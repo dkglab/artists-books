@@ -340,6 +340,27 @@ with photography and scanning workflow sub-collections.
 - **8,365** distinct creator names
 - 72% of books have 1 creator; 16% have 2; the rest have 3+
 
+### Creator identifiers
+
+There are **no globally unique creator identifiers** in the database —
+no VIAF, ISNI, ORCID, Wikidata QIDs, or LC authority numbers. Creators
+are identified by name strings only.
+
+What is available for future identity resolution:
+
+- **Life dates** — 610 creators have birth/death years embedded in name
+  fields (e.g. `firstName: "Tom Phillips"`, `lastName: "1937-"`), useful
+  for disambiguation against authority files
+- **Named Person entries** — 26 OCLC catalog pastes in notes contain
+  library authority-style name forms (e.g. `Phillips, Tom, 1937-`), but
+  only for subjects of reference works, not creators generally
+- **Role prefixes** — Some VCU-sourced names embed roles via pipe
+  delimiters (e.g. `publisher|miCielo Ediciones`)
+
+Creator identity resolution will need to be done externally by matching
+name strings (plus life dates where available) against VIAF, Wikidata,
+or LC Name Authority Files.
+
 ## Identifiers
 
 ### Global identifiers
