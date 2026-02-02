@@ -397,6 +397,68 @@ Many books appear 2-4 times in the database with slightly different
 title forms, likely from separate catalog imports. The collections
 (like "Reference resources") appear to hold the canonical records.
 
+## Item relations
+
+The `itemRelations` table contains 13,401 entries with three predicate
+types:
+
+### `owl:sameAs` (11,027)
+
+Links between local items and their counterparts in two shared Zotero
+group libraries:
+
+- **Group 262987**: "Artists_books_critical_index" (10,677 links)
+- **Group 2352415**: "ABCI (Artists' Books Critical Index)" (189 links)
+
+The account (`sloane-art`, user 5818691) syncs with these groups,
+meaning the data also exists online at `zotero.org/groups/262987`
+and `zotero.org/groups/2352415`.
+
+### `dc:relation` (2,366)
+
+Explicit item-to-item links connecting books to the reference works
+that cite them — a **third parallel encoding of the citation data**
+(alongside tags and notes). The top targets:
+
+| Reference work | Links |
+|---|---|
+| Lyons, *Artists' books: VSW Press* | 386 |
+| Bury, *Artists' books* | 328 |
+| Drucker, *The century of artists' books* | 275 |
+| Lyons, *Artists' books: a critical anthology* | 151 |
+
+These are a subset of the tag-based citations (~1,045 items linked
+vs ~7,000+ tagged). Nearly all items with a `dc:relation` also carry
+the corresponding citation tag.
+
+### `dc:replaces` (6)
+
+A handful of item version replacements.
+
+## Other data
+
+### abstractNote (1,296 items)
+
+A mix of physical descriptions with dimensions (669),
+colophon/edition details (230), and descriptive text (509). Many
+artists' books have unusual physical forms, so this data is
+valuable for the knowledge graph.
+
+### Physical descriptions in extra field
+
+845 `extra` field entries contain dimensions (cm/mm), separate from
+the OCLC and VCU identifiers that also appear in this field.
+
+### Fulltext index
+
+1,269 attachment snapshots indexed by Zotero with 11,175 distinct
+words and 100,643 word-item associations. This is Zotero's internal
+search index for the HTML catalog snapshots.
+
+### Deleted items
+
+95 items in the trash (50 books, 44 notes, 1 bookSection).
+
 ## What's in the storage directories
 
 Almost all 1,299 directories are complete web snapshots of pages from
