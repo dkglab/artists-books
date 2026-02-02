@@ -127,6 +127,65 @@ Bury's book is tagged `Bury (2015)`) and carries workflow tags like
 `Indexed, needs QC` or `Completed`, which the librarian used to track
 indexing progress.
 
+## Tags beyond citations
+
+The database contains 2,912 distinct tags. Beyond the ~73 citation-source
+tags and workflow tags, there are several other categories.
+
+### Course tags
+
+Books were tagged for use in university courses:
+`ARTH 285` (67), `EDUC 567` (62), `ENGL 123` (30), `ARTS 409` (29),
+`ARTS 322` (25), `INLS 749` (29), `ARTS 364` (11). Some include
+instructor names, e.g. `Instructor: Truong (Lien)`.
+
+### Zotero of the Week (ZotW)
+
+Dozens of tags like `ZotW 7/18/22`, `ZotW 9/19/22` (typically 8-10
+items each) — a recurring feature highlighting selected books on
+specific dates.
+
+### Monthly ABBC
+
+`ABBC` (192) plus monthly tags like `March 2019 ABBC`,
+`Feb. 2018 ABBC` — likely a recurring book club or display at the
+Artists' Book Collection.
+
+### Physical and production descriptors
+
+- **Binding:** `Pamphlet binding` (56), `Accordion fold` (8),
+  `Smyth sewing` (8), `Perfect binding` (11)
+- **Production:** `Offset` (25), `Photocopy` (9),
+  `Hand drawing, inking, or painting` (11), `Commercial production` (7)
+- **Format:** `Miniature books` (32), `Flip books` (11),
+  `Toy and movable books` (8), `Cartonera books` (17),
+  `Web-to-print exemplar` (17)
+
+### Subject and genre tags
+
+`Photography, Artistic` (84), `Poetry` (30), `Narrative` (26),
+`Feminism` (12), `Conceptual art` (6), `Mail art` (10), `Zines` (12),
+`Collage` (18), `Walking art` (11), etc.
+
+### Geographic/cultural tags
+
+`United States` (48), `Mexico` (9), `Cuba -- Matanzas` (6),
+plus Library of Congress-style headings for Argentina, Chile, and
+others.
+
+### Workflow/QC tags
+
+`Needs to be photographed` (229), `Re-photograph` (42),
+`Check citation - Re-search WC with more info` (23),
+`Check citation - WC discrepancy` (14), `Completed` (20),
+`Indexed, needs QC` (11), `Canonical works` (8).
+
+### Library of Congress Subject Headings
+
+2,099 singleton tags are LCSH subject headings imported from catalog
+records — e.g. `AIDS (Disease) and art`, `African American women
+artists`, `Aging in art`.
+
 ### Note on duplicates
 
 Many books appear 2-4 times in the database with slightly different
