@@ -105,6 +105,34 @@ The tags and notes encode the same information in parallel: the tag
 in that book's note, but the note adds the full bibliographic string
 and specific page numbers.
 
+### The "Reference resources" collection
+
+The citing reference works themselves are also cataloged in the
+database, organized into a **"Reference resources" collection** of
+156 items. These include the major surveys, exhibition catalogs,
+bibliographies, and journals used as citation sources:
+
+- Bury, *Artists' books: the book as a work of art 1963-2000* (2015)
+- Drucker, *The century of artists' books* (2004)
+- Moeglin-Delcroix, *Esthétique du livre d'artiste 1960/1980* (2012)
+- Phillpot, *Booktrek: selected essays on artists' books* (2013)
+- Wasserman, *The book as art* (2007)
+- Lyons, *Artists' books: Visual Studies Workshop Press* (2009)
+- Hamady, *Two decades of Hamady and the Perishable Press Limited* (1984)
+- Bodman, *Creating artists' books* (2005)
+- and ~148 others
+
+Each citing work is tagged with its own citation-source tag (e.g.
+Bury's book is tagged `Bury (2015)`) and carries workflow tags like
+`Indexed, needs QC` or `Completed`, which the librarian used to track
+indexing progress.
+
+### Note on duplicates
+
+Many books appear 2-4 times in the database with slightly different
+title forms, likely from separate catalog imports. The collections
+(like "Reference resources") appear to hold the canonical records.
+
 ## What's in the storage directories
 
 Almost all 1,299 directories are complete web snapshots of pages from
