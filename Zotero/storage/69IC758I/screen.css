@@ -1,0 +1,129 @@
+/* Locally defined CSS styles for Endeca-based catalog search results */
+/* Author:        Tito Sierra, Emily Lynema */
+/* Adapted for use with Search TRLN by Derek Rodriguez and Sean Aery */
+/* 1-11-2008, Derek Rodriguez, appended Sean's suggestions to the file */
+/* 1-11-2008, dar added redlabel */
+/* 1-14-2008, dar updated paths for resultAvailabilty jpgs */
+/* 1-14-2008, dar modified values for shadedbox and shadedfacet to include imgs, modified box border*/
+/* 1-16-2008, dar added new diagnostic anchor definition for test URL on full record page */
+/* 1-17-2008, dar added new img style for format icons */
+/* 1-17-2008, dar added new style for summary holdings */
+/* 1-18-2008, dar added new styles to support help */
+/* 1-24-2008, dar, added styles for Syndetics data */
+/* 1-29-2008, dre, added a currentSearchTermsPadding style for indenting search terms in the Search Terms breadcrumb.
+/* 2-8-2008, dar, modified style for masthead to accommodate new banner */
+/* 2-10-2008, dar, adjusted tab styles to ease flow within tabs */
+/* 2-20-2008 dre, adjusted some styles for Syndetics data/tab presentation to improve consistency across tabs and improve readability.
+/* 3-4-2008 dre, added styles facetName and showMore to support changes to 3/3/08 tweaks to facets.jsp
+/* 3-5-2008 dre, added styling to <html> tags to force vertical scrollbar in Mozilla (possibly other browsers as well).
+/* Last updated:  3-5-2008    */
+
+/* Column width for results page */
+
+.recordTitle {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.shaded {
+	background: url('../images/boxback.jpg') repeat-x #f5f5f4;
+/* 	background: #d3d3d3;
+ 	padding: 5px; */
+}
+
+
+.rss {
+	/*white-space: nowrap;
+	vertical-align: top;*/
+	font-size: 12px;
+}
+
+.lightText {
+	color: gray;
+}
+
+.smallText {
+	font-size: 9px;
+}
+
+
+/* Styles added by Sean Aery; to be appended to external stylesheet */
+
+
+body {
+	font-family: arial, verdana, sans-serif;
+	font-size: 12px;
+	
+}
+
+.recordTitle {
+  font-size: 13px;
+}
+
+
+
+
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+img.bookCover {
+	border: none;
+}
+
+/* Added by DAR 1-17-2008 */
+img.fmtIcon {
+	vertical-align:middle; 
+}
+
+
+
+
+
+
+
+
+
+
+.syndeticscopyrightblock {
+	margin: .5em auto;
+	text-align: right;
+	color: gray;
+	font-size: .75em;
+}
+
+
+/* Force vertical scrollbar in Firefox (and other browsers?) */
+
+html {
+	overflow-y: scroll;
+}
+
+
+
+
+
+
+table.hundredCol {
+	width: 50em;
+}
+
+
+

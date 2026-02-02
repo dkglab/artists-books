@@ -1,0 +1,1 @@
+ProcessYazTimeStatus({"b6412030":[{"location":"Art Library","callnum":"N7433.3 .I5 2009","status":"Available"}]});

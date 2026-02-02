@@ -1,0 +1,1 @@
+ProcessYazTimeStatus({"b7597390":[{"location":"Art Library Artists&apos; Book Collection","callnum":"N7433.4.A82 P35 2012","status":"In-Library Use Only"}]});

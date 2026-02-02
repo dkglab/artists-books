@@ -1,0 +1,1 @@
+ProcessRealTimeStatus({"i6424117": "Available"});

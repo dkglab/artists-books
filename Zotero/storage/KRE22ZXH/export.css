@@ -1,0 +1,266 @@
+/* Export CSS styles (primarily for lightboxes and ad hoc forms) */
+.exportform {
+	border: 0px solid black;
+	padding-left: 1.4em;
+	margin-top: 9px;
+	margin-left: -30px;
+}
+
+.markeditemsexportform {
+	border: 0px solid black;
+	padding-left: 1.4em;
+	margin-top: 9px;
+	margin-left: -15px;
+}
+
+fieldset {
+	border: 0px solid black;
+	padding-left: 1.4em;
+	margin-bottom: 0em;
+}
+
+#email,#sms {
+	top: 0px;
+	left: 0px;
+	width: 40em;
+	display: none;
+}
+
+#courseReserves {
+	display: none;
+}
+
+.reserves_form_errors {
+	color: #ff5555;
+	clear: both;
+	padding: 5px;
+}
+
+#reserves_form .two_column {
+	float: left;
+	margin-right: 10px;
+	padding: 6px;
+	*width: 242px;
+}
+
+#reserves_form .two_column.comments {
+	padding: 0px 6px;
+}
+
+#reserves_form .two_column.input_container {
+	*width: auto;
+}
+
+#reserves_form span {
+	font-size: 90%;
+}
+
+#reserves_form textarea {
+	resize: none;
+}
+
+#reserves_form .one_column span {
+	display: block;
+	float: right;
+	text-align: right;
+	padding-right: 15px;
+}
+
+#reserves_form .one_column input {
+	float: right;
+	margin-bottom: 3px;
+}
+
+#reserves_form .reserves_submit {
+	float: right;
+}
+
+#reserves_form h1 {
+	font-size: 15px;
+	margin: 0px;
+	padding: 5px 5px 7px 5px;
+	background-color: #EBF4FF;
+}
+
+#reserves_form h2 {
+	font-size: 13px;
+	margin: 0px;
+	clear: both;
+}
+
+#reserves_form .input_container input {
+	width: 100px;
+}
+
+#reserves_form .input_container {
+	padding: 2px 2px 2px 0px;
+	margin: 2px 8px 2px 0px;
+}
+
+#loan_periods {
+	min-height: 40px;
+	max-height: 190px;
+	overflow-y: auto;
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	border: 1px solid #CECECE;
+}
+
+#loan_periods li {
+	padding: 4px;
+}
+
+#loan_periods li div {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#loan_periods li div {
+	*display: inline;
+	width: 10%;
+}
+
+#loan_periods .reserves_even {
+	background-color: #FFFFFF;
+}
+
+#loan_periods .reserves_odd {
+	background-color: #EBF4FF;
+}
+
+#loan_periods .reserves_title {
+	width: 54%;
+}
+
+#loan_periods .reserves_title input {
+	margin-left: 10px;
+	width: 115px;
+	line-height: 13px;
+	font-size: 10px;
+	border: 1px solid #CECECE;
+}
+
+#loan_periods .reserves_loan_period {
+	width: 33%;
+}
+
+#loan_periods span {
+	font-size: 100%;
+}
+
+#loan_periods span.disabled {
+	color: #888;
+}
+
+.lightbox_reserves {
+	overflow: hidden;
+}
+
+.center {
+	text-align: center;
+}
+
+ul.exportoptions {
+	border: 0px solid gray;
+	margin: .5em auto;
+	padding: 0em;
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+ul.exportoptions li,ul.exportoptions li form {
+	display: inline;
+}
+
+ul.exportoptions li {
+	padding: 0em 3em;
+}
+
+ul.exportoptions li img {
+	vertical-align: top;
+}
+
+ul.exportoptions li form {
+	padding-left: 2em;
+}
+
+.exportoptions li a:hover {
+	text-decoration: none;
+}
+
+.exportoptions li a:hover .underline {
+	text-decoration: underline;
+}
+
+.lightbox {
+	padding: .5em;
+	background-color: #fff;
+	text-align: left;
+}
+
+.lightbox h3 {
+	text-align: center;
+	margin: .5em auto;
+	font-size: 1.2em;
+}
+
+.lightbox p {
+	padding: 5px 10px; /* mimics .record_export padding.... */
+}
+
+.lightbox form {
+	margin: .5em 1em;
+	padding: 0em;
+}
+
+.lightbox form .textentry {
+	width: 20em;
+}
+
+.lightbox form textarea {
+	display: none;
+}
+
+.lightbox .exportresults {
+	margin: 1em auto;
+	color: #660000;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+	/* display: none; */
+}
+
+.lightbox .exportresults img {
+	vertical-align: bottom;
+}
+
+.lightbox .formcontents p,.lightbox .formcontents .ol li {
+	margin: .5em auto;
+}
+
+.formcontents label {
+	padding-right: 10px;
+	font-weight: bold;
+	width: auto;
+}
+
+/* following are fancybox overrides to avoid some positioning and CSS issues posed by the layout... */
+#fancy_inner {
+	background-color: #fff !important;
+}
+
+#fancy_content {
+	background-color: #fff !important;
+}
+
+#fancy_content .lightbox {
+	font-size: .88em;
+}
+
+.smshidden {
+	display: none;
+	border: 1px solid #36647b;
+	background: #ddeeff;
+}
