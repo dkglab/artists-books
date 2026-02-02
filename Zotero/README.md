@@ -105,6 +105,41 @@ The tags and notes encode the same information in parallel: the tag
 in that book's note, but the note adds the full bibliographic string
 and specific page numbers.
 
+### Notes — full breakdown
+
+The 7,978 notes break down as follows:
+
+**Citation notes (96%)**
+
+| Variant | Count |
+|---|---|
+| `Cited:` (standard format) | 7,649 |
+| `<strong>Cited</strong>` (bold, no colon) | 7 |
+| `Citation:` (alternate keyword) | 2 |
+| **Subtotal** | **7,658** |
+
+**OCLC catalog record pastes (144)** — Full WorldCat catalog records
+pasted into notes on reference resource items, including class
+descriptors, named persons/corps, LC/Dewey numbers, and OCLC provider
+metadata. These contain structured bibliographic data not captured
+elsewhere in the Zotero fields.
+
+**Indexing workflow notes (63)** — Who performed indexing (`Indexed by
+XX`), QC credits (`QC by JH`), and completion markers (`Fully indexed
+for Sloane`).
+
+**Descriptive notes (~40)**
+
+- Edition/colophon details (18) — printing method, edition size, paper
+- Language notes (7) — e.g. "Text in English and German"
+- Condition notes (4) — e.g. "library markings, in protective enclosure"
+- Additional WorldCat records (4) — links to alternate OCLC records
+- Rarity notes (4) — e.g. "RARE - Johanna Drucker has it"
+- Contents/TOC (2) — tables of contents
+- Miscellaneous — title source, exhibition context, etc.
+
+**Empty notes (35)** — Blank or whitespace-only.
+
 ### The "Reference resources" collection
 
 The citing reference works themselves are also cataloged in the
