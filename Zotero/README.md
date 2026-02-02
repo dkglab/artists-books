@@ -57,7 +57,7 @@ database.
 
 ## Citation data
 
-This database was compiled by a librarian at the Hanes Art Library to
+This database was compiled by a library manager and book artist at the Sloane Art Library to
 record citation relationships among artists' books. For each book in
 the collection, they recorded which published reference works discuss
 it — effectively building a reverse citation index.
@@ -98,7 +98,7 @@ Bury, Stephen. Artists' Books... London, 2015. pp.17, 38, **45**, 178.
 Drucker, Johanna. The Century of Artists' Books. 2nd ed. NYC, 2004. pp.178, **179**, 276.
 ```
 
-Bold page numbers appear to indicate the primary or illustrated entry.
+Bold page numbers indicate the entry contains a photograph of the artist book.
 
 The tags and notes encode the same information in parallel: the tag
 `Drucker (2004)` on a book corresponds to the Drucker citation line
@@ -159,7 +159,7 @@ bibliographies, and journals used as citation sources:
 
 Each citing work is tagged with its own citation-source tag (e.g.
 Bury's book is tagged `Bury (2015)`) and carries workflow tags like
-`Indexed, needs QC` or `Completed`, which the librarian used to track
+`Indexed, needs QC` or `Completed`, which library staff used to track
 indexing progress.
 
 ## Tags beyond citations
@@ -169,22 +169,20 @@ tags and workflow tags, there are several other categories.
 
 ### Course tags
 
-Books were tagged for use in university courses:
+Books were tagged for pull lists for workshops in the library for university courses:
 `ARTH 285` (67), `EDUC 567` (62), `ENGL 123` (30), `ARTS 409` (29),
 `ARTS 322` (25), `INLS 749` (29), `ARTS 364` (11). Some include
 instructor names, e.g. `Instructor: Truong (Lien)`.
 
-### Zotero of the Week (ZotW)
+### Zines of the Week (ZotW)
 
 Dozens of tags like `ZotW 7/18/22`, `ZotW 9/19/22` (typically 8-10
-items each) — a recurring feature highlighting selected books on
-specific dates.
+items each) — a recurring feature highlighting which books were displayed that week as part of the Zines of the Week on-going display.
 
 ### Monthly ABBC
 
 `ABBC` (192) plus monthly tags like `March 2019 ABBC`,
-`Feb. 2018 ABBC` — likely a recurring book club or display at the
-Artists' Book Collection.
+`Feb. 2018 ABBC` — likely related to the defunct Artist Book Book Club. 
 
 ### Physical and production descriptors
 
@@ -270,7 +268,7 @@ There are four large top-level collections that partition the books
 into two non-overlapping pairs:
 
 - **ABCI (3,929)** overlaps with **Artists' books (7,117)** — ABCI
-  likely stands for "Artists' Book Citation Index"
+  stands for "Artists' Book Citation Index"
 - **ABCI (3,370)** overlaps with **Master list ... with or without
   citations (7,023)**
 
@@ -291,13 +289,13 @@ works. Items appear to move between them as work proceeds:
 
 Course reading lists and exhibition selections, organized under a
 single parent collection. Includes lists for ARTS, EDUC, ENGL, INLS,
-ARTH, and CMPL courses, plus themed displays and exhibitions.
+ARTH, and CMPL courses, plus themed displays and exhibitions. Placing items in this folder went alongside and sometimes replaced tagging the items with the course number.
 
 ### Sloane Special Collections
 
 Represents the physical holdings of the Sloane Art Library, split into
 **Artists' Books Collection** (1,341) and **Zines Collection** (488),
-with photography and scanning workflow sub-collections.
+with photography and scanning workflow sub-collections. Created in 2026 to replace the practice of using tags to track photographing/scanning workflow since tag upkeep had been abandoned at an unknown date.
 
 ## Item fields
 
@@ -395,7 +393,7 @@ point for linking to external knowledge graphs.
 
 Many books appear 2-4 times in the database with slightly different
 title forms, likely from separate catalog imports. The collections
-(like "Reference resources") appear to hold the canonical records.
+(like "Reference resources") appear to hold the canonical records. 
 
 ## Item relations
 
