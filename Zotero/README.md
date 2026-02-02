@@ -264,6 +264,36 @@ Represents the physical holdings of the Sloane Art Library, split into
 **Artists' Books Collection** (1,341) and **Zines Collection** (488),
 with photography and scanning workflow sub-collections.
 
+## Identifiers
+
+### Global identifiers
+
+| Identifier | Location | Count | Notes |
+|---|---|---|---|
+| OCLC number | `extra` field or WorldCat URL | 3,819 | 1,641 in `extra` as `OCLC: nnnnn`; 2,896 in `worldcat.org/oclc/` URLs; some overlap |
+| ISBN | `ISBN` field | 3,443 | Mix of ISBN-10 (2,153) and ISBN-13 (1,290); 1,134 contain multiple ISBNs; 223 have noise (prices, "pbk." etc.) |
+| ISSN | `ISSN` field | 10 | Journals/serials only |
+
+### Institutional identifiers
+
+| Identifier | Location | Count | Notes |
+|---|---|---|---|
+| UNC bib ID | URL field (`UNCb` numbers) | 2,174 | UNC Chapel Hill catalog; almost no overlap with OCLC |
+| VCU ALMA ID | `extra` field | 2,669 | Virginia Commonwealth University catalog |
+| LC call number | `callNumber` field | 1,857 | Not unique but useful for subject grouping |
+| Zotero key | `items.key` | 19,211 | Internal 8-char hash; unique within this DB only |
+
+### Coverage
+
+- **6,462 books (34%)** have at least one global identifier (ISBN or OCLC)
+- **12,749 books (66%)** have no global identifier
+
+Records come from three main sources: UNC catalog (~2,174), VCU
+catalog (~2,669), and WorldCat (~2,911). The ISBN data needs cleanup
+(multiple values per field, embedded prices and format notes). OCLC
+numbers are the cleanest global identifiers and the best starting
+point for linking to external knowledge graphs.
+
 ### Note on duplicates
 
 Many books appear 2-4 times in the database with slightly different
