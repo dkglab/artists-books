@@ -299,6 +299,47 @@ Represents the physical holdings of the Sloane Art Library, split into
 **Artists' Books Collection** (1,341) and **Zines Collection** (488),
 with photography and scanning workflow sub-collections.
 
+## Item fields
+
+### Metadata fields (books only, out of 19,211)
+
+| Field | Count | % | Notes |
+|---|---|---|---|
+| title | 19,196 | 99.9 | Near-universal |
+| date | 18,233 | 94.9 | |
+| publisher | 16,762 | 87.3 | |
+| place | 16,115 | 83.9 | Place of publication |
+| extra | 6,875 | 35.8 | Freetext; contains OCLC numbers, VCU IDs, physical descriptions |
+| language | 6,802 | 35.4 | English (4,774), Spanish (638), French (411), German (405), etc. |
+| url | 6,150 | 32.0 | UNC catalog, WorldCat, or other URLs |
+| libraryCatalog | 5,201 | 27.1 | Mostly "Open WorldCat" (4,904) |
+| ISBN | 3,443 | 17.9 | |
+| numPages | 3,252 | 16.9 | |
+| shortTitle | 2,171 | 11.3 | |
+| callNumber | 1,857 | 9.7 | LC call numbers |
+| archiveLocation | 1,576 | 8.2 | Nearly all "Art Library" |
+| abstractNote | 1,296 | 6.7 | |
+| edition | 916 | 4.8 | |
+| accessDate | 176 | 0.9 | |
+| series | 127 | 0.7 | |
+| numberOfVolumes | 13 | 0.1 | |
+| volume | 9 | | |
+| seriesNumber | 8 | | |
+| rights | 3 | | |
+
+### Creators (books only)
+
+| Role | Books | % | Total assignments |
+|---|---|---|---|
+| author | 18,674 | 97.2 | 27,255 |
+| editor | 219 | 1.1 | 437 |
+| contributor | 16 | 0.1 | 49 |
+| translator | 5 | | 6 |
+
+- **18,883 books** (98.3%) have at least one creator; 328 have none
+- **8,365** distinct creator names
+- 72% of books have 1 creator; 16% have 2; the rest have 3+
+
 ## Identifiers
 
 ### Global identifiers
