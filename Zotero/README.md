@@ -186,6 +186,84 @@ others.
 records — e.g. `AIDS (Disease) and art`, `African American women
 artists`, `Aging in art`.
 
+## Collections
+
+```
+ABCI (3,929)
+ABCI (3,370)
+Artists' books (7,117)
+Master list of artists' books with or without citations (7,023)
+Peripherals/Precedents (2)
+Pull lists (1)
+├── ARTS 364 - Walking art (18)
+├── Collage class - slavick 2019 (65)
+├── EDUC 567 - 2020 (36)
+├── EDUC 567 - 2021 (37)
+├── ENGL 123 - Intro to Fiction Writing (30)
+├── Fall 2020 A.b. instruction (0)
+│   ├── ARTH 551 (10)
+│   ├── CMPL 260 (43)
+│   └── ECU Book Arts class (0)
+├── Fall 2021 display -- Care and Wellness (26)
+├── How to Haiku references (9)
+├── INLS 749 (31)
+├── Portrait photography (32)
+├── Way out West pop-up list (25)
+└── Wilson Exhibition Spring 2023 (0)
+    ├── 2000-07 (249)
+    ├── 2008-15 (22)
+    └── 2016-present (0)
+Ref resources -- completed (21)
+Ref resources -- indexed, need qc (11)
+Reference resources (156)
+Reference resources to index (115)
+Sloane Special Collections (1)
+├── Artists' Books Collection (1,341)
+│   └── To be photographed (141)
+└── Zines Collection (488)
+    └── To be scanned (0)
+To Be Photographed (0)
+├── Jstor Artist Books (45)
+│   ├── Done (3)
+│   └── done not in master list (0)
+└── Jstor Zines (38)
+```
+
+### Main book collections
+
+There are four large top-level collections that partition the books
+into two non-overlapping pairs:
+
+- **ABCI (3,929)** overlaps with **Artists' books (7,117)** — ABCI
+  likely stands for "Artists' Book Citation Index"
+- **ABCI (3,370)** overlaps with **Master list ... with or without
+  citations (7,023)**
+
+No items appear in both pairs. Together the four collections cover
+~14,000 of the 19,211 books; 2,229 books belong to no collection.
+
+### Reference resource workflow
+
+Four collections track indexing progress for the citing reference
+works. Items appear to move between them as work proceeds:
+
+- **Reference resources** (156) — the main catalog of citing works
+- **Reference resources to index** (115) — not yet indexed
+- **Ref resources -- completed** (21) — fully indexed
+- **Ref resources -- indexed, need qc** (11) — indexed, awaiting review
+
+### Pull lists
+
+Course reading lists and exhibition selections, organized under a
+single parent collection. Includes lists for ARTS, EDUC, ENGL, INLS,
+ARTH, and CMPL courses, plus themed displays and exhibitions.
+
+### Sloane Special Collections
+
+Represents the physical holdings of the Sloane Art Library, split into
+**Artists' Books Collection** (1,341) and **Zines Collection** (488),
+with photography and scanning workflow sub-collections.
+
 ### Note on duplicates
 
 Many books appear 2-4 times in the database with slightly different
