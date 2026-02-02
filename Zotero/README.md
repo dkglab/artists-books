@@ -55,6 +55,56 @@ Only 1,297 of the 19,211 books have a corresponding storage snapshot.
 The remaining 17,915 books exist only as structured metadata in the
 database.
 
+## Citation data
+
+This database was compiled by a librarian at the Hanes Art Library to
+record citation relationships among artists' books. For each book in
+the collection, they recorded which published reference works discuss
+it — effectively building a reverse citation index.
+
+Citation data is stored in two parallel forms:
+
+### Tags — citation source shorthand
+
+Tags like `Bury (2015)`, `Drucker (2004)`, `Moeglin-Delcroix (2012)`
+identify which reference works cite a given book. There are ~73
+distinct citation-source tags. A book can carry many — e.g. Ed
+Ruscha's *Every building on the Sunset Strip* has 12, meaning it
+appears in 12 different reference works.
+
+The most frequently used citation sources:
+
+| Tag                       | Books cited |
+|---------------------------|-------------|
+| Moeglin-Delcroix (2012)  | 1,568       |
+| Bury (2015)              | 1,214       |
+| Lyons (2009)             | 877         |
+| Drucker (2004)           | 615         |
+| Phillpot (2013)          | 477         |
+| Moeglin-Delcroix (1985)  | 438         |
+| NRA Shakespeare (1985)   | 430         |
+| Lauf (1998)              | 364         |
+| Lyons (1985)             | 354         |
+
+### Notes — full citation details
+
+7,649 of the 7,978 notes are **"Cited:" notes** containing the full
+bibliographic references with page numbers. All of a book's citations
+are typically combined into a single note, e.g.:
+
+```
+Cited:
+Bury, Stephen. Artists' Books... London, 2015. pp.17, 38, **45**, 178.
+Drucker, Johanna. The Century of Artists' Books. 2nd ed. NYC, 2004. pp.178, **179**, 276.
+```
+
+Bold page numbers appear to indicate the primary or illustrated entry.
+
+The tags and notes encode the same information in parallel: the tag
+`Drucker (2004)` on a book corresponds to the Drucker citation line
+in that book's note, but the note adds the full bibliographic string
+and specific page numbers.
+
 ## What's in the storage directories
 
 Almost all 1,299 directories are complete web snapshots of pages from
