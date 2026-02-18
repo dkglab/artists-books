@@ -6,18 +6,18 @@
 |Book|A book.|
 |Reference_book|Subclass of book. Listed in the Zotero Ref resources -- completed file. Written about Artists' Books.|
 |Artist_book|Subclass of book. Listed in the Zotero ABCI file. Book created by an artist as a work of art.| 
-|Creator|An entity that is credited with creating all or part of a book.|
-|Author|Subclass of creator. Credited as author of a book.|
-|Contributor|Contributed to a book but is not listed as a creator or subclass of creator.|
+|Agent|Something that can do things.|
+|Person|Subclass of Agent. A human being.|
+|Group|Subclass of Agent. A group of agents.|
+|Citation| Is a relationship between an Artist Book and a Reference Book.|
 
 | Properties | Description |
 | ----- | ----------- |
-|written by| Relates an author to a book they wrote.|
-|created by| Relates a creator to a book they created.|
-|on page number| Assigns a number that is the page number in a Reference_book where the Artists_book is cited.|
-|cites|Relates an Artists_book to a Reference_book that cites it.|
-|contributed to| Relates a Contributor to a Book they contributed to.|
-
+|written by| Relates an Agent to a Book they wrote.|
+|created by| Relates an Agent to a Book they created.|
+|contributed to| Relates a Agent to a Book they contributed to.|
+|uses| Relates an Artist Book to a Book it uses in its creation.|
+|related to| Relates an Artist Book to a Book that it takes inspiration from or is responding to.|
 
 
 ##Graph
