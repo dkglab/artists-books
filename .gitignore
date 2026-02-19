@@ -9,3 +9,7 @@ Zotero/storage/**/*.ico
 Zotero/storage/**/*.js
 Zotero/storage/**/*.css
 /.sprite
+tools/jena/*
+!tools/jena/Makefile
+tools/rdflib/*
+!tools/rdflib/Makefile
