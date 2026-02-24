@@ -1,0 +1,19 @@
+Loading vocab.ttl as turtle... done.	(8 triples	0.00 seconds)
+Loaded a total of 8 triples in 0.00 seconds.
+digraph { 
+ node [ fontname="DejaVu Sans" ] ; 
+	node0 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+	node2 -> node3 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node2 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:domain</font> > ] ;
+	node2 -> node4 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+# http://example.org/Book node0
+node0 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Book</B></td></tr><tr><td href='http://example.org/Book' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://example.org/Book</font></td></tr><tr><td align='left'>rdfs:comment</td><td align='left'>&quot;A book is a written or printed work that calls itself a book.&quot;</td></tr></table> > ] 
+# http://www.w3.org/2000/01/rdf-schema#Class node1
+node1 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Class</B></td></tr><tr><td href='http://www.w3.org/2000/01/rdf-schema#Class' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.w3.org/2000/01/rdf-schema#Class</font></td></tr></table> > ] 
+# http://example.org/authoredBy node2
+node2 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>authored by</B></td></tr><tr><td href='http://example.org/authoredBy' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://example.org/authoredBy</font></td></tr><tr><td align='left'>rdfs:comment</td><td align='left'>&quot;Indicates the author of a book.&quot;</td></tr></table> > ] 
+# http://example.org/Agent node3
+node3 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Agent</B></td></tr><tr><td href='http://example.org/Agent' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://example.org/Agent</font></td></tr></table> > ] 
+# http://www.w3.org/2000/01/rdf-schema#Property node4
+node4 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Property</B></td></tr><tr><td href='http://www.w3.org/2000/01/rdf-schema#Property' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.w3.org/2000/01/rdf-schema#Property</font></td></tr></table> > ] 
+}

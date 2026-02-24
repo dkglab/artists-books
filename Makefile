@@ -32,4 +32,4 @@ diff.txt: description.ttl inferred.ttl | validate
 	|| echo "Triples were inferred!"
 
 %.png: %.ttl | validate tools/rdflib/bin/rdf2dot
-	./tools/rdflib/bin/rdf2dot $< | dot -Tpng > $@
+	./tools/rdflib/bin/rdf2dot $< 2>/dev/null | dot -Tpng > $@
