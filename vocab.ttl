@@ -16,63 +16,63 @@ ex:Agent a rdfs:Class ;
     rdfs:label "Agent" ;
     rdfs:comment "An agent is an entity that can perform actions, such as a person or an organization." .
 
-ex:created a rdfs:Property ;
-    rdfs:label "created" ;
+ex:createdBy a rdfs:Property ;
+    rdfs:label "created by" ;
     rdfs:comment "Indicates that an Agent created an Artist's Book." ;
-    rdfs:domain ex:Agent ;
-    rdfs:range ex:ArtistsBook .
+    rdfs:domain ex:ArtistsBook ;
+    rdfs:range ex:Agent .
 
-ex:isThePrimaryCreatorOf a rdf:Property ;
-    rdfs:subPropertyOf ex:created ;
-    rdfs:label "is the primary creator of" ;
+ex:primaryCreator a rdf:Property ;
+    rdfs:subPropertyOf ex:createdBy ;
+    rdfs:label "has a primary creator" ;
     rdfs:comment "Indicates that an Agent is the primary creator of an Artist's Book." ;
-    rdfs:domain ex:Agent ;
-    rdfs:range ex:ArtistsBook .
+    rdfs:domain ex:ArtistsBook ;
+    rdfs:range ex:Agent .
 
 ex:ArtistsBook a rdfs:Class ;
     rdfs:subClassOf ex:Book ;
     rdfs:label "Artist's Book" ;
     rdfs:comment "An artist book is a work of art that utilizes the form of a book." .
 
-ex:isTheSecondaryCreatorOf a rdf:Property ;
-    rdfs:subPropertyOf ex:created ;
-    rdfs:label "is the secondary creator of" ;
+ex:secondaryCreator a rdf:Property ;
+    rdfs:subPropertyOf ex:createdBy ;
+    rdfs:label "has a secondary creator" ;
     rdfs:comment "Indicates that an Agent is the secondary creator of an Artist's Book." ;
-    rdfs:domain ex:Agent ;
-    rdfs:range ex:ArtistsBook .
+    rdfs:domain ex:ArtistsBook ;
+    rdfs:range ex:Agent .
 
-ex:isAnAdditionalCreatorOf a rdf:Property ;
-    rdfs:subPropertyOf ex:created ;
-    rdfs:label "is an additional creator of" ;
+ex:additionalCreator a rdf:Property ;
+    rdfs:subPropertyOf ex:createdBy ;
+    rdfs:label "has an additional creator" ;
     rdfs:comment "Indicates that an Agent is an additional creator of an Artist's Book." ;
-    rdfs:domain ex:Agent ;
-    rdfs:range ex:ArtistsBook .
+    rdfs:domain ex:ArtistsBook ;
+    rdfs:range ex:Agent .
 
-ex:isAContributorTo a rdf:Property ;
-    rdfs:subPropertyOf ex:created ;
-    rdfs:label "is a contributor to" ;
-    rdfs:comment "Indicates that an Agent is listed as a contributor to a Book." ;
-    rdfs:domain ex:Agent ;
-    rdfs:range ex:Book .
+ex:contributor a rdf:Property ;
+    rdfs:subPropertyOf ex:createdBy ;
+    rdfs:label "is contributed to by" ;
+    rdfs:comment "Indicates that an Agent is listed as a contributor to an Artist's Book." ;
+    rdfs:domain ex:ArtistsBook ;
+    rdfs:range ex:Agent .
 
-ex:related_to a rdfs:Property ;
+ex:relatedTo a rdfs:Property ;
     rdfs:label "related to" ;
     rdfs:comment "Indicates a relationship between two books." ;
     rdfs:domain ex:Book ;
     rdfs:range ex:Book .
 
-ex:published_by a rdfs:Property ;
+ex:publishedBy a rdfs:Property ;
     rdfs:label "published by" ;
     rdfs:comment "Indicates the publisher of a book." ;
     rdfs:domain ex:Book ;
     rdfs:range ex:Agent .
 
-ex:published_in_year a rdfs:Property ;
+ex:publishedInYear a rdfs:Property ;
     rdfs:label "published in year" ;
     rdfs:comment "Indicates the year a book was published." ;
     rdfs:domain ex:Book .
 
-ex:published_in_location a rdfs:Property ;
+ex:publishedInLocation a rdfs:Property ;
     rdfs:label "published in location" ;
     rdfs:comment "Indicates the location where a book was published." ;
     rdfs:domain ex:Book ;
@@ -82,12 +82,12 @@ ex:Place a rdfs:Class ;
     rdfs:label "Place" ;
     rdfs:comment "A place is a physical location, such as a city or country." .
 
-ex:bookArtistfor a rdf:Property ;
-    rdfs:subPropertyOf ex:created ;
-    rdfs:label "book artist for" ;
+ex:bookArtist a rdf:Property ;
+    rdfs:subPropertyOf ex:createdBy ;
+    rdfs:label "has book artist" ;
     rdfs:comment "Indicates that an Agent is the book artist for an Artist's Book." ;
-    rdfs:domain ex:Agent ;
-    rdfs:range ex:ArtistsBook .
+    rdfs:domain ex:ArtistsBook ;
+    rdfs:range ex:Agent .
 
 ex:hasIdentificationNumber a rdfs:Property ;
     rdfs:label "has identification number" ;
@@ -119,7 +119,7 @@ ex:worldcatLink a rdfs:Property ;
     rdfs:comment "Indicates a URL to the WorldCat record for the book." ;
     rdfs:domain ex:Book .
 
-ex:subjectHeading a rdfs:Property ;
+ex:hasSubjectHeading a rdfs:Property ;
     rdfs:label "subject heading" ;
     rdfs:comment "Indicates a subject heading associated with the book." ;
     rdfs:domain ex:Book ;
@@ -196,8 +196,8 @@ ex:BookForm a rdfs:Class ;
     rdfs:label "Book Form" ;
     rdfs:comment "A book form is a category of Artist's Book, such as 'accordion' or 'pop-up'." .
 
-ex:hasMaterial a rdfs:Property ;
-    rdfs:label "has material" ;
+ex:usesMaterial a rdfs:Property ;
+    rdfs:label "uses material" ;
     rdfs:comment "Indicates a material used in the creation of an Artist's Book, such as 'paper' or 'cloth'." ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range ex:Material .
@@ -206,8 +206,8 @@ ex:Material a rdfs:Class ;
     rdfs:label "Material" ;
     rdfs:comment "A material is a substance used in the creation of an Artist's Book, such as 'paper' or 'cloth'." .
 
-ex:bindingMethod a rdf:Property ;
-    rdfs:subPropertyOf ex:productionMethod ;
+ex:hasBindingMethod a rdf:Property ;
+    rdfs:subPropertyOf ex:hasProductionMethod ;
     rdfs:label "bound using" ;
     rdfs:comment "Indicates the method used to bind an Artist's Book, such as 'saddle-stitch' or 'perfect binding'." ;
     rdfs:domain ex:ArtistsBook ;
@@ -218,8 +218,8 @@ ex:hasDimension a rdfs:Property ;
     rdfs:comment "Indicates the dimensions of an Artist's Book." ;
     rdfs:domain ex:ArtistsBook .
 
-ex:productionMethod a rdfs:Property ;
-    rdfs:label "production method" ;
+ex:hasProductionMethod a rdfs:Property ;
+    rdfs:label "has production method" ;
     rdfs:comment "Indicates the production method used to create an Artist's Book, such as 'handmade' or 'machine-made'." ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range ex:ProductionMethod .
@@ -237,6 +237,21 @@ ex:hasGenreHeading a rdfs:Property ;
 ex:GenreHeading a rdfs:Class ;
     rdfs:label "Genre Heading" ;
     rdfs:comment "A genre heading is a term used to describe the genre of a book in a library record." .
+
+ex:editionYear a rdfs:subPropertyOf ex:publishedInYear ;
+    rdfs:label "edition year" ;
+    rdfs:comment "Indicates the year of an edition of a book." ;
+    rdfs:domain ex:Book  .
+
+ex:inLanguage a rdfs:Property ;
+    rdfs:label "language" ;
+    rdfs:comment "Indicates the language of a book." ;
+    rdfs:domain ex:Book .
+    rdfs:range ex:Language .
+
+ex:Language a rdfs:Class ;
+    rdfs:label "Language" ;
+    rdfs:comment "A language is a system of communication used by a particular community or country." .
 
 
 
