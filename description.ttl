@@ -1,4 +1,8 @@
-TwentysixGasolineStations a ArtistBook ;
+@prefix ex: <http://example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:TwentysixGasolineStations a ex:ArtistBook ;
     ex:primaryCreator "Ed Ruscha" ;
     ex:publishedBy "Cunningham Press" ;
     ex:publishedInYear "1962" ;
@@ -24,3 +28,33 @@ TwentysixGasolineStations a ArtistBook ;
     ex:imagesAt "https://www.jstor.org/stable/community.949854" ;
     ex:hasProductionMethod "offset printing" ;
     ex:hasDimension "18 cm." ;
+    ex:usesTechnique ex:Photography ;
+    ex:worldcatLink "https://search.worldcat.org/title/888402" ;
+    ex:hasDescription "Largely considered the first modern artists' book, TwentySix Gasoline Stations is also the first bookwork by Ed Ruscha. Self-published in 1963 and in second and third editions in 1967 and 1969, Twentysix Gasoline Stations features black-and-white photos of gas stations taken from a distance along Route 66 in Southern California, Arizona, New Mexico, Oklahoma, and Texas, documenting the modernization of the American landscape and its expanding network of highways.--Printed Matter website." ;
+    ex:photographedBy "Ed Ruscha" .
+
+ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
+    ex:authoredBy "Stephen Bury" ;
+    ex:publishedBy "Bernard Quaritch Ltd" ;
+    ex:publishedInYear "2015" ;
+    ex:publishedInLocation "London" ;
+    ex:hasSubjectHeading "Artists' books" ;
+    ex:hasSubjectHeading "Artists' books -- History" ;
+    ex:describedAs "258 pages : illustrations (many color) ; 24 cm." ;
+    ex:describedAs "Color characteristics: polychrome" ;
+    ex:describedAs "Selective bibliography of artists' books 1963--: pages 175-239" ;
+    ex:inLanguage "English" ;
+    ex:hasGenreHeading "History" ;
+    ex:hasIdentificationNumber "ISBN 9780956301291" ;
+    ex:hasIdentificationNumber "ISBN 0956301290" ;
+    ex:hasIdentificationNumber "OCLC: 910978212" ;
+    ex:worldcatLink "https://search.worldcat.org/title/910978212" .
+
+ex:Ato26Gas a ex:Citation ;
+    ex:cites ex:TwentysixGasolineStations ;
+    ex:citedBy ex:ArtistsBooksTheBookAsAWorkOfArt ;
+    ex:onPageNumber "22" ;
+    ex:onPageNumber "176" ;
+    ex:imagesOnPageNumber "41" .
+
+

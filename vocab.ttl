@@ -238,7 +238,7 @@ ex:GenreHeading a rdfs:Class ;
     rdfs:label "Genre Heading" ;
     rdfs:comment "A genre heading is a term used to describe the genre of a book in a library record." .
 
-ex:editionYear a rdfs:subPropertyOf ex:publishedInYear ;
+ex:editionYear a rdfs:Property ;
     rdfs:label "edition year" ;
     rdfs:comment "Indicates the year of an edition of a book." ;
     rdfs:domain ex:Book  .
@@ -246,12 +246,31 @@ ex:editionYear a rdfs:subPropertyOf ex:publishedInYear ;
 ex:inLanguage a rdfs:Property ;
     rdfs:label "language" ;
     rdfs:comment "Indicates the language of a book." ;
-    rdfs:domain ex:Book .
+    rdfs:domain ex:Book ;
     rdfs:range ex:Language .
 
 ex:Language a rdfs:Class ;
     rdfs:label "Language" ;
     rdfs:comment "A language is a system of communication used by a particular community or country." .
+
+ex:usesTechnique a rdfs:Property ;
+    rdfs:label "uses technique" ;
+    rdfs:comment "Indicates a technique used in the creation of an Artist's Book, such as 'photography' or 'collage'." ;
+    rdfs:domain ex:ArtistsBook ;
+    rdfs:range ex:Technique .
+
+ex:Technique a rdfs:Class ;
+    rdfs:label "Technique" ;
+    rdfs:comment "A technique is a method or process used in the creation of an Artist's Book, such as 'photography' or 'collage'." .
+
+ex:photographedBy a rdf:Property ;
+    rdfs:subPropertyOf ex:createdBy ;
+    rdfs:subPropertyOf ex:usesTechnique ;
+    rdfs:label "photographed by" ;
+    rdfs:comment "Indicates that an Artist's Book uses photography as a technique and identifies the photographer." ;
+    rdfs:domain ex:ArtistsBook ;
+    rdfs:range ex:Agent .
+
 
 
 

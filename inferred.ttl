@@ -1,0 +1,51 @@
+PREFIX ex:   <http://example.org/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+ex:Ato26Gas  rdf:type          ex:Citation;
+        ex:citedBy             ex:ArtistsBooksTheBookAsAWorkOfArt;
+        ex:cites               ex:TwentysixGasolineStations;
+        ex:imagesOnPageNumber  "41";
+        ex:onPageNumber        "176" , "22" .
+
+ex:ArtistsBooksTheBookAsAWorkOfArt
+        rdf:type                    ex:ReferenceBook , ex:Book , ex:ArtistsBook;
+        ex:authoredBy               "Stephen Bury";
+        ex:describedAs              "258 pages : illustrations (many color) ; 24 cm." , "Color characteristics: polychrome" , "Selective bibliography of artists' books 1963--: pages 175-239";
+        ex:hasGenreHeading          "History";
+        ex:hasIdentificationNumber  "OCLC: 910978212" , "ISBN 9780956301291" , "ISBN 0956301290";
+        ex:hasSubjectHeading        "Artists' books" , "Artists' books -- History";
+        ex:inLanguage               "English";
+        ex:publishedBy              "Bernard Quaritch Ltd";
+        ex:publishedInLocation      "London";
+        ex:publishedInYear          "2015";
+        ex:worldcatLink             "https://search.worldcat.org/title/910978212" .
+
+ex:Photography  rdf:type  ex:Technique .
+
+ex:Twenty-sixGasolineStations
+        rdf:type  ex:Book .
+
+ex:TwentysixGasolineStations
+        rdf:type                    ex:ArtistBook , ex:ArtistsBook , ex:Book;
+        ex:createdBy                "Ed Ruscha";
+        ex:describedAs              "1 volume : (chiefly illustrations) ; 18 cm.";
+        ex:editionYear              "1969";
+        ex:hasDescription           "Largely considered the first modern artists' book, TwentySix Gasoline Stations is also the first bookwork by Ed Ruscha. Self-published in 1963 and in second and third editions in 1967 and 1969, Twentysix Gasoline Stations features black-and-white photos of gas stations taken from a distance along Route 66 in Southern California, Arizona, New Mexico, Oklahoma, and Texas, documenting the modernization of the American landscape and its expanding network of highways.--Printed Matter website.";
+        ex:hasDimension             "18 cm.";
+        ex:hasGenreHeading          "Illustrated works" , "Artists' books (books) -- United States" , "Photographic sequence" , "Photography, Artistic" , "Artists' books" , "Specimens" , "Pictorial works";
+        ex:hasIdentificationNumber  "OCLC: 888402";
+        ex:hasProductionMethod      "offset printing";
+        ex:hasSubjectHeading        "Ruscha, Edward" , "Service stations" , "Offset printing" , "Service stations -- Pictorial works" , "Offset printing -- Specimens";
+        ex:imagesAt                 "https://www.jstor.org/stable/community.949854";
+        ex:inLanguage               "English";
+        ex:isEditionNumber          "3";
+        ex:photographedBy           "Ed Ruscha";
+        ex:primaryCreator           "Ed Ruscha";
+        ex:publishedBy              "Cunningham Press";
+        ex:publishedInLocation      "Alhambra, Calif.";
+        ex:publishedInYear          "1962";
+        ex:relatedTo                ex:Twenty-sixGasolineStations;
+        ex:usesTechnique            "Ed Ruscha";
+        ex:usesTechnique            ex:Photography;
+        ex:worldcatLink             "https://search.worldcat.org/title/888402" .

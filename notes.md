@@ -6,5 +6,7 @@ Date ranges? I changed the property that needed this but still curious.
 
 how should onPageNumber handle roman numerals?
 
-Still stuck on form/technique/ect feeling redundant?
+Still stuck on form/technique/ect feeling redundant/bloated?
+
+why is it says both books are rdf type book, artistbook, and referencebook?
 
