@@ -102,7 +102,7 @@ ex:imagesAt a rdfs:Property ;
 ex:describedAs a rdfs:Property ;
     rdfs:label "described as" ;
     rdfs:comment "Indicates a description of the Artist's Book." ;
-    rdfs:domain ex:ArtistsBook .
+    rdfs:domain ex:Book .
 
 ex:isEditionNumber a rdfs:Property ;
     rdfs:label "is edition number" ;
