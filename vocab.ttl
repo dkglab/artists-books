@@ -97,7 +97,8 @@ ex:hasIdentificationNumber a rdfs:Property ;
 ex:imagesAt a rdfs:Property ;
     rdfs:label "images at" ;
     rdfs:comment "Indicates a URL where images of the book can be found." ;
-    rdfs:domain ex:ArtistsBook .
+    rdfs:domain ex:ArtistsBook ;
+    rdfs:range rdfs:Resource .
     
 ex:describedAs a rdfs:Property ;
     rdfs:label "described as" ;
@@ -117,7 +118,8 @@ ex:numberMade a rdfs:Property ;
 ex:worldcatLink a rdfs:Property ;
     rdfs:label "WorldCat link" ;
     rdfs:comment "Indicates a URL to the WorldCat record for the book." ;
-    rdfs:domain ex:Book .
+    rdfs:domain ex:Book ;
+    rdfs:range rdfs:Resource .
 
 ex:hasSubjectHeading a rdfs:Property ;
     rdfs:label "subject heading" ;
@@ -182,51 +184,26 @@ ex:onPageNumber a rdfs:Property ;
     rdfs:domain ex:Citation .
 
 ex:imagesOnPageNumber a rdfs:Property ;
+    rdfs:subPropertyOf ex:onPageNumber ;
     rdfs:label "images on page number" ;
     rdfs:comment "Relates Citation to a page number where an image of the cited Artist_book is." ;
     rdfs:domain ex:Citation .
 
-ex:hasForm a rdfs:Property ;
-    rdfs:label "has form" ;
-    rdfs:comment "Indicates the form of an Artist's Book, such as 'accordion' or 'pop-up'." ;
+ex:constructedUsing a rdfs:Property ;
+    rdfs:label "constructed using" ;
+    rdfs:comment "Indicates techniques, materials, and production methods used in the construction of an Artist's Book." ;
     rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:BookForm .
+    rdfs:range ex:ConstructionMethod .
 
-ex:BookForm a rdfs:Class ;
-    rdfs:label "Book Form" ;
-    rdfs:comment "A book form is a category of Artist's Book, such as 'accordion' or 'pop-up'." .
-
-ex:usesMaterial a rdfs:Property ;
-    rdfs:label "uses material" ;
-    rdfs:comment "Indicates a material used in the creation of an Artist's Book, such as 'paper' or 'cloth'." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:Material .
-
-ex:Material a rdfs:Class ;
-    rdfs:label "Material" ;
-    rdfs:comment "A material is a substance used in the creation of an Artist's Book, such as 'paper' or 'cloth'." .
-
-ex:hasBindingMethod a rdf:Property ;
-    rdfs:subPropertyOf ex:hasProductionMethod ;
-    rdfs:label "bound using" ;
-    rdfs:comment "Indicates the method used to bind an Artist's Book, such as 'saddle-stitch' or 'perfect binding'." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:ProductionMethod .
+ex:ConstructionMethod a rdfs:Class ;
+    rdfs:label "Construction Method" ;
+    rdfs:comment "A construction method is a technique, material, or production method used in the creation of an Artist's Book." .
 
 ex:hasDimension a rdfs:Property ;
     rdfs:label "has dimension" ;
     rdfs:comment "Indicates the dimensions of an Artist's Book." ;
     rdfs:domain ex:ArtistsBook .
 
-ex:hasProductionMethod a rdfs:Property ;
-    rdfs:label "has production method" ;
-    rdfs:comment "Indicates the production method used to create an Artist's Book, such as 'handmade' or 'machine-made'." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:ProductionMethod .
-
-ex:ProductionMethod a rdfs:Class ;
-    rdfs:label "Production Method" ;
-    rdfs:comment "A production method is a technique used to create an Artist's Book, such as 'letterpress' or 'commercial production'." .
 
 ex:hasGenreHeading a rdfs:Property ;
     rdfs:label "has genre heading" ;
@@ -253,23 +230,19 @@ ex:Language a rdfs:Class ;
     rdfs:label "Language" ;
     rdfs:comment "A language is a system of communication used by a particular community or country." .
 
-ex:usesTechnique a rdfs:Property ;
-    rdfs:label "uses technique" ;
-    rdfs:comment "Indicates a technique used in the creation of an Artist's Book, such as 'photography' or 'collage'." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:Technique .
-
-ex:Technique a rdfs:Class ;
-    rdfs:label "Technique" ;
-    rdfs:comment "A technique is a method or process used in the creation of an Artist's Book, such as 'photography' or 'collage'." .
-
 ex:photographedBy a rdf:Property ;
     rdfs:subPropertyOf ex:createdBy ;
-    rdfs:subPropertyOf ex:usesTechnique ;
+    rdfs:subPropertyOf ex:constructedUsing ;
     rdfs:label "photographed by" ;
-    rdfs:comment "Indicates that an Artist's Book uses photography as a technique and identifies the photographer." ;
+    rdfs:comment "Indicates that an Artist's Book uses photography as part of its construction and identifies the photographer." ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range ex:Agent .
+
+ex:hasTitle a rdfs:Property ;
+    rdfs:label "has title" ;
+    rdfs:comment "Indicates the title of a book." ;
+    rdfs:domain ex:Book .
+
 
 
 
