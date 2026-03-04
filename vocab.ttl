@@ -1,6 +1,8 @@
 @prefix ex: <http://example.org/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ulan: <http://vocab.getty.edu/ulan/> .
 
 ex:Book a rdfs:Class ;
     rdfs:label "Book" ;
@@ -89,9 +91,9 @@ ex:bookArtist a rdf:Property ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range ex:Agent .
 
-ex:hasIdentificationNumber a rdfs:Property ;
-    rdfs:label "has identification number" ;
-    rdfs:comment "Indicates an identification number for a book, such as an ISBN or OCLC number." ;
+dcterms:identifier a rdfs:Property ;
+    rdfs:label "Identifier" ;
+    rdfs:comment "An unambiguous reference to the resource within a given context." ;
     rdfs:domain ex:Book .
 
 ex:imagesAt a rdfs:Property ;

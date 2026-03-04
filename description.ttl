@@ -1,10 +1,12 @@
 @prefix ex: <http://example.org/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ulan: <http://vocab.getty.edu/ulan/> .
 
 ex:TwentysixGasolineStations a ex:ArtistsBook ;
     ex:hasTitle "Twentysix Gasoline Stations" ;
-    ex:primaryCreator "Ed Ruscha" ;
+    ex:primaryCreator ulan:500024159 ;
     ex:publishedBy "Cunningham Press" ;
     ex:publishedInYear "1962" ;
     ex:editionYear "1969" ;
@@ -24,15 +26,16 @@ ex:TwentysixGasolineStations a ex:ArtistsBook ;
     ex:hasGenreHeading "Photographic sequence" ;
     ex:hasGenreHeading "Artists' books (books) -- United States" ;
     ex:hasGenreHeading "Illustrated works" ;
-    ex:hasIdentificationNumber "OCLC: 888402" ;
+    dcterms:identifier "OCLC: 888402" ;
     ex:relatedTo ex:Twenty-sixGasolineStations ;
     ex:imagesAt <https://www.jstor.org/stable/community.949854> ;
     ex:constructedUsing "offset printing" ;
     ex:hasDimension "18 cm." ;
     ex:constructedUsing ex:Photography ;
+    dcterms:identifier "OCLC: 888402" ;
     ex:worldcatLink <https://search.worldcat.org/title/888402> ;
     ex:hasDescription "Largely considered the first modern artists' book, TwentySix Gasoline Stations is also the first bookwork by Ed Ruscha. Self-published in 1963 and in second and third editions in 1967 and 1969, Twentysix Gasoline Stations features black-and-white photos of gas stations taken from a distance along Route 66 in Southern California, Arizona, New Mexico, Oklahoma, and Texas, documenting the modernization of the American landscape and its expanding network of highways.--Printed Matter website." ;
-    ex:photographedBy "Ed Ruscha" .
+    ex:photographedBy ulan:500024159 .
 
 ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
     ex:hasTitle "Artists' Books: The Book as a Work of Art, 1963-2000" ;
@@ -47,9 +50,9 @@ ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
     ex:describedAs "Selective bibliography of artists' books 1963--: pages 175-239" ;
     ex:inLanguage "English" ;
     ex:hasGenreHeading "History" ;
-    ex:hasIdentificationNumber "ISBN 9780956301291" ;
-    ex:hasIdentificationNumber "ISBN 0956301290" ;
-    ex:hasIdentificationNumber "OCLC: 910978212" ;
+    dcterms:identifier "ISBN 9780956301291" ;
+    dcterms:identifier "ISBN 0956301290" ;
+    dcterms:identifier "OCLC: 910978212" ;
     ex:worldcatLink <https://search.worldcat.org/title/910978212> .
 
 ex:Ato26Gas a ex:Citation ;
