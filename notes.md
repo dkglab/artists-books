@@ -20,3 +20,5 @@ ask jj about copyright using thumbnail image
   thumbnails are all good; VRA has rules around image size and quality and use
 faceted browsing - random sample as many as can fit
 look at getty images and shutterstock image search interface
+
+how to use dcterms? Not necessary at this point?
