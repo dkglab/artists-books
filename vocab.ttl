@@ -9,12 +9,6 @@ ex:Book a rdfs:Class ;
     rdfs:label "Book" ;
     rdfs:comment "A book is an object that takes the usual form of a book with bound pages in a cover or an artwork that is identified as a book." .
 
-ex:authoredBy a rdfs:Property ;
-    rdfs:label "authored by" ;
-    rdfs:comment "Indicates the author of a book." ;
-    rdfs:domain ex:Book ;
-    rdfs:range ex:Agent .
-
 ex:Agent a rdfs:Class ;
     rdfs:label "Agent" ;
     rdfs:comment "An agent is an entity that can perform actions, such as a person or an organization." .
@@ -57,34 +51,12 @@ ex:relatedTo a rdfs:Property ;
     rdfs:domain ex:Book ;
     rdfs:range ex:Book .
 
-ex:publishedBy a rdfs:Property ;
-    rdfs:label "published by" ;
-    rdfs:comment "Indicates the publisher of a book." ;
-    rdfs:domain ex:Book ;
-    rdfs:range ex:Agent .
-
-ex:publishedInYear a rdfs:Property ;
-    rdfs:label "published in year" ;
-    rdfs:comment "Indicates the year a book was published." ;
-    rdfs:domain ex:Book .
-
-ex:publishedInLocation a rdfs:Property ;
-    rdfs:label "published in location" ;
-    rdfs:comment "Indicates the location where a book was published." ;
-    rdfs:domain ex:Book ;
-    rdfs:range ex:Place .
-
-ex:Place a rdfs:Class ;
-    rdfs:label "Place" ;
-    rdfs:comment "A place is a physical location, such as a city or country." .
-
 ex:bookArtist a rdf:Property ;
     rdfs:subPropertyOf ex:createdBy ;
     rdfs:label "has book artist" ;
     rdfs:comment "Indicates that an Agent is the book artist for an Artist's Book." ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range ex:Agent .
-
 
 ex:imagesAt a rdfs:Property ;
     rdfs:label "images at" ;
@@ -183,30 +155,12 @@ ex:hasDimension a rdfs:Property ;
     rdfs:domain ex:ArtistsBook .
 
 
-ex:hasGenreHeading a rdfs:Property ;
-    rdfs:label "has genre heading" ;
-    rdfs:comment "Indicates a genre heading associated with the book." ;
-    rdfs:domain ex:Book ;
-    rdfs:range ex:GenreHeading .
-
-ex:GenreHeading a rdfs:Class ;
-    rdfs:label "Genre Heading" ;
-    rdfs:comment "A genre heading is a term used to describe the genre of a book in a library record." .
-
 ex:editionYear a rdfs:Property ;
     rdfs:label "edition year" ;
     rdfs:comment "Indicates the year of an edition of a book." ;
     rdfs:domain ex:Book  .
 
-ex:inLanguage a rdfs:Property ;
-    rdfs:label "language" ;
-    rdfs:comment "Indicates the language of a book." ;
-    rdfs:domain ex:Book ;
-    rdfs:range ex:Language .
 
-ex:Language a rdfs:Class ;
-    rdfs:label "Language" ;
-    rdfs:comment "A language is a system of communication used by a particular community or country." .
 
 ex:photographyBy a rdf:Property ;
     rdfs:subPropertyOf ex:createdBy ;
@@ -216,10 +170,6 @@ ex:photographyBy a rdf:Property ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range ex:Agent .
 
-ex:hasTitle a rdfs:Property ;
-    rdfs:label "has title" ;
-    rdfs:comment "Indicates the title of a book." ;
-    rdfs:domain ex:Book .
 
 
 

@@ -2,6 +2,7 @@ PREFIX aat:     <http://vocab.getty.edu/aat/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX ex:      <http://example.org/>
 PREFIX gf:      <http://id.loc.gov/authorities/genreForms/>
+PREFIX ln:      <http://id.loc.gov/authorities/names/>
 PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sh:      <http://id.loc.gov/authorities/subjects/>
@@ -28,7 +29,7 @@ ex:ArtistsBooksTheBookAsAWorkOfArt
         dcterms:title        "Artists' Books: The Book as a Work of Art, 1963-2000";
         wd:P136              sh:sh85061212;
         wd:P291              wd:Q84;
-        wd:P50               "Stephen Bury";
+        wd:P50               ln:95044365;
         wd:P577              "2015" .
 
 <https://search.worldcat.org/title/888402>

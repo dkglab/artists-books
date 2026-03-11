@@ -4,6 +4,7 @@ identifier
 title
 contributer
 subject
+agent
 
 wikidata
 how to query subclass linkages between classes book, artist's book, reference work? 
