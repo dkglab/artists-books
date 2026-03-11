@@ -3,6 +3,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ulan: <http://vocab.getty.edu/ulan/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 
 ex:Book a rdfs:Class ;
     rdfs:label "Book" ;
@@ -50,13 +51,6 @@ ex:additionalCreator a rdf:Property ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range ex:Agent .
 
-ex:contributor a rdf:Property ;
-    rdfs:subPropertyOf ex:createdBy ;
-    rdfs:label "is contributed to by" ;
-    rdfs:comment "Indicates that an Agent is listed as a contributor to an Artist's Book." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:Agent .
-
 ex:relatedTo a rdfs:Property ;
     rdfs:label "related to" ;
     rdfs:comment "Indicates a relationship between two books." ;
@@ -91,10 +85,6 @@ ex:bookArtist a rdf:Property ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range ex:Agent .
 
-dcterms:identifier a rdfs:Property ;
-    rdfs:label "Identifier" ;
-    rdfs:comment "An unambiguous reference to the resource within a given context." ;
-    rdfs:domain ex:Book .
 
 ex:imagesAt a rdfs:Property ;
     rdfs:label "images at" ;
@@ -102,11 +92,6 @@ ex:imagesAt a rdfs:Property ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range rdfs:Resource .
     
-ex:describedAs a rdfs:Property ;
-    rdfs:label "described as" ;
-    rdfs:comment "Indicates a description of the Artist's Book." ;
-    rdfs:domain ex:Book .
-
 ex:isEditionNumber a rdfs:Property ;
     rdfs:label "is edition number" ;
     rdfs:comment "Indicates the edition number of a book." ;
@@ -123,15 +108,6 @@ ex:worldcatLink a rdfs:Property ;
     rdfs:domain ex:Book ;
     rdfs:range rdfs:Resource .
 
-ex:hasSubjectHeading a rdfs:Property ;
-    rdfs:label "subject heading" ;
-    rdfs:comment "Indicates a subject heading associated with the book." ;
-    rdfs:domain ex:Book ;
-    rdfs:range ex:SubjectHeading .
-
-ex:SubjectHeading a rdfs:Class ;
-    rdfs:label "Subject Heading" ;
-    rdfs:comment "A subject heading is a term used to describe the subject matter of a book in a library record." .
 
 ex:ReferenceBook a rdfs:Class ;
     rdfs:subClassOf ex:Book ;
@@ -232,7 +208,7 @@ ex:Language a rdfs:Class ;
     rdfs:label "Language" ;
     rdfs:comment "A language is a system of communication used by a particular community or country." .
 
-ex:photographedBy a rdf:Property ;
+ex:photographyBy a rdf:Property ;
     rdfs:subPropertyOf ex:createdBy ;
     rdfs:subPropertyOf ex:constructedUsing ;
     rdfs:label "photographed by" ;

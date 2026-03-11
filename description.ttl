@@ -3,60 +3,67 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ulan: <http://vocab.getty.edu/ulan/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix aat: <http://vocab.getty.edu/aat/> .
+@prefix sh: <http://id.loc.gov/authorities/subjects/> .
+@prefix gf: <http://id.loc.gov/authorities/genreForms/> .
 
-ex:TwentysixGasolineStations a ex:ArtistsBook ;
-    ex:hasTitle "Twentysix Gasoline Stations" ;
+
+ex:ulan:500024159 a ex:Agent ;
+    rdfs:label "Ed Ruscha" .
+
+wd:P136 a rdf:Property ;
+    rdfs:label "genre".
+
+wd:P577 a rdf:Property ;
+    rdfs:label "publication date" .
+
+wd:P291 a rdf:Property ;
+    rdfs:label "publication place" .
+
+wd:Q7857846 a ex:ArtistsBook ;
+    dcterms:title "Twentysix Gasoline Stations"@en ;
+    dcterms:alternative "Twenty-six Gasoline Stations"@en ;
     ex:primaryCreator ulan:500024159 ;
-    ex:publishedBy "Cunningham Press" ;
-    ex:publishedInYear "1962" ;
-    ex:editionYear "1969" ;
-    ex:isEditionNumber "3" ;
-    ex:publishedInLocation "Alhambra, Calif." ;
-    ex:hasSubjectHeading "Ruscha, Edward" ;
-    ex:hasSubjectHeading "Service stations" ;
-    ex:hasSubjectHeading "Offset printing" ;
-    ex:hasSubjectHeading "Service stations -- Pictorial works" ;
-    ex:hasSubjectHeading "Offset printing -- Specimens" ;
-    ex:describedAs "1 volume : (chiefly illustrations) ; 18 cm." ;
-    ex:inLanguage "English" ;
-    ex:hasGenreHeading "Pictorial works" ;
-    ex:hasGenreHeading "Specimens" ;
-    ex:hasGenreHeading "Artists' books" ;
-    ex:hasGenreHeading "Photography, Artistic" ;
-    ex:hasGenreHeading "Photographic sequence" ;
-    ex:hasGenreHeading "Artists' books (books) -- United States" ;
-    ex:hasGenreHeading "Illustrated works" ;
-    dcterms:identifier "OCLC: 888402" ;
-    ex:relatedTo ex:Twenty-sixGasolineStations ;
+    dcterms:publisher "Cunningham Press" ;
+    wd:P577 "1963" ;
+    wd:P291 wd:Q752681 ;
+    dcterms:subject ulan:500024159 ;
+    dcterms:subject sh:sh85010367 ;
+    ex:constructedUsing aat:300192896 ;
+    dcterms:description "1 volume : (chiefly illustrations) ; 18 cm." ;
+    dcterms:language "English" ;
+    wd:P136 sh:sh85101269 ;
+    wd:P136 aat:300192339 ;
+    wd:P136 gf:2014026111 ;
     ex:imagesAt <https://www.jstor.org/stable/community.949854> ;
-    ex:constructedUsing "offset printing" ;
-    ex:hasDimension "18 cm." ;
-    ex:constructedUsing ex:Photography ;
+    dcterms:format "18 cm." ;
+    ex:constructedUsing aat:300054225 ;
     dcterms:identifier "OCLC: 888402" ;
     ex:worldcatLink <https://search.worldcat.org/title/888402> ;
-    ex:hasDescription "Largely considered the first modern artists' book, TwentySix Gasoline Stations is also the first bookwork by Ed Ruscha. Self-published in 1963 and in second and third editions in 1967 and 1969, Twentysix Gasoline Stations features black-and-white photos of gas stations taken from a distance along Route 66 in Southern California, Arizona, New Mexico, Oklahoma, and Texas, documenting the modernization of the American landscape and its expanding network of highways.--Printed Matter website." ;
-    ex:photographedBy ulan:500024159 .
+    dcterms:description "Largely considered the first modern artists' book, TwentySix Gasoline Stations is also the first bookwork by Ed Ruscha. Self-published in 1963 and in second and third editions in 1967 and 1969, Twentysix Gasoline Stations features black-and-white photos of gas stations taken from a distance along Route 66 in Southern California, Arizona, New Mexico, Oklahoma, and Texas, documenting the modernization of the American landscape and its expanding network of highways.--Printed Matter website." ;
+    ex:photographyBy ulan:500024159 .
 
 ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
-    ex:hasTitle "Artists' Books: The Book as a Work of Art, 1963-2000" ;
-    ex:authoredBy "Stephen Bury" ;
-    ex:publishedBy "Bernard Quaritch Ltd" ;
-    ex:publishedInYear "2015" ;
-    ex:publishedInLocation "London" ;
-    ex:hasSubjectHeading "Artists' books" ;
-    ex:hasSubjectHeading "Artists' books -- History" ;
-    ex:describedAs "258 pages : illustrations (many color) ; 24 cm." ;
-    ex:describedAs "Color characteristics: polychrome" ;
-    ex:describedAs "Selective bibliography of artists' books 1963--: pages 175-239" ;
-    ex:inLanguage "English" ;
-    ex:hasGenreHeading "History" ;
+    dcterms:title "Artists' Books: The Book as a Work of Art, 1963-2000" ;
+    wd:P50 "Stephen Bury" ;
+    dcterms:publisher "Bernard Quaritch Ltd" ;
+    wd:P577 "2015" ;
+    wd:P291 wd:Q84 ;
+    dcterms:subject sh:sh85008302 ;
+    dcterms:subject sh:sh85061212 ;
+    dcterms:description "258 pages : illustrations (many color) ; 24 cm." ;
+    dcterms:description "Color characteristics: polychrome" ;
+    dcterms:description "Selective bibliography of artists' books 1963--: pages 175-239" ;
+    dcterms:language "English" ;
+    wd:P136 sh:sh85061212 ;
     dcterms:identifier "ISBN 9780956301291" ;
     dcterms:identifier "ISBN 0956301290" ;
     dcterms:identifier "OCLC: 910978212" ;
     ex:worldcatLink <https://search.worldcat.org/title/910978212> .
 
 ex:Ato26Gas a ex:Citation ;
-    ex:cites ex:TwentysixGasolineStations ;
+    ex:cites wd:Q7857846 ;
     ex:citedBy ex:ArtistsBooksTheBookAsAWorkOfArt ;
     ex:onPageNumber "22" ;
     ex:onPageNumber "176" ;

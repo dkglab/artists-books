@@ -26,7 +26,7 @@ inferred.ttl: vocab.ttl description.ttl | validate
 diff.txt: description.ttl inferred.ttl | validate
 	./tools/jena/bin/riot --validate inferred.ttl
 	@echo "inferred.ttl is valid."
-	@./tools/jena/bin/rdfdiff $^ TTL TTL > $@ ; \
+	./tools/jena/bin/rdfdiff $^ TTL TTL > $@ ; \
 	[ $$? -eq 0 ] \
 	&& (echo "\033[1;31mNo triples were inferred!\033[0m" ; rm -f $@) \
 	|| echo "Triples were inferred!"

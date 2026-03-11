@@ -21,4 +21,9 @@ ask jj about copyright using thumbnail image
 faceted browsing - random sample as many as can fit
 look at getty images and shutterstock image search interface
 
-how to use dcterms? Not necessary at this point?
+vocabulary encoding schemes? dc
+
+object statement for ulan like rdfs label so i can keep track of who is who
+
+collapse editions into wikidata version of twentysix gs?
+getty creators? instead of property?
