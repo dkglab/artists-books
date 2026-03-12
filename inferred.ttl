@@ -1,13 +1,13 @@
-PREFIX aat:     <http://vocab.getty.edu/aat/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX ex:      <http://example.org/>
-PREFIX gf:      <http://id.loc.gov/authorities/genreForms/>
-PREFIX ln:      <http://id.loc.gov/authorities/names/>
-PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sh:      <http://id.loc.gov/authorities/subjects/>
-PREFIX ulan:    <http://vocab.getty.edu/ulan/>
-PREFIX wd:      <http://www.wikidata.org/entity/>
+PREFIX aat:  <http://vocab.getty.edu/aat/>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX ex:   <http://example.org/>
+PREFIX ln:   <http://id.loc.gov/authorities/names/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sh:   <http://id.loc.gov/authorities/subjects/>
+PREFIX ulan: <http://vocab.getty.edu/ulan/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+PREFIX wdp:  <https://www.wikidata.org/wiki/Property:>
 
 ex:Ato26Gas  rdf:type          ex:Citation;
         ex:citedBy             ex:ArtistsBooksTheBookAsAWorkOfArt;
@@ -18,22 +18,27 @@ ex:Ato26Gas  rdf:type          ex:Citation;
 <https://search.worldcat.org/title/910978212>
         rdf:type  rdfs:Resource .
 
+aat:300247962  rdf:type  ex:ConstructionMethod .
+
 ex:ArtistsBooksTheBookAsAWorkOfArt
-        rdf:type             ex:ReferenceBook , ex:Book;
+        rdf:type             ex:ReferenceBook , ex:Book , ex:ArtistsBook;
+        ex:constructedUsing  aat:300247962;
         ex:worldcatLink      <https://search.worldcat.org/title/910978212>;
-        dcterms:description  "258 pages : illustrations (many color) ; 24 cm." , "Color characteristics: polychrome" , "Selective bibliography of artists' books 1963--: pages 175-239";
-        dcterms:identifier   "OCLC: 910978212" , "ISBN 9780956301291" , "ISBN 0956301290";
-        dcterms:language     "English";
-        dcterms:publisher    "Bernard Quaritch Ltd";
-        dcterms:subject      sh:sh85008302 , sh:sh85061212;
-        dcterms:title        "Artists' Books: The Book as a Work of Art, 1963-2000";
-        wd:P136              sh:sh85061212;
-        wd:P291              wd:Q84;
-        wd:P50               ln:95044365;
-        wd:P577              "2015" .
+        dct:description      "258 pages : illustrations (many color) ; 24 cm." , "Selective bibliography of artists' books 1963--: pages 175-239";
+        dct:identifier       "OCLC: 910978212" , "ISBN 0956301290" , "ISBN 9780956301291";
+        dct:language         "English";
+        dct:publisher        "Bernard Quaritch Ltd";
+        dct:subject          wd:Q1062404 , sh:sh85061212;
+        dct:title            "Artists' Books: The Book as a Work of Art, 1963-2000";
+        wdp:P136             wd:Q13136 , sh:85061212 , wd:Q1631107;
+        wdp:P291             wd:Q84;
+        wdp:P50              ln:95044365;
+        wdp:P577             "2015" .
 
 <https://search.worldcat.org/title/888402>
         rdf:type  rdfs:Resource .
+
+wd:Q1066582  rdf:type  ex:ConstructionMethod .
 
 aat:300054225  rdf:type  ex:ConstructionMethod .
 
@@ -45,31 +50,34 @@ aat:300192896  rdf:type  ex:ConstructionMethod .
 ulan:500024159  rdf:type  ex:Agent .
 
 wd:Q7857846  rdf:type        ex:ArtistsBook , ex:Book;
-        ex:constructedUsing  ulan:500024159 , aat:300054225 , aat:300192896;
+        ex:constructedUsing  ulan:500024159 , wd:Q1066582 , aat:300054225 , aat:300192896;
         ex:createdBy         ulan:500024159;
         ex:imagesAt          <https://www.jstor.org/stable/community.949854>;
         ex:photographyBy     ulan:500024159;
         ex:primaryCreator    ulan:500024159;
         ex:worldcatLink      <https://search.worldcat.org/title/888402>;
-        dcterms:alternative  "Twenty-six Gasoline Stations"@en;
-        dcterms:description  "Largely considered the first modern artists' book, TwentySix Gasoline Stations is also the first bookwork by Ed Ruscha. Self-published in 1963 and in second and third editions in 1967 and 1969, Twentysix Gasoline Stations features black-and-white photos of gas stations taken from a distance along Route 66 in Southern California, Arizona, New Mexico, Oklahoma, and Texas, documenting the modernization of the American landscape and its expanding network of highways.--Printed Matter website." , "1 volume : (chiefly illustrations) ; 18 cm.";
-        dcterms:format       "18 cm.";
-        dcterms:identifier   "OCLC: 888402";
-        dcterms:language     "English";
-        dcterms:publisher    "Cunningham Press";
-        dcterms:subject      ulan:500024159 , sh:sh85010367;
-        dcterms:title        "Twentysix Gasoline Stations"@en;
-        wd:P136              gf:2014026111 , sh:sh85101269 , aat:300192339;
-        wd:P291              wd:Q752681;
-        wd:P577              "1963" .
+        dct:alternative      "Twenty-six Gasoline Stations"@en;
+        dct:description      "Largely considered the first modern artists' book, TwentySix Gasoline Stations is also the first bookwork by Ed Ruscha. Self-published in 1963 and in second and third editions in 1967 and 1969, Twentysix Gasoline Stations features black-and-white photos of gas stations taken from a distance along Route 66 in Southern California, Arizona, New Mexico, Oklahoma, and Texas, documenting the modernization of the American landscape and its expanding network of highways.--Printed Matter website." , "1 volume : (chiefly illustrations) ; 18 cm.";
+        dct:format           "18 cm.";
+        dct:identifier       "OCLC: 888402";
+        dct:language         "English";
+        dct:publisher        "Cunningham Press";
+        dct:subject          sh:sh85010367;
+        dct:title            "Twentysix Gasoline Stations"@en;
+        wdp:P136             wd:Q1066582 , aat:300192339 , wd:Q111885808;
+        wdp:P291             wd:Q752681;
+        wdp:P577             "1963" .
 
-wd:P291  rdf:type   rdf:Property;
+wd:P50  rdf:type    rdf:Property;
+        rdfs:label  "author" .
+
+wdp:P291  rdf:type  rdf:Property;
         rdfs:label  "publication place" .
 
-wd:P577  rdf:type   rdf:Property;
+wdp:P577  rdf:type  rdf:Property;
         rdfs:label  "publication date" .
 
-wd:P136  rdf:type   rdf:Property;
+wdp:P136  rdf:type  rdf:Property;
         rdfs:label  "genre" .
 
 ex:ulan:500024159  rdf:type  ex:Agent;

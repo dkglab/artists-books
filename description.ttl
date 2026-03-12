@@ -4,7 +4,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ulan: <http://vocab.getty.edu/ulan/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
-@prefix wdp: <https://www.wikidata.org/wiki/Property:>
+@prefix wdp: <https://www.wikidata.org/wiki/Property:> .
 @prefix aat: <http://vocab.getty.edu/aat/> .
 @prefix sh: <http://id.loc.gov/authorities/subjects/> .
 @prefix ln: <http://id.loc.gov/authorities/names/> .
@@ -54,13 +54,15 @@ ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
     dct:publisher "Bernard Quaritch Ltd" ;
     wdp:P577 "2015" ;
     wdp:P291 wd:Q84 ;
-    dct:subject sh:sh85008302 ;
+    dct:subject wd:Q1062404 ;
     dct:subject sh:sh85061212 ;
     dct:description "258 pages : illustrations (many color) ; 24 cm." ;
-    dct:description "Color characteristics: polychrome" ;
+    ex:constructedUsing aat:300247962 ;
     dct:description "Selective bibliography of artists' books 1963--: pages 175-239" ;
     dct:language "English" ;
-    wdp:P136 sh:sh85061212 ;
+    wdp:P136 sh:85061212 ;
+    wdp:P136 wd:Q1631107 ;
+    wdp:P136 wd:Q13136 ;
     dct:identifier "ISBN 9780956301291" ;
     dct:identifier "ISBN 0956301290" ;
     dct:identifier "OCLC: 910978212" ;
