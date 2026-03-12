@@ -22,8 +22,11 @@ wdp:P577 a rdf:Property ;
 wdp:P291 a rdf:Property ;
     rdfs:label "publication place" .
 
-wd:P50 a rdf:Property ;
+wdp:P50 a rdf:Property ;
     rdfs:label "author" .
+
+wd:Q18763908 a ex:Agent;
+    rdfs:label "Stephen J. Bury" .
 
 wd:Q7857846 a ex:ArtistsBook ;
     dct:title "Twentysix Gasoline Stations"@en ;
