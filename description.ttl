@@ -6,7 +6,7 @@
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix wdp: <https://www.wikidata.org/wiki/Property:> .
 @prefix aat: <http://vocab.getty.edu/aat/> .
-@prefix sh: <http://id.loc.gov/authorities/subjects/> .
+
 
 
 
@@ -35,7 +35,7 @@ wd:Q7857846 a ex:ArtistsBook ;
     dct:publisher wd:Q121300358 ;
     wdp:P577 "1963" ;
     wdp:P291 wd:Q752681 ;
-    dct:subject sh:sh85010367 ;
+    dct:subject wd:Q128302279 ;
     ex:constructedUsing aat:300192896 ;
     dct:description "1 volume : (chiefly illustrations) ; 18 cm." ;
     dct:language "English" ;
@@ -58,12 +58,12 @@ ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
     wdp:P577 "2015" ;
     wdp:P291 wd:Q84 ;
     dct:subject wd:Q1062404 ;
-    dct:subject sh:sh85061212 ;
+    dct:subject wd:Q309 ;
     dct:description "258 pages : illustrations (many color) ; 24 cm." ;
     ex:constructedUsing aat:300247962 ;
     dct:description "Selective bibliography of artists' books 1963--: pages 175-239" ;
     dct:language "English" ;
-    wdp:P136 sh:85061212 ;
+    wdp:P136 wd:Q309 ;
     wdp:P136 wd:Q1631107 ;
     wdp:P136 wd:Q13136 ;
     dct:identifier "ISBN 9780956301291" ;
