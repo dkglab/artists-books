@@ -1,49 +1,38 @@
 @prefix ex: <http://example.org/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix ulan: <http://vocab.getty.edu/ulan/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
+@prefix aat: <http://vocab.getty.edu/aat/> .
+@prefix schema: <https://schema.org/> .
 
-ex:Book a rdfs:Class ;
-    rdfs:label "Book" ;
-    rdfs:comment "A book is an object that takes the usual form of a book with bound pages in a cover or an artwork that is identified as a book." .
-
-ex:Agent a rdfs:Class ;
-    rdfs:label "Agent" ;
-    rdfs:comment "An agent is an entity that can perform actions, such as a person or an organization." .
-
-ex:createdBy a rdfs:Property ;
-    rdfs:label "created by" ;
-    rdfs:comment "Indicates that an Agent created an Artist's Book." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:Agent .
 
 ex:primaryCreator a rdf:Property ;
-    rdfs:subPropertyOf ex:createdBy ;
-    rdfs:label "has a primary creator" ;
+    rdfs:subPropertyOf dct:creator ;
+    rdfs:label "primary creator" ;
     rdfs:comment "Indicates that an Agent is the primary creator of an Artist's Book." ;
     rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:Agent .
+    rdfs:range dct:Agent .
 
 ex:ArtistsBook a rdfs:Class ;
-    rdfs:subClassOf ex:Book ;
+    rdfs:subClassOf schema:Book ;
     rdfs:label "Artist's Book" ;
     rdfs:comment "An artist book is a work of art that utilizes the form of a book." .
 
 ex:secondaryCreator a rdf:Property ;
-    rdfs:subPropertyOf ex:createdBy ;
+    rdfs:subPropertyOf dct:creator ;
     rdfs:label "has a secondary creator" ;
     rdfs:comment "Indicates that an Agent is the secondary creator of an Artist's Book." ;
     rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:Agent .
+    rdfs:range dct:Agent .
 
 ex:additionalCreator a rdf:Property ;
-    rdfs:subPropertyOf ex:createdBy ;
+    rdfs:subPropertyOf dct:creator ;
     rdfs:label "has an additional creator" ;
     rdfs:comment "Indicates that an Agent is an additional creator of an Artist's Book." ;
     rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:Agent .
+    rdfs:range dct:Agent .
 
 ex:relatedTo a rdfs:Property ;
     rdfs:label "related to" ;
@@ -52,11 +41,11 @@ ex:relatedTo a rdfs:Property ;
     rdfs:range ex:Book .
 
 ex:bookArtist a rdf:Property ;
-    rdfs:subPropertyOf ex:createdBy ;
+    rdfs:subPropertyOf dct:creator ;
     rdfs:label "has book artist" ;
     rdfs:comment "Indicates that an Agent is the book artist for an Artist's Book." ;
     rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:Agent .
+    rdfs:range dct:Agent .
 
 ex:imagesAt a rdfs:Property ;
     rdfs:label "images at" ;
@@ -64,53 +53,17 @@ ex:imagesAt a rdfs:Property ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range rdfs:Resource .
     
-ex:isEditionNumber a rdfs:Property ;
-    rdfs:label "is edition number" ;
-    rdfs:comment "Indicates the edition number of a book." ;
-    rdfs:domain ex:Book .
-
-ex:numberMade a rdfs:Property ;
-    rdfs:label "number made" ;
-    rdfs:comment "Indicates the number of copies made of an Artist's Book." ;
-    rdfs:domain ex:ArtistsBook .
-
 ex:worldcatLink a rdfs:Property ;
     rdfs:label "WorldCat link" ;
     rdfs:comment "Indicates a URL to the WorldCat record for the book." ;
-    rdfs:domain ex:Book ;
+    rdfs:domain schema:Book ;
     rdfs:range rdfs:Resource .
 
 
 ex:ReferenceBook a rdfs:Class ;
-    rdfs:subClassOf ex:Book ;
+    rdfs:subClassOf schema:Book ;
     rdfs:label "Reference Book" ;
     rdfs:comment "A reference book is a book that cites an Artist's Book." .
-
-ex:Person a rdfs:Class ;
-    rdfs:subClassOf ex:Agent ;
-    rdfs:label "Person" ;
-    rdfs:comment "A person is an individual human being." .
-
-ex:Group a rdfs:Class ;
-    rdfs:subClassOf ex:Agent ;
-    rdfs:label "Group" ;
-    rdfs:comment "A group is a collection of individuals, such as an organization or collective." .
-
-ex:associatedWith a rdfs:Property ;
-    rdfs:label "associated with" ;
-    rdfs:comment "Indicates an association between a Person and a Group." ;
-    rdfs:domain ex:Person ;
-    rdfs:range ex:Group .
-
-ex:isBookType a rdfs:Property ;
-    rdfs:label "type of Reference Book" ;
-    rdfs:comment "Indicates the type of ReferenceBook, such as 'monograph' or 'exhibition catalog'." ;
-    rdfs:domain ex:ReferenceBook ;
-    rdfs:range ex:BookType .
-
-ex:BookType a rdfs:Class ;
-    rdfs:label "Book Type" ;
-    rdfs:comment "A book type is a category of ReferenceBook, such as 'monograph' or 'exhibition catalog'." .
 
 ex:Citation a rdfs:Class ;
     rdfs:label "Citation" ;
@@ -149,26 +102,13 @@ ex:ConstructionMethod a rdfs:Class ;
     rdfs:label "Construction Method" ;
     rdfs:comment "A construction method is a technique, material, or production method used in the creation of an Artist's Book." .
 
-ex:hasDimension a rdfs:Property ;
-    rdfs:label "has dimension" ;
-    rdfs:comment "Indicates the dimensions of an Artist's Book." ;
-    rdfs:domain ex:ArtistsBook .
-
-
-ex:editionYear a rdfs:Property ;
-    rdfs:label "edition year" ;
-    rdfs:comment "Indicates the year of an edition of a book." ;
-    rdfs:domain ex:Book  .
-
-
-
 ex:photographyBy a rdf:Property ;
-    rdfs:subPropertyOf ex:createdBy ;
+    rdfs:subPropertyOf dct:creator ;
     rdfs:subPropertyOf ex:constructedUsing ;
     rdfs:label "photographed by" ;
     rdfs:comment "Indicates that an Artist's Book uses photography as part of its construction and identifies the photographer." ;
     rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:Agent .
+    rdfs:range dct:Agent .
 
 
 

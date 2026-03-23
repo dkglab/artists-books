@@ -4,48 +4,68 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ulan: <http://vocab.getty.edu/ulan/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
-@prefix wdp: <https://www.wikidata.org/wiki/Property:> .
 @prefix aat: <http://vocab.getty.edu/aat/> .
+@prefix schema: <https://schema.org/> .
 
 
 
 
-ex:ulan:500024159 a ex:Agent ;
-    rdfs:label "Ed Ruscha" .
 
-wdp:P136 a rdf:Property ;
-    rdfs:label "genre".
+ulan:500024159 rdfs:label "Ed Ruscha" .
 
-wdp:P577 a rdf:Property ;
-    rdfs:label "publication date" .
+wd:Q18763908 rdfs:label "Stephen J. Bury" .
 
-wdp:P291 a rdf:Property ;
-    rdfs:label "publication place" .
+wd:Q121300358 rdfs:label "The Cunningham Press" .
 
-wdp:P50 a rdf:Property ;
-    rdfs:label "author" .
+wd:Q752681 rdfs:label "Alhambra, CA, USA" .
 
-wd:Q18763908 a ex:Agent;
-    rdfs:label "Stephen J. Bury" .
+aat:300192896 rdfs:label "offset lithographs" .
+
+wd:Q128302279 rdfs:label "gas station" .
+
+wd:Q1066582 rdfs:label "fine-art photography" .
+
+aat:300192339 rdfs:label "sequences" .
+
+wd:Q111885808 rdfs:label "illustrated works" .
+
+aat:300054225 rdfs:label "photography (process)" .
+
+wd:Q18763908 rdfs:label "Stephen J. Bury" .
+
+wd:Q65034936 rdfs:label "Bernard Quaritch Ltd" .
+
+wd:Q84 rdfs:label "London, UK" .
+
+wd:Q1062404 rdfs:label "artists' book" .
+
+wd:Q309 rdfs:label "history" .
+
+aat:300247962 rdfs:label "polychromy" .
+
+wd:Q1631107 rdfs:label "bibliography" .
+
+wd:Q13136 rdfs:label "reference work" .
+
 
 wd:Q7857846 a ex:ArtistsBook ;
+    rdfs:label "Twentysix Gasoline Stations" ;
     dct:title "Twentysix Gasoline Stations"@en ;
     dct:alternative "Twenty-six Gasoline Stations"@en ;
     ex:primaryCreator ulan:500024159 ;
     dct:publisher wd:Q121300358 ;
-    wdp:P577 "1963" ;
-    wdp:P291 wd:Q752681 ;
+    schema:datePublished 1963 ;
+    schema:location wd:Q752681 ;
     dct:subject wd:Q128302279 ;
     ex:constructedUsing aat:300192896 ;
     dct:description "1 volume : (chiefly illustrations) ; 18 cm." ;
     dct:language "English" ;
-    wdp:P136 wd:Q1066582 ;
-    wdp:P136 aat:300192339 ;
-    wdp:P136 wd:Q111885808 ;
+    schema:genre wd:Q1066582 ;
+    schema:genre aat:300192339 ;
+    schema:genre wd:Q111885808 ;
     ex:imagesAt <https://www.jstor.org/stable/community.949854> ;
-    dct:format "18 cm." ;
-    ex:constructedUsing aat:300054225 ;
-    ex:constructedUsing wd:Q1066582 ;
+    schema:size "18 cm." ;
+    ex:constructedUsing aat:300054225;
     dct:identifier "OCLC: 888402" ;
     ex:worldcatLink <https://search.worldcat.org/title/888402> ;
     dct:description "Largely considered the first modern artists' book, TwentySix Gasoline Stations is also the first bookwork by Ed Ruscha. Self-published in 1963 and in second and third editions in 1967 and 1969, Twentysix Gasoline Stations features black-and-white photos of gas stations taken from a distance along Route 66 in Southern California, Arizona, New Mexico, Oklahoma, and Texas, documenting the modernization of the American landscape and its expanding network of highways.--Printed Matter website." ;
@@ -53,19 +73,19 @@ wd:Q7857846 a ex:ArtistsBook ;
 
 ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
     dct:title "Artists' Books: The Book as a Work of Art, 1963-2000" ;
-    wdp:P50 wd:Q18763908 ;
+    schema:author wd:Q18763908 ;
     dct:publisher wd:Q65034936 ;
-    wdp:P577 "2015" ;
-    wdp:P291 wd:Q84 ;
+    schema:datePublished "2015" ;
+    schema:location wd:Q84 ;
     dct:subject wd:Q1062404 ;
     dct:subject wd:Q309 ;
     dct:description "258 pages : illustrations (many color) ; 24 cm." ;
     ex:constructedUsing aat:300247962 ;
     dct:description "Selective bibliography of artists' books 1963--: pages 175-239" ;
     dct:language "English" ;
-    wdp:P136 wd:Q309 ;
-    wdp:P136 wd:Q1631107 ;
-    wdp:P136 wd:Q13136 ;
+    schema:genre wd:Q309 ;
+    schema:genre wd:Q1631107 ;
+    schema:genre wd:Q13136 ;
     dct:identifier "ISBN 9780956301291" ;
     dct:identifier "ISBN 0956301290" ;
     dct:identifier "OCLC: 910978212" ;

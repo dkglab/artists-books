@@ -14,3 +14,4 @@ how to use publication date wikidata property? string?
 do i need an rdftype label for everything?
 
 getty photographer versus photographedby?
+
