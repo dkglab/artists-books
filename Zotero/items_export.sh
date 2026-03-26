@@ -12,7 +12,7 @@
 #   ./items_export.sh "To be photographed" > to_be_photographed.csv
 #
 #   # Or directly with sqlite3
-#   sqlite3 -cmd ".parameter set :collection 'To be photographed'" \
+#   sqlite3 -cmd ".parameter set :collection \"To be photographed\"" \
 #           -header -csv zotero.sqlite < items_export.sql
 #
 # Note: filtered exports still show all collection memberships for each item,
@@ -24,6 +24,6 @@ DB="$SCRIPT_DIR/zotero.sqlite"
 SQL="$SCRIPT_DIR/items_export.sql"
 
 sqlite3 \
-    -cmd ".parameter set :collection '${COLLECTION//\'/\'\'}'" \
+    -cmd ".parameter set :collection \"${COLLECTION//\"/\\\"}\"" \
     -header -csv \
     "$DB" < "$SQL"
