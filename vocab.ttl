@@ -22,27 +22,21 @@ ex:ArtistsBook a rdfs:Class ;
 
 ex:secondaryCreator a rdf:Property ;
     rdfs:subPropertyOf dct:creator ;
-    rdfs:label "has a secondary creator" ;
+    rdfs:label "secondary creator" ;
     rdfs:comment "Indicates that an Agent is the secondary creator of an Artist's Book." ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range dct:Agent .
 
 ex:additionalCreator a rdf:Property ;
     rdfs:subPropertyOf dct:creator ;
-    rdfs:label "has an additional creator" ;
+    rdfs:label "additional creator" ;
     rdfs:comment "Indicates that an Agent is an additional creator of an Artist's Book." ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range dct:Agent .
 
-ex:relatedTo a rdfs:Property ;
-    rdfs:label "related to" ;
-    rdfs:comment "Indicates a relationship between two books." ;
-    rdfs:domain ex:Book ;
-    rdfs:range ex:Book .
-
 ex:bookArtist a rdf:Property ;
-    rdfs:subPropertyOf dct:creator ;
-    rdfs:label "has book artist" ;
+    rdfs:subPropertyOf ex:primaryCreator ;
+    rdfs:label "book artist" ;
     rdfs:comment "Indicates that an Agent is the book artist for an Artist's Book." ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range dct:Agent .
@@ -109,6 +103,8 @@ ex:photographyBy a rdf:Property ;
     rdfs:comment "Indicates that an Artist's Book uses photography as part of its construction and identifies the photographer." ;
     rdfs:domain ex:ArtistsBook ;
     rdfs:range dct:Agent .
+
+
 
 
 
