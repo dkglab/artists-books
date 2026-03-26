@@ -1,5 +1,11 @@
 -- Export all Zotero items with data fields as columns
 -- Each row is an item, each used field becomes a column
+--
+-- Optional parameter: :collection (collection name to filter by)
+-- If unset or empty, all items are exported.
+-- Usage via wrapper: ./items_export.sh "Artists' Books Collection"
+-- Usage via sqlite3:
+--   sqlite3 -cmd ".parameter set :collection 'My Collection'" -header -csv zotero.sqlite < items_export.sql
 
 SELECT
     i.itemID,
@@ -46,5 +52,15 @@ LEFT JOIN itemData id ON i.itemID = id.itemID
 LEFT JOIN fieldsCombined f ON id.fieldID = f.fieldID
 LEFT JOIN itemDataValues idv ON id.valueID = idv.valueID
 WHERE it.typeName NOT IN ('attachment', 'note', 'annotation')
+  AND (
+    :collection IS NULL
+    OR :collection = ''
+    OR EXISTS (
+        SELECT 1
+        FROM collectionItems ci2
+        JOIN collections c2 ON ci2.collectionID = c2.collectionID
+        WHERE ci2.itemID = i.itemID AND c2.collectionName = :collection
+    )
+  )
 GROUP BY i.itemID
 ORDER BY i.itemID;
