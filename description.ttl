@@ -6,6 +6,10 @@
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix aat: <http://vocab.getty.edu/aat/> .
 @prefix schema: <https://schema.org/> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix lcna: <http://id.loc.gov/authorities/names/> .
+@prefix rel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix bflc: <http://id.loc.gov/ontologies/bflc/> .
 
 ulan:500024159 rdfs:label "Ed Ruscha" .
 wd:Q18763908 rdfs:label "Stephen J. Bury" .
@@ -29,49 +33,110 @@ ulan:500098671 rdfs:label "Jerry McMillan" .
 wd:Q121300405 rdfs:label "Heavy Industry Publications" .
 wd:Q34006 rdfs:label "Hollywood, CA, USA" .
 wd:Q1333350 rdfs:label "album cover" .
+aat:300386346 rdfs:label "book artist" .
+aat:300025687 rdfs:label "photographer" .
 
 
 wd:Q7857846 a ex:ArtistsBook ;
     rdfs:label "Twentysix Gasoline Stations" ;
-    dct:title "Twentysix Gasoline Stations"@en ;
-    dct:alternative "Twenty-six Gasoline Stations"@en ;
-    ex:bookArtist ulan:500024159 ;
-    dct:publisher wd:Q121300358 ;
-    schema:datePublished 1963 ;
-    schema:location wd:Q752681 ;
-    dct:subject wd:Q128302279 ;
-    ex:constructedUsing aat:300192896 ;
-    dct:description "1 volume : (chiefly illustrations) ; 18 cm." ;
-    dct:language "English" ;
-    schema:genre wd:Q1066582 ;
-    schema:genre aat:300192339 ;
-    schema:genre wd:Q111885808 ;
+    bf:title [
+        a bf:Title ;
+        bf:mainTitle "Twentysix Gasoline Stations"@en ;
+    ] ;
+    bf:title [
+        a bf:Title ;
+        bf:mainTitle "Twenty-six Gasoline Stations"@en ;
+        bf:variantType "spelling"
+    ] ;
+    bf:contribution [
+        a bf:PrimaryContribution ;
+        bf:agent ulan:500024159 ;
+        bf:role aat:300386346 ;
+        bf:role aat:300025687
+    ] ;
+    bf:provisionActivity [
+        a bf:ProvisionActivity ;
+        rdf:type bf:Publication ;
+        bf:agent wd:Q121300358 ;
+        bflc:simpleAgent "The Cunningham Press" ;
+        bf:date "1963" ;
+        bflc:simpleDate "1963" ;
+        bf:place wd:Q752681 ;
+        bflc:simplePlace "Alhambra, CA, USA" ;
+    ] ;
+    bf:subject wd:Q128302279 ;
+    bf:productionMethod aat:300192896 ;
+    bf:extent "1 volume" ;
+    bf:illustrativeContent "chiefly illustrations" ;
+    bf:dimensions "18 cm" ;
+    bf:language "English" ;
+    bf:genreForm wd:Q1066582 ;
+    bf:genreForm aat:300192339 ;
+    bf:genreForm wd:Q111885808 ;
     ex:imagesAt <https://www.jstor.org/stable/community.949854> ;
-    schema:size "18 cm." ;
-    ex:constructedUsing aat:300054225;
-    dct:identifier "OCLC: 888402" ;
+    bf:dimensions "18 cm." ;
+    ex:productionMethod aat:300054225;
+     bf:identifiedBy [
+        a bf:Identifier ;
+        rdf:value "888402" ;
+        bf:source [
+            rdfs:label "OCLC"
+    ] ;
+    ] ;
     ex:worldcatLink <https://search.worldcat.org/title/888402> ;
-    dct:description "Largely considered the first modern artists' book, TwentySix Gasoline Stations is also the first bookwork by Ed Ruscha. Self-published in 1963 and in second and third editions in 1967 and 1969, Twentysix Gasoline Stations features black-and-white photos of gas stations taken from a distance along Route 66 in Southern California, Arizona, New Mexico, Oklahoma, and Texas, documenting the modernization of the American landscape and its expanding network of highways.--Printed Matter website." ;
-    ex:photographyBy ulan:500024159 .
+    bf:summary "Largely considered the first modern artists' book, TwentySix Gasoline Stations is also the first bookwork by Ed Ruscha. Self-published in 1963 and in second and third editions in 1967 and 1969, Twentysix Gasoline Stations features black-and-white photos of gas stations taken from a distance along Route 66 in Southern California, Arizona, New Mexico, Oklahoma, and Texas, documenting the modernization of the American landscape and its expanding network of highways.--Printed Matter website." 
+    .
+
+
+
 
 ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
-    dct:title "Artists' Books: The Book as a Work of Art, 1963-2000" ;
-    schema:author wd:Q18763908 ;
-    dct:publisher wd:Q65034936 ;
-    schema:datePublished "2015" ;
-    schema:location wd:Q84 ;
-    dct:subject wd:Q1062404 ;
-    dct:subject wd:Q309 ;
-    dct:description "258 pages : illustrations (many color) ; 24 cm." ;
-    ex:constructedUsing aat:300247962 ;
-    dct:description "Selective bibliography of artists' books 1963--: pages 175-239" ;
-    dct:language "English" ;
-    schema:genre wd:Q309 ;
-    schema:genre wd:Q1631107 ;
-    schema:genre wd:Q13136 ;
-    dct:identifier "ISBN 9780956301291" ;
-    dct:identifier "ISBN 0956301290" ;
-    dct:identifier "OCLC: 910978212" ;
+    bf:title [
+        a bf:Title ;
+        bf:mainTitle "Artists' Books: The Book as a Work of Art, 1963-2000"@en ;
+    ]  ;
+    bf:contribution [
+        a bf:Contribution ;
+        bf:agent wd:Q18763908 ;
+        bf:role rel:aut
+    ] ;
+    bf:subject wd:Q1062404 ;
+    bf:subject wd:Q309 ;
+    bf:genreForm wd:Q309 ;
+    bf:genreForm wd:Q1631107 ;
+    bf:genreForm wd:Q13136 ;
+    bf:language "English" ;
+    bf:note [
+        a bf:Note ;
+        bf:noteType "bibliography" ;
+        rdfs:label "Selective bibliography of artists' books 1963--: pages 175-239"
+    ] ;
+    bf:provisionActivity [
+        a bf:ProvisionActivity ;
+        rdf:type bf:Publication ;
+        bf:agent wd:Q65034936 ;
+        bf:date "2015" ;
+        bf:place wd:Q84
+    ] ;
+    bf:extent "258 pages" ;
+    bf:illustrativeContent "illustrations (many color)" ;
+    bf:dimensions "24 cm" ;
+    bf:productionMethod aat:300247962;
+    bf:identifiedBy [
+        a bf:Isbn ;
+        rdf:value "9780956301291"
+    ] ;
+     bf:identifiedBy [
+        a bf:Isbn ;
+        rdf:value "0956301290"
+    ] ;
+     bf:identifiedBy [
+        a bf:Local ;
+        rdf:value "910978212" ;
+        bf:source [
+            rdfs:label "OCLC"
+        ]
+    ] ;
     ex:worldcatLink <https://search.worldcat.org/title/910978212> .
 
 ex:Ato26Gas a ex:Citation ;
@@ -83,24 +148,49 @@ ex:Ato26Gas a ex:Citation ;
 
 wd:Q121300913 a ex:ArtistsBook ;
     rdfs:label "Records" ;
-    dct:title "Records"@en ;
-    ex:bookArtist ulan:500024159 ;
-    ex:secondaryCreator ulan:500098671 ;
-    dct:publisher wd:Q121300405 ;
-    schema:datePublished 1971 ;
-    schema:location wd:Q34006 ;
-    dct:subject wd:Q1333350 ;
-    dct:description "1 volume (unpaged) : illustrations ; 18 cm" ;
-    dct:language "English" ;
-    ex:constructedUsing aat:300192896 ;
-    ex:constructedUsing aat:300054225 ;
-    dct:identifier "OCLC: 699695" ;
-    ex:worldcatLink <https://search.worldcat.org/title/699695> ;
-    schema:genre aat:300192339 ;
-    schema:genre wd:Q1066582 ;
-    ex:imagesAt <library.artstor.org/#/asset/SS33469_33469_25066402> ;
-    dct:description "Black and white photographs of thirty records and their jackets from Ed Ruscha's own collection, of both the album covers and the vinyl records. - worldcat" ;
-    ex:photographyBy ulan:500098671 .
+    bf:title [
+        a bf:Title ;
+        bf:mainTitle "Records"@en ;
+    ] ;
+         bf:contribution [
+        a bf:PrimaryContribution ;
+        bf:agent ulan:500024159 ;
+        bf:role aat:300386346
+    ] ,
+            [
+        a bf:Contribution ;
+        bf:agent ulan:500098671 ;
+        bf:role aat:300025687
+    ] ;
+    bf:subject <http://www.wikidata.org/entity/Q1333350> ;
+    bf:genreForm <http://vocab.getty.edu/aat/300192339> ;
+    bf:genreForm <http://www.wikidata.org/entity/Q1066582> ;
+    bf:language "English" ;
+    bf:summary [
+        a bf:Summary ;
+        rdfs:label "Black and white photographs of thirty records and their jackets from Ed Ruscha's own collection, of both the album covers and the vinyl records. - worldcat"
+    ] ;
+    bf:provisionActivity [
+        a bf:ProvisionActivity ;
+        rdf:type bf:Publication ;
+        bf:agent wd:Q121300405 ;
+        bf:date "1971" ;
+        bf:place wd:Q34006
+    ] ;
+    bf:extent "1 volume (unpaged)" ;
+    bf:illustrativeContent "illustrations" ;
+    bf:dimensions "18 cm" ;
+    bf:productionMethod aat:300192896 ;
+    bf:productionMethod aat:300054225 ;
+    bf:identifiedBy [
+        a bf:Local ;
+        rdf:value "699695" ;
+        bf:source [
+            rdfs:label "OCLC"
+        ]
+    ] ;
+     ex:worldcatLink <https://search.worldcat.org/title/699695> ;
+    ex:imagesAt <library.artstor.org/#/asset/SS33469_33469_25066402> .
 
 ex:AToRecords a ex:Citation ;
     ex:cites wd:Q121300913 ;

@@ -6,6 +6,7 @@
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix aat: <http://vocab.getty.edu/aat/> .
 @prefix schema: <https://schema.org/> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
 
 
 ex:primaryCreator a rdf:Property ;
