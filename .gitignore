@@ -13,3 +13,6 @@ tools/jena/*
 !tools/jena/Makefile
 tools/rdflib/*
 !tools/rdflib/Makefile
+tools/sparql-anything/*
+!tools/sparql-anything/Makefile
+/graph/

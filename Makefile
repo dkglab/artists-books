@@ -16,6 +16,9 @@ tools/jena/bin/riot:
 tools/rdflib/bin/rdf2dot:
 	$(MAKE) -s -C tools/rdflib
 
+tools/sparql-anything/sparql-anything.jar:
+	$(MAKE) -s -C tools/sparql-anything
+
 validate: vocab.ttl description.ttl | tools/jena/bin/riot
 	./tools/jena/bin/riot --validate $^
 	@echo "vocab.ttl and description.ttl are valid."
@@ -33,3 +36,7 @@ diff.txt: description.ttl inferred.ttl | validate
 
 %.png: %.ttl | validate tools/rdflib/bin/rdf2dot
 	./tools/rdflib/bin/rdf2dot $< 2>/dev/null | dot -Tpng > $@
+
+graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
+	@mkdir -p graph
+	java -jar tools/sparql-anything/sparql-anything.jar -q $< > $@
