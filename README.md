@@ -10,6 +10,10 @@
 
 [Artists' Books in the Center for Book Arts collection - includes images for all listings](https://collections.centerforbookarts.org/browse/objects/facet/term_facet/id/18074)
 
+## Generate the artists' books graph from CSV
+
+Run `make graph/artists-books.ttl`.
+
 ## Create your description and vocabulary
 
 In `vocab.ttl`, translate your classes and properties into RDFS in
