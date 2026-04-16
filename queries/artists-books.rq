@@ -22,6 +22,14 @@ CONSTRUCT {
       bf:date ?date ;
       bflc:simpleDate ?date ;
       bflc:simplePlace ?place ;
+    ] ;
+    bf:language ?language ;
+     bf:identifiedBy [
+        a bf:Identifier ;
+        rdf:value ?ISBN ;
+        bf:source [
+            rdfs:label "ISBN"
+      ]
     ] .
 }
 WHERE {
@@ -33,7 +41,9 @@ WHERE {
       xyz:title ?title ;
       xyz:publisher ?publisher ;
       xyz:place ?place ;
-      xyz:date ?date .
+      xyz:date ?date ;
+      xyz:language ?language ;
+      xyz:ISBN ?ISBN .
 
     # Mint new book URI using the fx:entity function
     BIND(fx:entity(ab:, "item/", ?item_key) AS ?book)
