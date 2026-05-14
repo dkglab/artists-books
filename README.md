@@ -57,7 +57,7 @@ All tools are downloaded on first use by the Makefiles in `tools/` — no system
 | [Apache Jena](https://jena.apache.org/) | 6.1.0 | RDF validation, RDFS reasoning, graph diffing (`riot`, `arq`, `shacl`) |
 | [Apache Fuseki](https://jena.apache.org/documentation/fuseki2/) | 6.1.0 | In-process SPARQL endpoint server |
 | [SPARQL-Anything](https://sparql-anything.cc/) | 1.1.0 | CSV-to-RDF transformation via SPARQL CONSTRUCT |
-| [Snowman](https://github.com/glaciers-in-archives/snowman) | 0.4.0 | SPARQL-driven static site generator |
+| [Snowman](https://github.com/glaciers-in-archives/snowman) | 0.8.0 | SPARQL-driven static site generator |
 
 ## Vocabulary
 
