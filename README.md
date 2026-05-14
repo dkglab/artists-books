@@ -131,7 +131,7 @@ templates/
 └── index.html       — page template that fills the shell
 ```
 
-Templates use Go's [`html/template`](https://pkg.go.dev/html/template) package. See the [Snowman template documentation](https://snowman.glaciers-in-archives.org/docs/templates/) for how SPARQL results are passed as template data.
+Templates use Go's [`html/template`](https://pkg.go.dev/html/template) package. See the [Snowman template documentation](https://byabbe.se/snowman-manual/reference/template-syntax/) for how SPARQL results are passed as template data.
 
 ## Relevant resources
 
