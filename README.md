@@ -87,9 +87,6 @@ The most-cited source is Moeglin-Delcroix (2012), which cites 1,568 books in the
 | `Makefile` | Orchestrates the full pipeline |
 | `snowman.yaml` | Tells Snowman where the SPARQL endpoint is |
 | `views.yaml` | Maps SELECT queries and templates to output files |
-| `vocab.ttl` | Custom RDF vocabulary |
-| `description.ttl` | Worked example / vocabulary test fixture |
-| `.gitignore` | Excludes generated files and downloaded tool binaries |
 
 ### `Makefile`
 
@@ -99,10 +96,6 @@ The central build file. Key targets:
 - `graph/%.ttl` — runs a CONSTRUCT query through SPARQL-Anything to generate RDF from CSV
 - `site/index.html` — starts Fuseki, runs Snowman, stops Fuseki; depends on the graph, both YAML files, all SPARQL SELECT queries, and all templates
 - `serve` — runs `snowman server` to serve the built site at `http://127.0.0.1:8000`
-- `validate` — checks `vocab.ttl` and `description.ttl` with `riot`
-- `inferred.ttl` — applies RDFS reasoning over the vocab and example description
-- `diff.txt` — diffs the original and inferred graphs to surface any new triples
-- `%.png` — renders any `.ttl` file as a graph diagram via `rdf2dot` + Graphviz
 - `clean` / `superclean` — removes generated files; `superclean` also removes downloaded tool binaries
 
 Fuseki lifecycle is controlled by the `START_FUSEKI` variable (default `true`). Set `START_FUSEKI=false` if you have Fuseki already running.
@@ -128,22 +121,6 @@ views:
 ```
 
 Add more entries here to generate additional pages (e.g. per-creator or per-publisher indexes).
-
-### `vocab.ttl`
-
-The project's RDF vocabulary, defined in Turtle. Declares the classes and properties used in the graph (`ab:ArtistsBook`, `ab:Citation`, creator role properties, etc.) as RDFS/OWL terms. Jena can apply this vocabulary for inference and validation.
-
-### `description.ttl`
-
-A hand-written RDF description of a single book (Ed Ruscha's *Twentysix Gasoline Stations*) used as a test fixture for the vocabulary. Run `make validate` to check both files with Jena's `riot`, or `make diff.txt` to confirm the vocab produces the expected inferred triples.
-
-### `.gitignore`
-
-Excludes three categories of files:
-
-- **Generated outputs** — `graph/`, `site/`, `inferred.ttl`, `diff.txt`, diagram PNGs, and the Snowman build cache (`.snowman/`)
-- **Downloaded tool binaries** — contents of `tools/*/` except each subdirectory's `Makefile`
-- **Zotero storage assets** — image, JS, and CSS files from web snapshots in `Zotero/storage/` (only the HTML metadata is kept)
 
 ## Relevant resources
 
