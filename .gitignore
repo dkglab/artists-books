@@ -15,4 +15,9 @@ tools/rdflib/*
 !tools/rdflib/Makefile
 tools/sparql-anything/*
 !tools/sparql-anything/Makefile
+tools/fuseki/*
+!tools/fuseki/Makefile
+tools/snowman/snowman
 /graph/
+/.snowman/
+/site/

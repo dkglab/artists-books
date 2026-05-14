@@ -1,0 +1,4 @@
+views:
+  - output: "index.html"
+    query: "select/artists-books.rq"
+    template: "index.html"

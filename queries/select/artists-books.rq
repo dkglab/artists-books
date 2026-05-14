@@ -1,0 +1,14 @@
+PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT
+?book
+?title
+
+WHERE {
+  ?book
+    a ab:ArtistsBook;
+    rdfs:label ?title ;
+    .
+}
+ORDER BY LCASE(?title)

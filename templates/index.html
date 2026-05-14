@@ -1,0 +1,12 @@
+{{ template "base" . }}
+
+{{ define "title" }} - list of books{{ end }}
+
+{{ define "content" }}
+<h1>Artists' Books</h1>
+<div class="mb">
+{{ range . }}
+<a href="{{ .book }}">{{ .title }}</a><br>
+{{ end }}
+{{ end }}
+</div>
