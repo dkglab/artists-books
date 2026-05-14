@@ -122,6 +122,17 @@ views:
 
 Add more entries here to generate additional pages (e.g. per-creator or per-publisher indexes).
 
+## Templates
+
+```
+templates/
+├── layouts/
+│   └── base.html    — outer HTML shell (head, body, nav)
+└── index.html       — page template that fills the shell
+```
+
+Templates use Go's [`html/template`](https://pkg.go.dev/html/template) package. See the [Snowman template documentation](https://snowman.glaciers-in-archives.org/docs/templates/) for how SPARQL results are passed as template data.
+
 ## Relevant resources
 
 - [Opening Artists' Books vocabulary](https://oab.lib.utah.edu)
