@@ -1,6 +1,6 @@
 OS := $(shell uname -sm)
 SM_HOST := https://github.com/glaciers-in-archives/snowman/releases/download
-SM_VERSION := 0.4.0
+SM_VERSION := 0.8.0
 
 ifeq ($(OS),Darwin x86_64)
         SM_BIN := snowman-darwin-amd64

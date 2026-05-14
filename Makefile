@@ -59,10 +59,7 @@ ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki start
 endif
 	mkdir -p .snowman
-	./tools/snowman/snowman build \
-	| tee .snowman/build_log.txt \
-	| grep -vE "^Issuing parameterized query" \
-	| grep -vE "^Rendered page at site/[a-z0-9]+\.html$$"
+	./tools/snowman/snowman build 2>&1 | tee .snowman/build_log.txt
 ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki stop
 endif
