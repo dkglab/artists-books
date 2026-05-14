@@ -29,7 +29,7 @@ The SQL queries join across Zotero's internal tables (`items`, `itemData`, `item
 
 ### 2. CSV → RDF graph
 
-[SPARQL-Anything](https://sparql-anything.cc/) reads the CSV files and transforms them into RDF using a SPARQL CONSTRUCT query (`queries/construct/artists-books.rq`). SPARQL-Anything treats the CSV as a virtual RDF graph that can be queried and reshaped — no intermediate Python or ETL script needed.
+[SPARQL-Anything](https://sparql-anything.cc/) reads the CSV files and transforms them into RDF using a SPARQL CONSTRUCT query (`queries/construct/artists-books.rq`).
 
 The resulting graph uses [BIBFRAME](https://www.loc.gov/bibframe/) (Library of Congress bibliographic framework) as its primary vocabulary, with a custom `ab:` namespace for collection-specific concepts. Each book is minted a URI from its Zotero item key and described with properties for title, creator, publisher, place, date, language, and ISBN.
 
