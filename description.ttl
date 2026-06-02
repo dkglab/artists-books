@@ -96,7 +96,7 @@ ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
         bf:mainTitle "Artists' Books: The Book as a Work of Art, 1963-2000"@en ;
     ]  ;
     bf:contribution [
-        a bf:Contribution ;
+        a bf:PrimaryContribution ;
         bf:agent wd:Q18763908 ;
         bf:role rel:aut
     ] ;
