@@ -27,7 +27,7 @@ validate: vocab.ttl description.ttl | tools/jena/bin/riot
 	@echo "vocab.ttl and description.ttl are valid."
 
 serve: site/index.html | tools/snowman/snowman
-	./tools/snowman/snowman server
+	./tools/snowman/snowman server --port 8080
 
 inferred.ttl: vocab.ttl description.ttl | validate
 	./tools/jena/bin/riot --formatted=ttl --rdfs $< $(word 2,$^) > $@
