@@ -53,10 +53,11 @@ WHERE {
       xyz:itemKey ?item_key ;
       xyz:title ?title ;
       xyz:publisher ?publisher ;
-      xyz:date ?date ;
-      xyz:language ?language ;
-      xyz:ISBN ?ISBN ;
+      xyz:date ?date_raw ;
       .
+
+    # Strip Zotero's leading "YYYY-MM-DD " prefix from the date string
+    BIND(REPLACE(?date_raw, "^\\d{4}-\\d{2}-\\d{2} ", "") AS ?date)
 
     # Mint new book URIs using the fx:entity function
     BIND(fx:entity(ab:, "item/", ?item_key) AS ?book)
