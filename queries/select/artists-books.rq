@@ -1,16 +1,44 @@
 PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
+PREFIX bf:      <http://id.loc.gov/ontologies/bibframe/>
+PREFIX bflc:    <http://id.loc.gov/ontologies/bflc/>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd:      <http://www.wikidata.org/entity/>
 
 SELECT
-?book
-?title
-?itemKey
+  ?book
+  ?title
+  ?itemKey
+  (GROUP_CONCAT(DISTINCT ?creatorName; separator="; ") AS ?creators)
+  ?publisher
+  ?place
+  ?date
+  ?language
+  (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
 
 WHERE {
   ?book
-    a ab:ArtistsBook;
+    a ab:ArtistsBook ;
     rdfs:label ?title ;
     ab:itemKey ?itemKey ;
     .
+
+  OPTIONAL { ?book bf:contribution/bf:agent/rdfs:label ?creatorName . }
+
+  OPTIONAL {
+    ?book bf:provisionActivity ?pub .
+    OPTIONAL { ?pub bflc:simpleAgent ?publisher . }
+    OPTIONAL { ?pub bflc:simplePlace ?place . }
+    OPTIONAL { ?pub bflc:simpleDate  ?date . }
+  }
+
+  OPTIONAL { ?book bf:language ?language . }
+
+  OPTIONAL {
+    ?book bf:identifiedBy ?id .
+    ?id rdf:value ?isbn ;
+        bf:source wd:Q33057 .
+  }
 }
+GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language
 ORDER BY LCASE(?title)

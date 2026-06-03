@@ -4,4 +4,36 @@
 
 {{ define "content" }}
 <h1>{{ .title }}</h1>
+
+<dl>
+  {{ with .creators }}
+  <dt>Creators</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
+  {{ with .publisher }}
+  <dt>Publisher</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
+  {{ with .place }}
+  <dt>Place of publication</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
+  {{ with .date }}
+  <dt>Date of publication</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
+  {{ with .language }}
+  <dt>Language</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
+  {{ with .isbns }}
+  <dt>ISBN</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+</dl>
 {{ end }}
