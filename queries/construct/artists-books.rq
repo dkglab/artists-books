@@ -53,7 +53,6 @@ WHERE {
       xyz:itemKey ?item_key ;
       xyz:title ?title ;
       xyz:publisher ?publisher ;
-      xyz:place ?place ;
       xyz:date ?date ;
       xyz:language ?language ;
       xyz:ISBN ?ISBN ;
@@ -63,7 +62,17 @@ WHERE {
     BIND(fx:entity(ab:, "item/", ?item_key) AS ?book)
     BIND(fx:entity(ab:, "item/", ?item_key, "/title") AS ?bookTitle)
     BIND(fx:entity(ab:, "item/", ?item_key, "/publication") AS ?bookPublication)
-    BIND(fx:entity(ab:, "item/", ?item_key, "/identifier") AS ?bookIdentifier)
+
+    OPTIONAL {
+      ?bookRow xyz:place ?place
+    }
+    OPTIONAL {
+      ?bookRow xyz:language ?language
+    }
+    OPTIONAL {
+      ?bookRow xyz:ISBN ?ISBN
+      BIND(fx:entity(ab:, "item/", ?item_key, "/identifier") AS ?bookIdentifier)
+    }
   }
 
   SERVICE <x-sparql-anything:location=Zotero/all-creators-reconciled.csv> {
