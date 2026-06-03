@@ -4,9 +4,9 @@
 
 {{ define "content" }}
 <h1>Artists' Books</h1>
-<div class="mb">
+<ol class="mb">
 {{ range . }}
-<a href="item/{{ .itemKey }}">{{ .title }}</a><br>
+<li><a href="item/{{ .itemKey }}">{{ .title }}</a></li>
 {{ end }}
-</div>
+</ol>
 {{ end }}
