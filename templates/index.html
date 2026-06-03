@@ -6,7 +6,7 @@
 <h1>Artists' Books</h1>
 <div class="mb">
 {{ range . }}
-<a href="{{ .book }}">{{ .title }}</a><br>
+<a href="item/{{ .itemKey }}">{{ .title }}</a><br>
 {{ end }}
 </div>
 {{ end }}

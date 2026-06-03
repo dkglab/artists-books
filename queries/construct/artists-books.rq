@@ -11,6 +11,7 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 CONSTRUCT {
   ?book a ab:ArtistsBook ;
     rdfs:label ?title ;
+    ab:itemKey ?item_key ;
     bf:title ?bookTitle ;
     bf:contribution [
       a bf:Contribution ;

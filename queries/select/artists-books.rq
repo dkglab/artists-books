@@ -4,11 +4,13 @@ PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 SELECT
 ?book
 ?title
+?itemKey
 
 WHERE {
   ?book
     a ab:ArtistsBook;
     rdfs:label ?title ;
+    ab:itemKey ?itemKey ;
     .
 }
 ORDER BY LCASE(?title)

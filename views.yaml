@@ -2,6 +2,6 @@ views:
   - output: "index.html"
     query: "select/artists-books.rq"
     template: "index.html"
-  - output: "item/{{id}}/index.html"
+  - output: "item/{{itemKey}}/index.html"
     query: "select/artists-books.rq"
     template: "artists-book.html"
