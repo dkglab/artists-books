@@ -26,7 +26,9 @@ The build log is captured at `.snowman/build_log.txt`.
 
 ### Editing the construct query
 
-`make graph/artists-books.ttl` runs `queries/construct/artists-books.rq` through SPARQL-Anything to read the CSVs under `Zotero/` and emit Turtle. This does **not** touch Fuseki — it's a pure CSV-to-RDF transform. Run this manually after editing the construct query or the source CSVs, then re-run `make` to rebuild the site.
+`make graph/artists-books.ttl` runs `queries/construct/artists-books.rq` through SPARQL-Anything to read the CSVs and `Zotero/artists-books-marc.xml` under `Zotero/` and emit Turtle. This does **not** touch Fuseki — it's a pure source-to-RDF transform. Run this manually after editing the construct query or the source data, then re-run `make` to rebuild the site.
+
+Before changing how the query walks the MARC XML, read `QUERY-PERFORMANCE.md` — traversing Facade-X containers with a variable predicate (`?s ?var ?o`) instead of `fx:anySlot` is the difference between a 6-second and a 5-minute build.
 
 ## Architecture notes beyond the README
 

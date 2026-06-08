@@ -9,7 +9,7 @@ SELECT
   ?book
   ?title
   ?itemKey
-  (GROUP_CONCAT(DISTINCT ?creatorName; separator="; ") AS ?creators)
+  (GROUP_CONCAT(DISTINCT ?creatorDisplay; separator="; ") AS ?creators)
   ?publisher
   ?place
   ?date
@@ -23,7 +23,28 @@ WHERE {
     ab:itemKey ?itemKey ;
     .
 
-  OPTIONAL { ?book bf:contribution/bf:agent/rdfs:label ?creatorName . }
+  # Each creator, rendered as "Name (role, role)". Roles are first folded per
+  # creator (a contribution may carry several relator roles), then the creators
+  # are concatenated by the outer GROUP_CONCAT. Kept OPTIONAL so books with no
+  # creators still render.
+  OPTIONAL {
+    SELECT ?book (SAMPLE(?creatorName) AS ?name)
+                 (GROUP_CONCAT(DISTINCT ?roleLabel; separator=", ") AS ?roleList)
+    WHERE {
+      ?book bf:contribution ?contribution .
+      ?contribution bf:agent ?agent .
+      ?agent rdfs:label ?creatorName .
+      OPTIONAL { ?contribution bf:role/rdfs:label ?roleLabel . }
+    }
+    GROUP BY ?book ?agent
+  }
+  # Roles go in square brackets, not parentheses: MARC name headings already use
+  # parentheses as qualifiers (e.g. "KaKeART (Group of artists)", "Freedom House
+  # (U.S.)"), so "(author, artist)" right after would be ambiguous.
+  BIND(COALESCE(?roleList, "") AS ?roles)
+  BIND(IF(STRLEN(?roles) > 0,
+          CONCAT(?name, " [", ?roles, "]"),
+          ?name) AS ?creatorDisplay)
 
   OPTIONAL {
     ?book bf:provisionActivity ?pub .

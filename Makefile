@@ -47,6 +47,9 @@ graph/%.ttl: queries/construct/%.rq | tools/sparql-anything/sparql-anything.jar
 	@mkdir -p graph
 	java -jar tools/sparql-anything/sparql-anything.jar -q $< > $@
 
+# The construct query reads these source files; rebuild the graph when they change.
+graph/artists-books.ttl: $(wildcard Zotero/*.csv) Zotero/artists-books-marc.xml
+
 site/index.html: \
 graph/artists-books.ttl \
 $(wildcard *.yaml) \
