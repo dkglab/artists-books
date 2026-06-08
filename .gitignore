@@ -21,6 +21,8 @@ tools/snowman/snowman
 /graph/
 /.snowman/
 /site/
+# MARC harvest state (resumable; only Zotero/*-marc.xml is committed)
+/Zotero/marc/
 # generated files
 description.png
 diff.txt
