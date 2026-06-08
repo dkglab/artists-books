@@ -276,6 +276,35 @@ def cmd_manifest(args):
 
 
 # --------------------------------------------------------------------------- #
+# stor -- the confirmed display-image tier
+# --------------------------------------------------------------------------- #
+# stor.artstor.org serves the actual page images by UUID with a _size<N> ladder
+# (0=64px wide .. 4=1024px). The endpoint is CORS-open and needs no auth: it
+# 302-redirects to a short-lived presigned S3 URL, but the stor URL itself is
+# stable and re-signs per request, so it is what belongs in <img src>.
+STOR_TMPL = "https://stor.artstor.org/stor/{uuid}_size{n}"
+_UUID_RE = re.compile(r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}", re.I)
+
+
+def cmd_stor(args):
+    m = _UUID_RE.search(args.uuid)
+    if not m:
+        sys.exit(f"could not find an image UUID in: {args.uuid}")
+    uuid = m.group(0)
+    sizes = [args.size] if args.size is not None else range(5)
+    for n in sizes:
+        url = STOR_TMPL.format(uuid=uuid, n=n)
+        status, final, hdrs, body = _request(url, max_bytes=300_000)
+        dims = image_dims(body) if status == 200 else None
+        cors = hdrs.get("Access-Control-Allow-Origin", "")
+        s3 = "amazonaws" in final
+        print(f"_size{n}: HTTP {status}  {hdrs.get('Content-Type','?')}  "
+              f"dims={dims}  bytes={len(body)}  CORS={cors or '(none)'}  "
+              f"{'-> S3' if s3 else ''}")
+    print(f"\nstable URL for <img src> (largest): {STOR_TMPL.format(uuid=uuid, n=4)}")
+
+
+# --------------------------------------------------------------------------- #
 # marc
 # --------------------------------------------------------------------------- #
 def _records():
@@ -339,6 +368,11 @@ def main():
     mc = sub.add_parser("marc", help="list artstor 856 links from the MARC XML")
     mc.add_argument("records", nargs="*", help="001 control numbers (default: all)")
     mc.set_defaults(func=cmd_marc)
+
+    s = sub.add_parser("stor", help="validate a stor.artstor.org image UUID across its size ladder")
+    s.add_argument("uuid", help="a stor.artstor.org URL or a bare image UUID")
+    s.add_argument("--size", type=int, help="only this size (0-4); default shows all")
+    s.set_defaults(func=cmd_stor)
 
     args = p.parse_args()
     args.func(args)
