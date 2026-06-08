@@ -105,6 +105,49 @@ The tags and notes encode the same information in parallel: the tag
 in that book's note, but the note adds the full bibliographic string
 and specific page numbers.
 
+### Notes — HTML structure (the styling is meaningful)
+
+Notes are stored as HTML in `itemNotes.note`, wrapped in Zotero's
+`<div class="zotero-note znv1">` (`znv1` = note schema version 1). For
+`Cited:` notes the inline tags carry semantics — they are not
+decorative:
+
+```html
+<div class="zotero-note znv1">
+  <p><strong>Cited:</strong></p>
+  <p>Chen, Julie, et. al.&nbsp; <em>Reading the object: three decades of books.&nbsp; </em>Oakland: Flying Fish Press, 2016. pp. 20, 22, <strong>23</strong>, <strong>30,</strong> 31, <strong>74-79 (foldout)</strong>,&nbsp;103.<strong> </strong></p>
+  <p>Ruben, Robert J. <em>Beyond the Text: Artists' Books from the Collection of Robert J. Ruben</em>. New York: Grolier Club, 2010. pp.48, <strong>49</strong>.</p>
+</div>
+```
+
+| Element | Meaning |
+|---|---|
+| `<p><strong>Cited:</strong></p>` | section heading — marks this as a reference-list note |
+| each subsequent `<p>` | **one citation** = `Author. <em>Title</em>. Place: Publisher, Year. pp.…` |
+| `<em>…</em>` | the **title** of the citing work (the only reliable title delimiter) |
+| `<strong>` on a page number | **principal reference** — the page(s) where this book is illustrated/photographed, vs. merely listed |
+
+So in `pp. 20, 22, **23**, **30,** 31, **74-79 (foldout)**, 103` only
+the bolded pages (23, 30, the 74–79 foldout) are the substantive
+appearances; the rest are passing mentions.
+
+**Caveats for any parser** — the markup is meaningful but sloppily
+applied:
+
+- Bold bleeds onto punctuation and whitespace: `<strong>30,</strong>`,
+  `205<strong>.</strong>`, and empty trailing `<strong> </strong>`.
+  Detect the *digits*, then trim.
+- Page ranges and annotations live inside the bold:
+  `<strong>74-79 (foldout)</strong>`.
+- Entity encoding is inconsistent across (and within) records — the
+  same corpus mixes literal Unicode and HTML entities: `Artists'`
+  vs. `Artists&rsquo;`, `Esthétique` vs. `Esth&eacute;tique`, `à`
+  vs. `&agrave;`.
+- `&nbsp;` appears mid-sentence and inside `<em>`; normalize
+  whitespace *after* stripping tags.
+- Page prefix varies: `pp. 20`, `pp.48`, `p.190` (space optional,
+  `p` vs. `pp`).
+
 ### Notes — full breakdown
 
 The 7,978 notes break down as follows:
