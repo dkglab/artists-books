@@ -5,6 +5,6 @@
 	// Zotero export scripts), make, and gh. We add the YAZ toolkit, which
 	// marc_harvest.py / `make *-marc.xml` need to talk Z39.50 to UNC's catalog.
 	"name": "artists-books",
-	"image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+	"image": "mcr.microsoft.com/devcontainers/universal:linux",
 	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y yaz"
 }
