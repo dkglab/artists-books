@@ -42,60 +42,75 @@ easier than chained XPath.
 Across 1340 records. **occ** = total occurrences, **recs%** = share of records
 with the tag at least once. (Long tail of <1% tags omitted; see the file.)
 
-| tag | occ | recs% | what |
-|-----|----:|------:|------|
-| **Control** | | | |
-| 001 | 1340 | 100% | OCLC control number |
-| 003 | 979 | 73% | control-number source (`OCoLC`) |
-| 005 | 1338 | 100% | latest transaction timestamp |
-| 008 | 1340 | 100% | fixed-length data (date, place, language…) |
-| 006/007 | 13/14 | 1% | additional material / physical description |
-| **Numbers & codes** | | | |
-| 010 | 123 | 9% | LCCN |
-| 019 | 411 | 31% | superseded OCLC numbers |
-| 020 | 1038 | 44% | ISBN |
-| 035 | 1083 | 81% | system control number `(OCoLC)…` |
-| 040 | 1340 | 100% | cataloging source |
-| 041 | 177 | 13% | language code (multilingual works) |
-| 042 | 149 | 11% | authentication (`pcc`) |
-| 043 | 542 | 40% | geographic area code |
-| 049/050 | 881/847 | 66%/56% | local holdings code / **LC call no.** |
-| 082 | 149 | 11% | Dewey number |
-| **Title & edition** | | | |
-| 245 | 1340 | 100% | title statement |
-| 246 | 395 | 23% | variant title |
-| 250 | 233 | 17% | edition statement |
-| 264 | 1763 | 100% | production/publication/copyright |
-| **Physical / RDA** | | | |
-| 300 | 1341 | 100% | physical description |
-| 336/337/338 | ~1.3k each | 100% | RDA content/media/carrier type |
-| 340 | 1349 | 90% | physical medium (RDA) |
-| 490/830 | 171/157 | 13%/11% | series statement / series added entry |
-| **Creators** (see below) | | | |
-| 100 | 1256 | 94% | main creator |
-| 700 | 820 | 35% | added personal creator |
-| 710 | 673 | 43% | added corporate creator |
-| 110/711 | 10/10 | 1% | main corporate / meeting |
-| **Subjects & genre** (see below) | | | |
-| 650 | 5267 | 82% | topical subject |
-| 651 | 743 | 32% | geographic subject |
-| 600/610/630 | 1248/72/33 | 47%/3%/1% | personal/corporate/title subject |
-| 647/648 | 39/259 | 2%/11% | named event / chronological |
-| 655 | 5191 | 99% | **genre/form** (heavily used) |
-| **Notes** (see below) | | | |
-| 500 | 3145 | 92% | general note |
-| 520 | 195 | 14% | summary/abstract |
-| 546/505/504 | 132/85/63 | 10%/6%/5% | language / contents / bibliography |
-| 563/590 | 25/32 | 2% | binding / local note |
-| **Linking** | | | |
-| 856 | 1169 | 86% | **electronic location (ArtStor)** |
-| 880 | 87 | 2% | vernacular / alternate-script |
-| **Local (Innopac/UNC, 9xx)** | | | |
-| 915 | 3982 | 100% | local processing note (MARS/authority control) |
-| 949 | 541 | 39% | local item / call no. / barcode |
-| 994/998 | 538/1339 | 40%/100% | local system fields |
-| 791/690/090 | 259/63/87 | local added entries / subjects / call no. |
-| **999** | 1340 | 100% | **injected: `$a` itemKey, `$b` bibnum** |
+| tag | MARC 21 field name | occ | recs% | notes |
+|-----|--------------------|----:|------:|-------|
+| **Control fields** | | | | |
+| 001 | Control Number | 1340 | 100% | OCLC number |
+| 003 | Control Number Identifier | 979 | 73% | `OCoLC` |
+| 005 | Date and Time of Latest Transaction | 1338 | 100% | |
+| 008 | Fixed-Length Data Elements | 1340 | 100% | date, place, language… |
+| 006 | Additional Material Characteristics | 13 | 1% | |
+| 007 | Physical Description Fixed Field | 14 | 1% | |
+| **Numbers & codes** | | | | |
+| 010 | Library of Congress Control Number | 123 | 9% | LCCN |
+| 019 | Superseded OCLC Control Numbers | 411 | 31% | OCLC-local |
+| 020 | International Standard Book Number | 1038 | 44% | ISBN |
+| 035 | System Control Number | 1083 | 81% | `(OCoLC)…` |
+| 040 | Cataloging Source | 1340 | 100% | |
+| 041 | Language Code | 177 | 13% | multilingual works |
+| 042 | Authentication Code | 149 | 11% | `pcc` |
+| 043 | Geographic Area Code | 542 | 40% | |
+| 049 | Local Holdings | 881 | 66% | OCLC-local |
+| 050 | Library of Congress Call Number | 847 | 56% | **`$0`-linked** |
+| 082 | Dewey Decimal Classification Number | 149 | 11% | |
+| **Title & edition** | | | | |
+| 245 | Title Statement | 1340 | 100% | |
+| 246 | Varying Form of Title | 395 | 23% | variant title |
+| 250 | Edition Statement | 233 | 17% | |
+| 264 | Production, Publication, Distribution, Manufacture & Copyright Notice | 1763 | 100% | |
+| **Physical description / RDA** | | | | |
+| 300 | Physical Description | 1341 | 100% | |
+| 336 | Content Type | 1729 | 100% | RDA, `$0`-linked |
+| 337 | Media Type | 1346 | 100% | RDA, `$0`-linked |
+| 338 | Carrier Type | 1373 | 100% | RDA, `$0`-linked |
+| 340 | Physical Medium | 1349 | 90% | RDA |
+| 490 | Series Statement | 171 | 13% | |
+| 830 | Series Added Entry — Uniform Title | 157 | 11% | |
+| **Creators** (see below) | | | | |
+| 100 | Main Entry — Personal Name | 1256 | 94% | main creator |
+| 700 | Added Entry — Personal Name | 820 | 35% | |
+| 710 | Added Entry — Corporate Name | 673 | 43% | |
+| 110 | Main Entry — Corporate Name | 10 | 1% | |
+| 711 | Added Entry — Meeting Name | 10 | 1% | |
+| **Subjects & genre** (see below) | | | | |
+| 650 | Subject Added Entry — Topical Term | 5267 | 82% | |
+| 651 | Subject Added Entry — Geographic Name | 743 | 32% | |
+| 600 | Subject Added Entry — Personal Name | 1248 | 47% | |
+| 610 | Subject Added Entry — Corporate Name | 72 | 3% | |
+| 630 | Subject Added Entry — Uniform Title | 33 | 1% | |
+| 647 | Subject Added Entry — Named Event | 39 | 2% | |
+| 648 | Subject Added Entry — Chronological Term | 259 | 11% | |
+| 655 | Index Term — Genre/Form | 5191 | 99% | **heavily used** |
+| **Notes** (see below) | | | | |
+| 500 | General Note | 3145 | 92% | colophon, edition, etc. |
+| 520 | Summary, Etc. | 195 | 14% | abstract |
+| 546 | Language Note | 132 | 10% | |
+| 505 | Formatted Contents Note | 85 | 6% | |
+| 504 | Bibliography, Etc. Note | 63 | 5% | |
+| 563 | Binding Information | 25 | 2% | |
+| 590 | Local Note | 32 | 2% | |
+| **Linking** | | | | |
+| 856 | Electronic Location and Access | 1169 | 86% | **ArtStor** |
+| 880 | Alternate Graphic Representation | 87 | 2% | vernacular / alt-script |
+| **Local (Innopac/UNC, 9xx)** | | | | |
+| 690 | Local Subject Added Entry — Topical | 63 | 1% | see Local headings |
+| 791 | Local Added Entry — Corporate/Other | 259 | 19% | acquisition funds |
+| 090 | Local Call Number | 87 | 6% | |
+| 915 | Local Processing Note | 3982 | 100% | MARS / authority control |
+| 949 | Local Holdings / Item | 541 | 39% | call no. + barcode `$i` |
+| 994 | Local System Field (OCLC) | 538 | 40% | |
+| 998 | Local System Field (Innopac) | 1339 | 100% | |
+| **999** | Local field — injected by harvester | 1340 | 100% | **`$a` itemKey, `$b` bibnum** |
 
 ## Linked-data assets — the headline
 
