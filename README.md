@@ -50,7 +50,7 @@ make serve             # serve at http://127.0.0.1:8000
 
 ## Tools
 
-All tools are downloaded on first use by the Makefiles in `tools/` — no system-level installs required beyond a JVM and `sqlite3`.
+All tools are downloaded on first use by the Makefiles in `tools/` — no system-level installs required beyond a JVM, `sqlite3`, and the [YAZ](https://www.indexdata.com/resources/software/yaz/) toolkit (`yaz-client`/`yaz-marcdump`, used by `Zotero/marc_harvest.py` to fetch MARC records over Z39.50). GitHub Codespaces gets these automatically via `.devcontainer/devcontainer.json`.
 
 | Tool | Version | Purpose |
 |---|---|---|
