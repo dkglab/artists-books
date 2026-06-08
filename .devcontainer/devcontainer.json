@@ -1,10 +1,13 @@
 {
-	// Codespaces dev container for the artists-books pipeline.
-	// The universal image already provides the JVM (for the Jena/Fuseki/etc.
-	// tools fetched under tools/), Python 3 (marc_harvest.py), sqlite3 (the
-	// Zotero export scripts), make, and gh. We add the YAZ toolkit, which
-	// marc_harvest.py / `make *-marc.xml` need to talk Z39.50 to UNC's catalog.
+	// Codespaces dev container for the artists-books pipeline. A lightweight
+	// Ubuntu base (the universal image is ~10 GB and slow to provision) plus the
+	// repo's system dependencies installed from apt:
+	//   - default-jre-headless : runs the Jena/Fuseki/SPARQL-Anything tools fetched under tools/
+	//   - python3              : marc_harvest.py
+	//   - sqlite3              : the Zotero export scripts
+	//   - make                 : the Makefiles
+	//   - yaz                  : yaz-client/yaz-marcdump, for the Z39.50 MARC harvest
 	"name": "artists-books",
-	"image": "mcr.microsoft.com/devcontainers/universal:linux",
-	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y yaz"
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y default-jre-headless python3 sqlite3 make yaz"
 }
