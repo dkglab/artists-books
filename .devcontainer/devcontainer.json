@@ -9,5 +9,10 @@
 	//   - yaz                  : yaz-client/yaz-marcdump, for the Z39.50 MARC harvest
 	"name": "artists-books",
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	// base:ubuntu has no SSH server (unlike the universal image); the sshd
+	// feature restores `gh codespace ssh` / SSH-based editor access.
+	"features": {
+		"ghcr.io/devcontainers/features/sshd:1": {}
+	},
 	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y default-jre-headless python3 sqlite3 make yaz"
 }
