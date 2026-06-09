@@ -9,38 +9,11 @@
 @prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
 
 
-ex:primaryCreator a rdf:Property ;
-    rdfs:subPropertyOf dct:creator ;
-    rdfs:label "primary creator" ;
-    rdfs:comment "Indicates that an Agent is the primary creator of an Artist's Book." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range dct:Agent .
-
 ex:ArtistsBook a rdfs:Class ;
     rdfs:subClassOf schema:Book ;
     rdfs:label "Artist's Book" ;
     rdfs:comment "An artist book is a work of art that utilizes the form of a book." .
 
-ex:secondaryCreator a rdf:Property ;
-    rdfs:subPropertyOf dct:creator ;
-    rdfs:label "secondary creator" ;
-    rdfs:comment "Indicates that an Agent is the secondary creator of an Artist's Book." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range dct:Agent .
-
-ex:additionalCreator a rdf:Property ;
-    rdfs:subPropertyOf dct:creator ;
-    rdfs:label "additional creator" ;
-    rdfs:comment "Indicates that an Agent is an additional creator of an Artist's Book." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range dct:Agent .
-
-ex:bookArtist a rdf:Property ;
-    rdfs:subPropertyOf ex:primaryCreator ;
-    rdfs:label "book artist" ;
-    rdfs:comment "Indicates that an Agent is the book artist for an Artist's Book." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range dct:Agent .
 
 ex:imagesAt a rdfs:Property ;
     rdfs:label "images at" ;
@@ -89,21 +62,9 @@ ex:imagesOnPageNumber a rdfs:Property ;
 
 ex:constructedUsing a rdfs:Property ;
     rdfs:label "constructed using" ;
-    rdfs:comment "Indicates techniques, materials, and production methods used in the construction of an Artist's Book." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range ex:ConstructionMethod .
+    rdfs:comment "Indicates techniques, materials, and production methods used in the construction of an Artist's Book. May also include the genre of the book like \"photographic sequence\"" ;
+    rdfs:domain ex:ArtistsBook.
 
-ex:ConstructionMethod a rdfs:Class ;
-    rdfs:label "Construction Method" ;
-    rdfs:comment "A construction method is a technique, material, or production method used in the creation of an Artist's Book." .
-
-ex:photographyBy a rdf:Property ;
-    rdfs:subPropertyOf dct:creator ;
-    rdfs:subPropertyOf ex:constructedUsing ;
-    rdfs:label "photographed by" ;
-    rdfs:comment "Indicates that an Artist's Book uses photography as part of its construction and identifies the photographer." ;
-    rdfs:domain ex:ArtistsBook ;
-    rdfs:range dct:Agent .
 
 
 
