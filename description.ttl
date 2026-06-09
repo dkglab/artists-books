@@ -86,11 +86,6 @@ ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
     bf:subject wd:Q1062404 ;
     bf:subject wd:Q309 ;
     bf:language "English" ;
-    bf:note [
-        a bf:Note ;
-        bf:noteType "bibliography" ;
-        rdfs:label "Selective bibliography of artists' books 1963--: pages 175-239"
-    ] ;
     bf:provisionActivity [
         a bf:ProvisionActivity ;
         rdf:type bf:Publication ;
@@ -140,10 +135,6 @@ wd:Q121300913 a ex:ArtistsBook ;
     ex:constructedUsing aat:300192339;
     ex:constructedUsing wd:Q1066582 ;
     bf:language "English" ;
-    bf:summary [
-        a bf:Summary ;
-        rdfs:label "Black and white photographs of thirty records and their jackets from Ed Ruscha's own collection, of both the album covers and the vinyl records. - worldcat"
-    ] ;
     bf:provisionActivity [
         a bf:ProvisionActivity ;
         rdf:type bf:Publication ;
