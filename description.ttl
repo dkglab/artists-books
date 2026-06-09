@@ -39,15 +39,7 @@ aat:300025687 rdfs:label "photographer" .
 
 wd:Q7857846 a ex:ArtistsBook ;
     rdfs:label "Twentysix Gasoline Stations" ;
-    bf:title [
-        a bf:Title ;
-        bf:mainTitle "Twentysix Gasoline Stations"@en ;
-    ] ;
-    bf:title [
-        a bf:Title ;
-        bf:mainTitle "Twenty-six Gasoline Stations"@en ;
-        bf:variantType "spelling"
-    ] ;
+    bf:Title "Twentysix Gasoline Stations"@en ;
     bf:contribution [
         a bf:PrimaryContribution ;
         bf:agent ulan:500024159 ;
@@ -65,17 +57,12 @@ wd:Q7857846 a ex:ArtistsBook ;
         bflc:simplePlace "Alhambra, CA, USA" ;
     ] ;
     bf:subject wd:Q128302279 ;
-    bf:productionMethod aat:300192896 ;
-    bf:extent "1 volume" ;
-    bf:illustrativeContent "chiefly illustrations" ;
-    bf:dimensions "18 cm" ;
+    ex:constructedUsing aat:300192896 ;
     bf:language "English" ;
-    bf:genreForm wd:Q1066582 ;
-    bf:genreForm aat:300192339 ;
-    bf:genreForm wd:Q111885808 ;
+    ex:constructedUsing wd:Q1066582 ;
+    ex:constructedUsing aat:300192339 ;
     ex:imagesAt <https://www.jstor.org/stable/community.949854> ;
-    bf:dimensions "18 cm." ;
-    ex:productionMethod aat:300054225;
+    ex:constructedUsing aat:300054225;
      bf:identifiedBy [
         a bf:Identifier ;
         rdf:value "888402" ;
@@ -84,17 +71,13 @@ wd:Q7857846 a ex:ArtistsBook ;
     ] ;
     ] ;
     ex:worldcatLink <https://search.worldcat.org/title/888402> ;
-    bf:summary "Largely considered the first modern artists' book, TwentySix Gasoline Stations is also the first bookwork by Ed Ruscha. Self-published in 1963 and in second and third editions in 1967 and 1969, Twentysix Gasoline Stations features black-and-white photos of gas stations taken from a distance along Route 66 in Southern California, Arizona, New Mexico, Oklahoma, and Texas, documenting the modernization of the American landscape and its expanding network of highways.--Printed Matter website." 
-    .
+   .
 
 
 
 
 ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
-    bf:title [
-        a bf:Title ;
-        bf:mainTitle "Artists' Books: The Book as a Work of Art, 1963-2000"@en ;
-    ]  ;
+    bf:Title "Artists' Books: The Book as a Work of Art, 1963-2000"@en ;
     bf:contribution [
         a bf:PrimaryContribution ;
         bf:agent wd:Q18763908 ;
@@ -102,9 +85,6 @@ ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
     ] ;
     bf:subject wd:Q1062404 ;
     bf:subject wd:Q309 ;
-    bf:genreForm wd:Q309 ;
-    bf:genreForm wd:Q1631107 ;
-    bf:genreForm wd:Q13136 ;
     bf:language "English" ;
     bf:note [
         a bf:Note ;
@@ -118,10 +98,7 @@ ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
         bf:date "2015" ;
         bf:place wd:Q84
     ] ;
-    bf:extent "258 pages" ;
-    bf:illustrativeContent "illustrations (many color)" ;
-    bf:dimensions "24 cm" ;
-    bf:productionMethod aat:300247962;
+    ex:constructedUsing aat:300247962;
     bf:identifiedBy [
         a bf:Isbn ;
         rdf:value "9780956301291"
@@ -148,23 +125,20 @@ ex:Ato26Gas a ex:Citation ;
 
 wd:Q121300913 a ex:ArtistsBook ;
     rdfs:label "Records" ;
-    bf:title [
-        a bf:Title ;
-        bf:mainTitle "Records"@en ;
-    ] ;
-         bf:contribution [
+    bf:Title "Records"@en ;
+    bf:contribution [
         a bf:PrimaryContribution ;
         bf:agent ulan:500024159 ;
         bf:role aat:300386346
     ] ,
-            [
+        [
         a bf:Contribution ;
         bf:agent ulan:500098671 ;
         bf:role aat:300025687
     ] ;
-    bf:subject <http://www.wikidata.org/entity/Q1333350> ;
-    bf:genreForm <http://vocab.getty.edu/aat/300192339> ;
-    bf:genreForm <http://www.wikidata.org/entity/Q1066582> ;
+    bf:subject wd:Q1333350 ;
+    ex:constructedUsing aat:300192339;
+    ex:constructedUsing wd:Q1066582 ;
     bf:language "English" ;
     bf:summary [
         a bf:Summary ;
@@ -177,11 +151,8 @@ wd:Q121300913 a ex:ArtistsBook ;
         bf:date "1971" ;
         bf:place wd:Q34006
     ] ;
-    bf:extent "1 volume (unpaged)" ;
-    bf:illustrativeContent "illustrations" ;
-    bf:dimensions "18 cm" ;
-    bf:productionMethod aat:300192896 ;
-    bf:productionMethod aat:300054225 ;
+    ex:constructedUsing aat:300192896 ;
+    ex:constructedUsing aat:300054225 ;
     bf:identifiedBy [
         a bf:Local ;
         rdf:value "699695" ;
