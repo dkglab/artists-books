@@ -8,6 +8,7 @@ PREFIX bf: <http://id.loc.gov/ontologies/bibframe/>
 PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX marc: <http://www.loc.gov/MARC21/slim#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
 CONSTRUCT {
   ?book a ab:ArtistsBook ;
@@ -17,7 +18,9 @@ CONSTRUCT {
     bf:contribution ?contribution ;
     bf:provisionActivity ?bookPublication ;
     bf:language ?language ;
-    bf:identifiedBy ?bookIdentifier ;
+    bf:identifiedBy ?bookISBN ;
+    bf:identifiedBy ?bookOCLCNum ;
+    foaf:primaryTopicOf ?worldcat_url ;
     .
 
   ?bookTitle a bf:Title ;
@@ -30,9 +33,14 @@ CONSTRUCT {
     bflc:simplePlace ?place ;
     .
 
-  ?bookIdentifier a bf:Identifier ;
+  ?bookISBN a bf:Identifier ;
     rdf:value ?ISBN ;
     bf:source wd:Q33057 ; # ISBN
+    .
+
+  ?bookOCLCNum a bf:Local ;
+    rdf:value ?oclc_number ;
+    bf:source [ rdfs:label "OCLC" ] ;
     .
 
   ?contribution a bf:Contribution ;
@@ -79,8 +87,28 @@ WHERE {
     }
     OPTIONAL {
       ?bookRow xyz:ISBN ?ISBN
-      BIND(fx:entity(ab:, "item/", ?item_key, "/identifier") AS ?bookIdentifier)
+      BIND(fx:entity(ab:, "item/", ?item_key, "/identifier") AS ?bookISBN)
     }
+  }
+
+  # OCLC number from the MARC 001 control field. 001 is a marc:controlfield
+  # (value on rdf:_1, no subfields), unique per record, so no GROUP BY is
+  # needed. Joined to the book via the synthetic 999 $a itemKey. The on/ocn/ocm
+  # prefix is stripped to the bare number for the WorldCat URL.
+  OPTIONAL {
+    SERVICE <x-sparql-anything:location=Zotero/artists-books-marc.xml> {
+      ?rec001 a marc:record .
+
+      ?rec001 fx:anySlot ?f999b .
+      ?f999b a marc:datafield ; xyz:tag "999" .
+      ?f999b fx:anySlot ?sf999b .
+      ?sf999b xyz:code "a" ; rdf:_1 ?item_key .
+
+      ?rec001 fx:anySlot ?cf001 .
+      ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number .
+    }
+    BIND(REPLACE(REPLACE(?control_number, "^\\D+", ""), "^0+", "") AS ?oclc_number)
+    BIND(IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)) AS ?worldcat_url)
   }
 
   # Creators come from the full MARC records (Zotero/artists-books-marc.xml),
