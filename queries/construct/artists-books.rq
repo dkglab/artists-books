@@ -40,7 +40,7 @@ CONSTRUCT {
 
   ?bookOCLCNum a bf:Local ;
     rdf:value ?oclc_number ;
-    bf:source [ rdfs:label "OCLC" ] ;
+    bf:source wd:Q846596 ; # Worldcat
     .
 
   ?contribution a bf:Contribution ;
