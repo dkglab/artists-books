@@ -23,6 +23,9 @@ tools/snowman/snowman
 /site/
 # MARC harvest state (resumable; only Zotero/*-marc.xml is committed)
 /Zotero/marc/
+# Python bytecode cache
+__pycache__/
+*.pyc
 # generated files
 description.png
 diff.txt
