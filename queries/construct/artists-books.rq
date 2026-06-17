@@ -59,11 +59,13 @@ CONSTRUCT {
 }
 WHERE {
   SERVICE <x-sparql-anything:location=Zotero/artists-books.csv> {
+    # Facade-X configuration for CSV data
     fx:properties
-      fx:csv.headers "true" ;
-      fx:csv.null-string  "" ;
+      fx:csv.headers "true" ;  # create xyz:header properties
+      fx:csv.null-string  "" ; # treat empty strings as null values
       .
 
+    # For each row in artists-books.csv
     ?bookRow
       xyz:itemKey ?item_key ;
       xyz:title ?title ;
@@ -94,8 +96,9 @@ WHERE {
   # Creators come from the full MARC records (Zotero/artists-books-marc.xml),
   # which carry authoritative names plus real-world-object URIs (VIAF/ISNI in
   # $1) and LC name-authority URIs ($0). Each record joins to a book through its
-  # synthetic 999 $a (the Zotero itemKey). Kept OPTIONAL so books without a MARC
-  # record (no UNC bib number) still emit.
+  # synthetic 999 $a (the Zotero itemKey).
+  #
+  # Kept OPTIONAL so books without a MARC record (no UNC bib number) still emit.
   OPTIONAL {
     # One row per creator field, with a single chosen name / VIAF / ISNI / LC id.
     # Multiple $1 subfields (a creator often has both VIAF and ISNI) are folded
@@ -109,30 +112,32 @@ WHERE {
              (SAMPLE(?lc_id_x) AS ?lc_id)
       WHERE {
         SERVICE <x-sparql-anything:location=Zotero/artists-books-marc.xml> {
+
+          # For each MARC record
           ?record a marc:record .
 
-          # Traverse container members with fx:anySlot, not a variable predicate
-          # (?record ?p ?child): the Facade-X graph evaluates ?s ?VAR ?o as a full
-          # scan, and cross-joining two of them per record is quadratic — it turns
-          # this query from minutes into seconds.
+          # Traverse container members (datafields or controlfields in
+          # MARC records, or subfields of datafields) with fx:anySlot.
+          # This is much faster than using a variable predicate like
+          # (?record ?p ?field).
 
-          # itemKey from the harvester's 999 $a
+          # When we downloaded the MARC XML records, we added the Zotero
+          # itemKey to each record as a 999 $a value, which enables us to
+          # grab the itemKey here so we can join with the CSV query above.
           ?record fx:anySlot ?f999 .
           ?f999 a marc:datafield ; xyz:tag "999" .
-          ?f999 fx:anySlot ?sf999 .
-          ?sf999 xyz:code "a" ; rdf:_1 ?item_key .
+          ?f999 fx:anySlot ?sf999a .
+          ?sf999a xyz:code "a" ; rdf:_1 ?item_key .
 
           # OCLC number from the 001 control field (per record, always present).
-          # Folded into THIS service so the MARC file is triplified only ONCE: a
-          # second SERVICE clause to the same file builds a second full in-memory
-          # Facade-X graph and blows the heap (~10 MB XML -> a multi-GB graph).
           # 001 is a marc:controlfield, so its value is on rdf:_1, not a subfield.
           ?record fx:anySlot ?cf001 .
           ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
 
-          # Creator fields are OPTIONAL: the ~12 records with no 100/110/111/700/
+          # Creator fields are OPTIONAL: the records with no 100/110/111/700/
           # 710/711 field still yield a row carrying item_key + the 001 number.
           OPTIONAL {
+
           # creator/contributor fields: personal (100/700), corporate (110/710),
           # meeting (111/711). 6xx (subjects) and 791 (acquisition funds) excluded.
           ?record fx:anySlot ?df .
@@ -183,8 +188,6 @@ WHERE {
 
     # WorldCat link + OCLC identifier, from the 001 number sampled above. Strip
     # the on/ocn/ocm prefix and any leading zeros to get the bare OCLC number.
-    # ?bookOCLCNum must be minted here: the CONSTRUCT references it, and an
-    # unbound subject silently drops the bf:Local identifier triples.
     BIND(REPLACE(REPLACE(?control_number, "^\\D+", ""), "^0+", "") AS ?oclc_number)
     BIND(IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)) AS ?worldcat_url)
     BIND(fx:entity(ab:, "item/", ?item_key, "/oclc") AS ?bookOCLCNum)
