@@ -39,7 +39,7 @@ Before changing how the query walks the MARC XML, read `QUERY-PERFORMANCE.md` â€
 
 ### URI minting
 
-Book URIs are minted from the Zotero `itemKey` field: `https://dkglab.github.io/ns/artists-books/item/<itemKey>`. Related per-book resources use suffixed paths (`/title`, `/publication`, `/identifier`). Creator URIs use `creator/<creatorID>`. This is done via `fx:entity(...)` `BIND` calls in the construct query.
+Book URIs are minted from the Zotero `itemKey` field: `https://dkglab.github.io/ns/artists-books/item/<itemKey>`. Related per-book resources use suffixed paths (`/title`, `/publication`, `/identifier`, `/oclc`, `/contribution/<creatorKey>`). Creators are identified by their real-world-object URI â€” VIAF, else ISNI (from MARC `$1`); only when neither exists is an `ab:creator/<creatorKey>` URI minted, where `creatorKey` is the LC name-authority id (MARC `$0`) or, failing that, a slug of the name. This is done via `fx:entity(...)` `BIND` calls in the construct query.
 
 ### `views.yaml` and per-row output expansion
 
