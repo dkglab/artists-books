@@ -34,10 +34,13 @@
   {{ with .isbns }}
   <dt>ISBN</dt>
   <dd>{{ . }}</dd>
+  {{ end }}
 
  {{ with .oclcNumbers }}
-  <dt>OCLC Number</dt>
-  <dd>{{ . }}</dd>
+  <dt>WorldCat</dt>
+  <dd>
+    <a href="{{ $.worldcatLink }}">{{ . }}</a>
+  </dd>
   {{ end }}
 </dl>
 {{ end }}

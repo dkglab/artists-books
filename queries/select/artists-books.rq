@@ -4,6 +4,7 @@ PREFIX bflc:    <http://id.loc.gov/ontologies/bflc/>
 PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wd:      <http://www.wikidata.org/entity/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
 SELECT
   ?book
@@ -16,6 +17,7 @@ SELECT
   ?language
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   (GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
+  (SAMPLE(?worldcat_url) AS ?worldcatLink)
 
 WHERE {
   ?book
@@ -65,6 +67,9 @@ WHERE {
     ?book bf:identifiedBy ?id .
     ?id rdf:value ?oclc_number ;
         bf:source wd:Q846596 .
+  }
+  OPTIONAL {
+    ?book foaf:isPrimaryTopicOf ?worldcat_url .
   }
 }
 GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?oclc_number
