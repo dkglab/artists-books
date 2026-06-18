@@ -33,8 +33,8 @@ ulan:500098671 rdfs:label "Jerry McMillan" .
 wd:Q121300405 rdfs:label "Heavy Industry Publications" .
 wd:Q34006 rdfs:label "Hollywood, CA, USA" .
 wd:Q1333350 rdfs:label "album cover" .
-aat:300386346 rdfs:label "book artist" .
-aat:300025687 rdfs:label "photographer" .
+rel:bka rdfs:label "book artist" .
+rel:pht rdfs:label "photographer" .
 
 
 wd:Q7857846 a ex:ArtistsBook ;
@@ -43,8 +43,8 @@ wd:Q7857846 a ex:ArtistsBook ;
     bf:contribution [
         a bf:PrimaryContribution ;
         bf:agent ulan:500024159 ;
-        bf:role aat:300386346 ;
-        bf:role aat:300025687
+        bf:role rel:bka ;
+        bf:role rel:pht
     ] ;
     bf:provisionActivity [
         a bf:ProvisionActivity ;
@@ -124,12 +124,12 @@ wd:Q121300913 a ex:ArtistsBook ;
     bf:contribution [
         a bf:PrimaryContribution ;
         bf:agent ulan:500024159 ;
-        bf:role aat:300386346
+        bf:role rel:bka
     ] ,
         [
         a bf:Contribution ;
         bf:agent ulan:500098671 ;
-        bf:role aat:300025687
+        bf:role rel:pht
     ] ;
     bf:subject wd:Q1333350 ;
     ex:constructedUsing aat:300192339;
