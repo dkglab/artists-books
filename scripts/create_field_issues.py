@@ -169,6 +169,10 @@ def ensure_fields(owner, number):
              "--name", "Priority", "--data-type", "SINGLE_SELECT",
              "--single-select-options", "High,Medium,Low"])
         print("  created Priority field")
+    if "Target" not in names:
+        run(["gh", "project", "field-create", str(number), "--owner", owner,
+             "--name", "Target", "--data-type", "DATE"])
+        print("  created Target date field")
     # Re-fetch so we have ids for any field we just created.
     fields = json.loads(
         run(["gh", "project", "field-list", str(number), "--owner", owner,
