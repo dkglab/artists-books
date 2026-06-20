@@ -2,6 +2,9 @@
 
 A linked data publication pipeline that transforms a curated [Zotero](https://www.zotero.org/) library into a knowledge graph and static website. The collection documents artists' books held at the Joseph C. Sloane Art Library (UNC Chapel Hill), along with citation data tracking how those books appear in reference literature.
 
+> [!IMPORTANT]
+> **`Zotero/zotero.sqlite` contains three libraries — and the one this site builds from has none of the citation notes.** It aggregates a *personal* library (the curated **1,341-book Sloane holdings** the pipeline builds from) plus two *group* libraries that hold the **"Cited:" citation notes**: an older `Artists_books_critical_index` (frozen 2021) and its live successor **`ABCI`** (use this one). Each book is catalogued once per library under a *different* Zotero item key, so surfacing a book's citations on its page is a cross-library **title/ISBN/OCLC reconciliation**, not an item-key join. See [`Zotero/README.md` → Three libraries in one database](Zotero/README.md#three-libraries-in-one-database) and issue #55.
+
 ## Pipeline overview
 
 ```

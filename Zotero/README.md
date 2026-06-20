@@ -3,6 +3,25 @@
 - `zotero.sqlite` — 55MB SQLite database (Zotero's main metadata store)
 - `storage/` — 1,299 subdirectories (8-char hash names)
 
+## Three libraries in one database
+
+> [!IMPORTANT]
+> `zotero.sqlite` is **not one library** — it aggregates **three** (see the `libraries` / `groups` tables), and the citation **"Cited:" notes live in the group libraries, *not* in the collection the website is built from.**
+
+| `libraryID` | Library | What it is | Holds (big collections) | "Cited:" notes |
+|---|---|---|---|---|
+| **1** | personal (user `5818691`) | The Sloane Art Library's curated **physical holdings**, actively maintained (edited through Nov 2025). **This is what the pipeline builds from.** | `Artists' Books Collection` (1,341) + `Zines Collection` (488) | **none** |
+| **2** | group `262987` — *Artists_books_critical_index* | The **older** citation index. **Frozen since Nov 2021.** | `Master list…` (7,023) + `ABCI` (3,370) | 3,650 items |
+| **3** | group `2352415` — *ABCI (Artists' Books Critical Index)* | The **newer** citation index — successor to lib 2 (**10,676 of its 12,052 items carry an `owl:sameAs` back to a lib‑2 item**). Live through Nov 2025. | `Artists' books` (7,117) + `ABCI` (3,929) | 4,008 items |
+
+Consequences:
+
+- **lib 3 (ABCI) supersedes lib 2.** It is richer and still maintained while lib 2 is frozen; only ~3 of the built collection's books are cited *only* in lib 2. Treat **lib 3 as the authoritative citation index**.
+- **The built collection (lib 1) has no citation notes**, so the website's "cited-by" model depends on joining notes from lib 3 onto lib‑1 pages.
+- **The same work is catalogued once per library under a different item key** — e.g. Ruth Laxson, *(Ho + go)² = it* (ISBN `0-932526-10-1`) is `HKGS8WHZ` in lib 2 and `GURAG9JG` in lib 3, with its own lib‑1 record. So that join is a **title / ISBN / OCLC reconciliation**, not an item-key match — and only **7 of 1,341** lib‑1 books carry an explicit `owl:sameAs` to lib 3. Tracked in issue #55.
+
+This is also *why* the four big book collections look like "two non-overlapping pairs" (see [Main book collections](#main-book-collections)): each pair is simply one group library, and items in different libraries can never share an item key.
+
 ## SQLite database
 
 The database is the primary source of value. It contains structured
@@ -308,15 +327,18 @@ To Be Photographed (0)
 ### Main book collections
 
 There are four large top-level collections that partition the books
-into two non-overlapping pairs:
+into two non-overlapping pairs — **one pair per group library** (see
+[Three libraries in one database](#three-libraries-in-one-database),
+which explains *why* the pairs never overlap):
 
-- **ABCI (3,929)** overlaps with **Artists' books (7,117)** — ABCI
-  stands for "Artists' Book Citation Index"
-- **ABCI (3,370)** overlaps with **Master list ... with or without
-  citations (7,023)**
+- **lib 3** (group *ABCI*): **ABCI (3,929)** overlaps with **Artists'
+  books (7,117)** — ABCI stands for "Artists' Book Citation Index"
+- **lib 2** (group *Artists_books_critical_index*): **ABCI (3,370)**
+  overlaps with **Master list ... with or without citations (7,023)**
 
-No items appear in both pairs. Together the four collections cover
-~14,000 of the 19,211 books; 2,229 books belong to no collection.
+No items appear in both pairs (they live in different libraries).
+Together the four collections cover ~14,000 of the 19,211 books; 2,229
+books belong to no collection.
 
 ### Reference resource workflow
 
@@ -435,8 +457,12 @@ point for linking to external knowledge graphs.
 ### Note on duplicates
 
 Many books appear 2-4 times in the database with slightly different
-title forms, likely from separate catalog imports. The collections
-(like "Reference resources") appear to hold the canonical records. 
+title forms. The main cause is the **three-library structure** (see
+[Three libraries in one database](#three-libraries-in-one-database)):
+the same work is catalogued independently in the personal library and
+in each group library, so a single book commonly has one record per
+library under different item keys. For citation work, lib 3 (*ABCI*)
+holds the authoritative copies.
 
 ## Item relations
 
@@ -445,11 +471,17 @@ types:
 
 ### `owl:sameAs` (11,027)
 
-Links between local items and their counterparts in two shared Zotero
-group libraries:
+Links between items and their counterparts in the two group libraries
+(see [Three libraries in one database](#three-libraries-in-one-database)):
 
-- **Group 262987**: "Artists_books_critical_index" (10,677 links)
+- **Group 262987**: "Artists_books_critical_index" (10,677 links) —
+  almost all *from* lib 3, pointing each newer *ABCI* record back to its
+  predecessor in the older library (this is the evidence that lib 3
+  supersedes lib 2)
 - **Group 2352415**: "ABCI (Artists' Books Critical Index)" (189 links)
+  — mostly from the personal library; only 7 of them are on
+  `Artists' Books Collection` books, so they are **not** a usable
+  crosswalk for the build
 
 The account (`sloane-art`, user 5818691) syncs with these groups,
 meaning the data also exists online at `zotero.org/groups/262987`
