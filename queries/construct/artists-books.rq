@@ -14,7 +14,6 @@ CONSTRUCT {
   ?book a ab:ArtistsBook ;
     rdfs:label ?title ;
     ab:itemKey ?item_key ;
-    bf:title ?bookTitle ;
     bf:contribution ?contribution ;
     bf:provisionActivity ?bookPublication ;
     bf:language ?language ;
@@ -23,9 +22,6 @@ CONSTRUCT {
     foaf:isPrimaryTopicOf ?worldcat_url ;
     .
 
-  ?bookTitle a bf:Title ;
-    bf:mainTitle ?title ;
-    .
 
   ?bookPublication a bf:Publication ;
     bflc:simpleAgent ?publisher ;
@@ -78,7 +74,6 @@ WHERE {
 
     # Mint new book URIs using the fx:entity function
     BIND(fx:entity(ab:, "item/", ?item_key) AS ?book)
-    BIND(fx:entity(ab:, "item/", ?item_key, "/title") AS ?bookTitle)
     BIND(fx:entity(ab:, "item/", ?item_key, "/publication") AS ?bookPublication)
 
     OPTIONAL {

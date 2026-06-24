@@ -38,8 +38,7 @@ rel:pht rdfs:label "photographer" .
 
 
 wd:Q7857846 a ex:ArtistsBook ;
-    rdfs:label "Twentysix Gasoline Stations" ;
-    bf:Title "Twentysix Gasoline Stations"@en ;
+    rdfs:label "Twentysix Gasoline Stations"@en ;
     bf:contribution [
         a bf:PrimaryContribution ;
         bf:agent ulan:500024159 ;
@@ -77,7 +76,7 @@ wd:Q7857846 a ex:ArtistsBook ;
 
 
 ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
-    bf:Title "Artists' Books: The Book as a Work of Art, 1963-2000"@en ;
+    rdfs:label "Artists' Books: The Book as a Work of Art, 1963-2000"@en ;
     bf:contribution [
         a bf:PrimaryContribution ;
         bf:agent wd:Q18763908 ;
@@ -119,8 +118,7 @@ ex:Ato26Gas a ex:Citation ;
     ex:imagesOnPageNumber "41" .
 
 wd:Q121300913 a ex:ArtistsBook ;
-    rdfs:label "Records" ;
-    bf:Title "Records"@en ;
+    rdfs:label "Records"@en ;
     bf:contribution [
         a bf:PrimaryContribution ;
         bf:agent ulan:500024159 ;
