@@ -14,7 +14,11 @@ CONSTRUCT {
   ?book a ab:ArtistsBook ;
     rdfs:label ?title ;
     ab:itemKey ?item_key ;
-    bf:contribution ?contribution ;
+    bf:contribution [
+  a ?contributionType ;
+  bf:agent ?creator ;
+  bf:role ?roleConcept
+] ;
     bf:provisionActivity ?bookPublication ;
     bf:language ?language ;
     bf:identifiedBy ?bookISBN ;
@@ -39,10 +43,7 @@ CONSTRUCT {
     bf:source wd:Q846596 ; # Worldcat
     .
 
-  ?contribution a bf:Contribution ;
-    bf:agent ?creator ;
-    bf:role ?roleConcept ;
-    .
+
 
   ?roleConcept a bf:Role ;
     rdfs:label ?role_term ;
@@ -99,7 +100,7 @@ WHERE {
     # Multiple $1 subfields (a creator often has both VIAF and ISNI) are folded
     # together here so each creator field yields exactly one ?creator downstream.
     {
-      SELECT ?item_key ?role_term
+      SELECT ?item_key ?df ?ctag ?role_term ?contributionType
              (SAMPLE(?control_number_raw) AS ?control_number)
              (SAMPLE(?name_x)  AS ?creator_name)
              (SAMPLE(?viaf_x)  AS ?viaf)
@@ -138,6 +139,14 @@ WHERE {
           ?record fx:anySlot ?df .
           ?df a marc:datafield ; xyz:tag ?ctag .
           FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+
+          #binds the contribution type based on the tag of the datafield. 100, 110, and 111 are considered primary contributions, while 700, 710, and 711 are considered secondary contributions.
+          BIND(
+            IF(?ctag IN ("100", "110", "111"),
+            bflc:PrimaryContribution,
+            bf:Contribution
+            ) AS ?contributionType
+            )
 
           # $a — name. Strip trailing cataloguing punctuation.
           ?df fx:anySlot ?sfa .
@@ -178,7 +187,7 @@ WHERE {
           }  # end OPTIONAL wrapping the creator fields
         }
       }
-      GROUP BY ?item_key ?df ?role_term
+      GROUP BY ?item_key ?df ?ctag ?role_term ?contributionType
     }
 
     # WorldCat link + OCLC identifier, from the 001 number sampled above. Strip

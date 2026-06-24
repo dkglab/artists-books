@@ -10,7 +10,8 @@ SELECT
   ?book
   ?title
   ?itemKey
-  (GROUP_CONCAT(DISTINCT ?creatorDisplay; separator="; ") AS ?creators)
+  (GROUP_CONCAT(DISTINCT ?primaryCreatorDisplay; separator="; ") AS ?primaryCreators)
+  (GROUP_CONCAT(DISTINCT ?otherCreatorDisplay; separator="; ") AS ?contributors)
   ?publisher
   ?place
   ?date
@@ -18,7 +19,6 @@ SELECT
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   (GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
   (SAMPLE(?worldcat_url) AS ?worldcatLink)
-
 WHERE {
   ?book
     a ab:ArtistsBook ;
@@ -26,28 +26,33 @@ WHERE {
     ab:itemKey ?itemKey ;
     .
 
-  # Each creator, rendered as "Name (role, role)". Roles are first folded per
-  # creator (a contribution may carry several relator roles), then the creators
-  # are concatenated by the outer GROUP_CONCAT. Kept OPTIONAL so books with no
-  # creators still render.
   OPTIONAL {
-    SELECT ?book (SAMPLE(?creatorName) AS ?name)
-                 (GROUP_CONCAT(DISTINCT ?roleLabel; separator=", ") AS ?roleList)
-    WHERE {
-      ?book bf:contribution ?contribution .
-      ?contribution bf:agent ?agent .
-      ?agent rdfs:label ?creatorName .
-      OPTIONAL { ?contribution bf:role/rdfs:label ?roleLabel . }
-    }
-    GROUP BY ?book ?agent
+    ?book bf:contribution ?c .
+    ?c a bflc:PrimaryContribution ;
+       bf:agent ?agent .
+    ?agent rdfs:label ?name .
+    OPTIONAL { ?c bf:role/rdfs:label ?role . }
+    BIND(
+      IF(BOUND(?role),
+         CONCAT(?name, " [", ?role, "]"),
+         ?name
+      ) AS ?primaryCreatorDisplay
+    )
   }
-  # Roles go in square brackets, not parentheses: MARC name headings already use
-  # parentheses as qualifiers (e.g. "KaKeART (Group of artists)", "Freedom House
-  # (U.S.)"), so "(author, artist)" right after would be ambiguous.
-  BIND(COALESCE(?roleList, "") AS ?roles)
-  BIND(IF(STRLEN(?roles) > 0,
-          CONCAT(?name, " [", ?roles, "]"),
-          ?name) AS ?creatorDisplay)
+
+  OPTIONAL {
+    ?book bf:contribution ?c2 .
+    ?c2 a bf:Contribution ;
+        bf:agent ?agent2 .
+    ?agent2 rdfs:label ?name2 .
+    OPTIONAL { ?c2 bf:role/rdfs:label ?role2 . }
+    BIND(
+      IF(BOUND(?role2),
+         CONCAT(?name2, " [", ?role2, "]"),
+         ?name2
+      ) AS ?otherCreatorDisplay
+    )
+  }
 
   OPTIONAL {
     ?book bf:provisionActivity ?pub .
@@ -63,11 +68,13 @@ WHERE {
     ?id rdf:value ?isbn ;
         bf:source wd:Q33057 .
   }
+
   OPTIONAL {
     ?book bf:identifiedBy ?id .
     ?id rdf:value ?oclc_number ;
         bf:source wd:Q846596 .
   }
+
   OPTIONAL {
     ?book foaf:isPrimaryTopicOf ?worldcat_url .
   }

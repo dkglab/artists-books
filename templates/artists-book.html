@@ -6,10 +6,16 @@
 <h1>{{ .title }}</h1>
 
 <dl>
-  {{ with .creators }}
-  <dt>Creators</dt>
+  {{ with .primaryCreators }}
+  <dt>Primary creators</dt>
   <dd>{{ . }}</dd>
   {{ end }}
+
+  {{ with .contributors }}
+  <dt>Contributors</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+</dl>
 
   {{ with .publisher }}
   <dt>Publisher</dt>
