@@ -37,6 +37,11 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
+  {{ with .extent }}
+  <dt>Extent</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
   {{ with .isbns }}
   <dt>ISBN</dt>
   <dd>{{ . }}</dd>
