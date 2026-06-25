@@ -22,6 +22,7 @@ CONSTRUCT {
     bf:provisionActivity ?bookPublication ;
     bf:language ?language ;
     bf:extent ?bookExtent ;
+    bf:dimensions ?dimensions ;
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
@@ -108,6 +109,7 @@ WHERE {
       SELECT ?item_key ?df ?ctag ?role_term ?contributionType
              (SAMPLE(?control_number_raw) AS ?control_number)
              (SAMPLE(?extent_x) AS ?extent)
+             (SAMPLE(?dimensions_x) AS ?dimensions)
              (SAMPLE(?name_x)  AS ?creator_name)
              (SAMPLE(?viaf_x)  AS ?viaf)
              (SAMPLE(?isni_x)  AS ?isni)
@@ -147,6 +149,18 @@ WHERE {
 
             # Strip trailing cataloging punctuation such as ":".
             BIND(REPLACE(?extent_raw, "[\\s:;/]+$", "") AS ?extent_x)
+          }
+
+          OPTIONAL {
+            ?df300 fx:anySlot ?sf300c .
+            ?sf300c
+                xyz:code "c" ;
+                rdf:_1 ?dimensions_raw .
+
+            BIND(
+              REPLACE(?dimensions_raw, "[\\s.;:/]+$", "")
+              AS ?dimensions_x
+            )
           }
 
           # Creator fields are OPTIONAL: the records with no 100/110/111/700/

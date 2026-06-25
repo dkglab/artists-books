@@ -42,6 +42,11 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
+  {{ with .dimensions }}
+  <dt>Dimensions</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
   {{ with .isbns }}
   <dt>ISBN</dt>
   <dd>{{ . }}</dd>

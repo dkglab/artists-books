@@ -17,6 +17,7 @@ SELECT
   ?date
   ?language
   ?extent
+  ?dimensions
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   (GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
   (SAMPLE(?worldcat_url) AS ?worldcatLink)
@@ -70,6 +71,10 @@ WHERE {
   }
 
   OPTIONAL {
+    ?book bf:dimensions ?dimensions .
+  }
+
+  OPTIONAL {
     ?book bf:identifiedBy ?id .
     ?id rdf:value ?isbn ;
         bf:source wd:Q33057 .
@@ -85,5 +90,5 @@ WHERE {
     ?book foaf:isPrimaryTopicOf ?worldcat_url .
   }
 }
-GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?oclc_number
+GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?dimensions ?oclc_number
 ORDER BY LCASE(?title)
