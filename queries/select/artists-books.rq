@@ -90,5 +90,5 @@ WHERE {
     ?book foaf:isPrimaryTopicOf ?worldcat_url .
   }
 }
-GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?dimensions ?oclc_number
+GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?dimensions
 ORDER BY LCASE(?title)
