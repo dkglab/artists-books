@@ -14,11 +14,7 @@ CONSTRUCT {
   ?book a ab:ArtistsBook ;
     rdfs:label ?title ;
     ab:itemKey ?item_key ;
-    bf:contribution [
-  a ?contributionType ;
-  bf:agent ?creator ;
-  bf:role ?roleConcept
-] ;
+    bf:contribution ?contribution ;
     bf:provisionActivity ?bookPublication ;
     bf:language ?language ;
     bf:extent ?bookExtent ;
@@ -49,7 +45,10 @@ CONSTRUCT {
     rdfs:label ?extent ; # Extent
     .
 
-
+  ?contribution a ?contributionType ;
+    bf:agent ?creator ;
+    bf:role ?roleConcept ;
+    .
 
   ?roleConcept a bf:Role ;
     rdfs:label ?role_term ;
