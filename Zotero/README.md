@@ -22,6 +22,105 @@ Consequences:
 
 This is also *why* the four big book collections look like "two non-overlapping pairs" (see [Main book collections](#main-book-collections)): each pair is simply one group library, and items in different libraries can never share an item key.
 
+### ABC ↔ cited-record crosswalk (#55)
+
+Because lib 1 (the ABC the website builds from) has no Cited notes and shares no
+item keys with lib 3, the notes can only reach ABC pages through a **bibliographic
+crosswalk**. `tools/fuzzy-match/match.py` reconciles each of the 1,341 ABC books
+to the lib-3 record(s) carrying a Cited note, trying signals in precedence order:
+
+| method | signal | confidence | ABC items matched |
+|---|---|---|---:|
+| `oclc`  | OCLC number agrees | 1.00 | **0** |
+| `isbn`  | ISBN agrees (10/13 forms cross-checked) | 1.00 | **31** |
+| `title` | exact normalized title agrees | 0.95 | **162** |
+| `fuzzy` | rapidfuzz title sim, confirmed by author + year | blended | **11** |
+| `none`  | no confident match | 0.00 | **1,137** |
+
+**204 / 1,341 (15.2%) match a cited-note-bearing lib-3 record** — i.e. 204 ABC
+books have a citation-carrying twin. The rest have no twin in the lib-3 cited set.
+
+Two findings worth recording:
+
+- **OCLC does not bridge these two sources.** The issue proposed spiking OCLC as
+  a high-precision key, but in practice it contributes **0** matches. ABC records
+  were (re)cataloged at UNC and carry fresh billion-range OCLC numbers, while only
+  747 lib-3 cited records carry *any* OCLC (in `extra` as `OCLC: <n>`), and that
+  subset describes different works — the two indexing efforts picked different
+  WorldCat records for the same book. ISBN and title carry the load instead.
+- **The fuzzy tail is shallow and noisy.** Beyond exact title, most high-title-
+  similarity pairs are coincidences (`Metamorfosis` vs `Metamorphosis`, different
+  author and year). The matcher therefore only asserts a fuzzy match when the
+  title is very close **or** the author is (near-)identical *and* the year matches
+  exactly (catching edition/series variants like `South America, 1972.` vs
+  `Richard Long : South America, 1972.`). Of the 11 fuzzy matches, **10 are
+  flagged `review=yes`** (confidence < 0.93) for manual vetting.
+
+**Output** `Zotero/abc-master-crosswalk.csv` is a complete census — one row per ABC
+item, matched or not — with columns `abcItemKey, citedItemKey, method, confidence,
+review, abcTitle, citedTitle`. The `abcTitle`/`citedTitle` columns are for human
+review; the note join (below) treats `review=yes` rows as provisional and skips them.
+
+**Regenerate:**
+
+```sh
+make -C tools/fuzzy-match              # build the rapidfuzz venv (one time)
+make -C Zotero cited-records.csv       # lib-3 candidate set (note presence + libraryID=3)
+make -C Zotero abc-master-crosswalk.csv
+```
+
+Fuzzy matching needs [`rapidfuzz`](https://pypi.org/project/rapidfuzz/), installed
+into an isolated venv under `tools/fuzzy-match/venv/` (gitignored — only the
+scripts are committed). `cited-records.csv` is produced by
+`cited_records_export.sh`/`.sql`, selecting lib-3 items that have a child note
+containing `Cited` (**not** by collection). The crosswalk reads the committed
+`artists-books.csv` (title/ISBN/date) and `artists-books-marc.xml` (OCLC in `001`,
+authors in `100`/`700 $a`, joined via `999 $a`).
+
+### Notes export (#53) — surfacing "Cited:" notes on ABC pages
+
+The "Cited:" notes are exported so the construct query can read them and, via the
+crosswalk above, attach each lib-3 record's citations to the ABC page it matches.
+
+`notes_export.sh` (`= notes_export.sql | notes_export.py`) emits **`notes.xml`**,
+one `<note itemKey="…">` per lib-3 cited note (selection scope identical to
+`cited-records.csv`). Zotero note HTML is messy — entities (`&nbsp;`, `&rsquo;`),
+malformed nesting (`<em>…<em>.</em></em>`), and walls of inline-styled `<span>`s —
+so `notes_export.py` (stdlib `html.parser`, no venv) parses it leniently and
+re-emits only what the citation model needs, guaranteed well-formed:
+
+- one `<p>` per citation paragraph (the `Cited:` header and empty paragraphs
+  dropped; the ~4 notes using a CSL `<div class="csl-entry">` bibliography are
+  handled too);
+- `<em>` kept — the only reliable delimiter of the citing work's title (#42);
+- **bold canonicalized to `<strong>`** whether the source used `<strong>`/`<b>`
+  or an inline `font-weight: bold` span (`font-weight: normal` spans are cruft,
+  not bold) — `<strong>` page numbers are the image-page signal (#43);
+- each `<p>` also carries `text="…"` (flattened reference string) and `n="…"`
+  (per-item index), so the query can read the citation label and mint a stable
+  citation URI without reconstructing text from fragmented XML nodes.
+
+≈4,006 notes / ≈5,170 citation paragraphs. The page-number split (#43/#44) and
+reference-work reconciliation (#42) are left to those issues — the markup that
+feeds them is preserved here.
+
+**Wired into the build (#55 step 3).** `queries/construct/artists-books.rq` reads
+`abc-master-crosswalk.csv` and `notes.xml` as two extra SPARQL-Anything SERVICEs:
+for each ABC `?book` it follows `abcItemKey → citedItemKey` (skipping
+`review=yes`), reads that record's note paragraphs, and emits one
+`ab:Citation` per paragraph (`ab:cites ?book`; reference string as `rdfs:label`;
+URI `…/item/<abcKey>/citation/<citedKey>-<n>`). Result: **427 citations on 193
+ABC books** (of the 194 confident matches). Citations are additive — existing
+book/creator triples are unchanged.
+
+**Regenerate** (notes.xml and the crosswalk are committed inputs to the graph
+build, like `artists-books.csv`/`-marc.xml`, so rebuild the graph explicitly):
+
+```sh
+make -C Zotero notes.xml
+make -B graph/artists-books.ttl
+```
+
 ## SQLite database
 
 The database is the primary source of value. It contains structured
