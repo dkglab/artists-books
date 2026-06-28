@@ -81,9 +81,9 @@ WHERE {
   }
 
   OPTIONAL {
-    ?book bf:identifiedBy ?id .
-    ?id rdf:value ?oclc_number ;
-        bf:source wd:Q846596 .
+    ?book bf:identifiedBy ?oclcId .
+    ?oclcId rdf:value ?oclc_number ;
+            bf:source wd:Q846596 .
   }
 
   OPTIONAL {
