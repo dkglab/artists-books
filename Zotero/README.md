@@ -22,6 +22,61 @@ Consequences:
 
 This is also *why* the four big book collections look like "two non-overlapping pairs" (see [Main book collections](#main-book-collections)): each pair is simply one group library, and items in different libraries can never share an item key.
 
+### ABC ↔ cited-record crosswalk (#55)
+
+Because lib 1 (the ABC the website builds from) has no Cited notes and shares no
+item keys with lib 3, the notes can only reach ABC pages through a **bibliographic
+crosswalk**. `tools/fuzzy-match/match.py` reconciles each of the 1,341 ABC books
+to the lib-3 record(s) carrying a Cited note, trying signals in precedence order:
+
+| method | signal | confidence | ABC items matched |
+|---|---|---|---:|
+| `oclc`  | OCLC number agrees | 1.00 | **0** |
+| `isbn`  | ISBN agrees (10/13 forms cross-checked) | 1.00 | **31** |
+| `title` | exact normalized title agrees | 0.95 | **162** |
+| `fuzzy` | rapidfuzz title sim, confirmed by author + year | blended | **11** |
+| `none`  | no confident match | 0.00 | **1,137** |
+
+**204 / 1,341 (15.2%) match a cited-note-bearing lib-3 record** — i.e. 204 ABC
+books have a citation-carrying twin. The rest have no twin in the lib-3 cited set.
+
+Two findings worth recording:
+
+- **OCLC does not bridge these two sources.** The issue proposed spiking OCLC as
+  a high-precision key, but in practice it contributes **0** matches. ABC records
+  were (re)cataloged at UNC and carry fresh billion-range OCLC numbers, while only
+  747 lib-3 cited records carry *any* OCLC (in `extra` as `OCLC: <n>`), and that
+  subset describes different works — the two indexing efforts picked different
+  WorldCat records for the same book. ISBN and title carry the load instead.
+- **The fuzzy tail is shallow and noisy.** Beyond exact title, most high-title-
+  similarity pairs are coincidences (`Metamorfosis` vs `Metamorphosis`, different
+  author and year). The matcher therefore only asserts a fuzzy match when the
+  title is very close **or** the author is (near-)identical *and* the year matches
+  exactly (catching edition/series variants like `South America, 1972.` vs
+  `Richard Long : South America, 1972.`). Of the 11 fuzzy matches, **10 are
+  flagged `review=yes`** (confidence < 0.93) for manual vetting.
+
+**Output** `Zotero/abc-master-crosswalk.csv` is a complete census — one row per ABC
+item, matched or not — with columns `abcItemKey, citedItemKey, method, confidence,
+review, abcTitle, citedTitle`. The `abcTitle`/`citedTitle` columns are for human
+review; downstream joins (#53) should treat `review=yes` rows as provisional.
+
+**Regenerate:**
+
+```sh
+make -C tools/fuzzy-match              # build the rapidfuzz venv (one time)
+make -C Zotero cited-records.csv       # lib-3 candidate set (note presence + libraryID=3)
+make -C Zotero abc-master-crosswalk.csv
+```
+
+Fuzzy matching needs [`rapidfuzz`](https://pypi.org/project/rapidfuzz/), installed
+into an isolated venv under `tools/fuzzy-match/venv/` (gitignored — only the
+scripts are committed). `cited-records.csv` is produced by
+`cited_records_export.sh`/`.sql`, selecting lib-3 items that have a child note
+containing `Cited` (**not** by collection). The crosswalk reads the committed
+`artists-books.csv` (title/ISBN/date) and `artists-books-marc.xml` (OCLC in `001`,
+authors in `100`/`700 $a`, joined via `999 $a`).
+
 ## SQLite database
 
 The database is the primary source of value. It contains structured

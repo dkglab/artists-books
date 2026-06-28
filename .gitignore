@@ -18,6 +18,8 @@ tools/sparql-anything/*
 tools/fuseki/*
 !tools/fuseki/Makefile
 tools/snowman/snowman
+# fuzzy-match: commit the scripts, ignore the generated venv (issue #55)
+tools/fuzzy-match/venv/
 /graph/
 /.snowman/
 /site/
