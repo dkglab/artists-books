@@ -46,6 +46,7 @@ WHERE {
     ?book bf:contribution ?c2 .
     ?c2 a bf:Contribution ;
         bf:agent ?agent2 .
+    FILTER NOT EXISTS { ?c2 a bflc:PrimaryContribution }
     ?agent2 rdfs:label ?name2 .
     OPTIONAL { ?c2 bf:role/rdfs:label ?role2 . }
     BIND(
