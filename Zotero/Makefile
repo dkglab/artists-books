@@ -12,6 +12,11 @@ reference-resources.csv: items_export.sh items_export.sql
 cited-records.csv: cited_records_export.sh cited_records_export.sql
 	./cited_records_export.sh > $@
 
+# Zotero "Cited:" notes normalized to well-formed XHTML for SPARQL-Anything
+# (issue #53). The construct query joins these onto ABC pages via the crosswalk.
+notes.xml: notes_export.sh notes_export.sql notes_export.py
+	./notes_export.sh > $@
+
 # ABC <-> cited-record crosswalk (issue #55). Reconciles each ABC book to the
 # lib-3 record(s) describing the same work (OCLC -> ISBN -> title -> fuzzy), so
 # the Cited notes living on those records can be joined onto ABC pages. The

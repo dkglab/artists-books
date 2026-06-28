@@ -14,6 +14,7 @@ CONSTRUCT {
   ?book a ab:ArtistsBook ;
     rdfs:label ?title ;
     ab:itemKey ?item_key ;
+    ab:citation ?citation ;
     bf:contribution ?contribution ;
     bf:provisionActivity ?bookPublication ;
     bf:language ?language ;
@@ -58,6 +59,14 @@ CONSTRUCT {
     rdfs:label ?creator_name ;
     .
 
+  # A "Cited:" reference, surfaced on this book via the #55 crosswalk (#53).
+  # The reference string is kept as a label for now; splitting page numbers
+  # (#43/#44) and reconciling the reference work (#42) are downstream issues.
+  ?citation a ab:Citation ;
+    ab:cites ?book ;
+    rdfs:label ?citation_text ;
+    .
+
 }
 WHERE {
   SERVICE <x-sparql-anything:location=Zotero/artists-books.csv> {
@@ -91,6 +100,42 @@ WHERE {
     OPTIONAL { ?bookRow xyz:ISBN ?ISBN }
     BIND(fx:entity(ab:, "item/", ?item_key, "/identifier") AS ?isbnNode)
     BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?bookISBN)
+  }
+
+  # Cited-by notes (#53, and #55 step 3). The ABC book carries no notes of its
+  # own; the "Cited:" notes live on the lib-3 record it reconciles to. Join
+  # through the crosswalk (abcItemKey -> citedItemKey), then read that record's
+  # notes from notes.xml. OPTIONAL so books with no confident match still emit.
+  OPTIONAL {
+    SERVICE <x-sparql-anything:location=Zotero/abc-master-crosswalk.csv> {
+      fx:properties
+        fx:csv.headers "true" ;     # expose columns as xyz:abcItemKey, etc.
+        fx:csv.null-string  "" ;    # unmatched rows (empty citedItemKey) drop out
+        .
+      ?xwRow
+        xyz:abcItemKey   ?item_key ;
+        xyz:citedItemKey ?cited_key ;
+        .
+      # Exclude provisional (review=yes) fuzzy matches from the automatic join.
+      OPTIONAL { ?xwRow xyz:review ?review_flag }
+      FILTER(!BOUND(?review_flag) || ?review_flag != "yes")
+    }
+
+    # One ab:Citation per citation paragraph in that record's note(s). The
+    # flattened reference string is on the paragraph's @text; @n gives a stable
+    # per-item index for minting the citation URI.
+    SERVICE <x-sparql-anything:location=Zotero/notes.xml> {
+      ?note
+        xyz:itemKey ?cited_key ;
+        fx:anySlot  ?citationParagraph ;
+        .
+      ?citationParagraph
+        a xyz:p ;
+        xyz:n    ?citation_index ;
+        xyz:text ?citation_text ;
+        .
+    }
+    BIND(fx:entity(ab:, "item/", ?item_key, "/citation/", ?cited_key, "-", ?citation_index) AS ?citation)
   }
 
   # Creators come from the full MARC records (Zotero/artists-books-marc.xml),
