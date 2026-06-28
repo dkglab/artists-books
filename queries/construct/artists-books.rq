@@ -88,10 +88,9 @@ WHERE {
     OPTIONAL {
       ?bookRow xyz:language ?language
     }
-    OPTIONAL {
-      ?bookRow xyz:ISBN ?ISBN
-      BIND(fx:entity(ab:, "item/", ?item_key, "/identifier") AS ?bookISBN)
-    }
+    OPTIONAL { ?bookRow xyz:ISBN ?ISBN }
+    BIND(fx:entity(ab:, "item/", ?item_key, "/identifier") AS ?isbnNode)
+    BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?bookISBN)
   }
 
   # Creators come from the full MARC records (Zotero/artists-books-marc.xml),
