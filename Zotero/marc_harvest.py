@@ -2,12 +2,15 @@
 """Harvest full MARC records for the items in a Zotero CSV from Z39.50 servers.
 
 Servers are tried in order (see SERVERS); the first that yields a verified
-record for an item wins, so a book UNC does not hold can still be found at the
-Library of Congress.
+record for an item wins, so a book UNC does not hold can still be found at a
+fallback catalogue.
 
 Strategy (see Zotero/README.md):
-  * Servers     : UNC Innopac first (tcp:afton.lib.unc.edu/INNOPAC), then the
-                  Library of Congress (tcp:lx2.loc.gov/LCDB) as a fallback.
+  * Servers     : UNC Innopac first (tcp:afton.lib.unc.edu/INNOPAC), then public
+                  fallbacks for what UNC lacks -- the Library of Congress
+                  (tcp:lx2.loc.gov/LCDB), the K10plus union catalogue
+                  (tcp:sru.k10plus.de/opac-de-627), and Penn State
+                  (tcp:zcat.libraries.psu.edu/Unicorn).
   * Search keys : per item, tried in order, first hit wins. Identifier keys are
                   trusted; title keys are verified against the CSV before use.
                     - bib          UNC only,  @attr 1=12 b<digits>   (unique)
@@ -71,6 +74,16 @@ SERVERS = [
      "keytypes": ("bib", "isbn"),
      "batch": 50, "qsleep": 0.4, "bsleep": 2, "show_n": 1},
     {"name": "lc",  "conn": "tcp:lx2.loc.gov:210/LCDB",
+     "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
+    # K10plus: the GBV/SWB union catalogue (~200 German/Austrian libraries),
+    # strong on art and humanities and international holdings -- a good reach for
+    # the European livre d'artiste / Kunstlerbuch reference works. Honest UTF-8.
+    {"name": "k10plus", "conn": "tcp:sru.k10plus.de:210/opac-de-627",
+     "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
+    # Penn State (Sirsi Unicorn), a large US research library. Honest UTF-8.
+    {"name": "psu", "conn": "tcp:zcat.libraries.psu.edu:2200/Unicorn",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
 ]
