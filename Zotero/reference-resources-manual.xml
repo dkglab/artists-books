@@ -1,2 +1,209 @@
 <?xml version='1.0' encoding='utf-8'?>
-<collection xmlns="http://www.loc.gov/MARC21/slim"><record><leader>01123cam a2200301 a 4500</leader><controlfield tag="001">1958188</controlfield><controlfield tag="005">20240123012750.1</controlfield><controlfield tag="008">941125s1994    qeaa     bc   000 0 eng d</controlfield><datafield ind1="1" ind2=" " tag="019"><subfield code="a">11077831</subfield></datafield><datafield ind1=" " ind2=" " tag="020"><subfield code="a">0646204335</subfield></datafield><datafield ind1=" " ind2=" " tag="035"><subfield code="9">(AuCNLDY)2208842</subfield></datafield><datafield ind1=" " ind2=" " tag="035"><subfield code="a">1958188</subfield></datafield><datafield ind1=" " ind2=" " tag="037"><subfield code="b">Available from Numero Uno publications, 1 Fernberg Rd, Milton QLD 4064</subfield></datafield><datafield ind1=" " ind2=" " tag="040"><subfield code="a">ANL</subfield><subfield code="b">eng</subfield><subfield code="c">ANL</subfield><subfield code="d">NSL:M</subfield></datafield><datafield ind1=" " ind2=" " tag="043"><subfield code="a">u-at---</subfield></datafield><datafield ind1=" " ind2="4" tag="050"><subfield code="a">N7433.35.A8</subfield><subfield code="b">A77 1994</subfield></datafield><datafield ind1="0" ind2="4" tag="082"><subfield code="a">709.94074943</subfield><subfield code="2">20</subfield></datafield><datafield ind1="0" ind2="0" tag="245"><subfield code="a">Artists' books fair '94 :</subfield><subfield code="b">State Library of Queensland, 24 and 25 September 1994.</subfield></datafield><datafield ind1="3" ind2=" " tag="246"><subfield code="a">Beware books by artists</subfield></datafield><datafield ind1=" " ind2=" " tag="260"><subfield code="a">Milton, Qld. :</subfield><subfield code="b">Numero Uno,</subfield><subfield code="c">c1994.</subfield></datafield><datafield ind1=" " ind2=" " tag="300"><subfield code="a">75 p. :</subfield><subfield code="b">ill. ;</subfield><subfield code="c">21 cm.</subfield></datafield><datafield ind1=" " ind2=" " tag="500"><subfield code="a">"Beware books by artists"--Cover title.</subfield></datafield><datafield ind1=" " ind2=" " tag="500"><subfield code="a">Printed in edition of 250 numbered copies.</subfield></datafield><datafield ind1=" " ind2="0" tag="650"><subfield code="a">Artists' books</subfield><subfield code="x">Exhibitions.</subfield></datafield><datafield ind1=" " ind2="0" tag="650"><subfield code="a">Artists' books</subfield><subfield code="z">Australia</subfield><subfield code="x">Exhibitions.</subfield></datafield><datafield ind1="2" ind2=" " tag="710"><subfield code="a">State Library of Queensland.</subfield><subfield code="0">2379</subfield><subfield code="9">44cb92ec-eced-5a00-a6fe-03da07d5bc0b</subfield></datafield><datafield ind1="0" ind2=" " tag="740"><subfield code="a">Beware books by artists.</subfield></datafield><datafield tag="999" ind1=" " ind2=" "><subfield code="a">NGYMWIFZ</subfield><subfield code="b">0646204335</subfield><subfield code="c">manual</subfield><subfield code="d">nla</subfield></datafield></record><record><leader>00000nam a2200000 a 4500</leader><controlfield tag="008">      s2007    fr                  fre d</controlfield><datafield tag="020" ind1=" " ind2=" "><subfield code="a">9782901816300</subfield></datafield><datafield tag="041" ind1="0" ind2=" "><subfield code="a">fre</subfield></datafield><datafield tag="245" ind1="0" ind2="0"><subfield code="a">Global books :</subfield><subfield code="b">les livres d'artistes de Gervais Jassaud /</subfield><subfield code="c">[exposition organisée par la ville de Reims, direction de la culture, présentée à la bibliothèque Carnegie et à la Médiathèque Jean Falala de Reims, ainsi qu'à la Comédie, centre dramatique national, du 11 décembre 2007 au 3 février 2008].</subfield></datafield><datafield tag="260" ind1=" " ind2=" "><subfield code="a">Reims :</subfield><subfield code="b">Ville de Reims,</subfield><subfield code="c">2007.</subfield></datafield><datafield tag="300" ind1=" " ind2=" "><subfield code="a">1 volume (143 pages) :</subfield><subfield code="b">illustrations ;</subfield><subfield code="e">1 DVD.</subfield></datafield><datafield tag="500" ind1=" " ind2=" "><subfield code="a">Record synthesized from Bibliothèque municipale de Lille catalogue data (Orphée/Syracuse); not a verbatim catalogue record.</subfield></datafield><datafield tag="600" ind1="1" ind2="4"><subfield code="a">Jassaud, Gervais,</subfield><subfield code="d">1944-</subfield><subfield code="x">Expositions.</subfield></datafield><datafield tag="710" ind1="2" ind2=" "><subfield code="a">Ville de Reims.</subfield></datafield><datafield tag="999" ind1=" " ind2=" "><subfield code="a">JQYAM7ED</subfield><subfield code="b">9782901816300</subfield><subfield code="c">manual</subfield><subfield code="d">bm-lille</subfield></datafield></record></collection>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record><leader>01123cam a2200301 a 4500</leader><controlfield tag="001">1958188</controlfield><controlfield tag="005">20240123012750.1</controlfield><controlfield tag="008">941125s1994    qeaa     bc   000 0 eng d</controlfield><datafield ind1="1" ind2=" " tag="019"><subfield code="a">11077831</subfield></datafield><datafield ind1=" " ind2=" " tag="020"><subfield code="a">0646204335</subfield></datafield><datafield ind1=" " ind2=" " tag="035"><subfield code="9">(AuCNLDY)2208842</subfield></datafield><datafield ind1=" " ind2=" " tag="035"><subfield code="a">1958188</subfield></datafield><datafield ind1=" " ind2=" " tag="037"><subfield code="b">Available from Numero Uno publications, 1 Fernberg Rd, Milton QLD 4064</subfield></datafield><datafield ind1=" " ind2=" " tag="040"><subfield code="a">ANL</subfield><subfield code="b">eng</subfield><subfield code="c">ANL</subfield><subfield code="d">NSL:M</subfield></datafield><datafield ind1=" " ind2=" " tag="043"><subfield code="a">u-at---</subfield></datafield><datafield ind1=" " ind2="4" tag="050"><subfield code="a">N7433.35.A8</subfield><subfield code="b">A77 1994</subfield></datafield><datafield ind1="0" ind2="4" tag="082"><subfield code="a">709.94074943</subfield><subfield code="2">20</subfield></datafield><datafield ind1="0" ind2="0" tag="245"><subfield code="a">Artists' books fair '94 :</subfield><subfield code="b">State Library of Queensland, 24 and 25 September 1994.</subfield></datafield><datafield ind1="3" ind2=" " tag="246"><subfield code="a">Beware books by artists</subfield></datafield><datafield ind1=" " ind2=" " tag="260"><subfield code="a">Milton, Qld. :</subfield><subfield code="b">Numero Uno,</subfield><subfield code="c">c1994.</subfield></datafield><datafield ind1=" " ind2=" " tag="300"><subfield code="a">75 p. :</subfield><subfield code="b">ill. ;</subfield><subfield code="c">21 cm.</subfield></datafield><datafield ind1=" " ind2=" " tag="500"><subfield code="a">"Beware books by artists"--Cover title.</subfield></datafield><datafield ind1=" " ind2=" " tag="500"><subfield code="a">Printed in edition of 250 numbered copies.</subfield></datafield><datafield ind1=" " ind2="0" tag="650"><subfield code="a">Artists' books</subfield><subfield code="x">Exhibitions.</subfield></datafield><datafield ind1=" " ind2="0" tag="650"><subfield code="a">Artists' books</subfield><subfield code="z">Australia</subfield><subfield code="x">Exhibitions.</subfield></datafield><datafield ind1="2" ind2=" " tag="710"><subfield code="a">State Library of Queensland.</subfield><subfield code="0">2379</subfield><subfield code="9">44cb92ec-eced-5a00-a6fe-03da07d5bc0b</subfield></datafield><datafield ind1="0" ind2=" " tag="740"><subfield code="a">Beware books by artists.</subfield></datafield><datafield tag="999" ind1=" " ind2=" "><subfield code="a">NGYMWIFZ</subfield><subfield code="b">0646204335</subfield><subfield code="c">manual</subfield><subfield code="d">nla</subfield></datafield></record><record><leader>00000nam a2200000 a 4500</leader><controlfield tag="008">      s2007    fr                  fre d</controlfield><datafield tag="020" ind1=" " ind2=" "><subfield code="a">9782901816300</subfield></datafield><datafield tag="041" ind1="0" ind2=" "><subfield code="a">fre</subfield></datafield><datafield tag="245" ind1="0" ind2="0"><subfield code="a">Global books :</subfield><subfield code="b">les livres d'artistes de Gervais Jassaud /</subfield><subfield code="c">[exposition organisée par la ville de Reims, direction de la culture, présentée à la bibliothèque Carnegie et à la Médiathèque Jean Falala de Reims, ainsi qu'à la Comédie, centre dramatique national, du 11 décembre 2007 au 3 février 2008].</subfield></datafield><datafield tag="260" ind1=" " ind2=" "><subfield code="a">Reims :</subfield><subfield code="b">Ville de Reims,</subfield><subfield code="c">2007.</subfield></datafield><datafield tag="300" ind1=" " ind2=" "><subfield code="a">1 volume (143 pages) :</subfield><subfield code="b">illustrations ;</subfield><subfield code="e">1 DVD.</subfield></datafield><datafield tag="500" ind1=" " ind2=" "><subfield code="a">Record synthesized from Bibliothèque municipale de Lille catalogue data (Orphée/Syracuse); not a verbatim catalogue record.</subfield></datafield><datafield tag="600" ind1="1" ind2="4"><subfield code="a">Jassaud, Gervais,</subfield><subfield code="d">1944-</subfield><subfield code="x">Expositions.</subfield></datafield><datafield tag="710" ind1="2" ind2=" "><subfield code="a">Ville de Reims.</subfield></datafield><datafield tag="999" ind1=" " ind2=" "><subfield code="a">JQYAM7ED</subfield><subfield code="b">9782901816300</subfield><subfield code="c">manual</subfield><subfield code="d">bm-lille</subfield></datafield></record><record>
+          <leader>02642cam a2200541Ii 4500</leader>
+          <controlfield tag="001">991002396609708431</controlfield>
+          <controlfield tag="005">20260528131113.0</controlfield>
+          <controlfield tag="008">781121s1975    enka     bc   001 0 eng d</controlfield>
+          <datafield ind1=" " ind2=" " tag="035">
+            <subfield code="a">(OCoLC)4390653</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="040">
+            <subfield code="a">CSJ</subfield>
+            <subfield code="b">eng</subfield>
+            <subfield code="c">CSJ</subfield>
+            <subfield code="d">OCL</subfield>
+            <subfield code="d">OCLCQ</subfield>
+            <subfield code="d">OCLCF</subfield>
+            <subfield code="d">EYT</subfield>
+            <subfield code="d">OCLCO</subfield>
+            <subfield code="d">OCLCQ</subfield>
+            <subfield code="d">OCLCA</subfield>
+            <subfield code="d">UKOBU</subfield>
+            <subfield code="d">AU@</subfield>
+            <subfield code="d">OCL</subfield>
+          </datafield>
+          <datafield ind1="0" ind2=" " tag="041">
+            <subfield code="a">eng</subfield>
+            <subfield code="a">ger</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="043">
+            <subfield code="a">e-uk-en</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="4" tag="050">
+            <subfield code="a">N8217.B6</subfield>
+            <subfield code="b">A7x</subfield>
+          </datafield>
+          <datafield ind1="0" ind2="4" tag="082">
+            <subfield code="a">655.4</subfield>
+            <subfield code="b">B777a</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="090">
+            <subfield code="a">NF195 .L65 1975</subfield>
+          </datafield>
+          <datafield ind1="0" ind2="0" tag="245">
+            <subfield code="a">"Artists' bookworks" =</subfield>
+            <subfield code="b">"Kunstwerke in Buchform" /</subfield>
+            <subfield code="c">[arranged by Martin Attwood and many others]</subfield>
+          </datafield>
+          <datafield ind1="1" ind2="1" tag="246">
+            <subfield code="a">Kunstwerke in Buchform</subfield>
+          </datafield>
+          <datafield ind1="1" ind2="4" tag="246">
+            <subfield code="a">Artists' bookworks : a British Council exhibition</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="1" tag="264">
+            <subfield code="a">London :</subfield>
+            <subfield code="b">British Council,</subfield>
+            <subfield code="c">[1975]</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="4" tag="264">
+            <subfield code="c">©1975</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="300">
+            <subfield code="a">132 pages :</subfield>
+            <subfield code="b">illustrations (black and white) ;</subfield>
+            <subfield code="c">21 cm</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="336">
+            <subfield code="a">text</subfield>
+            <subfield code="b">txt</subfield>
+            <subfield code="2">rdacontent</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="336">
+            <subfield code="a">still image</subfield>
+            <subfield code="b">sti</subfield>
+            <subfield code="2">rdacontent</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="337">
+            <subfield code="a">unmediated</subfield>
+            <subfield code="b">n</subfield>
+            <subfield code="2">rdamedia</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="338">
+            <subfield code="a">volume</subfield>
+            <subfield code="b">nc</subfield>
+            <subfield code="2">rdacarrier</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="500">
+            <subfield code="a">Catalogue of "a traveling exhibition of recent books, booklets, panphlets, catalogues, periodicals, anthologies and magazines, arranged for the Fine Arts Department of the British Council, London" - page 4</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="500">
+            <subfield code="a">"Artists' bookworks : a British Council exhibition" - cover title</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="546">
+            <subfield code="a">Parallel text in English and German</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="504">
+            <subfield code="a">Includes bibliographical references (pages 126-131) and index</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="585">
+            <subfield code="a">Catalogue of a touring exhibition arranged by the Fine Arts Department of the British Council, 1975</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="0" tag="650">
+            <subfield code="a">Artists' books</subfield>
+            <subfield code="v">Exhibitions.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2007101460</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="0" tag="650">
+            <subfield code="a">Books in art</subfield>
+            <subfield code="v">Exhibitions</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="0" tag="650">
+            <subfield code="a">Books</subfield>
+            <subfield code="x">History</subfield>
+            <subfield code="v">Exhibitions.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh85013834</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="0" tag="651">
+            <subfield code="a">London (England)</subfield>
+            <subfield code="v">Exhibitions</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="7" tag="650">
+            <subfield code="a">Artists' books.</subfield>
+            <subfield code="2">fast</subfield>
+            <subfield code="0">(OCoLC)fst00817660</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="7" tag="650">
+            <subfield code="a">Books.</subfield>
+            <subfield code="2">fast</subfield>
+            <subfield code="0">(OCoLC)fst00836401</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="7" tag="650">
+            <subfield code="a">Books in art.</subfield>
+            <subfield code="2">fast</subfield>
+            <subfield code="0">(OCoLC)fst00836479</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="7" tag="651">
+            <subfield code="a">England</subfield>
+            <subfield code="z">London.</subfield>
+            <subfield code="2">fast</subfield>
+            <subfield code="0">(OCoLC)fst01204271</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="653">
+            <subfield code="a">Artists' books</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="7" tag="655">
+            <subfield code="a">Exhibition catalogs.</subfield>
+            <subfield code="2">fast</subfield>
+            <subfield code="0">(OCoLC)fst01424028</subfield>
+          </datafield>
+          <datafield ind1=" " ind2="7" tag="655">
+            <subfield code="a">History.</subfield>
+            <subfield code="2">fast</subfield>
+            <subfield code="0">(OCoLC)fst01411628</subfield>
+          </datafield>
+          <datafield ind1="1" ind2=" " tag="700">
+            <subfield code="a">Attwood, Martin,</subfield>
+            <subfield code="e">organizer.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n86849000</subfield>
+          </datafield>
+          <datafield ind1="2" ind2=" " tag="710">
+            <subfield code="a">British Council.</subfield>
+            <subfield code="b">Fine Arts Department,</subfield>
+            <subfield code="e">host institution.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n86849001</subfield>
+          </datafield>
+          <datafield ind1="0" ind2="8" tag="776">
+            <subfield code="i">Online version:</subfield>
+            <subfield code="t">"Artists' bookworks"</subfield>
+            <subfield code="d">London : British Council, ©1975</subfield>
+            <subfield code="w">(OCoLC)951442066</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="902">
+            <subfield code="a">Processed by Backstage 2022-02</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="902">
+            <subfield code="a">Processed by Backstage 2022-08</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="907">
+            <subfield code="a">.b12591671</subfield>
+            <subfield code="b">12-23-23</subfield>
+            <subfield code="c">12-21-21</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="998">
+            <subfield code="a">stbib</subfield>
+            <subfield code="b">12-29-21</subfield>
+            <subfield code="c">m</subfield>
+            <subfield code="d">-</subfield>
+            <subfield code="e">-</subfield>
+            <subfield code="f">eng</subfield>
+            <subfield code="g">enk</subfield>
+            <subfield code="h">0</subfield>
+          </datafield>
+          <datafield ind1=" " ind2=" " tag="AVA">
+            <subfield code="0">991002396609708431</subfield>
+            <subfield code="8">2214156270008431</subfield>
+            <subfield code="a">01CLARKART_INST</subfield>
+            <subfield code="b">MAIN</subfield>
+            <subfield code="c">Stacks</subfield>
+            <subfield code="d">NF195 .L65 1975</subfield>
+            <subfield code="e">available</subfield>
+            <subfield code="f">1</subfield>
+            <subfield code="g">0</subfield>
+            <subfield code="j">STACKS</subfield>
+            <subfield code="k">0</subfield>
+            <subfield code="p">1</subfield>
+            <subfield code="q">Clark</subfield>
+          </datafield>
+        <datafield tag="999" ind1=" " ind2=" "><subfield code="a">F8ESBPVN</subfield><subfield code="b">991002396609708431</subfield><subfield code="c">mms</subfield><subfield code="d">clark</subfield></datafield></record>
+      </collection>
