@@ -13,7 +13,9 @@ clean: stop
 start: fuseki-server
 	if [ ! -e run/fuseki.pid ]; then \
 	mkdir -p run; \
-	./fuseki-server --quiet --file=../../graph/artists-books.ttl /artists-books \
+	./fuseki-server --quiet \
+	--file=../../graph/artists-books.ttl \
+	--file=../../graph/reference-resources.ttl /artists-books \
 	2> run/fuseki.log \
 	& echo $$! \
 	> run/fuseki.pid; \
