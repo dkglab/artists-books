@@ -34,6 +34,13 @@ SERVER      = "tcp:afton.lib.unc.edu:210/INNOPAC"
 HERE        = os.path.dirname(os.path.abspath(__file__))
 MARC_DIR    = os.path.join(HERE, "marc")  # gitignored harvest state, per-CSV subdir
 
+# YAZ is built under tools/yaz-client/ (see tools/yaz-client/Makefile), not
+# installed system-wide. Resolve the binaries from there so the harvest uses our
+# self-contained build rather than whatever happens to be on $PATH.
+YAZ_BIN     = os.path.normpath(os.path.join(HERE, os.pardir, "tools", "yaz-client", "bin"))
+YAZ_CLIENT  = os.path.join(YAZ_BIN, "yaz-client")
+YAZ_MARCDUMP = os.path.join(YAZ_BIN, "yaz-marcdump")
+
 BATCH_SIZE  = 50      # queries per reused connection
 QUERY_SLEEP = 0.4     # seconds between queries within a connection
 BATCH_SLEEP = 2       # seconds between batches
@@ -96,7 +103,7 @@ def run_batch(cfg, batch):
         cmds.append(f"sleep {QUERY_SLEEP}")
     cmds.append("quit")
     proc = subprocess.run(
-        ["yaz-client", "-m", tmp, SERVER],
+        [YAZ_CLIENT, "-m", tmp, SERVER],
         input="\n".join(cmds) + "\n",
         capture_output=True, text=True, timeout=60 + len(batch) * 10,
     )
@@ -172,7 +179,7 @@ def combine(cfg):
         return
     raw = subprocess.run(
         # No transcode (bytes are already UTF-8); just mark leader/09 'a' (97).
-        ["yaz-marcdump", "-l", "9=97", "-i", "marc", "-o", "marcxml", cfg["combined"]],
+        [YAZ_MARCDUMP, "-l", "9=97", "-i", "marc", "-o", "marcxml", cfg["combined"]],
         capture_output=True, text=True,
     ).stdout
 

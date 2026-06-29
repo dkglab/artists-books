@@ -57,7 +57,15 @@ $(FUZZY)/venv/bin/python:
 # Harvest full MARC records from UNC's Z39.50 server for the items in a CSV.
 # Resumable harvest state lives under marc/<csv-stem>/ (gitignored); only the
 # committed <stem>-marc.xml is the build product. Requires the YAZ toolkit
-# (yaz-client, yaz-marcdump). Hits an external server, so it only reruns when
+# (yaz-client, yaz-marcdump), built on demand under tools/yaz-client/. It is an
+# order-only prerequisite (| ...) so rebuilding the toolkit does not by itself
+# trigger a re-harvest -- that hits an external server, so it only reruns when
 # the source CSV changes.
-%-marc.xml: %.csv marc_harvest.py
+YAZ := ../tools/yaz-client
+%-marc.xml: %.csv marc_harvest.py | $(YAZ)/bin/yaz-client
 	python3 marc_harvest.py --csv $< --out $@
+
+# Build the YAZ toolkit on demand (order-only prerequisite above). The same
+# make invocation produces yaz-marcdump alongside yaz-client.
+$(YAZ)/bin/yaz-client:
+	$(MAKE) -C $(YAZ)

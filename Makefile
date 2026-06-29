@@ -14,6 +14,7 @@ superclean: clean
 	@$(MAKE) -s -C tools/rdflib clean
 	@$(MAKE) -s -C tools/fuseki clean
 	@$(MAKE) -s -C tools/snowman clean
+	@$(MAKE) -s -C tools/yaz-client clean
 
 tools/jena/bin/riot \
 tools/rdflib/bin/rdf2dot \
