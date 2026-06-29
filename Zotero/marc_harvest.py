@@ -121,16 +121,20 @@ TITLE_WEAK      = 0.60
 def make_cfg(csv_path, out_xml):
     """Resolve all paths for one CSV; harvest state lives in marc/<csv-stem>/."""
     csv_path = os.path.abspath(csv_path)
+    out_xml = os.path.abspath(out_xml)
     base = os.path.splitext(os.path.basename(csv_path))[0]
     state = os.path.join(MARC_DIR, base)
     return {
         "csv": csv_path,
-        "out": os.path.abspath(out_xml),
+        "out": out_xml,
         "state": state,
         "combined": os.path.join(state, "combined.marc"),  # binary MARC, append-only
         "manifest": os.path.join(state, "manifest.tsv"),   # itemKey server keytype value status
         "missing": os.path.join(state, "missing.tsv"),     # itemKey server value reason
         "review": os.path.join(state, "review.tsv"),       # itemKey server keytype value reason
+        # Committed records supplied by hand for items no reachable catalogue
+        # serves (each already carries its 999 $a itemKey); merged by combine().
+        "manual": os.path.join(os.path.dirname(out_xml), base + "-manual.xml"),
     }
 
 
@@ -612,7 +616,9 @@ def combine(cfg):
               f"refusing to stamp itemKeys", file=sys.stderr)
         sys.exit(3)
 
+    harvested_keys = set()
     for rec, (key, server, keytype, value) in zip(records, ok_rows):
+        harvested_keys.add(key)
         df = ET.SubElement(rec, f"{{{MARC_NS}}}datafield")
         df.set("tag", "999"); df.set("ind1", " "); df.set("ind2", " ")
         # $a join key (itemKey), $b resolving value, $c key type, $d source server.
@@ -620,8 +626,22 @@ def combine(cfg):
             sf = ET.SubElement(df, f"{{{MARC_NS}}}subfield")
             sf.set("code", code); sf.text = val
 
+    # Merge hand-supplied records (already carrying their 999 $a) for items no
+    # reachable catalogue serves; skip any itemKey a harvest also resolved.
+    n_manual = 0
+    if os.path.exists(cfg["manual"]):
+        for mrec in ET.parse(cfg["manual"]).getroot().findall(f"{{{MARC_NS}}}record"):
+            key = next((sf.text for df in mrec.findall(f"{{{MARC_NS}}}datafield")
+                        if df.get("tag") == "999"
+                        for sf in df.findall(f"{{{MARC_NS}}}subfield")
+                        if sf.get("code") == "a"), None)
+            if key and key not in harvested_keys:
+                root.append(mrec)
+                n_manual += 1
+
     ET.ElementTree(root).write(cfg["out"], encoding="unicode", xml_declaration=True)
-    print(f"wrote {cfg['out']}: {len(records)} records (itemKey in 999 $a)")
+    print(f"wrote {cfg['out']}: {len(records)} harvested + {n_manual} manual "
+          f"= {len(records) + n_manual} records (itemKey in 999 $a)")
 
 
 if __name__ == "__main__":
