@@ -7,10 +7,10 @@ fallback catalogue.
 
 Strategy (see Zotero/README.md):
   * Servers     : UNC Innopac first (tcp:afton.lib.unc.edu/INNOPAC), then public
-                  fallbacks for what UNC lacks -- the Library of Congress
-                  (tcp:lx2.loc.gov/LCDB), the K10plus union catalogue
-                  (tcp:sru.k10plus.de/opac-de-627), and Penn State
-                  (tcp:zcat.libraries.psu.edu/Unicorn).
+                  fallbacks for what UNC lacks -- the Library of Congress, the
+                  K10plus (German) academic union catalogue, LIBRIS (Sweden's
+                  national catalogue), and Penn State. See SERVERS for connection
+                  strings; all return MARC21 in UTF-8.
   * Search keys : per item, tried in order, first hit wins. Identifier keys are
                   trusted; title keys are verified against the CSV before use.
                     - bib          UNC only,  @attr 1=12 b<digits>   (unique)
@@ -84,6 +84,14 @@ SERVERS = [
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
     # Penn State (Sirsi Unicorn), a large US research library. Honest UTF-8.
     {"name": "psu", "conn": "tcp:zcat.libraries.psu.edu:2200/Unicorn",
+     "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
+    # NOTE: SUDOC (carmin.sudoc.abes.fr/ABES-Z39-PUBLIC) is reachable and would
+    # reach the French references, but its public endpoint emits records in a
+    # non-standard encoding that mislabels itself UTF-8 and that yaz cannot
+    # cleanly transcode (accented text is mangled or dropped), so it is omitted.
+    # LIBRIS, Sweden's national union catalogue. MARC21 in UTF-8.
+    {"name": "libris", "conn": "tcp:z3950.libris.kb.se:210/libris",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
 ]
@@ -262,18 +270,22 @@ def run_batch(cfg, conn, batch, qsleep, show_n):
     cmds.append("quit")
     proc = subprocess.run(
         [YAZ_CLIENT, "-m", tmp, conn],
-        input="\n".join(cmds) + "\n",
-        capture_output=True, text=True, timeout=60 + len(probes) * 10,
+        input=("\n".join(cmds) + "\n").encode(),
+        capture_output=True, timeout=60 + len(probes) * 10,
     )
+    # yaz-client echoes retrieved records to stdout too, and some targets (e.g.
+    # SUDOC) emit non-UTF-8 bytes there, so decode leniently -- we only read the
+    # ASCII "Number of hits" lines; the actual records come from the -m file.
+    stdout = proc.stdout.decode("utf-8", "replace")
 
-    counts = [int(n) for n in re.findall(r"Number of hits:\s*(\d+)", proc.stdout)]
+    counts = [int(n) for n in re.findall(r"Number of hits:\s*(\d+)", stdout)]
     if len(counts) != len(probes):
-        return None, proc.stdout  # parsing slipped -- let caller retry per item
+        return None, stdout  # parsing slipped -- let caller retry per item
 
     records = split_records(open(tmp, "rb").read() if os.path.exists(tmp) else b"")
     # Each `show 1+show_n` returns min(show_n, count) records, in probe order.
     if len(records) != sum(min(show_n, c) for c in counts):
-        return None, proc.stdout  # show/hit misalignment -- retry per item
+        return None, stdout  # show/hit misalignment -- retry per item
 
     rec_iter = iter(records)
     probe_recs = [[next(rec_iter) for _ in range(min(show_n, c))] for c in counts]
@@ -286,7 +298,7 @@ def run_batch(cfg, conn, batch, qsleep, show_n):
             probelist.append((keytype, value, counts[i], probe_recs[i]))
             i += 1
         results.append((key, probelist))
-    return results, proc.stdout
+    return results, stdout
 
 
 def select_record(cfg, key, probelist, rowmap):
@@ -355,8 +367,13 @@ def decode_record(cfg, record_bytes):
 
 
 def verify_title(cfg, record_bytes, row):
-    """True if a title-keyed record plausibly describes the CSV item."""
-    rtitle, rauthors, ryear = decode_record(cfg, record_bytes)
+    """True if a title-keyed record plausibly describes the CSV item.
+
+    A strong title match is taken on its own; in the weak band the publication
+    year must corroborate. (Author surname is deliberately not used as a
+    corroborator: corporate "surnames" like "Press" match unrelated records --
+    e.g. "The artist publisher" wrongly matching "The artist in Edo".)"""
+    rtitle, _rauthors, ryear = decode_record(cfg, record_bytes)
     ctitle = norm(row.get("title") or "")
     if not rtitle or not ctitle:
         return False
@@ -365,9 +382,8 @@ def verify_title(cfg, record_bytes, row):
         return True
     if ratio < TITLE_WEAK:
         return False
-    surname = norm(author_surname(row.get("creators") or ""))
     cyear = year_of(row.get("date") or "")
-    return bool((surname and surname in rauthors) or (cyear and ryear == cyear))
+    return bool(cyear and ryear == cyear)
 
 
 def harvest(cfg, limit=None):
