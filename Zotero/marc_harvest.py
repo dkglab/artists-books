@@ -9,8 +9,10 @@ Strategy (see Zotero/README.md):
   * Servers     : UNC Innopac first (tcp:afton.lib.unc.edu/INNOPAC), then public
                   fallbacks for what UNC lacks -- the Library of Congress, the
                   K10plus (German) academic union catalogue, LIBRIS (Sweden's
-                  national catalogue), and Penn State. See SERVERS for connection
-                  strings; all return MARC21 in UTF-8.
+                  national catalogue), Penn State, and the Getty Research
+                  Institute. Most are Z39.50; Getty is queried over SRU/CQL (see
+                  `protocol`). See SERVERS for connection strings; all yield
+                  MARC21 in UTF-8.
   * Search keys : per item, tried in order, first hit wins. Identifier keys are
                   trusted; title keys are verified against the CSV before use.
                     - bib          UNC only,  @attr 1=12 b<digits>   (unique)
@@ -49,6 +51,8 @@ import subprocess
 import sys
 import time
 import unicodedata
+import urllib.parse
+import urllib.request
 import xml.etree.ElementTree as ET
 
 HERE        = os.path.dirname(os.path.abspath(__file__))
@@ -67,8 +71,11 @@ MARC_NS     = "http://www.loc.gov/MARC21/slim"
 # server, in precedence order (first hit wins). The throttle overrides keep LC --
 # a shared national service -- gentler than UNC. Both targets serve UTF-8.
 # show_n is how many candidate records to retrieve per query: 1 is enough for
-# the unique identifier keys at UNC; LC also runs title searches, where the right
-# record may not be the first hit, so it pulls several to verify against.
+# the unique identifier keys at UNC; title searches pull several to verify
+# against, since the right record may not be the first hit. `protocol` defaults
+# to "z3950" (Bib-1 prefix queries via yaz-client); "sru" servers are queried
+# over HTTP/CQL and return MARCXML, which is converted to binary on ingest so
+# the rest of the pipeline is identical.
 SERVERS = [
     {"name": "unc", "conn": "tcp:afton.lib.unc.edu:210/INNOPAC",
      "keytypes": ("bib", "isbn"),
@@ -94,6 +101,12 @@ SERVERS = [
     {"name": "libris", "conn": "tcp:z3950.libris.kb.se:210/libris",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
+    # Getty Research Institute (Ex Libris Alma), a premier art library, queried
+    # over SRU/CQL. Holds much of the artist's-book exhibition/dealer ephemera
+    # the other catalogues lack. Returns MARCXML in UTF-8.
+    {"name": "getty", "conn": "https://na01.alma.exlibrisgroup.com/view/sru/01GRI_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
 ]
 
 # Identifier keys are trusted on a hit; title keys must be verified. Accept a
@@ -159,19 +172,23 @@ def year_of(date):
 
 
 def item_keys(row):
-    """Available search keys for one CSV row: keytype -> [(value, query), ...].
+    """Available search keys for one CSV row: keytype -> [(value, querymap), ...].
 
-    value is what gets stamped into 999 $b; query is the YAZ prefix expression.
+    value is what gets stamped into 999 $b; querymap maps a server protocol
+    ("z3950" Bib-1 prefix, "sru" CQL) to the query expression for that key. A
+    keytype with no entry for a server's protocol is simply skipped there (e.g.
+    bib is UNC-only). For SRU the title query is title-only and leans on
+    verify_title; CQL phrase-on-author is unreliable across Alma tenants.
     """
     keys = {}
     m = re.search(r"/UNCb(\d+)", row.get("url") or "")
     if m:
-        keys["bib"] = [("b" + m.group(1), f"@attr 1=12 b{m.group(1)}")]
-    isbns = clean_isbns(row.get("ISBN", ""))
-    if isbns:
-        keys["isbn"] = [(i, f"@attr 1=7 {i}") for i in isbns]
-    # One title probe per item: prefer title+author (far more precise -- in
-    # testing it returns a single exact hit where title alone returns dozens),
+        keys["bib"] = [("b" + m.group(1), {"z3950": f"@attr 1=12 b{m.group(1)}"})]
+    for i in clean_isbns(row.get("ISBN", "")):
+        keys.setdefault("isbn", []).append(
+            (i, {"z3950": f"@attr 1=7 {i}", "sru": f"alma.isbn={i}"}))
+    # One title probe per item: prefer title+author (far more precise on Z39.50 --
+    # in testing it returns a single exact hit where title alone returns dozens),
     # falling back to title alone only when the item has no author.
     title = main_title(row.get("title") or "")
     if title:
@@ -179,9 +196,12 @@ def item_keys(row):
         if surname:
             keys["title-author"] = [(
                 f"{surname} / {title}",
-                f'@and @attr 1=4 @attr 4=1 "{title}" @attr 1=1003 "{surname}"')]
+                {"z3950": f'@and @attr 1=4 @attr 4=1 "{title}" @attr 1=1003 "{surname}"',
+                 "sru": f'alma.title="{title}"'})]
         else:
-            keys["title"] = [(title, f'@attr 1=4 @attr 4=1 "{title}"')]
+            keys["title"] = [(title,
+                {"z3950": f'@attr 1=4 @attr 4=1 "{title}"',
+                 "sru": f'alma.title="{title}"'})]
     return keys
 
 
@@ -192,14 +212,18 @@ def read_rows(cfg):
 
 def server_targets(rows, server):
     """[(itemKey, [(keytype, value, query), ...])] for rows with >=1 key this
-    server can use, in the server's keytype precedence order."""
+    server can use, in the server's keytype precedence order. Queries are
+    selected for the server's protocol; keys with no query for it are skipped."""
+    proto = server.get("protocol", "z3950")
     targets = []
     for row in rows:
         keys = item_keys(row)
         probes = []
         for kt in server["keytypes"]:
-            for value, query in keys.get(kt, []):
-                probes.append((kt, value, query))
+            for value, querymap in keys.get(kt, []):
+                query = querymap.get(proto)
+                if query:
+                    probes.append((kt, value, query))
         if probes:
             targets.append((row["itemKey"], probes))
     return targets
@@ -320,6 +344,83 @@ def select_record(cfg, key, probelist, rowmap):
             "title hits failed verification" if failed else None)
 
 
+SLIM = "{http://www.loc.gov/MARC21/slim}"
+
+
+def sru_search(base, cql, maxrec):
+    """SRU searchRetrieve -> (numberOfRecords, [slim record Elements])."""
+    params = urllib.parse.urlencode({
+        "version": "1.2", "operation": "searchRetrieve",
+        "recordSchema": "marcxml", "maximumRecords": str(maxrec), "query": cql,
+    })
+    try:
+        raw = urllib.request.urlopen(f"{base}?{params}", timeout=30).read()
+        root = ET.fromstring(raw)
+    except Exception:
+        return 0, []
+    n = 0
+    for el in root.iter():  # SRW namespace varies across tenants; match by tag
+        if el.tag.endswith("numberOfRecords") and (el.text or "").strip().isdigit():
+            n = int(el.text)
+            break
+    return n, root.findall(f".//{SLIM}record")
+
+
+def marc_element_to_binary(rec):
+    """Encode one MARCXML <record> Element as a binary MARC (ISO 2709) record.
+
+    Done in pure Python because the bundled yaz-marcdump is built without
+    libxml2 and so cannot read MARCXML. Producing binary lets SRU hits flow
+    through the same combined.marc / verify / combine path as Z39.50 hits.
+    Lengths and offsets are byte counts (UTF-8); leader/09 is set to 'a'."""
+    FT, SUB, RT = b"\x1e", b"\x1f", b"\x1d"
+    fields = []  # (tag, data-bytes incl. trailing field terminator)
+    for cf in rec.findall(f"{SLIM}controlfield"):
+        fields.append((cf.get("tag") or "001", (cf.text or "").encode("utf-8") + FT))
+    for df in rec.findall(f"{SLIM}datafield"):
+        ind = ((df.get("ind1") or " ")[:1] + (df.get("ind2") or " ")[:1])
+        data = ind.encode("utf-8")
+        for sf in df.findall(f"{SLIM}subfield"):
+            data += SUB + (sf.get("code") or " ")[:1].encode("utf-8") + (sf.text or "").encode("utf-8")
+        fields.append((df.get("tag") or "999", data + FT))
+
+    directory, pos = b"", 0
+    for tag, data in fields:
+        directory += f"{tag:0>3.3}{len(data):04d}{pos:05d}".encode("ascii")
+        pos += len(data)
+    directory += FT
+    fielddata = b"".join(d for _t, d in fields)
+    base = 24 + len(directory)
+    total = base + len(fielddata) + 1
+
+    lead = list(((rec.findtext(f"{SLIM}leader") or "") + " " * 24)[:24])
+    lead[0:5] = f"{total:05d}"
+    lead[9] = "a"            # UTF-8
+    lead[10], lead[11] = "2", "2"   # indicator count, subfield code length
+    lead[12:17] = f"{base:05d}"
+    lead[20:24] = "4500"
+    return "".join(lead).encode("utf-8") + directory + fielddata + RT
+
+
+def marcxml_to_binary(elements):
+    """Convert SRU MARCXML <record> Elements to binary MARC records."""
+    return [marc_element_to_binary(el) for el in elements]
+
+
+def run_sru(cfg, server, batch, show_n):
+    """SRU equivalent of run_batch: one HTTP request per probe (CQL), returning
+    the same (itemKey, [(keytype, value, count, [record_bytes...]), ...]) shape."""
+    results = []
+    for key, plist in batch:
+        probelist = []
+        for keytype, value, cql in plist:
+            n, els = sru_search(server["conn"], cql, show_n)
+            probelist.append((keytype, value, n, marcxml_to_binary(els[:show_n])))
+            time.sleep(server["qsleep"])
+        results.append((key, probelist))
+    return results
+
+
 def _subfields(rec, tag, codes):
     out = []
     for df in rec.findall(f"{{{MARC_NS}}}datafield"):
@@ -402,31 +503,35 @@ def harvest(cfg, limit=None):
         print(f"[{name}] candidates={len(targets)} already_ok={len(ok_keys)} "
               f"this_run={len(pending)}")
 
+        proto = server.get("protocol", "z3950")
         bsize, show_n = server["batch"], server["show_n"]
         for start in range(0, len(pending), bsize):
             batch = pending[start:start + bsize]
-            results, _log = run_batch(cfg, server["conn"], batch, server["qsleep"], show_n)
 
-            if results is None:
-                # An unalignable batch usually means the server throttled or
-                # dropped a busy connection. Back off, then retry the whole
-                # batch once; if still bad, fall back to one item per connection
-                # with a pause between, and defer anything that still fails.
-                print(f"  !! [{name}] batch at {start}: output unalignable; "
-                      f"backing off {server['bsleep'] * 5}s and retrying",
-                      file=sys.stderr)
-                time.sleep(server["bsleep"] * 5)
-                results, _ = run_batch(cfg, server["conn"], batch, server["qsleep"], show_n)
-            if results is None:
-                results = []
-                for one in batch:
-                    r, _ = run_batch(cfg, server["conn"], [one], server["qsleep"], show_n)
-                    if r is None:
-                        print(f"  !! {one[0]}: still unalignable, deferring to next "
-                              f"run", file=sys.stderr)  # no manifest row -> retried
-                    else:
-                        results.extend(r)
-                    time.sleep(server["qsleep"])
+            if proto == "sru":
+                results = run_sru(cfg, server, batch, show_n)
+            else:
+                results, _log = run_batch(cfg, server["conn"], batch, server["qsleep"], show_n)
+                if results is None:
+                    # An unalignable batch usually means the server throttled or
+                    # dropped a busy connection. Back off, then retry the whole
+                    # batch once; if still bad, fall back to one item per
+                    # connection with a pause between, deferring what still fails.
+                    print(f"  !! [{name}] batch at {start}: output unalignable; "
+                          f"backing off {server['bsleep'] * 5}s and retrying",
+                          file=sys.stderr)
+                    time.sleep(server["bsleep"] * 5)
+                    results, _ = run_batch(cfg, server["conn"], batch, server["qsleep"], show_n)
+                if results is None:
+                    results = []
+                    for one in batch:
+                        r, _ = run_batch(cfg, server["conn"], [one], server["qsleep"], show_n)
+                        if r is None:
+                            print(f"  !! {one[0]}: still unalignable, deferring to "
+                                  f"next run", file=sys.stderr)  # no row -> retried
+                        else:
+                            results.extend(r)
+                        time.sleep(server["qsleep"])
 
             # Select/verify a record per item (identifier hits trusted, title
             # hits verified against the CSV).
