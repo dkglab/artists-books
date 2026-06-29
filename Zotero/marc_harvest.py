@@ -79,8 +79,11 @@ MARC_NS     = "http://www.loc.gov/MARC21/slim"
 # the rest of the pipeline is identical.
 SERVERS = [
     {"name": "unc", "conn": "tcp:afton.lib.unc.edu:210/INNOPAC",
-     "keytypes": ("bib", "isbn"),
-     "batch": 50, "qsleep": 0.4, "bsleep": 2, "show_n": 1},
+     # bib/isbn are exact-identifier lookups (trusted); title/title-author are
+     # verified against the CSV like the fallbacks, reaching UNC-held reference
+     # works that carry no ISBN or III bib number in the Zotero export.
+     "keytypes": ("bib", "isbn", "title-author", "title"),
+     "batch": 50, "qsleep": 0.4, "bsleep": 2, "show_n": 3},
     {"name": "lc",  "conn": "tcp:lx2.loc.gov:210/LCDB",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
@@ -446,7 +449,8 @@ def _subfields(rec, tag, codes):
 
 
 def decode_record(cfg, record_bytes):
-    """Parse one binary MARC record -> (normalized title, normalized authors, year).
+    """Parse one binary MARC record -> (full title, main title, authors, year),
+    titles and authors normalized.
 
     yaz-marcdump reads a file (not stdin), so the record is written to a temp
     file in the harvest state dir first.
@@ -464,8 +468,11 @@ def decode_record(cfg, record_bytes):
         return "", "", None
     rec = root if root.tag.endswith("record") else root.find(f"{{{MARC_NS}}}record")
     if rec is None:
-        return "", "", None
+        return "", "", "", None
     title = norm(" ".join(_subfields(rec, "245", ("a", "b"))))
+    # Main title only (245 $a before any ':' subtitle), so a CSV title that omits
+    # a long catalogue subtitle can still match -- common for exhibition catalogs.
+    main = main_title(" ".join(_subfields(rec, "245", ("a",))))
     authors = norm(" ".join(
         _subfields(rec, "100", ("a",)) + _subfields(rec, "110", ("a",)) +
         _subfields(rec, "700", ("a",)) + _subfields(rec, "710", ("a",))))
@@ -478,7 +485,7 @@ def decode_record(cfg, record_bytes):
                 break
         if year:
             break
-    return title, authors, year
+    return title, main, authors, year
 
 
 def verify_title(cfg, record_bytes, row):
@@ -488,14 +495,22 @@ def verify_title(cfg, record_bytes, row):
     year must corroborate. (Author surname is deliberately not used as a
     corroborator: corporate "surnames" like "Press" match unrelated records --
     e.g. "The artist publisher" wrongly matching "The artist in Edo".)"""
-    rtitle, _rauthors, ryear = decode_record(cfg, record_bytes)
+    rtitle, rmain, _rauthors, ryear = decode_record(cfg, record_bytes)
     ctitle = norm(row.get("title") or "")
+    cmain = main_title(row.get("title") or "")
     if not rtitle or not ctitle:
         return False
-    ratio = difflib.SequenceMatcher(None, rtitle, ctitle).ratio()
-    if ratio >= TITLE_STRONG:
+    full = difflib.SequenceMatcher(None, rtitle, ctitle).ratio()
+    if full >= TITLE_STRONG:
         return True
-    if ratio < TITLE_WEAK:
+    # Weak band: the publication year must corroborate. Main-title agreement
+    # (CSV title vs record 245 $a sans subtitle) may satisfy the weak band -- this
+    # reaches exhibition catalogs whose 245 carries a long subtitle the CSV omits
+    # -- but never grants acceptance on its own, so a generic series title
+    # ("Book as art") cannot be stamped onto the wrong installment by year.
+    main = (difflib.SequenceMatcher(None, rmain, cmain).ratio()
+            if rmain and cmain else 0.0)
+    if max(full, main) < TITLE_WEAK:
         return False
     cyear = year_of(row.get("date") or "")
     return bool(cyear and ryear == cyear)

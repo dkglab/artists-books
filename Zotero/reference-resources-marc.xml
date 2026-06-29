@@ -21320,6 +21320,945 @@
   </datafield>
 <datafield tag="999" ind1=" " ind2=" "><subfield code="a">DN8GXMLJ</subfield><subfield code="b">centre / 1st wexford artists book exhibition 1995</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
 <record>
+  <leader>02696cam a2200469 a 4500</leader>
+  <controlfield tag="001">ocm37114195</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20250801234219.0</controlfield>
+  <controlfield tag="008">970613s1993    dcua     bc   000 0 eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)37114195</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CLU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">CLU</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OBE</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.3</subfield>
+    <subfield code="b">.B64 1993</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Book as art VI :</subfield>
+    <subfield code="b">December 6, 1993-May 20, 1994, the National Museum of Women in the Arts, Washington, D.C. /</subfield>
+    <subfield code="c">the Library and Research Center.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Book as art 6.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Book as art six.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Washington, D.C. :</subfield>
+    <subfield code="b">The Museum,</subfield>
+    <subfield code="c">[1993]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">12 unnumbered pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">23 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Exhibition checklist: pages 6-8.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Text by Krystyna Wasserman.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2007101460.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Women artists</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2010118759.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Women artists.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1177159.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Women artists</subfield>
+    <subfield code="x">Exhibitions.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1177163.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="x">Exhibitions.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/817661.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Exhibition catalogs.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1424028.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Wasserman, Krystyna.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82087772</subfield>
+    <subfield code="1">http://viaf.org/viaf/77482942</subfield>
+    <subfield code="1">http://isni.org/isni/0000000116768581.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">National Museum of Women in the Arts (U.S.)</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86125073</subfield>
+    <subfield code="1">http://viaf.org/viaf/151736496</subfield>
+    <subfield code="1">http://isni.org/isni/0000000404731636.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">National Museum of Women in the Arts (U.S.).</subfield>
+    <subfield code="b">Library and Research Center.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n96010984</subfield>
+    <subfield code="1">http://viaf.org/viaf/130349663</subfield>
+    <subfield code="1">http://isni.org/isni/0000000089427764.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.3</subfield>
+    <subfield code="b">.B64 1993</subfield>
+    <subfield code="z">050 4</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00054477387</subfield>
+    <subfield code="l">aada</subfield>
+    <subfield code="w">GIFTCAT</subfield>
+    <subfield code="n">dls</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="u">-</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">01-14-20</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">dcu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">EXVACFS7</subfield><subfield code="b">wasserman / book as art vi</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+<record>
+  <leader>03555cam a2200505Ii 4500</leader>
+  <controlfield tag="001">ocm00699729</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20250801225146.0</controlfield>
+  <controlfield tag="008">730926s1973    paua     b    000 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">54429706</subfield>
+    <subfield code="a">213583575</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)00699729</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">KSU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">KSU</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">CRU</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">YJE</subfield>
+    <subfield code="d">N7N</subfield>
+    <subfield code="d">AU@</subfield>
+    <subfield code="d">VA@</subfield>
+    <subfield code="d">CUT</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">NUI</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">PS3566.E692</subfield>
+    <subfield code="b">V3x</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/PS1-PS3626</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.3</subfield>
+    <subfield code="b">.A765 1973</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">702.81</subfield>
+    <subfield code="2">20</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Artists books /</subfield>
+    <subfield code="c">[editor, Dianne Perry Vanderlip].</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Philadelphia :</subfield>
+    <subfield code="b">[Moore College of Art?],</subfield>
+    <subfield code="c">[1973]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">77 pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">18 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Catalogue of an exhibition organized by Dianne Perry Vanderlip and held at Moore College of Art, Philadelphia, Mar 23 - Apr 20 1973; traveling to the University Art Museum, Berkeley, Jan 16 - Feb 24, 1974.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Exhibition and catalog organized by Dianne Perry Vanderlip. Catalog design by Harry Anderson. Catalog printed by Falcon Press, Phila." --Title page verso.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">Foreword / by Dianne Perry Vanderlip -- Slices of silence, parcels of time: the book as a portable sculpture / by Lynn Lester Hershman -- Some thoughts on books as art, by John Perreault.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references.</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">1900-1999</subfield>
+    <subfield code="2">fast.</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">20th century</subfield>
+    <subfield code="2">fast.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2007101460.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Book ornamentation.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85015644.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Art, Modern</subfield>
+    <subfield code="y">20th century</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2007101136.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Art, Modern.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/816615.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Book ornamentation.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/836226.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="x">Exhibitions.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/817661.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Exhibition catalogs.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1424028.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Vanderlip, Dianne Perry,</subfield>
+    <subfield code="e">author,</subfield>
+    <subfield code="e">editor.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n80006663</subfield>
+    <subfield code="1">http://viaf.org/viaf/75141298</subfield>
+    <subfield code="1">http://isni.org/isni/000000007782413X.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Perreault, John,</subfield>
+    <subfield code="d">1937-2015,</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n80040372</subfield>
+    <subfield code="1">http://viaf.org/viaf/110303657</subfield>
+    <subfield code="1">http://isni.org/isni/0000000081760714.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Hershman-Leeson, Lynn,</subfield>
+    <subfield code="d">1941-</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n96025685</subfield>
+    <subfield code="1">http://viaf.org/viaf/96194408</subfield>
+    <subfield code="1">http://isni.org/isni/0000000090573216.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Anderson, Harry,</subfield>
+    <subfield code="d">1906-1996,</subfield>
+    <subfield code="e">cover designer.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2001083335</subfield>
+    <subfield code="1">http://viaf.org/viaf/66127880</subfield>
+    <subfield code="1">http://isni.org/isni/0000000078659244.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Falcon Press (Philadelphia, Pa.),</subfield>
+    <subfield code="e">printer.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2008012328</subfield>
+    <subfield code="1">http://viaf.org/viaf/131735464.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Basefile July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">11-12-21</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">pau</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">BEGEG5AI</subfield><subfield code="b">vanderlip / artists books</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+<record>
+  <leader>03402nam a2200457Ia 4500</leader>
+  <controlfield tag="001">ocm29484397</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20250801224645.0</controlfield>
+  <controlfield tag="008">931213s1993    nyua          000 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">1008406684</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)29484397</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CUS</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">CUS</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">GZM</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-ny</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us-ny</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCA</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.3</subfield>
+    <subfield code="b">.F74 1993</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Freeman, Brad,</subfield>
+    <subfield code="d">1951-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2012086451</subfield>
+    <subfield code="1">http://viaf.org/viaf/96556429</subfield>
+    <subfield code="1">http://isni.org/isni/0000000078617327.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Offset :</subfield>
+    <subfield code="b">artists' books &amp; prints.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York, N.Y. :</subfield>
+    <subfield code="b">Interplanetary Productions,</subfield>
+    <subfield code="c">[1993]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">24 unnumbered pages :</subfield>
+    <subfield code="b">illustrations, portraits ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">portrait</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1012.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"I designed and laid out this catalogue on a Mac IIsi ... I printed approximately 500 copies ... This show was first exhibited at Granary Books, 568 Broadway, Suite 403, New York, NY 10012, from December 2, 1993 until January 22, 1994. ... The books and prints will travel to The Minnesota Center for Book Arts in September, 1994, and Pyradmid Atlantic, 6001 66th Ave. #103, Riverdale, MD 20737, will exhibit the work in November, 1994. ... Brad Freeman, New York, September, 1993"--P. [7]-[8].</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes articles by Brad Freeman, Johanna Drucker, and Todd Walker, and a one page quote from Joe Ruther's book Color by Joseph, 1976.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2007101460.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Offset printing</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Offset printing.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1044269.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="x">Exhibitions.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/817661.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">New York</subfield>
+    <subfield code="v">exhibitions.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Exhibition catalogs.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1424028.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ruther, Joseph W.,</subfield>
+    <subfield code="d">1932-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n85322243</subfield>
+    <subfield code="1">http://viaf.org/viaf/26061035</subfield>
+    <subfield code="1">http://isni.org/isni/0000000028543091.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Drucker, Johanna,</subfield>
+    <subfield code="d">1952-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n81067311</subfield>
+    <subfield code="1">http://viaf.org/viaf/71503942</subfield>
+    <subfield code="1">http://isni.org/isni/0000000110291911.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Walker, Todd.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n81019474</subfield>
+    <subfield code="1">http://viaf.org/viaf/162322996</subfield>
+    <subfield code="1">http://isni.org/isni/0000000114579074.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Granary Books (Firm)</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no89000033</subfield>
+    <subfield code="1">http://viaf.org/viaf/125879631</subfield>
+    <subfield code="1">http://isni.org/isni/0000000107211706.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Inter Planetary Productions,</subfield>
+    <subfield code="e">publisher.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2008137105</subfield>
+    <subfield code="1">http://viaf.org/viaf/142286792.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">04-08-10</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">5JWH4AMJ</subfield><subfield code="b">freeman / offset</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+<record>
+  <leader>03135cam a2200493Ia 4500</leader>
+  <controlfield tag="001">ocm50337160</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20250801234220.0</controlfield>
+  <controlfield tag="008">020809s2002    dcua     bc   000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)50337160</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">IBV</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">IBV</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">B2Q</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N8217.F64</subfield>
+    <subfield code="b">T45 2002</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">702.81</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Temptations :</subfield>
+    <subfield code="b">book as art XIV : March 4, 2002 to January 5, 2003, National Museum of Women in the Arts, Library &amp; Research Center /</subfield>
+    <subfield code="c">curated by Krystyna Wasserman with the assistance of Jessica Roscio ; [catalogue edited by Nancy Lutz].</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Book as art XIV.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Book as art fourteen.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Washington, D.C. :</subfield>
+    <subfield code="b">National Museum of Women in the Arts,</subfield>
+    <subfield code="c">[2002]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">26 pages :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">24 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Exhibition catalog.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"The exhibition includes artists' books, paintings, drawings, prints, sketchbooks, and poetry by thirty-seven artists from the United States, France, Poland, Belgium, and Russia"--Page 3.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Food in art</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2009125335.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2007101460.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Women artists</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2010118759.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Food in art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/930835.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Women artists.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1177159.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Women artists</subfield>
+    <subfield code="x">Exhibitions.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1177163.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="x">Exhibitions.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/817661.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Exhibition catalogs.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1424028.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Wasserman, Krystyna.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82087772</subfield>
+    <subfield code="1">http://viaf.org/viaf/77482942</subfield>
+    <subfield code="1">http://isni.org/isni/0000000116768581.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Roscio, Jessica.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">National Museum of Women in the Arts (U.S.)</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86125073</subfield>
+    <subfield code="1">http://viaf.org/viaf/151736496</subfield>
+    <subfield code="1">http://isni.org/isni/0000000404731636.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">National Museum of Women in the Arts (U.S.).</subfield>
+    <subfield code="b">Library and Research Center.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n96010984</subfield>
+    <subfield code="1">http://viaf.org/viaf/130349663</subfield>
+    <subfield code="1">http://isni.org/isni/0000000089427764.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N8217.F64</subfield>
+    <subfield code="b">T45 2002</subfield>
+    <subfield code="z">050 4</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00054477038</subfield>
+    <subfield code="l">aada</subfield>
+    <subfield code="w">GIFTCAT</subfield>
+    <subfield code="n">dls</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="u">-</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">01-14-20</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">dcu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">MJWXHUAG</subfield><subfield code="b">wasserman / temptations</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+<record>
+  <leader>02722cam a2200469 a 4500</leader>
+  <controlfield tag="001">ocm29311221</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20250801234045.0</controlfield>
+  <controlfield tag="008">920420t19911991ohua     c    000 0 eng  </controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   92148333</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)29311221</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">BTCTA</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">GUA</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.35.U6</subfield>
+    <subfield code="b">A75 1991</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Art of the contemporary book :</subfield>
+    <subfield code="b">new works : a national juried exhibition, November 3-24, 1991, Bricker Hall, the Ohio State University, Columbus, Ohio /</subfield>
+    <subfield code="c">organized by John J. Taormina.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Columbus :</subfield>
+    <subfield code="b">The Ohio State University,</subfield>
+    <subfield code="c">[1991]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©1991.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">28 unnumbered pages :</subfield>
+    <subfield code="b">chiefly illustrations ;</subfield>
+    <subfield code="c">22 x 26 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Catalog.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title: Art.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Five hundred copies"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Source: Gift of Ohio State University, Nov. 8, 1991.</subfield>
+    <subfield code="5">DLC.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2009115980.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Book design</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/817660.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Book design.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/836152.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">United States.</subfield>
+    <subfield code="1">http://id.oclc.org/worldcat/entity/E39PBJtxgQXMWqmjMjjwXRHgrq</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204155.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">United States.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204155.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Exhibition catalogs.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1424028.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Taormina, John J.,</subfield>
+    <subfield code="e">curator.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n92083433</subfield>
+    <subfield code="1">http://viaf.org/viaf/43500076</subfield>
+    <subfield code="1">http://isni.org/isni/000000003119956X.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Ohio State University.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79046205</subfield>
+    <subfield code="1">http://viaf.org/viaf/129559629.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Basefile July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.35.U6</subfield>
+    <subfield code="b">A75 1991</subfield>
+    <subfield code="z">05000</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00056255530</subfield>
+    <subfield code="l">aada</subfield>
+    <subfield code="w">GIFTCAT</subfield>
+    <subfield code="n">wi</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="u">-</subfield>
+    <subfield code="j">Cataloged FY 2023-24 FIRST UnivLib</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">02-29-24</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">ohu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">1</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NS2F8TKC</subfield><subfield code="b">taormina / art of the contemporary book</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+<record>
           <leader>02642cam a2200541Ii 4500</leader>
           <controlfield tag="001">991002396609708431</controlfield>
           <controlfield tag="005">20260528131113.0</controlfield>
