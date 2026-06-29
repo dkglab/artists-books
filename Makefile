@@ -51,11 +51,12 @@ graph/%.ttl: queries/construct/%.rq | tools/sparql-anything/sparql-anything.jar
 # rebuild the graph when any of them changes.
 graph/artists-books.ttl: \
 Zotero/artists-books.csv \
-Zotero/artists-books-marc.xml \
-Zotero/abc-master-crosswalk.csv \
-Zotero/notes.xml
+Zotero/artists-books-marc.xml
 
-graph/reference-resources.ttl: Zotero/reference-resources.csv
+graph/reference-resources.ttl: \
+Zotero/reference-resources.csv \
+Zotero/citation-crosswalk.csv \
+Zotero/abc-master-crosswalk.csv
 
 site/index.html: \
 graph/artists-books.ttl \

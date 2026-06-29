@@ -100,25 +100,64 @@ re-emits only what the citation model needs, guaranteed well-formed:
   (per-item index), so the query can read the citation label and mint a stable
   citation URI without reconstructing text from fragmented XML nodes.
 
-≈4,006 notes / ≈5,170 citation paragraphs. The page-number split (#43/#44) and
-reference-work reconciliation (#42) are left to those issues — the markup that
-feeds them is preserved here.
+≈4,006 notes / ≈5,170 citation paragraphs. The page-number split (#43/#44) is
+left to those issues — the markup that feeds them is preserved here.
 
-**Wired into the build (#55 step 3).** `queries/construct/artists-books.rq` reads
-`abc-master-crosswalk.csv` and `notes.xml` as two extra SPARQL-Anything SERVICEs:
-for each ABC `?book` it follows `abcItemKey → citedItemKey` (skipping
-`review=yes`), reads that record's note paragraphs, and emits one
-`ab:Citation` per paragraph (`ab:cites ?book`; reference string as `rdfs:label`;
-URI `…/item/<abcKey>/citation/<citedKey>-<n>`). Result: **427 citations on 193
-ABC books** (of the 194 confident matches). Citations are additive — existing
-book/creator triples are unchanged.
+### Citation ↔ reference-resource crosswalk (#42)
 
-**Regenerate** (notes.xml and the crosswalk are committed inputs to the graph
-build, like `artists-books.csv`/`-marc.xml`, so rebuild the graph explicitly):
+Each Cited note paragraph is a *free-text* reference to a reference work; it
+carries no key linking it to the **Reference resources** collection
+(`reference-resources.csv`) — `citedItemKey` is the artist's book's lib-3 record,
+not the citing work. To anchor citation URIs on the reference resource
+(`reference/<refItemKey>/citation/…`), `tools/fuzzy-match/cite_match.py`
+reconciles each paragraph to a reference-resources row:
+
+1. **substring** — a reference title (≥ 10 normalized chars) appears verbatim in
+   the paragraph; longest title wins, the embedded year boosts confidence. This
+   is the dominant signal (the paragraph quotes the full title).  conf 0.95–0.99
+2. **em-exact** — the `<em>` title normalizes exactly to a reference title.  0.95
+3. **fuzzy** — rapidfuzz on the `<em>` title.  flagged for review below 0.93
+
+Scoped (via `abc-master-crosswalk.csv`) to the lib-3 cited records actually in
+use, so it covers the 436 citation paragraphs reachable from ABC books.
+**Output** `Zotero/citation-crosswalk.csv` is one row per paragraph
+(`citedItemKey, n, refItemKey, method, confidence, review, refTitle,
+citationText`). Generic short titles ("Artists books") and unmatched-but-citation
+paragraphs carry `review=yes` and are excluded from the construct query's
+auto-join. Current: **383 paragraphs auto-matched** across 44 reference works,
+50 held for review (mostly reference works not yet in the 156-row collection),
+3 editorial annotations recorded as `none`.
 
 ```sh
-make -C Zotero notes.xml
-make -B graph/artists-books.ttl
+make -C Zotero citation-crosswalk.csv
+```
+
+**Wired into the build (#42).** Citations are constructed by
+`queries/construct/reference-resources.rq` (not `artists-books.rq`), since a
+citation belongs to the reference work it appears in. It joins
+`citation-crosswalk.csv` (paragraph → `refItemKey` + flattened text, skipping
+`review=yes` / empty matches) with `abc-master-crosswalk.csv` (`citedItemKey →
+abcItemKey`, skipping `review=yes`) and emits one `ab:Citation` per resolved
+paragraph, anchored on the reference resource:
+
+```
+reference/<refItemKey>/citation/<abcItemKey>
+    a          ab:Citation ;
+    ab:citedBy reference/<refItemKey> ;   # the citing reference work
+    ab:cites   item/<abcItemKey> ;        # the cited artist's book
+    rdfs:label "<flattened reference string>" .
+```
+
+Result: **387 citations** linking **162 ABC books** to **41 reference works**;
+no `notes.xml` read is needed at graph-build time (the crosswalk already carries
+the text). Page-number / image-page extraction (#43/#44/#15/#16) is still TODO.
+
+**Regenerate** (the crosswalks are committed inputs to the graph build, like
+`artists-books.csv`/`-marc.xml`, so rebuild the graph explicitly):
+
+```sh
+make -C Zotero notes.xml citation-crosswalk.csv
+make -B graph/reference-resources.ttl
 ```
 
 ## SQLite database

@@ -34,6 +34,22 @@ abc-master-crosswalk.csv: cited-records.csv $(FUZZY)/match.py | $(FUZZY)/venv/bi
 		--cited cited-records.csv \
 		--out $@
 
+# Citation <-> reference-resource crosswalk (issue #42). Each "Cited:" note
+# paragraph (notes.xml) is a free-text reference to a reference work; this
+# reconciles it to a row in reference-resources.csv (the title appears verbatim
+# in the paragraph -> substring match, <em> title + year corroborate), so
+# citations can be minted under reference/<refItemKey>/... abc-master-crosswalk.csv
+# scopes the paragraphs to the cited records actually in use. Runs in the shared
+# fuzzy-match venv; low-confidence/unmatched rows carry review=yes and are
+# excluded from the construct query's auto-join.
+citation-crosswalk.csv: notes.xml reference-resources.csv abc-master-crosswalk.csv \
+		$(FUZZY)/cite_match.py | $(FUZZY)/venv/bin/python
+	$(FUZZY)/venv/bin/python $(FUZZY)/cite_match.py \
+		--notes notes.xml \
+		--refs reference-resources.csv \
+		--abc-crosswalk abc-master-crosswalk.csv \
+		--out $@
+
 # Build the fuzzy-match venv on demand (order-only prerequisite above).
 $(FUZZY)/venv/bin/python:
 	$(MAKE) -C $(FUZZY)
