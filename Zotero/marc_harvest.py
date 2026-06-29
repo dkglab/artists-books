@@ -10,8 +10,8 @@ Strategy (see Zotero/README.md):
                   fallbacks for what UNC lacks -- the Library of Congress, the
                   K10plus (German) academic union catalogue, LIBRIS (Sweden's
                   national catalogue), Penn State, and the Getty Research
-                  Institute and Clark Art Institute art libraries. Most are
-                  Z39.50; the Alma art libraries are queried over SRU/CQL (see
+                  Institute, Clark Art Institute, and NYARC art libraries. Most
+                  are Z39.50; the Alma art libraries are queried over SRU/CQL (see
                   `protocol`). See SERVERS for connection strings; all yield
                   MARC21 in UTF-8.
   * Search keys : per item, tried in order, first hit wins. Identifier keys are
@@ -110,6 +110,11 @@ SERVERS = [
      "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
     # Clark Art Institute (Ex Libris Alma), another art library on SRU/CQL.
     {"name": "clark", "conn": "https://na05.alma.exlibrisgroup.com/view/sru/01CLARKART_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # NYARC -- New York Art Resources Consortium (MoMA, Frick, Brooklyn Museum),
+    # Ex Libris Alma; strong on artist's-book exhibition ephemera. SRU/CQL.
+    {"name": "nyarc", "conn": "https://na01.alma.exlibrisgroup.com/view/sru/01NYA_INST",
      "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
 ]
