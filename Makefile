@@ -3,7 +3,7 @@ START_FUSEKI ?= true
 .PHONY: all clean superclean validate serve
 .DEFAULT_GOAL := all
 
-all: graph/artists-books.ttl site/index.html
+all: graph/artists-books.ttl graph/reference-resources.ttl site/index.html
 
 clean:
 	rm -f inferred.ttl diff.txt *.png
@@ -55,8 +55,11 @@ Zotero/artists-books-marc.xml \
 Zotero/abc-master-crosswalk.csv \
 Zotero/notes.xml
 
+graph/reference-resources.ttl: Zotero/reference-resources.csv
+
 site/index.html: \
 graph/artists-books.ttl \
+graph/reference-resources.ttl \
 $(wildcard *.yaml) \
 $(wildcard queries/select/*.rq) \
 $(wildcard templates/*.html) \

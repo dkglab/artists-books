@@ -10,6 +10,7 @@
 @prefix lcna: <http://id.loc.gov/authorities/names/> .
 @prefix rel: <http://id.loc.gov/vocabulary/relators/> .
 @prefix bflc: <http://id.loc.gov/ontologies/bflc/> .
+@prefix ab: <https://dkglab.github.io/ns/artists-books/> .
 
 ulan:500024159 rdfs:label "Ed Ruscha" .
 wd:Q18763908 rdfs:label "Stephen J. Bury" .
@@ -75,7 +76,7 @@ wd:Q7857846 a ex:ArtistsBook ;
 
 
 
-ex:ArtistsBooksTheBookAsAWorkOfArt a ex:ReferenceBook ;
+ex:ArtistsBooksTheBookAsAWorkOfArt a ab:ReferenceWork ;
     rdfs:label "Artists' Books: The Book as a Work of Art, 1963-2000"@en ;
     bf:contribution [
         a bf:PrimaryContribution ;

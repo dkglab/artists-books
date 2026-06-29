@@ -7,6 +7,7 @@
 @prefix aat: <http://vocab.getty.edu/aat/> .
 @prefix schema: <https://schema.org/> .
 @prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix ab: <https://dkglab.github.io/ns/artists-books/> .
 
 
 ex:ArtistsBook a rdfs:Class ;
@@ -28,10 +29,10 @@ ex:worldcatLink a rdfs:Property ;
     rdfs:range rdfs:Resource .
 
 
-ex:ReferenceBook a rdfs:Class ;
-    rdfs:subClassOf schema:Book ;
-    rdfs:label "Reference Book" ;
-    rdfs:comment "A reference book is a book that cites an Artist's Book." .
+ab:ReferenceWork a rdfs:Class ;
+    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:label "Reference Work" ;
+    rdfs:comment "A reference work is a work (book, article, webpage, etc.) that cites an Artist's Book." .
 
 ex:Citation a rdfs:Class ;
     rdfs:label "Citation" ;
@@ -39,9 +40,9 @@ ex:Citation a rdfs:Class ;
 
 ex:citedBy a rdfs:Property ;
     rdfs:label "cited by" ;
-    rdfs:comment "Relates a Citation to a Reference Book." ;
+    rdfs:comment "Relates a Citation to a Reference Work." ;
     rdfs:domain ex:Citation ;
-    rdfs:range ex:ReferenceBook .
+    rdfs:range ab:ReferenceWork .
 
 ex:cites a rdfs:Property ;
     rdfs:label "cites" ;
