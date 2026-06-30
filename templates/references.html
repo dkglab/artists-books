@@ -8,7 +8,7 @@
 {{ range . }}
 <li>
   <a href="reference/{{ .itemKey }}">{{ .title }}</a>
-  {{ with .citationCount }}<small>cites {{ . }}</small>{{ end }}
+  <small>cites {{ .citationCount }}</small>
 </li>
 {{ end }}
 </ol>
