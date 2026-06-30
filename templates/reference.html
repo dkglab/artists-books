@@ -4,18 +4,9 @@
 
 {{ define "content" }}
 <h1>{{ .title }}</h1>
+<p class="mb"><em>Reference work</em></p>
 
 <dl>
-  {{ with .primaryCreators }}
-  <dt>Primary creators</dt>
-  <dd>{{ . }}</dd>
-  {{ end }}
-
-  {{ with .contributors }}
-  <dt>Contributors</dt>
-  <dd>{{ . }}</dd>
-  {{ end }}
-
   {{ with .publisher }}
   <dt>Publisher</dt>
   <dd>{{ . }}</dd>
@@ -36,35 +27,18 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
-  {{ with .extent }}
-  <dt>Extent</dt>
-  <dd>{{ . }}</dd>
-  {{ end }}
-
-  {{ with .dimensions }}
-  <dt>Dimensions</dt>
-  <dd>{{ . }}</dd>
-  {{ end }}
-
   {{ with .isbns }}
   <dt>ISBN</dt>
   <dd>{{ . }}</dd>
   {{ end }}
-
- {{ with .oclcNumbers }}
-  <dt>WorldCat</dt>
-  <dd>
-    <a href="{{ $.worldcatLink }}">{{ . }}</a>
-  </dd>
-  {{ end }}
 </dl>
 
-{{ with .citedBy }}
-<h2>Cited by</h2>
+{{ with .citedBooks }}
+<h2>Cites</h2>
 <ul class="mb">
 {{- range (split . "\n") }}
 {{- $pair := split . "\t" }}
-<li><a href="/reference/{{ index $pair 0 }}">{{ index $pair 1 }}</a></li>
+<li><a href="/item/{{ index $pair 0 }}">{{ index $pair 1 }}</a></li>
 {{- end }}
 </ul>
 {{ end }}

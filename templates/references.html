@@ -1,0 +1,15 @@
+{{ template "base" . }}
+
+{{ define "title" }} - reference works{{ end }}
+
+{{ define "content" }}
+<h1>Reference Works</h1>
+<ol class="mb">
+{{ range . }}
+<li>
+  <a href="reference/{{ .itemKey }}">{{ .title }}</a>
+  <small>cites {{ .citationCount }}</small>
+</li>
+{{ end }}
+</ol>
+{{ end }}

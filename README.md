@@ -29,7 +29,7 @@ CSVs + notes.xml + crosswalks            MARCXML records
   (see steps 2–3).
 ```
 
-The pipeline runs as **two parallel tracks** that meet in the graph stage: the **artists' books** (the 1,341-book collection the site is built from) and the **reference works** that cite them (the 157-item *Reference resources* collection, plus the "Cited:" notes that connect the two). The reference track is newer; its data is in the graph but not yet surfaced on the website (no reference/results pages yet — issue #63).
+The pipeline runs as **two parallel tracks** that meet in the graph stage: the **artists' books** (the 1,341-book collection the site is built from) and the **reference works** that cite them (the 157-item *Reference resources* collection, plus the "Cited:" notes that connect the two). Both tracks are now surfaced on the website: alongside the per-book pages, a **reference works index** and a **per-reference-work page** render the citation relationship, and the two link to each other (a book lists the reference works that cite it; a reference work lists the books it cites). Only reference works that actually cite a book in the collection get a page (43 of the 157 today). The page-number / image-page detail of each citation is still pending (#43/#44).
 
 ### 1. Zotero → CSV
 
@@ -68,7 +68,7 @@ Both graphs use [BIBFRAME](https://www.loc.gov/bibframe/) (Library of Congress b
 
 **Artists' books.** Each book is minted a URI from its Zotero item key. Title, publisher, place, date, language, and ISBN come from the CSV; creators (with their VIAF/ISNI/LC identities and LC relator roles), the OCLC number, and the WorldCat URL come from the MARC records, joined to each book through the `999 $a` item key. Books without a MARC record still emit, just without the MARC-derived fields.
 
-**Reference works and citations.** `reference-resources.rq` mints an `ab:ReferenceWork` node (URI `…/reference/<itemKey>`) for each of the 157 reference works, with title/publisher/place/date/language/ISBN from `reference-resources.csv`. It then reads the two crosswalks and emits one **`ab:Citation`** per resolved reference→book link — `ab:citedBy` the reference work, `ab:cites` the artists' book — anchored at `…/reference/<refKey>/citation/<bookKey>`. Currently **433 citations** connect **194 artists' books** to **43 reference works** (paragraphs flagged `review=yes` are held out of the auto-join). Page-number / image-page extraction from the notes is still pending (#43/#44).
+**Reference works and citations.** `reference-resources.rq` mints an `ab:ReferenceWork` node (URI `…/reference/<itemKey>`) for each of the 157 reference works, with title/publisher/place/date/language/ISBN from `reference-resources.csv`. It then reads the two crosswalks and emits one **`ab:Citation`** per resolved reference→book link — `ab:citedBy` the reference work, `ab:cites` the artists' book — anchored at `…/reference/<refKey>/citation/<bookKey>`. Currently **433 citations** connect **194 artists' books** to **43 reference works** (paragraphs flagged `review=yes` are held out of the auto-join) — and step 4 renders this both ways, so each book page links to the reference works citing it and each reference page links to the books it cites. Page-number / image-page extraction from the notes is still pending (#43/#44).
 
 ```
 make graph/artists-books.ttl graph/reference-resources.ttl
@@ -161,18 +161,28 @@ views:
   - output: "item/{{itemKey}}/index.html"
     query: "select/artists-books.rq"
     template: "artists-book.html"
+  - output: "references.html"
+    query: "select/references.rq"
+    template: "references.html"
+  - output: "reference/{{itemKey}}/index.html"
+    query: "select/references.rq"
+    template: "reference.html"
 ```
 
-Both views run the same SELECT query, but the second templates a SPARQL variable (`{{itemKey}}`) into its output path, so Snowman writes one file per result row — a detail page per book. Add more entries here to generate additional pages (e.g. per-creator or per-publisher indexes).
+There are **four** views across two query/template pairs — one pair for the artists' books, one for the reference works. Within each pair both views run the same SELECT query, but the second templates a SPARQL variable (`{{itemKey}}`) into its output path, so Snowman writes one file per result row — a detail page per item. Add more entries here to generate additional pages (e.g. per-creator or per-publisher indexes).
 
 ## Templates
 
 ```
 templates/
 ├── layouts/
-│   └── base.html         — outer HTML shell (head, body, nav)
-├── index.html            — collection index, lists every book
-└── artists-book.html     — per-book detail page (one per item/{{itemKey}}/)
+│   └── base.html         — outer HTML shell (head, body, nav to both indexes)
+├── index.html            — collection index, lists every book ("cited by N")
+├── artists-book.html     — per-book detail page (one per item/{{itemKey}}/),
+│                           with a "Cited by" list of reference works
+├── references.html       — reference-works index, lists citing references ("cites N")
+└── reference.html        — per-reference detail page (one per reference/{{itemKey}}/),
+                            with a "Cites" list of artists' books
 ```
 
 Templates use Go's [`html/template`](https://pkg.go.dev/html/template) package. See the [Snowman template documentation](https://byabbe.se/snowman-manual/reference/template-syntax/) for how SPARQL results are passed as template data.

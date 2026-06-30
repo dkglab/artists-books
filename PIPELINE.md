@@ -36,7 +36,7 @@ flowchart TD
     templates["templates/*.html"] --> snowman
 
     %% ---- Output ----
-    snowman --> site["Static HTML website<br/>(site/)"]
+    snowman --> site["Static HTML website (site/)<br/>book index + pages · reference index + pages<br/>cross-linked by citations"]
 
     %% ---- Clickable links to the README sections that document each stage ----
     %% Absolute URLs: GitHub renders Mermaid in a sandboxed iframe where
