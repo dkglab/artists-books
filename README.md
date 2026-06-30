@@ -7,6 +7,8 @@ A linked data publication pipeline that transforms a curated [Zotero](https://ww
 
 ## Pipeline overview
 
+See [`PIPELINE.md`](PIPELINE.md) for a rendered (Mermaid) version of this diagram, with each stage linked back to the sections below.
+
 ```
 Zotero (SQLite database)                 Library catalogs (Z39.50 / SRU)
     │  SQL export + notes_export              │  marc_harvest.py (YAZ)
