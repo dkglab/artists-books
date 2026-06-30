@@ -81,6 +81,10 @@ authors in `100`/`700 $a`, joined via `999 $a`).
 
 The "Cited:" notes are exported so the construct query can read them and, via the
 crosswalk above, attach each lib-3 record's citations to the ABC page it matches.
+These now render on the site (#63): each ABC book page lists the reference works
+that cite it, and each reference-work page lists the ABC books it cites — the two
+ends of the `ab:Citation` joined back across the graphs by the Snowman SELECT
+queries.
 
 `notes_export.sh` (`= notes_export.sql | notes_export.py`) emits **`notes.xml`**,
 one `<note itemKey="…">` per lib-3 cited note (selection scope identical to

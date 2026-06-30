@@ -40,7 +40,7 @@ Before changing how the query walks the MARC XML, read `QUERY-PERFORMANCE.md` �
 ### Two SPARQL stages, two query directories
 
 - `queries/construct/` — runs against raw CSVs/MARCXML via SPARQL-Anything's `x-sparql-anything:` SERVICE. Two queries (`artists-books.rq`, `reference-resources.rq`) produce two graphs (`graph/artists-books.ttl`, `graph/reference-resources.ttl`); each only runs when its `.ttl` is regenerated.
-- `queries/select/` — runs against Fuseki (which loads **both** constructed graphs). One per Snowman view; results feed into Go templates. Note: only the artists'-book views exist today — no SELECT query reads the reference graph yet (#63).
+- `queries/select/` — runs against Fuseki (which loads **both** constructed graphs). One per Snowman view; results feed into Go templates. Two SELECT queries today: `artists-books.rq` (book index + per-book pages) and `references.rq` (reference index + per-reference pages, #63). Both join across the two graphs to render the citation relationship in each direction — `references.rq` requires the citation join so only reference works that cite an in-collection book get a page (43 of 157); `artists-books.rq` joins it `OPTIONAL` for the per-book "Cited by" list.
 
 ### URI minting
 
@@ -56,9 +56,14 @@ This means per-item SELECT queries should return **one row per output file**. Fo
 
 The index view uses the same row set but iterates with `{{ range . }}` in the template.
 
+Two non-obvious Snowman behaviours bite here (both learned building the reference views):
+
+- **A *bound* binding is always truthy under `{{ with }}` — even `0` or `""` from an `IF`/aggregate.** Only a genuinely *unbound* variable is hidden. An empty `GROUP_CONCAT` comes back unbound (so `{{ with .isbns }}` correctly hides it), but `COUNT(...)` of zero comes back as a bound `0` and would render. To hide a zero count, leave it unbound — compute it in an inner aggregate subquery, then `BIND(IF(?n > 0, STR(?n), ?sentinel) AS ?count)` in an outer non-aggregate scope (a bare unbound var is illegal in an aggregate projection). The reference index sidesteps this entirely: `references.rq` requires the citation join so the count is always ≥ 1, and the book index derives its "cited by N" with `len (split .citedBy "\n")` over a field that's absent when empty.
+- **To render multi-valued fields as *links*, not just text, pack `key`+`label` into each `GROUP_CONCAT` token and split in the template.** SPARQL aggregation flattens a row, losing the pairing needed for per-item hrefs. The citation lists emit `GROUP_CONCAT(DISTINCT CONCAT(?key, "\t", ?label); separator="\n")`, then the template does `{{ range (split . "\n") }}{{ $p := split . "\t" }}<a href="/…/{{ index $p 0 }}">{{ index $p 1 }}</a>{{ end }}`. Snowman's `split` is `split(string, sep)` and `index` is the Go builtin.
+
 ### Templates
 
-`templates/layouts/base.html` defines a `base` template with `title` and `content` blocks; page templates start with `{{ template "base" . }}` and `{{ define "content" }}...{{ end }}`. Go `html/template` syntax. SPARQL bindings are accessed by lowercase variable name (`.title`, not `.Title`).
+`templates/layouts/base.html` defines a `base` template with `title` and `content` blocks; page templates start with `{{ template "base" . }}` and `{{ define "content" }}...{{ end }}`. Go `html/template` syntax. SPARQL bindings are accessed by lowercase variable name (`.title`, not `.Title`). There are four page templates: `index.html` + `artists-book.html` (books) and `references.html` + `reference.html` (reference works); the two families cross-link via the citation relationship.
 
 ### Vocabulary status
 
