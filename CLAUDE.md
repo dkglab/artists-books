@@ -7,7 +7,7 @@ See `README.md` for the project overview and pipeline diagram. This file capture
 ## Common commands
 
 ```
-make all          # full pipeline: graph/artists-books.ttl, then site/index.html
+make all          # full pipeline: graph/artists-books.ttl + graph/reference-resources.ttl, then site/index.html
 make serve        # build if needed, then snowman server on port 8080
 make validate     # run Jena riot --validate on vocab.ttl + description.ttl
 make clean        # remove generated files (graph/, site/, .snowman/)
@@ -24,9 +24,14 @@ The `snowman server` process is *not* a watcher — it only serves what's in `si
 
 The build log is captured at `.snowman/build_log.txt`.
 
-### Editing the construct query
+### Editing the construct queries
 
-`make graph/artists-books.ttl` runs `queries/construct/artists-books.rq` through SPARQL-Anything to read the CSVs and `Zotero/artists-books-marc.xml` under `Zotero/` and emit Turtle. This does **not** touch Fuseki — it's a pure source-to-RDF transform. Run this manually after editing the construct query or the source data, then re-run `make` to rebuild the site.
+There are **two** construct queries, each producing its own graph:
+
+- `make graph/artists-books.ttl` runs `queries/construct/artists-books.rq` over the CSVs and `Zotero/artists-books-marc.xml`.
+- `make graph/reference-resources.ttl` runs `queries/construct/reference-resources.rq` over `Zotero/reference-resources.csv` and the two crosswalks (`citation-crosswalk.csv`, `abc-master-crosswalk.csv`) to emit the `ab:ReferenceWork` nodes and `ab:Citation`s. It does **not** yet read `Zotero/reference-resources-marc.xml` (that wiring is pending — #40/#46/#51).
+
+Both are pure source-to-RDF transforms — they do **not** touch Fuseki. The crosswalk CSVs are committed inputs to the graph build (like the `-marc.xml` files), so after regenerating them (`make -C Zotero …`) rebuild the graph explicitly with `make -B graph/reference-resources.ttl`, then re-run `make` to rebuild the site.
 
 Before changing how the query walks the MARC XML, read `QUERY-PERFORMANCE.md` — traversing Facade-X containers with a variable predicate (`?s ?var ?o`) instead of `fx:anySlot` is the difference between a 6-second and a 5-minute build.
 
@@ -34,12 +39,14 @@ Before changing how the query walks the MARC XML, read `QUERY-PERFORMANCE.md` �
 
 ### Two SPARQL stages, two query directories
 
-- `queries/construct/` — runs against raw CSVs via SPARQL-Anything's `x-sparql-anything:` SERVICE. Produces the RDF graph. Only runs at build time when `graph/artists-books.ttl` is regenerated.
-- `queries/select/` — runs against Fuseki (which has loaded the constructed graph). One per Snowman view; results feed into Go templates.
+- `queries/construct/` — runs against raw CSVs/MARCXML via SPARQL-Anything's `x-sparql-anything:` SERVICE. Two queries (`artists-books.rq`, `reference-resources.rq`) produce two graphs (`graph/artists-books.ttl`, `graph/reference-resources.ttl`); each only runs when its `.ttl` is regenerated.
+- `queries/select/` — runs against Fuseki (which loads **both** constructed graphs). One per Snowman view; results feed into Go templates. Note: only the artists'-book views exist today — no SELECT query reads the reference graph yet (#63).
 
 ### URI minting
 
 Book URIs are minted from the Zotero `itemKey` field: `https://dkglab.github.io/ns/artists-books/item/<itemKey>`. Related per-book resources use suffixed paths (`/title`, `/publication`, `/identifier`, `/oclc`, `/contribution/<creatorKey>`). Creators are identified by their real-world-object URI — VIAF, else ISNI (from MARC `$1`); only when neither exists is an `ab:creator/<creatorKey>` URI minted, where `creatorKey` is the LC name-authority id (MARC `$0`) or, failing that, a slug of the name. This is done via `fx:entity(...)` `BIND` calls in the construct query.
+
+`reference-resources.rq` mints parallel URIs for the reference track: each reference work is `…/reference/<itemKey>` (with `/publication`, `/identifier` sub-resources), and each citation is `…/reference/<refKey>/citation/<bookKey>` — keyed by the (reference work, artists' book) pair, so multiple note paragraphs citing the same book from the same work collapse to one `ab:Citation`.
 
 ### `views.yaml` and per-row output expansion
 
@@ -55,8 +62,8 @@ The index view uses the same row set but iterates with `{{ range . }}` in the te
 
 ### Vocabulary status
 
-The constructed graph emits BIBFRAME directly (`bf:title`, `bf:contribution`, `bf:provisionActivity`, etc.) plus a thin `ab:` namespace for `ab:ArtistsBook` and `ab:itemKey`. `vocab.ttl` defines a richer custom vocabulary (citation properties, creator roles like `ab:bookArtist`) that is **not yet emitted by the construct query** — it documents the target model. `description.ttl` is a hand-written worked example (Ed Ruscha's *Twentysix Gasoline Stations*) demonstrating the full intended shape.
+The constructed graphs emit BIBFRAME directly (`bf:title`, `bf:contribution`, `bf:provisionActivity`, etc.) plus a growing `ab:` namespace: `ab:ArtistsBook`/`ab:itemKey` (artists-books.rq) and `ab:ReferenceWork`, `ab:Citation`, `ab:cites`, `ab:citedBy` (reference-resources.rq). Still **not yet emitted**: the page-level citation properties (`ab:onPageNumber`/`ab:imagesOnPageNumber`, #43/#44) and the creator-role properties (`ab:bookArtist`, etc.). Note a divergence — `vocab.ttl` still defines the citation class/properties under a legacy `ex:` prefix (`ex:Citation`, `ex:cites`, …) while the construct query emits them under `ab:`; the vocabulary needs normalizing to match. `description.ttl` is a hand-written worked example (Ed Ruscha's *Twentysix Gasoline Stations*) demonstrating the full intended shape.
 
 ### Zotero subdirectory
 
-`Zotero/zotero.sqlite` is the authoritative source. The `*_export.sh` scripts run `*_export.sql` against it to produce the CSVs that the construct query reads. The `-reconciled.csv` variants have been manually cleaned (e.g. mapped to Wikidata/ULAN IDs). See `Zotero/README.md` for the citation data model.
+`Zotero/zotero.sqlite` is the authoritative source. The `*_export.sh` scripts run `*_export.sql` against it to produce the CSVs the construct queries read; `notes_export.sh` emits `notes.xml`, and `marc_harvest.py` produces the `*-marc.xml` collections. The `tools/fuzzy-match/` matchers turn those into the `*-crosswalk.csv` files. The `-reconciled.csv` variants have been manually cleaned (e.g. mapped to Wikidata/ULAN IDs). See `Zotero/README.md` for the citation data model and the reference-works pipeline.

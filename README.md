@@ -8,16 +8,26 @@ A linked data publication pipeline that transforms a curated [Zotero](https://ww
 ## Pipeline overview
 
 ```
-Zotero (SQLite database)         UNC catalog (Z39.50)
-    ↓  SQL export scripts            ↓  marc_harvest.py
-CSV files                        MARCXML records
-    └───────────────┬───────────────┘
-                    ↓  SPARQL-Anything (CONSTRUCT query)
-            RDF graph (Turtle)
-                    ↓  Apache Fuseki (SPARQL endpoint)
-                    ↓  Snowman (static site generator)
-            Static HTML website
+Zotero (SQLite database)                 Library catalogs (Z39.50 / SRU)
+    │  SQL export + notes_export              │  marc_harvest.py (YAZ)
+    ↓                                         ↓
+CSVs + notes.xml + crosswalks            MARCXML records
+  • artists-books.csv                      • artists-books-marc.xml
+  • reference-resources.csv                • reference-resources-marc.xml *
+  • notes.xml, *-crosswalk.csv
+    └─────────────────┬─────────────────────┘
+                      ↓  SPARQL-Anything (two CONSTRUCT queries)
+       artists-books.ttl   +   reference-resources.ttl
+                      ↓  Apache Fuseki (SPARQL endpoint)
+                      ↓  Snowman (static site generator)
+              Static HTML website
+
+* reference-resources-marc.xml is harvested but not yet read by a construct
+  query — the reference graph is currently built from the CSV + crosswalks
+  (see steps 2–3).
 ```
+
+The pipeline runs as **two parallel tracks** that meet in the graph stage: the **artists' books** (the 1,341-book collection the site is built from) and the **reference works** that cite them (the 157-item *Reference resources* collection, plus the "Cited:" notes that connect the two). The reference track is newer; its data is in the graph but not yet surfaced on the website (no reference/results pages yet — issue #63).
 
 ### 1. Zotero → CSV
 
@@ -25,28 +35,41 @@ The Zotero library is the authoritative source. Export scripts in `Zotero/` quer
 
 | Script | Output | Contents | Used by construct query? |
 |---|---|---|---|
-| `items_export.sh` | `artists-books.csv` | ~1,341 artists' books, one row per item (title, date, publisher, place, ISBN, language, …) | **Yes** |
+| `items_export.sh` | `artists-books.csv` | ~1,341 artists' books, one row per item (title, date, publisher, place, ISBN, language, …) | **Yes** (`artists-books.rq`) |
+| `items_export.sh "Reference resources"` | `reference-resources.csv` | 157 reference works that cite the artists' books | **Yes** (`reference-resources.rq`) |
+| `notes_export.sh` | `notes.xml` | "Cited:" note paragraphs (one `<p>` per citation), bold page markup preserved | Indirectly — via `citation-crosswalk.csv` |
 | `creators_export.sh` | `all-creators.csv`, `all-item_creators.csv` | ~8,385 distinct creator names and their item links | No |
 | `publishers_export.sh` | `all-publishers.csv`, `all-item_publishers.csv` | Publisher names and their item links | No |
 
 The SQL queries join across Zotero's internal tables (`items`, `itemData`, `itemDataValues`, `itemCreators`, `creators`, `fields`) to produce flat, structured CSV.
 
-Only `artists-books.csv` feeds the construct query today — it supplies the per-book title, publisher, place, date, language, and ISBN. Creators now come from the MARC records (step 2) rather than `all-creators.csv`, and publisher names are read straight from `artists-books.csv`, so the creators/publishers exports (and their hand-reconciled `*-reconciled.csv` variants) are currently auxiliary: kept for reference and reconciliation work, not consumed by the pipeline.
+`artists-books.csv` feeds the artists'-book construct query — it supplies the per-book title, publisher, place, date, language, and ISBN. Creators now come from the MARC records (step 2) rather than `all-creators.csv`, and publisher names are read straight from `artists-books.csv`, so the creators/publishers exports (and their hand-reconciled `*-reconciled.csv` variants) are currently auxiliary: kept for reference and reconciliation work, not consumed by the pipeline.
 
-### 2. UNC catalog → MARCXML
+`reference-resources.csv` feeds a **second** construct query (`reference-resources.rq`) for the reference works. The "Cited:" notes that connect references to artists' books don't live on the built collection's records, so a pair of fuzzy-match **crosswalks** (`abc-master-crosswalk.csv`, `citation-crosswalk.csv`) reconcile note → reference-work → artists'-book across the three Zotero libraries. See [`Zotero/README.md`](Zotero/README.md) for the full citation data model.
+
+### 2. Library catalogs → MARCXML
 
 For the books that have a UNC bib number, full MARC records are harvested from UNC's catalog over Z39.50 by `Zotero/marc_harvest.py` (using the YAZ toolkit) and written to `Zotero/artists-books-marc.xml` — a single MARCXML collection of ~1,340 records, one per item. The harvester stamps each record with a synthetic `999 $a <itemKey>` field so it can be joined back to the corresponding Zotero item.
 
 These records carry richer, more authoritative data than the CSV: cataloguer-supplied creator names with relator roles, real-world-object URIs (VIAF/ISNI in `$1`) and LC name-authority URIs (`$0`), plus the OCLC number (`001`). See `MARC-RECORDS.md` for a full analysis of the file.
 
+The same harvester also produces **`Zotero/reference-resources-marc.xml`** for the reference works. Reference works are mostly *not* UNC bibs, so the harvester searches a chain of **nine** catalogs (UNC, Library of Congress, K10plus, Penn State, LIBRIS, Getty, Clark, NYARC, Harvard) by **ISBN**, then **title + author**, falling back across servers until a record verifies; a few hand-supplied records are merged from `reference-resources-manual.xml`. Result: ~155 of the 157 reference works get a MARC record (joined by `999 $a`, same as the books). **This file is harvested but not yet consumed by the construct query** — the reference-work nodes are currently built from `reference-resources.csv` alone, so the MARC's richer creator/OCLC data isn't in the graph yet (tracked in #40/#46/#51).
+
 ### 3. CSV + MARCXML → RDF graph
 
-[SPARQL-Anything](https://sparql-anything.cc/) reads `artists-books.csv` and `Zotero/artists-books-marc.xml` and transforms them into RDF using a single SPARQL CONSTRUCT query (`queries/construct/artists-books.rq`).
+[SPARQL-Anything](https://sparql-anything.cc/) transforms the sources into RDF using **two** SPARQL CONSTRUCT queries — one per track:
 
-The resulting graph uses [BIBFRAME](https://www.loc.gov/bibframe/) (Library of Congress bibliographic framework) as its primary vocabulary, with a custom `ab:` namespace for collection-specific concepts. Each book is minted a URI from its Zotero item key. Title, publisher, place, date, language, and ISBN come from the CSV; creators (with their VIAF/ISNI/LC identities and LC relator roles), the OCLC number, and the WorldCat URL come from the MARC records, joined to each book through the `999 $a` item key. Books without a MARC record still emit, just without the MARC-derived fields.
+- `queries/construct/artists-books.rq` → `graph/artists-books.ttl` (the artists' books)
+- `queries/construct/reference-resources.rq` → `graph/reference-resources.ttl` (the reference works and citations)
+
+Both graphs use [BIBFRAME](https://www.loc.gov/bibframe/) (Library of Congress bibliographic framework) as their primary vocabulary, with a custom `ab:` namespace for collection-specific concepts.
+
+**Artists' books.** Each book is minted a URI from its Zotero item key. Title, publisher, place, date, language, and ISBN come from the CSV; creators (with their VIAF/ISNI/LC identities and LC relator roles), the OCLC number, and the WorldCat URL come from the MARC records, joined to each book through the `999 $a` item key. Books without a MARC record still emit, just without the MARC-derived fields.
+
+**Reference works and citations.** `reference-resources.rq` mints an `ab:ReferenceWork` node (URI `…/reference/<itemKey>`) for each of the 157 reference works, with title/publisher/place/date/language/ISBN from `reference-resources.csv`. It then reads the two crosswalks and emits one **`ab:Citation`** per resolved reference→book link — `ab:citedBy` the reference work, `ab:cites` the artists' book — anchored at `…/reference/<refKey>/citation/<bookKey>`. Currently **433 citations** connect **194 artists' books** to **43 reference works** (paragraphs flagged `review=yes` are held out of the auto-join). Page-number / image-page extraction from the notes is still pending (#43/#44).
 
 ```
-make graph/artists-books.ttl
+make graph/artists-books.ttl graph/reference-resources.ttl
 ```
 
 ### 4. RDF graph → website
@@ -76,21 +99,23 @@ All tools are downloaded on first use by the Makefiles in `tools/` — no system
 `vocab.ttl` defines a small custom vocabulary layered on top of BIBFRAME and schema.org:
 
 - `ab:ArtistsBook` — subclass of `schema:Book`
-- `ab:ReferenceBook` — reference works that cite artists' books
-- `ab:Citation` — links a reference book to the artists' book it cites, with page-level granularity
+- `ab:ReferenceWork` — a reference work (book, article, webpage) that cites an artists' book
+- `ab:Citation` — links a reference work to the artists' book it cites; `ab:cites` → the book, `ab:citedBy` → the reference work
 - Creator role properties: `ab:primaryCreator`, `ab:bookArtist`, `ab:photographyBy`, etc.
+
+`ab:ReferenceWork`, `ab:Citation`, `ab:cites`, and `ab:citedBy` are emitted by the construct queries today. The page-level citation properties and the creator-role properties are defined but **not yet emitted** — and `vocab.ttl` still carries the citation terms under a legacy `ex:` prefix pending normalization to `ab:`.
 
 `description.ttl` contains a worked example (Ed Ruscha's *Twentysix Gasoline Stations*) showing how the vocabulary is applied, with links to Wikidata, Getty ULAN, and LC authority records.
 
 ## Citation data
 
-The Zotero library also encodes citation data: which of the ~1,342 artists' books are mentioned in ~73 reference works on book arts. This is captured three ways in Zotero:
+The Zotero library also encodes citation data: which artists' books are mentioned in the reference works on book arts (the 157-item *Reference resources* collection; ~73 of them are used often enough to have a short citation-source tag). This is captured three ways in Zotero:
 
 - **Tags** — quick reference labels like `Bury (2015)` or `Drucker (2004)`
 - **Notes** — full citation text with page numbers (~7,649 "Cited:" notes)
 - **Item relations** — explicit `dc:relation` links (~2,366 connections)
 
-The most-cited source is Moeglin-Delcroix (2012), which cites 1,568 books in the collection. See `Zotero/README.md` for full documentation of the data model.
+The most-cited source is Moeglin-Delcroix (2012), which cites 1,568 books in the collection. The **notes** are the form the pipeline extracts: the construct query reconciles them (via the crosswalks) into the graph as 433 `ab:Citation`s (step 3). See `Zotero/README.md` for full documentation of the data model.
 
 ## Configuration files
 
