@@ -120,6 +120,11 @@ SERVERS = [
     {"name": "nyarc", "conn": "https://na01.alma.exlibrisgroup.com/view/sru/01NYA_INST",
      "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # Harvard (Ex Libris Alma), a very large research library with an open SRU
+    # endpoint on the na03 pod. Broad reach for the US/European reference tail.
+    {"name": "harvard", "conn": "https://na03.alma.exlibrisgroup.com/view/sru/01HVD_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
 ]
 
 # Identifier keys are trusted on a hit; title keys must be verified. Accept a
