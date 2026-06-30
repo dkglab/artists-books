@@ -25,7 +25,9 @@ SELECT
   ?date
   ?language
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
-  (GROUP_CONCAT(DISTINCT ?citedTitle; separator="; ") AS ?citedBooks)
+  # Each cited book as a "itemKey<TAB>title" token, tokens separated by newline,
+  # so the template can split the pair and link each title to its /item/ page.
+  (GROUP_CONCAT(DISTINCT CONCAT(?citedBookKey, "\t", ?citedTitle); separator="\n") AS ?citedBooks)
   (COUNT(DISTINCT ?citedBook) AS ?citationCount)
 WHERE {
   ?reference

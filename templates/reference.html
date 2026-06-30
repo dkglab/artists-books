@@ -35,6 +35,11 @@
 
 {{ with .citedBooks }}
 <h2>Cites</h2>
-<p>{{ . }}</p>
+<ul class="mb">
+{{- range (split . "\n") }}
+{{- $pair := split . "\t" }}
+<li><a href="/item/{{ index $pair 0 }}">{{ index $pair 1 }}</a></li>
+{{- end }}
+</ul>
 {{ end }}
 {{ end }}
