@@ -40,6 +40,27 @@ SELECT
     MAX(CASE WHEN f.fieldName = 'bookTitle' THEN idv.value END) AS bookTitle,
     MAX(CASE WHEN f.fieldName = 'websiteTitle' THEN idv.value END) AS websiteTitle,
     MAX(CASE WHEN f.fieldName = 'university' THEN idv.value END) AS university,
+    -- Ordered creator names (primary author first), so downstream consumers
+    -- (e.g. the MARC harvester's author-keyed fallback search) have a name to
+    -- query on. The inner subquery orders by orderIndex before concatenating;
+    -- pipe cruft from VCU-sourced names (e.g. "Name (Library)|") is stripped and
+    -- the resulting double spaces collapsed.
+    (
+        SELECT GROUP_CONCAT(name, '; ') FROM (
+            SELECT TRIM(REPLACE(REPLACE(REPLACE(
+                     CASE
+                       WHEN cr.fieldMode = 1   THEN cr.lastName
+                       WHEN cr.firstName = ''  THEN cr.lastName
+                       WHEN cr.lastName = ''   THEN cr.firstName
+                       ELSE cr.firstName || ' ' || cr.lastName
+                     END,
+                     '|', ''), '  ', ' '), '  ', ' ')) AS name
+            FROM itemCreators ic
+            JOIN creators cr ON cr.creatorID = ic.creatorID
+            WHERE ic.itemID = i.itemID
+            ORDER BY ic.orderIndex
+        )
+    ) AS creators,
     (
         SELECT GROUP_CONCAT(c.collectionName, '; ')
         FROM collectionItems ci
