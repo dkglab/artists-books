@@ -87,7 +87,7 @@ make serve             # serve at http://127.0.0.1:8080
 
 ## Tools
 
-All tools are downloaded on first use by the Makefiles in `tools/` — no system-level installs required beyond a JVM, `sqlite3`, and the [YAZ](https://www.indexdata.com/resources/software/yaz/) toolkit (`yaz-client`/`yaz-marcdump`, used by `Zotero/marc_harvest.py` to fetch MARC records over Z39.50). GitHub Codespaces gets these automatically via `.devcontainer/devcontainer.json`.
+All tools are fetched (and, for YAZ, built from source) on first use by the Makefiles in `tools/` — no third-party tool binaries need to be installed system-wide. The only system prerequisites are a JVM and `sqlite3`, plus `make` and a C toolchain (used to compile the vendored [YAZ](https://www.indexdata.com/resources/software/yaz/) toolkit from source). GitHub Codespaces gets these automatically via `.devcontainer/devcontainer.json`.
 
 | Tool | Version | Purpose |
 |---|---|---|
@@ -95,6 +95,7 @@ All tools are downloaded on first use by the Makefiles in `tools/` — no system
 | [Apache Fuseki](https://jena.apache.org/documentation/fuseki2/) | 6.1.0 | In-process SPARQL endpoint server |
 | [SPARQL-Anything](https://sparql-anything.cc/) | 1.1.0 | CSV/MARCXML-to-RDF transformation via SPARQL CONSTRUCT |
 | [Snowman](https://github.com/glaciers-in-archives/snowman) | 0.8.0 | SPARQL-driven static site generator |
+| [YAZ](https://www.indexdata.com/resources/software/yaz/) | 5.37.3 | `yaz-client`/`yaz-marcdump` — Z39.50/SRU MARC harvest (`Zotero/marc_harvest.py`); built from source under `tools/yaz-client/` |
 
 ## Vocabulary
 
