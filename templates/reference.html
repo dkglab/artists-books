@@ -7,6 +7,11 @@
 <p class="mb"><em>Reference work</em></p>
 
 <dl>
+  {{ with .creator }}
+  <dt>Creator</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
   {{ with .publisher }}
   <dt>Publisher</dt>
   <dd>{{ . }}</dd>

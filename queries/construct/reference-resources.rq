@@ -6,6 +6,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX bf: <http://id.loc.gov/ontologies/bibframe/>
 PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
 PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 
 # Reference works and the citations that link them to artists' books (#34, #42).
 #
@@ -15,10 +16,13 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 #      metadata, mirroring the shape the artists' books get in artists-books.rq
 #      but typed ab:ReferenceWork and minted under reference/<itemKey>. The
 #      collection is heterogeneous (151 book + 3 journalArticle + 2 webpage), so
-#      ab:ReferenceWork is a subclass of schema:CreativeWork (vocab.ttl). There
-#      are no MARC records for reference works, so the MARC-derived fields the
-#      artists' books carry (creators, OCLC/WorldCat, extent, dimensions) are
-#      absent by design.
+#      ab:ReferenceWork is a subclass of schema:CreativeWork (vocab.ttl). Most
+#      fields come from reference-resources.csv; a basic slice of the harvested
+#      MARC (Zotero/reference-resources-marc.xml) is also read — for now just the
+#      primary creator (100 $a), to demonstrate the join. The remaining
+#      MARC-derived fields the artists' books carry (OCLC/WorldCat, secondary
+#      creators, relator roles, identity URIs, extent/dimensions) are still
+#      absent (#40/#51).
 #
 #   2. The *citation* (#42, moved here from artists-books.rq): each "Cited:" note
 #      paragraph is a reference work citing an artist's book. The citation is now
@@ -34,6 +38,15 @@ CONSTRUCT {
     bf:provisionActivity ?refPublication ;
     bf:language ?language ;
     bf:identifiedBy ?refISBN ;
+    bf:contribution ?refContribution ;
+    .
+
+  ?refContribution a bflc:PrimaryContribution ;
+    bf:agent ?refAgent ;
+    .
+
+  ?refAgent a bf:Agent ;
+    rdfs:label ?creator_name ;
     .
 
   ?refPublication a bf:Publication ;
@@ -86,6 +99,35 @@ WHERE {
       OPTIONAL { ?refRow xyz:ISBN ?ISBN }
       BIND(fx:entity(ab:, "reference/", ?item_key, "/identifier") AS ?isbnNode)
       BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?refISBN)
+    }
+
+    # Basic MARC slice: the primary creator (100 $a) from the harvested
+    # reference MARC, joined to the CSV row by the synthetic 999 $a itemKey
+    # (same join the artists' books use). Kept OPTIONAL — most reference works
+    # have a MARC record but only some carry a 100 main entry (edited volumes /
+    # exhibition catalogs enter creators on 700/710 instead, not read yet).
+    # Traversal uses fx:anySlot, not a variable predicate (see
+    # QUERY-PERFORMANCE.md). Name only for now — no roles / identity URIs (#46).
+    OPTIONAL {
+      SERVICE <x-sparql-anything:location=Zotero/reference-resources-marc.xml> {
+        ?record a marc:record .
+
+        # 999 $a — the Zotero itemKey stamped onto each record at harvest time;
+        # join to the CSV row above.
+        ?record fx:anySlot ?f999 .
+        ?f999 a marc:datafield ; xyz:tag "999" .
+        ?f999 fx:anySlot ?sf999a .
+        ?sf999a xyz:code "a" ; rdf:_1 ?item_key .
+
+        # 100 $a — primary creator name. Strip trailing cataloguing punctuation.
+        ?record fx:anySlot ?df100 .
+        ?df100 a marc:datafield ; xyz:tag "100" .
+        ?df100 fx:anySlot ?sf100a .
+        ?sf100a xyz:code "a" ; rdf:_1 ?name_raw .
+        BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?creator_name)
+      }
+      BIND(fx:entity(ab:, "reference/", ?item_key, "/contribution/primary") AS ?refContribution)
+      BIND(fx:entity(ab:, "reference/", ?item_key, "/agent/primary") AS ?refAgent)
     }
   }
   UNION
