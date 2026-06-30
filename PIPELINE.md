@@ -21,7 +21,7 @@ flowchart TD
     marc --> abrq
     csvs --> refrq{{"reference-resources.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
     crosswalks --> refrq
-    refmarc -.->|"harvested, not yet read *"| refrq
+    refmarc -->|"primary creator only *"| refrq
 
     abrq --> abttl["graph/artists-books.ttl"]
     refrq --> refttl["graph/reference-resources.ttl"]
@@ -60,6 +60,8 @@ flowchart TD
     class site output;
 ```
 
-`*` `reference-resources-marc.xml` is harvested but not yet consumed by a construct
-query — the reference graph is currently built from the CSV plus the crosswalks
-(tracked in #40 / #46 / #51).
+`*` `reference-resources-marc.xml` is harvested but only minimally consumed: the
+construct query pulls just the primary creator (`100 $a`) from it, joined by
+`999 $a`; the rest of the reference graph comes from the CSV plus the crosswalks,
+and the remaining MARC fields (OCLC/WorldCat, secondary creators, …) are still
+pending (tracked in #40 / #51).

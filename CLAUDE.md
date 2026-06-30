@@ -29,7 +29,7 @@ The build log is captured at `.snowman/build_log.txt`.
 There are **two** construct queries, each producing its own graph:
 
 - `make graph/artists-books.ttl` runs `queries/construct/artists-books.rq` over the CSVs and `Zotero/artists-books-marc.xml`.
-- `make graph/reference-resources.ttl` runs `queries/construct/reference-resources.rq` over `Zotero/reference-resources.csv` and the two crosswalks (`citation-crosswalk.csv`, `abc-master-crosswalk.csv`) to emit the `ab:ReferenceWork` nodes and `ab:Citation`s. It does **not** yet read `Zotero/reference-resources-marc.xml` (that wiring is pending — #40/#46/#51).
+- `make graph/reference-resources.ttl` runs `queries/construct/reference-resources.rq` over `Zotero/reference-resources.csv` and the two crosswalks (`citation-crosswalk.csv`, `abc-master-crosswalk.csv`) to emit the `ab:ReferenceWork` nodes and `ab:Citation`s. It also reads a **basic slice** of `Zotero/reference-resources-marc.xml` — just the primary creator (`100 $a`), joined by `999 $a` like the books' MARC — emitted as a `bflc:PrimaryContribution` (#46). The rest of the reference MARC (OCLC/WorldCat, secondary creators, roles, identity URIs, extent/dimensions) is still pending (#40/#51).
 
 Both are pure source-to-RDF transforms — they do **not** touch Fuseki. The crosswalk CSVs are committed inputs to the graph build (like the `-marc.xml` files), so after regenerating them (`make -C Zotero …`) rebuild the graph explicitly with `make -B graph/reference-resources.ttl`, then re-run `make` to rebuild the site.
 

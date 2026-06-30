@@ -24,9 +24,9 @@ CSVs + notes.xml + crosswalks            MARCXML records
                       ↓  Snowman (static site generator)
               Static HTML website
 
-* reference-resources-marc.xml is harvested but not yet read by a construct
-  query — the reference graph is currently built from the CSV + crosswalks
-  (see steps 2–3).
+* reference-resources-marc.xml is harvested but only minimally read so far —
+  the construct query pulls just the primary creator from it; the rest of the
+  reference graph comes from the CSV + crosswalks (see steps 2–3).
 ```
 
 The pipeline runs as **two parallel tracks** that meet in the graph stage: the **artists' books** (the 1,341-book collection the site is built from) and the **reference works** that cite them (the 157-item *Reference resources* collection, plus the "Cited:" notes that connect the two). Both tracks are now surfaced on the website: alongside the per-book pages, a **reference works index** and a **per-reference-work page** render the citation relationship, and the two link to each other (a book lists the reference works that cite it; a reference work lists the books it cites). Only reference works that actually cite a book in the collection get a page (43 of the 157 today). The page-number / image-page detail of each citation is still pending (#43/#44).
@@ -55,7 +55,7 @@ For the books that have a UNC bib number, full MARC records are harvested from U
 
 These records carry richer, more authoritative data than the CSV: cataloguer-supplied creator names with relator roles, real-world-object URIs (VIAF/ISNI in `$1`) and LC name-authority URIs (`$0`), plus the OCLC number (`001`). See `MARC-RECORDS.md` for a full analysis of the file.
 
-The same harvester also produces **`Zotero/reference-resources-marc.xml`** for the reference works. Reference works are mostly *not* UNC bibs, so the harvester searches a chain of **nine** catalogs (UNC, Library of Congress, K10plus, Penn State, LIBRIS, Getty, Clark, NYARC, Harvard) by **ISBN**, then **title + author**, falling back across servers until a record verifies; a few hand-supplied records are merged from `reference-resources-manual.xml`. Result: ~155 of the 157 reference works get a MARC record (joined by `999 $a`, same as the books). **This file is harvested but not yet consumed by the construct query** — the reference-work nodes are currently built from `reference-resources.csv` alone, so the MARC's richer creator/OCLC data isn't in the graph yet (tracked in #40/#46/#51).
+The same harvester also produces **`Zotero/reference-resources-marc.xml`** for the reference works. Reference works are mostly *not* UNC bibs, so the harvester searches a chain of **nine** catalogs (UNC, Library of Congress, K10plus, Penn State, LIBRIS, Getty, Clark, NYARC, Harvard) by **ISBN**, then **title + author**, falling back across servers until a record verifies; a few hand-supplied records are merged from `reference-resources-manual.xml`. Result: ~155 of the 157 reference works get a MARC record (joined by `999 $a`, same as the books). The construct query now reads a **basic slice** of this file — just the **primary creator** (`100 $a`) — to demonstrate the join; the rest of the MARC's richer data (OCLC/WorldCat, secondary creators, relator roles, identity URIs, extent/dimensions) isn't in the graph yet (tracked in #40/#51).
 
 ### 3. CSV + MARCXML → RDF graph
 
@@ -68,7 +68,7 @@ Both graphs use [BIBFRAME](https://www.loc.gov/bibframe/) (Library of Congress b
 
 **Artists' books.** Each book is minted a URI from its Zotero item key. Title, publisher, place, date, language, and ISBN come from the CSV; creators (with their VIAF/ISNI/LC identities and LC relator roles), the OCLC number, and the WorldCat URL come from the MARC records, joined to each book through the `999 $a` item key. Books without a MARC record still emit, just without the MARC-derived fields.
 
-**Reference works and citations.** `reference-resources.rq` mints an `ab:ReferenceWork` node (URI `…/reference/<itemKey>`) for each of the 157 reference works, with title/publisher/place/date/language/ISBN from `reference-resources.csv`. It then reads the two crosswalks and emits one **`ab:Citation`** per resolved reference→book link — `ab:citedBy` the reference work, `ab:cites` the artists' book — anchored at `…/reference/<refKey>/citation/<bookKey>`. Currently **433 citations** connect **194 artists' books** to **43 reference works** (paragraphs flagged `review=yes` are held out of the auto-join) — and step 4 renders this both ways, so each book page links to the reference works citing it and each reference page links to the books it cites. Page-number / image-page extraction from the notes is still pending (#43/#44).
+**Reference works and citations.** `reference-resources.rq` mints an `ab:ReferenceWork` node (URI `…/reference/<itemKey>`) for each of the 157 reference works, with title/publisher/place/date/language/ISBN from `reference-resources.csv` and the **primary creator** (`100 $a`) joined in from `reference-resources-marc.xml` by the `999 $a` itemKey (a basic MARC slice, like the books' MARC join). It then reads the two crosswalks and emits one **`ab:Citation`** per resolved reference→book link — `ab:citedBy` the reference work, `ab:cites` the artists' book — anchored at `…/reference/<refKey>/citation/<bookKey>`. Currently **433 citations** connect **194 artists' books** to **43 reference works** (paragraphs flagged `review=yes` are held out of the auto-join) — and step 4 renders this both ways, so each book page links to the reference works citing it and each reference page links to the books it cites. Page-number / image-page extraction from the notes is still pending (#43/#44).
 
 ```
 make graph/artists-books.ttl graph/reference-resources.ttl
