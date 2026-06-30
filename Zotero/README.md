@@ -124,9 +124,12 @@ use, so it covers the 436 citation paragraphs reachable from ABC books.
 (`citedItemKey, n, refItemKey, method, confidence, review, refTitle,
 citationText`). Generic short titles ("Artists books") and unmatched-but-citation
 paragraphs carry `review=yes` and are excluded from the construct query's
-auto-join. Current: **383 paragraphs auto-matched** across 44 reference works,
-50 held for review (mostly reference works not yet in the 156-row collection),
-3 editorial annotations recorded as `none`.
+auto-join. Current: **433 paragraphs auto-matched** across 46 reference works,
+3 held for review (`BEGEG5AI`'s own short-generic-title citations), 3 editorial
+annotations recorded as `none`. (Earlier ~50 review-held paragraphs cited
+reference works missing from the collection; **#59** added them — e.g. Lyons,
+*Artists' Books: Visual Studies Workshop Press* — and repaired a corrupt note
+title, dropping the review count from ~50 to 3.)
 
 ```sh
 make -C Zotero citation-crosswalk.csv
@@ -148,7 +151,7 @@ reference/<refItemKey>/citation/<abcItemKey>
     rdfs:label "<flattened reference string>" .
 ```
 
-Result: **387 citations** linking **162 ABC books** to **41 reference works**;
+Result: **433 citations** linking **194 ABC books** to **43 reference works**;
 no `notes.xml` read is needed at graph-build time (the crosswalk already carries
 the text). Page-number / image-page extraction (#43/#44/#15/#16) is still TODO.
 
@@ -159,6 +162,42 @@ the text). Page-number / image-page extraction (#43/#44/#15/#16) is still TODO.
 make -C Zotero notes.xml citation-crosswalk.csv
 make -B graph/reference-resources.ttl
 ```
+
+### Reference-work MARC harvest (#54)
+
+`marc_harvest.py` harvests full MARC records for both tracks — `artists-books.csv`
+→ `artists-books-marc.xml` and `reference-resources.csv` →
+**`reference-resources-marc.xml`** — via the generic Makefile pattern rule
+`%-marc.xml: %.csv`. Each record is stamped with a synthetic `999 $a <itemKey>`
+so it joins back to its Zotero item, and harvest state (resumable) lives under
+`marc/<csv-stem>/` (gitignored; only the `<stem>-marc.xml` product is committed).
+
+The reference works need a **different keying strategy** than the books: they are
+mostly catalogued as *Open WorldCat*, not UNC bibs, so a UNC-bib lookup finds
+almost none. The harvester instead tries, per item:
+
+1. **ISBN** (`@attr 1=7` / `alma.isbn`),
+2. **title + author** (author surname from the CSV `creators` column, with a
+   `verify_title` guard so a coincidental title hit isn't stamped onto the wrong
+   key),
+
+across a chain of **nine catalogues** — UNC, Library of Congress, K10plus, Penn
+State, LIBRIS (Z39.50), then Getty, Clark, NYARC, Harvard (Alma SRU/CQL) —
+falling through to the next server until a record verifies. A handful of
+hand-supplied records are merged from `reference-resources-manual.xml`. Result:
+**~155 of the 157** reference works get a record; the residual (e.g. webpages
+with no catalogue record) is listed in `reference-resources-unresolved.csv`.
+
+```sh
+python3 marc_harvest.py --csv reference-resources.csv --out reference-resources-marc.xml
+# or, via the pattern rule:
+make -C Zotero reference-resources-marc.xml
+```
+
+> **Not yet wired into the graph.** `reference-resources.rq` builds the
+> `ab:ReferenceWork` nodes from `reference-resources.csv` only; it does **not**
+> read `reference-resources-marc.xml` yet, so the MARC's richer creator/OCLC/
+> WorldCat data isn't in the graph. That wiring is tracked in #40/#46/#51.
 
 ## SQLite database
 
@@ -344,7 +383,7 @@ for Sloane`).
 
 The citing reference works themselves are also cataloged in the
 database, organized into a **"Reference resources" collection** of
-156 items. These include the major surveys, exhibition catalogs,
+157 items. These include the major surveys, exhibition catalogs,
 bibliographies, and journals used as citation sources:
 
 - Bury, *Artists' books: the book as a work of art 1963-2000* (2015)
@@ -355,7 +394,7 @@ bibliographies, and journals used as citation sources:
 - Lyons, *Artists' books: Visual Studies Workshop Press* (2009)
 - Hamady, *Two decades of Hamady and the Perishable Press Limited* (1984)
 - Bodman, *Creating artists' books* (2005)
-- and ~148 others
+- and ~149 others
 
 Each citing work is tagged with its own citation-source tag (e.g.
 Bury's book is tagged `Bury (2015)`) and carries workflow tags like
@@ -448,7 +487,7 @@ Pull lists (1)
     └── 2016-present (0)
 Ref resources -- completed (21)
 Ref resources -- indexed, need qc (11)
-Reference resources (156)
+Reference resources (157)
 Reference resources to index (115)
 Sloane Special Collections (1)
 ├── Artists' Books Collection (1,341)
@@ -483,7 +522,7 @@ books belong to no collection.
 Four collections track indexing progress for the citing reference
 works. Items appear to move between them as work proceeds:
 
-- **Reference resources** (156) — the main catalog of citing works
+- **Reference resources** (157) — the main catalog of citing works
 - **Reference resources to index** (115) — not yet indexed
 - **Ref resources -- completed** (21) — fully indexed
 - **Ref resources -- indexed, need qc** (11) — indexed, awaiting review
