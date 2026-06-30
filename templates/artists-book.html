@@ -58,4 +58,14 @@
   </dd>
   {{ end }}
 </dl>
+
+{{ with .citedBy }}
+<h2>Cited by</h2>
+<ul class="mb">
+{{- range (split . "\n") }}
+{{- $pair := split . "\t" }}
+<li><a href="/reference/{{ index $pair 0 }}">{{ index $pair 1 }}</a></li>
+{{- end }}
+</ul>
+{{ end }}
 {{ end }}

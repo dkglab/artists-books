@@ -21,6 +21,11 @@ SELECT
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   (GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
   (SAMPLE(?worldcat_url) AS ?worldcatLink)
+  # Reference works that cite this book (#42), each as an "itemKey<TAB>title"
+  # token (tokens newline-separated) so the template can link each to its
+  # /reference/ page. Any citing reference necessarily cites an in-collection
+  # book (this one), so it always has a reference page.
+  (GROUP_CONCAT(DISTINCT ?citedByToken; separator="\n") AS ?citedBy)
 WHERE {
   ?book
     a ab:ArtistsBook ;
@@ -89,6 +94,14 @@ WHERE {
 
   OPTIONAL {
     ?book foaf:isPrimaryTopicOf ?worldcat_url .
+  }
+
+  OPTIONAL {
+    ?citation ab:cites ?book ;
+              ab:citedBy ?citingRef .
+    ?citingRef rdfs:label ?citingRefLabel ;
+               ab:itemKey ?citingRefKey .
+    BIND(CONCAT(?citingRefKey, "\t", ?citingRefLabel) AS ?citedByToken)
   }
 }
 GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?dimensions
