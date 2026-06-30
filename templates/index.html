@@ -6,7 +6,10 @@
 <h1>Artists' Books</h1>
 <ol class="mb">
 {{ range . }}
-<li><a href="item/{{ .itemKey }}">{{ .title }}</a></li>
+<li>
+  <a href="item/{{ .itemKey }}">{{ .title }}</a>
+  {{ with .citedBy }}<small>cited by {{ len (split . "\n") }}</small>{{ end }}
+</li>
 {{ end }}
 </ol>
 {{ end }}
