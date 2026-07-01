@@ -1,13 +1,16 @@
 .DS_Store
 .claude
 # Zotero storage noise - web snapshot assets
-Zotero/storage/**/*.gif
-Zotero/storage/**/*.jpg
-Zotero/storage/**/*.jpeg
-Zotero/storage/**/*.png
-Zotero/storage/**/*.ico
-Zotero/storage/**/*.js
-Zotero/storage/**/*.css
+sources/zotero/storage/**/*.gif
+sources/zotero/storage/**/*.jpg
+sources/zotero/storage/**/*.jpeg
+sources/zotero/storage/**/*.png
+sources/zotero/storage/**/*.ico
+sources/zotero/storage/**/*.js
+sources/zotero/storage/**/*.css
+# Zotero full-text index state - machine-regenerable, no research value
+sources/zotero/storage/**/.zotero-ft-cache
+sources/zotero/storage/**/.zotero-ft-unprocessed
 /.sprite
 tools/jena/*
 !tools/jena/Makefile
@@ -23,16 +26,16 @@ tools/snowman/snowman
 # fuzzy-match: commit the scripts, ignore the generated venv (issue #55)
 tools/fuzzy-match/venv/
 /graph/
-/.snowman/
-/site/
-# MARC harvest state (resumable; only Zotero/*-marc.xml is committed)
-/Zotero/marc/
+/web/.snowman/
+/web/site/
+# MARC harvest state (resumable; only sources/marc/*-marc.xml is committed)
+/sources/marc/harvest/
 # Python bytecode cache
 __pycache__/
 *.pyc
 # generated files
-description.png
+docs/description.png
 diff.txt
 inferred.png
 inferred.ttl
-vocab.png
+docs/vocab.png

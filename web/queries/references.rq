@@ -1,0 +1,73 @@
+PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
+PREFIX bf:      <http://id.loc.gov/ontologies/bibframe/>
+PREFIX bflc:    <http://id.loc.gov/ontologies/bflc/>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd:      <http://www.wikidata.org/entity/>
+
+# One row per reference work (#34) that cites at least one artists' book in the
+# ABC collection, feeding both the reference index ("Results" page) and the
+# per-reference detail page. Mirrors queries/artists-books.rq.
+#
+# The Reference resources collection is a 157-work bibliography, but a reference
+# work only earns a page here when it actually cites an in-collection book: the
+# citation join below is REQUIRED, not OPTIONAL, so the ~114 reference works
+# that no matched "Cited:" note connects to an ABC book are excluded. Citations
+# come from the artists-books graph (Fuseki loads both constructed graphs) via
+# the ab:Citation / ab:citedBy / ab:cites relationship (#42); requiring the
+# cited book's ab:itemKey keeps the join to books that exist in this collection.
+SELECT
+  ?reference
+  ?title
+  ?itemKey
+  ?creator
+  ?publisher
+  ?place
+  ?date
+  ?language
+  (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
+  # Each cited book as a "itemKey<TAB>title" token, tokens separated by newline,
+  # so the template can split the pair and link each title to its /item/ page.
+  (GROUP_CONCAT(DISTINCT CONCAT(?citedBookKey, "\t", ?citedTitle); separator="\n") AS ?citedBooks)
+  (COUNT(DISTINCT ?citedBook) AS ?citationCount)
+WHERE {
+  ?reference
+    a ab:ReferenceWork ;
+    rdfs:label ?title ;
+    ab:itemKey ?itemKey ;
+    .
+
+  # Primary creator from MARC 100 $a (basic MARC slice, #46). Present for only
+  # some reference works (edited volumes carry no 100 main entry).
+  OPTIONAL {
+    ?reference bf:contribution ?c .
+    ?c a bflc:PrimaryContribution ;
+       bf:agent/rdfs:label ?creator .
+  }
+
+  OPTIONAL {
+    ?reference bf:provisionActivity ?pub .
+    OPTIONAL { ?pub bflc:simpleAgent ?publisher . }
+    OPTIONAL { ?pub bflc:simplePlace ?place . }
+    OPTIONAL { ?pub bflc:simpleDate  ?date . }
+  }
+
+  OPTIONAL { ?reference bf:language ?language . }
+
+  OPTIONAL {
+    ?reference bf:identifiedBy ?id .
+    ?id rdf:value ?isbn ;
+        bf:source wd:Q33057 .
+  }
+
+  # Required: the artists' books this reference cites (#42). The cited book must
+  # exist in the artists-books graph (carry an ab:itemKey); fall back to that
+  # key for display when it has no label.
+  ?citation ab:citedBy ?reference ;
+            ab:cites   ?citedBook .
+  ?citedBook ab:itemKey ?citedBookKey .
+  OPTIONAL { ?citedBook rdfs:label ?citedBookLabel . }
+  BIND(COALESCE(?citedBookLabel, ?citedBookKey) AS ?citedTitle)
+}
+GROUP BY ?reference ?title ?itemKey ?creator ?publisher ?place ?date ?language
+ORDER BY LCASE(?title)

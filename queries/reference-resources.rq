@@ -1,0 +1,173 @@
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX ab: <https://dkglab.github.io/ns/artists-books/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bf: <http://id.loc.gov/ontologies/bibframe/>
+PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX marc: <http://www.loc.gov/MARC21/slim#>
+
+# Reference works and the citations that link them to artists' books (#34, #42).
+#
+# Two independent UNION branches feed graph/reference-resources.ttl:
+#
+#   1. The reference-work *resource* (#34): the node + its own BIBFRAME bib
+#      metadata, mirroring the shape the artists' books get in artists-books.rq
+#      but typed ab:ReferenceWork and minted under reference/<itemKey>. The
+#      collection is heterogeneous (151 book + 3 journalArticle + 2 webpage), so
+#      ab:ReferenceWork is a subclass of schema:CreativeWork (docs/vocab.ttl). Most
+#      fields come from reference-resources.csv; a basic slice of the harvested
+#      MARC (sources/marc/reference-resources-marc.xml) is also read — for now just the
+#      primary creator (100 $a), to demonstrate the join. The remaining
+#      MARC-derived fields the artists' books carry (OCLC/WorldCat, secondary
+#      creators, relator roles, identity URIs, extent/dimensions) are still
+#      absent (#40/#51).
+#
+#   2. The *citation* (#42, moved here from artists-books.rq): each "Cited:" note
+#      paragraph is a reference work citing an artist's book. The citation is now
+#      anchored on the reference resource it appears in —
+#      reference/<refItemKey>/citation/<abcItemKey> — rather than on the artist's
+#      book. The citing reference is resolved to a reference-resources node by the
+#      #42 citation crosswalk; the cited artist's book by the #55 ABC crosswalk.
+#      Page-number / image-page extraction (#43/#44/#15/#16) is still TODO.
+CONSTRUCT {
+  ?ref a ab:ReferenceWork ;
+    rdfs:label ?title ;
+    ab:itemKey ?item_key ;
+    bf:provisionActivity ?refPublication ;
+    bf:language ?language ;
+    bf:identifiedBy ?refISBN ;
+    bf:contribution ?refContribution ;
+    .
+
+  ?refContribution a bflc:PrimaryContribution ;
+    bf:agent ?refAgent ;
+    .
+
+  ?refAgent a bf:Agent ;
+    rdfs:label ?creator_name ;
+    .
+
+  ?refPublication a bf:Publication ;
+    bflc:simpleAgent ?publisher ;
+    bflc:simpleDate ?date ;
+    bflc:simplePlace ?place ;
+    .
+
+  ?refISBN a bf:Identifier ;
+    rdf:value ?ISBN ;
+    bf:source wd:Q33057 ; # ISBN
+    .
+
+  ?citation a ab:Citation ;
+    ab:citedBy ?citedRef ;
+    ab:cites ?book ;
+    rdfs:label ?citation_text ;
+    .
+}
+WHERE {
+  {
+    SERVICE <x-sparql-anything:location=sources/zotero/reference-resources.csv> {
+      # Facade-X configuration for CSV data
+      fx:properties
+        fx:csv.headers "true" ;  # create xyz:header properties
+        fx:csv.null-string  "" ; # treat empty strings as null values
+        .
+
+      # For each row in reference-resources.csv. Only itemKey and title are
+      # required; every other field is OPTIONAL so all 156 rows emit a node
+      # (e.g. webpages/articles carry no publisher).
+      ?refRow
+        xyz:itemKey ?item_key ;
+        xyz:title ?title ;
+        .
+
+      # Mint the reference-work URI and its publication sub-resource.
+      BIND(fx:entity(ab:, "reference/", ?item_key) AS ?ref)
+      BIND(fx:entity(ab:, "reference/", ?item_key, "/publication") AS ?refPublication)
+
+      OPTIONAL { ?refRow xyz:publisher ?publisher }
+      OPTIONAL {
+        ?refRow xyz:date ?date_raw .
+        # Strip Zotero's leading "YYYY-MM-DD " prefix from the date string.
+        BIND(REPLACE(?date_raw, "^\\d{4}-\\d{2}-\\d{2} ", "") AS ?date)
+      }
+      OPTIONAL { ?refRow xyz:place ?place }
+      OPTIONAL { ?refRow xyz:language ?language }
+
+      OPTIONAL { ?refRow xyz:ISBN ?ISBN }
+      BIND(fx:entity(ab:, "reference/", ?item_key, "/identifier") AS ?isbnNode)
+      BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?refISBN)
+    }
+
+    # Basic MARC slice: the primary creator (100 $a) from the harvested
+    # reference MARC, joined to the CSV row by the synthetic 999 $a itemKey
+    # (same join the artists' books use). Kept OPTIONAL — most reference works
+    # have a MARC record but only some carry a 100 main entry (edited volumes /
+    # exhibition catalogs enter creators on 700/710 instead, not read yet).
+    # Traversal uses fx:anySlot, not a variable predicate (see
+    # docs/QUERY-PERFORMANCE.md). Name only for now — no roles / identity URIs (#46).
+    OPTIONAL {
+      SERVICE <x-sparql-anything:location=sources/marc/reference-resources-marc.xml> {
+        ?record a marc:record .
+
+        # 999 $a — the Zotero itemKey stamped onto each record at harvest time;
+        # join to the CSV row above.
+        ?record fx:anySlot ?f999 .
+        ?f999 a marc:datafield ; xyz:tag "999" .
+        ?f999 fx:anySlot ?sf999a .
+        ?sf999a xyz:code "a" ; rdf:_1 ?item_key .
+
+        # 100 $a — primary creator name. Strip trailing cataloguing punctuation.
+        ?record fx:anySlot ?df100 .
+        ?df100 a marc:datafield ; xyz:tag "100" .
+        ?df100 fx:anySlot ?sf100a .
+        ?sf100a xyz:code "a" ; rdf:_1 ?name_raw .
+        BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?creator_name)
+      }
+      BIND(fx:entity(ab:, "reference/", ?item_key, "/contribution/primary") AS ?refContribution)
+      BIND(fx:entity(ab:, "reference/", ?item_key, "/agent/primary") AS ?refAgent)
+    }
+  }
+  UNION
+  {
+    # Citation crosswalk (#42): (citedItemKey, n) -> the reference-resources
+    # itemKey it cites, plus the flattened reference string. Requiring
+    # xyz:refItemKey to bind drops paragraphs with no confident reference match
+    # (empty cell); review=yes drops the low-confidence / generic-title grabs.
+    SERVICE <x-sparql-anything:location=sources/citation-crosswalk.csv> {
+      fx:properties
+        fx:csv.headers "true" ;
+        fx:csv.null-string  "" ;
+        .
+      ?ccRow
+        xyz:citedItemKey ?cited_key ;
+        xyz:refItemKey   ?ref_key ;
+        xyz:citationText ?citation_text ;
+        .
+      OPTIONAL { ?ccRow xyz:review ?cc_review }
+      FILTER(!BOUND(?cc_review) || ?cc_review != "yes")
+    }
+
+    # ABC crosswalk (#55): the cited (lib-3) record -> the ABC book that
+    # reconciles to it. Same review gate artists-books.rq applied.
+    SERVICE <x-sparql-anything:location=sources/abc-master-crosswalk.csv> {
+      fx:properties
+        fx:csv.headers "true" ;
+        fx:csv.null-string  "" ;
+        .
+      ?xwRow
+        xyz:abcItemKey   ?abc_key ;
+        xyz:citedItemKey ?cited_key ;
+        .
+      OPTIONAL { ?xwRow xyz:review ?xw_review }
+      FILTER(!BOUND(?xw_review) || ?xw_review != "yes")
+    }
+
+    # The citation is anchored on the reference resource it appears in.
+    BIND(fx:entity(ab:, "reference/", ?ref_key)                         AS ?citedRef)
+    BIND(fx:entity(ab:, "item/", ?abc_key)                              AS ?book)
+    BIND(fx:entity(ab:, "reference/", ?ref_key, "/citation/", ?abc_key) AS ?citation)
+  }
+}
