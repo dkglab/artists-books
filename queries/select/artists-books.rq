@@ -18,6 +18,7 @@ SELECT
   ?language
   ?extent
   ?dimensions
+  ?edition
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   (GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
   (SAMPLE(?worldcat_url) AS ?worldcatLink)
@@ -77,6 +78,11 @@ WHERE {
   }
 
   OPTIONAL {
+    ?book bf:edition ?editionNode .
+    ?editionNode rdfs:label ?edition .
+  }
+
+  OPTIONAL {
     ?book bf:dimensions ?dimensions .
   }
 
@@ -104,5 +110,5 @@ WHERE {
     BIND(CONCAT(?citingRefKey, "\t", ?citingRefLabel) AS ?citedByToken)
   }
 }
-GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?dimensions
+GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?dimensions ?edition
 ORDER BY LCASE(?title)

@@ -19,6 +19,7 @@ CONSTRUCT {
     bf:language ?language ;
     bf:extent ?bookExtent ;
     bf:dimensions ?dimensions ;
+    bf:edition ?bookEdition ;
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
@@ -43,6 +44,10 @@ CONSTRUCT {
 
   ?bookExtent a bf:Extent ;
     rdfs:label ?extent ; # Extent
+    .
+
+  ?bookEdition a bf:Edition ;
+    rdfs:label ?edition ; # Edition
     .
 
   ?contribution a ?contributionType ;
@@ -114,6 +119,7 @@ WHERE {
              (SAMPLE(?control_number_raw) AS ?control_number)
              (SAMPLE(?extent_x) AS ?extent)
              (SAMPLE(?dimensions_x) AS ?dimensions)
+             (SAMPLE(?edition_x) AS ?edition)
              (SAMPLE(?name_x)  AS ?creator_name)
              (SAMPLE(?viaf_x)  AS ?viaf)
              (SAMPLE(?isni_x)  AS ?isni)
@@ -164,6 +170,23 @@ WHERE {
             BIND(
               REPLACE(?dimensions_raw, "[\\s.;:/]+$", "")
               AS ?dimensions_x
+            )
+          }
+
+          OPTIONAL {
+            ?record fx:anySlot ?df250 .
+            ?df250
+                a marc:datafield ;
+                xyz:tag "250" .
+
+            ?df250 fx:anySlot ?sf250a .
+            ?sf250a
+                xyz:code "a" ;
+                rdf:_1 ?edition_raw .
+
+            BIND(
+                REPLACE(?edition_raw, "[\\s.;:/]+$", "")
+                AS ?edition_x
             )
           }
 
@@ -233,6 +256,7 @@ WHERE {
     BIND(IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)) AS ?worldcat_url)
     BIND(fx:entity(ab:, "item/", ?item_key, "/oclc") AS ?bookOCLCNum)
     BIND(fx:entity(ab:, "item/", ?item_key, "/extent") AS ?bookExtent)
+    BIND(fx:entity(ab:, "item/", ?item_key, "/edition") AS ?bookEdition)
 
     # Use the real-world-object URI (VIAF, else ISNI) as the creator's identity;
     # only mint an ab:creator/ URI when no such URI exists, keyed off the LC

@@ -46,6 +46,11 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
+  {{ with .edition }}
+  <dt>Edition</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
   {{ with .isbns }}
   <dt>ISBN</dt>
   <dd>{{ . }}</dd>
