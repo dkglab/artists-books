@@ -31,3 +31,12 @@ files.
   *Twentysix Gasoline Stations*) demonstrating the full intended graph shape.
 - [`website_sources_of_info.xlsx`](website_sources_of_info.xlsx) — spreadsheet of
   the source-of-information notes gathered while designing the website.
+
+## Design mockups
+
+Design-phase artifacts for the website, kept for reference.
+
+- [`website-mockup-jpegs/`](website-mockup-jpegs/) — four-page JPEG mockup of the
+  intended website layout, plus [`where_info_comes_from.md`](website-mockup-jpegs/where_info_comes_from.md),
+  a Mermaid diagram tracing each page field back to its source (MARC field,
+  Zotero CSV, JSTOR, etc.).
