@@ -198,10 +198,13 @@ python3 marc_harvest.py --csv reference-resources.csv --out reference-resources-
 make -C Zotero reference-resources-marc.xml
 ```
 
-> **Not yet wired into the graph.** `reference-resources.rq` builds the
-> `ab:ReferenceWork` nodes from `reference-resources.csv` only; it does **not**
-> read `reference-resources-marc.xml` yet, so the MARC's richer creator/OCLC/
-> WorldCat data isn't in the graph. That wiring is tracked in #40/#46/#51.
+> **Minimally wired into the graph.** `reference-resources.rq` builds the
+> `ab:ReferenceWork` nodes from `reference-resources.csv`, and now also reads a
+> **basic slice** of `reference-resources-marc.xml` — just the primary creator
+> (`100 $a`), joined by `999 $a` — emitted as a `bflc:PrimaryContribution`
+> (#46). The rest of the MARC's richer data (OCLC/WorldCat, secondary creators,
+> relator roles, identity URIs, extent/dimensions) isn't in the graph yet
+> (tracked in #40/#51).
 
 ## SQLite database
 

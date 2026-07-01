@@ -20,6 +20,7 @@ SELECT
   ?reference
   ?title
   ?itemKey
+  ?creator
   ?publisher
   ?place
   ?date
@@ -35,6 +36,14 @@ WHERE {
     rdfs:label ?title ;
     ab:itemKey ?itemKey ;
     .
+
+  # Primary creator from MARC 100 $a (basic MARC slice, #46). Present for only
+  # some reference works (edited volumes carry no 100 main entry).
+  OPTIONAL {
+    ?reference bf:contribution ?c .
+    ?c a bflc:PrimaryContribution ;
+       bf:agent/rdfs:label ?creator .
+  }
 
   OPTIONAL {
     ?reference bf:provisionActivity ?pub .
@@ -60,5 +69,5 @@ WHERE {
   OPTIONAL { ?citedBook rdfs:label ?citedBookLabel . }
   BIND(COALESCE(?citedBookLabel, ?citedBookKey) AS ?citedTitle)
 }
-GROUP BY ?reference ?title ?itemKey ?publisher ?place ?date ?language
+GROUP BY ?reference ?title ?itemKey ?creator ?publisher ?place ?date ?language
 ORDER BY LCASE(?title)
