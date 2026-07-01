@@ -26,8 +26,8 @@ tools/snowman/snowman
 # fuzzy-match: commit the scripts, ignore the generated venv (issue #55)
 tools/fuzzy-match/venv/
 /graph/
-/website/.snowman/
-/website/site/
+/web/.snowman/
+/web/site/
 # MARC harvest state (resumable; only Zotero/*-marc.xml is committed)
 /Zotero/marc/
 # Python bytecode cache

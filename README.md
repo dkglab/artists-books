@@ -78,10 +78,10 @@ make graph/artists-books.ttl graph/reference-resources.ttl
 
 [Apache Fuseki](https://jena.apache.org/documentation/fuseki2/) loads the Turtle file and exposes it as a local SPARQL endpoint at `http://localhost:3030/artists-books/sparql`.
 
-[Snowman](https://github.com/glaciers-in-archives/snowman) reads `website/views.yaml`, executes the SELECT queries in `website/queries/select/` against the Fuseki endpoint, and renders the results into HTML using the Go templates in `website/templates/`. The output lands in `website/site/`.
+[Snowman](https://github.com/glaciers-in-archives/snowman) reads `web/views.yaml`, executes the SELECT queries in `web/queries/select/` against the Fuseki endpoint, and renders the results into HTML using the Go templates in `web/templates/`. The output lands in `web/site/`.
 
 ```
-make website/site/index.html   # build the site (starts Fuseki automatically)
+make web/site/index.html   # build the site (starts Fuseki automatically)
 make serve             # serve at http://127.0.0.1:8080
 ```
 
@@ -125,22 +125,22 @@ The most-cited source is Moeglin-Delcroix (2012), which cites 1,568 books in the
 | File | Purpose |
 |---|---|
 | `Makefile` | Orchestrates the full pipeline |
-| `website/snowman.yaml` | Tells Snowman where the SPARQL endpoint is |
-| `website/views.yaml` | Maps SELECT queries and templates to output files |
+| `web/snowman.yaml` | Tells Snowman where the SPARQL endpoint is |
+| `web/views.yaml` | Maps SELECT queries and templates to output files |
 
 ### `Makefile`
 
 The central build file. Key targets:
 
-- `all` — builds `graph/artists-books.ttl` then `website/site/index.html`
+- `all` — builds `graph/artists-books.ttl` then `web/site/index.html`
 - `graph/%.ttl` — runs a CONSTRUCT query through SPARQL-Anything to generate RDF from the CSV and MARCXML sources
-- `website/site/index.html` — starts Fuseki, runs Snowman, stops Fuseki; depends on the graph, both YAML files, all SPARQL SELECT queries, and all templates
+- `web/site/index.html` — starts Fuseki, runs Snowman, stops Fuseki; depends on the graph, both YAML files, all SPARQL SELECT queries, and all templates
 - `serve` — runs `snowman server` to serve the built site at `http://127.0.0.1:8080`
 - `clean` / `superclean` — removes generated files; `superclean` also removes downloaded tool binaries
 
 Fuseki lifecycle is controlled by the `START_FUSEKI` variable (default `true`). Set `START_FUSEKI=false` if you have Fuseki already running.
 
-### `website/snowman.yaml`
+### `web/snowman.yaml`
 
 Tells Snowman which SPARQL endpoint to query:
 
@@ -149,7 +149,7 @@ sparql_client:
   endpoint: "http://localhost:3030/artists-books/sparql"
 ```
 
-### `website/views.yaml`
+### `web/views.yaml`
 
 Defines one view per output page. Each entry binds a SELECT query to a template and names the output file:
 
@@ -174,7 +174,7 @@ There are **four** views across two query/template pairs — one pair for the ar
 ## Templates
 
 ```
-website/templates/
+web/templates/
 ├── layouts/
 │   └── base.html         — outer HTML shell (head, body, nav to both indexes)
 ├── index.html            — collection index, lists every book ("cited by N")

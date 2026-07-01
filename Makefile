@@ -3,11 +3,11 @@ START_FUSEKI ?= true
 .PHONY: all clean superclean validate serve
 .DEFAULT_GOAL := all
 
-all: graph/artists-books.ttl graph/reference-resources.ttl website/site/index.html
+all: graph/artists-books.ttl graph/reference-resources.ttl web/site/index.html
 
 clean:
 	rm -f inferred.ttl diff.txt *.png docs/*.png
-	rm -rf graph site .snowman website/site website/.snowman
+	rm -rf graph site .snowman web/site web/.snowman
 
 superclean: clean
 	@$(MAKE) -s -C tools/jena clean
@@ -27,8 +27,8 @@ validate: docs/vocab.ttl docs/description.ttl | tools/jena/bin/riot
 	./tools/jena/bin/riot --validate $^
 	@echo "docs/vocab.ttl and docs/description.ttl are valid."
 
-serve: website/site/index.html | tools/snowman/snowman
-	cd website && ../tools/snowman/snowman server --port 8080
+serve: web/site/index.html | tools/snowman/snowman
+	cd web && ../tools/snowman/snowman server --port 8080
 
 inferred.ttl: docs/vocab.ttl docs/description.ttl | validate
 	./tools/jena/bin/riot --formatted=ttl --rdfs $< $(word 2,$^) > $@
@@ -59,20 +59,20 @@ Zotero/reference-resources.csv \
 Zotero/citation-crosswalk.csv \
 Zotero/abc-master-crosswalk.csv
 
-website/site/index.html: \
+web/site/index.html: \
 graph/artists-books.ttl \
 graph/reference-resources.ttl \
-$(wildcard website/*.yaml) \
-$(wildcard website/queries/select/*.rq) \
-$(wildcard website/templates/*.html) \
-$(wildcard website/templates/layouts/*.html) \
-$(wildcard website/templates/includes/*.html) \
+$(wildcard web/*.yaml) \
+$(wildcard web/queries/select/*.rq) \
+$(wildcard web/templates/*.html) \
+$(wildcard web/templates/layouts/*.html) \
+$(wildcard web/templates/includes/*.html) \
 | tools/fuseki/fuseki-server tools/snowman/snowman
 ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki start
 endif
-	mkdir -p website/.snowman
-	cd website && ../tools/snowman/snowman build 2>&1 | tee .snowman/build_log.txt
+	mkdir -p web/.snowman
+	cd web && ../tools/snowman/snowman build 2>&1 | tee .snowman/build_log.txt
 ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki stop
 endif

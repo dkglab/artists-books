@@ -32,11 +32,11 @@ flowchart TD
 
     %% ---- Stage 4: site generation ----
     fuseki --> snowman{{"Snowman<br/>(SELECT queries + Go templates)"}}
-    selects["website/queries/select/*.rq"] --> snowman
-    templates["website/templates/*.html"] --> snowman
+    selects["web/queries/select/*.rq"] --> snowman
+    templates["web/templates/*.html"] --> snowman
 
     %% ---- Output ----
-    snowman --> site["Static HTML website (website/site/)<br/>book index + pages · reference index + pages<br/>cross-linked by citations"]
+    snowman --> site["Static HTML website (web/site/)<br/>book index + pages · reference index + pages<br/>cross-linked by citations"]
 
     %% ---- Clickable links to the README sections that document each stage ----
     %% Absolute URLs: GitHub renders Mermaid in a sandboxed iframe where
