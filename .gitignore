@@ -8,6 +8,9 @@ Zotero/storage/**/*.png
 Zotero/storage/**/*.ico
 Zotero/storage/**/*.js
 Zotero/storage/**/*.css
+# Zotero full-text index state - machine-regenerable, no research value
+Zotero/storage/**/.zotero-ft-cache
+Zotero/storage/**/.zotero-ft-unprocessed
 /.sprite
 tools/jena/*
 !tools/jena/Makefile

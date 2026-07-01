@@ -731,9 +731,9 @@ Typical directory contents:
 | `status_api.php`                | Library availability API responses |
 | `books`                         | Google Books API responses (JSONP) |
 | `ISBN*&callback=ProcessListHathi` | HathiTrust API responses         |
-| `.zotero-ft-cache`              | Plain text extracted from the page (296 dirs) |
-| `.zotero-ft-unprocessed`        | JSON with extracted text awaiting indexing (973 dirs) |
 
-Web snapshot assets (JS, CSS, images) have been removed from version
-control and from disk — they were duplicated UI chrome with no research
-value. See `.gitignore` for the exclusion patterns.
+Web snapshot assets (JS, CSS, images) and Zotero's full-text index
+state (`.zotero-ft-cache`, `.zotero-ft-unprocessed`) have been removed
+from version control — the assets were duplicated UI chrome and the
+full-text state is machine-regenerable, neither with research value.
+See `.gitignore` for the exclusion patterns.
