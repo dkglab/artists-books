@@ -5,7 +5,7 @@ Servers are tried in order (see SERVERS); the first that yields a verified
 record for an item wins, so a book UNC does not hold can still be found at a
 fallback catalogue.
 
-Strategy (see Zotero/README.md):
+Strategy (see sources/README.md):
   * Servers     : UNC Innopac first (tcp:afton.lib.unc.edu/INNOPAC), then public
                   fallbacks for what UNC lacks -- the Library of Congress, the
                   K10plus (German) academic union catalogue, LIBRIS (Sweden's
@@ -36,12 +36,12 @@ Strategy (see Zotero/README.md):
                   MARC-8, so we rewrite leader/09 to 'a' (LC is already honest);
                   we do NOT transcode (that would double-encode).
   * Output      : a single MARCXML <collection>. Per-CSV harvest state lives under
-                  marc/<csv-stem>/ (combined.marc is append-only and resumable).
+                  harvest/<csv-stem>/ (combined.marc is append-only and resumable).
 
-Run:
-    python3 marc_harvest.py --csv reference-resources.csv --out reference-resources-marc.xml
-    python3 marc_harvest.py --csv reference-resources.csv --out reference-resources-marc.xml --limit 15
-    python3 marc_harvest.py --csv reference-resources.csv --out reference-resources-marc.xml --combine
+Run (from sources/, or let `make -C sources marc/<stem>-marc.xml` drive it):
+    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.xml
+    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.xml --limit 15
+    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.xml --combine
 """
 import argparse
 import csv
@@ -57,7 +57,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 HERE        = os.path.dirname(os.path.abspath(__file__))
-MARC_DIR    = os.path.join(HERE, "marc")  # gitignored harvest state, per-CSV subdir
+MARC_DIR    = os.path.join(HERE, "harvest")  # gitignored harvest state, per-CSV subdir
 
 # YAZ is built under tools/yaz-client/ (see tools/yaz-client/Makefile), not
 # installed system-wide. Resolve the binaries from there so the harvest uses our
@@ -137,7 +137,7 @@ TITLE_WEAK      = 0.60
 
 
 def make_cfg(csv_path, out_xml):
-    """Resolve all paths for one CSV; harvest state lives in marc/<csv-stem>/."""
+    """Resolve all paths for one CSV; harvest state lives in harvest/<csv-stem>/."""
     csv_path = os.path.abspath(csv_path)
     out_xml = os.path.abspath(out_xml)
     base = os.path.splitext(os.path.basename(csv_path))[0]

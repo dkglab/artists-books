@@ -1,7 +1,22 @@
 # Overview
 
-- `zotero.sqlite` — 55MB SQLite database (Zotero's main metadata store)
-- `storage/` — 1,299 subdirectories (8-char hash names)
+The `sources/` tree holds every raw input the pipeline transforms, split by
+provenance:
+
+- `zotero/` — the Zotero export track: `zotero.sqlite` (55MB SQLite database,
+  Zotero's main metadata store) and its `storage/` attachments (1,299
+  subdirectories with 8-char hash names), the `*_export.{sh,sql}` scripts, and
+  the CSVs / `notes.xml` they produce.
+- `marc/` — the Z39.50 MARC-harvest track: `marc_harvest.py`, the harvested
+  `*-marc.xml` collections, the hand-supplied `reference-resources-manual.xml`,
+  and `reference-resources-unresolved.csv`. Resumable harvest state lives under
+  `marc/harvest/` (gitignored).
+- root — files that bridge the two tracks: `abc-master-crosswalk.csv` and
+  `citation-crosswalk.csv`, plus loose external reference data (the JSTOR
+  collection dumps and `google_books_ids.csv`) and the regeneration `Makefile`.
+
+Below, filenames are given unqualified (e.g. `zotero.sqlite`, `artists-books.csv`);
+resolve them against the track layout above.
 
 ## Three libraries in one database
 
@@ -56,7 +71,7 @@ Two findings worth recording:
   `Richard Long : South America, 1972.`). Of the 11 fuzzy matches, **10 are
   flagged `review=yes`** (confidence < 0.93) for manual vetting.
 
-**Output** `Zotero/abc-master-crosswalk.csv` is a complete census — one row per ABC
+**Output** `sources/abc-master-crosswalk.csv` is a complete census — one row per ABC
 item, matched or not — with columns `abcItemKey, citedItemKey, method, confidence,
 review, abcTitle, citedTitle`. The `abcTitle`/`citedTitle` columns are for human
 review; the note join (below) treats `review=yes` rows as provisional and skips them.
@@ -124,7 +139,7 @@ reconciles each paragraph to a reference-resources row:
 
 Scoped (via `abc-master-crosswalk.csv`) to the lib-3 cited records actually in
 use, so it covers the 436 citation paragraphs reachable from ABC books.
-**Output** `Zotero/citation-crosswalk.csv` is one row per paragraph
+**Output** `sources/citation-crosswalk.csv` is one row per paragraph
 (`citedItemKey, n, refItemKey, method, confidence, review, refTitle,
 citationText`). Generic short titles ("Artists books") and unmatched-but-citation
 paragraphs carry `review=yes` and are excluded from the construct query's
@@ -251,7 +266,7 @@ Example:
 ```
 Book item  HKGS8WHZ  →  "(Ho + go)² = it" by Ruth Laxson (Nexus Press, 1986)
   └─ Attachment item  EINGQSS4  →  path: storage:search.html
-     └─ maps to  Zotero/storage/EINGQSS4/search.html
+     └─ maps to  sources/zotero/storage/EINGQSS4/search.html
 ```
 
 Only 1,297 of the 19,211 books have a corresponding storage snapshot.

@@ -3,7 +3,7 @@
 #
 # notes_export.sql selects each lib-3 cited note (parent itemKey + raw HTML);
 # notes_export.py normalizes the messy note HTML into one well-formed
-# Zotero/notes.xml. SQL selects, Python normalizes -- the Python step is
+# sources/zotero/notes.xml. SQL selects, Python normalizes -- the Python step is
 # stdlib-only and testable on its own stdin.
 #
 # Usage:

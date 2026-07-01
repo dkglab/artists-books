@@ -1,7 +1,7 @@
 # Local genre / technique terms
 
 The genre/form (`655`) and topical (`650`) heading terms in
-`Zotero/artists-books-marc.xml` that come from **genuinely local vocabularies** —
+`sources/marc/artists-books-marc.xml` that come from **genuinely local vocabularies** —
 i.e. schemes with no standard authority and **no `$0`/`$1` URIs**. These are the
 candidate seed list for a locally minted `ab:` vocabulary. (Standard
 vocabularies that merely lack URIs here — `fast.`, `aat.`, `lcgft.`, `rbmscv.` —

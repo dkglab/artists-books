@@ -51,13 +51,13 @@ graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 # The construct query reads these source files (its x-sparql-anything SERVICEs);
 # rebuild the graph when any of them changes.
 graph/artists-books.ttl: \
-Zotero/artists-books.csv \
-Zotero/artists-books-marc.xml
+sources/zotero/artists-books.csv \
+sources/marc/artists-books-marc.xml
 
 graph/reference-resources.ttl: \
-Zotero/reference-resources.csv \
-Zotero/citation-crosswalk.csv \
-Zotero/abc-master-crosswalk.csv
+sources/zotero/reference-resources.csv \
+sources/citation-crosswalk.csv \
+sources/abc-master-crosswalk.csv
 
 web/site/index.html: \
 graph/artists-books.ttl \

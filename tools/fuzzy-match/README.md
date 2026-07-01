@@ -7,7 +7,7 @@ Reconciliation tooling for the **ABC ↔ cited-record crosswalk** (issue #55).
 record(s) describing the same work, so the "Cited:" notes that live on those
 records can be joined onto ABC pages. It tries, in precedence order, **OCLC →
 ISBN → exact normalized title → fuzzy author+title+year** and writes
-`Zotero/abc-master-crosswalk.csv`.
+`sources/abc-master-crosswalk.csv`.
 
 Fuzzy matching uses [`rapidfuzz`](https://pypi.org/project/rapidfuzz/), installed
 into an isolated venv here (mirrors `tools/rdflib`). Everything except this
@@ -25,10 +25,10 @@ Or run the matcher directly:
 
 ```sh
 tools/fuzzy-match/venv/bin/python tools/fuzzy-match/match.py \
-    --abc   Zotero/artists-books.csv \
-    --marc  Zotero/artists-books-marc.xml \
-    --cited Zotero/cited-records.csv \
-    --out   Zotero/abc-master-crosswalk.csv
+    --abc   sources/zotero/artists-books.csv \
+    --marc  sources/marc/artists-books-marc.xml \
+    --cited sources/zotero/cited-records.csv \
+    --out   sources/abc-master-crosswalk.csv
 ```
 
 A coverage summary (matches by method) is printed to stderr.

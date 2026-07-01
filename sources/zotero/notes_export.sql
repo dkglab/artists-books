@@ -3,7 +3,7 @@
 -- The personal-library ABC (lib 1, what the site builds from) has no Cited
 -- notes; they live on the lib-3 records (group 2352415, "ABCI"). We export each
 -- note's parent itemKey + the raw note HTML; notes_export.py then normalizes the
--- HTML to well-formed XHTML (Zotero/notes.xml). The construct query joins these
+-- HTML to well-formed XHTML (sources/zotero/notes.xml). The construct query joins these
 -- onto ABC pages through the #55 crosswalk (abcItemKey -> citedItemKey).
 --
 -- Scope matches cited_records_export.sql: a real bibliographic item in

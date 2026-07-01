@@ -3,7 +3,7 @@
 A linked data publication pipeline that transforms a curated [Zotero](https://www.zotero.org/) library into a knowledge graph and static website. The collection documents artists' books held at the Joseph C. Sloane Art Library (UNC Chapel Hill), along with citation data tracking how those books appear in reference literature.
 
 > [!IMPORTANT]
-> **`Zotero/zotero.sqlite` contains three libraries — and the one this site builds from has none of the citation notes.** It aggregates a *personal* library (the curated **1,341-book Sloane holdings** the pipeline builds from) plus two *group* libraries that hold the **"Cited:" citation notes**: an older `Artists_books_critical_index` (frozen 2021) and its live successor **`ABCI`** (use this one). Each book is catalogued once per library under a *different* Zotero item key, so surfacing a book's citations on its page is a cross-library **title/ISBN/OCLC reconciliation**, not an item-key join. See [`Zotero/README.md` → Three libraries in one database](Zotero/README.md#three-libraries-in-one-database) and issue #55.
+> **`sources/zotero/zotero.sqlite` contains three libraries — and the one this site builds from has none of the citation notes.** It aggregates a *personal* library (the curated **1,341-book Sloane holdings** the pipeline builds from) plus two *group* libraries that hold the **"Cited:" citation notes**: an older `Artists_books_critical_index` (frozen 2021) and its live successor **`ABCI`** (use this one). Each book is catalogued once per library under a *different* Zotero item key, so surfacing a book's citations on its page is a cross-library **title/ISBN/OCLC reconciliation**, not an item-key join. See [`sources/README.md` → Three libraries in one database](sources/README.md#three-libraries-in-one-database) and issue #55.
 
 ## Pipeline overview
 
@@ -33,7 +33,7 @@ The pipeline runs as **two parallel tracks** that meet in the graph stage: the *
 
 ### 1. Zotero → CSV
 
-The Zotero library is the authoritative source. Export scripts in `Zotero/` query the Zotero SQLite database directly using `sqlite3` and produce several CSV files:
+The Zotero library is the authoritative source. Export scripts in `sources/zotero/` query the Zotero SQLite database directly using `sqlite3` and produce several CSV files:
 
 | Script | Output | Contents | Used by construct query? |
 |---|---|---|---|
@@ -47,15 +47,15 @@ The SQL queries join across Zotero's internal tables (`items`, `itemData`, `item
 
 `artists-books.csv` feeds the artists'-book construct query — it supplies the per-book title, publisher, place, date, language, and ISBN. Creators now come from the MARC records (step 2) rather than `all-creators.csv`, and publisher names are read straight from `artists-books.csv`, so the creators/publishers exports (and their hand-reconciled `*-reconciled.csv` variants) are currently auxiliary: kept for reference and reconciliation work, not consumed by the pipeline.
 
-`reference-resources.csv` feeds a **second** construct query (`reference-resources.rq`) for the reference works. The "Cited:" notes that connect references to artists' books don't live on the built collection's records, so a pair of fuzzy-match **crosswalks** (`abc-master-crosswalk.csv`, `citation-crosswalk.csv`) reconcile note → reference-work → artists'-book across the three Zotero libraries. See [`Zotero/README.md`](Zotero/README.md) for the full citation data model.
+`reference-resources.csv` feeds a **second** construct query (`reference-resources.rq`) for the reference works. The "Cited:" notes that connect references to artists' books don't live on the built collection's records, so a pair of fuzzy-match **crosswalks** (`abc-master-crosswalk.csv`, `citation-crosswalk.csv`) reconcile note → reference-work → artists'-book across the three Zotero libraries. See [`sources/README.md`](sources/README.md) for the full citation data model.
 
 ### 2. Library catalogs → MARCXML
 
-For the books that have a UNC bib number, full MARC records are harvested from UNC's catalog over Z39.50 by `Zotero/marc_harvest.py` (using the YAZ toolkit) and written to `Zotero/artists-books-marc.xml` — a single MARCXML collection of ~1,340 records, one per item. The harvester stamps each record with a synthetic `999 $a <itemKey>` field so it can be joined back to the corresponding Zotero item.
+For the books that have a UNC bib number, full MARC records are harvested from UNC's catalog over Z39.50 by `sources/marc/marc_harvest.py` (using the YAZ toolkit) and written to `sources/marc/artists-books-marc.xml` — a single MARCXML collection of ~1,340 records, one per item. The harvester stamps each record with a synthetic `999 $a <itemKey>` field so it can be joined back to the corresponding Zotero item.
 
 These records carry richer, more authoritative data than the CSV: cataloguer-supplied creator names with relator roles, real-world-object URIs (VIAF/ISNI in `$1`) and LC name-authority URIs (`$0`), plus the OCLC number (`001`). See [`MARC-RECORDS.md`](docs/MARC-RECORDS.md) for a full analysis of the file.
 
-The same harvester also produces **`Zotero/reference-resources-marc.xml`** for the reference works. Reference works are mostly *not* UNC bibs, so the harvester searches a chain of **nine** catalogs (UNC, Library of Congress, K10plus, Penn State, LIBRIS, Getty, Clark, NYARC, Harvard) by **ISBN**, then **title + author**, falling back across servers until a record verifies; a few hand-supplied records are merged from `reference-resources-manual.xml`. Result: ~155 of the 157 reference works get a MARC record (joined by `999 $a`, same as the books). The construct query now reads a **basic slice** of this file — just the **primary creator** (`100 $a`) — to demonstrate the join; the rest of the MARC's richer data (OCLC/WorldCat, secondary creators, relator roles, identity URIs, extent/dimensions) isn't in the graph yet (tracked in #40/#51).
+The same harvester also produces **`sources/marc/reference-resources-marc.xml`** for the reference works. Reference works are mostly *not* UNC bibs, so the harvester searches a chain of **nine** catalogs (UNC, Library of Congress, K10plus, Penn State, LIBRIS, Getty, Clark, NYARC, Harvard) by **ISBN**, then **title + author**, falling back across servers until a record verifies; a few hand-supplied records are merged from `reference-resources-manual.xml`. Result: ~155 of the 157 reference works get a MARC record (joined by `999 $a`, same as the books). The construct query now reads a **basic slice** of this file — just the **primary creator** (`100 $a`) — to demonstrate the join; the rest of the MARC's richer data (OCLC/WorldCat, secondary creators, relator roles, identity URIs, extent/dimensions) isn't in the graph yet (tracked in #40/#51).
 
 ### 3. CSV + MARCXML → RDF graph
 
@@ -95,7 +95,7 @@ All tools are fetched (and, for YAZ, built from source) on first use by the Make
 | [Apache Fuseki](https://jena.apache.org/documentation/fuseki2/) | 6.1.0 | In-process SPARQL endpoint server |
 | [SPARQL-Anything](https://sparql-anything.cc/) | 1.1.0 | CSV/MARCXML-to-RDF transformation via SPARQL CONSTRUCT |
 | [Snowman](https://github.com/glaciers-in-archives/snowman) | 0.8.0 | SPARQL-driven static site generator |
-| [YAZ](https://www.indexdata.com/resources/software/yaz/) | 5.37.3 | `yaz-client`/`yaz-marcdump` — Z39.50/SRU MARC harvest (`Zotero/marc_harvest.py`); built from source under `tools/yaz-client/` |
+| [YAZ](https://www.indexdata.com/resources/software/yaz/) | 5.37.3 | `yaz-client`/`yaz-marcdump` — Z39.50/SRU MARC harvest (`sources/marc/marc_harvest.py`); built from source under `tools/yaz-client/` |
 
 ## Vocabulary
 
@@ -118,7 +118,7 @@ The Zotero library also encodes citation data: which artists' books are mentione
 - **Notes** — full citation text with page numbers (~7,649 "Cited:" notes)
 - **Item relations** — explicit `dc:relation` links (~2,366 connections)
 
-The most-cited source is Moeglin-Delcroix (2012), which cites 1,568 books in the collection. The **notes** are the form the pipeline extracts: the construct query reconciles them (via the crosswalks) into the graph as 433 `ab:Citation`s (step 3). See `Zotero/README.md` for full documentation of the data model.
+The most-cited source is Moeglin-Delcroix (2012), which cites 1,568 books in the collection. The **notes** are the form the pipeline extracts: the construct query reconciles them (via the crosswalks) into the graph as 433 `ab:Citation`s (step 3). See `sources/README.md` for full documentation of the data model.
 
 ## Configuration files
 

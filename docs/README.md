@@ -10,7 +10,7 @@ for operational and architecture detail see [`CLAUDE.md`](../CLAUDE.md).
   (artists' books and reference works) rendered as a Mermaid diagram, each
   stage linked back to the README.
 - [`MARC-RECORDS.md`](MARC-RECORDS.md) — a full analysis of the harvested MARC
-  records (`Zotero/artists-books-marc.xml`): fields carried, creator names and
+  records (`sources/marc/artists-books-marc.xml`): fields carried, creator names and
   roles, real-world-object and name-authority URIs, and data-quality notes.
 - [`LOCAL_GENRE_TECHNIQUE_TERMS.md`](LOCAL_GENRE_TECHNIQUE_TERMS.md) — the local
   and un-reconciled genre/form (`655`) and topical (`650`) heading terms found

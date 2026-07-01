@@ -65,7 +65,7 @@ CONSTRUCT {
 
 }
 WHERE {
-  SERVICE <x-sparql-anything:location=Zotero/artists-books.csv> {
+  SERVICE <x-sparql-anything:location=sources/zotero/artists-books.csv> {
     # Facade-X configuration for CSV data
     fx:properties
       fx:csv.headers "true" ;  # create xyz:header properties
@@ -104,7 +104,7 @@ WHERE {
     BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?bookISBN)
   }
 
-  # Creators come from the full MARC records (Zotero/artists-books-marc.xml),
+  # Creators come from the full MARC records (sources/marc/artists-books-marc.xml),
   # which carry authoritative names plus real-world-object URIs (VIAF/ISNI in
   # $1) and LC name-authority URIs ($0). Each record joins to a book through its
   # synthetic 999 $a (the Zotero itemKey).
@@ -125,7 +125,7 @@ WHERE {
              (SAMPLE(?isni_x)  AS ?isni)
              (SAMPLE(?lc_id_x) AS ?lc_id)
       WHERE {
-        SERVICE <x-sparql-anything:location=Zotero/artists-books-marc.xml> {
+        SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.xml> {
 
           # For each MARC record
           ?record a marc:record .

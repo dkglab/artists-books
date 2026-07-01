@@ -2,7 +2,7 @@
 
 Notes on keeping `queries/artists-books.rq` (and any future
 SPARQL-Anything query) fast. The construct step reads the source CSVs and
-`Zotero/artists-books-marc.xml` through SPARQL-Anything's Facade-X and emits the
+`sources/marc/artists-books-marc.xml` through SPARQL-Anything's Facade-X and emits the
 RDF graph; it is the one place in the pipeline where a careless pattern turns a
 6-second build into a 5-minute one.
 

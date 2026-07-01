@@ -1,7 +1,7 @@
-# MARC records overview — `Zotero/artists-books-marc.xml`
+# MARC records overview — `sources/marc/artists-books-marc.xml`
 
 An analysis of the full MARC records harvested from UNC's catalog (see
-`Zotero/marc_harvest.py`), written with an eye toward turning them into linked
+`sources/marc/marc_harvest.py`), written with an eye toward turning them into linked
 data. **1340 records**, one per artists'-book item that has a UNC bib number.
 
 ## The file at a glance
@@ -23,15 +23,15 @@ the MARC slim namespace:
 NS=http://www.loc.gov/MARC21/slim
 
 # count records
-xmlstarlet sel -N m=$NS -t -v "count(//m:record)" Zotero/artists-books-marc.xml
+xmlstarlet sel -N m=$NS -t -v "count(//m:record)" sources/marc/artists-books-marc.xml
 
 # dump one field's subfields ($code=value)
 xmlstarlet sel -N m=$NS -t \
   -m "(//m:datafield[@tag='650'])[1]/m:subfield" \
-  -o "  \$" -v @code -o "=" -v . -n Zotero/artists-books-marc.xml
+  -o "  \$" -v @code -o "=" -v . -n sources/marc/artists-books-marc.xml
 
 # pretty-print / validate
-xmllint --format Zotero/artists-books-marc.xml | less
+xmllint --format sources/marc/artists-books-marc.xml | less
 ```
 
 For aggregation, Python's `xml.etree.ElementTree` over the same file is often

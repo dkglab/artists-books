@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Build the citation <-> reference-resource crosswalk (issue #42).
 
-Each "Cited:" note paragraph (Zotero/notes.xml) is a free-text reference to a
+Each "Cited:" note paragraph (sources/zotero/notes.xml) is a free-text reference to a
 *reference work* that cites an artist's book. To give those citations a stable
 identity anchored on the reference resource -- reference/<refItemKey>/citation/...
 -- each paragraph must be reconciled to one of the rows in the *Reference
-resources* collection (Zotero/reference-resources.csv).
+resources* collection (sources/zotero/reference-resources.csv).
 
 The note paragraph literally contains the reference work's full title (often also
 wrapped in <em>), so the dominant, high-precision signal is: a reference row whose
