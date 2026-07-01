@@ -64,4 +64,4 @@ flowchart TD
 construct query pulls just the primary creator (`100 $a`) from it, joined by
 `999 $a`; the rest of the reference graph comes from the CSV plus the crosswalks,
 and the remaining MARC fields (OCLC/WorldCat, secondary creators, …) are still
-pending (tracked in #40 / #51).
+pending.
