@@ -16,7 +16,7 @@ PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 #      metadata, mirroring the shape the artists' books get in artists-books.rq
 #      but typed ab:ReferenceWork and minted under reference/<itemKey>. The
 #      collection is heterogeneous (151 book + 3 journalArticle + 2 webpage), so
-#      ab:ReferenceWork is a subclass of schema:CreativeWork (vocab.ttl). Most
+#      ab:ReferenceWork is a subclass of schema:CreativeWork (docs/vocab.ttl). Most
 #      fields come from reference-resources.csv; a basic slice of the harvested
 #      MARC (Zotero/reference-resources-marc.xml) is also read — for now just the
 #      primary creator (100 $a), to demonstrate the join. The remaining

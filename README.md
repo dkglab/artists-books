@@ -78,10 +78,10 @@ make graph/artists-books.ttl graph/reference-resources.ttl
 
 [Apache Fuseki](https://jena.apache.org/documentation/fuseki2/) loads the Turtle file and exposes it as a local SPARQL endpoint at `http://localhost:3030/artists-books/sparql`.
 
-[Snowman](https://github.com/glaciers-in-archives/snowman) reads `views.yaml`, executes the SELECT queries in `queries/select/` against the Fuseki endpoint, and renders the results into HTML using the Go templates in `templates/`. The output lands in `site/`.
+[Snowman](https://github.com/glaciers-in-archives/snowman) reads `website/views.yaml`, executes the SELECT queries in `website/queries/select/` against the Fuseki endpoint, and renders the results into HTML using the Go templates in `website/templates/`. The output lands in `website/site/`.
 
 ```
-make site/index.html   # build the site (starts Fuseki automatically)
+make website/site/index.html   # build the site (starts Fuseki automatically)
 make serve             # serve at http://127.0.0.1:8080
 ```
 
@@ -99,16 +99,16 @@ All tools are fetched (and, for YAZ, built from source) on first use by the Make
 
 ## Vocabulary
 
-`vocab.ttl` defines a small custom vocabulary layered on top of BIBFRAME and schema.org:
+`docs/vocab.ttl` defines a small custom vocabulary layered on top of BIBFRAME and schema.org:
 
 - `ab:ArtistsBook` — subclass of `schema:Book`
 - `ab:ReferenceWork` — a reference work (book, article, webpage) that cites an artists' book
 - `ab:Citation` — links a reference work to the artists' book it cites; `ab:cites` → the book, `ab:citedBy` → the reference work
 - Creator role properties: `ab:primaryCreator`, `ab:bookArtist`, `ab:photographyBy`, etc.
 
-`ab:ReferenceWork`, `ab:Citation`, `ab:cites`, and `ab:citedBy` are emitted by the construct queries today. The page-level citation properties and the creator-role properties are defined but **not yet emitted** — and `vocab.ttl` still carries the citation terms under a legacy `ex:` prefix pending normalization to `ab:`.
+`ab:ReferenceWork`, `ab:Citation`, `ab:cites`, and `ab:citedBy` are emitted by the construct queries today. The page-level citation properties and the creator-role properties are defined but **not yet emitted** — and `docs/vocab.ttl` still carries the citation terms under a legacy `ex:` prefix pending normalization to `ab:`.
 
-`description.ttl` contains a worked example (Ed Ruscha's *Twentysix Gasoline Stations*) showing how the vocabulary is applied, with links to Wikidata, Getty ULAN, and LC authority records.
+`docs/description.ttl` contains a worked example (Ed Ruscha's *Twentysix Gasoline Stations*) showing how the vocabulary is applied, with links to Wikidata, Getty ULAN, and LC authority records.
 
 ## Citation data
 
@@ -125,22 +125,22 @@ The most-cited source is Moeglin-Delcroix (2012), which cites 1,568 books in the
 | File | Purpose |
 |---|---|
 | `Makefile` | Orchestrates the full pipeline |
-| `snowman.yaml` | Tells Snowman where the SPARQL endpoint is |
-| `views.yaml` | Maps SELECT queries and templates to output files |
+| `website/snowman.yaml` | Tells Snowman where the SPARQL endpoint is |
+| `website/views.yaml` | Maps SELECT queries and templates to output files |
 
 ### `Makefile`
 
 The central build file. Key targets:
 
-- `all` — builds `graph/artists-books.ttl` then `site/index.html`
+- `all` — builds `graph/artists-books.ttl` then `website/site/index.html`
 - `graph/%.ttl` — runs a CONSTRUCT query through SPARQL-Anything to generate RDF from the CSV and MARCXML sources
-- `site/index.html` — starts Fuseki, runs Snowman, stops Fuseki; depends on the graph, both YAML files, all SPARQL SELECT queries, and all templates
+- `website/site/index.html` — starts Fuseki, runs Snowman, stops Fuseki; depends on the graph, both YAML files, all SPARQL SELECT queries, and all templates
 - `serve` — runs `snowman server` to serve the built site at `http://127.0.0.1:8080`
 - `clean` / `superclean` — removes generated files; `superclean` also removes downloaded tool binaries
 
 Fuseki lifecycle is controlled by the `START_FUSEKI` variable (default `true`). Set `START_FUSEKI=false` if you have Fuseki already running.
 
-### `snowman.yaml`
+### `website/snowman.yaml`
 
 Tells Snowman which SPARQL endpoint to query:
 
@@ -149,7 +149,7 @@ sparql_client:
   endpoint: "http://localhost:3030/artists-books/sparql"
 ```
 
-### `views.yaml`
+### `website/views.yaml`
 
 Defines one view per output page. Each entry binds a SELECT query to a template and names the output file:
 
@@ -174,7 +174,7 @@ There are **four** views across two query/template pairs — one pair for the ar
 ## Templates
 
 ```
-templates/
+website/templates/
 ├── layouts/
 │   └── base.html         — outer HTML shell (head, body, nav to both indexes)
 ├── index.html            — collection index, lists every book ("cited by N")

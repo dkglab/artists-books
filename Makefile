@@ -3,11 +3,11 @@ START_FUSEKI ?= true
 .PHONY: all clean superclean validate serve
 .DEFAULT_GOAL := all
 
-all: graph/artists-books.ttl graph/reference-resources.ttl site/index.html
+all: graph/artists-books.ttl graph/reference-resources.ttl website/site/index.html
 
 clean:
-	rm -f inferred.ttl diff.txt *.png
-	rm -rf graph site .snowman
+	rm -f inferred.ttl diff.txt *.png docs/*.png
+	rm -rf graph site .snowman website/site website/.snowman
 
 superclean: clean
 	@$(MAKE) -s -C tools/jena clean
@@ -23,17 +23,17 @@ tools/fuseki/fuseki-server \
 tools/snowman/snowman:
 	$(MAKE) -s -C $(shell echo $@ | cut -d/ -f1-2)
 
-validate: vocab.ttl description.ttl | tools/jena/bin/riot
+validate: docs/vocab.ttl docs/description.ttl | tools/jena/bin/riot
 	./tools/jena/bin/riot --validate $^
-	@echo "vocab.ttl and description.ttl are valid."
+	@echo "docs/vocab.ttl and docs/description.ttl are valid."
 
-serve: site/index.html | tools/snowman/snowman
-	./tools/snowman/snowman server --port 8080
+serve: website/site/index.html | tools/snowman/snowman
+	cd website && ../tools/snowman/snowman server --port 8080
 
-inferred.ttl: vocab.ttl description.ttl | validate
+inferred.ttl: docs/vocab.ttl docs/description.ttl | validate
 	./tools/jena/bin/riot --formatted=ttl --rdfs $< $(word 2,$^) > $@
 
-diff.txt: description.ttl inferred.ttl | validate
+diff.txt: docs/description.ttl inferred.ttl | validate
 	./tools/jena/bin/riot --validate inferred.ttl
 	@echo "inferred.ttl is valid."
 	./tools/jena/bin/rdfdiff $^ TTL TTL > $@ ; \
@@ -59,20 +59,20 @@ Zotero/reference-resources.csv \
 Zotero/citation-crosswalk.csv \
 Zotero/abc-master-crosswalk.csv
 
-site/index.html: \
+website/site/index.html: \
 graph/artists-books.ttl \
 graph/reference-resources.ttl \
-$(wildcard *.yaml) \
-$(wildcard queries/select/*.rq) \
-$(wildcard templates/*.html) \
-$(wildcard templates/layouts/*.html) \
-$(wildcard templates/includes/*.html) \
+$(wildcard website/*.yaml) \
+$(wildcard website/queries/select/*.rq) \
+$(wildcard website/templates/*.html) \
+$(wildcard website/templates/layouts/*.html) \
+$(wildcard website/templates/includes/*.html) \
 | tools/fuseki/fuseki-server tools/snowman/snowman
 ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki start
 endif
-	mkdir -p .snowman
-	./tools/snowman/snowman build 2>&1 | tee .snowman/build_log.txt
+	mkdir -p website/.snowman
+	cd website && ../tools/snowman/snowman build 2>&1 | tee .snowman/build_log.txt
 ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki stop
 endif

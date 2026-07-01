@@ -4,6 +4,8 @@ Supplementary documentation for the artists' books project. For the project
 overview and pipeline diagram see the top-level [`README.md`](../README.md);
 for operational and architecture detail see [`CLAUDE.md`](../CLAUDE.md).
 
+## Guides & analyses
+
 - [`PIPELINE.md`](PIPELINE.md) — the build pipeline: the two parallel tracks
   (artists' books and reference works) rendered as a Mermaid diagram, each
   stage linked back to the README.
@@ -16,3 +18,16 @@ for operational and architecture detail see [`CLAUDE.md`](../CLAUDE.md).
 - [`QUERY-PERFORMANCE.md`](QUERY-PERFORMANCE.md) — notes on keeping the
   `queries/construct/` SPARQL-Anything step fast (avoiding the variable-predicate
   blowup when walking Facade-X containers).
+
+## Vocabulary & modeling examples
+
+These are documentation-by-example, not build inputs (the pipeline emits its own
+graphs under `graph/`). `make validate` runs Jena's validator over the two `.ttl`
+files.
+
+- [`vocab.ttl`](vocab.ttl) — the custom `ab:` vocabulary layered on BIBFRAME and
+  schema.org (the citation class/properties, creator-role properties, etc.).
+- [`description.ttl`](description.ttl) — a hand-written worked example (Ed Ruscha's
+  *Twentysix Gasoline Stations*) demonstrating the full intended graph shape.
+- [`website_sources_of_info.xlsx`](website_sources_of_info.xlsx) — spreadsheet of
+  the source-of-information notes gathered while designing the website.

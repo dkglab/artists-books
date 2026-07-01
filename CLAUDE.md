@@ -7,10 +7,10 @@ See `README.md` for the project overview and pipeline diagram. This file capture
 ## Common commands
 
 ```
-make all          # full pipeline: graph/artists-books.ttl + graph/reference-resources.ttl, then site/index.html
+make all          # full pipeline: graph/artists-books.ttl + graph/reference-resources.ttl, then website/site/index.html
 make serve        # build if needed, then snowman server on port 8080
-make validate     # run Jena riot --validate on vocab.ttl + description.ttl
-make clean        # remove generated files (graph/, site/, .snowman/)
+make validate     # run Jena riot --validate on docs/vocab.ttl + docs/description.ttl
+make clean        # remove generated files (graph/, website/site/, website/.snowman/)
 make superclean   # also remove downloaded tool binaries under tools/
 ```
 
@@ -18,11 +18,11 @@ The Makefile auto-fetches all tools (Jena, Fuseki, SPARQL-Anything, Snowman) int
 
 ### Iterating on queries and templates
 
-`site/index.html`'s Make recipe depends on every yaml, every `queries/select/*.rq`, every `templates/*.html`, every `templates/layouts/*.html`, and every `templates/includes/*.html`. Editing any of these triggers a rebuild on the next `make`. The recipe starts Fuseki, runs `snowman build`, then stops Fuseki — driven by `START_FUSEKI=true` (set `START_FUSEKI=false` if Fuseki is already running externally).
+`website/site/index.html`'s Make recipe depends on every yaml, every `website/queries/select/*.rq`, every `website/templates/*.html`, every `website/templates/layouts/*.html`, and every `website/templates/includes/*.html`. Editing any of these triggers a rebuild on the next `make`. The recipe starts Fuseki, `cd`s into `website/` and runs `snowman build` there (Snowman locates its config/queries/templates in the current directory), then stops Fuseki — driven by `START_FUSEKI=true` (set `START_FUSEKI=false` if Fuseki is already running externally).
 
-The `snowman server` process is *not* a watcher — it only serves what's in `site/`. After editing, you must kill the running server, re-run `make serve` (which rebuilds), and the new server will pick up the rebuilt files.
+The `snowman server` process is *not* a watcher — it only serves what's in `website/site/`. After editing, you must kill the running server, re-run `make serve` (which rebuilds), and the new server will pick up the rebuilt files.
 
-The build log is captured at `.snowman/build_log.txt`.
+The build log is captured at `website/.snowman/build_log.txt`.
 
 ### Editing the construct queries
 
@@ -40,7 +40,7 @@ Before changing how the query walks the MARC XML, read `docs/QUERY-PERFORMANCE.m
 ### Two SPARQL stages, two query directories
 
 - `queries/construct/` — runs against raw CSVs/MARCXML via SPARQL-Anything's `x-sparql-anything:` SERVICE. Two queries (`artists-books.rq`, `reference-resources.rq`) produce two graphs (`graph/artists-books.ttl`, `graph/reference-resources.ttl`); each only runs when its `.ttl` is regenerated.
-- `queries/select/` — runs against Fuseki (which loads **both** constructed graphs). One per Snowman view; results feed into Go templates. Two SELECT queries today: `artists-books.rq` (book index + per-book pages) and `references.rq` (reference index + per-reference pages, #63). Both join across the two graphs to render the citation relationship in each direction — `references.rq` requires the citation join so only reference works that cite an in-collection book get a page (43 of 157); `artists-books.rq` joins it `OPTIONAL` for the per-book "Cited by" list.
+- `website/queries/select/` — runs against Fuseki (which loads **both** constructed graphs). One per Snowman view; results feed into Go templates. Two SELECT queries today: `artists-books.rq` (book index + per-book pages) and `references.rq` (reference index + per-reference pages, #63). Both join across the two graphs to render the citation relationship in each direction — `references.rq` requires the citation join so only reference works that cite an in-collection book get a page (43 of 157); `artists-books.rq` joins it `OPTIONAL` for the per-book "Cited by" list.
 
 ### URI minting
 
@@ -48,9 +48,9 @@ Book URIs are minted from the Zotero `itemKey` field: `https://dkglab.github.io/
 
 `reference-resources.rq` mints parallel URIs for the reference track: each reference work is `…/reference/<itemKey>` (with `/publication`, `/identifier` sub-resources), and each citation is `…/reference/<refKey>/citation/<bookKey>` — keyed by the (reference work, artists' book) pair, so multiple note paragraphs citing the same book from the same work collapse to one `ab:Citation`.
 
-### `views.yaml` and per-row output expansion
+### `website/views.yaml` and per-row output expansion
 
-Each entry in `views.yaml` ties a SELECT query to a template + output path. When the output path templates a SPARQL variable (e.g. `item/{{itemKey}}/index.html`), Snowman writes one file per query result row, substituting that row's value. The template receives that row's bindings as its data context (accessible as `.itemKey`, `.title`, etc., matching the SELECT variable names exactly).
+Each entry in `website/views.yaml` ties a SELECT query to a template + output path. When the output path templates a SPARQL variable (e.g. `item/{{itemKey}}/index.html`), Snowman writes one file per query result row, substituting that row's value. The template receives that row's bindings as its data context (accessible as `.itemKey`, `.title`, etc., matching the SELECT variable names exactly).
 
 This means per-item SELECT queries should return **one row per output file**. For multi-valued fields (e.g. multiple creators per book), aggregate with `GROUP_CONCAT(DISTINCT ?x; separator="; ")` and `GROUP BY` so the rows collapse — otherwise you get duplicate output files.
 
@@ -63,11 +63,11 @@ Two non-obvious Snowman behaviours bite here (both learned building the referenc
 
 ### Templates
 
-`templates/layouts/base.html` defines a `base` template with `title` and `content` blocks; page templates start with `{{ template "base" . }}` and `{{ define "content" }}...{{ end }}`. Go `html/template` syntax. SPARQL bindings are accessed by lowercase variable name (`.title`, not `.Title`). There are four page templates: `index.html` + `artists-book.html` (books) and `references.html` + `reference.html` (reference works); the two families cross-link via the citation relationship.
+`website/templates/layouts/base.html` defines a `base` template with `title` and `content` blocks; page templates start with `{{ template "base" . }}` and `{{ define "content" }}...{{ end }}`. Go `html/template` syntax. SPARQL bindings are accessed by lowercase variable name (`.title`, not `.Title`). There are four page templates: `index.html` + `artists-book.html` (books) and `references.html` + `reference.html` (reference works); the two families cross-link via the citation relationship.
 
 ### Vocabulary status
 
-The constructed graphs emit BIBFRAME directly (`bf:title`, `bf:contribution`, `bf:provisionActivity`, etc.) plus a growing `ab:` namespace: `ab:ArtistsBook`/`ab:itemKey` (artists-books.rq) and `ab:ReferenceWork`, `ab:Citation`, `ab:cites`, `ab:citedBy` (reference-resources.rq). Still **not yet emitted**: the page-level citation properties (`ab:onPageNumber`/`ab:imagesOnPageNumber`, #43/#44) and the creator-role properties (`ab:bookArtist`, etc.). Note a divergence — `vocab.ttl` still defines the citation class/properties under a legacy `ex:` prefix (`ex:Citation`, `ex:cites`, …) while the construct query emits them under `ab:`; the vocabulary needs normalizing to match. `description.ttl` is a hand-written worked example (Ed Ruscha's *Twentysix Gasoline Stations*) demonstrating the full intended shape.
+The constructed graphs emit BIBFRAME directly (`bf:title`, `bf:contribution`, `bf:provisionActivity`, etc.) plus a growing `ab:` namespace: `ab:ArtistsBook`/`ab:itemKey` (artists-books.rq) and `ab:ReferenceWork`, `ab:Citation`, `ab:cites`, `ab:citedBy` (reference-resources.rq). Still **not yet emitted**: the page-level citation properties (`ab:onPageNumber`/`ab:imagesOnPageNumber`, #43/#44) and the creator-role properties (`ab:bookArtist`, etc.). Note a divergence — `docs/vocab.ttl` still defines the citation class/properties under a legacy `ex:` prefix (`ex:Citation`, `ex:cites`, …) while the construct query emits them under `ab:`; the vocabulary needs normalizing to match. `docs/description.ttl` is a hand-written worked example (Ed Ruscha's *Twentysix Gasoline Stations*) demonstrating the full intended shape.
 
 ### Zotero subdirectory
 
