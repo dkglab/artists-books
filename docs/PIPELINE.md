@@ -38,22 +38,6 @@ flowchart TD
     %% ---- Output ----
     snowman --> site["Static HTML website (web/site/)<br/>book index + pages · reference index + pages<br/>cross-linked by citations"]
 
-    %% ---- Clickable links to the README sections that document each stage ----
-    %% Absolute URLs: GitHub renders Mermaid in a sandboxed iframe where
-    %% relative paths resolve against viewscreen.githubusercontent.com and break.
-    click csvs "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-    click notes "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-    click crosswalks "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-    click marc "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-    click refmarc "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-    click abrq "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-    click refrq "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-    click abttl "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-    click refttl "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-    click fuseki "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-    click snowman "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-    click site "https://github.com/dkglab/artists-books/blob/main/README.md#pipeline" "README: Pipeline"
-
     classDef input fill:#e8f0fe,stroke:#4285f4,stroke-width:2px;
     classDef output fill:#e6f4ea,stroke:#34a853,stroke-width:2px;
     class zotero,catalogs input;
