@@ -1,50 +1,73 @@
 # Artists' Books
 
-A linked data publication pipeline that transforms a curated [Zotero](https://www.zotero.org/) library into a knowledge graph and static website. The collection documents artists' books held at the Joseph C. Sloane Art Library (UNC Chapel Hill), along with citation data tracking how those books appear in reference literature.
-
-> [!IMPORTANT]
-> **`sources/zotero/zotero.sqlite` bundles three libraries.** The site builds from a *personal* library (the curated **1,341-book Sloane holdings**), but the **"Cited:" citation notes** live in two separate *group* libraries under different item keys. Surfacing a book's citations is therefore a cross-library **title/ISBN/OCLC reconciliation**, not an item-key join. See [`sources/zotero/README.md` → Three libraries in one database](sources/zotero/README.md#three-libraries-in-one-database).
+A linked data publication pipeline that transforms a curated
+[Zotero](https://www.zotero.org/) library into a knowledge graph and
+static website. The collection documents artists' books held at the
+Joseph C. Sloane Art Library (UNC Chapel Hill), along with citation
+data tracking how those books appear in reference literature.
 
 ## Pipeline
 
-The pipeline runs as **two parallel tracks** that meet at the graph stage: the **artists' books** (the 1,341-book collection the site is built from) and the **reference works** that cite them (the 157-item *Reference resources* collection, plus the "Cited:" notes connecting the two). Both are surfaced on the website and cross-linked — a book lists the reference works citing it, a reference work lists the books it cites. Only reference works that actually cite an in-collection book get a page (43 of the 157 today).
+The pipeline runs as **two parallel tracks** that meet at the graph
+stage: the **artists' books** (the 1,341-book collection the site is
+built from) and the **reference works** that cite them (the 157-item
+*Reference resources* collection, plus the "Cited:" notes connecting
+the two). Both are surfaced on the website and cross-linked — a book
+lists the reference works citing it, a reference work lists the books
+it cites. Only reference works that actually cite an in-collection
+book get a page (43 of the 157 today).
 
-```
-Zotero (SQLite database)                 Library catalogs (Z39.50 / SRU)
-    │  SQL export + notes_export              │  marc_harvest.py (YAZ)
-    ↓                                         ↓
-CSVs + notes.xml + crosswalks            MARCXML records
-  • artists-books.csv                      • artists-books-marc.xml
-  • reference-resources.csv                • reference-resources-marc.xml *
-  • notes.xml, *-crosswalk.csv
-    └─────────────────┬─────────────────────┘
-                      ↓  SPARQL-Anything (two CONSTRUCT queries)
-       artists-books.ttl   +   reference-resources.ttl
-                      ↓  Apache Fuseki (SPARQL endpoint)
-                      ↓  Snowman (static site generator)
-              Static HTML website
-
-* reference-resources-marc.xml is harvested but only minimally read so far —
-  the construct query pulls just the primary creator from it.
-```
+See [`docs/PIPELINE.md`](docs/PIPELINE.md) for a useful diagram, and
+[`docs/README.md`](docs/README.md) for an index of the supplementary
+documentation.
 
 The stages, and where each is documented in depth:
 
-1. **Zotero → CSV/notes.** SQL export scripts pull the ~1,341 books and 157 reference works into CSVs; `notes_export.sh` emits the "Cited:" note paragraphs; fuzzy matchers reconcile notes → reference work → book across the three libraries into crosswalks. → [`sources/zotero/README.md`](sources/zotero/README.md) (database, notes, citation data model), [`sources/README.md`](sources/README.md) (crosswalk pipeline).
-2. **Library catalogs → MARCXML.** `marc_harvest.py` (YAZ) harvests full MARC records over Z39.50/SRU — books from UNC's catalog, reference works from a chain of nine catalogs by ISBN then title+author — each stamped with a synthetic `999 $a <itemKey>` to join back to its Zotero item. → [`sources/marc/README.md`](sources/marc/README.md) (harvest), [`docs/MARC-RECORDS.md`](docs/MARC-RECORDS.md) (field-level analysis).
-3. **CSV + MARCXML → RDF graph.** Two [SPARQL-Anything](https://sparql-anything.cc/) CONSTRUCT queries (`queries/artists-books.rq`, `queries/reference-resources.rq`) emit [BIBFRAME](https://www.loc.gov/bibframe/) plus a custom `ab:` namespace into `graph/*.ttl`. Currently 433 citations link 194 books to 43 reference works. → [`CLAUDE.md`](CLAUDE.md) (query architecture, URI minting), [`docs/QUERY-PERFORMANCE.md`](docs/QUERY-PERFORMANCE.md).
-4. **RDF graph → website.** [Apache Fuseki](https://jena.apache.org/documentation/fuseki2/) loads both graphs and serves a local SPARQL endpoint; [Snowman](https://github.com/glaciers-in-archives/snowman) runs the SELECT queries in `web/queries/` against it and renders the Go templates in `web/templates/` into `web/site/`. → [`CLAUDE.md`](CLAUDE.md) (views, templates, Snowman gotchas).
-
-See [`docs/PIPELINE.md`](docs/PIPELINE.md) for a rendered (Mermaid) version of the diagram with each stage linked, and [`docs/README.md`](docs/README.md) for an index of the supplementary documentation.
+1. **Zotero → CSV/notes.** SQL export scripts pull the ~1,341 books
+   and 157 reference works into CSVs; `notes_export.sh` emits the
+   "Cited:" note paragraphs; fuzzy matchers reconcile notes →
+   reference work → book across the three libraries into crosswalks. →
+   [`sources/zotero/README.md`](sources/zotero/README.md) (database,
+   notes, citation data model),
+   [`sources/README.md`](sources/README.md) (crosswalk pipeline).
+2. **Library catalogs → MARCXML.** `marc_harvest.py` (YAZ) harvests
+   full MARC records over Z39.50/SRU — books from UNC's catalog,
+   reference works from a chain of nine catalogs by ISBN then
+   title+author — each stamped with a synthetic `999 $a <itemKey>` to
+   join back to its Zotero item. →
+   [`sources/marc/README.md`](sources/marc/README.md) (harvest),
+   [`docs/MARC-RECORDS.md`](docs/MARC-RECORDS.md) (field-level
+   analysis).
+3. **CSV + MARCXML → RDF graph.** Two
+   [SPARQL-Anything](https://sparql-anything.cc/) CONSTRUCT queries
+   (`queries/artists-books.rq`, `queries/reference-resources.rq`) emit
+   [BIBFRAME](https://www.loc.gov/bibframe/) plus a custom `ab:`
+   namespace into `graph/*.ttl`. Currently 433 citations link 194
+   books to 43 reference works. → [`CLAUDE.md`](CLAUDE.md) (query
+   architecture, URI minting),
+   [`docs/QUERY-PERFORMANCE.md`](docs/QUERY-PERFORMANCE.md).
+4. **RDF graph → website.** [Apache
+   Fuseki](https://jena.apache.org/documentation/fuseki2/) loads both
+   graphs and serves a local SPARQL endpoint;
+   [Snowman](https://github.com/glaciers-in-archives/snowman) runs the
+   SELECT queries in `web/queries/` against it and renders the Go
+   templates in `web/templates/` into `web/site/`. →
+   [`CLAUDE.md`](CLAUDE.md) (views, templates, Snowman gotchas).
 
 ## Building
 
-```
+```sh
 make all       # build graph/*.ttl, then web/site/index.html
 make serve     # build if needed, then serve at http://127.0.0.1:8080
 ```
 
-All tools are fetched (and, for YAZ, built from source) on first use — no third-party binaries need a system-wide install. The only system prerequisites are a JVM, `sqlite3`, `make`, and a C toolchain (to compile the vendored [YAZ](https://www.indexdata.com/resources/software/yaz/)); GitHub Codespaces gets these via `.devcontainer/devcontainer.json`. See [`CLAUDE.md`](CLAUDE.md) for the full target list and build details.
+All tools are fetched (and, for YAZ, built from source) on first use —
+no third-party binaries need a system-wide install. The only system
+prerequisites are a JVM, `sqlite3`, `make`, and a C toolchain (to
+compile the vendored
+[YAZ](https://www.indexdata.com/resources/software/yaz/)); GitHub
+Codespaces gets these via `.devcontainer/devcontainer.json`. See
+[`CLAUDE.md`](CLAUDE.md) for the full target list and build details.
 
 | Tool | Version | Purpose |
 |---|---|---|
@@ -56,9 +79,21 @@ All tools are fetched (and, for YAZ, built from source) on first use — no thir
 
 ## Vocabulary & data model
 
-The graphs emit BIBFRAME with a custom `ab:` namespace layered on top (`ab:ArtistsBook`, `ab:ReferenceWork`, `ab:Citation`, `ab:cites`/`ab:citedBy`, creator-role properties). `docs/vocab.ttl` defines the vocabulary and `docs/description.ttl` is a hand-written worked example (Ed Ruscha's *Twentysix Gasoline Stations*); `make validate` runs Jena's validator over both. Some terms are defined but not yet emitted, and the citation terms still carry a legacy `ex:` prefix pending normalization — see [`docs/README.md`](docs/README.md) and [`CLAUDE.md`](CLAUDE.md) for current status.
+The graphs emit BIBFRAME with a custom `ab:` namespace layered on top
+(`ab:ArtistsBook`, `ab:ReferenceWork`, `ab:Citation`,
+`ab:cites`/`ab:citedBy`, creator-role properties). `docs/vocab.ttl`
+defines the vocabulary and `docs/description.ttl` is a hand-written
+worked example (Ed Ruscha's *Twentysix Gasoline Stations*); `make
+validate` runs Jena's validator over both. Some terms are defined but
+not yet emitted, and the citation terms still carry a legacy `ex:`
+prefix pending normalization — see [`docs/README.md`](docs/README.md)
+and [`CLAUDE.md`](CLAUDE.md) for current status.
 
-The Zotero library encodes the citation data three ways — tags, "Cited:" notes (~7,649), and `dc:relation` links (~2,366); the **notes** are the form the pipeline extracts. See [`sources/zotero/README.md` → Citation data](sources/zotero/README.md#citation-data) for the full model.
+The Zotero library encodes the citation data three ways — tags,
+"Cited:" notes (~7,649), and `dc:relation` links (~2,366); the
+**notes** are the form the pipeline extracts. See
+[`sources/zotero/README.md` → Citation
+data](sources/zotero/README.md#citation-data) for the full model.
 
 ## Relevant resources
 
