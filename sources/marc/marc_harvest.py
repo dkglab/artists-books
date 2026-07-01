@@ -5,7 +5,7 @@ Servers are tried in order (see SERVERS); the first that yields a verified
 record for an item wins, so a book UNC does not hold can still be found at a
 fallback catalogue.
 
-Strategy (see sources/README.md):
+Strategy (see sources/marc/README.md):
   * Servers     : UNC Innopac first (tcp:afton.lib.unc.edu/INNOPAC), then public
                   fallbacks for what UNC lacks -- the Library of Congress, the
                   K10plus (German) academic union catalogue, LIBRIS (Sweden's
