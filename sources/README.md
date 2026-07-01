@@ -23,7 +23,7 @@ in a group library can be surfaced on the artists'-book page it refers to.
 Filenames below are qualified by track (`zotero/…`, `marc/…`) except the
 crosswalks and external data, which live at this level.
 
-## ABC ↔ cited-record crosswalk (#55)
+## ABC ↔ cited-record crosswalk
 
 Because lib 1 (the ABC the website builds from) has no Cited notes and shares no
 item keys with lib 3 (see [Three libraries in one database](zotero/README.md#three-libraries-in-one-database)),
@@ -79,10 +79,10 @@ containing `Cited` (**not** by collection). The crosswalk reads the committed
 `zotero/artists-books.csv` (title/ISBN/date) and `marc/artists-books-marc.xml` (OCLC in `001`,
 authors in `100`/`700 $a`, joined via `999 $a`).
 
-## Citation ↔ reference-resource crosswalk (#42)
+## Citation ↔ reference-resource crosswalk
 
 Each Cited note paragraph (exported to `zotero/notes.xml` — see
-[Notes export](zotero/README.md#notes-export-53--surfacing-cited-notes-on-abc-pages))
+[Notes export](zotero/README.md#notes-export--surfacing-cited-notes-on-abc-pages))
 is a *free-text* reference to a reference work; it
 carries no key linking it to the **Reference resources** collection
 (`zotero/reference-resources.csv`) — `citedItemKey` is the artist's book's lib-3 record,
@@ -105,15 +105,15 @@ paragraphs carry `review=yes` and are excluded from the construct query's
 auto-join. Current: **433 paragraphs auto-matched** across 46 reference works,
 3 held for review (`BEGEG5AI`'s own short-generic-title citations), 3 editorial
 annotations recorded as `none`. (Earlier ~50 review-held paragraphs cited
-reference works missing from the collection; **#59** added them — e.g. Lyons,
-*Artists' Books: Visual Studies Workshop Press* — and repaired a corrupt note
-title, dropping the review count from ~50 to 3.)
+reference works missing from the collection; those were later added — e.g. Lyons,
+*Artists' Books: Visual Studies Workshop Press* — and a corrupt note title was
+repaired, dropping the review count from ~50 to 3.)
 
 ```sh
 make -C sources citation-crosswalk.csv
 ```
 
-**Wired into the build (#42).** Citations are constructed by
+**Wired into the build.** Citations are constructed by
 `queries/reference-resources.rq` (not `artists-books.rq`), since a
 citation belongs to the reference work it appears in. It joins
 `citation-crosswalk.csv` (paragraph → `refItemKey` + flattened text, skipping
@@ -131,7 +131,7 @@ reference/<refItemKey>/citation/<abcItemKey>
 
 Result: **433 citations** linking **194 ABC books** to **43 reference works**;
 no `notes.xml` read is needed at graph-build time (the crosswalk already carries
-the text). Page-number / image-page extraction (#43/#44/#15/#16) is still TODO.
+the text). Page-number / image-page extraction is still TODO.
 
 **Regenerate** (the crosswalks are committed inputs to the graph build, like
 `artists-books.csv`/`-marc.xml`, so rebuild the graph explicitly):

@@ -12,7 +12,7 @@ and [`../README.md`](../README.md) for the crosswalk pipeline that bridges the
 two. For a field-level analysis of the harvested artists'-book records see
 [`../../docs/MARC-RECORDS.md`](../../docs/MARC-RECORDS.md).
 
-## Reference-work MARC harvest (#54)
+## Reference-work MARC harvest
 
 `marc_harvest.py` harvests full MARC records for both tracks — `zotero/artists-books.csv`
 → `artists-books-marc.xml` and `zotero/reference-resources.csv` →
@@ -48,7 +48,6 @@ python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/ref
 > **Minimally wired into the graph.** `reference-resources.rq` builds the
 > `ab:ReferenceWork` nodes from `reference-resources.csv`, and now also reads a
 > **basic slice** of `reference-resources-marc.xml` — just the primary creator
-> (`100 $a`), joined by `999 $a` — emitted as a `bflc:PrimaryContribution`
-> (#46). The rest of the MARC's richer data (OCLC/WorldCat, secondary creators,
-> relator roles, identity URIs, extent/dimensions) isn't in the graph yet
-> (tracked in #40/#51).
+> (`100 $a`), joined by `999 $a` — emitted as a `bflc:PrimaryContribution`.
+> The rest of the MARC's richer data (OCLC/WorldCat, secondary creators,
+> relator roles, identity URIs, extent/dimensions) isn't in the graph yet.

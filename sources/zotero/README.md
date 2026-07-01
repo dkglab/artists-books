@@ -25,12 +25,12 @@ Consequences:
 
 - **lib 3 (ABCI) supersedes lib 2.** It is richer and still maintained while lib 2 is frozen; only ~3 of the built collection's books are cited *only* in lib 2. Treat **lib 3 as the authoritative citation index**.
 - **The built collection (lib 1) has no citation notes**, so the website's "cited-by" model depends on joining notes from lib 3 onto lib‑1 pages.
-- **The same work is catalogued once per library under a different item key** — e.g. Ruth Laxson, *(Ho + go)² = it* (ISBN `0-932526-10-1`) is `HKGS8WHZ` in lib 2 and `GURAG9JG` in lib 3, with its own lib‑1 record. So that join is a **title / ISBN / OCLC reconciliation**, not an item-key match — and only **7 of 1,341** lib‑1 books carry an explicit `owl:sameAs` to lib 3. Tracked in issue #55.
+- **The same work is catalogued once per library under a different item key** — e.g. Ruth Laxson, *(Ho + go)² = it* (ISBN `0-932526-10-1`) is `HKGS8WHZ` in lib 2 and `GURAG9JG` in lib 3, with its own lib‑1 record. So that join is a **title / ISBN / OCLC reconciliation**, not an item-key match — and only **7 of 1,341** lib‑1 books carry an explicit `owl:sameAs` to lib 3.
 
 This is also *why* the four big book collections look like "two non-overlapping pairs" (see [Main book collections](#main-book-collections)): each pair is simply one group library, and items in different libraries can never share an item key.
 
 The reconciliation itself — how the lib-3 Cited notes are joined onto lib-1 ABC
-pages via the fuzzy-match crosswalks (#55, #42) — is documented in
+pages via the fuzzy-match crosswalks — is documented in
 [`../README.md`](../README.md).
 
 ## SQLite database
@@ -235,12 +235,12 @@ Bury's book is tagged `Bury (2015)`) and carries workflow tags like
 `Indexed, needs QC` or `Completed`, which library staff used to track
 indexing progress.
 
-## Notes export (#53) — surfacing "Cited:" notes on ABC pages
+## Notes export — surfacing "Cited:" notes on ABC pages
 
 The "Cited:" notes are exported so the construct query can read them and, via
 the fuzzy-match crosswalks (documented in [`../README.md`](../README.md)),
 attach each lib-3 record's citations to the ABC page it matches. These now
-render on the site (#63): each ABC book page lists the reference works that cite
+render on the site: each ABC book page lists the reference works that cite
 it, and each reference-work page lists the ABC books it cites — the two ends of
 the `ab:Citation` joined back across the graphs by the Snowman SELECT queries.
 
@@ -254,15 +254,15 @@ re-emits only what the citation model needs, guaranteed well-formed:
 - one `<p>` per citation paragraph (the `Cited:` header and empty paragraphs
   dropped; the ~4 notes using a CSL `<div class="csl-entry">` bibliography are
   handled too);
-- `<em>` kept — the only reliable delimiter of the citing work's title (#42);
+- `<em>` kept — the only reliable delimiter of the citing work's title;
 - **bold canonicalized to `<strong>`** whether the source used `<strong>`/`<b>`
   or an inline `font-weight: bold` span (`font-weight: normal` spans are cruft,
-  not bold) — `<strong>` page numbers are the image-page signal (#43);
+  not bold) — `<strong>` page numbers are the image-page signal;
 - each `<p>` also carries `text="…"` (flattened reference string) and `n="…"`
   (per-item index), so the query can read the citation label and mint a stable
   citation URI without reconstructing text from fragmented XML nodes.
 
-≈4,006 notes / ≈5,170 citation paragraphs. The page-number split (#43/#44) is
+≈4,006 notes / ≈5,170 citation paragraphs. The page-number split is
 left to those issues — the markup that feeds them is preserved here.
 
 ## Tags beyond citations

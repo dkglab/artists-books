@@ -1,6 +1,6 @@
 # fuzzy-match
 
-Reconciliation tooling for the **ABC ↔ cited-record crosswalk** (issue #55).
+Reconciliation tooling for the **ABC ↔ cited-record crosswalk**.
 
 `match.py` matches each book in the personal-library *Artists' Books Collection*
 (ABC, lib 1 — what the website builds from) to the lib-3 citation-index
