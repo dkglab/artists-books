@@ -33,7 +33,7 @@ There are **two** construct queries, each producing its own graph:
 
 Both are pure source-to-RDF transforms — they do **not** touch Fuseki. The crosswalk CSVs are committed inputs to the graph build (like the `-marc.xml` files), so after regenerating them (`make -C Zotero …`) rebuild the graph explicitly with `make -B graph/reference-resources.ttl`, then re-run `make` to rebuild the site.
 
-Before changing how the query walks the MARC XML, read `QUERY-PERFORMANCE.md` — traversing Facade-X containers with a variable predicate (`?s ?var ?o`) instead of `fx:anySlot` is the difference between a 6-second and a 5-minute build.
+Before changing how the query walks the MARC XML, read `docs/QUERY-PERFORMANCE.md` — traversing Facade-X containers with a variable predicate (`?s ?var ?o`) instead of `fx:anySlot` is the difference between a 6-second and a 5-minute build.
 
 ## Architecture notes beyond the README
 

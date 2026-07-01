@@ -107,7 +107,7 @@ WHERE {
     # have a MARC record but only some carry a 100 main entry (edited volumes /
     # exhibition catalogs enter creators on 700/710 instead, not read yet).
     # Traversal uses fx:anySlot, not a variable predicate (see
-    # QUERY-PERFORMANCE.md). Name only for now — no roles / identity URIs (#46).
+    # docs/QUERY-PERFORMANCE.md). Name only for now — no roles / identity URIs (#46).
     OPTIONAL {
       SERVICE <x-sparql-anything:location=Zotero/reference-resources-marc.xml> {
         ?record a marc:record .

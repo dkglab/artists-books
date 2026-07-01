@@ -223,7 +223,7 @@ WHERE {
           }
 
           # $1 — real-world-object URI. Prefer VIAF, else ISNI. Strip the leaked
-          # trailing "." (see MARC-RECORDS.md: 58% of $1 are corrupted this way).
+          # trailing "." (see docs/MARC-RECORDS.md: 58% of $1 are corrupted this way).
           OPTIONAL {
             ?df fx:anySlot ?sfv .
             ?sfv xyz:code "1" ; rdf:_1 ?rwo_v .

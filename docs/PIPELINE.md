@@ -1,6 +1,6 @@
 # Build pipeline
 
-The build runs as two parallel tracks — the **artists' books** and the **reference works** that cite them — that meet at the RDF graph stage and flow into a single static website. See [`README.md`](README.md) for prose and [`CLAUDE.md`](CLAUDE.md) for operational detail.
+The build runs as two parallel tracks — the **artists' books** and the **reference works** that cite them — that meet at the RDF graph stage and flow into a single static website. See [`README.md`](../README.md) for prose and [`CLAUDE.md`](../CLAUDE.md) for operational detail.
 
 ```mermaid
 flowchart TD

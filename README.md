@@ -7,7 +7,7 @@ A linked data publication pipeline that transforms a curated [Zotero](https://ww
 
 ## Pipeline overview
 
-See [`PIPELINE.md`](PIPELINE.md) for a rendered (Mermaid) version of this diagram, with each stage linked back to the sections below.
+See [`PIPELINE.md`](docs/PIPELINE.md) for a rendered (Mermaid) version of this diagram, with each stage linked back to the sections below.
 
 ```
 Zotero (SQLite database)                 Library catalogs (Z39.50 / SRU)
@@ -53,7 +53,7 @@ The SQL queries join across Zotero's internal tables (`items`, `itemData`, `item
 
 For the books that have a UNC bib number, full MARC records are harvested from UNC's catalog over Z39.50 by `Zotero/marc_harvest.py` (using the YAZ toolkit) and written to `Zotero/artists-books-marc.xml` — a single MARCXML collection of ~1,340 records, one per item. The harvester stamps each record with a synthetic `999 $a <itemKey>` field so it can be joined back to the corresponding Zotero item.
 
-These records carry richer, more authoritative data than the CSV: cataloguer-supplied creator names with relator roles, real-world-object URIs (VIAF/ISNI in `$1`) and LC name-authority URIs (`$0`), plus the OCLC number (`001`). See `MARC-RECORDS.md` for a full analysis of the file.
+These records carry richer, more authoritative data than the CSV: cataloguer-supplied creator names with relator roles, real-world-object URIs (VIAF/ISNI in `$1`) and LC name-authority URIs (`$0`), plus the OCLC number (`001`). See [`MARC-RECORDS.md`](docs/MARC-RECORDS.md) for a full analysis of the file.
 
 The same harvester also produces **`Zotero/reference-resources-marc.xml`** for the reference works. Reference works are mostly *not* UNC bibs, so the harvester searches a chain of **nine** catalogs (UNC, Library of Congress, K10plus, Penn State, LIBRIS, Getty, Clark, NYARC, Harvard) by **ISBN**, then **title + author**, falling back across servers until a record verifies; a few hand-supplied records are merged from `reference-resources-manual.xml`. Result: ~155 of the 157 reference works get a MARC record (joined by `999 $a`, same as the books). The construct query now reads a **basic slice** of this file — just the **primary creator** (`100 $a`) — to demonstrate the join; the rest of the MARC's richer data (OCLC/WorldCat, secondary creators, relator roles, identity URIs, extent/dimensions) isn't in the graph yet (tracked in #40/#51).
 
