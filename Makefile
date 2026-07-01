@@ -44,7 +44,7 @@ diff.txt: docs/description.ttl inferred.ttl | validate
 %.png: %.ttl | validate tools/rdflib/bin/rdf2dot
 	./tools/rdflib/bin/rdf2dot $< 2>/dev/null | dot -Tpng > $@
 
-graph/%.ttl: queries/construct/%.rq | tools/sparql-anything/sparql-anything.jar
+graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 	@mkdir -p graph
 	java -jar tools/sparql-anything/sparql-anything.jar -q $< > $@
 
@@ -63,7 +63,7 @@ web/site/index.html: \
 graph/artists-books.ttl \
 graph/reference-resources.ttl \
 $(wildcard web/*.yaml) \
-$(wildcard web/queries/select/*.rq) \
+$(wildcard web/queries/*.rq) \
 $(wildcard web/templates/*.html) \
 $(wildcard web/templates/layouts/*.html) \
 $(wildcard web/templates/includes/*.html) \

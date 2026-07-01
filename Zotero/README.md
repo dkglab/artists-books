@@ -140,7 +140,7 @@ make -C Zotero citation-crosswalk.csv
 ```
 
 **Wired into the build (#42).** Citations are constructed by
-`queries/construct/reference-resources.rq` (not `artists-books.rq`), since a
+`queries/reference-resources.rq` (not `artists-books.rq`), since a
 citation belongs to the reference work it appears in. It joins
 `citation-crosswalk.csv` (paragraph → `refItemKey` + flattened text, skipping
 `review=yes` / empty matches) with `abc-master-crosswalk.csv` (`citedItemKey →

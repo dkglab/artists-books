@@ -61,8 +61,8 @@ The same harvester also produces **`Zotero/reference-resources-marc.xml`** for t
 
 [SPARQL-Anything](https://sparql-anything.cc/) transforms the sources into RDF using **two** SPARQL CONSTRUCT queries — one per track:
 
-- `queries/construct/artists-books.rq` → `graph/artists-books.ttl` (the artists' books)
-- `queries/construct/reference-resources.rq` → `graph/reference-resources.ttl` (the reference works and citations)
+- `queries/artists-books.rq` → `graph/artists-books.ttl` (the artists' books)
+- `queries/reference-resources.rq` → `graph/reference-resources.ttl` (the reference works and citations)
 
 Both graphs use [BIBFRAME](https://www.loc.gov/bibframe/) (Library of Congress bibliographic framework) as their primary vocabulary, with a custom `ab:` namespace for collection-specific concepts.
 
@@ -78,7 +78,7 @@ make graph/artists-books.ttl graph/reference-resources.ttl
 
 [Apache Fuseki](https://jena.apache.org/documentation/fuseki2/) loads the Turtle file and exposes it as a local SPARQL endpoint at `http://localhost:3030/artists-books/sparql`.
 
-[Snowman](https://github.com/glaciers-in-archives/snowman) reads `web/views.yaml`, executes the SELECT queries in `web/queries/select/` against the Fuseki endpoint, and renders the results into HTML using the Go templates in `web/templates/`. The output lands in `web/site/`.
+[Snowman](https://github.com/glaciers-in-archives/snowman) reads `web/views.yaml`, executes the SELECT queries in `web/queries/` against the Fuseki endpoint, and renders the results into HTML using the Go templates in `web/templates/`. The output lands in `web/site/`.
 
 ```
 make web/site/index.html   # build the site (starts Fuseki automatically)
@@ -156,16 +156,16 @@ Defines one view per output page. Each entry binds a SELECT query to a template 
 ```yaml
 views:
   - output: "index.html"
-    query: "select/artists-books.rq"
+    query: "artists-books.rq"
     template: "index.html"
   - output: "item/{{itemKey}}/index.html"
-    query: "select/artists-books.rq"
+    query: "artists-books.rq"
     template: "artists-book.html"
   - output: "references.html"
-    query: "select/references.rq"
+    query: "references.rq"
     template: "references.html"
   - output: "reference/{{itemKey}}/index.html"
-    query: "select/references.rq"
+    query: "references.rq"
     template: "reference.html"
 ```
 

@@ -16,7 +16,7 @@ for operational and architecture detail see [`CLAUDE.md`](../CLAUDE.md).
   and un-reconciled genre/form (`655`) and topical (`650`) heading terms found
   in the MARC records.
 - [`QUERY-PERFORMANCE.md`](QUERY-PERFORMANCE.md) — notes on keeping the
-  `queries/construct/` SPARQL-Anything step fast (avoiding the variable-predicate
+  `queries/` SPARQL-Anything step fast (avoiding the variable-predicate
   blowup when walking Facade-X containers).
 
 ## Vocabulary & modeling examples

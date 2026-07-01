@@ -18,7 +18,7 @@ The Makefile auto-fetches all tools (Jena, Fuseki, SPARQL-Anything, Snowman) int
 
 ### Iterating on queries and templates
 
-`web/site/index.html`'s Make recipe depends on every yaml, every `web/queries/select/*.rq`, every `web/templates/*.html`, every `web/templates/layouts/*.html`, and every `web/templates/includes/*.html`. Editing any of these triggers a rebuild on the next `make`. The recipe starts Fuseki, `cd`s into `web/` and runs `snowman build` there (Snowman locates its config/queries/templates in the current directory), then stops Fuseki — driven by `START_FUSEKI=true` (set `START_FUSEKI=false` if Fuseki is already running externally).
+`web/site/index.html`'s Make recipe depends on every yaml, every `web/queries/*.rq`, every `web/templates/*.html`, every `web/templates/layouts/*.html`, and every `web/templates/includes/*.html`. Editing any of these triggers a rebuild on the next `make`. The recipe starts Fuseki, `cd`s into `web/` and runs `snowman build` there (Snowman locates its config/queries/templates in the current directory), then stops Fuseki — driven by `START_FUSEKI=true` (set `START_FUSEKI=false` if Fuseki is already running externally).
 
 The `snowman server` process is *not* a watcher — it only serves what's in `web/site/`. After editing, you must kill the running server, re-run `make serve` (which rebuilds), and the new server will pick up the rebuilt files.
 
@@ -28,8 +28,8 @@ The build log is captured at `web/.snowman/build_log.txt`.
 
 There are **two** construct queries, each producing its own graph:
 
-- `make graph/artists-books.ttl` runs `queries/construct/artists-books.rq` over the CSVs and `Zotero/artists-books-marc.xml`.
-- `make graph/reference-resources.ttl` runs `queries/construct/reference-resources.rq` over `Zotero/reference-resources.csv` and the two crosswalks (`citation-crosswalk.csv`, `abc-master-crosswalk.csv`) to emit the `ab:ReferenceWork` nodes and `ab:Citation`s. It also reads a **basic slice** of `Zotero/reference-resources-marc.xml` — just the primary creator (`100 $a`), joined by `999 $a` like the books' MARC — emitted as a `bflc:PrimaryContribution` (#46). The rest of the reference MARC (OCLC/WorldCat, secondary creators, roles, identity URIs, extent/dimensions) is still pending (#40/#51).
+- `make graph/artists-books.ttl` runs `queries/artists-books.rq` over the CSVs and `Zotero/artists-books-marc.xml`.
+- `make graph/reference-resources.ttl` runs `queries/reference-resources.rq` over `Zotero/reference-resources.csv` and the two crosswalks (`citation-crosswalk.csv`, `abc-master-crosswalk.csv`) to emit the `ab:ReferenceWork` nodes and `ab:Citation`s. It also reads a **basic slice** of `Zotero/reference-resources-marc.xml` — just the primary creator (`100 $a`), joined by `999 $a` like the books' MARC — emitted as a `bflc:PrimaryContribution` (#46). The rest of the reference MARC (OCLC/WorldCat, secondary creators, roles, identity URIs, extent/dimensions) is still pending (#40/#51).
 
 Both are pure source-to-RDF transforms — they do **not** touch Fuseki. The crosswalk CSVs are committed inputs to the graph build (like the `-marc.xml` files), so after regenerating them (`make -C Zotero …`) rebuild the graph explicitly with `make -B graph/reference-resources.ttl`, then re-run `make` to rebuild the site.
 
@@ -39,8 +39,8 @@ Before changing how the query walks the MARC XML, read `docs/QUERY-PERFORMANCE.m
 
 ### Two SPARQL stages, two query directories
 
-- `queries/construct/` — runs against raw CSVs/MARCXML via SPARQL-Anything's `x-sparql-anything:` SERVICE. Two queries (`artists-books.rq`, `reference-resources.rq`) produce two graphs (`graph/artists-books.ttl`, `graph/reference-resources.ttl`); each only runs when its `.ttl` is regenerated.
-- `web/queries/select/` — runs against Fuseki (which loads **both** constructed graphs). One per Snowman view; results feed into Go templates. Two SELECT queries today: `artists-books.rq` (book index + per-book pages) and `references.rq` (reference index + per-reference pages, #63). Both join across the two graphs to render the citation relationship in each direction — `references.rq` requires the citation join so only reference works that cite an in-collection book get a page (43 of 157); `artists-books.rq` joins it `OPTIONAL` for the per-book "Cited by" list.
+- `queries/` — runs against raw CSVs/MARCXML via SPARQL-Anything's `x-sparql-anything:` SERVICE. Two queries (`artists-books.rq`, `reference-resources.rq`) produce two graphs (`graph/artists-books.ttl`, `graph/reference-resources.ttl`); each only runs when its `.ttl` is regenerated.
+- `web/queries/` — runs against Fuseki (which loads **both** constructed graphs). One per Snowman view; results feed into Go templates. Two SELECT queries today: `artists-books.rq` (book index + per-book pages) and `references.rq` (reference index + per-reference pages, #63). Both join across the two graphs to render the citation relationship in each direction — `references.rq` requires the citation join so only reference works that cite an in-collection book get a page (43 of 157); `artists-books.rq` joins it `OPTIONAL` for the per-book "Cited by" list.
 
 ### URI minting
 

@@ -1,6 +1,6 @@
 # Query performance — avoiding blowup in the construct step
 
-Notes on keeping `queries/construct/artists-books.rq` (and any future
+Notes on keeping `queries/artists-books.rq` (and any future
 SPARQL-Anything query) fast. The construct step reads the source CSVs and
 `Zotero/artists-books-marc.xml` through SPARQL-Anything's Facade-X and emits the
 RDF graph; it is the one place in the pipeline where a careless pattern turns a
@@ -54,7 +54,7 @@ Run the query with `-e` (ARQ explain). The plan prints to stderr before
 execution, so you see it immediately even when the run itself is slow:
 
 ```sh
-java -jar tools/sparql-anything/sparql-anything.jar -e -q queries/construct/artists-books.rq > /dev/null 2> explain.txt
+java -jar tools/sparql-anything/sparql-anything.jar -e -q queries/artists-books.rq > /dev/null 2> explain.txt
 ```
 
 In `explain.txt`, look at the `ALGEBRA` block and the `Reorder/generic` lines:

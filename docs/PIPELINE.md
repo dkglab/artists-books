@@ -32,7 +32,7 @@ flowchart TD
 
     %% ---- Stage 4: site generation ----
     fuseki --> snowman{{"Snowman<br/>(SELECT queries + Go templates)"}}
-    selects["web/queries/select/*.rq"] --> snowman
+    selects["web/queries/*.rq"] --> snowman
     templates["web/templates/*.html"] --> snowman
 
     %% ---- Output ----

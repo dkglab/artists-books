@@ -7,7 +7,7 @@ PREFIX wd:      <http://www.wikidata.org/entity/>
 
 # One row per reference work (#34) that cites at least one artists' book in the
 # ABC collection, feeding both the reference index ("Results" page) and the
-# per-reference detail page. Mirrors queries/select/artists-books.rq.
+# per-reference detail page. Mirrors queries/artists-books.rq.
 #
 # The Reference resources collection is a 157-work bibliography, but a reference
 # work only earns a page here when it actually cites an in-collection book: the
