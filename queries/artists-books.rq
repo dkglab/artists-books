@@ -19,7 +19,7 @@ CONSTRUCT {
     bf:language ?language ;
     bf:extent ?bookExtent ;
     bf:dimensions ?dimensions ;
-    bf:edition ?bookEdition ;
+    bf:editionStatement ?edition ;
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
@@ -44,10 +44,6 @@ CONSTRUCT {
 
   ?bookExtent a bf:Extent ;
     rdfs:label ?extent ; # Extent
-    .
-
-  ?bookEdition a bf:Edition ;
-    rdfs:label ?edition ; # Edition
     .
 
   ?contribution a ?contributionType ;
@@ -255,9 +251,14 @@ WHERE {
     BIND(REPLACE(REPLACE(?control_number, "^\\D+", ""), "^0+", "") AS ?oclc_number)
     BIND(IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)) AS ?worldcat_url)
     BIND(fx:entity(ab:, "item/", ?item_key, "/oclc") AS ?bookOCLCNum)
-    BIND(fx:entity(ab:, "item/", ?item_key, "/extent") AS ?bookExtent)
-    BIND(fx:entity(ab:, "item/", ?item_key, "/edition") AS ?bookEdition)
-
+    BIND(
+      IF(
+        BOUND(?extent),
+        fx:entity(ab:, "item/", ?item_key, "/extent"),
+        ?sentinel
+      ) AS ?bookExtent
+    )
+    
     # Use the real-world-object URI (VIAF, else ISNI) as the creator's identity;
     # only mint an ab:creator/ URI when no such URI exists, keyed off the LC
     # authority id when present, otherwise a slug of the name.
