@@ -33,6 +33,25 @@ The reconciliation itself — how the lib-3 Cited notes are joined onto lib-1 AB
 pages via the fuzzy-match crosswalks — is documented in
 [`../README.md`](../README.md).
 
+### How these libraries came to be
+
+The three-library shape is an artifact of the project's history, not a
+deliberate design. It traces to Josh, who first kept a **private** Zotero
+library to track the books he taught with — and, again privately, began
+recording the citations he found for those books in published reference works.
+When that private teaching list was **promoted to seed the larger shared
+(group) library**, its contents carried over as the base. From there the work
+opened up: students worked through an exhibition catalog or reference work and
+added every artists' book it cited, along with the `Cited:` notes. The shared
+index then evolved across the two group libraries (lib 2 froze; lib 3 succeeded
+it).
+
+One visible consequence: **some reference works carry no citations at all.**
+Those are largely holdovers from Josh's original private teaching list — carried
+into the shared library when it was seeded, before the student-driven
+citation-indexing workflow existed — rather than gaps in data entry. See
+[The "Reference resources" collection](#the-reference-resources-collection).
+
 ## SQLite database
 
 The database is the primary source of value. It contains structured
@@ -234,6 +253,14 @@ Each citing work is tagged with its own citation-source tag (e.g.
 Bury's book is tagged `Bury (2015)`) and carries workflow tags like
 `Indexed, needs QC` or `Completed`, which library staff used to track
 indexing progress.
+
+Not every reference work here has any citations pointing at it. That is
+expected: many are holdovers from Josh's original private teaching list, carried
+into the shared library when it became the base and never run through the
+student citation-indexing workflow (see
+[How these libraries came to be](#how-these-libraries-came-to-be)). A reference
+work with no `Cited:` notes is therefore often a provenance artifact, not
+missing data.
 
 ## Notes export — surfacing "Cited:" notes on ABC pages
 
