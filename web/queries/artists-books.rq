@@ -78,7 +78,7 @@ WHERE {
   }
 
   OPTIONAL {
-  ?book bf:editionStatement ?edition .
+    ?book bf:editionStatement ?edition .
   }
 
   OPTIONAL {

@@ -258,7 +258,7 @@ WHERE {
         ?sentinel
       ) AS ?bookExtent
     )
-    
+
     # Use the real-world-object URI (VIAF, else ISNI) as the creator's identity;
     # only mint an ab:creator/ URI when no such URI exists, keyed off the LC
     # authority id when present, otherwise a slug of the name.
