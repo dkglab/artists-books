@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
-"""Normalize Zotero "Cited:" note HTML into well-formed XHTML for SPARQL-Anything.
+"""Normalize Zotero "Cited:" note HTML into one HTML file per note, packed into a
+reproducible zip for SPARQL-Anything (issue #53).
 
-Reads the `itemKey,note` CSV produced by notes_export.sql on stdin and writes one
-well-formed `<notes>` document to stdout (issue #53).
+Reads the `itemKey,note` CSV produced by notes_export.sql on stdin and writes a zip
+(`--out`) holding one `<itemKey>.html` document per note. The construct query reads
+these directly via SPARQL-Anything's archive + HTML triplifiers and computes the
+citation join in SPARQL (substring on the reference title, <em>-exact fallback) --
+replacing the old cite_match.py crosswalk. Each `<p n="I">` carries the 1-based
+paragraph index; the reference matcher reads the flattened text off each `<p>`'s
+`#innerText`, so no `text=` attribute is emitted.
+
+The zip is written deterministically (entries sorted by itemKey, fixed 1980 mtimes)
+so an unchanged database produces byte-identical output and git shows no churn.
 
 Zotero note HTML is messy -- HTML entities (`&nbsp;`, `&rsquo;`), malformed nesting
 (`<em>...<em>.</em></em>`), and walls of inline-styled `<span>`s -- so it is not
@@ -25,11 +34,13 @@ Each `<p>` also carries:
 The `<em>`/`<strong>` child markup is retained for the downstream page/title parsers
 (#42/#43/#44); this export only makes the notes *readable*, it does not parse pages.
 """
+import argparse
 import csv
 import re
 import sys
+import zipfile
 from html.parser import HTMLParser
-from xml.sax.saxutils import escape, quoteattr
+from xml.sax.saxutils import escape
 
 # A <span style="..."> is bold only for an explicit bold weight, not the
 # ubiquitous `font-weight: normal` styling cruft.
@@ -160,22 +171,35 @@ def citations(note_html):
 
 
 def main():
-    out = sys.stdout
-    out.write('<?xml version="1.0" encoding="utf-8"?>\n<notes>\n')
-    counters = {}  # itemKey -> running paragraph index (unique across its notes)
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--out", required=True, help="output zip of per-note HTML files")
+    args = ap.parse_args()
+
+    # Collect paragraphs per itemKey. An item can carry up to two DB notes (two CSV
+    # rows); the paragraph index continues across them so (itemKey, n) stays unique.
+    notes = {}     # itemKey -> list of (n, inner_xhtml)
+    counters = {}  # itemKey -> running paragraph index
     for row in csv.DictReader(sys.stdin):
         key = row["itemKey"]
         paras = list(citations(row["note"]))
         if not paras:
             continue
-        out.write(f"  <note itemKey={quoteattr(key)}>\n")
         n = counters.get(key, 0)
-        for flat, inner in paras:
+        bucket = notes.setdefault(key, [])
+        for _flat, inner in paras:
             n += 1
-            out.write(f"    <p n={quoteattr(str(n))} text={quoteattr(flat)}>{inner}</p>\n")
+            bucket.append((n, inner))
         counters[key] = n
-        out.write("  </note>\n")
-    out.write("</notes>\n")
+
+    # Deterministic zip: entries sorted, fixed mtime, so unchanged input -> identical
+    # bytes (no git churn on rebuild).
+    with zipfile.ZipFile(args.out, "w", zipfile.ZIP_DEFLATED) as zf:
+        for key in sorted(notes):
+            body = "\n".join(f'<p n="{n}">{inner}</p>' for n, inner in notes[key])
+            html = f"<html><body>\n{body}\n</body></html>\n"
+            info = zipfile.ZipInfo(f"{key}.html", date_time=(1980, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            zf.writestr(info, html)
 
 
 if __name__ == "__main__":

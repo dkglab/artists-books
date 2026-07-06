@@ -5,21 +5,21 @@ provenance:
 
 - [`zotero/`](zotero/README.md) — the Zotero export track: `zotero.sqlite` (55MB
   SQLite database, Zotero's main metadata store) and its `storage/` attachments,
-  the `*_export.{sh,sql}` scripts, and the CSVs / `notes.xml` they produce. Its
+  the `*_export.{sh,sql}` scripts, and the CSVs / `notes.zip` they produce. Its
   README documents the database itself — the three-library structure, contents,
   tags, collections, fields, and the note export.
 - [`marc/`](marc/README.md) — the Z39.50 MARC-harvest track: `marc_harvest.py`,
   the harvested `*-marc.xml` collections, the hand-supplied
   `reference-resources-manual.xml`, and `reference-resources-unresolved.csv`.
   Resumable harvest state lives under `marc/harvest/` (gitignored).
-- root (this file) — the files that **bridge** the two tracks:
-  `abc-master-crosswalk.csv` and `citation-crosswalk.csv`, plus loose external
-  reference data (the JSTOR collection dumps and `google_books_ids.csv`) and the
-  regeneration `Makefile`.
+- root (this file) — the file that **bridges** the two tracks:
+  `abc-master-crosswalk.csv`, plus loose external reference data (the JSTOR
+  collection dumps and `google_books_ids.csv`) and the regeneration `Makefile`.
 
-The rest of this document describes the citation-crosswalk pipeline: the two
-fuzzy-match reconciliations that bridge the two tracks so a Zotero "Cited:" note
-in a group library can be surfaced on the artists'-book page it refers to.
+The rest of this document describes how a Zotero "Cited:" note in a group library
+is surfaced on the artists'-book page it refers to: one fuzzy-match reconciliation
+(`abc-master-crosswalk.csv`, book ↔ cited record) plus the citation ↔ reference-work
+title match, which is now done live in SPARQL at graph-build time.
 Filenames below are qualified by track (`zotero/…`, `marc/…`) except the
 crosswalks and external data, which live at this level.
 
@@ -79,47 +79,43 @@ containing `Cited` (**not** by collection). The crosswalk reads the committed
 `zotero/artists-books.csv` (title/ISBN/date) and `marc/artists-books-marc.xml` (OCLC in `001`,
 authors in `100`/`700 $a`, joined via `999 $a`).
 
-## Citation ↔ reference-resource crosswalk
+## Citation ↔ reference-resource matching (in SPARQL)
 
-Each Cited note paragraph (exported to `zotero/notes.xml` — see
+Each Cited note paragraph (exported to `zotero/notes.zip` — see
 [Notes export](zotero/README.md#notes-export--surfacing-cited-notes-on-abc-pages))
 is a *free-text* reference to a reference work; it
 carries no key linking it to the **Reference resources** collection
 (`zotero/reference-resources.csv`) — `citedItemKey` is the artist's book's lib-3 record,
-not the citing work. To anchor citation URIs on the reference resource
-(`reference/<refItemKey>/citation/…`), `tools/fuzzy-match/cite_match.py`
-reconciles each paragraph to a reference-resources row:
+not the citing work. Anchoring citation URIs on the reference resource
+(`reference/<refItemKey>/citation/…`) therefore needs the citing work resolved by
+its *title text*. This match used to be precomputed by a Python fuzzy matcher
+(`cite_match.py` → `citation-crosswalk.csv`); it is now computed **live in SPARQL**
+by `queries/reference-resources.rq`, which reads the note HTML out of `notes.zip`
+(SPARQL-Anything archive + HTML triplifiers) and matches each paragraph:
 
-1. **substring** — a reference title (≥ 10 normalized chars) appears verbatim in
-   the paragraph; longest title wins, the embedded year boosts confidence. This
-   is the dominant signal (the paragraph quotes the full title).  conf 0.95–0.99
-2. **em-exact** — the `<em>` title normalizes exactly to a reference title.  0.95
-3. **fuzzy** — rapidfuzz on the `<em>` title.  flagged for review below 0.93
+1. **substring** — a reference title (≥ 16 normalized chars) appears verbatim in
+   the flattened paragraph text (`CONTAINS`); the longest such title wins
+   (`FILTER NOT EXISTS` a longer match). The 16-char floor drops generic short
+   titles ("Artists books") too ambiguous to auto-cite. Dominant signal.
+2. **`<em>`-exact** — a reference title too short for the substring floor,
+   appearing as a complete `<em>` (e.g. "Conveyor."). Fires only when the
+   paragraph has no substring match at all (≥ 10 chars) — same precedence the old
+   matcher used. A `UNION` branch.
 
-Scoped (via `abc-master-crosswalk.csv`) to the lib-3 cited records actually in
-use, so it covers the 436 citation paragraphs reachable from ABC books.
-**Output** `sources/citation-crosswalk.csv` is one row per paragraph
-(`citedItemKey, n, refItemKey, method, confidence, review, refTitle,
-citationText`). Generic short titles ("Artists books") and unmatched-but-citation
-paragraphs carry `review=yes` and are excluded from the construct query's
-auto-join. Current: **433 paragraphs auto-matched** across 46 reference works,
-3 held for review (`BEGEG5AI`'s own short-generic-title citations), 3 editorial
-annotations recorded as `none`. (Earlier ~50 review-held paragraphs cited
-reference works missing from the collection; those were later added — e.g. Lyons,
-*Artists' Books: Visual Studies Workshop Press* — and a corrupt note title was
-repaired, dropping the review count from ~50 to 3.)
-
-```sh
-make -C sources citation-crosswalk.csv
-```
+Titles are normalized with `LCASE` + `REPLACE("[^a-z0-9]+"," ")` (accent-folding
+turned out to be unnecessary — plain lowercasing reproduces every match). Scope
+comes from `abc-master-crosswalk.csv`, joined *inside* the archive read (right
+after listing the note files) so the HTML triplifier only runs on the ~194
+in-scope note files, not all ~4,000 — the difference between a ~4s and a ~25s
+reference-graph build (see [`docs/QUERY-PERFORMANCE.md`](../docs/QUERY-PERFORMANCE.md)).
 
 **Wired into the build.** Citations are constructed by
-`queries/reference-resources.rq` (not `artists-books.rq`), since a
-citation belongs to the reference work it appears in. It joins
-`citation-crosswalk.csv` (paragraph → `refItemKey` + flattened text, skipping
-`review=yes` / empty matches) with `abc-master-crosswalk.csv` (`citedItemKey →
-abcItemKey`, skipping `review=yes`) and emits one `ab:Citation` per resolved
-paragraph, anchored on the reference resource:
+`queries/reference-resources.rq` (not `artists-books.rq`), since a citation
+belongs to the reference work it appears in. The live match supplies the paragraph
+→ `refItemKey` pairing and the flattened citation text (the `<p>` `#innerText`);
+`abc-master-crosswalk.csv` supplies `citedItemKey → abcItemKey` (skipping
+`review=yes`). One `ab:Citation` is emitted per resolved (reference work, book)
+pair, anchored on the reference resource:
 
 ```
 reference/<refItemKey>/citation/<abcItemKey>
@@ -129,14 +125,14 @@ reference/<refItemKey>/citation/<abcItemKey>
     rdfs:label "<flattened reference string>" .
 ```
 
-Result: **433 citations** linking **194 ABC books** to **43 reference works**;
-no `notes.xml` read is needed at graph-build time (the crosswalk already carries
-the text). Page-number / image-page extraction is still TODO.
+Result: **433 citations** linking **194 ABC books** to **43 reference works**
+(byte-identical to the graph the old crosswalk produced). Page-number / image-page
+extraction is still TODO.
 
-**Regenerate** (the crosswalks are committed inputs to the graph build, like
+**Regenerate** (`notes.zip` is a committed input to the graph build, like
 `artists-books.csv`/`-marc.xml`, so rebuild the graph explicitly):
 
 ```sh
-make -C sources zotero/notes.xml citation-crosswalk.csv
+make -C sources zotero/notes.zip
 make -B graph/reference-resources.ttl
 ```

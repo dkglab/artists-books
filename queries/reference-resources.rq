@@ -7,6 +7,7 @@ PREFIX bf: <http://id.loc.gov/ontologies/bibframe/>
 PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX marc: <http://www.loc.gov/MARC21/slim#>
+PREFIX xhtml: <http://www.w3.org/1999/xhtml#>
 
 # Reference works and the citations that link them to artists' books (#34, #42).
 #
@@ -28,9 +29,15 @@ PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 #      paragraph is a reference work citing an artist's book. The citation is now
 #      anchored on the reference resource it appears in —
 #      reference/<refItemKey>/citation/<abcItemKey> — rather than on the artist's
-#      book. The citing reference is resolved to a reference-resources node by the
-#      #42 citation crosswalk; the cited artist's book by the #55 ABC crosswalk.
-#      Page-number / image-page extraction (#43/#44/#15/#16) is still TODO.
+#      book. The citing reference work is resolved *live in SPARQL* by reading the
+#      note HTML (sources/zotero/notes.zip) with SPARQL-Anything's archive + HTML
+#      triplifiers and matching the reference title against the flattened paragraph
+#      text (substring, longest wins; an <em>-exact fallback for titles below the
+#      substring floor) — this replaces the old cite_match.py citation crosswalk.
+#      The cited artist's book comes from the #55 ABC crosswalk, joined *inside* the
+#      archive read so only in-scope note files are triplified (see
+#      docs/QUERY-PERFORMANCE.md). Page-number / image-page extraction
+#      (#43/#44/#15/#16) is still TODO.
 CONSTRUCT {
   ?ref a ab:ReferenceWork ;
     rdfs:label ?title ;
@@ -132,37 +139,90 @@ WHERE {
   }
   UNION
   {
-    # Citation crosswalk (#42): (citedItemKey, n) -> the reference-resources
-    # itemKey it cites, plus the flattened reference string. Requiring
-    # xyz:refItemKey to bind drops paragraphs with no confident reference match
-    # (empty cell); review=yes drops the low-confidence / generic-title grabs.
-    SERVICE <x-sparql-anything:location=sources/citation-crosswalk.csv> {
-      fx:properties
-        fx:csv.headers "true" ;
-        fx:csv.null-string  "" ;
-        .
-      ?ccRow
-        xyz:citedItemKey ?cited_key ;
-        xyz:refItemKey   ?ref_key ;
-        xyz:citationText ?citation_text ;
-        .
-      OPTIONAL { ?ccRow xyz:review ?cc_review }
-      FILTER(!BOUND(?cc_review) || ?cc_review != "yes")
+    # Each note paragraph -> the reference work it cites. Two match paths (a nested
+    # UNION); both read the paragraph's flattened text off the <p> #innerText and
+    # take ?citation_text from it (byte-identical to the old crosswalk citationText).
+    #
+    # In BOTH paths the ABC crosswalk (#55) is joined *inside* the archive read,
+    # right after listing the note files, so the expensive HTML triplifier only runs
+    # on the ~194 in-scope files instead of all ~4,000 (docs/QUERY-PERFORMANCE.md).
+    # The join also supplies ?abc_key (the cited lib-3 record -> ABC book) under the
+    # same review gate artists-books.rq applies. The .html filename is the itemKey.
+    {
+      # PATH substring: a reference title (>=16 normalized chars) appears verbatim in
+      # the paragraph; the longest such title wins (NOT EXISTS a longer match). The
+      # 16-char floor drops generic short titles ("Artists books") that are too
+      # ambiguous to auto-cite -- the review=yes rows the old crosswalk excluded.
+      SERVICE <x-sparql-anything:location=sources/zotero/notes.zip> {
+        fx:properties fx:archive.matches ".*\\.html" .
+        ?dir fx:anySlot ?file .
+        BIND(REPLACE(REPLACE(STR(?file), "^.*/", ""), "\\.html$", "") AS ?cited_key)
+        SERVICE <x-sparql-anything:location=sources/abc-master-crosswalk.csv> {
+          fx:properties fx:csv.headers "true" ; fx:csv.null-string "" .
+          ?xwRow xyz:abcItemKey ?abc_key ; xyz:citedItemKey ?cited_key .
+          OPTIONAL { ?xwRow xyz:review ?xw_review }
+          FILTER(!BOUND(?xw_review) || ?xw_review != "yes")
+        }
+        SERVICE <x-sparql-anything:> {
+          fx:properties fx:location ?file ; fx:from-archive "sources/zotero/notes.zip" ; fx:media-type "text/html" .
+          ?p rdf:type xhtml:p ; <https://html.spec.whatwg.org/#innerText> ?citation_text .
+        }
+      }
+      BIND(REPLACE(REPLACE(LCASE(?citation_text), "[^a-z0-9]+", " "), "^ +| +$", "") AS ?ntext)
+      SERVICE <x-sparql-anything:location=sources/zotero/reference-resources.csv> {
+        fx:properties fx:csv.headers "true" ; fx:csv.null-string "" .
+        ?r xyz:itemKey ?ref_key ; xyz:title ?refTitle .
+      }
+      BIND(REPLACE(REPLACE(LCASE(?refTitle), "[^a-z0-9]+", " "), "^ +| +$", "") AS ?ntitle)
+      BIND(STRLEN(?ntitle) AS ?tlen)
+      FILTER(?tlen >= 16 && CONTAINS(?ntext, ?ntitle))
+      FILTER NOT EXISTS {
+        SERVICE <x-sparql-anything:location=sources/zotero/reference-resources.csv> {
+          fx:properties fx:csv.headers "true" ; fx:csv.null-string "" .
+          ?r2 xyz:title ?t2 .
+        }
+        BIND(REPLACE(REPLACE(LCASE(?t2), "[^a-z0-9]+", " "), "^ +| +$", "") AS ?nt2)
+        FILTER(STRLEN(?nt2) >= 16 && STRLEN(?nt2) > ?tlen && CONTAINS(?ntext, ?nt2))
+      }
     }
-
-    # ABC crosswalk (#55): the cited (lib-3) record -> the ABC book that
-    # reconciles to it. Same review gate artists-books.rq applied.
-    SERVICE <x-sparql-anything:location=sources/abc-master-crosswalk.csv> {
-      fx:properties
-        fx:csv.headers "true" ;
-        fx:csv.null-string  "" ;
-        .
-      ?xwRow
-        xyz:abcItemKey   ?abc_key ;
-        xyz:citedItemKey ?cited_key ;
-        .
-      OPTIONAL { ?xwRow xyz:review ?xw_review }
-      FILTER(!BOUND(?xw_review) || ?xw_review != "yes")
+    UNION
+    {
+      # PATH <em>-exact: a reference title too short for the substring floor,
+      # appearing as a complete <em> (e.g. "Conveyor."). Fires only when the
+      # paragraph has NO substring match at all (>=10 chars) -- mirrors cite_match's
+      # substring-then-em precedence.
+      SERVICE <x-sparql-anything:location=sources/zotero/notes.zip> {
+        fx:properties fx:archive.matches ".*\\.html" .
+        ?dir fx:anySlot ?file .
+        BIND(REPLACE(REPLACE(STR(?file), "^.*/", ""), "\\.html$", "") AS ?cited_key)
+        SERVICE <x-sparql-anything:location=sources/abc-master-crosswalk.csv> {
+          fx:properties fx:csv.headers "true" ; fx:csv.null-string "" .
+          ?xwRow xyz:abcItemKey ?abc_key ; xyz:citedItemKey ?cited_key .
+          OPTIONAL { ?xwRow xyz:review ?xw_review }
+          FILTER(!BOUND(?xw_review) || ?xw_review != "yes")
+        }
+        SERVICE <x-sparql-anything:> {
+          fx:properties fx:location ?file ; fx:from-archive "sources/zotero/notes.zip" ; fx:media-type "text/html" .
+          ?p rdf:type xhtml:p ; <https://html.spec.whatwg.org/#innerText> ?citation_text .
+          ?p fx:anySlot ?emEl . ?emEl rdf:type xhtml:em ; <https://html.spec.whatwg.org/#innerText> ?emRaw .
+        }
+      }
+      BIND(REPLACE(REPLACE(LCASE(?citation_text), "[^a-z0-9]+", " "), "^ +| +$", "") AS ?ntext)
+      BIND(REPLACE(REPLACE(LCASE(?emRaw), "[^a-z0-9]+", " "), "^ +| +$", "") AS ?nem)
+      SERVICE <x-sparql-anything:location=sources/zotero/reference-resources.csv> {
+        fx:properties fx:csv.headers "true" ; fx:csv.null-string "" .
+        ?r xyz:itemKey ?ref_key ; xyz:title ?refTitle .
+      }
+      BIND(REPLACE(REPLACE(LCASE(?refTitle), "[^a-z0-9]+", " "), "^ +| +$", "") AS ?ntitle)
+      FILTER(?nem = ?ntitle)
+      FILTER NOT EXISTS {
+        SERVICE <x-sparql-anything:location=sources/zotero/reference-resources.csv> {
+          fx:properties fx:csv.headers "true" ; fx:csv.null-string "" .
+          ?r3 xyz:title ?t3 .
+        }
+        BIND(REPLACE(REPLACE(LCASE(?t3), "[^a-z0-9]+", " "), "^ +| +$", "") AS ?nt3)
+        FILTER(STRLEN(?nt3) >= 10 && CONTAINS(?ntext, ?nt3))
+      }
     }
 
     # The citation is anchored on the reference resource it appears in.

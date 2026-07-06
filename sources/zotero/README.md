@@ -2,7 +2,7 @@
 
 `zotero/` holds the Zotero side of the pipeline: `zotero.sqlite` (Zotero's main
 metadata store), its `storage/` attachment snapshots, the `*_export.{sh,sql}`
-scripts, and the CSVs / `notes.xml` they produce. This document describes the
+scripts, and the CSVs / `notes.zip` they produce. This document describes the
 database itself — its three-library structure, contents, tags, collections, and
 fields — and the note export drawn from it.
 
@@ -264,30 +264,33 @@ missing data.
 
 ## Notes export — surfacing "Cited:" notes on ABC pages
 
-The "Cited:" notes are exported so the construct query can read them and, via
-the fuzzy-match crosswalks (documented in [`../README.md`](../README.md)),
-attach each lib-3 record's citations to the ABC page it matches. These now
-render on the site: each ABC book page lists the reference works that cite
-it, and each reference-work page lists the ABC books it cites — the two ends of
-the `ab:Citation` joined back across the graphs by the Snowman SELECT queries.
+The "Cited:" notes are exported so the construct query can read them directly and
+match each paragraph to the reference work it cites (the title-substring match runs
+live in SPARQL — see [`../README.md`](../README.md)); the cited paragraph is then
+attached to the ABC page via `abc-master-crosswalk.csv`. These render on the site:
+each ABC book page lists the reference works that cite it, and each reference-work
+page lists the ABC books it cites — the two ends of the `ab:Citation` joined back
+across the graphs by the Snowman SELECT queries.
 
-`notes_export.sh` (`= notes_export.sql | notes_export.py`) emits **`notes.xml`**,
-one `<note itemKey="…">` per lib-3 cited note (selection scope identical to
-`cited-records.csv`). Zotero note HTML is messy — entities (`&nbsp;`, `&rsquo;`),
-malformed nesting (`<em>…<em>.</em></em>`), and walls of inline-styled `<span>`s —
-so `notes_export.py` (stdlib `html.parser`, no venv) parses it leniently and
-re-emits only what the citation model needs, guaranteed well-formed:
+`notes_export.sh` (`= notes_export.sql | notes_export.py`) emits **`notes.zip`**,
+one `<itemKey>.html` file per lib-3 cited note (selection scope identical to
+`cited-records.csv`; entries sorted with fixed mtimes so an unchanged database
+gives byte-identical output). Zotero note HTML is messy — entities (`&nbsp;`,
+`&rsquo;`), malformed nesting (`<em>…<em>.</em></em>`), and walls of inline-styled
+`<span>`s — so `notes_export.py` (stdlib `html.parser`, no venv) parses it
+leniently and re-emits only what the citation model needs, as clean HTML:
 
 - one `<p>` per citation paragraph (the `Cited:` header and empty paragraphs
   dropped; the ~4 notes using a CSL `<div class="csl-entry">` bibliography are
   handled too);
-- `<em>` kept — the only reliable delimiter of the citing work's title;
+- `<em>` kept — the only reliable delimiter of the citing work's title, and the
+  signal for the `<em>`-exact fallback match;
 - **bold canonicalized to `<strong>`** whether the source used `<strong>`/`<b>`
   or an inline `font-weight: bold` span (`font-weight: normal` spans are cruft,
   not bold) — `<strong>` page numbers are the image-page signal;
-- each `<p>` also carries `text="…"` (flattened reference string) and `n="…"`
-  (per-item index), so the query can read the citation label and mint a stable
-  citation URI without reconstructing text from fragmented XML nodes.
+- each `<p>` carries `n="…"` (per-item paragraph index). The flattened reference
+  string is *not* stored as an attribute — the query reads it straight off the
+  `<p>`'s HTML `#innerText`, which the SPARQL-Anything HTML triplifier exposes.
 
 ≈4,006 notes / ≈5,170 citation paragraphs. The page-number split is
 left to those issues — the markup that feeds them is preserved here.

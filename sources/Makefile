@@ -17,10 +17,11 @@ zotero/reference-resources.csv: zotero/items_export.sh zotero/items_export.sql
 zotero/cited-records.csv: zotero/cited_records_export.sh zotero/cited_records_export.sql
 	./zotero/cited_records_export.sh > $@
 
-# Zotero "Cited:" notes normalized to well-formed XHTML for SPARQL-Anything
-# (issue #53). The construct query joins these onto ABC pages via the crosswalk.
-zotero/notes.xml: zotero/notes_export.sh zotero/notes_export.sql zotero/notes_export.py
-	./zotero/notes_export.sh > $@
+# Zotero "Cited:" notes normalized to one HTML file per note, packed into a zip
+# for SPARQL-Anything (issue #53). The construct query reads these directly and
+# computes the citation join in SPARQL (reference-resources.rq) -- no crosswalk.
+zotero/notes.zip: zotero/notes_export.sh zotero/notes_export.sql zotero/notes_export.py
+	./zotero/notes_export.sh $@
 
 # ABC <-> cited-record crosswalk (issue #55). Reconciles each ABC book to the
 # lib-3 record(s) describing the same work (OCLC -> ISBN -> title -> fuzzy), so
@@ -39,21 +40,11 @@ abc-master-crosswalk.csv: zotero/cited-records.csv $(FUZZY)/match.py | $(FUZZY)/
 		--cited zotero/cited-records.csv \
 		--out $@
 
-# Citation <-> reference-resource crosswalk (issue #42). Each "Cited:" note
-# paragraph (zotero/notes.xml) is a free-text reference to a reference work;
-# this reconciles it to a row in zotero/reference-resources.csv (the title
-# appears verbatim in the paragraph -> substring match, <em> title + year
-# corroborate), so citations can be minted under reference/<refItemKey>/...
-# abc-master-crosswalk.csv scopes the paragraphs to the cited records actually
-# in use. Runs in the shared fuzzy-match venv; low-confidence/unmatched rows
-# carry review=yes and are excluded from the construct query's auto-join.
-citation-crosswalk.csv: zotero/notes.xml zotero/reference-resources.csv abc-master-crosswalk.csv \
-		$(FUZZY)/cite_match.py | $(FUZZY)/venv/bin/python
-	$(FUZZY)/venv/bin/python $(FUZZY)/cite_match.py \
-		--notes zotero/notes.xml \
-		--refs zotero/reference-resources.csv \
-		--abc-crosswalk abc-master-crosswalk.csv \
-		--out $@
+# NOTE (#42): the citation <-> reference-resource match used to be precomputed here
+# by tools/fuzzy-match/cite_match.py into citation-crosswalk.csv. It is now computed
+# live in SPARQL by queries/reference-resources.rq, which reads the note HTML
+# (zotero/notes.zip) and substring-matches the reference title against each
+# paragraph. The crosswalk and cite_match.py were removed.
 
 # Build the fuzzy-match venv on demand (order-only prerequisite above).
 $(FUZZY)/venv/bin/python:

@@ -46,7 +46,10 @@ diff.txt: docs/description.ttl inferred.ttl | validate
 
 graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 	@mkdir -p graph
-	java -jar tools/sparql-anything/sparql-anything.jar -q $< > $@
+	# -Dlog4j2.statusLoggerLevel=OFF: the HTML/archive triplifiers (reference-resources.rq)
+	# trip Log4j's StatusLogger, which prints "could not find a logging provider" to
+	# stdout and corrupts the Turtle; silence it so only the graph reaches $@.
+	java -Dlog4j2.statusLoggerLevel=OFF -jar tools/sparql-anything/sparql-anything.jar -q $< > $@
 
 # The construct query reads these source files (its x-sparql-anything SERVICEs);
 # rebuild the graph when any of them changes.
@@ -56,7 +59,7 @@ sources/marc/artists-books-marc.xml
 
 graph/reference-resources.ttl: \
 sources/zotero/reference-resources.csv \
-sources/citation-crosswalk.csv \
+sources/zotero/notes.zip \
 sources/abc-master-crosswalk.csv
 
 web/site/index.html: \

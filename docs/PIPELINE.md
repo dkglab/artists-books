@@ -10,8 +10,8 @@ flowchart TD
 
     %% ---- Stage 1: source extraction ----
     zotero -->|"SQL export scripts"| csvs["artists-books.csv<br/>reference-resources.csv"]
-    zotero -->|"notes_export.sh"| notes["notes.xml<br/>('Cited:' note paragraphs)"]
-    notes -->|"fuzzy-match"| crosswalks["citation-crosswalk.csv<br/>abc-master-crosswalk.csv"]
+    zotero -->|"notes_export.sh"| notes["notes.zip<br/>('Cited:' note HTML, one file per note)"]
+    csvs -->|"fuzzy-match (match.py)"| crosswalk["abc-master-crosswalk.csv"]
 
     catalogs -->|"marc_harvest.py (YAZ)"| marc["artists-books-marc.xml"]
     catalogs -->|"marc_harvest.py (YAZ)"| refmarc["reference-resources-marc.xml *"]
@@ -20,7 +20,8 @@ flowchart TD
     csvs --> abrq{{"artists-books.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
     marc --> abrq
     csvs --> refrq{{"reference-resources.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
-    crosswalks --> refrq
+    crosswalk --> refrq
+    notes -->|"citation match in SPARQL"| refrq
     refmarc -->|"primary creator only *"| refrq
 
     abrq --> abttl["graph/artists-books.ttl"]
