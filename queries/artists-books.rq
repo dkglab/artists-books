@@ -96,6 +96,12 @@ WHERE {
     # itemKey in 999 $a). sourceKeys is "<lib>:<KEY>; ..." tokens; pull the key
     # after the "1:" token. No "1:" token (a non-held work) -> the REPLACE leaves
     # the string unchanged, so fall back to a sentinel that matches no MARC record.
+    #
+    # TEMPORARY (#82, task 5): this whole extraction exists only because the MARC
+    # predates canonical identity. The canonical re-harvest will stamp the
+    # canonical key in 999 $a (see sources/marc/marc_harvest.py), after which the
+    # MARC joins directly on ?canonical_key and this block -- plus the "mint the
+    # sub-resource URIs after the OPTIONAL" workaround below -- is deleted.
     ?bookRow xyz:sourceKeys ?source_keys .
     BIND(REPLACE(?source_keys, "^(.*[;, ]|)1:([0-9A-Z]{8}).*$", "$2") AS ?lib1_repl)
     BIND(IF(?lib1_repl != ?source_keys, ?lib1_repl, "__none__") AS ?lib1_key)

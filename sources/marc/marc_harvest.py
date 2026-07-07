@@ -26,9 +26,16 @@ Strategy (see sources/marc/README.md):
                   author surname or the year; otherwise it is rejected (logged to
                   review.tsv). This guards the synthetic-999 join against a
                   coincidental title match being stamped onto the wrong itemKey.
-  * Join key    : the Zotero itemKey. Each retrieved record is stamped with a
-                  synthetic 999 $a <itemKey> $b <value> $c <keytype> $d <server>
-                  field -- no content-based join.
+  * Join key    : the CSV's key column (read as row["itemKey"]). Each retrieved
+                  record is stamped with a synthetic 999 $a <key> $b <value>
+                  $c <keytype> $d <server> field -- no content-based join.
+                  NOTE (#82, task 5): the canonical re-harvest should run off the
+                  canonical lists (sources/artists-books.csv / reference-works.csv)
+                  and stamp the *canonical* key in 999 $a -- name that column
+                  "itemKey", or teach this script to read "canonicalKey". Once the
+                  MARC carries canonical keys, queries/artists-books.rq joins MARC
+                  directly on ?canonical_key and the lib-1 sourceKeys extraction
+                  (the ?lib1_key workaround) is deleted.
   * Politeness  : one serial connection per server per batch, with a `sleep`
                   between queries and a pause between batches (more conservative
                   for LC, a shared national service).
