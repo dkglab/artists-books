@@ -1,0 +1,54 @@
+@prefix ab: <https://dkglab.github.io/ns/artists-books/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ab:photographicSequence a skos:Concept ;
+    skos:notation "photographic-sequence" ;
+    rdfs:label "Photographic sequence" ;
+    rdfs:comment "Local construction / narrative term." .
+
+ab:appropriatedText a skos:Concept ;
+    skos:notation "appropriated-text" ;
+    rdfs:label "Appropriated text" ;
+    rdfs:comment "Local construction / narrative term." .
+
+ab:visualNarrative a skos:Concept ;
+    skos:notation "visual-narrative" ;
+    rdfs:label "Visual narrative" ;
+    skos:altLabel "Visiual narrative" ;
+    rdfs:comment "Local construction / narrative term." .
+
+ab:typographicArt a skos:Concept ;
+    skos:notation "typographic-art" ;
+    rdfs:label "Typographic art" ;
+    rdfs:comment "Local construction / technique term." .
+
+ab:conceptualBookworks a skos:Concept ;
+    skos:notation "conceptual-bookworks" ;
+    rdfs:label "Conceptual bookworks" ;
+    rdfs:comment "Local construction / genre term." .
+
+ab:graduatedForeEdges a skos:Concept ;
+    skos:notation "graduated-fore-edges" ;
+    rdfs:label "Graduated fore-edges" ;
+    rdfs:comment "Local construction / technique term." .
+
+ab:asemicWriting a skos:Concept ;
+    skos:notation "asemic-writing" ;
+    rdfs:label "Asemic writing" ;
+    rdfs:comment "Local construction / technique term." .
+
+ab:stabBinding a skos:Concept ;
+    skos:notation "stab-binding" ;
+    rdfs:label "Stab binding" ;
+    rdfs:comment "Local construction / binding term." .
+
+ab:corrugatedPaperboardBindings a skos:Concept ;
+    skos:notation "corrugated-paperboard-bindings" ;
+    rdfs:label "Corrugated paperboard bindings" ;
+    rdfs:comment "Local construction / binding term." .
+
+ab:offsetPrinting a skos:Concept ;
+    skos:notation "offset-printing" ;
+    rdfs:label "Offset printing" ;
+    rdfs:comment "Local construction / technique term." .
