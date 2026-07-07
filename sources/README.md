@@ -17,9 +17,71 @@ provenance:
   reference data (the JSTOR collection dumps and `google_books_ids.csv`) and the
   regeneration `Makefile`.
 
-The rest of this document describes the citation-crosswalk pipeline: the two
-fuzzy-match reconciliations that bridge the two tracks so a Zotero "Cited:" note
-in a group library can be surfaced on the artists'-book page it refers to.
+## Canonical key scheme (issue #82, Phase 0)
+
+> [!IMPORTANT]
+> The three Zotero libraries are **frozen** (see
+> [Three libraries in one database](zotero/README.md#three-libraries-in-one-database)).
+> Under #82 the authoritative artists'-book set is **lib 1 ∪ lib 2 ∪ lib 3,
+> deduplicated** — the same work catalogued once per library collapses to **one
+> canonical node**. This section fixes the identity of that node. It is the
+> first Phase-0 decision because everything downstream (the frozen
+> `graph/citations.ttl`, the MARC harvest, every minted URI) hangs off it, and
+> the frozen citations must point at keys that never move again.
+
+**The canonical key is an existing Zotero item key — never a freshly minted
+one — chosen per work by this precedence:**
+
+| # | Prefer the key from… | Because | Applies to |
+|---|---|---|---|
+| 1 | **lib 3** (group 2352415, *ABCI*) | The newest, richest citation index, maintained latest, and the library the **`Cited:` notes live in**. Choosing it means citation edges anchor on lib-3 keys with **zero bridging** — this is what dissolves the crosswalk. | Any work present in lib 3 |
+| 2 | **lib 2** (group 262987) | The older frozen index; use its key only for works that never migrated to lib 3 (no lib-3 successor). | Works in lib 2 but not lib 3 |
+| 3 | **lib 1** (personal, user 5818691) | The Sloane physical holdings; use its key only for held works that were never indexed in either group library. | Works in lib 1 only (~290 of the 1,341 held books) |
+
+The precedence is essentially **forced by the data**, not a free choice: lib 3
+supersedes lib 2 (10,677 `owl:sameAs` links point lib-3 records back to lib-2
+predecessors), and only ~290 held books exist in no group library at all.
+
+**The non-canonical keys are kept as provenance, not discarded.** Each canonical
+node records the source item(s) it was deduplicated from — the losing
+lib-N keys — as `owl:sameAs` to their Zotero item URIs
+(`http://zotero.org/groups/<gid>/items/<key>` or
+`http://zotero.org/users/5818691/items/<key>`). The dedup step (Phase-0 task 2)
+emits these alongside the canonical key.
+
+**Held flag, not a separate graph.** UNC's physical holdings stay special only
+because we have *images* of them. Membership in lib 1's `Artists' Books
+Collection` (1,341) is recorded as a **property on the canonical node** (a held
+flag), *not* as a distinct held-books graph.
+
+### URI consequences
+
+Minted URIs use the canonical key: `…/item/<canonicalKey>` for artists' books,
+`…/reference/<canonicalKey>` for reference works (see CLAUDE.md "URI minting").
+
+- **Reference works are unaffected.** The `Reference resources` collection (157)
+  lives in **lib 3**, so `…/reference/<itemKey>` URIs already use lib-3 keys.
+- **Artists'-book URIs migrate.** The site historically built from lib 1, so
+  today's book URIs carry **lib-1** keys. Under lib-3-precedence the ~1,051 held
+  books that also exist in a group library move to their **lib-3** (or lib-2)
+  canonical key; only the ~290 held-only books keep a lib-1 key. This is an
+  accepted one-time break — the whole point of #82 is to make every cited book a
+  first-class node keyed the same way the citations already reference it.
+
+**Ordering constraint:** mint canonical AB/RW identity (Phase-0 task 2)
+**before** freezing `graph/citations.ttl` (task 3), or the citation edges point
+at keys that later move.
+
+---
+
+The rest of this document describes the citation-crosswalk pipeline as it
+stands **today** — the two fuzzy-match reconciliations that bridge lib 1 to
+lib 3 so a Zotero `Cited:` note in a group library can be surfaced on the
+artists'-book page it refers to. Under #82 this machinery is being replaced:
+the canonical-key dedup above **subsumes** `abc-master-crosswalk.csv` (once
+every work is one keyed node there is nothing to bridge), and the citation
+match becomes the one-time `graph/citations.ttl` generator. The sections below
+are retained as reference until that transition lands.
 Filenames below are qualified by track (`zotero/…`, `marc/…`) except the
 crosswalks and external data, which live at this level.
 
