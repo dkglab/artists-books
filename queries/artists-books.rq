@@ -25,7 +25,7 @@ CONSTRUCT {
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
-    ab:constructedUsing ?constructionTerm ;
+    ab:constructedUsing ?constructionTermURI ;
     .
 
 
@@ -383,7 +383,7 @@ WHERE {
             }
             UNION
             {
-              FILTER(?scheme IN ("abo.org", "local"))
+              FILTER(?scheme IN ("local"))
               FILTER NOT EXISTS {
                 ?record fx:anySlot ?df340exists .
                 ?df340exists a marc:datafield ; xyz:tag "340" .
@@ -411,6 +411,7 @@ WHERE {
         }
       }
     }
+    BIND(IF(BOUND(?constructionTerm), IRI(?constructionTerm), ?constructionTerm) AS ?constructionTermURI)
     BIND(REPLACE(REPLACE(?role_term, "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?role_slug)
     BIND(COALESCE(?relator, fx:entity(ab:, "role/", ?role_slug)) AS ?roleConcept)
   }

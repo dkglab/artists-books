@@ -20,6 +20,7 @@ SELECT
   ?dimensions
   ?edition
   (SAMPLE(?summaryLabel) AS ?summary)
+  (GROUP_CONCAT(DISTINCT COALESCE(?constructionTermLabel, STR(?constructionTerm)); separator="; ") AS ?constructionTerms)
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   (GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
   (SAMPLE(?worldcat_url) AS ?worldcatLink)
@@ -105,6 +106,11 @@ WHERE {
 
   OPTIONAL {
     ?book foaf:isPrimaryTopicOf ?worldcat_url .
+  }
+
+  OPTIONAL {
+    ?book ab:constructedUsing ?constructionTerm .
+    OPTIONAL { ?constructionTerm rdfs:label ?constructionTermLabel . }
   }
 
   OPTIONAL {

@@ -56,6 +56,11 @@
     <dd>{{ . }}</dd>
   {{ end }}
 
+  {{ with .constructionTerms }}
+  <dt>Construction Techniques, Materials, and Production Methods</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
   {{ with .isbns }}
   <dt>ISBN</dt>
   <dd>{{ . }}</dd>
