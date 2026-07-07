@@ -1,54 +1,27 @@
 @prefix ab: <https://dkglab.github.io/ns/artists-books/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 ab:photographicSequence a skos:Concept ;
-    skos:notation "photographic-sequence" ;
-    rdfs:label "Photographic sequence" ;
-    rdfs:comment "Local construction / narrative term." .
+    skos:notation "photographic-sequence"@en ;
+    skos:prefLabel  "Photographic sequence"@en ;
+    skos:definition "A construction method where an artist's book (or part of an artist's book) uses deliberately ordered photographs to produce collective meaning, narrative, or rhythm."@en .
 
 ab:appropriatedText a skos:Concept ;
-    skos:notation "appropriated-text" ;
-    rdfs:label "Appropriated text" ;
-    rdfs:comment "Local construction / narrative term." .
-
-ab:visualNarrative a skos:Concept ;
-    skos:notation "visual-narrative" ;
-    rdfs:label "Visual narrative" ;
-    skos:altLabel "Visiual narrative" ;
-    rdfs:comment "Local construction / narrative term." .
-
-ab:typographicArt a skos:Concept ;
-    skos:notation "typographic-art" ;
-    rdfs:label "Typographic art" ;
-    rdfs:comment "Local construction / technique term." .
-
-ab:conceptualBookworks a skos:Concept ;
-    skos:notation "conceptual-bookworks" ;
-    rdfs:label "Conceptual bookworks" ;
-    rdfs:comment "Local construction / genre term." .
+    skos:notation "appropriated-text"@en ;
+    skos:prefLabel  "Appropriated text"@en ;
+    skos:definition "Phrases or passages borrowed from another source and used in an artwork, typically with the intention of recontextualization."@en ;
+    dcterms:source <https://oab.lib.utah.edu/artist_book_term/appropriated-text/> .
 
 ab:graduatedForeEdges a skos:Concept ;
-    skos:notation "graduated-fore-edges" ;
-    rdfs:label "Graduated fore-edges" ;
-    rdfs:comment "Local construction / technique term." .
+    skos:notation "graduated-fore-edges"@en ;
+    skos:prefLabel  "Graduated fore-edges"@en ;
+    skos:definition "When a gradation is created on the outer vertical edge of a book's pages using either color or cutting."@en .
 
 ab:asemicWriting a skos:Concept ;
-    skos:notation "asemic-writing" ;
-    rdfs:label "Asemic writing" ;
-    rdfs:comment "Local construction / technique term." .
+    skos:notation "asemic-writing"@en ;
+     skos:prefLabel  "Asemic writing"@en ;
+    skos:definition "illegible, handwritten element that iterates gesture and abstracted meaning without the specificity of language. The mark-making is suggestive of handwriting and/or lines of text but if glyphs are present, they are either indecipherable or do not belong to a known system of writing."@en ;
+    dcterms:source <https://oab.lib.utah.edu/artist_book_term/asemic-writing/> .
 
-ab:stabBinding a skos:Concept ;
-    skos:notation "stab-binding" ;
-    rdfs:label "Stab binding" ;
-    rdfs:comment "Local construction / binding term." .
 
-ab:corrugatedPaperboardBindings a skos:Concept ;
-    skos:notation "corrugated-paperboard-bindings" ;
-    rdfs:label "Corrugated paperboard bindings" ;
-    rdfs:comment "Local construction / binding term." .
-
-ab:offsetPrinting a skos:Concept ;
-    skos:notation "offset-printing" ;
-    rdfs:label "Offset printing" ;
-    rdfs:comment "Local construction / technique term." .
