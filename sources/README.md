@@ -72,6 +72,53 @@ Minted URIs use the canonical key: `…/item/<canonicalKey>` for artists' books,
 **before** freezing `graph/citations.ttl` (task 3), or the citation edges point
 at keys that later move.
 
+### The dedup generator
+
+`tools/fuzzy-match/dedup.py` mints that canonical identity. It is one-time
+throwaway tooling (run once, review, commit; archived with the rest of
+`tools/fuzzy-match/` after Phase 0) and reads `zotero/zotero.sqlite` **directly**
+— no intermediate export CSVs, since the whole tool is about to be retired. It
+clusters records into one node per work using signals in **descending order of
+authority**, so a weaker signal never overrides a stronger one:
+
+| # | Signal | Scope | Why it's trusted at this rank |
+|---|---|---|---|
+| 1 | `owl:sameAs` | all libs | Editorially asserted in Zotero; the dense lib 3 → lib 2 bridge (10,677 links) that supersession is built on. |
+| 2 | ISBN (10/13 cross-checked) | all libs | A work-level identifier; near-zero false collisions. Catches duplicates `sameAs` missed — e.g. two lib-2 records of one work where only one carries the lib-3 link. |
+| 3 | OCLC | all libs | Same, from the `extra` field. |
+| 4 | title + author + **year** | all libs | The no-ISBN fallback. Year keeps distinct **editions** apart (the 1980–2016 editions of *A Humument*; Moeglin-Delcroix 1985 vs 2012) — they collapse only if #1–#3 link them. High-precision default for a frozen set, where a wrong merge is harder to undo than a missed one. |
+| 5 | fuzzy title (rapidfuzz), author+year re-ranked | lib 1 → lib 2/3 only | Reused from `match.py`. Only lib-1 books with no exact twin reach here; every attach is written to the review CSV, low-confidence ones flagged `review=yes`. |
+
+Signals 1–4 run globally over all three libraries (the fix that makes it a true
+three-way dedup, not the old pairwise lib-1 → lib-3 bridge). Signal 5 exists only
+because lib 1 carries almost no `sameAs` (just 7 of its 1,341 books).
+
+**Outputs** (committed; the librarian reviews them before they seed the build):
+
+- `artists-books.csv` — the authoritative artists'-book list (~7.8k canonical
+  works), scoped to lib 1's *Artists' Books Collection* ∪ lib 2's *Master list* ∪
+  lib 3's *Artists' books*/*ABCI*.
+- `reference-works.csv` — the authoritative reference-work list (155 works),
+  scoped to lib 3's *Reference resources* (157 records; 2 duplicate pairs
+  collapse).
+- `artists-books-dedup-review.csv` — the transient review surface: one row per
+  **fuzzy** lib-1 attach (`lib1Key, twinKey, twinLib, method, confidence, review,
+  lib1Title, twinTitle`), `review=yes` on the uncertain (< 0.93) ones.
+
+Both authoritative lists share the schema `canonicalKey, canonicalLib, held,
+sourceKeys, <bibliographic fields…>`. `canonicalLib` is the library the chosen
+key came from; `held` is `true` when any source record is a Sloane physical
+holding (lib-1 *Artists' Books Collection* membership); `sourceKeys` lists every
+deduplicated record as `libN:KEY` tokens (canonical first), preserving the lib-2/
+lib-1 provenance the canonical key demotes to `sameAs`.
+
+**Regenerate:**
+
+```sh
+make -C tools/fuzzy-match                 # build the rapidfuzz venv (one time)
+make -C sources -B artists-books.csv      # -> artists-books.csv, reference-works.csv, review CSV
+```
+
 ---
 
 The rest of this document describes the citation-crosswalk pipeline as it

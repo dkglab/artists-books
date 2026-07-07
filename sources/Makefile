@@ -32,6 +32,22 @@ zotero/notes.xml: zotero/notes_export.sh zotero/notes_export.sql zotero/notes_ex
 # server), so they are read by the recipe but deliberately NOT prerequisites
 # here -- we do not want a crosswalk rebuild to trigger a re-harvest.
 FUZZY := ../tools/fuzzy-match
+
+# One-time cross-library dedup (issue #82, Phase 0). Collapses the same work
+# catalogued across lib 1/2/3 into one canonical node (canonical key by
+# precedence lib 3 > lib 2 > lib 1; see README.md "Canonical key scheme") and
+# emits the authoritative artists'-book and reference-work lists plus a review
+# CSV of the uncertain lib-1 fuzzy attaches. Reads zotero/zotero.sqlite directly
+# (no intermediate export CSVs) and runs in the shared fuzzy-match venv. Grouped
+# target (&:) -- one recipe run produces all three files.
+artists-books.csv reference-works.csv artists-books-dedup-review.csv &: \
+		$(FUZZY)/dedup.py $(FUZZY)/match.py | $(FUZZY)/venv/bin/python
+	$(FUZZY)/venv/bin/python $(FUZZY)/dedup.py \
+		--db zotero/zotero.sqlite \
+		--out-books artists-books.csv \
+		--out-refs reference-works.csv \
+		--review artists-books-dedup-review.csv
+
 abc-master-crosswalk.csv: zotero/cited-records.csv $(FUZZY)/match.py | $(FUZZY)/venv/bin/python
 	$(FUZZY)/venv/bin/python $(FUZZY)/match.py \
 		--abc zotero/artists-books.csv \
