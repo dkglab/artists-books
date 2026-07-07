@@ -121,6 +121,43 @@ make -C tools/fuzzy-match                 # build the rapidfuzz venv (one time)
 make -C sources -B artists-books.csv      # -> artists-books.csv, reference-works.csv, review CSV
 ```
 
+### Frozen citations (`citations.ttl`)
+
+With canonical identity minted, the citation edges are frozen **once** into
+`sources/citations.ttl` instead of recomputed every build — the corpus is dead,
+so there is no living source to re-export, and emitting Turtle deletes a whole
+construct stage (there is no `citations.rq`). `tools/fuzzy-match/freeze_citations.py`
+reads the Zotero `Cited:` notes (`zotero/notes.xml`) and, for each citation
+paragraph, resolves **both ends to their canonical URI**:
+
+- the **citing reference work** — matched from the paragraph text by the verified
+  substring / `<em>` / fuzzy matcher (`cite_match.py`, ported from #79) against
+  `reference-works.csv`;
+- the **cited artist's book** — the note's lib-3 itemKey mapped through
+  `artists-books.csv`'s `sourceKeys` to the canonical node.
+
+Page numbers come straight from the note markup (#43/#44): a page inside
+`<strong>` is an image of the book (`ab:imagesOnPageNumber`), the rest are
+passing mentions (`ab:onPageNumber`). Each citation is
+`reference/<refKey>/citation/<bookKey>` with `ab:citedBy`, `ab:cites`, an
+`rdfs:label` (the verbatim reference string), and its page triples — the same
+shape the old construct query emitted, now against canonical keys and with pages.
+
+Only confident, fully-resolved paragraphs are emitted; the uncertain (generic
+short titles like *Artists books*), unmatched, and orphaned ones go to
+`citations-review.csv` for a human to bless. Current: **5,022 citation edges**
+linking **3,896 artists' books** to **54 reference works**; 117 held for review,
+1 orphan (a work that is both a reference work and a cited book — it stays a
+reference node). `citations.ttl` is committed and loaded into Fuseki alongside
+the two constructed graphs (wired in task 4); `graph/` is build output only, so
+the frozen graph lives here under `sources/`.
+
+**Regenerate:**
+
+```sh
+make -C sources -B citations.ttl          # -> citations.ttl, citations-review.csv
+```
+
 ---
 
 The rest of this document describes the citation-crosswalk pipeline as it
@@ -129,8 +166,8 @@ lib 3 so a Zotero `Cited:` note in a group library can be surfaced on the
 artists'-book page it refers to. Under #82 this machinery is being replaced:
 the canonical-key dedup above **subsumes** `abc-master-crosswalk.csv` (once
 every work is one keyed node there is nothing to bridge), and the citation
-match becomes the one-time `graph/citations.ttl` generator. The sections below
-are retained as reference until that transition lands.
+match becomes the one-time `sources/citations.ttl` generator described above.
+The sections below are retained as reference until that transition lands.
 Filenames below are qualified by track (`zotero/…`, `marc/…`) except the
 crosswalks and external data, which live at this level.
 

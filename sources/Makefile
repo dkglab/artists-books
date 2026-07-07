@@ -48,6 +48,22 @@ artists-books.csv reference-works.csv artists-books-dedup-review.csv &: \
 		--out-refs reference-works.csv \
 		--review artists-books-dedup-review.csv
 
+# Frozen citations (issue #82, Phase 0, task 3). Reads the Zotero "Cited:" notes
+# and emits one ab:Citation per (reference work, artist's book) against the
+# canonical URIs from the two dedup lists above, capturing page numbers (#43/#44)
+# from the note markup. Generated once, committed, and loaded into Fuseki as-is
+# (no citations.rq); the review CSV surfaces the uncertain/unmatched paragraphs.
+# artists-books.csv/reference-works.csv are committed inputs with their own
+# target above, so (like the crosswalks) they are read but not prerequisites.
+citations.ttl citations-review.csv &: zotero/notes.xml \
+		$(FUZZY)/freeze_citations.py $(FUZZY)/cite_match.py | $(FUZZY)/venv/bin/python
+	$(FUZZY)/venv/bin/python $(FUZZY)/freeze_citations.py \
+		--notes zotero/notes.xml \
+		--refs reference-works.csv \
+		--books artists-books.csv \
+		--out citations.ttl \
+		--review citations-review.csv
+
 abc-master-crosswalk.csv: zotero/cited-records.csv $(FUZZY)/match.py | $(FUZZY)/venv/bin/python
 	$(FUZZY)/venv/bin/python $(FUZZY)/match.py \
 		--abc zotero/artists-books.csv \
