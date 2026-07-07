@@ -13,7 +13,8 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 CONSTRUCT {
   ?book a ab:ArtistsBook ;
     rdfs:label ?title ;
-    ab:itemKey ?item_key ;
+    ab:itemKey ?canonical_key ;
+    ab:heldBySloane ?held_flag ;
     bf:contribution ?contribution ;
     bf:provisionActivity ?bookPublication ;
     bf:language ?language ;
@@ -61,26 +62,43 @@ CONSTRUCT {
 
 }
 WHERE {
-  SERVICE <x-sparql-anything:location=sources/zotero/artists-books.csv> {
+  SERVICE <x-sparql-anything:location=sources/artists-books.csv> {
     # Facade-X configuration for CSV data
     fx:properties
       fx:csv.headers "true" ;  # create xyz:header properties
       fx:csv.null-string  "" ; # treat empty strings as null values
       .
 
-    # For each row in artists-books.csv. Only itemKey and title are required;
-    # publisher/date are OPTIONAL so books lacking them still emit (otherwise
-    # ~19 ABC books -- e.g. Ruscha's "Every building on the Sunset Strip." which
-    # has a date but no publisher -- silently drop out, taking their citations
+    # For each row in the canonical artists'-book list (#82: lib 1 ∪ 2 ∪ 3,
+    # deduplicated to one node per work). Only canonicalKey and title are
+    # required; publisher/date are OPTIONAL so books lacking them still emit
+    # (otherwise books like Ruscha's "Every building on the Sunset Strip." which
+    # has a date but no publisher would silently drop out, taking their citations
     # with them).
     ?bookRow
-      xyz:itemKey ?item_key ;
+      xyz:canonicalKey ?canonical_key ;
       xyz:title ?title ;
       .
 
-    # Mint new book URIs using the fx:entity function
-    BIND(fx:entity(ab:, "item/", ?item_key) AS ?book)
-    BIND(fx:entity(ab:, "item/", ?item_key, "/publication") AS ?bookPublication)
+    # Mint new book URIs from the canonical key. Citations (sources/citations.ttl)
+    # target these same item/<canonicalKey> URIs.
+    BIND(fx:entity(ab:, "item/", ?canonical_key) AS ?book)
+    BIND(fx:entity(ab:, "item/", ?canonical_key, "/publication") AS ?bookPublication)
+
+    # Sloane holdings flag (#82): the ~1,300 works UNC physically holds (and has
+    # images of). Non-held rows carry an empty cell -> null -> ?held_raw unbound
+    # -> no triple.
+    OPTIONAL { ?bookRow xyz:held ?held_raw }
+    BIND(IF(BOUND(?held_raw), true, ?sentinel) AS ?held_flag)
+
+    # Extract the lib-1 source key (if any) to join the MARC harvest, which is
+    # still lib-1-only (sources/marc/artists-books-marc.xml, keyed by the lib-1
+    # itemKey in 999 $a). sourceKeys is "<lib>:<KEY>; ..." tokens; pull the key
+    # after the "1:" token. No "1:" token (a non-held work) -> the REPLACE leaves
+    # the string unchanged, so fall back to a sentinel that matches no MARC record.
+    ?bookRow xyz:sourceKeys ?source_keys .
+    BIND(REPLACE(?source_keys, "^(.*[;, ]|)1:([0-9A-Z]{8}).*$", "$2") AS ?lib1_repl)
+    BIND(IF(?lib1_repl != ?source_keys, ?lib1_repl, "__none__") AS ?lib1_key)
 
     OPTIONAL { ?bookRow xyz:publisher ?publisher }
     OPTIONAL {
@@ -96,22 +114,26 @@ WHERE {
       ?bookRow xyz:language ?language
     }
     OPTIONAL { ?bookRow xyz:ISBN ?ISBN }
-    BIND(fx:entity(ab:, "item/", ?item_key, "/identifier") AS ?isbnNode)
+    BIND(fx:entity(ab:, "item/", ?canonical_key, "/identifier") AS ?isbnNode)
     BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?bookISBN)
   }
 
   # Creators come from the full MARC records (sources/marc/artists-books-marc.xml),
   # which carry authoritative names plus real-world-object URIs (VIAF/ISNI in
-  # $1) and LC name-authority URIs ($0). Each record joins to a book through its
-  # synthetic 999 $a (the Zotero itemKey).
+  # $1) and LC name-authority URIs ($0). The harvest is still lib-1-only, so each
+  # record joins to a book through the lib-1 source key (?lib1_key, pulled from
+  # sourceKeys above) matched against the record's synthetic 999 $a. Non-held
+  # works carry the "__none__" sentinel and so match no record — their MARC
+  # enrichment (creators/OCLC/extent) waits on the full canonical harvest (#82,
+  # task 5).
   #
-  # Kept OPTIONAL so books without a MARC record (no UNC bib number) still emit.
+  # Kept OPTIONAL so books without a MARC record still emit.
   OPTIONAL {
     # One row per creator field, with a single chosen name / VIAF / ISNI / LC id.
     # Multiple $1 subfields (a creator often has both VIAF and ISNI) are folded
     # together here so each creator field yields exactly one ?creator downstream.
     {
-      SELECT ?item_key ?df ?ctag ?role_term ?contributionType
+      SELECT ?lib1_key ?df ?ctag ?role_term ?contributionType
              (SAMPLE(?control_number_raw) AS ?control_number)
              (SAMPLE(?extent_x) AS ?extent)
              (SAMPLE(?dimensions_x) AS ?dimensions)
@@ -137,7 +159,7 @@ WHERE {
           ?record fx:anySlot ?f999 .
           ?f999 a marc:datafield ; xyz:tag "999" .
           ?f999 fx:anySlot ?sf999a .
-          ?sf999a xyz:code "a" ; rdf:_1 ?item_key .
+          ?sf999a xyz:code "a" ; rdf:_1 ?lib1_key .
 
           # OCLC number from the 001 control field (per record, always present).
           # 001 is a marc:controlfield, so its value is on rdf:_1, not a subfield.
@@ -187,7 +209,7 @@ WHERE {
           }
 
           # Creator fields are OPTIONAL: the records with no 100/110/111/700/
-          # 710/711 field still yield a row carrying item_key + the 001 number.
+          # 710/711 field still yield a row carrying lib1_key + the 001 number.
           OPTIONAL {
 
           # creator/contributor fields: personal (100/700), corporate (110/710),
@@ -243,21 +265,13 @@ WHERE {
           }  # end OPTIONAL wrapping the creator fields
         }
       }
-      GROUP BY ?item_key ?df ?ctag ?role_term ?contributionType
+      GROUP BY ?lib1_key ?df ?ctag ?role_term ?contributionType
     }
 
     # WorldCat link + OCLC identifier, from the 001 number sampled above. Strip
     # the on/ocn/ocm prefix and any leading zeros to get the bare OCLC number.
     BIND(REPLACE(REPLACE(?control_number, "^\\D+", ""), "^0+", "") AS ?oclc_number)
     BIND(IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)) AS ?worldcat_url)
-    BIND(fx:entity(ab:, "item/", ?item_key, "/oclc") AS ?bookOCLCNum)
-    BIND(
-      IF(
-        BOUND(?extent),
-        fx:entity(ab:, "item/", ?item_key, "/extent"),
-        ?sentinel
-      ) AS ?bookExtent
-    )
 
     # Use the real-world-object URI (VIAF, else ISNI) as the creator's identity;
     # only mint an ab:creator/ URI when no such URI exists, keyed off the LC
@@ -266,7 +280,6 @@ WHERE {
     BIND(REPLACE(REPLACE(LCASE(?creator_name), "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?name_slug)
     BIND(COALESCE(?lc_id, ?name_slug) AS ?creator_key)
     BIND(IF(BOUND(?rwo), IRI(?rwo), fx:entity(ab:, "creator/", ?creator_key)) AS ?creator)
-    BIND(fx:entity(ab:, "item/", ?item_key, "/contribution/", ?creator_key) AS ?contribution)
 
     # Map the relator term to its LC relator URI. The lookup binds its own key
     # variable (?relator_term) and joins via FILTER rather than sharing
@@ -321,4 +334,15 @@ WHERE {
     BIND(REPLACE(REPLACE(?role_term, "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?role_slug)
     BIND(COALESCE(?relator, fx:entity(ab:, "role/", ?role_slug)) AS ?roleConcept)
   }
+
+  # Per-book MARC sub-resource URIs are minted here, OUTSIDE the MARC OPTIONAL.
+  # They combine the canonical key (from the CSV — an *outer* variable) with
+  # values produced by the MARC join (?oclc_number / ?extent / ?creator_key),
+  # which only bind after the left-join. Minting them inside the OPTIONAL would
+  # evaluate ?canonical_key before the join, where it is still unbound (the join
+  # is on ?lib1_key, not the canonical key). Each mint is guarded so a book with
+  # no MARC match emits no dangling sub-resource node.
+  BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "item/", ?canonical_key, "/oclc"), ?sentinel) AS ?bookOCLCNum)
+  BIND(IF(BOUND(?extent), fx:entity(ab:, "item/", ?canonical_key, "/extent"), ?sentinel) AS ?bookExtent)
+  BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
 }

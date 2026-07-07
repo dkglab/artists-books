@@ -45,9 +45,9 @@ make -C sources marc/reference-resources-marc.xml
 python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.xml
 ```
 
-> **Minimally wired into the graph.** `reference-resources.rq` builds the
-> `ab:ReferenceWork` nodes from `reference-resources.csv`, and now also reads a
-> **basic slice** of `reference-resources-marc.xml` — just the primary creator
-> (`100 $a`), joined by `999 $a` — emitted as a `bflc:PrimaryContribution`.
+> **Minimally wired into the graph.** `reference-works.rq` builds the
+> `ab:ReferenceWork` nodes from the canonical `reference-works.csv`, and now also
+> reads a **basic slice** of `reference-resources-marc.xml` — just the primary
+> creator (`100 $a`), joined by `999 $a` — emitted as a `bflc:PrimaryContribution`.
 > The rest of the MARC's richer data (OCLC/WorldCat, secondary creators,
 > relator roles, identity URIs, extent/dimensions) isn't in the graph yet.

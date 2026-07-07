@@ -3,7 +3,7 @@ START_FUSEKI ?= true
 .PHONY: all clean superclean validate serve
 .DEFAULT_GOAL := all
 
-all: graph/artists-books.ttl graph/reference-resources.ttl web/site/index.html
+all: graph/artists-books.ttl graph/reference-works.ttl web/site/index.html
 
 clean:
 	rm -f inferred.ttl diff.txt *.png docs/*.png
@@ -51,17 +51,20 @@ graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 # The construct query reads these source files (its x-sparql-anything SERVICEs);
 # rebuild the graph when any of them changes.
 graph/artists-books.ttl: \
-sources/zotero/artists-books.csv \
+sources/artists-books.csv \
 sources/marc/artists-books-marc.xml
 
-graph/reference-resources.ttl: \
-sources/zotero/reference-resources.csv \
-sources/citation-crosswalk.csv \
-sources/abc-master-crosswalk.csv
+graph/reference-works.ttl: \
+sources/reference-works.csv \
+sources/marc/reference-resources-marc.xml
 
+# sources/citations.ttl is a committed frozen graph (issue #82, task 3) — no
+# recipe; Fuseki loads it alongside the two constructed graphs, so the site
+# rebuilds when it changes.
 web/site/index.html: \
 graph/artists-books.ttl \
-graph/reference-resources.ttl \
+graph/reference-works.ttl \
+sources/citations.ttl \
 $(wildcard web/*.yaml) \
 $(wildcard web/queries/*.rq) \
 $(wildcard web/templates/*.html) \
@@ -72,7 +75,11 @@ ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki start
 endif
 	mkdir -p web/.snowman
-	cd web && ../tools/snowman/snowman build 2>&1 | tee .snowman/build_log.txt
+	# --cache-sparql never: Make already gates this recipe on the graph/query/
+	# template prerequisites, so always re-query Fuseki. Snowman's default cache
+	# is keyed by query text only, so a changed graph (same query) would other-
+	# wise serve stale results (e.g. the old lib-1-only book set).
+	cd web && ../tools/snowman/snowman build --cache-sparql never 2>&1 | tee .snowman/build_log.txt
 ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki stop
 endif

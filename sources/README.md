@@ -26,7 +26,7 @@ provenance:
 > deduplicated** — the same work catalogued once per library collapses to **one
 > canonical node**. This section fixes the identity of that node. It is the
 > first Phase-0 decision because everything downstream (the frozen
-> `graph/citations.ttl`, the MARC harvest, every minted URI) hangs off it, and
+> `sources/citations.ttl`, the MARC harvest, every minted URI) hangs off it, and
 > the frozen citations must point at keys that never move again.
 
 **The canonical key is an existing Zotero item key — never a freshly minted
@@ -69,7 +69,7 @@ Minted URIs use the canonical key: `…/item/<canonicalKey>` for artists' books,
   first-class node keyed the same way the citations already reference it.
 
 **Ordering constraint:** mint canonical AB/RW identity (Phase-0 task 2)
-**before** freezing `graph/citations.ttl` (task 3), or the citation edges point
+**before** freezing `sources/citations.ttl` (task 3), or the citation edges point
 at keys that later move.
 
 ### The dedup generator
@@ -173,6 +173,15 @@ crosswalks and external data, which live at this level.
 
 ## ABC ↔ cited-record crosswalk
 
+> **Superseded (issue #82, Phase 0).** This lib-1 ↔ lib-3 bridge existed only
+> because the site built from lib 1 while the Cited notes live in lib 3. Now that
+> the graph is scoped to the deduplicated union of all three libraries (see
+> [Canonical key scheme](#canonical-key-scheme-issue-82-phase-0)), every cited
+> book is already a first-class canonical node and there is nothing to bridge —
+> the dedup (`tools/fuzzy-match/dedup.py`) replaces this crosswalk. The section
+> is kept for provenance; `abc-master-crosswalk.csv` is no longer read by the
+> repeatable build.
+
 Because lib 1 (the ABC the website builds from) has no Cited notes and shares no
 item keys with lib 3 (see [Three libraries in one database](zotero/README.md#three-libraries-in-one-database)),
 the notes can only reach ABC pages through a **bibliographic
@@ -229,6 +238,15 @@ authors in `100`/`700 $a`, joined via `999 $a`).
 
 ## Citation ↔ reference-resource crosswalk
 
+> **Superseded (issue #82, Phase 0).** The citation edges are no longer built
+> live from this crosswalk; they are frozen once into `sources/citations.ttl` by
+> `tools/fuzzy-match/freeze_citations.py` (see
+> [Frozen citations](#frozen-citations-citationsttl)), which ports this matcher's
+> verified substring/`<em>` logic and additionally captures page numbers
+> (#43/#44). `citation-crosswalk.csv` and the deleted `reference-resources.rq`
+> citation branch have left the repeatable build. The section is kept for
+> provenance.
+
 Each Cited note paragraph (exported to `zotero/notes.xml` — see
 [Notes export](zotero/README.md#notes-export--surfacing-cited-notes-on-abc-pages))
 is a *free-text* reference to a reference work; it
@@ -261,13 +279,14 @@ repaired, dropping the review count from ~50 to 3.)
 make -C sources citation-crosswalk.csv
 ```
 
-**Wired into the build.** Citations are constructed by
+**How it fed the graph (historical).** Citations were once constructed live by
 `queries/reference-resources.rq` (not `artists-books.rq`), since a
-citation belongs to the reference work it appears in. It joins
+citation belongs to the reference work it appears in. It joined
 `citation-crosswalk.csv` (paragraph → `refItemKey` + flattened text, skipping
 `review=yes` / empty matches) with `abc-master-crosswalk.csv` (`citedItemKey →
-abcItemKey`, skipping `review=yes`) and emits one `ab:Citation` per resolved
-paragraph, anchored on the reference resource:
+abcItemKey`, skipping `review=yes`) and emitted one `ab:Citation` per resolved
+paragraph, anchored on the reference resource. This is now the shape frozen into
+`sources/citations.ttl` (against **canonical** keys), not a live join:
 
 ```
 reference/<refItemKey>/citation/<abcItemKey>
@@ -281,10 +300,9 @@ Result: **433 citations** linking **194 ABC books** to **43 reference works**;
 no `notes.xml` read is needed at graph-build time (the crosswalk already carries
 the text). Page-number / image-page extraction is still TODO.
 
-**Regenerate** (the crosswalks are committed inputs to the graph build, like
-`artists-books.csv`/`-marc.xml`, so rebuild the graph explicitly):
+**Regenerate** the frozen citations from the notes (see
+[Frozen citations](#frozen-citations-citationsttl)):
 
 ```sh
-make -C sources zotero/notes.xml citation-crosswalk.csv
-make -B graph/reference-resources.ttl
+make -C sources -B citations.ttl
 ```
