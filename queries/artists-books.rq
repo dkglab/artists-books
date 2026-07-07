@@ -91,21 +91,6 @@ WHERE {
     OPTIONAL { ?bookRow xyz:held ?held_raw }
     BIND(IF(BOUND(?held_raw), true, ?sentinel) AS ?held_flag)
 
-    # Extract the lib-1 source key (if any) to join the MARC harvest, which is
-    # still lib-1-only (sources/marc/artists-books-marc.xml, keyed by the lib-1
-    # itemKey in 999 $a). sourceKeys is "<lib>:<KEY>; ..." tokens; pull the key
-    # after the "1:" token. No "1:" token (a non-held work) -> the REPLACE leaves
-    # the string unchanged, so fall back to a sentinel that matches no MARC record.
-    #
-    # TEMPORARY (#82, task 5): this whole extraction exists only because the MARC
-    # predates canonical identity. The canonical re-harvest will stamp the
-    # canonical key in 999 $a (see sources/marc/marc_harvest.py), after which the
-    # MARC joins directly on ?canonical_key and this block -- plus the "mint the
-    # sub-resource URIs after the OPTIONAL" workaround below -- is deleted.
-    ?bookRow xyz:sourceKeys ?source_keys .
-    BIND(REPLACE(?source_keys, "^(.*[;, ]|)1:([0-9A-Z]{8}).*$", "$2") AS ?lib1_repl)
-    BIND(IF(?lib1_repl != ?source_keys, ?lib1_repl, "__none__") AS ?lib1_key)
-
     OPTIONAL { ?bookRow xyz:publisher ?publisher }
     OPTIONAL {
       ?bookRow xyz:date ?date_raw .
@@ -126,12 +111,10 @@ WHERE {
 
   # Creators come from the full MARC records (sources/marc/artists-books-marc.xml),
   # which carry authoritative names plus real-world-object URIs (VIAF/ISNI in
-  # $1) and LC name-authority URIs ($0). The harvest is still lib-1-only, so each
-  # record joins to a book through the lib-1 source key (?lib1_key, pulled from
-  # sourceKeys above) matched against the record's synthetic 999 $a. Non-held
-  # works carry the "__none__" sentinel and so match no record — their MARC
-  # enrichment (creators/OCLC/extent) waits on the full canonical harvest (#82,
-  # task 5).
+  # $1) and LC name-authority URIs ($0). Since the canonical re-harvest (#84) each
+  # record's synthetic 999 $a carries the *canonical* key, so the MARC joins the
+  # book directly on ?canonical_key. A book with no MARC record simply gets no
+  # enrichment.
   #
   # Kept OPTIONAL so books without a MARC record still emit.
   OPTIONAL {
@@ -139,7 +122,7 @@ WHERE {
     # Multiple $1 subfields (a creator often has both VIAF and ISNI) are folded
     # together here so each creator field yields exactly one ?creator downstream.
     {
-      SELECT ?lib1_key ?df ?ctag ?role_term ?contributionType
+      SELECT ?canonical_key ?df ?ctag ?role_term ?contributionType
              (SAMPLE(?control_number_raw) AS ?control_number)
              (SAMPLE(?extent_x) AS ?extent)
              (SAMPLE(?dimensions_x) AS ?dimensions)
@@ -159,13 +142,12 @@ WHERE {
           # This is much faster than using a variable predicate like
           # (?record ?p ?field).
 
-          # When we downloaded the MARC XML records, we added the Zotero
-          # itemKey to each record as a 999 $a value, which enables us to
-          # grab the itemKey here so we can join with the CSV query above.
+          # The harvest stamps each record's canonical key into 999 $a (#84), so
+          # we grab it here to join directly with the canonical CSV query above.
           ?record fx:anySlot ?f999 .
           ?f999 a marc:datafield ; xyz:tag "999" .
           ?f999 fx:anySlot ?sf999a .
-          ?sf999a xyz:code "a" ; rdf:_1 ?lib1_key .
+          ?sf999a xyz:code "a" ; rdf:_1 ?canonical_key .
 
           # OCLC number from the 001 control field (per record, always present).
           # 001 is a marc:controlfield, so its value is on rdf:_1, not a subfield.
@@ -215,7 +197,7 @@ WHERE {
           }
 
           # Creator fields are OPTIONAL: the records with no 100/110/111/700/
-          # 710/711 field still yield a row carrying lib1_key + the 001 number.
+          # 710/711 field still yield a row carrying canonical_key + the 001 number.
           OPTIONAL {
 
           # creator/contributor fields: personal (100/700), corporate (110/710),
@@ -271,7 +253,7 @@ WHERE {
           }  # end OPTIONAL wrapping the creator fields
         }
       }
-      GROUP BY ?lib1_key ?df ?ctag ?role_term ?contributionType
+      GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
     }
 
     # WorldCat link + OCLC identifier, from the 001 number sampled above. Strip
@@ -339,16 +321,14 @@ WHERE {
     }
     BIND(REPLACE(REPLACE(?role_term, "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?role_slug)
     BIND(COALESCE(?relator, fx:entity(ab:, "role/", ?role_slug)) AS ?roleConcept)
-  }
 
-  # Per-book MARC sub-resource URIs are minted here, OUTSIDE the MARC OPTIONAL.
-  # They combine the canonical key (from the CSV — an *outer* variable) with
-  # values produced by the MARC join (?oclc_number / ?extent / ?creator_key),
-  # which only bind after the left-join. Minting them inside the OPTIONAL would
-  # evaluate ?canonical_key before the join, where it is still unbound (the join
-  # is on ?lib1_key, not the canonical key). Each mint is guarded so a book with
-  # no MARC match emits no dangling sub-resource node.
-  BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "item/", ?canonical_key, "/oclc"), ?sentinel) AS ?bookOCLCNum)
-  BIND(IF(BOUND(?extent), fx:entity(ab:, "item/", ?canonical_key, "/extent"), ?sentinel) AS ?bookExtent)
-  BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
+    # Per-book MARC sub-resource URIs. The MARC now joins on ?canonical_key, so it
+    # is bound inside this OPTIONAL and the sub-resources are minted inline (each
+    # guarded so a book with no MARC match emits no dangling node). For a book
+    # that never matched MARC the whole OPTIONAL contributes nothing, so these
+    # stay unbound and no triple is emitted.
+    BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "item/", ?canonical_key, "/oclc"), ?sentinel) AS ?bookOCLCNum)
+    BIND(IF(BOUND(?extent), fx:entity(ab:, "item/", ?canonical_key, "/extent"), ?sentinel) AS ?bookExtent)
+    BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
+  }
 }

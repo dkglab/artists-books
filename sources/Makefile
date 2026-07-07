@@ -100,6 +100,19 @@ $(FUZZY)/venv/bin/python:
 # itself trigger a re-harvest -- that hits an external server, so it only
 # reruns when the source CSV changes.
 YAZ := ../tools/yaz-client
+
+# The canonical artists'-book harvest (issue #84). Unlike the reference track
+# (pattern rule below), the canonical AB list lives at the sources/ root with a
+# canonicalKey column, so this explicit rule overrides the marc/%-marc.xml
+# pattern. The ~1,340 already-harvested held books are NOT re-harvested: they are
+# merged from the frozen, re-keyed marc/artists-books-held-marc.xml (a one-time
+# artifact of marc/rekey_held.py, so an order-only prerequisite) via --premerged,
+# and only the ~6,619 non-held books hit the Z39.50/SRU servers here.
+marc/artists-books-marc.xml: artists-books.csv \
+		| marc/artists-books-held-marc.xml marc/marc_harvest.py $(YAZ)/bin/yaz-client
+	python3 marc/marc_harvest.py --csv $< --out $@ \
+		--premerged marc/artists-books-held-marc.xml
+
 marc/%-marc.xml: zotero/%.csv | marc/marc_harvest.py $(YAZ)/bin/yaz-client
 	python3 marc/marc_harvest.py --csv $< --out $@
 

@@ -26,16 +26,19 @@ Strategy (see sources/marc/README.md):
                   author surname or the year; otherwise it is rejected (logged to
                   review.tsv). This guards the synthetic-999 join against a
                   coincidental title match being stamped onto the wrong itemKey.
-  * Join key    : the CSV's key column (read as row["itemKey"]). Each retrieved
-                  record is stamped with a synthetic 999 $a <key> $b <value>
-                  $c <keytype> $d <server> field -- no content-based join.
-                  NOTE (#82, task 5): the canonical re-harvest should run off the
-                  canonical lists (sources/artists-books.csv / reference-works.csv)
-                  and stamp the *canonical* key in 999 $a -- name that column
-                  "itemKey", or teach this script to read "canonicalKey". Once the
-                  MARC carries canonical keys, queries/artists-books.rq joins MARC
-                  directly on ?canonical_key and the lib-1 sourceKeys extraction
-                  (the ?lib1_key workaround) is deleted.
+  * Join key    : the CSV's canonical key (row["canonicalKey"], falling back to
+                  the legacy row["itemKey"]; see row_key). Each retrieved record is
+                  stamped with a synthetic 999 $a <key> $b <value> $c <keytype>
+                  $d <server> field -- no content-based join. Since #82/#84 the
+                  canonical harvest runs off the deduped lists
+                  (sources/artists-books.csv / reference-works.csv) and stamps the
+                  *canonical* key in 999 $a, so queries/artists-books.rq joins MARC
+                  directly on ?canonical_key.
+  * Premerged   : legacy MARC already carrying its 999 $a (e.g. the re-keyed lib-1
+                  held records in marc/artists-books-held-marc.xml -- see
+                  marc/rekey_held.py) can be supplied with --premerged: those keys
+                  are skipped during harvest and the records merged in combine(),
+                  so the ~1,340 held books need no re-harvest.
   * Politeness  : one serial connection per server per batch, with a `sleep`
                   between queries and a pause between batches (more conservative
                   for LC, a shared national service).
@@ -69,7 +72,10 @@ MARC_DIR    = os.path.join(HERE, "harvest")  # gitignored harvest state, per-CSV
 # YAZ is built under tools/yaz-client/ (see tools/yaz-client/Makefile), not
 # installed system-wide. Resolve the binaries from there so the harvest uses our
 # self-contained build rather than whatever happens to be on $PATH.
-YAZ_BIN     = os.path.normpath(os.path.join(HERE, os.pardir, "tools", "yaz-client", "bin"))
+# HERE is sources/marc/; the toolkit lives at the repo root under tools/, so two
+# levels up (sources/marc -> sources -> repo root), matching the Makefile's
+# ../tools/yaz-client when run from sources/.
+YAZ_BIN     = os.path.normpath(os.path.join(HERE, os.pardir, os.pardir, "tools", "yaz-client", "bin"))
 YAZ_CLIENT  = os.path.join(YAZ_BIN, "yaz-client")
 YAZ_MARCDUMP = os.path.join(YAZ_BIN, "yaz-marcdump")
 
@@ -143,7 +149,7 @@ TITLE_STRONG    = 0.85
 TITLE_WEAK      = 0.60
 
 
-def make_cfg(csv_path, out_xml):
+def make_cfg(csv_path, out_xml, premerged=None):
     """Resolve all paths for one CSV; harvest state lives in harvest/<csv-stem>/."""
     csv_path = os.path.abspath(csv_path)
     out_xml = os.path.abspath(out_xml)
@@ -160,6 +166,9 @@ def make_cfg(csv_path, out_xml):
         # Committed records supplied by hand for items no reachable catalogue
         # serves (each already carries its 999 $a itemKey); merged by combine().
         "manual": os.path.join(os.path.dirname(out_xml), base + "-manual.xml"),
+        # Optional pre-keyed MARC (records already carrying their 999 $a) to skip
+        # during harvest and merge in combine() -- e.g. the re-keyed held records.
+        "premerged": os.path.abspath(premerged) if premerged else None,
     }
 
 
@@ -239,6 +248,29 @@ def read_rows(cfg):
         return list(csv.DictReader(fh))
 
 
+def row_key(row):
+    """Join key stamped into 999 $a: the canonical key (#82/#84 deduped identity),
+    falling back to the legacy per-library itemKey for older CSVs."""
+    return row.get("canonicalKey") or row.get("itemKey")
+
+
+def read_keyed_records(path):
+    """[(key, record Element)] from a MARCXML file whose records carry their join
+    key in 999 $a (records without one are skipped). Used for --premerged and the
+    hand-supplied manual file."""
+    if not path or not os.path.exists(path):
+        return []
+    out = []
+    for rec in ET.parse(path).getroot().findall(f"{{{MARC_NS}}}record"):
+        key = next((sf.text for df in rec.findall(f"{{{MARC_NS}}}datafield")
+                    if df.get("tag") == "999"
+                    for sf in df.findall(f"{{{MARC_NS}}}subfield")
+                    if sf.get("code") == "a"), None)
+        if key:
+            out.append((key, rec))
+    return out
+
+
 def server_targets(rows, server):
     """[(itemKey, [(keytype, value, query), ...])] for rows with >=1 key this
     server can use, in the server's keytype precedence order. Queries are
@@ -254,7 +286,7 @@ def server_targets(rows, server):
                 if query:
                     probes.append((kt, value, query))
         if probes:
-            targets.append((row["itemKey"], probes))
+            targets.append((row_key(row), probes))
     return targets
 
 
@@ -531,8 +563,12 @@ def verify_title(cfg, record_bytes, row):
 def harvest(cfg, limit=None):
     os.makedirs(cfg["state"], exist_ok=True)
     rows = read_rows(cfg)
-    rowmap = {r["itemKey"]: r for r in rows}
+    rowmap = {row_key(r): r for r in rows}
     ok_keys, attempted = load_state(cfg)
+    # Pre-keyed records (e.g. re-keyed held MARC) are already resolved: skip them
+    # on every server; combine() merges them back in.
+    for key, _rec in read_keyed_records(cfg.get("premerged")):
+        ok_keys.add(key)
 
     for server in SERVERS:
         name = server["name"]
@@ -619,66 +655,83 @@ def harvest(cfg, limit=None):
 
 
 def combine(cfg):
-    """Convert combined.marc -> single MARCXML <collection>, stamping itemKeys."""
-    if not os.path.exists(cfg["combined"]):
-        print("no combined.marc yet -- nothing to combine", file=sys.stderr)
-        return
-    raw = subprocess.run(
-        # Both servers send UTF-8 bytes; just mark leader/09 'a' (97). No transcode.
-        [YAZ_MARCDUMP, "-l", "9=97", "-i", "marc", "-o", "marcxml", cfg["combined"]],
-        capture_output=True, text=True,
-    ).stdout
-
+    """Build the output MARCXML <collection>: stamp the canonical key into 999 $a
+    on each harvested record, then merge the pre-keyed --premerged and manual
+    records. Runs even with no harvested records yet (premerged/manual only) -- so
+    the held baseline can be produced before the non-held harvest has run."""
     ET.register_namespace("", MARC_NS)
-    root = ET.fromstring(raw)
-    records = root.findall(f"{{{MARC_NS}}}record")
 
-    # Manifest ok rows, in retrieval order, as (itemKey, server, keytype, value).
-    # Current format is 5 cols (itemKey, server, keytype, value, status); tolerate
-    # the older 4-col (itemKey, keytype, value, status) and 3-col bib-only
-    # (itemKey, value, status) formats, attributing both to the UNC server.
-    ok_rows = []
-    for line in open(cfg["manifest"]):
-        c = line.rstrip("\n").split("\t")
-        if c[-1] != "ok":
-            continue
-        if len(c) >= 5:
-            ok_rows.append((c[0], c[1], c[2], c[3]))
-        elif len(c) == 4:
-            ok_rows.append((c[0], "unc", c[1], c[2]))
-        else:
-            ok_rows.append((c[0], "unc", "bib", c[1]))
-    if len(ok_rows) != len(records):
-        print(f"FATAL: {len(records)} records vs {len(ok_rows)} ok manifest rows; "
-              f"refusing to stamp itemKeys", file=sys.stderr)
-        sys.exit(3)
+    have_harvest = os.path.exists(cfg["combined"]) and os.path.getsize(cfg["combined"]) > 0
+    if not have_harvest and not os.path.exists(cfg.get("premerged") or "") \
+            and not os.path.exists(cfg["manual"]):
+        print("no combined.marc, premerged or manual records -- nothing to combine",
+              file=sys.stderr)
+        return
+
+    if have_harvest:
+        raw = subprocess.run(
+            # Both servers send UTF-8 bytes; just mark leader/09 'a' (97). No transcode.
+            [YAZ_MARCDUMP, "-l", "9=97", "-i", "marc", "-o", "marcxml", cfg["combined"]],
+            capture_output=True, text=True,
+        ).stdout
+        root = ET.fromstring(raw)
+        records = root.findall(f"{{{MARC_NS}}}record")
+    else:
+        root = ET.Element(f"{{{MARC_NS}}}collection")
+        records = []
 
     harvested_keys = set()
-    for rec, (key, server, keytype, value) in zip(records, ok_rows):
-        harvested_keys.add(key)
-        df = ET.SubElement(rec, f"{{{MARC_NS}}}datafield")
-        df.set("tag", "999"); df.set("ind1", " "); df.set("ind2", " ")
-        # $a join key (itemKey), $b resolving value, $c key type, $d source server.
-        for code, val in (("a", key), ("b", value), ("c", keytype), ("d", server)):
-            sf = ET.SubElement(df, f"{{{MARC_NS}}}subfield")
-            sf.set("code", code); sf.text = val
+    if records:
+        # Manifest ok rows, in retrieval order, as (itemKey, server, keytype, value).
+        # Current format is 5 cols (itemKey, server, keytype, value, status); tolerate
+        # the older 4-col (itemKey, keytype, value, status) and 3-col bib-only
+        # (itemKey, value, status) formats, attributing both to the UNC server.
+        ok_rows = []
+        for line in open(cfg["manifest"]):
+            c = line.rstrip("\n").split("\t")
+            if c[-1] != "ok":
+                continue
+            if len(c) >= 5:
+                ok_rows.append((c[0], c[1], c[2], c[3]))
+            elif len(c) == 4:
+                ok_rows.append((c[0], "unc", c[1], c[2]))
+            else:
+                ok_rows.append((c[0], "unc", "bib", c[1]))
+        if len(ok_rows) != len(records):
+            print(f"FATAL: {len(records)} records vs {len(ok_rows)} ok manifest rows; "
+                  f"refusing to stamp itemKeys", file=sys.stderr)
+            sys.exit(3)
 
-    # Merge hand-supplied records (already carrying their 999 $a) for items no
-    # reachable catalogue serves; skip any itemKey a harvest also resolved.
+        for rec, (key, server, keytype, value) in zip(records, ok_rows):
+            harvested_keys.add(key)
+            df = ET.SubElement(rec, f"{{{MARC_NS}}}datafield")
+            df.set("tag", "999"); df.set("ind1", " "); df.set("ind2", " ")
+            # $a join key (canonical), $b resolving value, $c key type, $d server.
+            for code, val in (("a", key), ("b", value), ("c", keytype), ("d", server)):
+                sf = ET.SubElement(df, f"{{{MARC_NS}}}subfield")
+                sf.set("code", code); sf.text = val
+
+    # Merge pre-keyed records (each already carrying its 999 $a): first the
+    # --premerged file (e.g. the re-keyed lib-1 held MARC), then the hand-supplied
+    # manual records for items no reachable catalogue serves. A harvested record
+    # for the same key wins (freshly verified), so skip keys already present.
+    n_premerged = 0
+    for key, rec in read_keyed_records(cfg.get("premerged")):
+        if key not in harvested_keys:
+            root.append(rec)
+            harvested_keys.add(key)
+            n_premerged += 1
     n_manual = 0
-    if os.path.exists(cfg["manual"]):
-        for mrec in ET.parse(cfg["manual"]).getroot().findall(f"{{{MARC_NS}}}record"):
-            key = next((sf.text for df in mrec.findall(f"{{{MARC_NS}}}datafield")
-                        if df.get("tag") == "999"
-                        for sf in df.findall(f"{{{MARC_NS}}}subfield")
-                        if sf.get("code") == "a"), None)
-            if key and key not in harvested_keys:
-                root.append(mrec)
-                n_manual += 1
+    for key, mrec in read_keyed_records(cfg["manual"]):
+        if key not in harvested_keys:
+            root.append(mrec)
+            harvested_keys.add(key)
+            n_manual += 1
 
     ET.ElementTree(root).write(cfg["out"], encoding="unicode", xml_declaration=True)
-    print(f"wrote {cfg['out']}: {len(records)} harvested + {n_manual} manual "
-          f"= {len(records) + n_manual} records (itemKey in 999 $a)")
+    total = len(records) + n_premerged + n_manual
+    print(f"wrote {cfg['out']}: {len(records)} harvested + {n_premerged} premerged "
+          f"+ {n_manual} manual = {total} records (canonical key in 999 $a)")
 
 
 if __name__ == "__main__":
@@ -689,8 +742,10 @@ if __name__ == "__main__":
     ap.add_argument("--limit", type=int, help="only process first N pending per server")
     ap.add_argument("--combine", action="store_true",
                     help="just (re)build the output XML from existing harvest state")
+    ap.add_argument("--premerged", help="MARCXML of pre-keyed records (999 $a) to "
+                    "skip during harvest and merge on combine (e.g. re-keyed held MARC)")
     args = ap.parse_args()
-    cfg = make_cfg(args.csv, args.out)
+    cfg = make_cfg(args.csv, args.out, premerged=args.premerged)
     if args.combine:
         combine(cfg)
     else:
