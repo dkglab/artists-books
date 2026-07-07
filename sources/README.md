@@ -95,9 +95,11 @@ because lib 1 carries almost no `sameAs` (just 7 of its 1,341 books).
 
 **Outputs** (committed; the librarian reviews them before they seed the build):
 
-- `artists-books.csv` — the authoritative artists'-book list (~7.8k canonical
+- `artists-books.csv` — the authoritative artists'-book list (~7.9k canonical
   works), scoped to lib 1's *Artists' Books Collection* ∪ lib 2's *Master list* ∪
-  lib 3's *Artists' books*/*ABCI*.
+  lib 3's *Artists' books*/*ABCI*, **plus any lib-3 record carrying a `Cited:`
+  note** (≈63 cited books sit in no collection, but every cited book must be a
+  first-class node or its citation has nothing to attach to).
 - `reference-works.csv` — the authoritative reference-work list (155 works),
   scoped to lib 3's *Reference resources* (157 records; 2 duplicate pairs
   collapse).

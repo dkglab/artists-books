@@ -66,6 +66,15 @@ AB_COLLECTIONS = {
 HELD_COLLECTION = ("Artists' Books Collection", 1)  # membership => a Sloane holding
 REF_COLLECTION = ("Reference resources", 3)          # the reference-work scope (lib 3)
 
+# ~63 lib-3 books carry a "Cited:" note but sit in no collection, so the
+# collection scope alone misses them -- yet they are cited artists' books, and
+# under #82 every cited book must be a first-class node (or its citation has
+# nothing to attach to). Union note-bearing lib-3 records into the AB scope.
+CITED_NOTE_INCLUDE = (
+    "i.libraryID = 3 AND EXISTS (SELECT 1 FROM itemNotes n "
+    "WHERE n.parentItemID = i.itemID AND n.note LIKE '%Cited%')"
+)
+
 # Output field set: canonical record's bibliographic fields, after the provenance
 # columns. Matches the Zotero field names the Phase-1 construct queries read.
 FIELD_COLS = [
@@ -110,13 +119,16 @@ def _scope_predicate(collections_by_lib):
     return " OR ".join(clauses)
 
 
-def load_scope(conn, collections_by_lib, exclude=None):
+def load_scope(conn, collections_by_lib, exclude=None, extra_include=None):
     """Return {(lib, key): record dict} for book items in scope.
 
     `exclude` is an optional (collectionName, libraryID) whose members are dropped
     (used to keep the reference works out of the artists'-book set).
+    `extra_include` is an optional raw-SQL boolean OR'd with the collection scope
+    (used to fold in note-bearing lib-3 records that sit in no collection).
     """
     include = _scope_predicate(collections_by_lib)
+    extra_sql = f"OR ({extra_include})" if extra_include else ""
     exclude_sql = ""
     if exclude:
         name, lib = exclude
@@ -155,8 +167,9 @@ def load_scope(conn, collections_by_lib, exclude=None):
         LEFT JOIN fieldsCombined f ON f.fieldID = id.fieldID
         LEFT JOIN itemDataValues idv ON idv.valueID = id.valueID
         WHERE it.typeName NOT IN ('attachment', 'note', 'annotation')
-          AND EXISTS (SELECT 1 FROM collectionItems ci JOIN collections c USING(collectionID)
-                      WHERE ci.itemID = i.itemID AND ({include})){exclude_sql}
+          AND (EXISTS (SELECT 1 FROM collectionItems ci JOIN collections c USING(collectionID)
+                       WHERE ci.itemID = i.itemID AND ({include}))
+               {extra_sql}){exclude_sql}
         GROUP BY i.itemID
     """
     records = {}
@@ -321,8 +334,8 @@ def canonical_row(members, allnodes, records):
 
 
 # --------------------------------------------------------------------------- #
-def dedup(conn, scope_collections, exclude, do_fuzzy):
-    records = load_scope(conn, scope_collections, exclude=exclude)
+def dedup(conn, scope_collections, exclude, do_fuzzy, extra_include=None):
+    records = load_scope(conn, scope_collections, exclude=exclude, extra_include=extra_include)
     provenance = defaultdict(set)
     uf = UnionFind()
     # 1. sameAs -- authoritative, DB-recorded same-work links (mostly lib3<->lib2).
@@ -390,7 +403,8 @@ def main():
     conn = sqlite3.connect(f"file:{args.db}?mode=ro", uri=True)
     conn.row_factory = sqlite3.Row
 
-    books, review = dedup(conn, AB_COLLECTIONS, exclude=REF_COLLECTION, do_fuzzy=True)
+    books, review = dedup(conn, AB_COLLECTIONS, exclude=REF_COLLECTION, do_fuzzy=True,
+                          extra_include=CITED_NOTE_INCLUDE)
     refs, _ = dedup(conn, {3: [REF_COLLECTION[0]]}, exclude=None, do_fuzzy=False)
 
     write_csv(args.out_books, OUT_COLS, books)
