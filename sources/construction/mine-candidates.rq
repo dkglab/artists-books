@@ -1,0 +1,38 @@
+# Mine construction/production candidate terms from the artists-books MARC.
+# Pool: 655 (all schemes) + 340 rdamat + 650 (all schemes except pure
+# fast/LCSH subject headings). One row per concept CLUSTER:
+#   cluster = the $0 authority URI when present, else scheme|normalized-label.
+# labels lists every distinct raw $a variant seen (so curation can see twins).
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
+PREFIX marc:<http://www.loc.gov/MARC21/slim#>
+SELECT
+  ?cluster
+  (SAMPLE(?dollar0) AS ?authorityURI)
+  (GROUP_CONCAT(DISTINCT ?scheme; separator=" ") AS ?schemes)
+  (GROUP_CONCAT(DISTINCT ?tag; separator=" ") AS ?tags)
+  (COUNT(DISTINCT ?record) AS ?recs)
+  (GROUP_CONCAT(DISTINCT ?rawLabel; separator=" | ") AS ?labels)
+WHERE {
+  SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.xml> {
+    ?record a marc:record .
+    ?record fx:anySlot ?df .
+    ?df a marc:datafield ; xyz:tag ?tag .
+    OPTIONAL { ?df fx:anySlot ?sf2 . ?sf2 xyz:code "2" ; rdf:_1 ?sr . }
+    BIND(LCASE(REPLACE(STR(?sr), "\\.$", "")) AS ?scheme)
+    # candidate pool
+    FILTER(
+         ?tag = "655"
+      || (?tag = "340" && ?scheme = "rdamat")
+      || (?tag = "650" && BOUND(?scheme) && ?scheme != "fast")
+    )
+    ?df fx:anySlot ?sfa . ?sfa xyz:code "a" ; rdf:_1 ?labelRaw .
+    BIND(STR(?labelRaw) AS ?rawLabel)
+    BIND(REPLACE(REPLACE(REPLACE(LCASE(?rawLabel), "[\\s.]+$",""), "[^a-z0-9]+","-"), "(^-)|(-$)","") AS ?normLabel)
+    OPTIONAL { ?df fx:anySlot ?sf0 . ?sf0 xyz:code "0" ; rdf:_1 ?zeroRaw . BIND(STR(?zeroRaw) AS ?dollar0) }
+    BIND(COALESCE(?dollar0, CONCAT(COALESCE(?scheme,"none"), "|", ?normLabel)) AS ?cluster)
+  }
+}
+GROUP BY ?cluster
+ORDER BY DESC(?recs) ?cluster
