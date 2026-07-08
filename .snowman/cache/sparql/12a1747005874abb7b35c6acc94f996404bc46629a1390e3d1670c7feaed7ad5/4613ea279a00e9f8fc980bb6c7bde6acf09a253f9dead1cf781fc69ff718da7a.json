@@ -1,0 +1,467 @@
+{ "head": {
+    "vars": [ "reference" , "title" , "itemKey" , "publisher" , "place" , "date" , "language" , "isbns" , "citedBooks" , "citationCount" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/XWS4XW55" } ,
+        "title": { "type": "literal" , "value": "500 handmade books : inspiring interpretations of a timeless form" } ,
+        "itemKey": { "type": "literal" , "value": "XWS4XW55" } ,
+        "publisher": { "type": "literal" , "value": "New York : Lark Books, c2008." } ,
+        "date": { "type": "literal" , "value": "2008" } ,
+        "isbns": { "type": "literal" , "value": "978-1-57990-877-5" } ,
+        "citedBooks": { "type": "literal" , "value": "XUNKI7T4\tBreathe." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/YYY7YVSS" } ,
+        "title": { "type": "literal" , "value": "<Usus>, typography, and artists' books" } ,
+        "itemKey": { "type": "literal" , "value": "YYY7YVSS" } ,
+        "publisher": { "type": "literal" , "value": "Codex Foundation" } ,
+        "place": { "type": "literal" , "value": "Berkeley, CA" } ,
+        "date": { "type": "literal" , "value": "2010" } ,
+        "language": { "type": "literal" , "value": "English" } ,
+        "isbns": { "type": "literal" , "value": "978-0-9817914-1-8 0-9817914-1-7" } ,
+        "citedBooks": { "type": "literal" , "value": "ITFVWI5E\tBoundless" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/XUKZQZKP" } ,
+        "title": { "type": "literal" , "value": "Ajam Media Collective" } ,
+        "itemKey": { "type": "literal" , "value": "XUKZQZKP" } ,
+        "citedBooks": { "type": "literal" , "value": "AE8FNKMW\tExhausted geographies." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/DCLMEBVD" } ,
+        "title": { "type": "literal" , "value": "Allan Kaprow : a bibliography" } ,
+        "itemKey": { "type": "literal" , "value": "DCLMEBVD" } ,
+        "publisher": { "type": "literal" , "value": "Mousse Pub." } ,
+        "place": { "type": "literal" , "value": "Milano" } ,
+        "date": { "type": "literal" , "value": "2011" } ,
+        "isbns": { "type": "literal" , "value": "978-88-96501-79-5" } ,
+        "citedBooks": { "type": "literal" , "value": "6T27APQ6\tBlindsight\nWV97865Y\tRates of exchange." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "2" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/KB2E34DZ" } ,
+        "title": { "type": "literal" , "value": "Artist/author : contemporary artists' books" } ,
+        "itemKey": { "type": "literal" , "value": "KB2E34DZ" } ,
+        "publisher": { "type": "literal" , "value": "American Federation of Arts" } ,
+        "place": { "type": "literal" , "value": "New York" } ,
+        "date": { "type": "literal" , "value": "1998" } ,
+        "isbns": { "type": "literal" , "value": "1-881616-94-0" } ,
+        "citedBooks": { "type": "literal" , "value": "ZNQ8DVG6\tFunction = funzione = funcion = fonction = Funktion.\nQZI8KM7C\tThen what? : photographs and folklore\nLVFKI2FS\tIn case of emergency\nSBH8W73W\tTurn over darling--\nZZ4K95WR\tLines in two directions and in five colors on five colors with all their combinations\n7M4CUF8W\tAutobiography\nS3KSCVWU\tCarl Andre, Robert Barry, Douglas Huebler, Joseph Kosuth, Sol Lewitt, Robert Morris, Lawrence Weiner.\nGIEE4QSQ\tIf you sleep on your other side, it will go away\nNA9H59MR\tOptimism : Hirsch Farm Project, 1994.\nRG82FYMT\tCover to cover\nW2CKKEFW\tThirty four parking lots in Los Angeles.\nQA3AAH6T\tHigh tension : Montage '93\nLJTCCQUS\tVarious small fires and milk." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "13" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/MN3CW7FZ" } ,
+        "title": { "type": "literal" , "value": "Artists and their books - books and their artists" } ,
+        "itemKey": { "type": "literal" , "value": "MN3CW7FZ" } ,
+        "publisher": { "type": "literal" , "value": "Getty Research Institute" } ,
+        "place": { "type": "literal" , "value": "Los Angeles, Calif." } ,
+        "date": { "type": "literal" , "value": "2018" } ,
+        "isbns": { "type": "literal" , "value": "978-1-60606-573-0" } ,
+        "citedBooks": { "type": "literal" , "value": "UNHRR465\tArguments\n9YSIF956\tCrackers.\nTP93XNGK\tDutch details\nTZETAWX9\tRoyal road test\nHHZ4J3GZ\tEvery building on the Sunset Strip.\nNAFRUGR9\tReal estate opportunities\nE96R942N\tA few palm trees.\nSGM76QTY\tField guide to North America and to other regions\nZYHSNVXL\tNine swimming pools and a broken glass.\nMHQJXPU4\tColored people." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "10" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/7YGZYJ5L" } ,
+        "title": { "type": "literal" , "value": "Artists of the book, 1988 :" } ,
+        "itemKey": { "type": "literal" , "value": "7YGZYJ5L" } ,
+        "publisher": { "type": "literal" , "value": "Boston Athenæum" } ,
+        "place": { "type": "literal" , "value": "Boston, Mass." } ,
+        "date": { "type": "literal" , "value": "1988" } ,
+        "language": { "type": "literal" , "value": "English" } ,
+        "isbns": { "type": "literal" , "value": "0-934552-53-3" } ,
+        "citedBooks": { "type": "literal" , "value": "38QRZLWU\tAunt Sallie's lament" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/LTE96PUD" } ,
+        "title": { "type": "literal" , "value": "Artists who make books" } ,
+        "itemKey": { "type": "literal" , "value": "LTE96PUD" } ,
+        "publisher": { "type": "literal" , "value": "London ; New York : Phaidon, [2017]" } ,
+        "date": { "type": "literal" , "value": "2017" } ,
+        "isbns": { "type": "literal" , "value": "978-0-7148-7264-3" } ,
+        "citedBooks": { "type": "literal" , "value": "PG4L9B6A\t128 details from a picture (Halifax 1978)" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/94CKQLVX" } ,
+        "title": { "type": "literal" , "value": "Artists' books : a critical anthology and sourcebook" } ,
+        "itemKey": { "type": "literal" , "value": "94CKQLVX" } ,
+        "publisher": { "type": "literal" , "value": "The Visual Studies Workshop Press ;" } ,
+        "place": { "type": "literal" , "value": "Rochester, N.Y." } ,
+        "date": { "type": "literal" , "value": "1985" } ,
+        "isbns": { "type": "literal" , "value": "0898220416 :" } ,
+        "citedBooks": { "type": "literal" , "value": "TZETAWX9\tRoyal road test\nCX95PR5D\tPicture/Readings\nNQ3LRV3F\tWord rain; or, A discursive introduction to the intimate philosophical investigations of G,r,e,t,a, G,a,r,b,o, it says.\nMUMG8CL7\tA humument : a treated Victorian novel\nLHZB44WA\tConstructs : stories\nPU5ERMM9\tFrom around a lake\nZYHSNVXL\tNine swimming pools and a broken glass.\nRG82FYMT\tCover to cover\n98D8LT43\tPhotoanalysis : a structuralist play\n9YD9TLR2\tBird songs, heartbeats\nWDXCLLBJ\tIngres and other parables.\n9YSIF956\tCrackers.\nCAZG5JIU\tThirty five years/one week\nHHZ4J3GZ\tEvery building on the Sunset Strip.\nXRTNP8B7\tBoiling coffee\n577Q437G\tPhotogrids\n7M4CUF8W\tAutobiography\nYDQWE48C\tA nuclear atlas\nXZGDHCZF\tTrunk pieces : New York, 1975\nRFU9C2TV\tCommodity character\nS3KSCVWU\tCarl Andre, Robert Barry, Douglas Huebler, Joseph Kosuth, Sol Lewitt, Robert Morris, Lawrence Weiner.\nB3JDEZ2U\tService : a trilogy on colonization\nJKNJ93GK\tSome Los Angeles apartments\nZING7QFJ\tPassage\nTP93XNGK\tDutch details\nXUVN7Z84\tClinkscale.\nNAFRUGR9\tReal estate opportunities\nW2CKKEFW\tThirty four parking lots in Los Angeles.\nQ6966ZEK\tKex.\n42CU6NPN\tThe case for the burial of ancestors\nI65L5MZF\tGeometric figures & color\nMHQJXPU4\tColored people.\nFW6XVIPQ\tVisual diary, 1/1/80-12/31/80" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "33" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/A5RE4482" } ,
+        "title": { "type": "literal" , "value": "Artists' books : the book as a work of art 1963-2000" } ,
+        "itemKey": { "type": "literal" , "value": "A5RE4482" } ,
+        "publisher": { "type": "literal" , "value": "Bernard Quaritch Ltd" } ,
+        "place": { "type": "literal" , "value": "London" } ,
+        "date": { "type": "literal" , "value": "2015" } ,
+        "isbns": { "type": "literal" , "value": "0-9563012-9-0" } ,
+        "citedBooks": { "type": "literal" , "value": "LVFKI2FS\tIn case of emergency\nYEUNFQ2H\tClose-cropped tales\nEUP3CJJ4\tLines & color\nS39Q38HB\tSecrets : variable piece 4\n577Q437G\tPhotogrids\nUCTJPHGL\tCock fight dance\nZYHSNVXL\tNine swimming pools and a broken glass.\nHHZ4J3GZ\tEvery building on the Sunset Strip.\nTZETAWX9\tRoyal road test\nS3KSCVWU\tCarl Andre, Robert Barry, Douglas Huebler, Joseph Kosuth, Sol Lewitt, Robert Morris, Lawrence Weiner.\n9YSIF956\tCrackers.\n9DKLBA8M\tThe fall\nHCXE4WW6\tCamp fire : my artform is the short journey made by walking in the landscape\nRG82FYMT\tCover to cover\n4I6Y9BIG\tContinuous project altered daily : earth, water, grease, plastic, felt, wood, thread, light, photographs, sound\nDNVLI4KM\tTen isometric drawings for ten vertical constructions\nZLE5VFSE\tL A air.\nCX95PR5D\tPicture/Readings\n52F84BLP\tFamily\n4RMAU6HA\tItalia\nI65L5MZF\tGeometric figures & color\nPG4L9B6A\t128 details from a picture (Halifax 1978)\nWJI3MS2X\tRex reason\nJGQSQF5Q\tSkyline Ridge\nXRTNP8B7\tBoiling coffee\nYKNYU9HC\t11 excerpts (1967-1970) = 11 [i.e. onze] extraits (1967-1970)\nAEL6GH6Q\tThe location of straight, not-straight & broken lines and all their combinations.\n2AWAWJPU\tSix arcs\nXU5YIHTS\tLines and non-lines\n7M4CUF8W\tAutobiography\nZHWAJ5F3\tIncomplete open cubes : The John Weber Gallery, New York 1974\n5TLFIS8A\tArcs and lines : all combinations of arcs from four corners, arcs from four sides, straight lines, not-straight lines, and broken lines : Sol LeWitt, 1974.\nUNHRR465\tArguments\nV9XTTKYM\tWell-heeled\n7H5ZZ95K\tMisunderstandings : a theory of photography\nBT9S9S3C\tQuincy book.\nPU5ERMM9\tFrom around a lake\nNAFRUGR9\tReal estate opportunities\n3ECIVRE9\tTorn photograph from the second stop (rubble) : second mountain of 6 stops on a section\nTGE4ZDRG\tInches and field\nZING7QFJ\tPassage\nIL549Z67\tWhat's happening with momma?\nWW3PIRNN\tRichard Long : [an exhibition held at the] Scottish National Gallery of Modern Art, Edinburgh, July-August 1974.\nH386I5HW\tBook of dust : the beginning and the end of time and thereafter\nMUMG8CL7\tA humument : a treated Victorian novel\nV9EQXMKK\tSunrise & sunset at Praiano" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "46" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/GDNNXY63" } ,
+        "title": { "type": "literal" , "value": "Artists' Books: Visual Studies Workshop Press" } ,
+        "itemKey": { "type": "literal" , "value": "GDNNXY63" } ,
+        "publisher": { "type": "literal" , "value": "Visual Studies Workshop Press" } ,
+        "place": { "type": "literal" , "value": "Rochester, N.Y." } ,
+        "date": { "type": "literal" , "value": "2009" } ,
+        "isbns": { "type": "literal" , "value": "9780898221268" } ,
+        "citedBooks": { "type": "literal" , "value": "7MFURWM7\tIt wasn't Little Rock\nAZ27E8TR\tSensations\nRG6PMUM7\tSeattle subtext\nVSQKW4BW\tMy mother's book\nH22JJDE8\tThe position of the author\n6M5DVI7W\tShadowed memory\nNHG3LVCB\tTime outs\nG4CPAXVL\tTwenty-five years ago\n42CU6NPN\tThe case for the burial of ancestors\nYZ6RI9B8\tMill river, river mill : with associated music\nB76AVV9G\tWhen we were ten : a photo/text story of a mother and her son\nH386I5HW\tBook of dust : the beginning and the end of time and thereafter\nT5BY6GL3\t(Untitled)\nHUA9ZMZN\tOzone alert\nCAZG5JIU\tThirty five years/one week\nCLFJCLPS\tOnly child\nXZGDHCZF\tTrunk pieces : New York, 1975\nRFU9C2TV\tCommodity character\n8HI9LLCQ\tTo a fragmented world-- a poetics = a un mundo fragmentado-- una poética\n2G2XDJXS\tHome\n4BLVQYYX\tSombras rojas.\nU64L9DKA\tMemory loss\n5L2TAD4P\tThe queen of wands\nQA3AAH6T\tHigh tension : Montage '93\nJTI6FSV8\tIn the event anyone disappears\n7ZDEDDST\tTea, c, d&c : cycles interrupted\nPMVKE79R\tKaddish\n39NEFI87\tSome (m)other stories, a parent(hetic)al tale\nEYIGS3WV\tI am Siam\nUL9CIKQK\tMother-son talk\nR47BWPEK\tDiary of images : it's still time to mourn\nLLBP3IUB\tMy 9 migraine cures\nPZAIVR4Z\tSoul & psyche\n3L36U9YX\tMemory loss\nJRQDNKJH\tThings don't always fall into place\nXSIHYN76\tThe weight of the body\nZSX4EAAX\tTender tearful spaces\nH9RXTD3X\tThe practical speller : a manual of instruction in the rudiments of the English language\n54Y58IEG\tAntlers.\nL8L2D7EQ\tMother sun\nUBM3NK7Q\tThis is not America either\n2LMUF9JJ\tFar horizons\nM98I24JJ\tHomo futurus\n9PNZXXYJ\tVerbal landscape/dinosaur sat down\nTPYQ6DEA\tDiplomatic passport : United States of America." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "45" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/L3HFQ2SA" } ,
+        "title": { "type": "literal" , "value": "Beyond the text : artists' books from the collection of Robert J. Ruben" } ,
+        "itemKey": { "type": "literal" , "value": "L3HFQ2SA" } ,
+        "publisher": { "type": "literal" , "value": "Grolier Club" } ,
+        "place": { "type": "literal" , "value": "New York" } ,
+        "date": { "type": "literal" , "value": "2010" } ,
+        "isbns": { "type": "literal" , "value": "978-1-60583-026-1" } ,
+        "citedBooks": { "type": "literal" , "value": "SBH8W73W\tTurn over darling--\nSIBBPKMP\tThe uncommon perspective of M.E.J. Colter\nURK5NWYJ\tParallax\nU64L9DKA\tMemory loss\nNM55DLTN\tPanorama\n3L36U9YX\tMemory loss\n9KY8A7ZF\tParallax" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "7" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/X37HVCXS" } ,
+        "title": { "type": "literal" , "value": "Book arts 2007, Bright Hill Center" } ,
+        "itemKey": { "type": "literal" , "value": "X37HVCXS" } ,
+        "publisher": { "type": "literal" , "value": "Bright Hill Press" } ,
+        "place": { "type": "literal" , "value": "Treadwell, N.Y." } ,
+        "date": { "type": "literal" , "value": "2007" } ,
+        "isbns": { "type": "literal" , "value": "978-1-892471-47-5" } ,
+        "citedBooks": { "type": "literal" , "value": "EJGSE7FM\tThe index\nLZX5FAS5\tThis tends to happen." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "2" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/EXVACFS7" } ,
+        "title": { "type": "literal" , "value": "Book as art VI: December 6, 1993-May 20, 1994, the National Museum of Women in the Arts, Washington, D.C." } ,
+        "itemKey": { "type": "literal" , "value": "EXVACFS7" } ,
+        "publisher": { "type": "literal" , "value": "The Museum" } ,
+        "place": { "type": "literal" , "value": "Washington, D.C." } ,
+        "date": { "type": "literal" , "value": "1993" } ,
+        "language": { "type": "literal" , "value": "English" } ,
+        "citedBooks": { "type": "literal" , "value": "C9TSNWCL\tTreading the maze : an artist's book of daze\nJZJSJKVW\tInstructions for assembly : three how-to projects that will improve your life" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "2" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/75SCFJ8D" } ,
+        "title": { "type": "literal" , "value": "Book as art VII : December 19, 1994-September 8, 1995, the National Museum of Women in the Arts, Washington, D.C." } ,
+        "itemKey": { "type": "literal" , "value": "75SCFJ8D" } ,
+        "publisher": { "type": "literal" , "value": "Washington, D.C. : National Museum of Women in the Arts, [1994]" } ,
+        "date": { "type": "literal" , "value": "1994" } ,
+        "citedBooks": { "type": "literal" , "value": "R2V4AMGF\tQuercus psalter." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/FAEUXXHV" } ,
+        "title": { "type": "literal" , "value": "Booktrek : selected essays on artists' books (1972-2010)" } ,
+        "itemKey": { "type": "literal" , "value": "FAEUXXHV" } ,
+        "publisher": { "type": "literal" , "value": "JRP/Ringier ;" } ,
+        "place": { "type": "literal" , "value": "Zurich" } ,
+        "date": { "type": "literal" , "value": "2013" } ,
+        "isbns": { "type": "literal" , "value": "2840665743 (Presses du reel : pbk.)" } ,
+        "citedBooks": { "type": "literal" , "value": "98D8LT43\tPhotoanalysis : a structuralist play\nPU5ERMM9\tFrom around a lake\nZING7QFJ\tPassage\nNAFRUGR9\tReal estate opportunities\nZNQ8DVG6\tFunction = funzione = funcion = fonction = Funktion.\nZYHSNVXL\tNine swimming pools and a broken glass.\nXUVN7Z84\tClinkscale.\nHHZ4J3GZ\tEvery building on the Sunset Strip.\nEUP3CJJ4\tLines & color\n7M4CUF8W\tAutobiography\nV9EQXMKK\tSunrise & sunset at Praiano\nQ6966ZEK\tKex.\nZZ4K95WR\tLines in two directions and in five colors on five colors with all their combinations\n2IIY49CS\tTalking to myself : the ongoing autobiography of an art object = Entretien avec moi-meme : l'autobiographie évolutive d'un objet d'art\nW2CKKEFW\tThirty four parking lots in Los Angeles.\n577Q437G\tPhotogrids\nTP93XNGK\tDutch details\nXZGDHCZF\tTrunk pieces : New York, 1975\nI65L5MZF\tGeometric figures & color\nLJTCCQUS\tVarious small fires and milk.\nB3JDEZ2U\tService : a trilogy on colonization\n9YSIF956\tCrackers.\nS3KSCVWU\tCarl Andre, Robert Barry, Douglas Huebler, Joseph Kosuth, Sol Lewitt, Robert Morris, Lawrence Weiner.\n7ZIJ5CXE\tTwentysix gasoline stations.\nMHQJXPU4\tColored people.\nYN2WJ76B\tSelf hipnosis\nE96R942N\tA few palm trees.\nPI7NYVAN\tLibro illeggibile N.Y. 1\nWDXCLLBJ\tIngres and other parables.\nGIEE4QSQ\tIf you sleep on your other side, it will go away\nTZETAWX9\tRoyal road test\nA368J3CQ\tYoung masters and misses\nCY2TGWQJ\tA portfolio of piles." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "33" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/R9TPTHIC" } ,
+        "title": { "type": "literal" , "value": "Breaking the bindings : American book art now : an exhibition of creative bookmaking produced in the United States since 1980, Elvehjem Museum of Art, 6 May-3 July 1983." } ,
+        "itemKey": { "type": "literal" , "value": "R9TPTHIC" } ,
+        "publisher": { "type": "literal" , "value": "Elvehjem Museum of Art?]" } ,
+        "place": { "type": "literal" , "value": "Madison, Wis." } ,
+        "date": { "type": "literal" , "value": "1983" } ,
+        "citedBooks": { "type": "literal" , "value": "42CU6NPN\tThe case for the burial of ancestors" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/P6PLUKGC" } ,
+        "title": { "type": "literal" , "value": "Conveyor." } ,
+        "itemKey": { "type": "literal" , "value": "P6PLUKGC" } ,
+        "date": { "type": "literal" , "value": "2011" } ,
+        "language": { "type": "literal" , "value": "English" } ,
+        "citedBooks": { "type": "literal" , "value": "JPCRGULS\tOld man and sea" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/Z55EI6ES" } ,
+        "title": { "type": "literal" , "value": "Cooking the books : Ron King and Circle Press" } ,
+        "itemKey": { "type": "literal" , "value": "Z55EI6ES" } ,
+        "publisher": { "type": "literal" , "value": "Circle Press" } ,
+        "place": { "type": "literal" , "value": "New Haven, Conn." } ,
+        "date": { "type": "literal" , "value": "2002" } ,
+        "isbns": { "type": "literal" , "value": "0-930606-96-5" } ,
+        "citedBooks": { "type": "literal" , "value": "SBH8W73W\tTurn over darling--" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/EYAM3MR5" } ,
+        "title": { "type": "literal" , "value": "Creating artists' books" } ,
+        "itemKey": { "type": "literal" , "value": "EYAM3MR5" } ,
+        "publisher": { "type": "literal" , "value": "Watson-Guptill Publications" } ,
+        "place": { "type": "literal" , "value": "New York" } ,
+        "date": { "type": "literal" , "value": "2005" } ,
+        "isbns": { "type": "literal" , "value": "978-0-8230-1012-7" } ,
+        "citedBooks": { "type": "literal" , "value": "MI3QFGWR\tSpace + time\n6RHFECJS\tSpace + time\nG4CPAXVL\tTwenty-five years ago\nWT3LJVAP\tDouble game\n5XFCZ3TR\tLucha por la vida = Struggle for life\nMUMG8CL7\tA humument : a treated Victorian novel\nZYHSNVXL\tNine swimming pools and a broken glass." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "7" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/SUH3PR5D" } ,
+        "title": { "type": "literal" , "value": "Diamond leaves : artist books from around the world" } ,
+        "itemKey": { "type": "literal" , "value": "SUH3PR5D" } ,
+        "publisher": { "type": "literal" , "value": "Guilin Shi : Guangxi Shi fan da xue chu ban she, 2015. 桂林市 : 广西师范大学出版社, 2015." } ,
+        "date": { "type": "literal" , "value": "2015" } ,
+        "isbns": { "type": "literal" , "value": "978-7-5495-7208-3" } ,
+        "citedBooks": { "type": "literal" , "value": "HHZ4J3GZ\tEvery building on the Sunset Strip.\nELUGCBUC\tBook from the ground : from point to point" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "2" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/STSHFPHF" } ,
+        "title": { "type": "literal" , "value": "Druckworks 1972-2012 : 40 years of books and projects" } ,
+        "itemKey": { "type": "literal" , "value": "STSHFPHF" } ,
+        "publisher": { "type": "literal" , "value": "Epicenter, Center for Book and Paper Arts" } ,
+        "place": { "type": "literal" , "value": "Chicago, Ill." } ,
+        "date": { "type": "literal" , "value": "2012" } ,
+        "isbns": { "type": "literal" , "value": "978-1-935195-42-9" } ,
+        "citedBooks": { "type": "literal" , "value": "DFQRLP65\tHistory of the/my word : fragments of a testimonial to history, some lived and realized moments open to claims of memory.\nMUMG8CL7\tA humument : a treated Victorian novel\nZ9IFVZFI\tOtherspace : Martian ty/opography\nFWSWMASH\tA girl's life\nT3KKZBKH\tA girl's life\n9IXNB9Y7\tThe word made flesh\nP3N2IHVX\tOtherspace : Martian ty/opography" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "7" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/SGBJXYRF" } ,
+        "title": { "type": "literal" , "value": "Esthétique du livre d'artiste 1960/1980 : une introduction à l'art contemporain" } ,
+        "itemKey": { "type": "literal" , "value": "SGBJXYRF" } ,
+        "publisher": { "type": "literal" , "value": "Bibliothèque nationale de France" } ,
+        "place": { "type": "literal" , "value": "Marseille" } ,
+        "date": { "type": "literal" , "value": "2012" } ,
+        "isbns": { "type": "literal" , "value": "2-36054-013-0" } ,
+        "citedBooks": { "type": "literal" , "value": "WV97865Y\tRates of exchange.\nK7MIXPJ9\tFantastic architecture\nPSR69JFR\tIt is... it isn't...\n9YSIF956\tCrackers.\nJGQSQF5Q\tSkyline Ridge\n8TU9I4CW\tRape is\n577Q437G\tPhotogrids\nBT9S9S3C\tQuincy book.\nXZGDHCZF\tTrunk pieces : New York, 1975\nE96R942N\tA few palm trees.\nZYHSNVXL\tNine swimming pools and a broken glass.\nHHZ4J3GZ\tEvery building on the Sunset Strip.\n7H5ZZ95K\tMisunderstandings : a theory of photography\nBHZT8DG4\tJanuary 5-31, 1969\nTZETAWX9\tRoyal road test\nEUP3CJJ4\tLines & color\nQXLUBH75\tSaga\nAEL6GH6Q\tThe location of straight, not-straight & broken lines and all their combinations.\nL7IVZW42\tSweethearts\nLJTCCQUS\tVarious small fires and milk.\n52F84BLP\tFamily\nWDXCLLBJ\tIngres and other parables.\n5TLFIS8A\tArcs and lines : all combinations of arcs from four corners, arcs from four sides, straight lines, not-straight lines, and broken lines : Sol LeWitt, 1974.\nB3JDEZ2U\tService : a trilogy on colonization\nUNHRR465\tArguments\nZING7QFJ\tPassage\nYEUNFQ2H\tClose-cropped tales\nZNQ8DVG6\tFunction = funzione = funcion = fonction = Funktion.\nUJGRWX24\tArcs, from corners & sides, circles, & grids and all their combinations.\nZZ4K95WR\tLines in two directions and in five colors on five colors with all their combinations\nCX95PR5D\tPicture/Readings\nXRTNP8B7\tBoiling coffee\nUCTJPHGL\tCock fight dance\nTNTBK9RH\tVisual language.\nRG82FYMT\tCover to cover\nS3KSCVWU\tCarl Andre, Robert Barry, Douglas Huebler, Joseph Kosuth, Sol Lewitt, Robert Morris, Lawrence Weiner.\n7ZIJ5CXE\tTwentysix gasoline stations.\nXUVN7Z84\tClinkscale.\nZHWAJ5F3\tIncomplete open cubes : The John Weber Gallery, New York 1974\nTP93XNGK\tDutch details\nNCSI3PB2\tAfter art : Museum of Mott Art inc. : catalogue of After Art services 1974\nNAFRUGR9\tReal estate opportunities\n9DKLBA8M\tThe fall\nPU5ERMM9\tFrom around a lake\nENMSTWBI\tSweethearts.\nJKNJ93GK\tSome Los Angeles apartments\nW2CKKEFW\tThirty four parking lots in Los Angeles.\nDFCZZ3NL\tLocation of three geometric figures\nMUMG8CL7\tA humument : a treated Victorian novel\n7M4CUF8W\tAutobiography\nPG4L9B6A\t128 details from a picture (Halifax 1978)\nV9EQXMKK\tSunrise & sunset at Praiano" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "52" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/6YHF3EFS" } ,
+        "title": { "type": "literal" , "value": "Freedom of the presses : artists' books in the twenty-first century" } ,
+        "itemKey": { "type": "literal" , "value": "6YHF3EFS" } ,
+        "publisher": { "type": "literal" , "value": "Brooklyn, NY : Booklyn, [2018]" } ,
+        "date": { "type": "literal" , "value": "2018" } ,
+        "isbns": { "type": "literal" , "value": "978-0-692-16678-9" } ,
+        "citedBooks": { "type": "literal" , "value": "IL549Z67\tWhat's happening with momma?" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/G7EEP5BC" } ,
+        "title": { "type": "literal" , "value": "Gerhard Richter : books" } ,
+        "itemKey": { "type": "literal" , "value": "G7EEP5BC" } ,
+        "publisher": { "type": "literal" , "value": "Gregory R. Miller & Co." } ,
+        "place": { "type": "literal" , "value": "New York, NY" } ,
+        "date": { "type": "literal" , "value": "2014" } ,
+        "isbns": { "type": "literal" , "value": "978-1-941366-01-1" } ,
+        "citedBooks": { "type": "literal" , "value": "PG4L9B6A\t128 details from a picture (Halifax 1978)\nQ6966ZEK\tKex.\nCFMRJ8E5\tPatterns : divided, mirrored, repeated\nBBS6NWT3\tWar cut\nTBSWMXFY\tWar cut" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "5" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/5ECYVY6V" } ,
+        "title": { "type": "literal" , "value": "Hand, voice & vision: artists' books from Women's Studio Workshop" } ,
+        "itemKey": { "type": "literal" , "value": "5ECYVY6V" } ,
+        "publisher": { "type": "literal" , "value": "Women's Studio Workshop" } ,
+        "place": { "type": "literal" , "value": "Rosendale, N.Y." } ,
+        "date": { "type": "literal" , "value": "2010" } ,
+        "isbns": { "type": "literal" , "value": "1-893125-78-5" } ,
+        "citedBooks": { "type": "literal" , "value": "XGBCRW8B\tSite readings\nIL549Z67\tWhat's happening with momma?\nYDQWE48C\tA nuclear atlas\n7MFURWM7\tIt wasn't Little Rock\nB4BBDBEF\tPistol, pistil : botanical ballistics\nCC3R9EQJ\tAtlas of punctuation\n6I9LT2TJ\tRemembrance.\n6WRYPXPN\tRelation\n5XFCZ3TR\tLucha por la vida = Struggle for life\nKDRDUZLM\tThe complex of all of these" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "10" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/E8MAPXUI" } ,
+        "title": { "type": "literal" , "value": "Learn to read art: artists' books" } ,
+        "itemKey": { "type": "literal" , "value": "E8MAPXUI" } ,
+        "publisher": { "type": "literal" , "value": "Art Gallery of Hamilton" } ,
+        "place": { "type": "literal" , "value": "Hamilton, Ont." } ,
+        "date": { "type": "literal" , "value": "1990" } ,
+        "language": { "type": "literal" , "value": "English" } ,
+        "isbns": { "type": "literal" , "value": "0-919153-20-8 978-0-919153-20-2" } ,
+        "citedBooks": { "type": "literal" , "value": "HHZ4J3GZ\tEvery building on the Sunset Strip.\nW2CKKEFW\tThirty four parking lots in Los Angeles.\n9YSIF956\tCrackers.\nS3KSCVWU\tCarl Andre, Robert Barry, Douglas Huebler, Joseph Kosuth, Sol Lewitt, Robert Morris, Lawrence Weiner.\nJKNJ93GK\tSome Los Angeles apartments\nG539678C\tRoodborst territorium: sculptuur 1969, april-juni. Robin Redbreast's territory; sculpture 1969. Domaine d'un rouge-gorge: sculpture 1969. Rotkehlchenterritorium: Skulptur 1969." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "6" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/DHC5ATH7" } ,
+        "title": { "type": "literal" , "value": "Livres d'artistes" } ,
+        "itemKey": { "type": "literal" , "value": "DHC5ATH7" } ,
+        "publisher": { "type": "literal" , "value": "BPI, Centre Georges Pompidou :" } ,
+        "place": { "type": "literal" , "value": "Paris" } ,
+        "date": { "type": "literal" , "value": "1985" } ,
+        "isbns": { "type": "literal" , "value": "978-2-7335-0085-9" } ,
+        "citedBooks": { "type": "literal" , "value": "ENMSTWBI\tSweethearts.\n577Q437G\tPhotogrids\nJGQSQF5Q\tSkyline Ridge\n52F84BLP\tFamily\nG539678C\tRoodborst territorium: sculptuur 1969, april-juni. Robin Redbreast's territory; sculpture 1969. Domaine d'un rouge-gorge: sculpture 1969. Rotkehlchenterritorium: Skulptur 1969.\nS3KSCVWU\tCarl Andre, Robert Barry, Douglas Huebler, Joseph Kosuth, Sol Lewitt, Robert Morris, Lawrence Weiner.\nZNQ8DVG6\tFunction = funzione = funcion = fonction = Funktion.\nHHZ4J3GZ\tEvery building on the Sunset Strip.\nL7IVZW42\tSweethearts\nE96R942N\tA few palm trees.\n385EZZS9\tLexicon\nS39Q38HB\tSecrets : variable piece 4\nXUVN7Z84\tClinkscale.\nDNVLI4KM\tTen isometric drawings for ten vertical constructions\nEUP3CJJ4\tLines & color\nMUMG8CL7\tA humument : a treated Victorian novel\nK7MIXPJ9\tFantastic architecture\n9DKLBA8M\tThe fall\nPU5ERMM9\tFrom around a lake\nP4I22GHD\tBrick wall\nXU5YIHTS\tLines and non-lines\nBBSPA372\t[Altered book]\nRG82FYMT\tCover to cover" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "23" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/T5WUKIXI" } ,
+        "title": { "type": "literal" , "value": "Multiples: the first decade; [catalogue]" } ,
+        "itemKey": { "type": "literal" , "value": "T5WUKIXI" } ,
+        "publisher": { "type": "literal" , "value": "Philadelphia Museum of Art; distributed by Boston Book and Art, Boston" } ,
+        "date": { "type": "literal" , "value": "1971" } ,
+        "citedBooks": { "type": "literal" , "value": "W5V6K3L9\tDuration piece # 8 : global, (parts I-II)\nHHZ4J3GZ\tEvery building on the Sunset Strip." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "2" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/5JWH4AMJ" } ,
+        "title": { "type": "literal" , "value": "Offset : artists' books & prints." } ,
+        "itemKey": { "type": "literal" , "value": "5JWH4AMJ" } ,
+        "publisher": { "type": "literal" , "value": "Interplanetary Productions" } ,
+        "place": { "type": "literal" , "value": "New York, N.Y." } ,
+        "date": { "type": "literal" , "value": "1993" } ,
+        "citedBooks": { "type": "literal" , "value": "VSQKW4BW\tMy mother's book\nGRUU9TTY\tInterference\n79NJTA6J\tDesire : the collective unconscious\nQA3AAH6T\tHigh tension : Montage '93\nZ9IFVZFI\tOtherspace : Martian ty/opography\nP3N2IHVX\tOtherspace : Martian ty/opography" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "6" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/NN8ZFZNF" } ,
+        "title": { "type": "literal" , "value": "Reading the object : three decades of books" } ,
+        "itemKey": { "type": "literal" , "value": "NN8ZFZNF" } ,
+        "publisher": { "type": "literal" , "value": "Flying Fish Press" } ,
+        "place": { "type": "literal" , "value": "Oakland, California" } ,
+        "date": { "type": "literal" , "value": "2016" } ,
+        "citedBooks": { "type": "literal" , "value": "WI96UCDP\tCat's cradle\nNM55DLTN\tPanorama" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "2" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/CR3NFXSJ" } ,
+        "title": { "type": "literal" , "value": "Resonance and response : artists' books from Special Collections, Wellesley College Library, June 15-18, 2005" } ,
+        "itemKey": { "type": "literal" , "value": "CR3NFXSJ" } ,
+        "publisher": { "type": "literal" , "value": "Wellesley College Library" } ,
+        "place": { "type": "literal" , "value": "Wellesley, Mass." } ,
+        "date": { "type": "literal" , "value": "2005" } ,
+        "citedBooks": { "type": "literal" , "value": "SIBBPKMP\tThe uncommon perspective of M.E.J. Colter" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/JHBWPGKS" } ,
+        "title": { "type": "literal" , "value": "Sol LeWitt : artist's books" } ,
+        "itemKey": { "type": "literal" , "value": "JHBWPGKS" } ,
+        "publisher": { "type": "literal" , "value": "Viaindustriae" } ,
+        "place": { "type": "literal" , "value": "Sant'Eraclio di Foligno (Foligno)" } ,
+        "date": { "type": "literal" , "value": "2009" } ,
+        "isbns": { "type": "literal" , "value": "978-88-903459-2-0" } ,
+        "citedBooks": { "type": "literal" , "value": "QX3E9UY8\tWall drawings : seventeen squares of eight feet with sixteen lines and one arc\n5TLFIS8A\tArcs and lines : all combinations of arcs from four corners, arcs from four sides, straight lines, not-straight lines, and broken lines : Sol LeWitt, 1974.\nPKZPLBAL\tSix wall drawings : arcs with straight lines, non-straight lines and broken lines\nUCTJPHGL\tCock fight dance\nS3KSCVWU\tCarl Andre, Robert Barry, Douglas Huebler, Joseph Kosuth, Sol Lewitt, Robert Morris, Lawrence Weiner.\n7M4CUF8W\tAutobiography\nEUP3CJJ4\tLines & color\nV9EQXMKK\tSunrise & sunset at Praiano\nDFCZZ3NL\tLocation of three geometric figures\nI65L5MZF\tGeometric figures & color\nAEL6GH6Q\tThe location of straight, not-straight & broken lines and all their combinations.\nZZ4K95WR\tLines in two directions and in five colors on five colors with all their combinations\nZHWAJ5F3\tIncomplete open cubes : The John Weber Gallery, New York 1974\n577Q437G\tPhotogrids" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "14" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/D2HD5CJR" } ,
+        "title": { "type": "literal" , "value": "Speaking of book art : interviews with British and American book artists" } ,
+        "itemKey": { "type": "literal" , "value": "D2HD5CJR" } ,
+        "publisher": { "type": "literal" , "value": "Anderson-Lovelace" } ,
+        "place": { "type": "literal" , "value": "Los Altos Hills, Calif." } ,
+        "date": { "type": "literal" , "value": "1999" } ,
+        "isbns": { "type": "literal" , "value": "978-0-9626372-5-4" } ,
+        "citedBooks": { "type": "literal" , "value": "C9TSNWCL\tTreading the maze : an artist's book of daze\nVSQKW4BW\tMy mother's book\nA368J3CQ\tYoung masters and misses\nDFQRLP65\tHistory of the/my word : fragments of a testimonial to history, some lived and realized moments open to claims of memory.\nZ9IFVZFI\tOtherspace : Martian ty/opography\nW2CKKEFW\tThirty four parking lots in Los Angeles.\nXUVN7Z84\tClinkscale.\nQA3AAH6T\tHigh tension : Montage '93\nLJTCCQUS\tVarious small fires and milk.\n79NJTA6J\tDesire : the collective unconscious\nZING7QFJ\tPassage\nV9XTTKYM\tWell-heeled\n38QRZLWU\tAunt Sallie's lament\n8SZQBGZ5\tPassport\nP3N2IHVX\tOtherspace : Martian ty/opography\nNAFRUGR9\tReal estate opportunities\nSBH8W73W\tTurn over darling--" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "17" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/S8RLZLKM" } ,
+        "title": { "type": "literal" , "value": "The book as art : artists' books from the National Museum of Women in the arts" } ,
+        "itemKey": { "type": "literal" , "value": "S8RLZLKM" } ,
+        "publisher": { "type": "literal" , "value": "Princeton Architectural Press" } ,
+        "place": { "type": "literal" , "value": "New York" } ,
+        "date": { "type": "literal" , "value": "2007" } ,
+        "isbns": { "type": "literal" , "value": "1568986092 (alk. paper)" } ,
+        "citedBooks": { "type": "literal" , "value": "NLPJCCNA\tSoap story : an artist's book\nDFQRLP65\tHistory of the/my word : fragments of a testimonial to history, some lived and realized moments open to claims of memory.\nYGVJRI4Y\t(Ho + go)² = it\nSQDPPBXK\t(Ho + go)² = it\nLLBP3IUB\tMy 9 migraine cures\nIL549Z67\tWhat's happening with momma?\nVSQKW4BW\tMy mother's book" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "7" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/7SFXCRS9" } ,
+        "title": { "type": "literal" , "value": "The book made art : a selection of contemporary artists' books, exhibited in the Joseph Regenstein Library, the University of Chicago, February through April 1986" } ,
+        "itemKey": { "type": "literal" , "value": "7SFXCRS9" } ,
+        "publisher": { "type": "literal" , "value": "University of Chicago Library" } ,
+        "place": { "type": "literal" , "value": "Chicago" } ,
+        "date": { "type": "literal" , "value": "1986" } ,
+        "isbns": { "type": "literal" , "value": "094305608X (pbk.)" } ,
+        "citedBooks": { "type": "literal" , "value": "8NA97YKF\tIn celebration of the discovery of the abandoned star factory\n42CU6NPN\tThe case for the burial of ancestors" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "2" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/BCG5FURQ" } ,
+        "title": { "type": "literal" , "value": "The century of artists' books" } ,
+        "itemKey": { "type": "literal" , "value": "BCG5FURQ" } ,
+        "publisher": { "type": "literal" , "value": "Granary Books" } ,
+        "place": { "type": "literal" , "value": "New York City" } ,
+        "date": { "type": "literal" , "value": "2004" } ,
+        "isbns": { "type": "literal" , "value": "1887123695 (pbk.)" } ,
+        "citedBooks": { "type": "literal" , "value": "9IXNB9Y7\tThe word made flesh\nVSQKW4BW\tMy mother's book\nTNTBK9RH\tVisual language.\n9KY8A7ZF\tParallax\n7M4CUF8W\tAutobiography\nGAHFZ256\tSheherezade : a flip book\nBEA5N4L6\tTelevision\nLVFKI2FS\tIn case of emergency\nQA3AAH6T\tHigh tension : Montage '93\nG539678C\tRoodborst territorium: sculptuur 1969, april-juni. Robin Redbreast's territory; sculpture 1969. Domaine d'un rouge-gorge: sculpture 1969. Rotkehlchenterritorium: Skulptur 1969.\n2KV4AXNL\t[One night stood\nPI7NYVAN\tLibro illeggibile N.Y. 1\nGRUU9TTY\tInterference\nZYHSNVXL\tNine swimming pools and a broken glass.\nU2MF224T\tI want to take picture\nU64L9DKA\tMemory loss\nL7IVZW42\tSweethearts\nNQ3LRV3F\tWord rain; or, A discursive introduction to the intimate philosophical investigations of G,r,e,t,a, G,a,r,b,o, it says.\n3L36U9YX\tMemory loss\n79NJTA6J\tDesire : the collective unconscious\nS3KSCVWU\tCarl Andre, Robert Barry, Douglas Huebler, Joseph Kosuth, Sol Lewitt, Robert Morris, Lawrence Weiner.\nMUMG8CL7\tA humument : a treated Victorian novel\n9PNZXXYJ\tVerbal landscape/dinosaur sat down\n8TU9I4CW\tRape is\nTZETAWX9\tRoyal road test\nHHZ4J3GZ\tEvery building on the Sunset Strip.\nT69EUI24\tPost-partum document\nZING7QFJ\tPassage\nEYIGS3WV\tI am Siam\n566PNJJ7\tSheherezade : a flip book\nYEUNFQ2H\tClose-cropped tales\nI65L5MZF\tGeometric figures & color\nUHTNCU5Y\tThe Anti-Warhol Museum : proposals for the socially responsible disposal of Warholia\n3M7S4K3S\tFor the voice\n4I6Y9BIG\tContinuous project altered daily : earth, water, grease, plastic, felt, wood, thread, light, photographs, sound\nENMSTWBI\tSweethearts.\nH386I5HW\tBook of dust : the beginning and the end of time and thereafter\nG4YIB67F\tThe exorcism of page thirteen\nURK5NWYJ\tParallax\n42CU6NPN\tThe case for the burial of ancestors\nZLE5VFSE\tL A air.\nB3JDEZ2U\tService : a trilogy on colonization\nRG82FYMT\tCover to cover\nRFU9C2TV\tCommodity character\n9YSIF956\tCrackers.\nSBH8W73W\tTurn over darling--" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "46" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/278G84HQ" } ,
+        "title": { "type": "literal" , "value": "The journal of artists' books JAB." } ,
+        "itemKey": { "type": "literal" , "value": "278G84HQ" } ,
+        "publisher": { "type": "literal" , "value": "Interplanetary Productions" } ,
+        "place": { "type": "literal" , "value": "New York, NY" } ,
+        "date": { "type": "literal" , "value": "1994" } ,
+        "language": { "type": "literal" , "value": "English" } ,
+        "isbns": { "type": "literal" , "value": "2163-3789" } ,
+        "citedBooks": { "type": "literal" , "value": "DFQRLP65\tHistory of the/my word : fragments of a testimonial to history, some lived and realized moments open to claims of memory.\n9IXNB9Y7\tThe word made flesh\nRG82FYMT\tCover to cover\nQA3AAH6T\tHigh tension : Montage '93" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "4" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/AAZM5Y3X" } ,
+        "title": { "type": "literal" , "value": "The photobook : a history" } ,
+        "itemKey": { "type": "literal" , "value": "AAZM5Y3X" } ,
+        "publisher": { "type": "literal" , "value": "Phaidon" } ,
+        "place": { "type": "literal" , "value": "London ;New York" } ,
+        "date": { "type": "literal" , "value": "2004" } ,
+        "isbns": { "type": "literal" , "value": "0714842850 (v. 1)" } ,
+        "citedBooks": { "type": "literal" , "value": "MWWMFA8J\tMrs Merryman's collection" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/QEFHBIF4" } ,
+        "title": { "type": "literal" , "value": "Thread loves paper" } ,
+        "itemKey": { "type": "literal" , "value": "QEFHBIF4" } ,
+        "publisher": { "type": "literal" , "value": "[Sonoma, Calif. ] : Emily Marks, c2012." } ,
+        "date": { "type": "literal" , "value": "2012" } ,
+        "isbns": { "type": "literal" , "value": "978-0-615-65988-6" } ,
+        "citedBooks": { "type": "literal" , "value": "MUMG8CL7\tA humument : a treated Victorian novel" } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/JV2JKULL" } ,
+        "title": { "type": "literal" , "value": "Various small books : referencing various small books by Ed Ruscha" } ,
+        "itemKey": { "type": "literal" , "value": "JV2JKULL" } ,
+        "publisher": { "type": "literal" , "value": "MIT Press" } ,
+        "place": { "type": "literal" , "value": "Cambridge, Massachusetts" } ,
+        "date": { "type": "literal" , "value": "2013" } ,
+        "isbns": { "type": "literal" , "value": "978-0-262-01877-7" } ,
+        "citedBooks": { "type": "literal" , "value": "7ZIJ5CXE\tTwentysix gasoline stations.\nMHQJXPU4\tColored people.\n9YSIF956\tCrackers.\nZYHSNVXL\tNine swimming pools and a broken glass.\nALB9FTPR\tVarious fires : and four running boys\nTZETAWX9\tRoyal road test\nNAFRUGR9\tReal estate opportunities\nE96R942N\tA few palm trees.\nWJ4H4FVJ\tTwentysix gasoline stations\nLJTCCQUS\tVarious small fires and milk.\nW2CKKEFW\tThirty four parking lots in Los Angeles.\nHHZ4J3GZ\tEvery building on the Sunset Strip." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "12" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/6QJ3APUK" } ,
+        "title": { "type": "literal" , "value": "What is?: nine epistemological essays" } ,
+        "itemKey": { "type": "literal" , "value": "6QJ3APUK" } ,
+        "publisher": { "type": "literal" , "value": "Cuneiform Press" } ,
+        "place": { "type": "literal" , "value": "[Victoria, Texas]" } ,
+        "date": { "type": "literal" , "value": "2013" } ,
+        "language": { "type": "literal" , "value": "English" } ,
+        "isbns": { "type": "literal" , "value": "978-0-9860040-2-5 0-9860040-2-2" } ,
+        "citedBooks": { "type": "literal" , "value": "QFHMVHPM\tDead man's trail\nHHZ4J3GZ\tEvery building on the Sunset Strip." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "2" }
+      } ,
+      { 
+        "reference": { "type": "uri" , "value": "https://dkglab.github.io/ns/artists-books/reference/TWI7C9MN" } ,
+        "title": { "type": "literal" , "value": "When will the book be done? : Granary's books" } ,
+        "itemKey": { "type": "literal" , "value": "TWI7C9MN" } ,
+        "publisher": { "type": "literal" , "value": "Granary Books" } ,
+        "place": { "type": "literal" , "value": "New York" } ,
+        "date": { "type": "literal" , "value": "2001" } ,
+        "isbns": { "type": "literal" , "value": "1887123431 (pbk. : alk. paper)" } ,
+        "citedBooks": { "type": "literal" , "value": "DFQRLP65\tHistory of the/my word : fragments of a testimonial to history, some lived and realized moments open to claims of memory." } ,
+        "citationCount": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      }
+    ]
+  }
+}
