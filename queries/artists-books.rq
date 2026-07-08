@@ -25,7 +25,6 @@ CONSTRUCT {
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
-    ab:constructedUsing ?constructionTermURI ;
     .
 
 
@@ -351,67 +350,13 @@ WHERE {
       FILTER(?relator_term = ?role_term)
     }
 
-    # Read construction terms from the MARC record.
-    # Keep 655 terms only when they are technique/material vocabularies with
-    # $0 URIs. Use docs/construction-vocab.ttl for local 655 terms only when
-    # there is no matching 340 rdamat term in the same record. Keep 340 terms
-    # only when the scheme is rdamat.
-    OPTIONAL {
-      SELECT DISTINCT ?item_key ?constructionTerm WHERE {
-        SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.xml> {
-          ?record a marc:record .
-          ?record fx:anySlot ?f999 .
-          ?f999 a marc:datafield ; xyz:tag "999" .
-          ?f999 fx:anySlot ?sf999a .
-          ?sf999a xyz:code "a" ; rdf:_1 ?item_key .
+    # TODO(#86): attach construction & production methods here. Look each book's
+    # 655 / 340 / 650 heading up in the SKOS scheme sources/construction-methods.ttl
+    # -- match on ab:matchKey (the normalized $a text) or skos:exactMatch (the $0
+    # URI) -- and emit `ab:constructedUsing <concept>` (add the property back to
+    # the CONSTRUCT block above). The old docs/construction-vocab.ttl slug lookup
+    # was removed together with that file; see the pull request for the plan.
 
-          {
-            ?record fx:anySlot ?df655 .
-            ?df655 a marc:datafield ; xyz:tag "655" .
-            ?df655 fx:anySlot ?sf655a .
-            ?sf655a xyz:code "a" ; rdf:_1 ?construction_label_raw .
-            BIND(LCASE(REPLACE(REPLACE(REPLACE(STR(?construction_label_raw), "[\\s.]+$", ""), "[^a-z0-9]+", "-"), "(^-)|(-$)", "")) AS ?construction_key)
-
-            ?df655 fx:anySlot ?sf6552 .
-            ?sf6552 xyz:code "2" ; rdf:_1 ?scheme_raw .
-            BIND(LCASE(REPLACE(STR(?scheme_raw), "\\.$", "")) AS ?scheme)
-
-            {
-              FILTER(?scheme IN ("aat", "rbmscv", "rbgenr", "rbtyp", "rbpap"))
-              ?df655 fx:anySlot ?sf6550 .
-              ?sf6550 xyz:code "0" ; rdf:_1 ?constructionTerm .
-            }
-            UNION
-            {
-              FILTER(?scheme IN ("local"))
-              FILTER NOT EXISTS {
-                ?record fx:anySlot ?df340exists .
-                ?df340exists a marc:datafield ; xyz:tag "340" .
-                ?df340exists fx:anySlot ?sf3402exists .
-                ?sf3402exists xyz:code "2" ; rdf:_1 ?scheme_raw_340 .
-                FILTER(LCASE(REPLACE(STR(?scheme_raw_340), "\\.$", "")) = "rdamat")
-              }
-              SERVICE <x-sparql-anything:location=docs/construction-vocab.ttl> {
-                ?constructionTerm skos:notation ?construction_key .
-              }
-            }
-          }
-          UNION
-          {
-            ?record fx:anySlot ?df340 .
-            ?df340 a marc:datafield ; xyz:tag "340" .
-            ?df340 fx:anySlot ?sf3402 .
-            ?sf3402 xyz:code "2" ; rdf:_1 ?scheme_raw .
-            BIND(LCASE(REPLACE(STR(?scheme_raw), "\\.$", "")) AS ?scheme)
-            FILTER(?scheme = "rdamat")
-
-            ?df340 fx:anySlot ?sf3400 .
-            ?sf3400 xyz:code "0" ; rdf:_1 ?constructionTerm .
-          }
-        }
-      }
-    }
-    BIND(IF(BOUND(?constructionTerm), IRI(?constructionTerm), ?constructionTerm) AS ?constructionTermURI)
     BIND(REPLACE(REPLACE(?role_term, "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?role_slug)
     BIND(COALESCE(?relator, fx:entity(ab:, "role/", ?role_slug)) AS ?roleConcept)
   }
