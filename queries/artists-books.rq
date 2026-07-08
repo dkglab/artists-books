@@ -25,6 +25,7 @@ CONSTRUCT {
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
+    ab:constructedUsing ?constructionMethod ;
     .
 
 
@@ -348,8 +349,9 @@ WHERE {
         ("collector"                                    <http://id.loc.gov/vocabulary/relators/col>)
       }
       FILTER(?relator_term = ?role_term)
+      BIND(REPLACE(REPLACE(?role_term, "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?role_slug)
+      BIND(COALESCE(?relator, fx:entity(ab:, "role/", ?role_slug)) AS ?roleConcept)
     }
-
     # TODO(#86): attach construction & production methods here. Look each book's
     # 655 / 340 / 650 heading up in the SKOS scheme sources/construction-methods.ttl
     # -- match on ab:matchKey (the normalized $a text) or skos:exactMatch (the $0
@@ -357,7 +359,29 @@ WHERE {
     # the CONSTRUCT block above). The old docs/construction-vocab.ttl slug lookup
     # was removed together with that file; see the pull request for the plan.
 
-    BIND(REPLACE(REPLACE(?role_term, "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?role_slug)
-    BIND(COALESCE(?relator, fx:entity(ab:, "role/", ?role_slug)) AS ?roleConcept)
-  }
+      OPTIONAL {
+        ?record fx:anySlot ?dfCM .
+        ?dfCM a marc:datafield ;
+          xyz:tag ?cmtag .
+        FILTER(?cmtag IN ("655", "340", "650"))
+
+        ?dfCM fx:anySlot ?sfaCM .
+        ?sfaCM xyz:code "a" ;
+          rdf:_1 ?constructionRaw .
+
+      BIND(LCASE(?constructionRaw) AS ?constructionTerm)
+      BIND(REPLACE(REPLACE(?constructionTerm, "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?constructionSlug)
+
+      OPTIONAL {
+        ?slugConstructionConcept ab:matchKey ?constructionSlug .
+      }
+
+      OPTIONAL {
+        ?dfCM fx:anySlot ?sf0CM .
+        ?sf0CM xyz:code "0" ; 
+          rdf:_1 ?construction_0 .
+        ?exactConstructionConcept skos:exactMatch ?construction_0 .
+      }
+        BIND(COALESCE(?exactConstructionConcept, ?slugConstructionConcept) AS ?constructionMethod)
+    }
 }
