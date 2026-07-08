@@ -28,6 +28,9 @@ tools/fuzzy-match/venv/
 /graph/
 /web/.snowman/
 /web/site/
+# same Snowman output when the build is (mistakenly) run from the repo root
+/.snowman/
+/site/
 # MARC harvest state (resumable; only sources/marc/*-marc.xml is committed)
 /sources/marc/harvest/
 # Python bytecode cache
