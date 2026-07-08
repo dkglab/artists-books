@@ -19,6 +19,7 @@ SELECT
   ?extent
   ?dimensions
   ?edition
+  (SAMPLE(?summaryLabel) AS ?summary)
   (GROUP_CONCAT(DISTINCT COALESCE(?constructionTermLabel, STR(?constructionTerm)); separator="; ") AS ?constructionTerms)
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   (GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
@@ -84,6 +85,11 @@ WHERE {
 
   OPTIONAL {
     ?book bf:dimensions ?dimensions .
+  }
+
+  OPTIONAL {
+    ?book bf:summary ?summaryNode .
+    ?summaryNode rdfs:label ?summaryLabel .
   }
 
   OPTIONAL {

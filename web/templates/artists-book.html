@@ -51,6 +51,11 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
+  {{ with .summary }}
+  <dt>Summary</dt>
+    <dd>{{ . }}</dd>
+  {{ end }}
+
   {{ with .constructionTerms }}
   <dt>Construction Techniques, Materials, and Production Methods</dt>
   <dd>{{ . }}</dd>
