@@ -15,13 +15,14 @@ canonical harvest merges via marc_harvest.py --premerged, so the ~1,340 already
 "re-key held + harvest non-held"). Records whose lib-1 key no longer maps to any
 canonical row (folded away by dedup) are dropped and reported.
 
-This is a Phase-0-style one-shot: it reads the pre-#84 committed MARC, and once
-the canonical pipeline overwrites artists-books-marc.xml the held file is treated
-as frozen (like the *-manual.xml records and sources/citations.ttl). Regenerate
-only from the pre-#84 MARC (git history) if the dedup lists change.
+This is a Phase-0-style one-shot: it reads the pre-#84 committed lib-1 MARC (a
+single-collection artists-books-marc.xml; #81 later replaced that monolith with a
+per-record artists-books-marc.zip, so recover the old XML from git history) and
+writes the frozen held file, thereafter treated as static (like the *-manual.xml
+records and sources/citations.ttl). Regenerate only if the dedup lists change.
 
-Run once (from sources/):
-    python3 marc/rekey_held.py --in-marc marc/artists-books-marc.xml \
+Run once (from sources/), pointing --in-marc at the pre-#84 lib-1 MARCXML:
+    python3 marc/rekey_held.py --in-marc <pre-#84 artists-books-marc.xml> \
         --csv artists-books.csv --out marc/artists-books-held-marc.xml
 """
 import argparse

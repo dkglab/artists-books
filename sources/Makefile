@@ -27,10 +27,13 @@ zotero/notes.xml: zotero/notes_export.sh zotero/notes_export.sql zotero/notes_ex
 # the Cited notes living on those records can be joined onto ABC pages. The
 # matcher runs in an isolated venv built under tools/fuzzy-match/.
 #
-# zotero/artists-books.csv and marc/artists-books-marc.xml are committed inputs
-# maintained by their own targets (the MARC harvest hits an external Z39.50
-# server), so they are read by the recipe but deliberately NOT prerequisites
-# here -- we do not want a crosswalk rebuild to trigger a re-harvest.
+# NOTE: this is a legacy Phase-0 target (the abc<->cited crosswalk), retired from
+# the repeatable build (citations are now frozen in citations.ttl). match.py reads
+# a single-collection marc/artists-books-marc.xml, but #81 replaced that monolith
+# with the per-record archive marc/artists-books-marc.zip, so this recipe is no
+# longer runnable as-is; the committed abc-master-crosswalk.csv stays as a frozen
+# artifact. (zotero/artists-books.csv and the MARC were always read, not
+# prerequisites, so a crosswalk rebuild never triggered a re-harvest.)
 FUZZY := ../tools/fuzzy-match
 
 # One-time cross-library dedup (issue #82, Phase 0). Collapses the same work
@@ -101,19 +104,23 @@ $(FUZZY)/venv/bin/python:
 # reruns when the source CSV changes.
 YAZ := ../tools/yaz-client
 
+# The MARC harvest emits a per-record zip archive (#81) -- one <key>.xml per
+# record -- not one big <collection> file; the construct queries read it via
+# nested Archive -> XML triplifiers.
+#
 # The canonical artists'-book harvest (issue #84). Unlike the reference track
 # (pattern rule below), the canonical AB list lives at the sources/ root with a
-# canonicalKey column, so this explicit rule overrides the marc/%-marc.xml
+# canonicalKey column, so this explicit rule overrides the marc/%-marc.zip
 # pattern. The ~1,340 already-harvested held books are NOT re-harvested: they are
 # merged from the frozen, re-keyed marc/artists-books-held-marc.xml (a one-time
 # artifact of marc/rekey_held.py, so an order-only prerequisite) via --premerged,
 # and only the ~6,619 non-held books hit the Z39.50/SRU servers here.
-marc/artists-books-marc.xml: artists-books.csv \
+marc/artists-books-marc.zip: artists-books.csv \
 		| marc/artists-books-held-marc.xml marc/marc_harvest.py $(YAZ)/bin/yaz-client
 	python3 marc/marc_harvest.py --csv $< --out $@ \
 		--premerged marc/artists-books-held-marc.xml
 
-marc/%-marc.xml: zotero/%.csv | marc/marc_harvest.py $(YAZ)/bin/yaz-client
+marc/%-marc.zip: zotero/%.csv | marc/marc_harvest.py $(YAZ)/bin/yaz-client
 	python3 marc/marc_harvest.py --csv $< --out $@
 
 # Build the YAZ toolkit on demand (order-only prerequisite above). The same

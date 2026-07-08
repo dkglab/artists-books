@@ -24,7 +24,7 @@ PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 # (book + journalArticle + webpage), so ab:ReferenceWork is a subclass of
 # schema:CreativeWork (docs/vocab.ttl). Most fields come from
 # sources/reference-works.csv (the canonical RW list from the Phase-0 dedup);
-# a basic slice of the harvested MARC (sources/marc/reference-resources-marc.xml)
+# a basic slice of the harvested MARC (sources/marc/reference-resources-marc.zip)
 # is also read — for now just the primary creator (100 $a), to demonstrate the
 # join. The remaining MARC-derived fields the artists' books carry (OCLC/WorldCat,
 # secondary creators, relator roles, identity URIs, extent/dimensions) are still
@@ -95,32 +95,55 @@ WHERE {
     BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?refISBN)
   }
 
-  # Basic MARC slice: the primary creator (100 $a) from the harvested
-  # reference MARC, joined to the CSV row by the synthetic 999 $a itemKey
-  # (same join the artists' books use). Kept OPTIONAL — most reference works
-  # have a MARC record but only some carry a 100 main entry (edited volumes /
-  # exhibition catalogs enter creators on 700/710 instead, not read yet).
-  # Traversal uses fx:anySlot, not a variable predicate (see
-  # docs/QUERY-PERFORMANCE.md). Name only for now — no roles / identity URIs (#46).
+  # Basic MARC slice: the primary creator (100 $a) from the harvested reference
+  # MARC. The MARC is a per-record archive (#81): sources/marc/reference-resources-marc.zip
+  # holds one <itemKey>.xml document per record, read with SPARQL-Anything's
+  # nested Archive -> XML triplifiers. The outer archive read lists the entries
+  # (fx:archive.matches) and the inner SERVICE triplifies just that one record
+  # (fx:location ?file + fx:from-archive), joining to the CSV row on the record's
+  # own 999 $a — the key is read from the record data, not the filename. Each
+  # entry is triplified once and joined after, so it is no slower than the old
+  # single-file read. Per-record traversal uses fx:anySlot (docs/QUERY-PERFORMANCE.md).
+  #
+  # Kept OPTIONAL — most reference works have a MARC record but only some carry a
+  # 100 main entry (edited volumes / exhibition catalogs enter creators on
+  # 700/710 instead, not read yet). Name only for now — no roles / identity URIs (#46).
   OPTIONAL {
-    SERVICE <x-sparql-anything:location=sources/marc/reference-resources-marc.xml> {
-      ?record a marc:record .
+    SERVICE <x-sparql-anything:location=sources/marc/reference-resources-marc.zip> {
+      fx:properties fx:archive.matches ".*\\.xml" .
+      ?archive fx:anySlot ?file .
 
-      # 999 $a — the Zotero itemKey stamped onto each record at harvest time;
-      # join to the CSV row above.
-      ?record fx:anySlot ?f999 .
-      ?f999 a marc:datafield ; xyz:tag "999" .
-      ?f999 fx:anySlot ?sf999a .
-      ?sf999a xyz:code "a" ; rdf:_1 ?canonical_key .
+      SERVICE <x-sparql-anything:> {
+        fx:properties
+          fx:location ?file ;
+          fx:from-archive "sources/marc/reference-resources-marc.zip" ;
+          fx:media-type "application/xml" .
 
-      # 100 $a — primary creator name. Strip trailing cataloguing punctuation.
-      ?record fx:anySlot ?df100 .
-      ?df100 a marc:datafield ; xyz:tag "100" .
-      ?df100 fx:anySlot ?sf100a .
-      ?sf100a xyz:code "a" ; rdf:_1 ?name_raw .
-      BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?creator_name)
+        ?record a marc:record .
+
+        # 999 $a — the canonical key stamped on each record at harvest; join to
+        # the CSV row above. The key is read from the record data, not the
+        # filename, so the archive entries could be named anything.
+        ?record fx:anySlot ?f999 .
+        ?f999 a marc:datafield ; xyz:tag "999" .
+        ?f999 fx:anySlot ?sf999a .
+        ?sf999a xyz:code "a" ; rdf:_1 ?canonical_key .
+
+        # 100 $a — primary creator name. Strip trailing cataloguing punctuation.
+        ?record fx:anySlot ?df100 .
+        ?df100 a marc:datafield ; xyz:tag "100" .
+        ?df100 fx:anySlot ?sf100a .
+        ?sf100a xyz:code "a" ; rdf:_1 ?name_raw .
+        BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?creator_name)
+      }
     }
-    BIND(fx:entity(ab:, "reference/", ?canonical_key, "/contribution/primary") AS ?refContribution)
-    BIND(fx:entity(ab:, "reference/", ?canonical_key, "/agent/primary") AS ?refAgent)
+    # Guard on ?creator_name: the nested archive read binds ?canonical_key (from
+    # 999 $a) for every record, including those with no 100 $a (the inner per-
+    # record SERVICE then simply binds no ?creator_name), so mint the
+    # contribution/agent only when a name was actually found — otherwise a
+    # nameless agent leaks. (The old single-file read dropped such rows because
+    # the 100-match was a required pattern in the same SERVICE.)
+    BIND(IF(BOUND(?creator_name), fx:entity(ab:, "reference/", ?canonical_key, "/contribution/primary"), ?sentinel) AS ?refContribution)
+    BIND(IF(BOUND(?creator_name), fx:entity(ab:, "reference/", ?canonical_key, "/agent/primary"), ?sentinel) AS ?refAgent)
   }
 }

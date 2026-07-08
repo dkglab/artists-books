@@ -109,7 +109,7 @@ WHERE {
     BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?bookISBN)
   }
 
-  # Creators come from the full MARC records (sources/marc/artists-books-marc.xml),
+  # Creators come from the full MARC records (sources/marc/artists-books-marc.zip),
   # which carry authoritative names plus real-world-object URIs (VIAF/ISNI in
   # $1) and LC name-authority URIs ($0). Since the canonical re-harvest (#84) each
   # record's synthetic 999 $a carries the *canonical* key, so the MARC joins the
@@ -132,18 +132,28 @@ WHERE {
              (SAMPLE(?isni_x)  AS ?isni)
              (SAMPLE(?lc_id_x) AS ?lc_id)
       WHERE {
-        SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.xml> {
+        SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.zip> {
+          # Per-record MARC archive (#81): one MARCXML document per record. The
+          # outer archive read lists the entries (fx:archive.matches); the inner
+          # SERVICE triplifies just that one record (fx:location ?file +
+          # fx:from-archive) and joins to the CSV row on the record's own 999 $a —
+          # the key is read from the record data, not the filename. Each entry is
+          # triplified once (per-record traversal still uses fx:anySlot, not a
+          # variable predicate — docs/QUERY-PERFORMANCE.md).
+          fx:properties fx:archive.matches ".*\\.xml" .
+          ?archive fx:anySlot ?file .
+
+          SERVICE <x-sparql-anything:> {
+            fx:properties
+              fx:location ?file ;
+              fx:from-archive "sources/marc/artists-books-marc.zip" ;
+              fx:media-type "application/xml" .
 
           # For each MARC record
           ?record a marc:record .
 
-          # Traverse container members (datafields or controlfields in
-          # MARC records, or subfields of datafields) with fx:anySlot.
-          # This is much faster than using a variable predicate like
-          # (?record ?p ?field).
-
-          # The harvest stamps each record's canonical key into 999 $a (#84), so
-          # we grab it here to join directly with the canonical CSV query above.
+          # 999 $a — the canonical key stamped onto each record at harvest (#84),
+          # to join directly with the canonical CSV query above.
           ?record fx:anySlot ?f999 .
           ?f999 a marc:datafield ; xyz:tag "999" .
           ?f999 fx:anySlot ?sf999a .
@@ -168,7 +178,14 @@ WHERE {
           }
 
           OPTIONAL {
-            ?df300 fx:anySlot ?sf300c .
+            # Re-derive the 300 datafield from the record (rather than reuse the
+            # ?df300 bound in the extent OPTIONAL above): if a record has no 300 at
+            # all, reusing an unbound ?df300 turns `fx:anySlot` into an unbound-
+            # subject scan that grabs a stray $c from elsewhere (a bogus dimensions
+            # on a record with no 300). Anchoring on ?record keeps it record-scoped.
+            ?record fx:anySlot ?df300c .
+            ?df300c a marc:datafield ; xyz:tag "300" .
+            ?df300c fx:anySlot ?sf300c .
             ?sf300c
                 xyz:code "c" ;
                 rdf:_1 ?dimensions_raw .
@@ -251,7 +268,8 @@ WHERE {
             BIND(REPLACE(REPLACE(?lc_0, "\\.$", ""), "^.*/", "") AS ?lc_id_x)
           }
           }  # end OPTIONAL wrapping the creator fields
-        }
+          }  # end inner per-record SERVICE
+        }  # end archive-listing SERVICE
       }
       GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
     }

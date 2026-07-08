@@ -46,17 +46,21 @@ diff.txt: docs/description.ttl inferred.ttl | validate
 
 graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 	@mkdir -p graph
-	java -jar tools/sparql-anything/sparql-anything.jar -q $< > $@
+	# -Dlog4j2.statusLoggerLevel=OFF: the SPARQL-Anything archive triplifier (the
+	# per-record MARC zip read, #81) trips Log4j's StatusLogger onto stdout, which
+	# would corrupt the Turtle. Silence it so only the RDF reaches $@.
+	java -Dlog4j2.statusLoggerLevel=OFF -jar tools/sparql-anything/sparql-anything.jar -q $< > $@
 
 # The construct query reads these source files (its x-sparql-anything SERVICEs);
-# rebuild the graph when any of them changes.
+# rebuild the graph when any of them changes. The MARC is a per-record zip archive
+# (#81), read via nested Archive -> XML triplifiers.
 graph/artists-books.ttl: \
 sources/artists-books.csv \
-sources/marc/artists-books-marc.xml
+sources/marc/artists-books-marc.zip
 
 graph/reference-works.ttl: \
 sources/reference-works.csv \
-sources/marc/reference-resources-marc.xml
+sources/marc/reference-resources-marc.zip
 
 # sources/citations.ttl is a committed frozen graph (issue #82, task 3) — no
 # recipe; Fuseki loads it alongside the two constructed graphs, so the site

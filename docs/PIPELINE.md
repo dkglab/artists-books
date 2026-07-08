@@ -13,8 +13,8 @@ flowchart TD
     zotero -->|"notes_export.sh"| notes["notes.xml<br/>('Cited:' note paragraphs)"]
     notes -->|"freeze_citations.py (one-time)"| citttl["sources/citations.ttl<br/>(frozen citation edges)"]
 
-    catalogs -->|"marc_harvest.py (YAZ)"| marc["artists-books-marc.xml"]
-    catalogs -->|"marc_harvest.py (YAZ)"| refmarc["reference-resources-marc.xml *"]
+    catalogs -->|"marc_harvest.py (YAZ)"| marc["artists-books-marc.zip<br/>(per-record MARC archive)"]
+    catalogs -->|"marc_harvest.py (YAZ)"| refmarc["reference-resources-marc.zip *"]
 
     %% ---- Stage 2: CONSTRUCT queries (SPARQL-Anything) ----
     csvs --> abrq{{"artists-books.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
@@ -44,7 +44,7 @@ flowchart TD
     class site output;
 ```
 
-`*` `reference-resources-marc.xml` is harvested but only minimally consumed: the
+`*` `reference-resources-marc.zip` is harvested but only minimally consumed: the
 construct query pulls just the primary creator (`100 $a`) from it, joined by
 `999 $a`; the rest of the reference graph comes from the CSV, and the remaining
 MARC fields (OCLC/WorldCat, secondary creators, …) are still pending.

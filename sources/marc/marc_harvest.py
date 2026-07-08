@@ -45,13 +45,17 @@ Strategy (see sources/marc/README.md):
   * Encoding    : both targets return UTF-8 bytes. UNC mislabels leader/09 as
                   MARC-8, so we rewrite leader/09 to 'a' (LC is already honest);
                   we do NOT transcode (that would double-encode).
-  * Output      : a single MARCXML <collection>. Per-CSV harvest state lives under
-                  harvest/<csv-stem>/ (combined.marc is append-only and resumable).
+  * Output      : a per-record zip archive (#81) -- one <key>.xml MARCXML document
+                  per record, read by the construct queries via nested Archive ->
+                  XML triplifiers. Reproducible bytes (entries sorted, fixed 1980
+                  mtimes) so a re-harvest that changes one record touches one entry.
+                  Per-CSV harvest state lives under harvest/<csv-stem>/
+                  (combined.marc is append-only and resumable).
 
-Run (from sources/, or let `make -C sources marc/<stem>-marc.xml` drive it):
-    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.xml
-    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.xml --limit 15
-    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.xml --combine
+Run (from sources/, or let `make -C sources marc/<stem>-marc.zip` drive it):
+    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.zip
+    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.zip --limit 15
+    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.zip --combine
 """
 import argparse
 import csv
@@ -65,6 +69,7 @@ import unicodedata
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+import zipfile
 
 HERE        = os.path.dirname(os.path.abspath(__file__))
 MARC_DIR    = os.path.join(HERE, "harvest")  # gitignored harvest state, per-CSV subdir
@@ -254,21 +259,59 @@ def row_key(row):
     return row.get("canonicalKey") or row.get("itemKey")
 
 
+def record_key(rec):
+    """A MARC record Element's 999 $a join key, or None."""
+    for df in rec.findall(f"{{{MARC_NS}}}datafield"):
+        if df.get("tag") == "999":
+            for sf in df.findall(f"{{{MARC_NS}}}subfield"):
+                if sf.get("code") == "a":
+                    return sf.text
+    return None
+
+
 def read_keyed_records(path):
     """[(key, record Element)] from a MARCXML file whose records carry their join
     key in 999 $a (records without one are skipped). Used for --premerged and the
     hand-supplied manual file."""
     if not path or not os.path.exists(path):
         return []
-    out = []
-    for rec in ET.parse(path).getroot().findall(f"{{{MARC_NS}}}record"):
-        key = next((sf.text for df in rec.findall(f"{{{MARC_NS}}}datafield")
-                    if df.get("tag") == "999"
-                    for sf in df.findall(f"{{{MARC_NS}}}subfield")
-                    if sf.get("code") == "a"), None)
-        if key:
-            out.append((key, rec))
-    return out
+    root = ET.parse(path).getroot()
+    # Accept both a <collection> of records and a bare <record> (per-record file).
+    records = root.findall(f"{{{MARC_NS}}}record") or (
+        [root] if root.tag == f"{{{MARC_NS}}}record" else [])
+    return [(k, rec) for rec in records if (k := record_key(rec)) is not None]
+
+
+def record_document(rec):
+    """One <record> serialized as a standalone <collection>-wrapped MARCXML doc,
+    mirroring the collection structure so the queries' `?record a marc:record`
+    traversal is unchanged -- only the container holds a single record."""
+    coll = ET.Element(f"{{{MARC_NS}}}collection")
+    coll.append(rec)
+    return ET.tostring(coll, encoding="unicode", xml_declaration=True)
+
+
+def write_record_zip(records, out_zip):
+    """Write records to a reproducible per-record zip archive (#81): one <key>.xml
+    per record (key from 999 $a), entries sorted with fixed 1980 mtimes so an
+    unchanged input gives byte-identical bytes and git shows no churn -- the same
+    discipline notes.zip uses (#79). The queries read the key from 999, not the
+    filename, so the <key>.xml naming is just for a stable, debuggable layout.
+    Returns (n_written, n_no_key)."""
+    ET.register_namespace("", MARC_NS)
+    docs, no_key = {}, 0
+    for rec in records:
+        key = record_key(rec)
+        if key is None:
+            no_key += 1
+            continue
+        docs[key] = record_document(rec)  # last wins on a duplicate key
+    with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED) as zf:
+        for key in sorted(docs):
+            info = zipfile.ZipInfo(f"{key}.xml", date_time=(1980, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            zf.writestr(info, docs[key])
+    return len(docs), no_key
 
 
 def server_targets(rows, server):
@@ -728,17 +771,24 @@ def combine(cfg):
             harvested_keys.add(key)
             n_manual += 1
 
-    ET.ElementTree(root).write(cfg["out"], encoding="unicode", xml_declaration=True)
+    # Emit a per-record zip archive (#81), not one big <collection> file: one
+    # <key>.xml per record, read by the construct queries via nested Archive -> XML
+    # triplifiers. Diffable (a re-harvest that changes one record touches one entry).
+    n_archive, n_nokey = write_record_zip(root.findall(f"{{{MARC_NS}}}record"), cfg["out"])
     total = len(records) + n_premerged + n_manual
     print(f"wrote {cfg['out']}: {len(records)} harvested + {n_premerged} premerged "
-          f"+ {n_manual} manual = {total} records (canonical key in 999 $a)")
+          f"+ {n_manual} manual = {total} records -> {n_archive} archive entries "
+          f"(canonical key in 999 $a)")
+    if n_nokey:
+        print(f"  WARNING: {n_nokey} records had no 999 $a and were dropped",
+              file=sys.stderr)
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--csv", required=True, help="input Zotero CSV")
-    ap.add_argument("--out", required=True, help="output MARCXML collection path")
+    ap.add_argument("--out", required=True, help="output per-record zip archive (#81)")
     ap.add_argument("--limit", type=int, help="only process first N pending per server")
     ap.add_argument("--combine", action="store_true",
                     help="just (re)build the output XML from existing harvest state")
