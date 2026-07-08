@@ -67,7 +67,13 @@ re-harvest to pick up new headings).
 
 ### ② Curate — edit `decisions.csv` by hand
 
-Each row is one candidate cluster. Fill in these columns:
+Each row is one candidate cluster. The **`labels`** column (right after
+`cluster`) is a read-only review aid — the raw `$a` heading text mined for that
+cluster, copied over from `candidates.csv` so a reviewer can tell what a bare
+cluster URI/slug actually is without leaving the file. Don't edit it; it's
+ignored by the build (`build-scheme.rq` reads columns by name and only touches
+`include=y` rows). It mirrors `candidates.csv`; after a re-mine, re-copy the
+`labels` column across for any new/changed clusters. Fill in the rest by hand:
 
 - **include** — `y` if this heading is a construction/production method, `n`
   otherwise (subject matter, literary genre, document type, etc.).
