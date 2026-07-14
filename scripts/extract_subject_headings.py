@@ -1,6 +1,7 @@
 import csv
 import xml.etree.ElementTree as ET
 from collections import Counter
+from collections import defaultdict
 
 # MARC XML namespace
 NS = {"marc": "http://www.loc.gov/MARC21/slim"}
@@ -83,7 +84,7 @@ for field in root.findall(".//marc:datafield", NS):
         elif ind2 == "6":
             vocabulary = "rvm"
 
-    # Optional data quality check Ryan mentioned
+    # Optional data quality check
     if tag == "650":
 
         ind2 = field.attrib.get("ind2")
@@ -102,8 +103,6 @@ for field in root.findall(".//marc:datafield", NS):
             "uri": uri,
         }
     )
-
-print(f"\nExtracted {len(subjects)} subject headings.")
 
 # Show a few examples
 print("\nFirst 10 extracted subjects:")
@@ -163,3 +162,87 @@ with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
         )
 
 print(f"\nWrote {len(subject_counts)} unique subject headings to {output_file}")
+print(f"\nExtracted {len(subjects)} subject headings.")
+
+uri_map = defaultdict(lambda: {"labels": set(), "vocabularies": set()})
+for subject in subjects:
+    uri = subject["uri"]
+    if not uri:
+        continue
+    uri_map[uri]["labels"].add(subject["heading"])
+    if subject["vocabulary"]:
+        uri_map[uri]["vocabularies"].add(subject["vocabulary"])
+
+print("\nURIs with multiple labels:\n")
+
+count = 0
+shown = 0
+
+for uri, info in uri_map.items():
+
+    if len(info["labels"]) > 1:
+
+        count += 1
+
+        if shown < 10:
+            print(uri)
+
+            for label in sorted(info["labels"]):
+                print("  -", label)
+
+            print()
+
+            shown += 1
+
+print(f"Found {count} URIs with multiple labels.")
+
+print("\nURI statistics")
+
+print("Unique URIs:", len(uri_map))
+
+with_uri = sum(1 for s in subjects if s["uri"])
+
+without_uri = len(subjects) - with_uri
+
+print("Subjects with URI:", with_uri)
+print("Subjects without URI:", without_uri)
+
+labels_without_uri = Counter()
+
+for subject in subjects:
+
+    if subject["uri"] == "":
+        labels_without_uri[subject["heading"]] += 1
+print("Unique labels without URI:", len(labels_without_uri))
+print("\nMost common labels without URI")
+
+for label, count in labels_without_uri.most_common(20):
+    print(count, label)
+
+# Export URI analysis
+uri_output = "uri_analysis.csv"
+
+with open(uri_output, "w", newline="", encoding="utf-8") as csvfile:
+
+    fieldnames = [
+        "uri",
+        "vocabularies",
+        "label_count",
+        "labels",
+    ]
+
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+
+    for uri, info in sorted(uri_map.items()):
+
+        writer.writerow(
+            {
+                "uri": uri,
+                "vocabularies": "; ".join(sorted(info["vocabularies"])),
+                "label_count": len(info["labels"]),
+                "labels": " | ".join(sorted(info["labels"])),
+            }
+        )
+
+print(f"\nWrote URI analysis to {uri_output}")
