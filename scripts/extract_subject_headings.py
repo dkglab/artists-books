@@ -53,16 +53,47 @@ for field in root.findall(".//marc:datafield", NS):
         if code in {"a", "x", "y", "z", "v"}:
             heading_parts.append(text)
 
-        # Vocabulary
+        # Vocabulary explicitly stored in $2
         elif code == "2":
             vocabulary = text.lower()
 
-        # URI
+        # URI stored in $0
         elif code == "0":
             uri = text
 
     heading = " -- ".join(heading_parts)
 
+    # Infer vocabulary from MARC indicator for 650 fields
+    if tag == "650" and not vocabulary:
+
+        ind2 = field.attrib.get("ind2")
+
+        if ind2 == "0":
+            vocabulary = "lcsh"
+        elif ind2 == "1":
+            vocabulary = "lcshac"
+        elif ind2 == "2":
+            vocabulary = "mesh"
+        elif ind2 == "3":
+            vocabulary = "nal"
+        elif ind2 == "4":
+            vocabulary = "unspecified"
+        elif ind2 == "5":
+            vocabulary = "csh"
+        elif ind2 == "6":
+            vocabulary = "rvm"
+
+    # Optional data quality check Ryan mentioned
+    if tag == "650":
+
+        ind2 = field.attrib.get("ind2")
+
+        if ind2 == "0" and vocabulary not in {"", "lcsh"}:
+            print("\nPotential inconsistency:")
+            print("Heading:", heading)
+            print("Vocabulary:", vocabulary)
+
+    # Append EVERY subject record
     subjects.append(
         {
             "tag": tag,
@@ -89,6 +120,18 @@ subject_counts = Counter(
     )
     for subject in subjects
 )
+
+# Count second indicators for 650 fields
+indicator_counts = Counter()
+
+for field in root.findall(".//marc:datafield", NS):
+    if field.attrib.get("tag") == "650":
+        ind2 = field.attrib.get("ind2", " ")
+        indicator_counts[ind2] += 1
+
+print("\n650 second indicator counts:")
+for ind2, count in sorted(indicator_counts.items()):
+    print(f"ind2='{ind2}': {count}")
 
 # Export CSV
 output_file = "subject_headings.csv"
