@@ -14,7 +14,7 @@ flowchart TD
     notes -->|"freeze_citations.py (one-time)"| citttl["sources/citations.ttl<br/>(frozen citation edges)"]
 
     catalogs -->|"marc_harvest.py (YAZ)"| marc["artists-books-marc.zip<br/>(per-record MARC archive)"]
-    catalogs -->|"marc_harvest.py (YAZ)"| refmarc["reference-resources-marc.zip *"]
+    catalogs -->|"marc_harvest.py (YAZ)"| refmarc["reference-works-marc.zip *"]
 
     %% ---- Stage 2: CONSTRUCT queries (SPARQL-Anything) ----
     csvs --> abrq{{"artists-books.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
@@ -44,7 +44,7 @@ flowchart TD
     class site output;
 ```
 
-`*` `reference-resources-marc.zip` is harvested but only minimally consumed: the
+`*` `reference-works-marc.zip` is harvested but only minimally consumed: the
 construct query pulls just the primary creator (`100 $a`) from it, joined by
 `999 $a`; the rest of the reference graph comes from the CSV, and the remaining
 MARC fields (OCLC/WorldCat, secondary creators, …) are still pending.
@@ -54,4 +54,4 @@ the three Zotero libraries into the canonical `artists-books.csv` /
 `reference-works.csv` lists, and `freeze_citations.py` emits `sources/citations.ttl`
 against the canonical URIs — both one-time Phase-0 steps, committed and loaded as-is.
 The former live citation match (the `*-crosswalk.csv` fuzzy bridge feeding a
-`reference-resources.rq` citation branch) has left the repeatable build.
+`reference-resources.rq` citation branch) has been removed from the repo.

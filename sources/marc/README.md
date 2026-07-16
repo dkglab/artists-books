@@ -1,8 +1,8 @@
 # MARC harvest track
 
 `marc/` holds the Z39.50 MARC-harvest track: `marc_harvest.py`, the harvested
-`*-marc.zip` archives, the hand-supplied `reference-resources-manual.xml`, and
-`reference-resources-unresolved.csv`. Resumable harvest state lives under
+`*-marc.zip` archives, the hand-supplied `reference-works-manual.xml`, and
+`reference-works-unresolved.csv`. Resumable harvest state lives under
 `marc/harvest/` (gitignored; only the committed `*-marc.zip` is a build product).
 
 The harvest product is a **per-record zip archive** (#81), not one big
@@ -14,11 +14,13 @@ legacy monolithic `*-marc.xml` to this format without a re-harvest).
 
 Each record is stamped with a synthetic `999 $a <key>` join key: for the
 artists' books this is the **canonical** key (the deduped lib 1∪2∪3 identity,
-#82/#84); for the reference works it is the lib-3 `itemKey` (already canonical).
+#82/#84); for the reference works it is the canonical key from the deduped
+`reference-works.csv` (a lib-3 `itemKey`, which for the reference set is already
+canonical).
 The graph queries join MARC to their CSV rows on this key (read from the record's
 999, not the entry filename). See
 [`../zotero/README.md`](../zotero/README.md) for the database and
-[`../README.md`](../README.md) for the crosswalk pipeline. For a field-level
+[`../README.md`](../README.md) for the canonical dedup + citation pipeline. For a field-level
 analysis of the harvested artists'-book records see
 [`../../docs/MARC-RECORDS.md`](../../docs/MARC-RECORDS.md).
 
@@ -79,12 +81,18 @@ python3 marc/rekey_held.py --in-marc <pre-#84 lib-1 marc.xml> \
 
 ## Reference-work MARC harvest
 
-`marc_harvest.py` also harvests the reference works — `zotero/reference-resources.csv`
-→ **`reference-resources-marc.zip`** — via the generic Makefile pattern rule
-`marc/%-marc.zip: zotero/%.csv` (the books track has its own target, above). Each
-record is stamped with a synthetic `999 $a <itemKey>` so it joins back to its
-Zotero item, and harvest state (resumable) lives under `harvest/<csv-stem>/`
-(gitignored; only the `<stem>-marc.zip` product is committed).
+`marc_harvest.py` also harvests the reference works — the deduped canonical
+`reference-works.csv` (at the `sources/` root, `canonicalKey` column) →
+**`reference-works-marc.zip`** — via its own explicit Makefile target, like the
+books track (not the `marc/%-marc.zip` pattern rule, which is keyed to the
+per-library `zotero/` exports). Each record is stamped with a synthetic
+`999 $a <canonicalKey>` so it joins its `reference-works.rq` row directly on
+`?canonical_key`, and harvest state (resumable) lives under `harvest/<csv-stem>/`
+(gitignored; only the `<stem>-marc.zip` product is committed). Harvesting the
+deduped canonical list (rather than the pre-dedup 157-row "Reference resources"
+collection) keeps the archive to exactly the 155 canonical works — an earlier
+pre-dedup harvest also fetched a couple of losing-key records that then failed to
+join any canonical row.
 
 The reference works need a **different keying strategy** than the books: they are
 mostly catalogued as *Open WorldCat*, not UNC bibs, so a UNC-bib lookup finds
@@ -98,20 +106,20 @@ almost none. The harvester instead tries, per item:
 across a chain of **nine catalogues** — UNC, Library of Congress, K10plus, Penn
 State, LIBRIS (Z39.50), then Getty, Clark, NYARC, Harvard (Alma SRU/CQL) —
 falling through to the next server until a record verifies. A handful of
-hand-supplied records are merged from `reference-resources-manual.xml`. Result:
-**~155 of the 157** reference works get a record; the residual (e.g. webpages
-with no catalogue record) is listed in `reference-resources-unresolved.csv`.
+hand-supplied records are merged from `reference-works-manual.xml`. Result:
+**153 of the 155** canonical reference works get a record; the residual (two
+webpages with no catalogue record) is listed in `reference-works-unresolved.csv`.
 
 ```sh
 # from sources/:
-make -C sources marc/reference-resources-marc.zip
+make -C sources marc/reference-works-marc.zip
 # or directly (also run from sources/):
-python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.zip
+python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc.zip
 ```
 
 > **Minimally wired into the graph.** `reference-works.rq` builds the
 > `ab:ReferenceWork` nodes from the canonical `reference-works.csv`, and now also
-> reads a **basic slice** of `reference-resources-marc.zip` — just the primary
+> reads a **basic slice** of `reference-works-marc.zip` — just the primary
 > creator (`100 $a`), joined by `999 $a` — emitted as a `bflc:PrimaryContribution`.
 > The rest of the MARC's richer data (OCLC/WorldCat, secondary creators,
 > relator roles, identity URIs, extent/dimensions) isn't in the graph yet.

@@ -9,31 +9,15 @@ zotero/all-items.csv: zotero/items_export.sh zotero/items_export.sql
 zotero/artists-books.csv: zotero/items_export.sh zotero/items_export.sql
 	./zotero/items_export.sh "Artists' Books Collection" > $@
 
-zotero/reference-resources.csv: zotero/items_export.sh zotero/items_export.sql
-	./zotero/items_export.sh "Reference resources" > $@
-
-# The lib-3 citation-index records carrying a "Cited:" note -- the candidate
-# target set for the ABC <-> cited-record crosswalk (issue #55).
-zotero/cited-records.csv: zotero/cited_records_export.sh zotero/cited_records_export.sql
-	./zotero/cited_records_export.sh > $@
+# (No reference-works export target: the canonical reference-works.csv is built by
+# dedup.py straight from zotero.sqlite, so the "Reference resources" collection
+# needs no intermediate CSV export.)
 
 # Zotero "Cited:" notes normalized to well-formed XHTML for SPARQL-Anything
-# (issue #53). The construct query joins these onto ABC pages via the crosswalk.
+# (issue #53). freeze_citations.py reads these to build the frozen citations.ttl.
 zotero/notes.xml: zotero/notes_export.sh zotero/notes_export.sql zotero/notes_export.py
 	./zotero/notes_export.sh > $@
 
-# ABC <-> cited-record crosswalk (issue #55). Reconciles each ABC book to the
-# lib-3 record(s) describing the same work (OCLC -> ISBN -> title -> fuzzy), so
-# the Cited notes living on those records can be joined onto ABC pages. The
-# matcher runs in an isolated venv built under tools/fuzzy-match/.
-#
-# NOTE: this is a legacy Phase-0 target (the abc<->cited crosswalk), retired from
-# the repeatable build (citations are now frozen in citations.ttl). match.py reads
-# a single-collection marc/artists-books-marc.xml, but #81 replaced that monolith
-# with the per-record archive marc/artists-books-marc.zip, so this recipe is no
-# longer runnable as-is; the committed abc-master-crosswalk.csv stays as a frozen
-# artifact. (zotero/artists-books.csv and the MARC were always read, not
-# prerequisites, so a crosswalk rebuild never triggered a re-harvest.)
 FUZZY := ../tools/fuzzy-match
 
 # One-time cross-library dedup (issue #82, Phase 0). Collapses the same work
@@ -56,8 +40,9 @@ artists-books.csv reference-works.csv artists-books-dedup-review.csv &: \
 # canonical URIs from the two dedup lists above, capturing page numbers (#43/#44)
 # from the note markup. Generated once, committed, and loaded into Fuseki as-is
 # (no citations.rq); the review CSV surfaces the uncertain/unmatched paragraphs.
-# artists-books.csv/reference-works.csv are committed inputs with their own
-# target above, so (like the crosswalks) they are read but not prerequisites.
+# The paragraph -> reference-work match reuses cite_match.py's matcher. artists-books.csv
+# and reference-works.csv are committed inputs with their own target above, so they
+# are read but not listed as prerequisites (a rebuild here doesn't re-run the dedup).
 citations.ttl citations-review.csv &: zotero/notes.xml \
 		$(FUZZY)/freeze_citations.py $(FUZZY)/cite_match.py | $(FUZZY)/venv/bin/python
 	$(FUZZY)/venv/bin/python $(FUZZY)/freeze_citations.py \
@@ -67,28 +52,6 @@ citations.ttl citations-review.csv &: zotero/notes.xml \
 		--out citations.ttl \
 		--review citations-review.csv
 
-abc-master-crosswalk.csv: zotero/cited-records.csv $(FUZZY)/match.py | $(FUZZY)/venv/bin/python
-	$(FUZZY)/venv/bin/python $(FUZZY)/match.py \
-		--abc zotero/artists-books.csv \
-		--marc marc/artists-books-marc.xml \
-		--cited zotero/cited-records.csv \
-		--out $@
-
-# Citation <-> reference-resource crosswalk (issue #42). Each "Cited:" note
-# paragraph (zotero/notes.xml) is a free-text reference to a reference work;
-# this reconciles it to a row in zotero/reference-resources.csv (the title
-# appears verbatim in the paragraph -> substring match, <em> title + year
-# corroborate), so citations can be minted under reference/<refItemKey>/...
-# abc-master-crosswalk.csv scopes the paragraphs to the cited records actually
-# in use. Runs in the shared fuzzy-match venv; low-confidence/unmatched rows
-# carry review=yes and are excluded from the construct query's auto-join.
-citation-crosswalk.csv: zotero/notes.xml zotero/reference-resources.csv abc-master-crosswalk.csv \
-		$(FUZZY)/cite_match.py | $(FUZZY)/venv/bin/python
-	$(FUZZY)/venv/bin/python $(FUZZY)/cite_match.py \
-		--notes zotero/notes.xml \
-		--refs zotero/reference-resources.csv \
-		--abc-crosswalk abc-master-crosswalk.csv \
-		--out $@
 
 # Build the fuzzy-match venv on demand (order-only prerequisite above).
 $(FUZZY)/venv/bin/python:
@@ -108,18 +71,30 @@ YAZ := ../tools/yaz-client
 # record -- not one big <collection> file; the construct queries read it via
 # nested Archive -> XML triplifiers.
 #
-# The canonical artists'-book harvest (issue #84). Unlike the reference track
-# (pattern rule below), the canonical AB list lives at the sources/ root with a
-# canonicalKey column, so this explicit rule overrides the marc/%-marc.zip
-# pattern. The ~1,340 already-harvested held books are NOT re-harvested: they are
-# merged from the frozen, re-keyed marc/artists-books-held-marc.xml (a one-time
-# artifact of marc/rekey_held.py, so an order-only prerequisite) via --premerged,
-# and only the ~6,619 non-held books hit the Z39.50/SRU servers here.
+# Both canonical harvests read a deduped list at the sources/ root (canonicalKey
+# column), not a per-library zotero/ export, so they get explicit rules that
+# override the marc/%-marc.zip pattern below.
+#
+# The canonical artists'-book harvest (issue #84). The ~1,340 already-harvested
+# held books are NOT re-harvested: they are merged from the frozen, re-keyed
+# marc/artists-books-held-marc.xml (a one-time artifact of marc/rekey_held.py, so
+# an order-only prerequisite) via --premerged, and only the ~6,619 non-held books
+# hit the Z39.50/SRU servers here.
 marc/artists-books-marc.zip: artists-books.csv \
 		| marc/artists-books-held-marc.xml marc/marc_harvest.py \
 		  $(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch
 	python3 marc/marc_harvest.py --csv $< --out $@ \
 		--premerged marc/artists-books-held-marc.xml
+
+# The canonical reference-work harvest. Reads the deduped reference-works.csv (not
+# the pre-dedup "Reference resources" collection), so each record is stamped with
+# the canonical key -- keeping the archive to exactly the canonical works, with no
+# losing-key duplicates. row_key() prefers canonicalKey, and the hand-supplied
+# marc/reference-works-manual.xml (derived from the CSV stem) is
+# merged for the items no reachable catalogue serves.
+marc/reference-works-marc.zip: reference-works.csv | marc/marc_harvest.py \
+		$(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch
+	python3 marc/marc_harvest.py --csv $< --out $@
 
 marc/%-marc.zip: zotero/%.csv | marc/marc_harvest.py \
 		$(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch
