@@ -116,14 +116,17 @@ YAZ := ../tools/yaz-client
 # artifact of marc/rekey_held.py, so an order-only prerequisite) via --premerged,
 # and only the ~6,619 non-held books hit the Z39.50/SRU servers here.
 marc/artists-books-marc.zip: artists-books.csv \
-		| marc/artists-books-held-marc.xml marc/marc_harvest.py $(YAZ)/bin/yaz-client
+		| marc/artists-books-held-marc.xml marc/marc_harvest.py \
+		  $(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch
 	python3 marc/marc_harvest.py --csv $< --out $@ \
 		--premerged marc/artists-books-held-marc.xml
 
-marc/%-marc.zip: zotero/%.csv | marc/marc_harvest.py $(YAZ)/bin/yaz-client
+marc/%-marc.zip: zotero/%.csv | marc/marc_harvest.py \
+		$(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch
 	python3 marc/marc_harvest.py --csv $< --out $@
 
 # Build the YAZ toolkit on demand (order-only prerequisite above). The same
-# make invocation produces yaz-marcdump alongside yaz-client.
-$(YAZ)/bin/yaz-client:
+# make invocation produces yaz-marcdump and the zoomfetch driver (issue #85)
+# alongside yaz-client.
+$(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch:
 	$(MAKE) -C $(YAZ)
