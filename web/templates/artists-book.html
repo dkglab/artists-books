@@ -51,6 +51,11 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
+  {{ with .summary }}
+  <dt>Summary</dt>
+    <dd>{{ . }}</dd>
+  {{ end }}
+
   {{ with .isbns }}
   <dt>ISBN</dt>
   <dd>{{ . }}</dd>

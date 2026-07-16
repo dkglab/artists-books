@@ -21,6 +21,7 @@ CONSTRUCT {
     bf:extent ?bookExtent ;
     bf:dimensions ?dimensions ;
     bf:editionStatement ?edition ;
+    bf:summary ?bookSummary ;
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
@@ -59,6 +60,10 @@ CONSTRUCT {
   ?creator a bf:Agent ;
     rdfs:label ?creator_name ;
     .
+
+  ?bookSummary
+    a bf:Summary ;
+    rdfs:label ?summary .
 
 }
 WHERE {
@@ -127,6 +132,7 @@ WHERE {
              (SAMPLE(?extent_x) AS ?extent)
              (SAMPLE(?dimensions_x) AS ?dimensions)
              (SAMPLE(?edition_x) AS ?edition)
+             (SAMPLE(?summary_x) AS ?summary)
              (SAMPLE(?name_x)  AS ?creator_name)
              (SAMPLE(?viaf_x)  AS ?viaf)
              (SAMPLE(?isni_x)  AS ?isni)
@@ -210,6 +216,23 @@ WHERE {
             BIND(
                 REPLACE(?edition_raw, "[\\s.;:/]+$", "")
                 AS ?edition_x
+            )
+          }
+
+          OPTIONAL {
+            ?record fx:anySlot ?df520 .
+            ?df520
+                a marc:datafield ;
+                xyz:tag "520" .
+
+            ?df520 fx:anySlot ?sf520a .
+            ?sf520a
+                xyz:code "a" ;
+                rdf:_1 ?summary_raw .
+
+            BIND(
+                REPLACE(?summary_raw, "[\\s]+$", "")
+                AS ?summary_x
             )
           }
 
@@ -347,6 +370,7 @@ WHERE {
     # stay unbound and no triple is emitted.
     BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "item/", ?canonical_key, "/oclc"), ?sentinel) AS ?bookOCLCNum)
     BIND(IF(BOUND(?extent), fx:entity(ab:, "item/", ?canonical_key, "/extent"), ?sentinel) AS ?bookExtent)
+    BIND(IF(BOUND(?summary), fx:entity(ab:, "item/", ?canonical_key, "/summary"), ?sentinel) AS ?bookSummary)
     BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
   }
 }
