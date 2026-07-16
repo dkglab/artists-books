@@ -396,11 +396,17 @@ def run_batch(cfg, conn, batch, qsleep, show_n):
                 cmds.append(f"show {k}")
             cmds.append(f"sleep {qsleep}")
     cmds.append("quit")
-    proc = subprocess.run(
-        [YAZ_CLIENT, "-m", tmp, conn],
-        input=("\n".join(cmds) + "\n").encode(),
-        capture_output=True, timeout=60 + len(probes) * 10,
-    )
+    try:
+        proc = subprocess.run(
+            [YAZ_CLIENT, "-m", tmp, conn],
+            input=("\n".join(cmds) + "\n").encode(),
+            capture_output=True, timeout=60 + len(probes) * 10,
+        )
+    except subprocess.TimeoutExpired:
+        # A hung/dropped connection (yaz-client never returned). Treat it like an
+        # unalignable batch: the caller backs off and retries, then defers the
+        # still-stuck items to the next run -- never crash a resumable harvest.
+        return None, ""
     # yaz-client echoes retrieved records to stdout too, and some targets (e.g.
     # SUDOC) emit non-UTF-8 bytes there, so decode leniently -- we only read the
     # ASCII "Number of hits" lines; the actual records come from the -m file.
@@ -603,7 +609,7 @@ def verify_title(cfg, record_bytes, row):
     return bool(cyear and ryear == cyear)
 
 
-def harvest(cfg, limit=None):
+def harvest(cfg, limit=None, servers=None):
     os.makedirs(cfg["state"], exist_ok=True)
     rows = read_rows(cfg)
     rowmap = {row_key(r): r for r in rows}
@@ -613,7 +619,7 @@ def harvest(cfg, limit=None):
     for key, _rec in read_keyed_records(cfg.get("premerged")):
         ok_keys.add(key)
 
-    for server in SERVERS:
+    for server in (servers or SERVERS):
         name = server["name"]
         targets = server_targets(rows, server)
         pending = [(k, p) for (k, p) in targets
@@ -794,9 +800,22 @@ if __name__ == "__main__":
                     help="just (re)build the output XML from existing harvest state")
     ap.add_argument("--premerged", help="MARCXML of pre-keyed records (999 $a) to "
                     "skip during harvest and merge on combine (e.g. re-keyed held MARC)")
+    ap.add_argument("--servers", help="comma-separated server names to query, in the "
+                    "given order (default: all of SERVERS in their listed order). "
+                    "Resumable state is per (item, server), so this only restricts "
+                    "which servers run this pass -- e.g. --servers harvard,libris")
     args = ap.parse_args()
     cfg = make_cfg(args.csv, args.out, premerged=args.premerged)
+    servers = None
+    if args.servers:
+        by_name = {s["name"]: s for s in SERVERS}
+        names = [n.strip() for n in args.servers.split(",") if n.strip()]
+        unknown = [n for n in names if n not in by_name]
+        if unknown:
+            ap.error(f"unknown server(s): {', '.join(unknown)}; "
+                     f"known: {', '.join(by_name)}")
+        servers = [by_name[n] for n in names]
     if args.combine:
         combine(cfg)
     else:
-        harvest(cfg, limit=args.limit)
+        harvest(cfg, limit=args.limit, servers=servers)
