@@ -40,15 +40,16 @@ The stages, and where each is documented in depth:
    analysis).
 3. **CSV + MARCXML → RDF graph.** Two
    [SPARQL-Anything](https://sparql-anything.cc/) CONSTRUCT queries
-   (`queries/artists-books.rq`, `queries/reference-resources.rq`) emit
+   (`queries/artists-books.rq`, `queries/reference-works.rq`) emit
    [BIBFRAME](https://www.loc.gov/bibframe/) plus a custom `ab:`
-   namespace into `graph/*.ttl`. Currently 433 citations link 194
-   books to 43 reference works. → [`CLAUDE.md`](CLAUDE.md) (query
-   architecture, URI minting),
+   namespace into `graph/*.ttl`. The citation edges are not constructed
+   here — they are the frozen `sources/citations.ttl` (issue #82): 5,022
+   citations link 3,896 books to 54 reference works. → [`CLAUDE.md`](CLAUDE.md)
+   (query architecture, URI minting),
    [`docs/QUERY-PERFORMANCE.md`](docs/QUERY-PERFORMANCE.md).
 4. **RDF graph → website.** [Apache
-   Fuseki](https://jena.apache.org/documentation/fuseki2/) loads both
-   graphs and serves a local SPARQL endpoint;
+   Fuseki](https://jena.apache.org/documentation/fuseki2/) loads the two
+   constructed graphs plus the frozen citations and serves a local SPARQL endpoint;
    [Snowman](https://github.com/glaciers-in-archives/snowman) runs the
    SELECT queries in `web/queries/` against it and renders the Go
    templates in `web/templates/` into `web/site/`. →

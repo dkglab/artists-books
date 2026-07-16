@@ -26,22 +26,36 @@ Strategy (see sources/marc/README.md):
                   author surname or the year; otherwise it is rejected (logged to
                   review.tsv). This guards the synthetic-999 join against a
                   coincidental title match being stamped onto the wrong itemKey.
-  * Join key    : the Zotero itemKey. Each retrieved record is stamped with a
-                  synthetic 999 $a <itemKey> $b <value> $c <keytype> $d <server>
-                  field -- no content-based join.
+  * Join key    : the CSV's canonical key (row["canonicalKey"], falling back to
+                  the legacy row["itemKey"]; see row_key). Each retrieved record is
+                  stamped with a synthetic 999 $a <key> $b <value> $c <keytype>
+                  $d <server> field -- no content-based join. Since #82/#84 the
+                  canonical harvest runs off the deduped lists
+                  (sources/artists-books.csv / reference-works.csv) and stamps the
+                  *canonical* key in 999 $a, so queries/artists-books.rq joins MARC
+                  directly on ?canonical_key.
+  * Premerged   : legacy MARC already carrying its 999 $a (e.g. the re-keyed lib-1
+                  held records in marc/artists-books-held-marc.xml -- see
+                  marc/rekey_held.py) can be supplied with --premerged: those keys
+                  are skipped during harvest and the records merged in combine(),
+                  so the ~1,340 held books need no re-harvest.
   * Politeness  : one serial connection per server per batch, with a `sleep`
                   between queries and a pause between batches (more conservative
                   for LC, a shared national service).
   * Encoding    : both targets return UTF-8 bytes. UNC mislabels leader/09 as
                   MARC-8, so we rewrite leader/09 to 'a' (LC is already honest);
                   we do NOT transcode (that would double-encode).
-  * Output      : a single MARCXML <collection>. Per-CSV harvest state lives under
-                  harvest/<csv-stem>/ (combined.marc is append-only and resumable).
+  * Output      : a per-record zip archive (#81) -- one <key>.xml MARCXML document
+                  per record, read by the construct queries via nested Archive ->
+                  XML triplifiers. Reproducible bytes (entries sorted, fixed 1980
+                  mtimes) so a re-harvest that changes one record touches one entry.
+                  Per-CSV harvest state lives under harvest/<csv-stem>/
+                  (combined.marc is append-only and resumable).
 
-Run (from sources/, or let `make -C sources marc/<stem>-marc.xml` drive it):
-    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.xml
-    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.xml --limit 15
-    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.xml --combine
+Run (from sources/, or let `make -C sources marc/<stem>-marc.zip` drive it):
+    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.zip
+    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.zip --limit 15
+    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.zip --combine
 """
 import argparse
 import csv
@@ -55,6 +69,7 @@ import unicodedata
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+import zipfile
 
 HERE        = os.path.dirname(os.path.abspath(__file__))
 MARC_DIR    = os.path.join(HERE, "harvest")  # gitignored harvest state, per-CSV subdir
@@ -62,7 +77,10 @@ MARC_DIR    = os.path.join(HERE, "harvest")  # gitignored harvest state, per-CSV
 # YAZ is built under tools/yaz-client/ (see tools/yaz-client/Makefile), not
 # installed system-wide. Resolve the binaries from there so the harvest uses our
 # self-contained build rather than whatever happens to be on $PATH.
-YAZ_BIN     = os.path.normpath(os.path.join(HERE, os.pardir, "tools", "yaz-client", "bin"))
+# HERE is sources/marc/; the toolkit lives at the repo root under tools/, so two
+# levels up (sources/marc -> sources -> repo root), matching the Makefile's
+# ../tools/yaz-client when run from sources/.
+YAZ_BIN     = os.path.normpath(os.path.join(HERE, os.pardir, os.pardir, "tools", "yaz-client", "bin"))
 YAZ_CLIENT  = os.path.join(YAZ_BIN, "yaz-client")
 YAZ_MARCDUMP = os.path.join(YAZ_BIN, "yaz-marcdump")
 
@@ -77,54 +95,75 @@ MARC_NS     = "http://www.loc.gov/MARC21/slim"
 # to "z3950" (Bib-1 prefix queries via yaz-client); "sru" servers are queried
 # over HTTP/CQL and return MARCXML, which is converted to binary on ingest so
 # the rest of the pipeline is identical.
+#
+# Precedence is by *relevance to artist's books*, not catalogue size or measured
+# hit rate (the harvest is a waterfall -- each server only sees the residual its
+# predecessors missed, so per-server rates are not comparable; see issue #88):
+#   1. UNC first          -- home institution; prefer its own holdings/call numbers.
+#   2. the art libraries  -- NYARC/Getty/Clark hold the artist's-book exhibition
+#                            and dealer ephemera the general catalogues lack, and
+#                            catalogue it best, so prefer their records when they
+#                            have the work (a full-corpus experiment over the
+#                            non-held residual bore this out: NYARC ~15%, Getty
+#                            ~8% even on the hardest leftovers -- issue #88).
+#   3. the big US libraries -- LC, Harvard (English-language cataloguing).
+#   4. the big EU library   -- K10plus (the ~80M-record German union catalogue).
+#   5. the rest             -- PSU and LIBRIS, both near-dead weight (~0.7% and
+#                            ~0.6% yield); kept as a last reach but demoted so
+#                            they never pre-empt a better-catalogued record.
 SERVERS = [
+    # 1. UNC (home institution) -- Innopac v1.1 over Z39.50.
     {"name": "unc", "conn": "tcp:afton.lib.unc.edu:210/INNOPAC",
      # bib/isbn are exact-identifier lookups (trusted); title/title-author are
      # verified against the CSV like the fallbacks, reaching UNC-held reference
      # works that carry no ISBN or III bib number in the Zotero export.
+     # batch kept small: UNC's Innopac v1.1 Z39.50 server drops/throttles a large
+     # multi-query session (a 50-probe batch came back consistently unalignable,
+     # while 8-10 aligns cleanly), so match the fallbacks' batch of 10.
      "keytypes": ("bib", "isbn", "title-author", "title"),
-     "batch": 50, "qsleep": 0.4, "bsleep": 2, "show_n": 3},
+     "batch": 10, "qsleep": 0.4, "bsleep": 2, "show_n": 3},
+    # 2. Art libraries (Ex Libris Alma, SRU/CQL) -- hold and best catalogue the
+    #    artist's-book ephemera the general catalogues lack. Return MARCXML/UTF-8.
+    # NYARC -- New York Art Resources Consortium (MoMA, Frick, Brooklyn Museum).
+    {"name": "nyarc", "conn": "https://na01.alma.exlibrisgroup.com/view/sru/01NYA_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # Getty Research Institute, a premier art library.
+    {"name": "getty", "conn": "https://na01.alma.exlibrisgroup.com/view/sru/01GRI_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # Clark Art Institute, another art library.
+    {"name": "clark", "conn": "https://na05.alma.exlibrisgroup.com/view/sru/01CLARKART_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # 3. Big US libraries -- English-language cataloguing.
+    # LC (Z39.50): a shared national service, throttled gentler than UNC. UTF-8.
     {"name": "lc",  "conn": "tcp:lx2.loc.gov:210/LCDB",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
-    # K10plus: the GBV/SWB union catalogue (~200 German/Austrian libraries),
-    # strong on art and humanities and international holdings -- a good reach for
-    # the European livre d'artiste / Kunstlerbuch reference works. Honest UTF-8.
+    # Harvard (Ex Libris Alma), a very large research library on the na03 pod.
+    {"name": "harvard", "conn": "https://na03.alma.exlibrisgroup.com/view/sru/01HVD_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # 4. Big EU library -- K10plus, the GBV/SWB union catalogue (~200 German/
+    #    Austrian libraries), strong on art/humanities and international holdings:
+    #    a good reach for the European livre d'artiste / Kunstlerbuch. Honest UTF-8.
     {"name": "k10plus", "conn": "tcp:sru.k10plus.de:210/opac-de-627",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
+    # 5. The rest -- near-dead weight, kept only as a last reach (see #88).
     # Penn State (Sirsi Unicorn), a large US research library. Honest UTF-8.
     {"name": "psu", "conn": "tcp:zcat.libraries.psu.edu:2200/Unicorn",
+     "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
+    # LIBRIS, Sweden's national union catalogue. MARC21 in UTF-8.
+    {"name": "libris", "conn": "tcp:z3950.libris.kb.se:210/libris",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
     # NOTE: SUDOC (carmin.sudoc.abes.fr/ABES-Z39-PUBLIC) is reachable and would
     # reach the French references, but its public endpoint emits records in a
     # non-standard encoding that mislabels itself UTF-8 and that yaz cannot
     # cleanly transcode (accented text is mangled or dropped), so it is omitted.
-    # LIBRIS, Sweden's national union catalogue. MARC21 in UTF-8.
-    {"name": "libris", "conn": "tcp:z3950.libris.kb.se:210/libris",
-     "keytypes": ("isbn", "title-author", "title"),
-     "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
-    # Getty Research Institute (Ex Libris Alma), a premier art library, queried
-    # over SRU/CQL. Holds much of the artist's-book exhibition/dealer ephemera
-    # the other catalogues lack. Returns MARCXML in UTF-8.
-    {"name": "getty", "conn": "https://na01.alma.exlibrisgroup.com/view/sru/01GRI_INST",
-     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
-     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
-    # Clark Art Institute (Ex Libris Alma), another art library on SRU/CQL.
-    {"name": "clark", "conn": "https://na05.alma.exlibrisgroup.com/view/sru/01CLARKART_INST",
-     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
-     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
-    # NYARC -- New York Art Resources Consortium (MoMA, Frick, Brooklyn Museum),
-    # Ex Libris Alma; strong on artist's-book exhibition ephemera. SRU/CQL.
-    {"name": "nyarc", "conn": "https://na01.alma.exlibrisgroup.com/view/sru/01NYA_INST",
-     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
-     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
-    # Harvard (Ex Libris Alma), a very large research library with an open SRU
-    # endpoint on the na03 pod. Broad reach for the US/European reference tail.
-    {"name": "harvard", "conn": "https://na03.alma.exlibrisgroup.com/view/sru/01HVD_INST",
-     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
-     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
 ]
 
 # Identifier keys are trusted on a hit; title keys must be verified. Accept a
@@ -136,7 +175,7 @@ TITLE_STRONG    = 0.85
 TITLE_WEAK      = 0.60
 
 
-def make_cfg(csv_path, out_xml):
+def make_cfg(csv_path, out_xml, premerged=None):
     """Resolve all paths for one CSV; harvest state lives in harvest/<csv-stem>/."""
     csv_path = os.path.abspath(csv_path)
     out_xml = os.path.abspath(out_xml)
@@ -153,6 +192,9 @@ def make_cfg(csv_path, out_xml):
         # Committed records supplied by hand for items no reachable catalogue
         # serves (each already carries its 999 $a itemKey); merged by combine().
         "manual": os.path.join(os.path.dirname(out_xml), base + "-manual.xml"),
+        # Optional pre-keyed MARC (records already carrying their 999 $a) to skip
+        # during harvest and merge in combine() -- e.g. the re-keyed held records.
+        "premerged": os.path.abspath(premerged) if premerged else None,
     }
 
 
@@ -232,6 +274,67 @@ def read_rows(cfg):
         return list(csv.DictReader(fh))
 
 
+def row_key(row):
+    """Join key stamped into 999 $a: the canonical key (#82/#84 deduped identity),
+    falling back to the legacy per-library itemKey for older CSVs."""
+    return row.get("canonicalKey") or row.get("itemKey")
+
+
+def record_key(rec):
+    """A MARC record Element's 999 $a join key, or None."""
+    for df in rec.findall(f"{{{MARC_NS}}}datafield"):
+        if df.get("tag") == "999":
+            for sf in df.findall(f"{{{MARC_NS}}}subfield"):
+                if sf.get("code") == "a":
+                    return sf.text
+    return None
+
+
+def read_keyed_records(path):
+    """[(key, record Element)] from a MARCXML file whose records carry their join
+    key in 999 $a (records without one are skipped). Used for --premerged and the
+    hand-supplied manual file."""
+    if not path or not os.path.exists(path):
+        return []
+    root = ET.parse(path).getroot()
+    # Accept both a <collection> of records and a bare <record> (per-record file).
+    records = root.findall(f"{{{MARC_NS}}}record") or (
+        [root] if root.tag == f"{{{MARC_NS}}}record" else [])
+    return [(k, rec) for rec in records if (k := record_key(rec)) is not None]
+
+
+def record_document(rec):
+    """One <record> serialized as a standalone <collection>-wrapped MARCXML doc,
+    mirroring the collection structure so the queries' `?record a marc:record`
+    traversal is unchanged -- only the container holds a single record."""
+    coll = ET.Element(f"{{{MARC_NS}}}collection")
+    coll.append(rec)
+    return ET.tostring(coll, encoding="unicode", xml_declaration=True)
+
+
+def write_record_zip(records, out_zip):
+    """Write records to a reproducible per-record zip archive (#81): one <key>.xml
+    per record (key from 999 $a), entries sorted with fixed 1980 mtimes so an
+    unchanged input gives byte-identical bytes and git shows no churn -- the same
+    discipline notes.zip uses (#79). The queries read the key from 999, not the
+    filename, so the <key>.xml naming is just for a stable, debuggable layout.
+    Returns (n_written, n_no_key)."""
+    ET.register_namespace("", MARC_NS)
+    docs, no_key = {}, 0
+    for rec in records:
+        key = record_key(rec)
+        if key is None:
+            no_key += 1
+            continue
+        docs[key] = record_document(rec)  # last wins on a duplicate key
+    with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED) as zf:
+        for key in sorted(docs):
+            info = zipfile.ZipInfo(f"{key}.xml", date_time=(1980, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            zf.writestr(info, docs[key])
+    return len(docs), no_key
+
+
 def server_targets(rows, server):
     """[(itemKey, [(keytype, value, query), ...])] for rows with >=1 key this
     server can use, in the server's keytype precedence order. Queries are
@@ -247,7 +350,7 @@ def server_targets(rows, server):
                 if query:
                     probes.append((kt, value, query))
         if probes:
-            targets.append((row["itemKey"], probes))
+            targets.append((row_key(row), probes))
     return targets
 
 
@@ -314,11 +417,17 @@ def run_batch(cfg, conn, batch, qsleep, show_n):
                 cmds.append(f"show {k}")
             cmds.append(f"sleep {qsleep}")
     cmds.append("quit")
-    proc = subprocess.run(
-        [YAZ_CLIENT, "-m", tmp, conn],
-        input=("\n".join(cmds) + "\n").encode(),
-        capture_output=True, timeout=60 + len(probes) * 10,
-    )
+    try:
+        proc = subprocess.run(
+            [YAZ_CLIENT, "-m", tmp, conn],
+            input=("\n".join(cmds) + "\n").encode(),
+            capture_output=True, timeout=60 + len(probes) * 10,
+        )
+    except subprocess.TimeoutExpired:
+        # A hung/dropped connection (yaz-client never returned). Treat it like an
+        # unalignable batch: the caller backs off and retries, then defers the
+        # still-stuck items to the next run -- never crash a resumable harvest.
+        return None, ""
     # yaz-client echoes retrieved records to stdout too, and some targets (e.g.
     # SUDOC) emit non-UTF-8 bytes there, so decode leniently -- we only read the
     # ASCII "Number of hits" lines; the actual records come from the -m file.
@@ -521,13 +630,17 @@ def verify_title(cfg, record_bytes, row):
     return bool(cyear and ryear == cyear)
 
 
-def harvest(cfg, limit=None):
+def harvest(cfg, limit=None, servers=None):
     os.makedirs(cfg["state"], exist_ok=True)
     rows = read_rows(cfg)
-    rowmap = {r["itemKey"]: r for r in rows}
+    rowmap = {row_key(r): r for r in rows}
     ok_keys, attempted = load_state(cfg)
+    # Pre-keyed records (e.g. re-keyed held MARC) are already resolved: skip them
+    # on every server; combine() merges them back in.
+    for key, _rec in read_keyed_records(cfg.get("premerged")):
+        ok_keys.add(key)
 
-    for server in SERVERS:
+    for server in (servers or SERVERS):
         name = server["name"]
         targets = server_targets(rows, server)
         pending = [(k, p) for (k, p) in targets
@@ -612,79 +725,118 @@ def harvest(cfg, limit=None):
 
 
 def combine(cfg):
-    """Convert combined.marc -> single MARCXML <collection>, stamping itemKeys."""
-    if not os.path.exists(cfg["combined"]):
-        print("no combined.marc yet -- nothing to combine", file=sys.stderr)
-        return
-    raw = subprocess.run(
-        # Both servers send UTF-8 bytes; just mark leader/09 'a' (97). No transcode.
-        [YAZ_MARCDUMP, "-l", "9=97", "-i", "marc", "-o", "marcxml", cfg["combined"]],
-        capture_output=True, text=True,
-    ).stdout
-
+    """Build the output MARCXML <collection>: stamp the canonical key into 999 $a
+    on each harvested record, then merge the pre-keyed --premerged and manual
+    records. Runs even with no harvested records yet (premerged/manual only) -- so
+    the held baseline can be produced before the non-held harvest has run."""
     ET.register_namespace("", MARC_NS)
-    root = ET.fromstring(raw)
-    records = root.findall(f"{{{MARC_NS}}}record")
 
-    # Manifest ok rows, in retrieval order, as (itemKey, server, keytype, value).
-    # Current format is 5 cols (itemKey, server, keytype, value, status); tolerate
-    # the older 4-col (itemKey, keytype, value, status) and 3-col bib-only
-    # (itemKey, value, status) formats, attributing both to the UNC server.
-    ok_rows = []
-    for line in open(cfg["manifest"]):
-        c = line.rstrip("\n").split("\t")
-        if c[-1] != "ok":
-            continue
-        if len(c) >= 5:
-            ok_rows.append((c[0], c[1], c[2], c[3]))
-        elif len(c) == 4:
-            ok_rows.append((c[0], "unc", c[1], c[2]))
-        else:
-            ok_rows.append((c[0], "unc", "bib", c[1]))
-    if len(ok_rows) != len(records):
-        print(f"FATAL: {len(records)} records vs {len(ok_rows)} ok manifest rows; "
-              f"refusing to stamp itemKeys", file=sys.stderr)
-        sys.exit(3)
+    have_harvest = os.path.exists(cfg["combined"]) and os.path.getsize(cfg["combined"]) > 0
+    if not have_harvest and not os.path.exists(cfg.get("premerged") or "") \
+            and not os.path.exists(cfg["manual"]):
+        print("no combined.marc, premerged or manual records -- nothing to combine",
+              file=sys.stderr)
+        return
+
+    if have_harvest:
+        raw = subprocess.run(
+            # Both servers send UTF-8 bytes; just mark leader/09 'a' (97). No transcode.
+            [YAZ_MARCDUMP, "-l", "9=97", "-i", "marc", "-o", "marcxml", cfg["combined"]],
+            capture_output=True, text=True,
+        ).stdout
+        root = ET.fromstring(raw)
+        records = root.findall(f"{{{MARC_NS}}}record")
+    else:
+        root = ET.Element(f"{{{MARC_NS}}}collection")
+        records = []
 
     harvested_keys = set()
-    for rec, (key, server, keytype, value) in zip(records, ok_rows):
-        harvested_keys.add(key)
-        df = ET.SubElement(rec, f"{{{MARC_NS}}}datafield")
-        df.set("tag", "999"); df.set("ind1", " "); df.set("ind2", " ")
-        # $a join key (itemKey), $b resolving value, $c key type, $d source server.
-        for code, val in (("a", key), ("b", value), ("c", keytype), ("d", server)):
-            sf = ET.SubElement(df, f"{{{MARC_NS}}}subfield")
-            sf.set("code", code); sf.text = val
+    if records:
+        # Manifest ok rows, in retrieval order, as (itemKey, server, keytype, value).
+        # Current format is 5 cols (itemKey, server, keytype, value, status); tolerate
+        # the older 4-col (itemKey, keytype, value, status) and 3-col bib-only
+        # (itemKey, value, status) formats, attributing both to the UNC server.
+        ok_rows = []
+        for line in open(cfg["manifest"]):
+            c = line.rstrip("\n").split("\t")
+            if c[-1] != "ok":
+                continue
+            if len(c) >= 5:
+                ok_rows.append((c[0], c[1], c[2], c[3]))
+            elif len(c) == 4:
+                ok_rows.append((c[0], "unc", c[1], c[2]))
+            else:
+                ok_rows.append((c[0], "unc", "bib", c[1]))
+        if len(ok_rows) != len(records):
+            print(f"FATAL: {len(records)} records vs {len(ok_rows)} ok manifest rows; "
+                  f"refusing to stamp itemKeys", file=sys.stderr)
+            sys.exit(3)
 
-    # Merge hand-supplied records (already carrying their 999 $a) for items no
-    # reachable catalogue serves; skip any itemKey a harvest also resolved.
+        for rec, (key, server, keytype, value) in zip(records, ok_rows):
+            harvested_keys.add(key)
+            df = ET.SubElement(rec, f"{{{MARC_NS}}}datafield")
+            df.set("tag", "999"); df.set("ind1", " "); df.set("ind2", " ")
+            # $a join key (canonical), $b resolving value, $c key type, $d server.
+            for code, val in (("a", key), ("b", value), ("c", keytype), ("d", server)):
+                sf = ET.SubElement(df, f"{{{MARC_NS}}}subfield")
+                sf.set("code", code); sf.text = val
+
+    # Merge pre-keyed records (each already carrying its 999 $a): first the
+    # --premerged file (e.g. the re-keyed lib-1 held MARC), then the hand-supplied
+    # manual records for items no reachable catalogue serves. A harvested record
+    # for the same key wins (freshly verified), so skip keys already present.
+    n_premerged = 0
+    for key, rec in read_keyed_records(cfg.get("premerged")):
+        if key not in harvested_keys:
+            root.append(rec)
+            harvested_keys.add(key)
+            n_premerged += 1
     n_manual = 0
-    if os.path.exists(cfg["manual"]):
-        for mrec in ET.parse(cfg["manual"]).getroot().findall(f"{{{MARC_NS}}}record"):
-            key = next((sf.text for df in mrec.findall(f"{{{MARC_NS}}}datafield")
-                        if df.get("tag") == "999"
-                        for sf in df.findall(f"{{{MARC_NS}}}subfield")
-                        if sf.get("code") == "a"), None)
-            if key and key not in harvested_keys:
-                root.append(mrec)
-                n_manual += 1
+    for key, mrec in read_keyed_records(cfg["manual"]):
+        if key not in harvested_keys:
+            root.append(mrec)
+            harvested_keys.add(key)
+            n_manual += 1
 
-    ET.ElementTree(root).write(cfg["out"], encoding="unicode", xml_declaration=True)
-    print(f"wrote {cfg['out']}: {len(records)} harvested + {n_manual} manual "
-          f"= {len(records) + n_manual} records (itemKey in 999 $a)")
+    # Emit a per-record zip archive (#81), not one big <collection> file: one
+    # <key>.xml per record, read by the construct queries via nested Archive -> XML
+    # triplifiers. Diffable (a re-harvest that changes one record touches one entry).
+    n_archive, n_nokey = write_record_zip(root.findall(f"{{{MARC_NS}}}record"), cfg["out"])
+    total = len(records) + n_premerged + n_manual
+    print(f"wrote {cfg['out']}: {len(records)} harvested + {n_premerged} premerged "
+          f"+ {n_manual} manual = {total} records -> {n_archive} archive entries "
+          f"(canonical key in 999 $a)")
+    if n_nokey:
+        print(f"  WARNING: {n_nokey} records had no 999 $a and were dropped",
+              file=sys.stderr)
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--csv", required=True, help="input Zotero CSV")
-    ap.add_argument("--out", required=True, help="output MARCXML collection path")
+    ap.add_argument("--out", required=True, help="output per-record zip archive (#81)")
     ap.add_argument("--limit", type=int, help="only process first N pending per server")
     ap.add_argument("--combine", action="store_true",
                     help="just (re)build the output XML from existing harvest state")
+    ap.add_argument("--premerged", help="MARCXML of pre-keyed records (999 $a) to "
+                    "skip during harvest and merge on combine (e.g. re-keyed held MARC)")
+    ap.add_argument("--servers", help="comma-separated server names to query, in the "
+                    "given order (default: all of SERVERS in their listed order). "
+                    "Resumable state is per (item, server), so this only restricts "
+                    "which servers run this pass -- e.g. --servers harvard,libris")
     args = ap.parse_args()
-    cfg = make_cfg(args.csv, args.out)
+    cfg = make_cfg(args.csv, args.out, premerged=args.premerged)
+    servers = None
+    if args.servers:
+        by_name = {s["name"]: s for s in SERVERS}
+        names = [n.strip() for n in args.servers.split(",") if n.strip()]
+        unknown = [n for n in names if n not in by_name]
+        if unknown:
+            ap.error(f"unknown server(s): {', '.join(unknown)}; "
+                     f"known: {', '.join(by_name)}")
+        servers = [by_name[n] for n in names]
     if args.combine:
         combine(cfg)
     else:
-        harvest(cfg, limit=args.limit)
+        harvest(cfg, limit=args.limit, servers=servers)

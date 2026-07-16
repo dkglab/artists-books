@@ -1,0 +1,149 @@
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX ab: <https://dkglab.github.io/ns/artists-books/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bf: <http://id.loc.gov/ontologies/bibframe/>
+PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX marc: <http://www.loc.gov/MARC21/slim#>
+
+# Reference works (#34, #42). Builds graph/reference-works.ttl.
+#
+# This is branch 1 of the former reference-resources.rq, split out for the
+# phased graph rebuild (#82, task 4): the reference-work *resource* only. The
+# citations that link reference works to artists' books are no longer built
+# here — they are frozen once into sources/citations.ttl (issue #82, task 3)
+# and loaded into Fuseki as-is, so the whole citation UNION branch (the
+# citation/ABC crosswalk reads + the ab:Citation mint) is gone from the
+# repeatable build.
+#
+# Each reference work is the node + its own BIBFRAME bib metadata, mirroring the
+# shape the artists' books get in artists-books.rq but typed ab:ReferenceWork and
+# minted under reference/<canonicalKey>. The collection is heterogeneous
+# (book + journalArticle + webpage), so ab:ReferenceWork is a subclass of
+# schema:CreativeWork (docs/vocab.ttl). Most fields come from
+# sources/reference-works.csv (the canonical RW list from the Phase-0 dedup);
+# a basic slice of the harvested MARC (sources/marc/reference-resources-marc.zip)
+# is also read — for now just the primary creator (100 $a), to demonstrate the
+# join. The remaining MARC-derived fields the artists' books carry (OCLC/WorldCat,
+# secondary creators, relator roles, identity URIs, extent/dimensions) are still
+# absent (#40/#51).
+#
+# The canonical RW keys are lib-3 keys, and the reference MARC was harvested
+# under those same lib-3 keys, so the 999 $a join below still works directly.
+CONSTRUCT {
+  ?ref a ab:ReferenceWork ;
+    rdfs:label ?title ;
+    ab:itemKey ?canonical_key ;
+    bf:provisionActivity ?refPublication ;
+    bf:language ?language ;
+    bf:identifiedBy ?refISBN ;
+    bf:contribution ?refContribution ;
+    .
+
+  ?refContribution a bflc:PrimaryContribution ;
+    bf:agent ?refAgent ;
+    .
+
+  ?refAgent a bf:Agent ;
+    rdfs:label ?creator_name ;
+    .
+
+  ?refPublication a bf:Publication ;
+    bflc:simpleAgent ?publisher ;
+    bflc:simpleDate ?date ;
+    bflc:simplePlace ?place ;
+    .
+
+  ?refISBN a bf:Identifier ;
+    rdf:value ?ISBN ;
+    bf:source wd:Q33057 ; # ISBN
+    .
+}
+WHERE {
+  SERVICE <x-sparql-anything:location=sources/reference-works.csv> {
+    # Facade-X configuration for CSV data
+    fx:properties
+      fx:csv.headers "true" ;  # create xyz:header properties
+      fx:csv.null-string  "" ; # treat empty strings as null values
+      .
+
+    # For each row in reference-works.csv. Only canonicalKey and title are
+    # required; every other field is OPTIONAL so all rows emit a node
+    # (e.g. webpages/articles carry no publisher).
+    ?refRow
+      xyz:canonicalKey ?canonical_key ;
+      xyz:title ?title ;
+      .
+
+    # Mint the reference-work URI and its publication sub-resource.
+    BIND(fx:entity(ab:, "reference/", ?canonical_key) AS ?ref)
+    BIND(fx:entity(ab:, "reference/", ?canonical_key, "/publication") AS ?refPublication)
+
+    OPTIONAL { ?refRow xyz:publisher ?publisher }
+    OPTIONAL {
+      ?refRow xyz:date ?date_raw .
+      # Strip Zotero's leading "YYYY-MM-DD " prefix from the date string.
+      BIND(REPLACE(?date_raw, "^\\d{4}-\\d{2}-\\d{2} ", "") AS ?date)
+    }
+    OPTIONAL { ?refRow xyz:place ?place }
+    OPTIONAL { ?refRow xyz:language ?language }
+
+    OPTIONAL { ?refRow xyz:ISBN ?ISBN }
+    BIND(fx:entity(ab:, "reference/", ?canonical_key, "/identifier") AS ?isbnNode)
+    BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?refISBN)
+  }
+
+  # Basic MARC slice: the primary creator (100 $a) from the harvested reference
+  # MARC. The MARC is a per-record archive (#81): sources/marc/reference-resources-marc.zip
+  # holds one <itemKey>.xml document per record, read with SPARQL-Anything's
+  # nested Archive -> XML triplifiers. The outer archive read lists the entries
+  # (fx:archive.matches) and the inner SERVICE triplifies just that one record
+  # (fx:location ?file + fx:from-archive), joining to the CSV row on the record's
+  # own 999 $a — the key is read from the record data, not the filename. Each
+  # entry is triplified once and joined after, so it is no slower than the old
+  # single-file read. Per-record traversal uses fx:anySlot (docs/QUERY-PERFORMANCE.md).
+  #
+  # Kept OPTIONAL — most reference works have a MARC record but only some carry a
+  # 100 main entry (edited volumes / exhibition catalogs enter creators on
+  # 700/710 instead, not read yet). Name only for now — no roles / identity URIs (#46).
+  OPTIONAL {
+    SERVICE <x-sparql-anything:location=sources/marc/reference-resources-marc.zip> {
+      fx:properties fx:archive.matches ".*\\.xml" .
+      ?archive fx:anySlot ?file .
+
+      SERVICE <x-sparql-anything:> {
+        fx:properties
+          fx:location ?file ;
+          fx:from-archive "sources/marc/reference-resources-marc.zip" ;
+          fx:media-type "application/xml" .
+
+        ?record a marc:record .
+
+        # 999 $a — the canonical key stamped on each record at harvest; join to
+        # the CSV row above. The key is read from the record data, not the
+        # filename, so the archive entries could be named anything.
+        ?record fx:anySlot ?f999 .
+        ?f999 a marc:datafield ; xyz:tag "999" .
+        ?f999 fx:anySlot ?sf999a .
+        ?sf999a xyz:code "a" ; rdf:_1 ?canonical_key .
+
+        # 100 $a — primary creator name. Strip trailing cataloguing punctuation.
+        ?record fx:anySlot ?df100 .
+        ?df100 a marc:datafield ; xyz:tag "100" .
+        ?df100 fx:anySlot ?sf100a .
+        ?sf100a xyz:code "a" ; rdf:_1 ?name_raw .
+        BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?creator_name)
+      }
+    }
+    # Guard on ?creator_name: the nested archive read binds ?canonical_key (from
+    # 999 $a) for every record, including those with no 100 $a (the inner per-
+    # record SERVICE then simply binds no ?creator_name), so mint the
+    # contribution/agent only when a name was actually found — otherwise a
+    # nameless agent leaks. (The old single-file read dropped such rows because
+    # the 100-match was a required pattern in the same SERVICE.)
+    BIND(IF(BOUND(?creator_name), fx:entity(ab:, "reference/", ?canonical_key, "/contribution/primary"), ?sentinel) AS ?refContribution)
+    BIND(IF(BOUND(?creator_name), fx:entity(ab:, "reference/", ?canonical_key, "/agent/primary"), ?sentinel) AS ?refAgent)
+  }
+}
