@@ -22,6 +22,36 @@ The graph queries join MARC to their CSV rows on this key (read from the record'
 analysis of the harvested artists'-book records see
 [`../../docs/MARC-RECORDS.md`](../../docs/MARC-RECORDS.md).
 
+## Fetch transport: the `zoomfetch` ZOOM driver (#85)
+
+Z39.50 records are fetched by **`zoomfetch`**, a ~200-line C driver
+(`zoomfetch.c`) built against the libyaz we already compile under
+`tools/yaz-client/` — it talks the protocol over YAZ's **ZOOM** C API rather than
+scripting the interactive `yaz-client`. It needs no new external dependency (just
+a C compiler, already required to build YAZ); the Makefile compiles it with
+`yaz-config --cflags/--libs` and installs it as `tools/yaz-client/bin/zoomfetch`
+alongside `yaz-marcdump`.
+
+`marc_harvest.py` opens one `zoomfetch` process per server batch (one persistent
+`ZOOM_connection`, so the Init handshake is amortised across the batch) and pipes
+it one job per line — `id⇥pqf-query⇥maxrecords`. For each job the driver emits
+framed, length-prefixed blocks on stdout: `HITS⇥id⇥n`, then a `RECORD⇥id⇥index⇥bytelen`
+header followed by exactly `bytelen` **raw ISO 2709 bytes** per record; a
+server-side search diagnostic is `ERROR⇥id⇥code⇥msg` (a real miss) and a
+connection-level failure is `FATAL⇥id⇥code⇥msg`, after which the driver stops so
+the caller **defers** every unanswered job to the next run.
+
+Because every record is tagged with its job `id`, there is no positional
+reconstruction — which kills the old **"unalignable"** failure class at the root.
+The former positional machinery (the `Number of hits:`/record-count consistency
+checks, the batch back-off/retry, the per-item fallback, and UNC's `batch: 10`
+workaround) is gone; the only remaining Z39.50 resilience is a subprocess timeout
+that defers a hung driver rather than crashing the resumable harvest. The SRU art
+libraries (Getty, Clark, NYARC, Harvard) are untouched — they already fetch over
+clean HTTP/CQL via `sru_search()`. Encoding is unchanged: `zoomfetch` returns the
+server's raw bytes and the UTF-8 / UNC leader-09 handling stays downstream
+(`yaz-marcdump -l 9=97`).
+
 ## Artists'-book MARC harvest (canonical, #84)
 
 The books harvest is keyed to the **canonical** artists'-book list at the

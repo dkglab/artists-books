@@ -39,6 +39,12 @@ Strategy (see sources/marc/README.md):
                   marc/rekey_held.py) can be supplied with --premerged: those keys
                   are skipped during harvest and the records merged in combine(),
                   so the ~1,340 held books need no re-harvest.
+  * Transport   : Z39.50 fetches go through the `zoomfetch` C driver (issue #85),
+                  which talks the protocol over YAZ's ZOOM API and frames each
+                  record with its job id -- so records can't be misaligned to the
+                  wrong query (the old yaz-client scripting reconstructed that by
+                  position, the root of the "unalignable" failures). SRU targets
+                  still go over HTTP/CQL via sru_search().
   * Politeness  : one serial connection per server per batch, with a `sleep`
                   between queries and a pause between batches (more conservative
                   for LC, a shared national service).
@@ -81,8 +87,11 @@ MARC_DIR    = os.path.join(HERE, "harvest")  # gitignored harvest state, per-CSV
 # levels up (sources/marc -> sources -> repo root), matching the Makefile's
 # ../tools/yaz-client when run from sources/.
 YAZ_BIN     = os.path.normpath(os.path.join(HERE, os.pardir, os.pardir, "tools", "yaz-client", "bin"))
-YAZ_CLIENT  = os.path.join(YAZ_BIN, "yaz-client")
 YAZ_MARCDUMP = os.path.join(YAZ_BIN, "yaz-marcdump")
+# The Z39.50 fetch driver (issue #85): our own tiny C program over YAZ's ZOOM API,
+# built alongside yaz-marcdump under tools/yaz-client/bin. It fetches records with
+# id-per-record framing, so alignment can't break (no more "unalignable").
+ZOOMFETCH   = os.path.join(YAZ_BIN, "zoomfetch")
 
 MARC_NS     = "http://www.loc.gov/MARC21/slim"
 
@@ -117,11 +126,13 @@ SERVERS = [
      # bib/isbn are exact-identifier lookups (trusted); title/title-author are
      # verified against the CSV like the fallbacks, reaching UNC-held reference
      # works that carry no ISBN or III bib number in the Zotero export.
-     # batch kept small: UNC's Innopac v1.1 Z39.50 server drops/throttles a large
-     # multi-query session (a 50-probe batch came back consistently unalignable,
-     # while 8-10 aligns cleanly), so match the fallbacks' batch of 10.
+     # batch amortises the Init handshake over one connection; since #85 the
+     # zoomfetch driver tags every record with its job id, so a session UNC's
+     # Innopac v1.1 server drops or truncates no longer corrupts alignment -- the
+     # unanswered tail simply defers and retries -- and the old batch:10 workaround
+     # for the "unalignable" bug is gone.
      "keytypes": ("bib", "isbn", "title-author", "title"),
-     "batch": 10, "qsleep": 0.4, "bsleep": 2, "show_n": 3},
+     "batch": 50, "qsleep": 0.4, "bsleep": 2, "show_n": 3},
     # 2. Art libraries (Ex Libris Alma, SRU/CQL) -- hold and best catalogue the
     #    artist's-book ephemera the general catalogues lack. Return MARCXML/UTF-8.
     # NYARC -- New York Art Resources Consortium (MoMA, Frick, Brooklyn Museum).
@@ -372,96 +383,118 @@ def load_state(cfg):
     return ok, attempted
 
 
-def split_records(blob):
-    """Split a binary MARC blob into individual records (each ends with 0x1D)."""
-    recs, start = [], 0
-    for i, byte in enumerate(blob):
-        if byte == 0x1D:
-            recs.append(blob[start:i + 1])
-            start = i + 1
-    return recs
-
-
 def count_records(marc_bytes):
     """Count records in a binary MARC blob (records end with the 0x1D terminator)."""
     return marc_bytes.count(b"\x1d")
 
 
-def run_batch(cfg, conn, batch, qsleep, show_n):
-    """Query a batch over one connection to `conn`. batch is
-    [(itemKey, [(keytype, value, query), ...]), ...]. Each probe retrieves up to
-    show_n candidate records (`show 1+show_n`). Returns (results, stdout) where
-    results is one (itemKey, probes) per item, in order, and probes is
-        [(keytype, value, count, [record_bytes, ...]), ...]
-    one per query in precedence order (count is the server's hit count; the list
-    holds min(show_n, count) records). The caller selects/verifies.
+def parse_zoom(out):
+    """Parse zoomfetch's framed stdout (issue #85) into per-job results.
 
-    Returns (None, stdout) if the server output can't be aligned to the probes,
-    so the caller can retry per item.
-    """
-    tmp = os.path.join(cfg["state"], "_batch.marc")
-    if os.path.exists(tmp):
-        os.remove(tmp)
+    Returns (hits, recs) where hits maps a job id -> server hit count for every
+    job that was *answered* (emitted a HITS or ERROR line), and recs maps a job
+    id -> [record_bytes, ...] in index order. A job id absent from `hits` was not
+    answered -- the connection died (FATAL) before reaching it, or the driver was
+    cut short -- and the caller defers it rather than recording a false miss.
 
-    probes = []  # (keytype, value, query); probes for an item are contiguous
-    cmds = ["format usmarc", "querytype prefix"]
-    for _key, plist in batch:
+    Framing (see zoomfetch.c): an ASCII tab-separated header line, then for a
+    RECORD exactly <bytelen> raw ISO 2709 bytes and a trailing newline. Records
+    are binary (they contain newlines), so the stream is parsed with a byte
+    cursor, not line-by-line."""
+    hits, recs = {}, {}
+    i, n = 0, len(out)
+    while i < n:
+        j = out.find(b"\n", i)
+        if j < 0:
+            break
+        parts = out[i:j].split(b"\t")
+        i = j + 1
+        tag = parts[0]
+        if tag == b"HITS" and len(parts) >= 3:
+            hits[parts[1].decode()] = int(parts[2])
+        elif tag == b"RECORD" and len(parts) >= 4:
+            jid = parts[1].decode()
+            blen = int(parts[3])
+            recs.setdefault(jid, []).append(out[i:i + blen])
+            i += blen
+            if i < n and out[i:i + 1] == b"\n":  # trailing newline after the bytes
+                i += 1
+        elif tag in (b"ERROR", b"FATAL") and len(parts) >= 2:
+            # A server search diagnostic (ERROR) is a real, non-retryable miss:
+            # record it as an answered job with 0 hits. A connection-level FATAL
+            # means the job wasn't really tested -- leave it unanswered so the
+            # caller defers it (the driver stops emitting after a FATAL).
+            if tag == b"ERROR":
+                hits.setdefault(parts[1].decode(), 0)
+    return hits, recs
+
+
+def run_zoom(cfg, server, batch, show_n):
+    """Fetch a batch over one persistent connection via the zoomfetch driver.
+    batch is [(itemKey, [(keytype, value, query), ...]), ...]. Returns results as
+        [(itemKey, [(keytype, value, count, [record_bytes, ...]), ...]), ...]
+    one probe per query in precedence order (count is the server hit count; the
+    list holds min(show_n, count) records) -- the same shape run_sru returns and
+    select_record consumes.
+
+    Every probe is fed to the driver with a unique job id, and every record comes
+    back tagged with that id, so there is no positional reconstruction and hence
+    no "unalignable" failure mode. A probe the driver did not answer (connection
+    died before reaching it) is deferred: it is emitted with count = None so the
+    caller leaves the item unattempted to retry next run.
+
+    Returns None only if the driver hangs (subprocess timeout) -- the caller
+    defers the whole batch, never crashing a resumable harvest."""
+    conn = server["conn"]
+    qsleep = server["qsleep"]
+
+    # Flatten probes to lines `<jobid>\t<query>\t<show_n>`; jobid is the flat
+    # probe index. per_item keeps the (jobid, keytype, value) grouping to reassemble.
+    lines, per_item, pid = [], [], 0
+    for key, plist in batch:
+        ids = []
         for keytype, value, query in plist:
-            probes.append((keytype, value, query))
-            cmds.append(f"find {query}")
-            # Fetch up to show_n candidates one position at a time. `show 1+N`
-            # asks for exactly N and this target rejects it as out-of-range when
-            # fewer exist; `show k` past the end is just a harmless diagnostic, so
-            # a probe yields min(show_n, count) records, in order.
-            for k in range(1, show_n + 1):
-                cmds.append(f"show {k}")
-            cmds.append(f"sleep {qsleep}")
-    cmds.append("quit")
+            jid = str(pid); pid += 1
+            lines.append(f"{jid}\t{query}\t{show_n}")
+            ids.append((jid, keytype, value))
+        per_item.append((key, ids))
+
     try:
         proc = subprocess.run(
-            [YAZ_CLIENT, "-m", tmp, conn],
-            input=("\n".join(cmds) + "\n").encode(),
-            capture_output=True, timeout=60 + len(probes) * 10,
+            [ZOOMFETCH, "--syntax", "usmarc", "--sleep", str(qsleep),
+             "--maxrecords", str(show_n), conn],
+            input=("\n".join(lines) + "\n").encode(),
+            capture_output=True, timeout=60 + len(lines) * 10,
         )
     except subprocess.TimeoutExpired:
-        # A hung/dropped connection (yaz-client never returned). Treat it like an
-        # unalignable batch: the caller backs off and retries, then defers the
-        # still-stuck items to the next run -- never crash a resumable harvest.
-        return None, ""
-    # yaz-client echoes retrieved records to stdout too, and some targets (e.g.
-    # SUDOC) emit non-UTF-8 bytes there, so decode leniently -- we only read the
-    # ASCII "Number of hits" lines; the actual records come from the -m file.
-    stdout = proc.stdout.decode("utf-8", "replace")
+        # A hung/dropped server (zoomfetch never returned). Defer the whole batch:
+        # the caller retries it on the next run -- never crash a resumable harvest.
+        return None
 
-    counts = [int(n) for n in re.findall(r"Number of hits:\s*(\d+)", stdout)]
-    if len(counts) != len(probes):
-        return None, stdout  # parsing slipped -- let caller retry per item
-
-    records = split_records(open(tmp, "rb").read() if os.path.exists(tmp) else b"")
-    # Each `show 1+show_n` returns min(show_n, count) records, in probe order.
-    if len(records) != sum(min(show_n, c) for c in counts):
-        return None, stdout  # show/hit misalignment -- retry per item
-
-    rec_iter = iter(records)
-    probe_recs = [[next(rec_iter) for _ in range(min(show_n, c))] for c in counts]
-
-    results, i = [], 0
-    for key, plist in batch:
+    hits, recs = parse_zoom(proc.stdout)
+    results = []
+    for key, ids in per_item:
         probelist = []
-        for _ in range(len(plist)):
-            keytype, value, _q = probes[i]
-            probelist.append((keytype, value, counts[i], probe_recs[i]))
-            i += 1
+        for jid, keytype, value in ids:
+            # count None == not answered (deferred); an answered job has an int.
+            count = hits.get(jid)
+            probelist.append((keytype, value, count, recs.get(jid, [])))
         results.append((key, probelist))
-    return results, stdout
+    return results
 
 
 def select_record(cfg, key, probelist, rowmap):
     """Choose a record for one item from its probe results, in precedence order.
     Identifier-key hits are trusted; title-key hits are verified against the CSV.
-    Returns (status, keytype, value, record_or_None, ncands, review_or_None)."""
+    Returns (status, keytype, value, record_or_None, ncands, review_or_None).
+
+    status is "ok" (a record was chosen), "miss" (every probe was tested and none
+    matched), or "defer" (some probe was left unanswered -- count is None because
+    the connection died before the driver reached it -- and nothing else resolved
+    the item, so it is left unattempted to retry rather than recorded as a false
+    miss)."""
     for keytype, value, count, recs in probelist:
-        if count == 0:
+        if not count or not recs:  # 0 hits, unanswered (None), or no record bytes
             continue
         if keytype in IDENTIFIER_KEYS:
             review = f"{count} holdings; show picked first" if count > 1 else None
@@ -470,6 +503,8 @@ def select_record(cfg, key, probelist, rowmap):
             if verify_title(cfg, rec, rowmap[key]):
                 review = f"{count} candidates; verified one" if count > 1 else None
                 return "ok", keytype, value, rec, count, review
+    if any(count is None for _kt, _v, count, _r in probelist):
+        return "defer", "", "", None, 0, None
     failed = any(kt in TITLE_KEYS and c > 0 for kt, _v, c, _r in probelist)
     return ("miss", "", "", None, 0,
             "title hits failed verification" if failed else None)
@@ -539,8 +574,9 @@ def marcxml_to_binary(elements):
 
 
 def run_sru(cfg, server, batch, show_n):
-    """SRU equivalent of run_batch: one HTTP request per probe (CQL), returning
-    the same (itemKey, [(keytype, value, count, [record_bytes...]), ...]) shape."""
+    """SRU equivalent of run_zoom: one HTTP request per probe (CQL), returning
+    the same (itemKey, [(keytype, value, count, [record_bytes...]), ...]) shape.
+    SRU has no persistent-connection drop to defer, so count is always an int."""
     results = []
     for key, plist in batch:
         probelist = []
@@ -658,34 +694,26 @@ def harvest(cfg, limit=None, servers=None):
             if proto == "sru":
                 results = run_sru(cfg, server, batch, show_n)
             else:
-                results, _log = run_batch(cfg, server["conn"], batch, server["qsleep"], show_n)
+                # zoomfetch tags every record with its job id, so there is no
+                # positional alignment to break (issue #85): the only failure mode
+                # left is a hung driver, which returns None -> defer the whole
+                # batch to the next run rather than crash the resumable harvest.
+                results = run_zoom(cfg, server, batch, show_n)
                 if results is None:
-                    # An unalignable batch usually means the server throttled or
-                    # dropped a busy connection. Back off, then retry the whole
-                    # batch once; if still bad, fall back to one item per
-                    # connection with a pause between, deferring what still fails.
-                    print(f"  !! [{name}] batch at {start}: output unalignable; "
-                          f"backing off {server['bsleep'] * 5}s and retrying",
-                          file=sys.stderr)
-                    time.sleep(server["bsleep"] * 5)
-                    results, _ = run_batch(cfg, server["conn"], batch, server["qsleep"], show_n)
-                if results is None:
-                    results = []
-                    for one in batch:
-                        r, _ = run_batch(cfg, server["conn"], [one], server["qsleep"], show_n)
-                        if r is None:
-                            print(f"  !! {one[0]}: still unalignable, deferring to "
-                                  f"next run", file=sys.stderr)  # no row -> retried
-                        else:
-                            results.extend(r)
-                        time.sleep(server["qsleep"])
+                    print(f"  !! [{name}] batch at {start}: zoomfetch timed out; "
+                          f"deferring to next run", file=sys.stderr)
+                    continue
 
             # Select/verify a record per item (identifier hits trusted, title
-            # hits verified against the CSV).
+            # hits verified against the CSV). A "defer" item had a probe the driver
+            # never answered (connection dropped mid-batch); leave it unrecorded so
+            # it stays pending and retries next run, rather than logging a false miss.
             accepted, rows_out, reviews = [], [], []
             for key, probelist in results:
                 status, kt, value, rec, _n, review = select_record(
                     cfg, key, probelist, rowmap)
+                if status == "defer":
+                    continue
                 rows_out.append((key, kt, value, status))
                 if status == "ok":
                     accepted.append((key, rec))
