@@ -95,54 +95,75 @@ MARC_NS     = "http://www.loc.gov/MARC21/slim"
 # to "z3950" (Bib-1 prefix queries via yaz-client); "sru" servers are queried
 # over HTTP/CQL and return MARCXML, which is converted to binary on ingest so
 # the rest of the pipeline is identical.
+#
+# Precedence is by *relevance to artist's books*, not catalogue size or measured
+# hit rate (the harvest is a waterfall -- each server only sees the residual its
+# predecessors missed, so per-server rates are not comparable; see issue #88):
+#   1. UNC first          -- home institution; prefer its own holdings/call numbers.
+#   2. the art libraries  -- NYARC/Getty/Clark hold the artist's-book exhibition
+#                            and dealer ephemera the general catalogues lack, and
+#                            catalogue it best, so prefer their records when they
+#                            have the work (a full-corpus experiment over the
+#                            non-held residual bore this out: NYARC ~15%, Getty
+#                            ~8% even on the hardest leftovers -- issue #88).
+#   3. the big US libraries -- LC, Harvard (English-language cataloguing).
+#   4. the big EU library   -- K10plus (the ~80M-record German union catalogue).
+#   5. the rest             -- PSU and LIBRIS, both near-dead weight (~0.7% and
+#                            ~0.6% yield); kept as a last reach but demoted so
+#                            they never pre-empt a better-catalogued record.
 SERVERS = [
+    # 1. UNC (home institution) -- Innopac v1.1 over Z39.50.
     {"name": "unc", "conn": "tcp:afton.lib.unc.edu:210/INNOPAC",
      # bib/isbn are exact-identifier lookups (trusted); title/title-author are
      # verified against the CSV like the fallbacks, reaching UNC-held reference
      # works that carry no ISBN or III bib number in the Zotero export.
+     # batch kept small: UNC's Innopac v1.1 Z39.50 server drops/throttles a large
+     # multi-query session (a 50-probe batch came back consistently unalignable,
+     # while 8-10 aligns cleanly), so match the fallbacks' batch of 10.
      "keytypes": ("bib", "isbn", "title-author", "title"),
-     "batch": 50, "qsleep": 0.4, "bsleep": 2, "show_n": 3},
+     "batch": 10, "qsleep": 0.4, "bsleep": 2, "show_n": 3},
+    # 2. Art libraries (Ex Libris Alma, SRU/CQL) -- hold and best catalogue the
+    #    artist's-book ephemera the general catalogues lack. Return MARCXML/UTF-8.
+    # NYARC -- New York Art Resources Consortium (MoMA, Frick, Brooklyn Museum).
+    {"name": "nyarc", "conn": "https://na01.alma.exlibrisgroup.com/view/sru/01NYA_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # Getty Research Institute, a premier art library.
+    {"name": "getty", "conn": "https://na01.alma.exlibrisgroup.com/view/sru/01GRI_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # Clark Art Institute, another art library.
+    {"name": "clark", "conn": "https://na05.alma.exlibrisgroup.com/view/sru/01CLARKART_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # 3. Big US libraries -- English-language cataloguing.
+    # LC (Z39.50): a shared national service, throttled gentler than UNC. UTF-8.
     {"name": "lc",  "conn": "tcp:lx2.loc.gov:210/LCDB",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
-    # K10plus: the GBV/SWB union catalogue (~200 German/Austrian libraries),
-    # strong on art and humanities and international holdings -- a good reach for
-    # the European livre d'artiste / Kunstlerbuch reference works. Honest UTF-8.
+    # Harvard (Ex Libris Alma), a very large research library on the na03 pod.
+    {"name": "harvard", "conn": "https://na03.alma.exlibrisgroup.com/view/sru/01HVD_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # 4. Big EU library -- K10plus, the GBV/SWB union catalogue (~200 German/
+    #    Austrian libraries), strong on art/humanities and international holdings:
+    #    a good reach for the European livre d'artiste / Kunstlerbuch. Honest UTF-8.
     {"name": "k10plus", "conn": "tcp:sru.k10plus.de:210/opac-de-627",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
+    # 5. The rest -- near-dead weight, kept only as a last reach (see #88).
     # Penn State (Sirsi Unicorn), a large US research library. Honest UTF-8.
     {"name": "psu", "conn": "tcp:zcat.libraries.psu.edu:2200/Unicorn",
+     "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
+    # LIBRIS, Sweden's national union catalogue. MARC21 in UTF-8.
+    {"name": "libris", "conn": "tcp:z3950.libris.kb.se:210/libris",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
     # NOTE: SUDOC (carmin.sudoc.abes.fr/ABES-Z39-PUBLIC) is reachable and would
     # reach the French references, but its public endpoint emits records in a
     # non-standard encoding that mislabels itself UTF-8 and that yaz cannot
     # cleanly transcode (accented text is mangled or dropped), so it is omitted.
-    # LIBRIS, Sweden's national union catalogue. MARC21 in UTF-8.
-    {"name": "libris", "conn": "tcp:z3950.libris.kb.se:210/libris",
-     "keytypes": ("isbn", "title-author", "title"),
-     "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
-    # Getty Research Institute (Ex Libris Alma), a premier art library, queried
-    # over SRU/CQL. Holds much of the artist's-book exhibition/dealer ephemera
-    # the other catalogues lack. Returns MARCXML in UTF-8.
-    {"name": "getty", "conn": "https://na01.alma.exlibrisgroup.com/view/sru/01GRI_INST",
-     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
-     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
-    # Clark Art Institute (Ex Libris Alma), another art library on SRU/CQL.
-    {"name": "clark", "conn": "https://na05.alma.exlibrisgroup.com/view/sru/01CLARKART_INST",
-     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
-     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
-    # NYARC -- New York Art Resources Consortium (MoMA, Frick, Brooklyn Museum),
-    # Ex Libris Alma; strong on artist's-book exhibition ephemera. SRU/CQL.
-    {"name": "nyarc", "conn": "https://na01.alma.exlibrisgroup.com/view/sru/01NYA_INST",
-     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
-     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
-    # Harvard (Ex Libris Alma), a very large research library with an open SRU
-    # endpoint on the na03 pod. Broad reach for the US/European reference tail.
-    {"name": "harvard", "conn": "https://na03.alma.exlibrisgroup.com/view/sru/01HVD_INST",
-     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
-     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
 ]
 
 # Identifier keys are trusted on a hit; title keys must be verified. Accept a
