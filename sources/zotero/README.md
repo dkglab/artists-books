@@ -6,8 +6,8 @@ scripts, and the CSVs / `notes.xml` they produce. This document describes the
 database itself — its three-library structure, contents, tags, collections, and
 fields — and the note export drawn from it.
 
-For the crosswalk pipeline that bridges these exports to the MARC harvest see
-[`../README.md`](../README.md); for the MARC harvest itself see
+For the canonical dedup and frozen-citation pipeline built from these exports see
+[`../README.md`](../README.md); for the MARC harvest see
 [`../marc/README.md`](../marc/README.md).
 
 ## Three libraries in one database
@@ -29,8 +29,8 @@ Consequences:
 
 This is also *why* the four big book collections look like "two non-overlapping pairs" (see [Main book collections](#main-book-collections)): each pair is simply one group library, and items in different libraries can never share an item key.
 
-The reconciliation itself — how the lib-3 Cited notes are joined onto lib-1 ABC
-pages via the fuzzy-match crosswalks — is documented in
+The reconciliation itself — how the Cited notes are matched to reference works
+and frozen into the citation graph — is documented in
 [`../README.md`](../README.md).
 
 ### How these libraries came to be
@@ -264,16 +264,17 @@ missing data.
 
 ## Notes export — surfacing "Cited:" notes on ABC pages
 
-The "Cited:" notes are exported so the construct query can read them and, via
-the fuzzy-match crosswalks (documented in [`../README.md`](../README.md)),
-attach each lib-3 record's citations to the ABC page it matches. These now
-render on the site: each ABC book page lists the reference works that cite
-it, and each reference-work page lists the ABC books it cites — the two ends of
-the `ab:Citation` joined back across the graphs by the Snowman SELECT queries.
+The "Cited:" notes are exported so `freeze_citations.py` can read them, match
+each paragraph to a canonical reference work (see
+[`../README.md`](../README.md)), and freeze the resulting citation edges into
+`sources/citations.ttl`. These now render on the site: each ABC book page lists
+the reference works that cite it, and each reference-work page lists the ABC
+books it cites — the two ends of the `ab:Citation` joined back across the graphs
+by the Snowman SELECT queries.
 
 `notes_export.sh` (`= notes_export.sql | notes_export.py`) emits **`notes.xml`**,
-one `<note itemKey="…">` per lib-3 cited note (selection scope identical to
-`cited-records.csv`). Zotero note HTML is messy — entities (`&nbsp;`, `&rsquo;`),
+one `<note itemKey="…">` per lib-3 cited note (lib-3 items with a child note whose
+text contains `Cited`). Zotero note HTML is messy — entities (`&nbsp;`, `&rsquo;`),
 malformed nesting (`<em>…<em>.</em></em>`), and walls of inline-styled `<span>`s —
 so `notes_export.py` (stdlib `html.parser`, no venv) parses it leniently and
 re-emits only what the citation model needs, guaranteed well-formed:

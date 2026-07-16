@@ -13,8 +13,8 @@ The queries take the join key from each record's 999 $a, not the entry filename,
 so the <key>.xml naming is only a stable, debuggable layout.
 
 Run (from sources/):
-    python3 marc/marc_to_archive.py --in marc/reference-resources-marc.xml \
-        --out marc/reference-resources-marc.zip
+    python3 marc/marc_to_archive.py --in marc/reference-works-marc.xml \
+        --out marc/reference-works-marc.zip
 """
 import argparse
 import sys

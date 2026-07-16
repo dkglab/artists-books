@@ -60,7 +60,7 @@ sources/marc/artists-books-marc.zip
 
 graph/reference-works.ttl: \
 sources/reference-works.csv \
-sources/marc/reference-resources-marc.zip
+sources/marc/reference-works-marc.zip
 
 # sources/citations.ttl is a committed frozen graph (issue #82, task 3) — no
 # recipe; Fuseki loads it alongside the two constructed graphs, so the site

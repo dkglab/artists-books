@@ -23,13 +23,15 @@ documentation.
 
 The stages, and where each is documented in depth:
 
-1. **Zotero → CSV/notes.** SQL export scripts pull the ~1,341 books
-   and 157 reference works into CSVs; `notes_export.sh` emits the
-   "Cited:" note paragraphs; fuzzy matchers reconcile notes →
-   reference work → book across the three libraries into crosswalks. →
+1. **Zotero → CSV/notes.** `dedup.py` collapses the three Zotero
+   libraries into the canonical book (~7.9k) and reference-work lists;
+   `notes_export.sh` emits the "Cited:" note paragraphs; and
+   `freeze_citations.py` reconciles those paragraphs to reference works
+   and freezes the citation edges into `sources/citations.ttl`. →
    [`sources/zotero/README.md`](sources/zotero/README.md) (database,
    notes, citation data model),
-   [`sources/README.md`](sources/README.md) (crosswalk pipeline).
+   [`sources/README.md`](sources/README.md) (canonical dedup + frozen
+   citations).
 2. **Library catalogs → MARCXML.** `marc_harvest.py` (YAZ) harvests
    full MARC records over Z39.50/SRU — books from UNC's catalog,
    reference works from a chain of nine catalogs by ISBN then

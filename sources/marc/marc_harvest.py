@@ -32,8 +32,8 @@ Strategy (see sources/marc/README.md):
                   $d <server> field -- no content-based join. Since #82/#84 the
                   canonical harvest runs off the deduped lists
                   (sources/artists-books.csv / reference-works.csv) and stamps the
-                  *canonical* key in 999 $a, so queries/artists-books.rq joins MARC
-                  directly on ?canonical_key.
+                  *canonical* key in 999 $a, so queries/artists-books.rq and
+                  queries/reference-works.rq join MARC directly on ?canonical_key.
   * Premerged   : legacy MARC already carrying its 999 $a (e.g. the re-keyed lib-1
                   held records in marc/artists-books-held-marc.xml -- see
                   marc/rekey_held.py) can be supplied with --premerged: those keys
@@ -59,9 +59,9 @@ Strategy (see sources/marc/README.md):
                   (combined.marc is append-only and resumable).
 
 Run (from sources/, or let `make -C sources marc/<stem>-marc.zip` drive it):
-    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.zip
-    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.zip --limit 15
-    python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.zip --combine
+    python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc.zip
+    python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc.zip --limit 15
+    python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc.zip --combine
 """
 import argparse
 import csv

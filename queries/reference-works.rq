@@ -24,7 +24,7 @@ PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 # (book + journalArticle + webpage), so ab:ReferenceWork is a subclass of
 # schema:CreativeWork (docs/vocab.ttl). Most fields come from
 # sources/reference-works.csv (the canonical RW list from the Phase-0 dedup);
-# a basic slice of the harvested MARC (sources/marc/reference-resources-marc.zip)
+# a basic slice of the harvested MARC (sources/marc/reference-works-marc.zip)
 # is also read — for now just the primary creator (100 $a), to demonstrate the
 # join. The remaining MARC-derived fields the artists' books carry (OCLC/WorldCat,
 # secondary creators, relator roles, identity URIs, extent/dimensions) are still
@@ -96,7 +96,7 @@ WHERE {
   }
 
   # Basic MARC slice: the primary creator (100 $a) from the harvested reference
-  # MARC. The MARC is a per-record archive (#81): sources/marc/reference-resources-marc.zip
+  # MARC. The MARC is a per-record archive (#81): sources/marc/reference-works-marc.zip
   # holds one <itemKey>.xml document per record, read with SPARQL-Anything's
   # nested Archive -> XML triplifiers. The outer archive read lists the entries
   # (fx:archive.matches) and the inner SERVICE triplifies just that one record
@@ -109,14 +109,14 @@ WHERE {
   # 100 main entry (edited volumes / exhibition catalogs enter creators on
   # 700/710 instead, not read yet). Name only for now — no roles / identity URIs (#46).
   OPTIONAL {
-    SERVICE <x-sparql-anything:location=sources/marc/reference-resources-marc.zip> {
+    SERVICE <x-sparql-anything:location=sources/marc/reference-works-marc.zip> {
       fx:properties fx:archive.matches ".*\\.xml" .
       ?archive fx:anySlot ?file .
 
       SERVICE <x-sparql-anything:> {
         fx:properties
           fx:location ?file ;
-          fx:from-archive "sources/marc/reference-resources-marc.zip" ;
+          fx:from-archive "sources/marc/reference-works-marc.zip" ;
           fx:media-type "application/xml" .
 
         ?record a marc:record .
