@@ -817,6 +817,11 @@ def combine(cfg):
 
         for rec, (key, server, keytype, value) in zip(records, ok_rows):
             harvested_keys.add(key)
+            # Strip any pre-existing 999 the source catalogue stamped (999 is a
+            # locally-defined field; NYARC populates it with staff data -- #95)
+            # so each record carries exactly one 999 = our canonical join key.
+            for old in rec.findall(f"{{{MARC_NS}}}datafield[@tag='999']"):
+                rec.remove(old)
             df = ET.SubElement(rec, f"{{{MARC_NS}}}datafield")
             df.set("tag", "999"); df.set("ind1", " "); df.set("ind2", " ")
             # $a join key (canonical), $b resolving value, $c key type, $d server.
