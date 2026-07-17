@@ -103,9 +103,12 @@ almost none. The harvester instead tries, per item:
    `verify_title` guard so a coincidental title hit isn't stamped onto the wrong
    key),
 
-across a chain of **nine catalogues** — UNC, Library of Congress, K10plus, Penn
-State, LIBRIS (Z39.50), then Getty, Clark, NYARC, Harvard (Alma SRU/CQL) —
-falling through to the next server until a record verifies. A handful of
+across a chain of **ten catalogues** — UNC, Library of Congress, K10plus, Penn
+State, LIBRIS (Z39.50), then Getty, Clark, NYARC, Emory, Harvard (Alma SRU/CQL) —
+falling through to the next server until a record verifies. (Emory's Rose Library
+holds the Nexus Press archive and a deep artist's-book collection, so it is
+grouped with the art libraries; SCAD, which also holds Nexus Press, is unreachable
+— its iii.com-hosted catalogue firewalls datacenter clients on both :210 and :443.) A handful of
 hand-supplied records are merged from `reference-works-manual.xml`. Result:
 **153 of the 155** canonical reference works get a record; the residual (two
 webpages with no catalogue record) is listed in `reference-works-unresolved.csv`.

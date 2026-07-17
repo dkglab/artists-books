@@ -109,12 +109,14 @@ MARC_NS     = "http://www.loc.gov/MARC21/slim"
 # hit rate (the harvest is a waterfall -- each server only sees the residual its
 # predecessors missed, so per-server rates are not comparable; see issue #88):
 #   1. UNC first          -- home institution; prefer its own holdings/call numbers.
-#   2. the art libraries  -- NYARC/Getty/Clark hold the artist's-book exhibition
-#                            and dealer ephemera the general catalogues lack, and
-#                            catalogue it best, so prefer their records when they
-#                            have the work (a full-corpus experiment over the
-#                            non-held residual bore this out: NYARC ~15%, Getty
-#                            ~8% even on the hardest leftovers -- issue #88).
+#   2. the art libraries  -- NYARC/Getty/Clark/Emory hold the artist's-book
+#                            exhibition and dealer ephemera the general catalogues
+#                            lack, and catalogue it best, so prefer their records
+#                            when they have the work (a full-corpus experiment over
+#                            the non-held residual bore this out: NYARC ~15%, Getty
+#                            ~8% even on the hardest leftovers -- issue #88). Emory's
+#                            Rose Library holds the Nexus Press archive + a deep
+#                            artist's-book collection (issue #84).
 #   3. the big US libraries -- LC, Harvard (English-language cataloguing).
 #   4. the big EU library   -- K10plus (the ~80M-record German union catalogue).
 #   5. the rest             -- PSU and LIBRIS, both near-dead weight (~0.7% and
@@ -145,6 +147,19 @@ SERVERS = [
      "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
     # Clark Art Institute, another art library.
     {"name": "clark", "conn": "https://na05.alma.exlibrisgroup.com/view/sru/01CLARKART_INST",
+     "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # Emory (Ex Libris Alma, GALILEO consortium inst 01GALI_EMORY, na03 pod) --
+    # grouped with the art libraries, not the general ones, because its Stuart A.
+    # Rose Library holds the Nexus Press archive and a deep artist's-book
+    # collection: it catalogues the small-press / Atlanta artist's-book tail that
+    # the general catalogues miss (issue #84 -- e.g. the ~22 Nexus Press works with
+    # no UNC/ISBN key). alma.oclc_control_number is a dead index here as on the
+    # other Alma tenants (returns nothing for real and fake numbers alike), so we
+    # rely on isbn/title-author/title like the rest. NOTE: SCAD, which also holds
+    # Nexus Press, is unreachable -- its iii.com-hosted catalogue firewalls
+    # datacenter clients on both :210 and :443.
+    {"name": "emory", "conn": "https://na03.alma.exlibrisgroup.com/view/sru/01GALI_EMORY",
      "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
     # 3. Big US libraries -- English-language cataloguing.
