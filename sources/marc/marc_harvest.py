@@ -156,12 +156,27 @@ SERVERS = [
     # the general catalogues miss (issue #84 -- e.g. the ~22 Nexus Press works with
     # no UNC/ISBN key). alma.oclc_control_number is a dead index here as on the
     # other Alma tenants (returns nothing for real and fake numbers alike), so we
-    # rely on isbn/title-author/title like the rest. NOTE: SCAD, which also holds
-    # Nexus Press, is unreachable -- its iii.com-hosted catalogue firewalls
-    # datacenter clients on both :210 and :443.
+    # rely on isbn/title-author/title like the rest.
     {"name": "emory", "conn": "https://na03.alma.exlibrisgroup.com/view/sru/01GALI_EMORY",
      "protocol": "sru", "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # SCAD (Savannah College of Art and Design) -- absorbed the Atlanta College of
+    # Art and holds the Nexus Press / ACA imprint books directly, so it catalogues
+    # the Atlanta artist's-book tail (issue #84) that even Emory's Rose Library can
+    # miss. Innovative Interfaces III Z39.50 SERVER v1.1 on library.scad.edu:210
+    # (db INNOPAC). An earlier note held this catalogue unreachable (iii.com host
+    # firewalling datacenter clients on :210/:443); re-probed 2026-07, both the
+    # :210 Z39.50 server and the :443 WebPAC accept connections and return MARC21.
+    # No OCLC/bib index we can key on, and these small-press books rarely carry an
+    # ISBN, so it leans on title-author/title -- and several tail titles are single
+    # common words ("Alice", "Distance", "Climax"), so the title-verify (245 vs CSV
+    # title + author surname / year) is doing real work here.
+    # Encoding: like UNC, SCAD mislabels leader/09 as blank/MARC-8 but the bytes are
+    # real UTF-8 (verified 2026-07: Cäcilia/Benoît/Dalí/São Paulo/raisonné all valid
+    # UTF-8), so the combine() leader/09->'a' rewrite handles it with no transcode.
+    {"name": "scad", "conn": "tcp:library.scad.edu:210/INNOPAC",
+     "protocol": "z3950", "keytypes": ("isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
     # 3. Big US libraries -- English-language cataloguing.
     # LC (Z39.50): a shared national service, throttled gentler than UNC. UTF-8.
     {"name": "lc",  "conn": "tcp:lx2.loc.gov:210/LCDB",

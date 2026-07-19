@@ -79,6 +79,37 @@ python3 marc/rekey_held.py --in-marc <pre-#84 lib-1 marc.xml> \
     --csv artists-books.csv --out marc/artists-books-held-marc.xml
 ```
 
+### Adding a server's reach to the committed archive
+
+`combine()` rebuilds an archive wholly from the harvest state under
+`harvest/<csv-stem>/`, which is **gitignored** — so running a newly added server
+against the residual and pointing `--out` at the committed archive would *replace*
+it with only that run's hits, dropping everything harvested before. Adding a
+server's reach is therefore an **additive merge of archives**, via
+`merge_archives.py`: run the new server against a residual CSV (the books still
+missing a record) into its own archive under `harvest/`, then merge that into the
+committed one. Every record carries its join key in `999 $a` and every entry is
+`<key>.xml`, so the merge is a union keyed by entry name; for a residual run the
+expected collision count is zero, and the tool reports any it finds.
+
+That is how the SCAD pass landed: 2,920 non-held books still missing MARC →
+**463 verified records** (15.9%), plus **12** hand-adjudicated recoveries merged
+from `harvest/scad-residual-manual.xml`, taking the committed archive from 4,985
+to **5,460** records. The 12 are title-verify false negatives — the right book
+under a cataloguer's variant title (`Iconomics : Money` catalogued as `245 $a
+Money` with `246 Iconomics`; `Bob : book number 100` as `Bobby : book nr. 100`) —
+recovered by re-querying the `review.tsv` rejects with a wider `show_n` and
+reading the candidates by hand, **without** loosening `TITLE_STRONG`/`TITLE_WEAK`.
+One of the 12 was ranked 4th of 7 hits, i.e. outside the harvest's `show_n=3`
+window: on common-word artist's-book titles the show depth, not just the
+threshold, is a real ceiling on recall.
+
+```sh
+# from sources/, after harvesting a residual into its own archive:
+python3 marc/merge_archives.py --base marc/artists-books-marc.zip \
+    --add marc/harvest/scad-residual.zip --out marc/artists-books-marc.zip
+```
+
 ## Reference-work MARC harvest
 
 `marc_harvest.py` also harvests the reference works — the deduped canonical
@@ -103,12 +134,15 @@ almost none. The harvester instead tries, per item:
    `verify_title` guard so a coincidental title hit isn't stamped onto the wrong
    key),
 
-across a chain of **ten catalogues** — UNC, Library of Congress, K10plus, Penn
-State, LIBRIS (Z39.50), then Getty, Clark, NYARC, Emory, Harvard (Alma SRU/CQL) —
-falling through to the next server until a record verifies. (Emory's Rose Library
-holds the Nexus Press archive and a deep artist's-book collection, so it is
-grouped with the art libraries; SCAD, which also holds Nexus Press, is unreachable
-— its iii.com-hosted catalogue firewalls datacenter clients on both :210 and :443.) A handful of
+across a chain of **eleven catalogues** — UNC, Library of Congress, K10plus, Penn
+State, LIBRIS (Z39.50), then Getty, Clark, NYARC, Emory, Harvard (Alma SRU/CQL),
+and SCAD (Z39.50) — falling through to the next server until a record verifies.
+(Emory's Rose Library holds the Nexus Press archive and a deep artist's-book
+collection, so it is grouped with the art libraries; SCAD absorbed the Atlanta
+College of Art and holds the Nexus Press / ACA imprints directly. An earlier note
+here held SCAD unreachable — its iii.com-hosted catalogue firewalling datacenter
+clients on :210 and :443 — but a 2026-07 re-probe found both the Z39.50 server and
+the WebPAC answering, and it is now in the chain.) A handful of
 hand-supplied records are merged from `reference-works-manual.xml`. Result:
 **153 of the 155** canonical reference works get a record; the residual (two
 webpages with no catalogue record) is listed in `reference-works-unresolved.csv`.
