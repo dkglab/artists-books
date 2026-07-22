@@ -7,6 +7,7 @@ PREFIX bf: <http://id.loc.gov/ontologies/bibframe/>
 PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX marc: <http://www.loc.gov/MARC21/slim#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
 # Reference works (#34, #42). Builds graph/reference-works.ttl.
 #
@@ -39,6 +40,8 @@ CONSTRUCT {
     bf:provisionActivity ?refPublication ;
     bf:language ?language ;
     bf:identifiedBy ?refISBN ;
+    bf:identifiedBy ?refOCLCNum ;
+    foaf:isPrimaryTopicOf ?worldcat_url ;
     bf:contribution ?refContribution ;
     .
 
@@ -59,6 +62,11 @@ CONSTRUCT {
   ?refISBN a bf:Identifier ;
     rdf:value ?ISBN ;
     bf:source wd:Q33057 ; # ISBN
+    .
+
+  ?refOCLCNum a bf:Local ;
+    rdf:value ?oclc_number ;
+    bf:source wd:Q846596 ;   # WorldCat
     .
 }
 WHERE {
@@ -135,6 +143,13 @@ WHERE {
         ?df100 fx:anySlot ?sf100a .
         ?sf100a xyz:code "a" ; rdf:_1 ?name_raw .
         BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?creator_name)
+
+        # OCLC number from MARC 001
+        ?record fx:anySlot ?cf001 .
+        ?cf001
+          a marc:controlfield ;
+          xyz:tag "001" ;
+          rdf:_1 ?control_number_raw .
       }
     }
     # Guard on ?creator_name: the nested archive read binds ?canonical_key (from
@@ -145,5 +160,31 @@ WHERE {
     # the 100-match was a required pattern in the same SERVICE.)
     BIND(IF(BOUND(?creator_name), fx:entity(ab:, "reference/", ?canonical_key, "/contribution/primary"), ?sentinel) AS ?refContribution)
     BIND(IF(BOUND(?creator_name), fx:entity(ab:, "reference/", ?canonical_key, "/agent/primary"), ?sentinel) AS ?refAgent)
+    BIND(
+      REPLACE(
+        REPLACE(?control_number_raw, "^\\D+", ""),
+        "^0+",
+        ""
+      )
+      AS ?oclc_number
+    )
+
+    BIND(
+      IF(
+        BOUND(?oclc_number),
+        IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)),
+        ?sentinel
+      )
+      AS ?worldcat_url
+    )
+
+    BIND(
+        IF(
+            BOUND(?oclc_number),
+            fx:entity(ab:, "reference/", ?canonical_key, "/oclc"),
+            ?sentinel
+        )
+        AS ?refOCLCNum
+    )
   }
 }
