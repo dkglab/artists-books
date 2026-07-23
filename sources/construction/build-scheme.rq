@@ -1,0 +1,79 @@
+# Build the SKOS construction-methods scheme from the curated decisions.csv
+# joined against the mined occurrences.csv. For every include=y cluster the
+# matching occurrences contribute their raw $a variants (as skos:altLabel + a
+# normalized ab:matchKey) and their $0 authority URIs (as skos:exactMatch).
+# Concepts are minted in the ab: namespace and grouped under four category top
+# concepts.
+#
+# Both inputs are small local CSVs, so this join is cheap. occurrences.csv is
+# the MARC extract materialized once by mine-occurrences.rq -- reading the MARC
+# archive directly here instead would make ARQ re-read the whole archive once
+# per decision row (confirmed via `--explain`; see mine-occurrences.rq).
+#
+# Matching-key normalization was applied when occurrences.csv was mined and MUST
+# stay identical to mine-candidates.rq/mine-occurrences.rq and to the construct
+# query that consumes the scheme: lower-case, strip trailing whitespace/periods,
+# punctuation -> hyphen, trim hyphens. matchKey is a PLAIN literal (no language
+# tag) so the eventual join can never hit a langtag mismatch.
+PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xyz:     <http://sparql.xyz/facade-x/data/>
+PREFIX fx:      <http://sparql.xyz/facade-x/ns/>
+
+CONSTRUCT {
+  ab:construction-methods a skos:ConceptScheme ;
+    skos:prefLabel "Construction and production methods"@en .
+
+  ?catConcept a skos:Concept ;
+    skos:inScheme ab:construction-methods ;
+    skos:topConceptOf ab:construction-methods ;
+    skos:prefLabel ?catLabel ;
+    rdfs:label ?catLabel .
+
+  ?concept a skos:Concept ;
+    skos:inScheme ab:construction-methods ;
+    skos:broader ?catConcept ;
+    skos:prefLabel ?prefLabelLang ;
+    rdfs:label ?prefLabelLang ;
+    skos:altLabel ?altLabelLang ;
+    skos:exactMatch ?matchIRI ;
+    ab:matchKey ?matchKey .
+}
+WHERE {
+  # ---- curated decisions (include = y only) ----
+  SERVICE <x-sparql-anything:location=sources/construction/decisions.csv,csv.headers=true> {
+    ?drow xyz:cluster ?cluster_d ;
+          xyz:include "y" ;
+          xyz:conceptId ?conceptId ;
+          xyz:category  ?category ;
+          xyz:prefLabel ?prefLabel .
+  }
+  VALUES (?category ?catSlug ?catLabel) {
+    ("material"            "material"            "Materials"@en)
+    ("technique"           "technique"           "Techniques"@en)
+    ("binding-format"      "binding-format"      "Binding and format"@en)
+    ("production-printing" "production-printing" "Production and printing"@en)
+  }
+  BIND(fx:entity(ab:, "construction/", ?conceptId)       AS ?concept)
+  BIND(fx:entity(ab:, "construction/category/", ?catSlug) AS ?catConcept)
+  BIND(STRLANG(?prefLabel, "en") AS ?prefLabelLang)
+
+  # ---- mined MARC occurrences (materialized once by mine-occurrences.rq) ----
+  # One row per distinct (cluster, raw label, authority URI). Join to the curated
+  # decisions on the cluster key.
+  SERVICE <x-sparql-anything:location=sources/construction/occurrences.csv,csv.headers=true> {
+    ?orow xyz:cluster    ?cluster ;
+          xyz:rawLabel   ?rawLabel ;
+          xyz:normLabel  ?normLabel .
+    # authority is "" for headings that carry no $0; treat that as absent.
+    OPTIONAL { ?orow xyz:authority ?authRaw . FILTER(?authRaw != "") BIND(?authRaw AS ?authority) }
+  }
+  FILTER(?cluster = ?cluster_d)
+
+  # normalized match key (plain literal) + variant label + exact-match IRI
+  BIND(?normLabel AS ?matchKey)
+  BIND(IF(STR(?rawLabel) != ?prefLabel, STRLANG(?rawLabel, "en"), ?unbound) AS ?altLabelLang)
+  BIND(IF(BOUND(?authority), IRI(?authority), ?unbound) AS ?matchIRI)
+}

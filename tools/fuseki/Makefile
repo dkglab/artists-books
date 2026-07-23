@@ -16,7 +16,8 @@ start: fuseki-server
 	./fuseki-server --quiet \
 	--file=../../graph/artists-books.ttl \
 	--file=../../graph/reference-works.ttl \
-	--file=../../sources/citations.ttl /artists-books \
+	--file=../../sources/citations.ttl \
+	--file=../../sources/construction-methods.ttl /artists-books \
 	2> run/fuseki.log \
 	& echo $$! \
 	> run/fuseki.pid; \

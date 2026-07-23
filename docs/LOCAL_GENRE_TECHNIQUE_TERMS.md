@@ -9,20 +9,20 @@ are *not* included; see `MARC-RECORDS.md` → "Local & un-reconciled headings".)
 
 Two schemes, **15 distinct terms**, 148 occurrences total. None carry a URI.
 
-- **`abo.org.`** — Artists' Books Online structural/narrative descriptors (4 terms)
+- **`abo.org.`** — Artists' Books Online structural/narrative descriptors (4 terms) #not an actual resource
 - **`local.`** — UNC local genre/technique terms (11 terms)
 
 `occ` = total occurrences; `recs` = distinct records; `tags` = which MARC field(s)
 the term appears in (`655` genre/form, `650` topical). Trailing end-of-field
 periods have been stripped from the display form.
 
-## `abo.org.` — Artists' Books Online descriptors
+## `abo.org.` — Artists' Books Online descriptors 
 
 | term | occ | recs | tags |
 |------|----:|-----:|------|
-| Photographic sequence | 44 | 44 | 655, 650 |
-| Appropriated text | 43 | 43 | 655, 650 |
-| Visual narrative | 25 | 25 | 655, 650 |
+| Photographic sequence | 44 | 44 | 655, 650 | 
+| Appropriated text | 43 | 43 | 655, 650 | note: in OAB
+| Visual narrative | 25 | 25 | 655, 650 | 
 | Visiual narrative ⚠️ | 1 | 1 | 655 |
 
 ⚠️ **`Visiual narrative`** is a typo for **`Visual narrative`** — merge it
@@ -32,28 +32,26 @@ periods have been stripped from the display form.
 
 | term | occ | recs | tags |
 |------|----:|-----:|------|
-| Typographic art | 19 | 19 | 655, 650 |
-| Asemic writing | 3 | 3 | 650 |
-| Artists' books | 2 | 2 | 655 |
-| Conceptual art | 2 | 2 | 655 |
+| Typographic art | 19 | 19 | 655, 650 | note: same as typography in other vocabs |
+| Asemic writing | 3 | 3 | 650 | note: in OAB
+| Artists' books | 2 | 2 | 655 | 
+| Conceptual art | 2 | 2 | 655 | 
 | Graduated fore-edges | 2 | 2 | 655 |
 | Sales catalogs | 2 | 2 | 650 |
 | Altered books | 1 | 1 | 655 |
 | Conceptual bookworks | 1 | 1 | 655 |
-| Corrugated paperboard bindings | 1 | 1 | 655 |
-| Offset printing | 1 | 1 | 650 |
-| Stab binding | 1 | 1 | 655 |
+| Corrugated paperboard bindings | 1 | 1 | 655 | note: same as https://www.getty.edu/vow/AATFullDisplay?find=paper+board&logic=AND&note=&english=N&prev_page=1&subjectid=300183678
+| Offset printing | 1 | 1 | 650 | note: in AAT
+| Stab binding | 1 | 1 | 655 | note: same as https://www.getty.edu/vow/AATFullDisplay?find=&place=&nation=&logic=&note=&role=&subjectid=300458831
 
 ## Grouped by what the term describes
 
 **Genre / form — what the work is**
-Artists' books · Conceptual art · Conceptual bookworks · Visual narrative ·
-Photographic sequence · Appropriated text · Sales catalogs · Altered books ·
-Asemic writing · Typographic art
+Artists' books · Conceptual art · Conceptual bookworks · Visual narrative · Sales catalogs 
 
 **Technique / physical structure — how it's made**
 Stab binding · Corrugated paperboard bindings · Graduated fore-edges ·
-Offset printing
+Offset printing · Photographic sequence · Appropriated text · Altered books · Asemic writing · Typographic art
 
 ## Reconciliation notes
 
