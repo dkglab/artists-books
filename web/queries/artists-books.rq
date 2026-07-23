@@ -20,7 +20,12 @@ SELECT
   ?dimensions
   ?edition
   (SAMPLE(?summaryLabel) AS ?summary)
-  (GROUP_CONCAT(DISTINCT COALESCE(?constructionTermLabel, STR(?constructionTerm)); separator="; ") AS ?constructionTerms)
+  # Each construction method as a "conceptKey<TAB>label" token, tokens newline-
+  # separated, so the template links each to its /construction/ page.
+  (GROUP_CONCAT(DISTINCT CONCAT(
+     REPLACE(STR(?constructionTerm), ".*/construction/", ""), "\t",
+     COALESCE(?constructionTermLabel, STR(?constructionTerm))
+   ); separator="\n") AS ?constructionTerms)
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   (GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
   (SAMPLE(?worldcat_url) AS ?worldcatLink)
