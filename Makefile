@@ -56,15 +56,18 @@ graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 # (#81), read via nested Archive -> XML triplifiers.
 #
 # artists-books.ttl also reads the construction occurrences + decisions CSVs to
-# attach ab:constructedUsing (#86): occurrences.csv maps each book's canonical
-# key to its heading clusters, decisions.csv maps included clusters to concepts.
-# The concept URIs it emits resolve against sources/construction-methods.ttl,
-# which Fuseki loads separately.
+# attach ab:constructedUsing (#86), and the subjects occurrences + decisions CSVs
+# to attach ab:hasSubject (#105): each occurrences.csv maps a book's canonical key
+# to its heading clusters, each decisions.csv maps included clusters to concepts.
+# The concept URIs it emits resolve against sources/construction-methods.ttl and
+# sources/subject-terms.ttl, which Fuseki loads separately.
 graph/artists-books.ttl: \
 sources/artists-books.csv \
 sources/marc/artists-books-marc.zip \
 sources/construction/occurrences.csv \
-sources/construction/decisions.csv
+sources/construction/decisions.csv \
+sources/subjects/occurrences.csv \
+sources/subjects/decisions.csv
 
 graph/reference-works.ttl: \
 sources/reference-works.csv \
@@ -77,6 +80,8 @@ web/site/index.html: \
 graph/artists-books.ttl \
 graph/reference-works.ttl \
 sources/citations.ttl \
+sources/construction-methods.ttl \
+sources/subject-terms.ttl \
 $(wildcard web/*.yaml) \
 $(wildcard web/queries/*.rq) \
 $(wildcard web/templates/*.html) \

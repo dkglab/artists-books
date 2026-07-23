@@ -8,6 +8,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
 @prefix ab: <https://dkglab.github.io/ns/artists-books/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 
 ex:ArtistsBook a rdfs:Class ;
@@ -65,6 +66,12 @@ ex:constructedUsing a rdfs:Property ;
     rdfs:label "constructed using" ;
     rdfs:comment "Indicates techniques, materials, and production methods used in the construction of an Artist's Book. May also include the genre of the book like \"photographic sequence\"" ;
     rdfs:domain ex:ArtistsBook.
+
+ex:hasSubject a rdfs:Property ;
+    rdfs:label "has subject" ;
+    rdfs:comment "Relates an Artist's Book to a topical or geographic subject concept (a skos:Concept in the ab:subject-terms scheme) drawn from its MARC 650/651 headings. Indicates what the book is about." ;
+    rdfs:domain ex:ArtistsBook ;
+    rdfs:range skos:Concept.
 
 
 

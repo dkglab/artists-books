@@ -1,0 +1,91 @@
+# Build the SKOS subject-terms scheme from the curated decisions.csv joined
+# against the mined occurrences.csv. For every include=y cluster the matching
+# occurrences contribute their raw heading variants (as skos:altLabel + a
+# normalized ab:matchKey) and their $0 authority URIs (as skos:exactMatch);
+# decisions.csv may add a manual exactMatch for a cluster whose records carried
+# no $0. Concepts are minted in the ab: namespace under two category top concepts
+# (topical / geographic), which partition the scheme.
+#
+# This mirrors ../construction/build-scheme.rq exactly, with one addition: the
+# manual `exactMatch` column (issue #105) -- because the hard case for subjects is
+# bare headings with no $0, and this is where the curator records the authority
+# URI they reconciled it to.
+#
+# Both inputs are small local CSVs, so this join is cheap. occurrences.csv is the
+# MARC extract materialized once by mine-occurrences.rq -- reading the MARC archive
+# directly here would make ARQ re-read the whole archive once per decision row
+# (see mine-occurrences.rq). Matching-key normalization was applied when
+# occurrences.csv was mined and MUST stay identical across the three subjects
+# queries and the eventual construct query that consumes the scheme: lower-case,
+# strip trailing whitespace/periods, punctuation -> hyphen, trim hyphens. matchKey
+# is a PLAIN literal (no language tag) so the eventual join can never hit a
+# langtag mismatch.
+PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xyz:     <http://sparql.xyz/facade-x/data/>
+PREFIX fx:      <http://sparql.xyz/facade-x/ns/>
+
+CONSTRUCT {
+  ab:subject-terms a skos:ConceptScheme ;
+    skos:prefLabel "Subject terms"@en .
+
+  ?catConcept a skos:Concept ;
+    skos:inScheme ab:subject-terms ;
+    skos:topConceptOf ab:subject-terms ;
+    skos:prefLabel ?catLabel ;
+    rdfs:label ?catLabel .
+
+  ?concept a skos:Concept ;
+    skos:inScheme ab:subject-terms ;
+    skos:broader ?catConcept ;
+    skos:prefLabel ?prefLabelLang ;
+    rdfs:label ?prefLabelLang ;
+    skos:altLabel ?altLabelLang ;
+    skos:exactMatch ?matchIRI ;
+    skos:exactMatch ?manualIRI ;
+    ab:matchKey ?matchKey .
+}
+WHERE {
+  # ---- curated decisions (include = y only) ----
+  SERVICE <x-sparql-anything:location=sources/subjects/decisions.csv,csv.headers=true> {
+    ?drow xyz:cluster ?cluster ;
+          xyz:include "y" ;
+          xyz:conceptId ?conceptId ;
+          xyz:category  ?category ;
+          xyz:prefLabel ?prefLabel .
+    # manual exactMatch: an authority URI hand-assigned to a cluster that had no
+    # $0 in any record. Blank/absent when the occurrences already supply one.
+    OPTIONAL { ?drow xyz:exactMatch ?exactRaw . FILTER(?exactRaw != "") BIND(?exactRaw AS ?exactMatch) }
+  }
+  VALUES (?category ?catSlug ?catLabel) {
+    ("topical"    "topical"    "Topical subjects"@en)
+    ("geographic" "geographic" "Geographic subjects"@en)
+  }
+  BIND(fx:entity(ab:, "subject/", ?conceptId)          AS ?concept)
+  BIND(fx:entity(ab:, "subject/category/", ?catSlug)   AS ?catConcept)
+  BIND(STRLANG(?prefLabel, "en") AS ?prefLabelLang)
+  BIND(IF(BOUND(?exactMatch), IRI(?exactMatch), ?unbound) AS ?manualIRI)
+
+  # ---- mined MARC occurrences (materialized once by mine-occurrences.rq) ----
+  # One row per distinct (cluster, raw heading, authority URI). Natural-join to the
+  # curated decisions on the shared ?cluster key: binding the SAME variable in both
+  # (required, non-OPTIONAL) SERVICEs lets ARQ hash-join them. (Using a private key
+  # + FILTER(?cluster = ?cluster_d) instead forces a nested-loop cross product --
+  # ~9 min here vs ~3 s. Both ?cluster ends are always bound, so the private-key
+  # rule in docs/QUERY-PERFORMANCE.md -- which guards against an *unbound* OPTIONAL
+  # var fanning out -- does not apply.)
+  SERVICE <x-sparql-anything:location=sources/subjects/occurrences.csv,csv.headers=true> {
+    ?orow xyz:cluster    ?cluster ;
+          xyz:rawLabel   ?rawLabel ;
+          xyz:normLabel  ?normLabel .
+    # authority is "" for headings that carry no $0; treat that as absent.
+    OPTIONAL { ?orow xyz:authority ?authRaw . FILTER(?authRaw != "") BIND(?authRaw AS ?authority) }
+  }
+
+  # normalized match key (plain literal) + variant label + exact-match IRI
+  BIND(?normLabel AS ?matchKey)
+  BIND(IF(STR(?rawLabel) != ?prefLabel, STRLANG(?rawLabel, "en"), ?unbound) AS ?altLabelLang)
+  BIND(IF(BOUND(?authority), IRI(?authority), ?unbound) AS ?matchIRI)
+}

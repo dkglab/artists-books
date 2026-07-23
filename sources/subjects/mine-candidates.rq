@@ -1,0 +1,100 @@
+# Mine subject candidate headings from the artists-books MARC. Pool: plain
+# topical `650` + geographic `651` -- the complement of the construction pool
+# (655/340 + non-plain 650), i.e. what a book is ABOUT (issue #105). One row per
+# concept CLUSTER:
+#   cluster = the $0 authority URI when present, else scheme|normalized-heading.
+# labels lists every distinct raw heading variant seen (so curation can see twins).
+#
+# Same pool, heading assembly, and normalization as mine-occurrences.rq (they MUST
+# stay in lockstep). The heading is the ordered subfields $a $x $y $z $v joined
+# with " -- ", rebuilt in document order via an ORDERed sub-SELECT feeding
+# GROUP_CONCAT (see the long note in mine-occurrences.rq for the ordering and the
+# one variable-predicate walk it requires). ?recs counts distinct archive entries
+# (one .xml per record), robust regardless of per-record blank-node identity.
+#
+# Reads the per-record MARC zip archive (#81) via the nested Archive->XML
+# triplifier pattern (the outer fx:archive.matches listing + inner per-record
+# fx:location ?file + fx:from-archive).
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
+PREFIX marc:<http://www.loc.gov/MARC21/slim#>
+SELECT
+  ?cluster
+  (SAMPLE(?dollar0) AS ?authorityURI)
+  (GROUP_CONCAT(DISTINCT ?scheme; separator=" ") AS ?schemes)
+  (GROUP_CONCAT(DISTINCT ?tag; separator=" ") AS ?tags)
+  (COUNT(DISTINCT ?file) AS ?recs)
+  (GROUP_CONCAT(DISTINCT ?rawLabel; separator=" | ") AS ?labels)
+WHERE {
+  # ---- per datafield: assemble the ordered heading ($a $x $y $z $v) ----
+  {
+    SELECT ?file ?tag ?df ?scheme ?dollar0
+           (GROUP_CONCAT(?part; separator=" -- ") AS ?rawLabel)
+    WHERE {
+      {
+        SELECT ?file ?tag ?df ?scheme ?dollar0 ?idx ?part
+        WHERE {
+          SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.zip> {
+            fx:properties fx:archive.matches ".*\\.xml" .
+            ?archive fx:anySlot ?file .
+
+            SERVICE <x-sparql-anything:> {
+              fx:properties
+                fx:location ?file ;
+                fx:from-archive "sources/marc/artists-books-marc.zip" ;
+                fx:media-type "application/xml" .
+
+              ?record a marc:record .
+              ?record fx:anySlot ?df .
+              ?df a marc:datafield ; xyz:tag ?tag .
+              FILTER(?tag IN ("650", "651"))
+
+              # $0 and $2 reduced to one value per datafield so a repeated $0
+              # can't cross-multiply the heading parts (see mine-occurrences.rq).
+              OPTIONAL {
+                SELECT ?df (MIN(?d0) AS ?dollar0) WHERE {
+                  ?df fx:anySlot ?sf0 . ?sf0 xyz:code "0" ; rdf:_1 ?zeroRaw .
+                  BIND(STR(?zeroRaw) AS ?d0)
+                } GROUP BY ?df
+              }
+              OPTIONAL {
+                SELECT ?df (MIN(?s2) AS ?schemeFrom2) WHERE {
+                  ?df fx:anySlot ?sf2 . ?sf2 xyz:code "2" ; rdf:_1 ?sr .
+                  BIND(LCASE(REPLACE(STR(?sr), "\\.$", "")) AS ?s2)
+                } GROUP BY ?df
+              }
+              # vocabulary: $2 else 650 second-indicator map (see mine-occurrences.rq).
+              OPTIONAL { ?df xyz:ind2 ?ind2raw }
+              BIND(IF(?tag = "650", COALESCE(?ind2raw, ""), "") AS ?ind2key)
+              OPTIONAL {
+                VALUES (?i2k ?i2scheme) {
+                  ("0" "lcsh") ("1" "lcshac") ("2" "mesh")
+                  ("3" "nal") ("4" "unspecified") ("5" "csh") ("6" "rvm")
+                }
+                FILTER(?i2k = ?ind2key)
+              }
+              BIND(COALESCE(?schemeFrom2, ?i2scheme) AS ?scheme)
+
+              ?df ?p ?sf .
+              FILTER(STRSTARTS(STR(?p), "http://www.w3.org/1999/02/22-rdf-syntax-ns#_"))
+              BIND(xsd:integer(STRAFTER(STR(?p), "#_")) AS ?idx)
+              ?sf xyz:code ?code ; rdf:_1 ?v .
+              FILTER(?code IN ("a", "x", "y", "z", "v"))
+              BIND(REPLACE(REPLACE(STR(?v), "[\\s.]+$", ""), "\\s+$", "") AS ?part)
+            }
+          }
+        }
+        ORDER BY ?df ?idx
+      }
+    }
+    GROUP BY ?file ?tag ?df ?scheme ?dollar0
+  }
+  FILTER(?rawLabel != "")
+
+  BIND(REPLACE(REPLACE(REPLACE(LCASE(?rawLabel), "[\\s.]+$",""), "[^a-z0-9]+","-"), "(^-)|(-$)","") AS ?normLabel)
+  BIND(COALESCE(?dollar0, CONCAT(COALESCE(?scheme,"none"), "|", ?normLabel)) AS ?cluster)
+}
+GROUP BY ?cluster
+ORDER BY DESC(?recs) ?cluster
