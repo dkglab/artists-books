@@ -5,25 +5,158 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
-<https://dkglab.github.io/ns/artists-books/construction/vinylcuts>
-        rdf:type         skos:Concept;
-        rdfs:label       "Vinylcuts"@en;
-        skos:altLabel    "Vinylcuts."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300264640>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Vinylcuts"@en;
-        ab:matchKey      "vinylcuts" .
+<https://dkglab.github.io/ns/artists-books/construction/soft-ground-etchings>
+        rdf:type        skos:Concept;
+        rdfs:label      "Soft-ground etchings"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Soft-ground etchings"@en;
+        ab:matchKey     "soft-ground-etchings" .
 
-<https://dkglab.github.io/ns/artists-books/construction/inkjet-prints>
+<https://dkglab.github.io/ns/artists-books/construction/pigment-prints>
+        rdf:type        skos:Concept;
+        rdfs:label      "Pigment prints"@en;
+        skos:altLabel   "Pigment prints."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Pigment prints"@en;
+        ab:matchKey     "pigment-prints" .
+
+<https://dkglab.github.io/ns/artists-books/construction/offset-printed-halftones>
+        rdf:type        skos:Concept;
+        rdfs:label      "Offset-printed halftones"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Offset-printed halftones"@en;
+        ab:matchKey     "offset-printed-halftones" .
+
+<https://dkglab.github.io/ns/artists-books/construction/offset-lithography>
+        rdf:type        skos:Concept;
+        rdfs:label      "Offset lithography"@en;
+        skos:altLabel   "Offset lithography."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Offset lithography"@en;
+        ab:matchKey     "offset-lithography" .
+
+<https://dkglab.github.io/ns/artists-books/construction/offset-lithographs>
+        rdf:type        skos:Concept;
+        rdfs:label      "Offset lithographs"@en;
+        skos:altLabel   "offset lithographs."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Offset lithographs"@en;
+        ab:matchKey     "offset-lithographs" .
+
+<https://dkglab.github.io/ns/artists-books/construction/offset-halftones>
+        rdf:type        skos:Concept;
+        rdfs:label      "Offset halftones"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Offset halftones"@en;
+        ab:matchKey     "offset-halftones" .
+
+<https://dkglab.github.io/ns/artists-books/construction/intaglio-prints>
+        rdf:type        skos:Concept;
+        rdfs:label      "Intaglio prints"@en;
+        skos:altLabel   "Intaglio prints."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Intaglio prints"@en;
+        ab:matchKey     "intaglio-prints" .
+
+<https://dkglab.github.io/ns/artists-books/construction/gelatin-silver-prints>
+        rdf:type        skos:Concept;
+        rdfs:label      "Gelatin silver prints"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Gelatin silver prints"@en;
+        ab:matchKey     "gelatin-silver-prints" .
+
+<https://dkglab.github.io/ns/artists-books/construction/engravings-prints>
+        rdf:type        skos:Concept;
+        rdfs:label      "Engravings (prints)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Engravings (prints)"@en;
+        ab:matchKey     "engravings-prints" .
+
+<https://dkglab.github.io/ns/artists-books/construction/engravings>
+        rdf:type        skos:Concept;
+        rdfs:label      "Engravings"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Engravings"@en;
+        ab:matchKey     "engravings" .
+
+<https://dkglab.github.io/ns/artists-books/construction/digital-prints>
+        rdf:type        skos:Concept;
+        rdfs:label      "Digital prints"@en;
+        skos:altLabel   "Digital prints."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Digital prints"@en;
+        ab:matchKey     "digital-prints" .
+
+<https://dkglab.github.io/ns/artists-books/construction/color-prints>
+        rdf:type        skos:Concept;
+        rdfs:label      "Color prints"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Color prints"@en;
+        ab:matchKey     "color-prints" .
+
+<https://dkglab.github.io/ns/artists-books/construction/color-lithographs>
+        rdf:type        skos:Concept;
+        rdfs:label      "Color lithographs"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Color lithographs"@en;
+        ab:matchKey     "color-lithographs" .
+
+<https://dkglab.github.io/ns/artists-books/construction/color-ink-jet-printing>
+        rdf:type        skos:Concept;
+        rdfs:label      "Color ink jet printing"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Color ink jet printing"@en;
+        ab:matchKey     "color-ink-jet-printing" .
+
+<https://dkglab.github.io/ns/artists-books/construction/collograph-printing>
+        rdf:type        skos:Concept;
+        rdfs:label      "Collograph printing"@en;
+        skos:altLabel   "Collograph printing."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Collograph printing"@en;
+        ab:matchKey     "collograph-printing" .
+
+<https://dkglab.github.io/ns/artists-books/construction/chine-colle>
+        rdf:type        skos:Concept;
+        rdfs:label      "Chine collé"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Chine collé"@en;
+        ab:matchKey     "chine-colle" .
+
+<https://dkglab.github.io/ns/artists-books/construction/offset-printing>
+        rdf:type        skos:Concept;
+        rdfs:label      "Offset printing"@en;
+        skos:altLabel   "Offset prints."@en , "Offset printing."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Offset printing"@en;
+        ab:matchKey     "offset-prints" , "offset-printing" .
+
+<https://dkglab.github.io/ns/artists-books/construction/stencil-prints>
         rdf:type         skos:Concept;
-        rdfs:label       "Inkjet prints"@en;
-        skos:altLabel    "Inkjet prints."@en;
+        rdfs:label       "Stencil prints"@en;
+        skos:altLabel    "Stencils (visual works)"@en , "Stencil prints."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300265621>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300435283>;
         skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Inkjet prints"@en;
-        ab:matchKey      "inkjet-prints" .
+        skos:prefLabel   "Stencil prints"@en;
+        ab:matchKey      "stencils-visual-works" , "stencil-prints" .
 
 <https://dkglab.github.io/ns/artists-books/construction/foil-stamping>
         rdf:type         skos:Concept;
@@ -35,23 +168,25 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:prefLabel   "Foil stamping"@en;
         ab:matchKey      "foil-stamping" .
 
-<https://dkglab.github.io/ns/artists-books/construction/stencil-prints>
+<https://dkglab.github.io/ns/artists-books/construction/inkjet-prints>
         rdf:type         skos:Concept;
-        rdfs:label       "Stencil prints"@en;
-        skos:altLabel    "Stencil prints."@en;
+        rdfs:label       "Inkjet prints"@en;
+        skos:altLabel    "Inkjet prints."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300435283>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300265621>;
         skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Stencil prints"@en;
-        ab:matchKey      "stencil-prints" .
+        skos:prefLabel   "Inkjet prints"@en;
+        ab:matchKey      "inkjet-prints" .
 
-<https://dkglab.github.io/ns/artists-books/construction/offset-printing>
-        rdf:type        skos:Concept;
-        rdfs:label      "Offset printing"@en;
-        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
-        skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Offset printing"@en;
-        ab:matchKey     "offset-printing" .
+<https://dkglab.github.io/ns/artists-books/construction/vinylcuts>
+        rdf:type         skos:Concept;
+        rdfs:label       "Vinylcuts"@en;
+        skos:altLabel    "Vinylcuts."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300264640>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Vinylcuts"@en;
+        ab:matchKey      "vinylcuts" .
 
 <https://dkglab.github.io/ns/artists-books/construction/overprinting>
         rdf:type         skos:Concept;
@@ -76,12 +211,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/etching>
         rdf:type         skos:Concept;
         rdfs:label       "Etching"@en;
-        skos:altLabel    "Etching (printing process)"@en;
+        skos:altLabel    "Etchings (prints)."@en , "Etchings."@en , "Etchings"@en , "Etching (printing process)."@en , "Etching (printing process)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300053241>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Etching"@en;
-        ab:matchKey      "etching-printing-process" .
+        ab:matchKey      "etchings-prints" , "etchings" , "etching-printing-process" .
 
 <https://dkglab.github.io/ns/artists-books/construction/drypoint>
         rdf:type         skos:Concept;
@@ -101,17 +236,17 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:exactMatch  <http://vocab.getty.edu/aat/300041366>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Aquatints"@en;
-        ab:matchKey      "aquatints-prints" .
+        ab:matchKey      "aquatints" , "aquatints-prints" .
 
 <https://dkglab.github.io/ns/artists-books/construction/pochoir>
         rdf:type         skos:Concept;
         rdfs:label       "Pochoir"@en;
-        skos:altLabel    "Pochoir (technique)"@en;
+        skos:altLabel    "Pochoir prints"@en , "Pochoir."@en , "Pochoir (technique)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300053436>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Pochoir"@en;
-        ab:matchKey      "pochoir-technique" .
+        ab:matchKey      "pochoir-prints" , "pochoir" , "pochoir-technique" .
 
 <https://dkglab.github.io/ns/artists-books/construction/block-printing>
         rdf:type         skos:Concept;
@@ -138,7 +273,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Relief prints"@en;
         skos:altLabel    "Relief prints."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300041391>;
+        skos:exactMatch  <http://id.worldcat.org/fast/1986258> , <http://id.loc.gov/authorities/genreForms/gf2017027256> , <http://vocab.getty.edu/aat/300041391>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Relief prints"@en;
         ab:matchKey      "relief-prints" .
@@ -166,32 +301,32 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/letterpress-printing>
         rdf:type         skos:Concept;
         rdfs:label       "Letterpress printing"@en;
-        skos:altLabel    "Letterpress printing."@en;
+        skos:altLabel    "Letterpress prints."@en , "Letterpress printing."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300178926>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Letterpress printing"@en;
-        ab:matchKey      "letterpress-printing" .
+        ab:matchKey      "letterpress-prints" , "letterpress-printing" .
 
 <https://dkglab.github.io/ns/artists-books/construction/linocuts>
         rdf:type         skos:Concept;
         rdfs:label       "Linocuts"@en;
-        skos:altLabel    "Linocuts (prints)"@en;
+        skos:altLabel    "Linocuts."@en , "Linocuts (prints)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300041393>;
+        skos:exactMatch  <http://id.worldcat.org/fast/1986235> , <http://id.loc.gov/authorities/genreForms/gf2017027240> , <http://vocab.getty.edu/aat/300041393>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Linocuts"@en;
-        ab:matchKey      "linocuts-prints" .
+        ab:matchKey      "linocuts" , "linocuts-prints" .
 
 <https://dkglab.github.io/ns/artists-books/construction/screen-printing>
         rdf:type         skos:Concept;
         rdfs:label       "Screen printing"@en;
-        skos:altLabel    "Screen printing."@en , "Screen prints."@en;
+        skos:altLabel    "Screen prints."@en , "Screen printing."@en , "screen prints."@en , "Screen prints"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
-        skos:exactMatch  <http://id.worldcat.org/fast/1986255> , <http://id.loc.gov/authorities/genreForms/gf2017027258> , <http://vocab.getty.edu/aat/300053281> , <http://vocab.getty.edu/aat/300178688>;
+        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(OCoLC)fst01986255> , <http://vocab.getty.edu/aat/300178688> , <http://vocab.getty.edu/aat/300053281> , <http://id.loc.gov/authorities/genreForms/gf2017027258> , <http://id.worldcat.org/fast/1986255> , <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300178688>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Screen printing"@en;
-        ab:matchKey      "screen-printing" , "screen-prints" .
+        ab:matchKey      "screen-prints" , "screen-printing" .
 
 <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>
         rdf:type           skos:Concept;
@@ -200,84 +335,232 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:prefLabel     "Production and printing"@en;
         skos:topConceptOf  ab:construction-methods .
 
-<https://dkglab.github.io/ns/artists-books/construction/portfolios>
-        rdf:type         skos:Concept;
-        rdfs:label       "Portfolios"@en;
-        skos:altLabel    "Portfolios (containers)"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300198929>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Portfolios"@en;
-        ab:matchKey      "portfolios-containers" .
+<https://dkglab.github.io/ns/artists-books/construction/accordian-fold-format-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Accordian fold format (Binding)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Accordian fold format (Binding)"@en;
+        ab:matchKey     "accordian-fold-format-binding" .
 
-<https://dkglab.github.io/ns/artists-books/construction/wrappers>
-        rdf:type         skos:Concept;
-        rdfs:label       "Wrappers"@en;
-        skos:altLabel    "Wrappers (book covers)"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300211392>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Wrappers"@en;
-        ab:matchKey      "wrappers-book-covers" .
+<https://dkglab.github.io/ns/artists-books/construction/acordion-fold-format-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Acordion fold format (binding)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Acordion fold format (binding)"@en;
+        ab:matchKey     "acordion-fold-format-binding" .
 
-<https://dkglab.github.io/ns/artists-books/construction/binding-cords>
-        rdf:type         skos:Concept;
-        rdfs:label       "Cords (binding components)"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300253051>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Cords (binding components)"@en;
-        ab:matchKey      "cords-binding-components" .
+<https://dkglab.github.io/ns/artists-books/construction/bookbinding-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Bookbinding (Binding)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Bookbinding (Binding)"@en;
+        ab:matchKey     "bookbinding-binding" .
 
-<https://dkglab.github.io/ns/artists-books/construction/board-books>
-        rdf:type         skos:Concept;
-        rdfs:label       "Board books"@en;
-        skos:altLabel    "Board books."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300257224>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Board books"@en;
-        ab:matchKey      "board-books" .
+<https://dkglab.github.io/ns/artists-books/construction/clamshell-boxes-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Clamshell boxes (Binding)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Clamshell boxes (Binding)"@en;
+        ab:matchKey     "clamshell-boxes-binding" .
 
-<https://dkglab.github.io/ns/artists-books/construction/double-leaves>
-        rdf:type         skos:Concept;
-        rdfs:label       "Double leaves"@en;
-        skos:altLabel    "Double leaves."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300257370>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Double leaves"@en;
-        ab:matchKey      "double-leaves" .
+<https://dkglab.github.io/ns/artists-books/construction/non-adhesive-bindings-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Non-adhesive bindings (Binding)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Non-adhesive bindings (Binding)"@en;
+        ab:matchKey     "non-adhesive-bindings-binding" .
 
-<https://dkglab.github.io/ns/artists-books/construction/cloth-books>
-        rdf:type         skos:Concept;
-        rdfs:label       "Cloth books"@en;
-        skos:altLabel    "Cloth books (books)"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300263749>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Cloth books"@en;
-        ab:matchKey      "cloth-books-books" .
+<https://dkglab.github.io/ns/artists-books/construction/paper-bindings-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Paper bindings (Binding)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Paper bindings (Binding)"@en;
+        ab:matchKey     "paper-bindings-binding" .
 
-<https://dkglab.github.io/ns/artists-books/construction/pamphlet-bindings>
-        rdf:type         skos:Concept;
-        rdfs:label       "Pamphlet bindings"@en;
-        skos:altLabel    "Pamphlet bindings."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300264218>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Pamphlet bindings"@en;
-        ab:matchKey      "pamphlet-bindings" .
+<https://dkglab.github.io/ns/artists-books/construction/paper-onlays-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Paper onlays (Binding)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Paper onlays (Binding)"@en;
+        ab:matchKey     "paper-onlays-binding" .
 
-<https://dkglab.github.io/ns/artists-books/construction/broadsheet>
+<https://dkglab.github.io/ns/artists-books/construction/paste-papers-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Paste papers (Binding)"@en;
+        skos:altLabel   "Paste papers (Binding)."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Paste papers (Binding)"@en;
+        ab:matchKey     "paste-papers-binding" .
+
+<https://dkglab.github.io/ns/artists-books/construction/vellum-bindings-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Vellum bindings (Binding)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Vellum bindings (Binding)"@en;
+        ab:matchKey     "vellum-bindings-binding" .
+
+<https://dkglab.github.io/ns/artists-books/construction/clamshell-boxes>
+        rdf:type        skos:Concept;
+        rdfs:label      "Clamshell boxes"@en;
+        skos:altLabel   "Clamshell boxes."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Clamshell boxes"@en;
+        ab:matchKey     "clamshell-boxes" .
+
+<https://dkglab.github.io/ns/artists-books/construction/comb-bindings>
+        rdf:type        skos:Concept;
+        rdfs:label      "Comb bindings"@en;
+        skos:altLabel   "Comb bindings."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Comb bindings"@en;
+        ab:matchKey     "comb-bindings" .
+
+<https://dkglab.github.io/ns/artists-books/construction/non-adhesive-bindings>
+        rdf:type        skos:Concept;
+        rdfs:label      "Non-adhesive bindings"@en;
+        skos:altLabel   "Non-adhesive bindings."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Non-adhesive bindings"@en;
+        ab:matchKey     "non-adhesive-bindings" .
+
+<https://dkglab.github.io/ns/artists-books/construction/concertina-bindings>
+        rdf:type        skos:Concept;
+        rdfs:label      "Concertina bindings"@en;
+        skos:altLabel   "Concertina bindings."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Concertina bindings"@en;
+        ab:matchKey     "concertina-bindings" .
+
+<https://dkglab.github.io/ns/artists-books/construction/ethiopian-bindings>
+        rdf:type        skos:Concept;
+        rdfs:label      "Ethiopian bindings"@en;
+        skos:altLabel   "Ethiopian bindings."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Ethiopian bindings"@en;
+        ab:matchKey     "ethiopian-bindings" .
+
+<https://dkglab.github.io/ns/artists-books/construction/chicago-screw-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Chicago screw binding"@en;
+        skos:altLabel   "Chicago screw binding."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Chicago screw binding"@en;
+        ab:matchKey     "chicago-screw-binding" .
+
+<https://dkglab.github.io/ns/artists-books/construction/tunnel-books>
+        rdf:type        skos:Concept;
+        rdfs:label      "Tunnel books"@en;
+        skos:altLabel   "Tunnel books."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Tunnel books"@en;
+        ab:matchKey     "tunnel-books" .
+
+<https://dkglab.github.io/ns/artists-books/construction/embossed-paper-bindings>
         rdf:type         skos:Concept;
-        rdfs:label       "Broadsheet"@en;
-        skos:altLabel    "Broadsheet (format)"@en;
+        rdfs:label       "Embossed paper bindings"@en;
+        skos:altLabel    "Embossed paper bindings."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300310088>;
+        skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv00494>;
         skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Broadsheet"@en;
-        ab:matchKey      "broadsheet-format" .
+        skos:prefLabel   "Embossed paper bindings"@en;
+        ab:matchKey      "embossed-paper-bindings" .
+
+<https://dkglab.github.io/ns/artists-books/construction/stabbing-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Stabbing (Binding)"@en;
+        skos:altLabel   "Stabbing (Binding)."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Stabbing (Binding)"@en;
+        ab:matchKey     "stabbing-binding" .
+
+<https://dkglab.github.io/ns/artists-books/construction/printed-cloth-bindings-gathered-matter-components>
+        rdf:type        skos:Concept;
+        rdfs:label      "Printed cloth bindings (gathered matter components"@en;
+        skos:altLabel   "Printed cloth bindings (gathered matter components."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Printed cloth bindings (gathered matter components"@en;
+        ab:matchKey     "printed-cloth-bindings-gathered-matter-components" .
+
+<https://dkglab.github.io/ns/artists-books/construction/perfect-binding-process>
+        rdf:type        skos:Concept;
+        rdfs:label      "Perfect binding (process"@en;
+        skos:altLabel   "Perfect binding (process."@en , "Perfect binding (process)."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Perfect binding (process"@en;
+        ab:matchKey     "perfect-binding-process" .
+
+<https://dkglab.github.io/ns/artists-books/construction/carousel-books>
+        rdf:type        skos:Concept;
+        rdfs:label      "Carousel books"@en;
+        skos:altLabel   "Carousel books."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Carousel books"@en;
+        ab:matchKey     "carousel-books" .
+
+<https://dkglab.github.io/ns/artists-books/construction/binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Binding"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Binding"@en;
+        ab:matchKey     "binding" .
+
+<https://dkglab.github.io/ns/artists-books/construction/limp-bindings>
+        rdf:type         skos:Concept;
+        rdfs:label       "Limp bindings"@en;
+        skos:altLabel    "Limp bindings."@en , "limp bindings."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300201735>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Limp bindings"@en;
+        ab:matchKey      "limp-bindings" .
+
+<https://dkglab.github.io/ns/artists-books/construction/unbound-sheets>
+        rdf:type        skos:Concept;
+        rdfs:label      "Unbound sheets"@en;
+        skos:altLabel   "Unbound sheets."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Unbound sheets"@en;
+        ab:matchKey     "unbound-sheets" .
+
+<https://dkglab.github.io/ns/artists-books/construction/stab-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Stab binding"@en;
+        skos:altLabel   "Stab binding."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Stab binding"@en;
+        ab:matchKey     "stab-binding" .
+
+<https://dkglab.github.io/ns/artists-books/construction/triptychs>
+        rdf:type        skos:Concept;
+        rdfs:label      "Triptychs"@en;
+        skos:altLabel   "Triptychs."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Triptychs"@en;
+        ab:matchKey     "triptychs" .
 
 <https://dkglab.github.io/ns/artists-books/construction/cloth-bindings>
         rdf:type         skos:Concept;
@@ -289,31 +572,84 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:prefLabel   "Cloth bindings"@en;
         ab:matchKey      "cloth-bindings-bookbindings" .
 
-<https://dkglab.github.io/ns/artists-books/construction/triptychs>
-        rdf:type        skos:Concept;
-        rdfs:label      "Triptychs"@en;
-        skos:altLabel   "Triptychs."@en;
-        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Triptychs"@en;
-        ab:matchKey     "triptychs" .
+<https://dkglab.github.io/ns/artists-books/construction/broadsheet>
+        rdf:type         skos:Concept;
+        rdfs:label       "Broadsheet"@en;
+        skos:altLabel    "Broadsheet (format)"@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300310088>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Broadsheet"@en;
+        ab:matchKey      "broadsheet-format" .
 
-<https://dkglab.github.io/ns/artists-books/construction/stab-binding>
-        rdf:type        skos:Concept;
-        rdfs:label      "Stab binding"@en;
-        skos:altLabel   "Stab binding."@en;
-        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Stab binding"@en;
-        ab:matchKey     "stab-binding" .
+<https://dkglab.github.io/ns/artists-books/construction/pamphlet-bindings>
+        rdf:type         skos:Concept;
+        rdfs:label       "Pamphlet bindings"@en;
+        skos:altLabel    "Pamphlets."@en , "pamphlet bindings."@en , "Pamphlet bindings."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300264218> , <http://vocab.getty.edu/aat/300264218>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Pamphlet bindings"@en;
+        ab:matchKey      "pamphlets" , "pamphlet-bindings" .
 
-<https://dkglab.github.io/ns/artists-books/construction/unbound-sheets>
-        rdf:type        skos:Concept;
-        rdfs:label      "Unbound sheets"@en;
-        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Unbound sheets"@en;
-        ab:matchKey     "unbound-sheets" .
+<https://dkglab.github.io/ns/artists-books/construction/cloth-books>
+        rdf:type         skos:Concept;
+        rdfs:label       "Cloth books"@en;
+        skos:altLabel    "Cloth books (books)"@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300263749>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Cloth books"@en;
+        ab:matchKey      "cloth-books-books" .
+
+<https://dkglab.github.io/ns/artists-books/construction/double-leaves>
+        rdf:type         skos:Concept;
+        rdfs:label       "Double leaves"@en;
+        skos:altLabel    "Double leaves."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300257370>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Double leaves"@en;
+        ab:matchKey      "double-leaves" .
+
+<https://dkglab.github.io/ns/artists-books/construction/board-books>
+        rdf:type         skos:Concept;
+        rdfs:label       "Board books"@en;
+        skos:altLabel    "Board books."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300257224>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Board books"@en;
+        ab:matchKey      "board-books" .
+
+<https://dkglab.github.io/ns/artists-books/construction/binding-cords>
+        rdf:type         skos:Concept;
+        rdfs:label       "Cords (binding components)"@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300253051>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Cords (binding components)"@en;
+        ab:matchKey      "cords-binding-components" .
+
+<https://dkglab.github.io/ns/artists-books/construction/wrappers>
+        rdf:type         skos:Concept;
+        rdfs:label       "Wrappers"@en;
+        skos:altLabel    "Wrappers (Binding)"@en , "Wrappers (book covers)"@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300211392>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Wrappers"@en;
+        ab:matchKey      "wrappers-binding" , "wrappers-book-covers" .
+
+<https://dkglab.github.io/ns/artists-books/construction/portfolios>
+        rdf:type         skos:Concept;
+        rdfs:label       "Portfolios"@en;
+        skos:altLabel    "Portfolios (containers)"@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300198929>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Portfolios"@en;
+        ab:matchKey      "portfolios-containers" .
 
 <https://dkglab.github.io/ns/artists-books/construction/handscrolls>
         rdf:type         skos:Concept;
@@ -404,12 +740,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/staple-bindings>
         rdf:type         skos:Concept;
         rdfs:label       "Staple bindings"@en;
-        skos:altLabel    "Staple bindings."@en;
+        skos:altLabel    "Staple binding."@en , "staple bindings."@en , "Staple bindings."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300375674>;
+        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300375674> , <http://vocab.getty.edu/aat/300375674>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Staple bindings"@en;
-        ab:matchKey      "staple-bindings" .
+        ab:matchKey      "staple-binding" , "staple-bindings" .
 
 <https://dkglab.github.io/ns/artists-books/construction/dos-a-dos-bindings>
         rdf:type         skos:Concept;
@@ -424,12 +760,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/shaped-books>
         rdf:type         skos:Concept;
         rdfs:label       "Shaped books"@en;
-        skos:altLabel    "Shaped books."@en;
+        skos:altLabel    "Shaped books (Printing)"@en , "Shaped books."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
         skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv01881>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Shaped books"@en;
-        ab:matchKey      "shaped-books" .
+        ab:matchKey      "shaped-books-printing" , "shaped-books" .
 
 <https://dkglab.github.io/ns/artists-books/construction/flip-books>
         rdf:type         skos:Concept;
@@ -454,22 +790,22 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/miniature-books>
         rdf:type         skos:Concept;
         rdfs:label       "Miniature books"@en;
-        skos:altLabel    "Miniature books."@en;
+        skos:altLabel    "Miniature books (Printing)"@en , "Miniature books."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
         skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv00867>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Miniature books"@en;
-        ab:matchKey      "miniature-books" .
+        ab:matchKey      "miniature-books-printing" , "miniature-books" .
 
 <https://dkglab.github.io/ns/artists-books/construction/boxes>
         rdf:type         skos:Concept;
         rdfs:label       "Boxes"@en;
-        skos:altLabel    "Boxes (containers)"@en;
+        skos:altLabel    "Boxes."@en , "Boxes (containers)."@en , "Boxes (containers)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300045643>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Boxes"@en;
-        ab:matchKey      "boxes-containers" .
+        ab:matchKey      "boxes" , "boxes-containers" .
 
 <https://dkglab.github.io/ns/artists-books/construction/dust-jackets>
         rdf:type         skos:Concept;
@@ -484,9 +820,9 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/slipcases>
         rdf:type         skos:Concept;
         rdfs:label       "Slipcases"@en;
-        skos:altLabel    "Book slipcases."@en , "Slipcases."@en;
+        skos:altLabel    "slipcases."@en , "Book slipcases."@en , "Slipcases."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300422132> , <http://id.loc.gov/vocabulary/rbmscv/cv00737>;
+        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300200341> , <http://vocab.getty.edu/aat/300422132> , <http://id.loc.gov/vocabulary/rbmscv/cv00737>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Slipcases"@en;
         ab:matchKey      "book-slipcases" , "slipcases" .
@@ -506,7 +842,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Pop-up books"@en;
         skos:altLabel    "Pop-up books."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://id.worldcat.org/fast/1919955> , <http://id.loc.gov/authorities/genreForms/gf2014026150> , <http://vocab.getty.edu/aat/300201034>;
+        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(OCoLC)fst01919955> , <http://id.worldcat.org/fast/1919955> , <http://id.loc.gov/authorities/genreForms/gf2014026150> , <http://vocab.getty.edu/aat/300201034>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Pop-up books"@en;
         ab:matchKey      "pop-up-books" .
@@ -522,12 +858,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/movable-books>
         rdf:type         skos:Concept;
         rdfs:label       "Toy and movable books"@en;
-        skos:altLabel    "Toys and movable books."@en , "Toy and movable books."@en;
+        skos:altLabel    "Toy and movable books."@en , "Toys and movable books."@en , "Movable books"@en , "Movable books."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026197> , <http://id.worldcat.org/fast/1726766>;
+        skos:exactMatch  <http://id.worldcat.org/fast/1726766> , <http://id.loc.gov/authorities/genreForms/gf2014026197> , <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(OCoLC)fst01726766> , <http://vocab.getty.edu/aat/300207697>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Toy and movable books"@en;
-        ab:matchKey      "toys-and-movable-books" , "toy-and-movable-books" .
+        ab:matchKey      "toy-and-movable-books" , "toys-and-movable-books" , "movable-books" .
 
 <https://dkglab.github.io/ns/artists-books/construction/painted-bindings>
         rdf:type        skos:Concept;
@@ -560,12 +896,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/accordion-fold>
         rdf:type         skos:Concept;
         rdfs:label       "Accordion fold format"@en;
-        skos:altLabel    "Accordion fold format."@en , "Accordion fold books."@en , "Accordion books."@en , "Accordion folding."@en;
+        skos:altLabel    "Accordion fold format (binding)"@en , "Accordion fold format (Binding)."@en , "Accordion fold format (Binding)"@en , "Accordion bindings."@en , "accordion books."@en , "Accordion fold format."@en , "Accordion fold books."@en , "Accordion books."@en , "Accordion folding."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
         skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv00024> , <http://id.loc.gov/authorities/genreForms/gf2022026082> , <http://vocab.getty.edu/aat/300438814> , <http://vocab.getty.edu/aat/300417532>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Accordion fold format"@en;
-        ab:matchKey      "accordion-folding" , "accordion-fold-format" , "accordion-fold-books" , "accordion-books" .
+        ab:matchKey      "accordion-fold-format-binding" , "accordion-bindings" , "accordion-folding" , "accordion-fold-format" , "accordion-fold-books" , "accordion-books" .
 
 <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>
         rdf:type           skos:Concept;
@@ -574,35 +910,75 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:prefLabel     "Binding and format"@en;
         skos:topConceptOf  ab:construction-methods .
 
-<https://dkglab.github.io/ns/artists-books/construction/impressing>
-        rdf:type         skos:Concept;
-        rdfs:label       "Impressing"@en;
-        skos:altLabel    "Impressing."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300233405>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Impressing"@en;
-        ab:matchKey      "impressing" .
+<https://dkglab.github.io/ns/artists-books/construction/side-stitching>
+        rdf:type        skos:Concept;
+        rdfs:label      "Side stitching"@en;
+        skos:altLabel   "Side stitching."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Side stitching"@en;
+        ab:matchKey     "side-stitching" .
 
-<https://dkglab.github.io/ns/artists-books/construction/folding>
-        rdf:type         skos:Concept;
-        rdfs:label       "Folding"@en;
-        skos:altLabel    "Folding (process)"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300247923>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Folding"@en;
-        ab:matchKey      "folding-process" .
+<https://dkglab.github.io/ns/artists-books/construction/saddle-stitching>
+        rdf:type        skos:Concept;
+        rdfs:label      "Saddle stitching"@en;
+        skos:altLabel   "Saddle stitching."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Saddle stitching"@en;
+        ab:matchKey     "saddle-stitching" .
 
-<https://dkglab.github.io/ns/artists-books/construction/interleaving>
-        rdf:type         skos:Concept;
-        rdfs:label       "Interleaving"@en;
-        skos:altLabel    "Interleaving."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300253104>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Interleaving"@en;
-        ab:matchKey      "interleaving" .
+<https://dkglab.github.io/ns/artists-books/construction/rubber-stamp-printing>
+        rdf:type        skos:Concept;
+        rdfs:label      "Rubber stamp printing"@en;
+        skos:altLabel   "Rubber stamp printing."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Rubber stamp printing"@en;
+        ab:matchKey     "rubber-stamp-printing" .
+
+<https://dkglab.github.io/ns/artists-books/construction/rubber-stamp-art>
+        rdf:type        skos:Concept;
+        rdfs:label      "Rubber stamp art"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Rubber stamp art"@en;
+        ab:matchKey     "rubber-stamp-art" .
+
+<https://dkglab.github.io/ns/artists-books/construction/embroidery-visual-works>
+        rdf:type        skos:Concept;
+        rdfs:label      "Embroidery (visual works)"@en;
+        skos:altLabel   "Embroidery (visual works)."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Embroidery (visual works)"@en;
+        ab:matchKey     "embroidery-visual-works" .
+
+<https://dkglab.github.io/ns/artists-books/construction/embossing-technique>
+        rdf:type        skos:Concept;
+        rdfs:label      "Embossing (technique)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Embossing (technique)"@en;
+        ab:matchKey     "embossing-technique" .
+
+<https://dkglab.github.io/ns/artists-books/construction/debossing>
+        rdf:type        skos:Concept;
+        rdfs:label      "Debossing"@en;
+        skos:altLabel   "Debossing."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Debossing"@en;
+        ab:matchKey     "debossing" .
+
+<https://dkglab.github.io/ns/artists-books/construction/blind-embossing>
+        rdf:type        skos:Concept;
+        rdfs:label      "Blind embossing"@en;
+        skos:altLabel   "Blind embossing."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Blind embossing"@en;
+        ab:matchKey     "blind-embossing" .
 
 <https://dkglab.github.io/ns/artists-books/construction/crochet>
         rdf:type         skos:Concept;
@@ -614,15 +990,45 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:prefLabel   "Crochet"@en;
         ab:matchKey      "crochet-needlework" .
 
+<https://dkglab.github.io/ns/artists-books/construction/interleaving>
+        rdf:type         skos:Concept;
+        rdfs:label       "Interleaving"@en;
+        skos:altLabel    "Interleaving."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300253104>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Interleaving"@en;
+        ab:matchKey      "interleaving" .
+
+<https://dkglab.github.io/ns/artists-books/construction/folding>
+        rdf:type         skos:Concept;
+        rdfs:label       "Folding"@en;
+        skos:altLabel    "Folding (process)"@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300247923>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Folding"@en;
+        ab:matchKey      "folding-process" .
+
+<https://dkglab.github.io/ns/artists-books/construction/impressing>
+        rdf:type         skos:Concept;
+        rdfs:label       "Impressing"@en;
+        skos:altLabel    "Impressing."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300233405>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Impressing"@en;
+        ab:matchKey      "impressing" .
+
 <https://dkglab.github.io/ns/artists-books/construction/handmade>
         rdf:type         skos:Concept;
         rdfs:label       "Handmade"@en;
-        skos:altLabel    "Handmade."@en;
+        skos:altLabel    "Handmade books"@en , "Handmade."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300191818>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Handmade"@en;
-        ab:matchKey      "handmade" .
+        ab:matchKey      "handmade-books" , "handmade" .
 
 <https://dkglab.github.io/ns/artists-books/construction/mixed-media>
         rdf:type         skos:Concept;
@@ -647,11 +1053,11 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/papier-mache>
         rdf:type        skos:Concept;
         rdfs:label      "Papier-mâché"@en;
-        skos:altLabel   "Papier-mâché sculpture"@en;
+        skos:altLabel   "Papier-mâché bindings"@en , "Papier mâché."@en , "Papier-mâché sculpture"@en;
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
         skos:inScheme   ab:construction-methods;
         skos:prefLabel  "Papier-mâché"@en;
-        ab:matchKey     "papier-m-ch-sculpture" .
+        ab:matchKey     "papier-m-ch-bindings" , "papier-m-ch" , "papier-m-ch-sculpture" .
 
 <https://dkglab.github.io/ns/artists-books/construction/die-cutting>
         rdf:type         skos:Concept;
@@ -675,7 +1081,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/stamping>
         rdf:type         skos:Concept;
         rdfs:label       "Stamping"@en;
-        skos:altLabel    "Stamping (marking)"@en;
+        skos:altLabel    "Stamping (marking)."@en , "Stamping (marking)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300239001>;
         skos:inScheme    ab:construction-methods;
@@ -714,12 +1120,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/collage>
         rdf:type         skos:Concept;
         rdfs:label       "Collage"@en;
-        skos:altLabel    "Collages."@en , "Collage."@en , "Collage (technique)"@en;
+        skos:altLabel    "Collage (technique)"@en , "Collage."@en , "Collages."@en , "Collages (visual works)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
-        skos:exactMatch  <http://id.worldcat.org/fast/1986256> , <http://id.loc.gov/authorities/genreForms/gf2017027227> , <http://vocab.getty.edu/aat/300138699>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300033963> , <http://vocab.getty.edu/aat/300138699> , <http://id.loc.gov/authorities/genreForms/gf2017027227> , <http://id.worldcat.org/fast/1986256>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Collage"@en;
-        ab:matchKey      "collages" , "collage" , "collage-technique" .
+        ab:matchKey      "collage-technique" , "collage" , "collages" , "collages-visual-works" .
 
 <https://dkglab.github.io/ns/artists-books/construction/photographic-sequence>
         rdf:type        skos:Concept;
@@ -737,15 +1143,258 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:prefLabel     "Techniques"@en;
         skos:topConceptOf  ab:construction-methods .
 
-<https://dkglab.github.io/ns/artists-books/construction/acetate-film>
+<https://dkglab.github.io/ns/artists-books/construction/cotton-fibers>
+        rdf:type        skos:Concept;
+        rdfs:label      "Cotton fibers"@en;
+        skos:altLabel   "Cotton fibers."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Cotton fibers"@en;
+        ab:matchKey     "cotton-fibers" .
+
+<https://dkglab.github.io/ns/artists-books/construction/cotton-fibers-paper>
+        rdf:type        skos:Concept;
+        rdfs:label      "Cotton fibers (Paper)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Cotton fibers (Paper)"@en;
+        ab:matchKey     "cotton-fibers-paper" .
+
+<https://dkglab.github.io/ns/artists-books/construction/handmade-papers-paper>
+        rdf:type        skos:Concept;
+        rdfs:label      "Handmade papers (Paper)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Handmade papers (Paper)"@en;
+        ab:matchKey     "handmade-papers-paper" .
+
+<https://dkglab.github.io/ns/artists-books/construction/straw-fibers>
+        rdf:type        skos:Concept;
+        rdfs:label      "Straw fibers"@en;
+        skos:altLabel   "Straw fibers."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Straw fibers"@en;
+        ab:matchKey     "straw-fibers" .
+
+<https://dkglab.github.io/ns/artists-books/construction/wood-types>
+        rdf:type        skos:Concept;
+        rdfs:label      "Wood types"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Wood types"@en;
+        ab:matchKey     "wood-types" .
+
+<https://dkglab.github.io/ns/artists-books/construction/pulp-painting>
+        rdf:type        skos:Concept;
+        rdfs:label      "Pulp painting"@en;
+        skos:altLabel   "Pulp painting."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Pulp painting"@en;
+        ab:matchKey     "pulp-painting" .
+
+<https://dkglab.github.io/ns/artists-books/construction/paper-handmade>
+        rdf:type        skos:Concept;
+        rdfs:label      "Paper, Handmade"@en;
+        skos:altLabel   "Paper, handmade."@en , "Paper, Handmade."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Paper, Handmade"@en;
+        ab:matchKey     "paper-handmade" .
+
+<https://dkglab.github.io/ns/artists-books/construction/marbled-papers>
         rdf:type         skos:Concept;
-        rdfs:label       "Acetate film"@en;
-        skos:altLabel    "Acetate film."@en;
+        rdfs:label       "Marbled papers"@en;
+        skos:altLabel    "Marbled papers."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/material>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300255863>;
+        skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv00063>;
         skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Acetate film"@en;
-        ab:matchKey      "acetate-film" .
+        skos:prefLabel   "Marbled papers"@en;
+        ab:matchKey      "marbled-papers" .
+
+<https://dkglab.github.io/ns/artists-books/construction/glass-negatives>
+        rdf:type        skos:Concept;
+        rdfs:label      "Glass negatives"@en;
+        skos:altLabel   "Glass negatives."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Glass negatives"@en;
+        ab:matchKey     "glass-negatives" .
+
+<https://dkglab.github.io/ns/artists-books/construction/wood-pulp-paper>
+        rdf:type        skos:Concept;
+        rdfs:label      "Wood pulp paper"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Wood pulp paper"@en;
+        ab:matchKey     "wood-pulp-paper" .
+
+<https://dkglab.github.io/ns/artists-books/construction/velvet-fabric-weave>
+        rdf:type        skos:Concept;
+        rdfs:label      "Velvet (fabric weave)"@en;
+        skos:altLabel   "Velvet (fabric weave)."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Velvet (fabric weave)"@en;
+        ab:matchKey     "velvet-fabric-weave" .
+
+<https://dkglab.github.io/ns/artists-books/construction/transparent-paper>
+        rdf:type        skos:Concept;
+        rdfs:label      "Transparent paper"@en;
+        skos:altLabel   "transparent paper."@en , "Transparent paper."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Transparent paper"@en;
+        ab:matchKey     "transparent-paper" .
+
+<https://dkglab.github.io/ns/artists-books/construction/thread>
+        rdf:type        skos:Concept;
+        rdfs:label      "Thread"@en;
+        skos:altLabel   "Thread."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Thread"@en;
+        ab:matchKey     "thread" .
+
+<https://dkglab.github.io/ns/artists-books/construction/stone-worked-rock>
+        rdf:type        skos:Concept;
+        rdfs:label      "Stone (worked rock)"@en;
+        skos:altLabel   "Stone (worked rock)."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Stone (worked rock)"@en;
+        ab:matchKey     "stone-worked-rock" .
+
+<https://dkglab.github.io/ns/artists-books/construction/plastic-laminate>
+        rdf:type        skos:Concept;
+        rdfs:label      "Plastic laminate"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Plastic laminate"@en;
+        ab:matchKey     "plastic-laminate" .
+
+<https://dkglab.github.io/ns/artists-books/construction/paper-scupltors>
+        rdf:type        skos:Concept;
+        rdfs:label      "Paper scupltors"@en;
+        skos:altLabel   "Paper scupltors."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Paper scupltors"@en;
+        ab:matchKey     "paper-scupltors" .
+
+<https://dkglab.github.io/ns/artists-books/construction/paper-cutouts>
+        rdf:type        skos:Concept;
+        rdfs:label      "Paper cutouts"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Paper cutouts"@en;
+        ab:matchKey     "paper-cutouts" .
+
+<https://dkglab.github.io/ns/artists-books/construction/mylar-tm>
+        rdf:type        skos:Concept;
+        rdfs:label      "Mylar (TM)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Mylar (TM)"@en;
+        ab:matchKey     "mylar-tm" .
+
+<https://dkglab.github.io/ns/artists-books/construction/metallic-paper>
+        rdf:type        skos:Concept;
+        rdfs:label      "Metallic paper"@en;
+        skos:altLabel   "metallic paper."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Metallic paper"@en;
+        ab:matchKey     "metallic-paper" .
+
+<https://dkglab.github.io/ns/artists-books/construction/japanese-paper-handmade-paper>
+        rdf:type        skos:Concept;
+        rdfs:label      "Japanese paper (handmade paper)"@en;
+        skos:altLabel   "Japanese paper (handmade paper)."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Japanese paper (handmade paper)"@en;
+        ab:matchKey     "japanese-paper-handmade-paper" .
+
+<https://dkglab.github.io/ns/artists-books/construction/ink>
+        rdf:type        skos:Concept;
+        rdfs:label      "Ink"@en;
+        skos:altLabel   "Ink."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Ink"@en;
+        ab:matchKey     "ink" .
+
+<https://dkglab.github.io/ns/artists-books/construction/glassine>
+        rdf:type        skos:Concept;
+        rdfs:label      "Glassine"@en;
+        skos:altLabel   "Glassine."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Glassine"@en;
+        ab:matchKey     "glassine" .
+
+<https://dkglab.github.io/ns/artists-books/construction/felt-work>
+        rdf:type        skos:Concept;
+        rdfs:label      "Felt work"@en;
+        skos:altLabel   "Felt work."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Felt work"@en;
+        ab:matchKey     "felt-work" .
+
+<https://dkglab.github.io/ns/artists-books/construction/felt-textile>
+        rdf:type        skos:Concept;
+        rdfs:label      "Felt (textile)"@en;
+        skos:altLabel   "Felt (textile)."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Felt (textile)"@en;
+        ab:matchKey     "felt-textile" .
+
+<https://dkglab.github.io/ns/artists-books/construction/brass-alloy>
+        rdf:type        skos:Concept;
+        rdfs:label      "Brass (alloy)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Brass (alloy)"@en;
+        ab:matchKey     "brass-alloy" .
+
+<https://dkglab.github.io/ns/artists-books/construction/book-cloth-textile-material>
+        rdf:type        skos:Concept;
+        rdfs:label      "Book cloth (textile material)"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Book cloth (textile material)"@en;
+        ab:matchKey     "book-cloth-textile-material" .
+
+<https://dkglab.github.io/ns/artists-books/construction/bamboo>
+        rdf:type        skos:Concept;
+        rdfs:label      "Bamboo"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Bamboo"@en;
+        ab:matchKey     "bamboo" .
+
+<https://dkglab.github.io/ns/artists-books/construction/acrylic-sheet>
+        rdf:type        skos:Concept;
+        rdfs:label      "Acrylic sheet"@en;
+        skos:altLabel   "Acrylic sheet."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Acrylic sheet"@en;
+        ab:matchKey     "acrylic-sheet" .
+
+<https://dkglab.github.io/ns/artists-books/construction/vinyl>
+        rdf:type         skos:Concept;
+        rdfs:label       "Vinyl"@en;
+        skos:altLabel    "vinyl."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300014502>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Vinyl"@en;
+        ab:matchKey      "vinyl" .
 
 <https://dkglab.github.io/ns/artists-books/construction/kozo-paper>
         rdf:type         skos:Concept;
@@ -756,6 +1405,16 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Kozo"@en;
         ab:matchKey      "kozo-paper" .
+
+<https://dkglab.github.io/ns/artists-books/construction/acetate-film>
+        rdf:type         skos:Concept;
+        rdfs:label       "Acetate film"@en;
+        skos:altLabel    "Acetate film."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300255863>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Acetate film"@en;
+        ab:matchKey      "acetate-film" .
 
 <https://dkglab.github.io/ns/artists-books/construction/hosho>
         rdf:type         skos:Concept;
@@ -800,7 +1459,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/canvas>
         rdf:type         skos:Concept;
         rdfs:label       "Canvas"@en;
-        skos:altLabel    "Canvas (textile material)"@en;
+        skos:altLabel    "Canvas (textile material)."@en , "Canvas (textile material)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/material>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300014078>;
         skos:inScheme    ab:construction-methods;
@@ -889,7 +1548,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/ribbon>
         rdf:type         skos:Concept;
         rdfs:label       "Ribbon"@en;
-        skos:altLabel    "Ribbon (material)"@en;
+        skos:altLabel    "Ribbon (material)."@en , "Ribbon (material)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/material>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300014668>;
         skos:inScheme    ab:construction-methods;
@@ -969,7 +1628,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/wood>
         rdf:type         skos:Concept;
         rdfs:label       "Wood"@en;
-        skos:altLabel    "Wood (plant material)"@en , "wood"@en;
+        skos:altLabel    "Wood."@en , "Wood (plant material)."@en , "Wood (plant material)"@en , "wood"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/material>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300011914> , <http://rdaregistry.info/termList/RDAMaterial/1045>;
         skos:inScheme    ab:construction-methods;
@@ -989,22 +1648,22 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/paper>
         rdf:type         skos:Concept;
         rdfs:label       "Paper"@en;
-        skos:altLabel    "paper"@en;
+        skos:altLabel    "Paper bindings."@en , "paper"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/material>;
         skos:exactMatch  <http://rdaregistry.info/termList/RDAMaterial/1025>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Paper"@en;
-        ab:matchKey      "paper" .
+        ab:matchKey      "paper-bindings" , "paper" .
 
 <https://dkglab.github.io/ns/artists-books/construction/handmade-paper>
         rdf:type         skos:Concept;
         rdfs:label       "Handmade paper"@en;
-        skos:altLabel    "Handmade papers"@en , "Handmade paper."@en , "Handmade papers."@en;
+        skos:altLabel    "Handmade papers (fiber product)"@en , "Handmade papers"@en , "Handmade paper."@en , "Handmade papers."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/material>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300411543> , <http://id.loc.gov/vocabulary/rbmscv/cv01435>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Handmade paper"@en;
-        ab:matchKey      "handmade-paper" , "handmade-papers" .
+        ab:matchKey      "handmade-papers-fiber-product" , "handmade-paper" , "handmade-papers" .
 
 <https://dkglab.github.io/ns/artists-books/construction/category/material>
         rdf:type           skos:Concept;
