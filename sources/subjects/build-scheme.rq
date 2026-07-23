@@ -56,8 +56,9 @@ WHERE {
           xyz:category  ?category ;
           xyz:prefLabel ?prefLabel .
     # manual exactMatch: an authority URI hand-assigned to a cluster that had no
-    # $0 in any record. Blank/absent when the occurrences already supply one.
-    OPTIONAL { ?drow xyz:exactMatch ?exactRaw . FILTER(?exactRaw != "") BIND(?exactRaw AS ?exactMatch) }
+    # $0 in any record. Blank/absent when the occurrences already supply one; must
+    # be an absolute http(s) URI (guarded like the mined authority below).
+    OPTIONAL { ?drow xyz:exactMatch ?exactRaw . FILTER(STRSTARTS(STR(?exactRaw), "http")) BIND(?exactRaw AS ?exactMatch) }
   }
   VALUES (?category ?catSlug ?catLabel) {
     ("topical"    "topical"    "Topical subjects"@en)
@@ -80,8 +81,11 @@ WHERE {
     ?orow xyz:cluster    ?cluster ;
           xyz:rawLabel   ?rawLabel ;
           xyz:normLabel  ?normLabel .
-    # authority is "" for headings that carry no $0; treat that as absent.
-    OPTIONAL { ?orow xyz:authority ?authRaw . FILTER(?authRaw != "") BIND(?authRaw AS ?authority) }
+    # authority is "" for headings that carry no $0; treat that as absent. Only
+    # keep a web-resolvable http(s) URI as an exactMatch target -- many $0 are bare
+    # institution-local control numbers ("(OCoLC)fst...", "(DE-576)...") that would
+    # otherwise become bogus relative file:// IRIs under IRI() below.
+    OPTIONAL { ?orow xyz:authority ?authRaw . FILTER(STRSTARTS(STR(?authRaw), "http")) BIND(?authRaw AS ?authority) }
   }
 
   # normalized match key (plain literal) + variant label + exact-match IRI

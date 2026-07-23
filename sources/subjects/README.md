@@ -145,5 +145,8 @@ category, the per-book template renders a "Subjects" section, and there is a
 (`/subject/<conceptKey>/`). `ab:hasSubject` is documented in `docs/vocab.ttl`.
 
 Note: with the current auto-seeded draft `decisions.csv` (every row `include=y`),
-the index lists ~6,400 subjects. Curation — flipping non-subjects to `include=n`
-and merging twins — is what brings that down to the real subject set.
+the index lists ~4,900 subjects — the seed already merges clusters that share an
+identical `prefLabel`+`category` into one `conceptId` (so the FAST/LCSH/local
+variants of e.g. *Toy and movable books* collapse). Curation — flipping
+non-subjects to `include=n` and merging the remaining differently-spelled/worded
+twins — brings that down to the real subject set.
