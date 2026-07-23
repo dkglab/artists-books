@@ -68,6 +68,62 @@ To attribute time between parsing and querying, time a trivial `COUNT(*)` over
 the source first (that forces a full triplification but no join). If that is fast
 and the real query is slow, the join is at fault.
 
+`-e FINE` also logs one `BGP` block per *execution*, so counting them tells you
+how often each pattern actually ran:
+
+```sh
+grep -A1 'exec - BGP$' explain.txt | grep -v 'exec - BGP$' | grep -v '^--$' \
+  | sed 's/^ *//' | sort | uniq -c | sort -rn | head
+```
+
+A pattern that should run once per record but shows up tens of thousands of
+times is a nested-loop `OPTIONAL` being fed far more rows than it should.
+
+## The second rule: a FILTER is a *group* filter, so it runs after the OPTIONALs
+
+SPARQL evaluates a bare `FILTER` against the whole group it sits in — **after**
+every `OPTIONAL` in that group, not at the line where you wrote it. So this:
+
+```sparql
+# DON'T — the tag test runs last, after all four OPTIONALs
+?record fx:anySlot ?df .
+?df a marc:datafield ; xyz:tag ?ctag .
+FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+
+?df fx:anySlot ?sfa .  ?sfa xyz:code "a" ; rdf:_1 ?name_raw .
+OPTIONAL { ?df fx:anySlot ?sfe . ?sfe xyz:code "e" ; rdf:_1 ?role_raw . }
+OPTIONAL { ?df fx:anySlot ?sfv . ?sfv xyz:code "1" ; rdf:_1 ?rwo_v . }
+OPTIONAL { ?df fx:anySlot ?sfi . ?sfi xyz:code "1" ; rdf:_1 ?rwo_i . }
+OPTIONAL { ?df fx:anySlot ?sf0 . ?sf0 xyz:code "0" ; rdf:_1 ?lc_0 . }
+```
+
+pushes **every** datafield carrying a `$a` (143,271 of them) through four
+nested-loop joins, to keep the 10,943 that are creator fields — 13× the work,
+for identical answers. In the `ALGEBRA` block the filter shows up wrapped
+*around* the outermost `leftjoin` rather than inside the left-hand `bgp`.
+
+Wrap the test in its own group so it prunes where you wrote it:
+
+```sparql
+# DO — nested group; the filter is scoped to it and cannot float past
+{
+  ?record fx:anySlot ?df .
+  ?df a marc:datafield ; xyz:tag ?ctag .
+  FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+}
+```
+
+### Measured impact (full construct, 5,460 MARC records)
+
+| query | time | BGP executions |
+|-------|-----:|---------------:|
+| Triplify the archive + `999 $a` join (parsing only) | 12 s | — |
+| Construct, **group-scoped filter** (before the fix) | 60 s | 694,970 |
+| Construct, **nested-group filter** | **31 s** | 168,850 |
+
+Output was identical — 178,515 triples, byte-for-byte after sorting to
+N-Triples. Only the number of rows reaching the `OPTIONAL`s changed.
+
 ## Other things that keep the construct fast
 
 - **Anchor every traversal from something bound.** Reach members from a known
@@ -130,5 +186,8 @@ Two gotchas:
 1. Did I add any `?s ?var ?o` to walk Facade-X members? Replace with `fx:anySlot`.
 2. Can any pattern multiply rows (repeated subfields, a `VALUES` join on a shared
    var)? Aggregate it away or join on a private key.
-3. `time` the rebuild (`make graph/artists-books.ttl`). It should be seconds. If
-   it is not, run with `-e` and look for variable-predicate triples in the BGP.
+3. Does a `FILTER` share a group with an `OPTIONAL`? Then it runs *after* that
+   optional. Wrap the required patterns it prunes in their own `{ … }`.
+4. `time` the rebuild (`make graph/artists-books.ttl`). It should be seconds. If
+   it is not, run with `-e` and look for variable-predicate triples in the BGP,
+   and at the `BGP`-execution counts for an over-fed `OPTIONAL`.

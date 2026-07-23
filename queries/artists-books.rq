@@ -243,9 +243,18 @@ WHERE {
 
           # creator/contributor fields: personal (100/700), corporate (110/710),
           # meeting (111/711). 6xx (subjects) and 791 (acquisition funds) excluded.
-          ?record fx:anySlot ?df .
-          ?df a marc:datafield ; xyz:tag ?ctag .
-          FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+          #
+          # The tag test is wrapped in its own group so it prunes *here*. A bare
+          # FILTER in this group would be a group filter, which SPARQL evaluates
+          # after the whole group — i.e. after the four subfield OPTIONALs below —
+          # so all 143,271 datafields carrying a $a would be pushed through those
+          # nested-loop joins instead of the 10,943 creator ones. Same answers,
+          # twice the runtime (see docs/QUERY-PERFORMANCE.md).
+          {
+            ?record fx:anySlot ?df .
+            ?df a marc:datafield ; xyz:tag ?ctag .
+            FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+          }
 
           #binds the contribution type based on the tag of the datafield. 100, 110, and 111 are considered primary contributions, while 700, 710, and 711 are considered secondary contributions.
           BIND(
