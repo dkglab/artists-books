@@ -1,10 +1,10 @@
 # Query performance — avoiding blowup in the construct step
 
 Notes on keeping `queries/artists-books.rq` (and any future
-SPARQL-Anything query) fast. The construct step reads the source CSVs and
-`sources/marc/artists-books-marc.xml` through SPARQL-Anything's Facade-X and emits the
-RDF graph; it is the one place in the pipeline where a careless pattern turns a
-6-second build into a 5-minute one.
+SPARQL-Anything query) fast. The construct step reads the source CSVs and the
+per-record MARC zip archive `sources/marc/artists-books-marc.zip` (#81) through
+SPARQL-Anything's Facade-X and emits the RDF graph; it is the one place in the
+pipeline where a careless pattern turns a 6-second build into a 5-minute one.
 
 ## The one rule that matters most: never traverse with a variable predicate
 
@@ -95,6 +95,35 @@ and the real query is slow, the join is at fault.
   when its inputs are bound (e.g. `?contribution` is minted from the creator key,
   which is unbound when there is no creator), so CONSTRUCT drops the whole block
   instead of writing a dangling typed-but-empty node.
+
+## Reading the per-record MARC archive (#81)
+
+The MARC is a per-record zip archive (`*-marc.zip`, one `<key>.xml` per record),
+read with a **nested** pattern: an outer `SERVICE` lists the entries
+(`fx:archive.matches` + `?archive fx:anySlot ?file`) and an inner
+`SERVICE <x-sparql-anything:>` triplifies one entry (`fx:location ?file` +
+`fx:from-archive` + `fx:media-type "application/xml"`). The join key is read from
+each record's `999 $a`, **not** the entry filename, so entries could be named
+anything; `fx:anySlot` still governs the per-record traversal.
+
+Each entry is triplified **once** and joined afterward, so this is at worst a wash
+versus the old single-file read — and for `reference-works.rq` it was a large win
+(~35 s → ~2 s). Why: that query's MARC read is *not* wrapped in an aggregating
+sub-SELECT, so ARQ pushed the CSV-bound `?canonical_key` into the SERVICE and
+re-triplified the **whole** collection once per key; per-record entries removed
+the monolith re-parse. `artists-books.rq` already parsed once (its creator
+sub-SELECT is self-contained), so there the archive is roughly even.
+
+Two gotchas:
+
+- **Silence Log4j.** The archive triplifier trips Log4j's StatusLogger onto
+  stdout, corrupting the Turtle. The graph recipe passes
+  `-Dlog4j2.statusLoggerLevel=OFF`.
+- **A nested inner SERVICE that matches nothing still leaves the outer row.** So
+  a record with (say) no `100 $a` yields a row with `?canonical_key` bound but the
+  creator vars unbound — the old single-file read dropped it because the match was
+  a required pattern in the same SERVICE. Guard any minted URI on `BOUND(...)` of
+  the value it depends on, or a nameless/empty node leaks.
 
 ## Quick checklist before committing a construct change
 

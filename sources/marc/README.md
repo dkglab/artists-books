@@ -1,26 +1,129 @@
 # MARC harvest track
 
 `marc/` holds the Z39.50 MARC-harvest track: `marc_harvest.py`, the harvested
-`*-marc.xml` collections, the hand-supplied `reference-resources-manual.xml`,
-and `reference-resources-unresolved.csv`. Resumable harvest state lives under
-`marc/harvest/` (gitignored; only the committed `*-marc.xml` is a build product).
+`*-marc.zip` archives, the hand-supplied `reference-works-manual.xml`, and
+`reference-works-unresolved.csv`. Resumable harvest state lives under
+`marc/harvest/` (gitignored; only the committed `*-marc.zip` is a build product).
 
-Each record is stamped with a synthetic `999 $a <itemKey>` so it joins back to
-its Zotero item, so this track only makes sense alongside the Zotero exports it
-keys against — see [`../zotero/README.md`](../zotero/README.md) for the database
-and [`../README.md`](../README.md) for the crosswalk pipeline that bridges the
-two. For a field-level analysis of the harvested artists'-book records see
+The harvest product is a **per-record zip archive** (#81), not one big
+`<collection>` file: one `<key>.xml` MARCXML document per record, packed with
+reproducible bytes (entries sorted, fixed 1980 mtimes) so a re-harvest that
+changes one record touches one entry. The construct queries read it with
+SPARQL-Anything's nested Archive→XML triplifiers (`marc_to_archive.py` converts a
+legacy monolithic `*-marc.xml` to this format without a re-harvest).
+
+Each record is stamped with a synthetic `999 $a <key>` join key: for the
+artists' books this is the **canonical** key (the deduped lib 1∪2∪3 identity,
+#82/#84); for the reference works it is the canonical key from the deduped
+`reference-works.csv` (a lib-3 `itemKey`, which for the reference set is already
+canonical).
+The graph queries join MARC to their CSV rows on this key (read from the record's
+999, not the entry filename). See
+[`../zotero/README.md`](../zotero/README.md) for the database and
+[`../README.md`](../README.md) for the canonical dedup + citation pipeline. For a field-level
+analysis of the harvested artists'-book records see
 [`../../docs/MARC-RECORDS.md`](../../docs/MARC-RECORDS.md).
+
+## Fetch transport: the `zoomfetch` ZOOM driver (#85)
+
+Z39.50 records are fetched by **`zoomfetch`**, a ~200-line C driver
+(`zoomfetch.c`) built against the libyaz we already compile under
+`tools/yaz-client/` — it talks the protocol over YAZ's **ZOOM** C API rather than
+scripting the interactive `yaz-client`. It needs no new external dependency (just
+a C compiler, already required to build YAZ); the Makefile compiles it with
+`yaz-config --cflags/--libs` and installs it as `tools/yaz-client/bin/zoomfetch`
+alongside `yaz-marcdump`.
+
+`marc_harvest.py` opens one `zoomfetch` process per server batch (one persistent
+`ZOOM_connection`, so the Init handshake is amortised across the batch) and pipes
+it one job per line — `id⇥pqf-query⇥maxrecords`. For each job the driver emits
+framed, length-prefixed blocks on stdout: `HITS⇥id⇥n`, then a `RECORD⇥id⇥index⇥bytelen`
+header followed by exactly `bytelen` **raw ISO 2709 bytes** per record; a
+server-side search diagnostic is `ERROR⇥id⇥code⇥msg` (a real miss) and a
+connection-level failure is `FATAL⇥id⇥code⇥msg`, after which the driver stops so
+the caller **defers** every unanswered job to the next run.
+
+Because every record is tagged with its job `id`, there is no positional
+reconstruction — which kills the old **"unalignable"** failure class at the root.
+The former positional machinery (the `Number of hits:`/record-count consistency
+checks, the batch back-off/retry, the per-item fallback, and UNC's `batch: 10`
+workaround) is gone; the only remaining Z39.50 resilience is a subprocess timeout
+that defers a hung driver rather than crashing the resumable harvest. The SRU art
+libraries (Getty, Clark, NYARC, Harvard) are untouched — they already fetch over
+clean HTTP/CQL via `sru_search()`. Encoding is unchanged: `zoomfetch` returns the
+server's raw bytes and the UTF-8 / UNC leader-09 handling stays downstream
+(`yaz-marcdump -l 9=97`).
+
+## Artists'-book MARC harvest (canonical, #84)
+
+The books harvest is keyed to the **canonical** artists'-book list at the
+`sources/` root (`sources/artists-books.csv`, `canonicalKey` column), not the
+per-library `zotero/` export, so it has its own explicit Makefile target (not the
+`marc/%-marc.zip` pattern rule). The ~1,286 books UNC already holds were
+harvested under the old lib-1 keys; rather than re-harvest them, `rekey_held.py`
+rewrites their `999 $a` from the lib-1 itemKey to the canonical key (via the CSV
+`sourceKeys` map) into the frozen `artists-books-held-marc.xml` (kept as a single
+`<collection>` file — it is a `--premerged` input, not a query-facing product).
+`marc_harvest.py` then merges that file with `--premerged` (its keys skipped
+during harvest, its records merged on `--combine`) and harvests only the ~6,619
+**non-held** works. Because the non-held tail mostly lacks a UNC bib number and
+ISBN, it falls to verified title / title-author matching — a large, slow,
+resumable external run with a real miss rate; until it completes the committed
+`artists-books-marc.zip` is the held baseline only.
+
+```sh
+# from sources/:
+make -C sources -B marc/artists-books-marc.zip   # -B: force the (slow) harvest
+# regenerate the frozen held re-key (one-time, from the pre-#84 lib-1 MARC):
+python3 marc/rekey_held.py --in-marc <pre-#84 lib-1 marc.xml> \
+    --csv artists-books.csv --out marc/artists-books-held-marc.xml
+```
+
+### Adding a server's reach to the committed archive
+
+`combine()` rebuilds an archive wholly from the harvest state under
+`harvest/<csv-stem>/`, which is **gitignored** — so running a newly added server
+against the residual and pointing `--out` at the committed archive would *replace*
+it with only that run's hits, dropping everything harvested before. Adding a
+server's reach is therefore an **additive merge of archives**, via
+`merge_archives.py`: run the new server against a residual CSV (the books still
+missing a record) into its own archive under `harvest/`, then merge that into the
+committed one. Every record carries its join key in `999 $a` and every entry is
+`<key>.xml`, so the merge is a union keyed by entry name; for a residual run the
+expected collision count is zero, and the tool reports any it finds.
+
+That is how the SCAD pass landed: 2,920 non-held books still missing MARC →
+**463 verified records** (15.9%), plus **12** hand-adjudicated recoveries merged
+from `harvest/scad-residual-manual.xml`, taking the committed archive from 4,985
+to **5,460** records. The 12 are title-verify false negatives — the right book
+under a cataloguer's variant title (`Iconomics : Money` catalogued as `245 $a
+Money` with `246 Iconomics`; `Bob : book number 100` as `Bobby : book nr. 100`) —
+recovered by re-querying the `review.tsv` rejects with a wider `show_n` and
+reading the candidates by hand, **without** loosening `TITLE_STRONG`/`TITLE_WEAK`.
+One of the 12 was ranked 4th of 7 hits, i.e. outside the harvest's `show_n=3`
+window: on common-word artist's-book titles the show depth, not just the
+threshold, is a real ceiling on recall.
+
+```sh
+# from sources/, after harvesting a residual into its own archive:
+python3 marc/merge_archives.py --base marc/artists-books-marc.zip \
+    --add marc/harvest/scad-residual.zip --out marc/artists-books-marc.zip
+```
 
 ## Reference-work MARC harvest
 
-`marc_harvest.py` harvests full MARC records for both tracks — `zotero/artists-books.csv`
-→ `artists-books-marc.xml` and `zotero/reference-resources.csv` →
-**`reference-resources-marc.xml`** — via the generic Makefile pattern rule
-`marc/%-marc.xml: zotero/%.csv`. Each record is stamped with a synthetic
-`999 $a <itemKey>` so it joins back to its Zotero item, and harvest state
-(resumable) lives under `harvest/<csv-stem>/` (gitignored; only the
-`<stem>-marc.xml` product is committed).
+`marc_harvest.py` also harvests the reference works — the deduped canonical
+`reference-works.csv` (at the `sources/` root, `canonicalKey` column) →
+**`reference-works-marc.zip`** — via its own explicit Makefile target, like the
+books track (not the `marc/%-marc.zip` pattern rule, which is keyed to the
+per-library `zotero/` exports). Each record is stamped with a synthetic
+`999 $a <canonicalKey>` so it joins its `reference-works.rq` row directly on
+`?canonical_key`, and harvest state (resumable) lives under `harvest/<csv-stem>/`
+(gitignored; only the `<stem>-marc.zip` product is committed). Harvesting the
+deduped canonical list (rather than the pre-dedup 157-row "Reference resources"
+collection) keeps the archive to exactly the 155 canonical works — an earlier
+pre-dedup harvest also fetched a couple of losing-key records that then failed to
+join any canonical row.
 
 The reference works need a **different keying strategy** than the books: they are
 mostly catalogued as *Open WorldCat*, not UNC bibs, so a UNC-bib lookup finds
@@ -31,23 +134,29 @@ almost none. The harvester instead tries, per item:
    `verify_title` guard so a coincidental title hit isn't stamped onto the wrong
    key),
 
-across a chain of **nine catalogues** — UNC, Library of Congress, K10plus, Penn
-State, LIBRIS (Z39.50), then Getty, Clark, NYARC, Harvard (Alma SRU/CQL) —
-falling through to the next server until a record verifies. A handful of
-hand-supplied records are merged from `reference-resources-manual.xml`. Result:
-**~155 of the 157** reference works get a record; the residual (e.g. webpages
-with no catalogue record) is listed in `reference-resources-unresolved.csv`.
+across a chain of **eleven catalogues** — UNC, Library of Congress, K10plus, Penn
+State, LIBRIS (Z39.50), then Getty, Clark, NYARC, Emory, Harvard (Alma SRU/CQL),
+and SCAD (Z39.50) — falling through to the next server until a record verifies.
+(Emory's Rose Library holds the Nexus Press archive and a deep artist's-book
+collection, so it is grouped with the art libraries; SCAD absorbed the Atlanta
+College of Art and holds the Nexus Press / ACA imprints directly. An earlier note
+here held SCAD unreachable — its iii.com-hosted catalogue firewalling datacenter
+clients on :210 and :443 — but a 2026-07 re-probe found both the Z39.50 server and
+the WebPAC answering, and it is now in the chain.) A handful of
+hand-supplied records are merged from `reference-works-manual.xml`. Result:
+**153 of the 155** canonical reference works get a record; the residual (two
+webpages with no catalogue record) is listed in `reference-works-unresolved.csv`.
 
 ```sh
 # from sources/:
-make -C sources marc/reference-resources-marc.xml
+make -C sources marc/reference-works-marc.zip
 # or directly (also run from sources/):
-python3 marc/marc_harvest.py --csv zotero/reference-resources.csv --out marc/reference-resources-marc.xml
+python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc.zip
 ```
 
-> **Minimally wired into the graph.** `reference-resources.rq` builds the
-> `ab:ReferenceWork` nodes from `reference-resources.csv`, and now also reads a
-> **basic slice** of `reference-resources-marc.xml` — just the primary creator
-> (`100 $a`), joined by `999 $a` — emitted as a `bflc:PrimaryContribution`.
+> **Minimally wired into the graph.** `reference-works.rq` builds the
+> `ab:ReferenceWork` nodes from the canonical `reference-works.csv`, and now also
+> reads a **basic slice** of `reference-works-marc.zip` — just the primary
+> creator (`100 $a`), joined by `999 $a` — emitted as a `bflc:PrimaryContribution`.
 > The rest of the MARC's richer data (OCLC/WorldCat, secondary creators,
 > relator roles, identity URIs, extent/dimensions) isn't in the graph yet.
