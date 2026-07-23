@@ -16,9 +16,17 @@ flowchart TD
     catalogs -->|"marc_harvest.py (YAZ)"| marc["artists-books-marc.zip<br/>(per-record MARC archive)"]
     catalogs -->|"marc_harvest.py (YAZ)"| refmarc["reference-works-marc.zip *"]
 
+    %% ---- Construction-methods SKOS vocabulary (mined from the book MARC) ----
+    marc -->|"mine-occurrences.rq"| cocc["construction/occurrences.csv<br/>(one row per book heading)"]
+    cocc --> cbuild{{"build-scheme.rq"}}
+    cdec["construction/decisions.csv<br/>(hand-curated: include? / concept / category)"] --> cbuild
+    cbuild --> cmttl["sources/construction-methods.ttl<br/>(SKOS concept scheme)"]
+
     %% ---- Stage 2: CONSTRUCT queries (SPARQL-Anything) ----
     csvs --> abrq{{"artists-books.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
     marc --> abrq
+    cocc -->|"ab:constructedUsing join"| abrq
+    cdec --> abrq
     csvs --> refrq{{"reference-works.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
     refmarc -->|"primary creator only *"| refrq
 
@@ -29,6 +37,7 @@ flowchart TD
     abttl --> fuseki[["Apache Fuseki<br/>(SPARQL endpoint)"]]
     refttl --> fuseki
     citttl -->|"loaded as-is (no query)"| fuseki
+    cmttl -->|"loaded as-is (no query)"| fuseki
 
     %% ---- Stage 4: site generation ----
     fuseki --> snowman{{"Snowman<br/>(SELECT queries + Go templates)"}}
@@ -40,7 +49,7 @@ flowchart TD
 
     classDef input fill:#e8f0fe,stroke:#4285f4,stroke-width:2px;
     classDef output fill:#e6f4ea,stroke:#34a853,stroke-width:2px;
-    class zotero,catalogs input;
+    class zotero,catalogs,cdec input;
     class site output;
 ```
 
@@ -55,3 +64,16 @@ the three Zotero libraries into the canonical `artists-books.csv` /
 against the canonical URIs — both one-time Phase-0 steps, committed and loaded as-is.
 The former live citation match (the `*-crosswalk.csv` fuzzy bridge feeding a
 `reference-resources.rq` citation branch) has been removed from the repo.
+
+The **construction-methods** track is an enrichment of the book graph, mined
+from the same book MARC. `mine-occurrences.rq` extracts every genre/technique/
+material heading to `construction/occurrences.csv` (one row per book heading — a
+single pass over the archive, so every downstream step is a cheap CSV-to-CSV
+join); `construction/decisions.csv` is the hand-curated call for each heading
+cluster (include? / concept id / category). `build-scheme.rq` joins the two into
+the `sources/construction-methods.ttl` SKOS scheme, and `artists-books.rq` joins
+the same two to attach an `ab:constructedUsing` link from each book to the
+concepts its headings map to. Fuseki loads the scheme as-is alongside the
+constructed graphs, so the site can resolve each linked concept's label. See
+[`sources/construction/README.md`](../sources/construction/README.md) for the
+mine → curate → build pipeline.

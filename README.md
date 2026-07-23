@@ -46,15 +46,25 @@ The stages, and where each is documented in depth:
    [BIBFRAME](https://www.loc.gov/bibframe/) plus a custom `ab:`
    namespace into `graph/*.ttl`. The citation edges are not constructed
    here — they are the frozen `sources/citations.ttl` (issue #82): 5,022
-   citations link 3,896 books to 54 reference works. → [`CLAUDE.md`](CLAUDE.md)
+   citations link 3,896 books to 54 reference works. A local SKOS
+   vocabulary of construction techniques, materials, binding/format
+   types and printing methods is mined from the book MARC and curated by
+   hand in `sources/construction/decisions.csv`; `build-scheme.rq` emits
+   it to `sources/construction-methods.ttl`, and `artists-books.rq`
+   attaches an `ab:constructedUsing` link from each book to the concepts
+   its headings map to. → [`CLAUDE.md`](CLAUDE.md)
    (query architecture, URI minting),
+   [`sources/construction/README.md`](sources/construction/README.md)
+   (the mine → curate → build vocabulary pipeline),
    [`docs/QUERY-PERFORMANCE.md`](docs/QUERY-PERFORMANCE.md).
 4. **RDF graph → website.** [Apache
    Fuseki](https://jena.apache.org/documentation/fuseki2/) loads the two
-   constructed graphs plus the frozen citations and serves a local SPARQL endpoint;
+   constructed graphs, the frozen citations, and the
+   `construction-methods.ttl` SKOS scheme, and serves a local SPARQL endpoint;
    [Snowman](https://github.com/glaciers-in-archives/snowman) runs the
    SELECT queries in `web/queries/` against it and renders the Go
-   templates in `web/templates/` into `web/site/`. →
+   templates in `web/templates/` into `web/site/` — including, on each
+   book page, the construction-methods section resolved from the scheme. →
    [`CLAUDE.md`](CLAUDE.md) (views, templates, Snowman gotchas).
 
 ## Building
@@ -84,7 +94,13 @@ Codespaces gets these via `.devcontainer/devcontainer.json`. See
 
 The graphs emit BIBFRAME with a custom `ab:` namespace layered on top
 (`ab:ArtistsBook`, `ab:ReferenceWork`, `ab:Citation`,
-`ab:cites`/`ab:citedBy`, creator-role properties). `docs/vocab.ttl`
+`ab:cites`/`ab:citedBy`, `ab:constructedUsing`, creator-role
+properties). The construction-method concepts that `ab:constructedUsing`
+points at live in a companion SKOS scheme,
+`sources/construction-methods.ttl` — mined from the book MARC and
+curated by hand (see
+[`sources/construction/README.md`](sources/construction/README.md)).
+`docs/vocab.ttl`
 defines the vocabulary and `docs/description.ttl` is a hand-written
 worked example (Ed Ruscha's *Twentysix Gasoline Stations*); `make
 validate` runs Jena's validator over both. Some terms are defined but
