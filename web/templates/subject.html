@@ -1,0 +1,18 @@
+{{ template "base" . }}
+
+{{ define "title" }} - {{ .label }}{{ end }}
+
+{{ define "content" }}
+<h1>{{ .label }}</h1>
+<p class="mb"><em>Subject{{ with .categoryLabel }} &middot; {{ . }}{{ end }}</em></p>
+
+{{ with .books }}
+<h2>Artists' books with this subject</h2>
+<ul class="mb">
+{{- range (split . "\n") }}
+{{- $pair := split . "\t" }}
+<li><a href="/item/{{ index $pair 0 }}">{{ index $pair 1 }}</a></li>
+{{- end }}
+</ul>
+{{ end }}
+{{ end }}

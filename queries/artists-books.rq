@@ -26,6 +26,7 @@ CONSTRUCT {
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
     ab:constructedUsing ?constructionConcept ;
+    ab:hasSubject ?subjectConcept ;
     .
 
 
@@ -416,6 +417,30 @@ WHERE {
               xyz:cluster       ?cCluster .
       }
       BIND(fx:entity(ab:, "construction/", ?cConceptId) AS ?constructionConcept)
+    }
+  }
+
+  # Subject terms (#105). Attach ab:hasSubject exactly as ab:constructedUsing
+  # above, but from the parallel subjects pipeline: join each book's 650/651
+  # subject-heading occurrences (sources/subjects/occurrences.csv, keyed by the
+  # canonical key) to the curated decisions (sources/subjects/decisions.csv) on
+  # the shared cluster key, and mint ab:subject/<conceptId> -- the same URI the
+  # SKOS scheme defines (sources/subjects/build-scheme.rq), so it resolves against
+  # sources/subject-terms.ttl, which Fuseki loads alongside this graph. The two
+  # SERVICEs bind the same ?sCluster so ARQ hash-joins them. Kept OPTIONAL so a
+  # book with no subject heading emits nothing.
+  OPTIONAL {
+    SELECT DISTINCT ?canonical_key ?subjectConcept WHERE {
+      SERVICE <x-sparql-anything:location=sources/subjects/decisions.csv,csv.headers=true> {
+        ?sdRow xyz:cluster    ?sCluster ;
+               xyz:include    "y" ;
+               xyz:conceptId  ?sConceptId .
+      }
+      SERVICE <x-sparql-anything:location=sources/subjects/occurrences.csv,csv.headers=true> {
+        ?soRow xyz:canonicalKey ?canonical_key ;
+               xyz:cluster       ?sCluster .
+      }
+      BIND(fx:entity(ab:, "subject/", ?sConceptId) AS ?subjectConcept)
     }
   }
 }

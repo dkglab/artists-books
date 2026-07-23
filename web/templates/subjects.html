@@ -1,0 +1,24 @@
+{{ template "base" . }}
+
+{{ define "title" }} - subjects{{ end }}
+
+{{ define "content" }}
+<h1>Subjects</h1>
+<p class="mb"><em>Topical and geographic subjects &mdash; what the books in the collection are about.</em></p>
+
+{{ $rows := . }}
+
+<h2>Topical subjects</h2>
+<ul class="mb">
+{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Topical subjects" }}
+<li><a href="/subject/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
+{{- end }}{{ end }}
+</ul>
+
+<h2>Geographic subjects</h2>
+<ul class="mb">
+{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Geographic subjects" }}
+<li><a href="/subject/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
+{{- end }}{{ end }}
+</ul>
+{{ end }}

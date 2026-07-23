@@ -146,5 +146,20 @@ construction/occurrences.csv: construction/mine-occurrences.rq | $(SA)
 construction-methods.ttl: construction/build-scheme.rq construction/decisions.csv construction/occurrences.csv | $(SA)
 	cd .. && $(SA_RUN) -q sources/construction/build-scheme.rq -f TTL > sources/construction-methods.ttl
 
+# subject-terms.ttl -- the subject-headings SKOS scheme (650/651), built exactly
+# like construction-methods.ttl but from the subjects/ pipeline (issue #105). The
+# two schemes partition the heading space; see subjects/README.md. Same
+# discipline: the committed MARC zip is read by the mining recipes but is
+# deliberately NOT a prerequisite (so a rebuild never triggers a re-harvest);
+# build-scheme.rq reads only the two committed CSVs.
+subjects/candidates.csv: subjects/mine-candidates.rq | $(SA)
+	cd .. && $(SA_RUN) -q sources/subjects/mine-candidates.rq -f CSV > sources/subjects/candidates.csv
+
+subjects/occurrences.csv: subjects/mine-occurrences.rq | $(SA)
+	cd .. && $(SA_RUN) -q sources/subjects/mine-occurrences.rq -f CSV > sources/subjects/occurrences.csv
+
+subject-terms.ttl: subjects/build-scheme.rq subjects/decisions.csv subjects/occurrences.csv | $(SA)
+	cd .. && $(SA_RUN) -q sources/subjects/build-scheme.rq -f TTL > sources/subject-terms.ttl
+
 $(SA):
 	$(MAKE) -s -C ../tools/sparql-anything

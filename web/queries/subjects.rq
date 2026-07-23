@@ -1,0 +1,52 @@
+PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+
+# One row per subject-term concept that at least one artists' book is linked to
+# via ab:hasSubject. Feeds both the subjects index ("Subjects" page) and the
+# per-subject detail page. Mirrors queries/construction-methods.rq: the book join
+# is REQUIRED (not OPTIONAL), so a curated concept that no in-collection book uses
+# earns no page.
+#
+# Fuseki loads the SKOS scheme (sources/subject-terms.ttl) alongside the
+# constructed graphs, so each concept's prefLabel and its category (skos:broader
+# top-concept: Topical subjects / Geographic subjects) resolve here.
+SELECT
+  ?concept
+  # The URI slug (…/subject/<conceptKey>), used for the output path and for the
+  # links minted on the book pages.
+  (REPLACE(STR(?concept), ".*/subject/", "") AS ?conceptKey)
+  ?label
+  ?category
+  ?categoryLabel
+  # Each book with this subject as an "itemKey<TAB>title" token, tokens newline-
+  # separated, so the template can split the pair and link each title to its
+  # /item/ page.
+  (GROUP_CONCAT(DISTINCT CONCAT(?bookKey, "\t", ?title); separator="\n") AS ?books)
+  (COUNT(DISTINCT ?book) AS ?bookCount)
+WHERE {
+  ?concept
+    a skos:Concept ;
+    skos:inScheme ab:subject-terms ;
+    .
+  OPTIONAL { ?concept skos:prefLabel ?prefLabel . }
+  OPTIONAL { ?concept rdfs:label ?rdfsLabel . }
+  BIND(COALESCE(?prefLabel, ?rdfsLabel) AS ?label)
+
+  # Category top-concept (Topical subjects / Geographic subjects), for grouping
+  # the index.
+  OPTIONAL {
+    ?concept skos:broader ?category .
+    ?category rdfs:label ?categoryLabel .
+  }
+
+  # Required: the artists' books with this subject.
+  ?book
+    a ab:ArtistsBook ;
+    ab:hasSubject ?concept ;
+    ab:itemKey ?bookKey ;
+    rdfs:label ?title ;
+    .
+}
+GROUP BY ?concept ?label ?category ?categoryLabel
+ORDER BY ?categoryLabel LCASE(?label)

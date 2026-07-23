@@ -65,6 +65,15 @@
   </dd>
   {{ end }}
 
+  {{ with .subjectTerms }}
+  <dt>Subjects</dt>
+  <dd>
+  {{- range $i, $t := (split . "\n") }}{{ $p := split $t "\t" }}
+  {{- if $i }}; {{ end }}<a href="/subject/{{ index $p 0 }}">{{ index $p 1 }}</a>
+  {{- end }}
+  </dd>
+  {{ end }}
+
   {{ with .isbns }}
   <dt>ISBN</dt>
   <dd>{{ . }}</dd>
