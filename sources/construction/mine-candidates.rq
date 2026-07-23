@@ -3,6 +3,12 @@
 # fast/LCSH subject headings). One row per concept CLUSTER:
 #   cluster = the $0 authority URI when present, else scheme|normalized-label.
 # labels lists every distinct raw $a variant seen (so curation can see twins).
+#
+# Reads the per-record MARC zip archive (#81) via the nested Archive->XML
+# triplifier pattern: the outer read lists the entries (fx:archive.matches);
+# the inner per-record SERVICE triplifies one record (fx:location ?file +
+# fx:from-archive). ?recs counts distinct archive entries (one .xml per record),
+# which is robust regardless of per-record blank-node identity.
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xyz: <http://sparql.xyz/facade-x/data/>
 PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
@@ -12,27 +18,47 @@ SELECT
   (SAMPLE(?dollar0) AS ?authorityURI)
   (GROUP_CONCAT(DISTINCT ?scheme; separator=" ") AS ?schemes)
   (GROUP_CONCAT(DISTINCT ?tag; separator=" ") AS ?tags)
-  (COUNT(DISTINCT ?record) AS ?recs)
+  (COUNT(DISTINCT ?file) AS ?recs)
   (GROUP_CONCAT(DISTINCT ?rawLabel; separator=" | ") AS ?labels)
 WHERE {
-  SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.xml> {
-    ?record a marc:record .
-    ?record fx:anySlot ?df .
-    ?df a marc:datafield ; xyz:tag ?tag .
-    OPTIONAL { ?df fx:anySlot ?sf2 . ?sf2 xyz:code "2" ; rdf:_1 ?sr . }
-    BIND(LCASE(REPLACE(STR(?sr), "\\.$", "")) AS ?scheme)
-    # candidate pool
-    FILTER(
-         ?tag = "655"
-      || (?tag = "340" && ?scheme = "rdamat")
-      || (?tag = "650" && BOUND(?scheme) && ?scheme != "fast")
-    )
-    ?df fx:anySlot ?sfa . ?sfa xyz:code "a" ; rdf:_1 ?labelRaw .
-    BIND(STR(?labelRaw) AS ?rawLabel)
-    BIND(REPLACE(REPLACE(REPLACE(LCASE(?rawLabel), "[\\s.]+$",""), "[^a-z0-9]+","-"), "(^-)|(-$)","") AS ?normLabel)
-    OPTIONAL { ?df fx:anySlot ?sf0 . ?sf0 xyz:code "0" ; rdf:_1 ?zeroRaw . BIND(STR(?zeroRaw) AS ?dollar0) }
-    BIND(COALESCE(?dollar0, CONCAT(COALESCE(?scheme,"none"), "|", ?normLabel)) AS ?cluster)
+  SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.zip> {
+    fx:properties fx:archive.matches ".*\\.xml" .
+    ?archive fx:anySlot ?file .
+
+    SERVICE <x-sparql-anything:> {
+      fx:properties
+        fx:location ?file ;
+        fx:from-archive "sources/marc/artists-books-marc.zip" ;
+        fx:media-type "application/xml" .
+
+      ?record a marc:record .
+      ?record fx:anySlot ?df .
+      ?df a marc:datafield ; xyz:tag ?tag .
+      # Prune to the candidate tags FIRST, before the $2 subfield scan below:
+      # a record carries ~30 datafields, so scanning $2 on every one of them
+      # (rather than just the 3-4 genre/material fields) is the difference
+      # between seconds and minutes on the full archive.
+      FILTER(?tag IN ("655", "340", "650"))
+      OPTIONAL { ?df fx:anySlot ?sf2 . ?sf2 xyz:code "2" ; rdf:_1 ?sr . }
+      BIND(LCASE(REPLACE(STR(?sr), "\\.$", "")) AS ?scheme)
+      # candidate pool
+      FILTER(
+           ?tag = "655"
+        || (?tag = "340" && ?scheme = "rdamat")
+        || (?tag = "650" && BOUND(?scheme) && ?scheme != "fast")
+      )
+      ?df fx:anySlot ?sfa . ?sfa xyz:code "a" ; rdf:_1 ?labelRaw .
+      BIND(STR(?labelRaw) AS ?rawLabel)
+      BIND(REPLACE(REPLACE(REPLACE(LCASE(?rawLabel), "[\\s.]+$",""), "[^a-z0-9]+","-"), "(^-)|(-$)","") AS ?normLabel)
+      OPTIONAL { ?df fx:anySlot ?sf0 . ?sf0 xyz:code "0" ; rdf:_1 ?zeroRaw . BIND(STR(?zeroRaw) AS ?dollar0) }
+      BIND(COALESCE(?dollar0, CONCAT(COALESCE(?scheme,"none"), "|", ?normLabel)) AS ?cluster)
+    }
   }
+  # A record with no candidate heading yields one all-unbound phantom row per
+  # archive entry (a quirk of the nested Archive->XML read with fx:from-archive;
+  # the main construct query never sees it because its required 999 $a always
+  # matches). Drop those so they don't collapse into a bogus empty cluster.
+  FILTER(BOUND(?cluster))
 }
 GROUP BY ?cluster
 ORDER BY DESC(?recs) ?cluster

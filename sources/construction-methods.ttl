@@ -1,6 +1,5 @@
 PREFIX ab:   <https://dkglab.github.io/ns/artists-books/>
 PREFIX fx:   <http://sparql.xyz/facade-x/ns/>
-PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -147,7 +146,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/woodcuts>
         rdf:type         skos:Concept;
         rdfs:label       "Woodcuts"@en;
-        skos:altLabel    "Woodcuts."@en , "Woodcuts (prints)"@en;
+        skos:altLabel    "Woodcuts."@en , "woodcuts (prints)"@en , "Woodcuts (prints)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
         skos:exactMatch  <http://id.worldcat.org/fast/1986233> , <http://id.loc.gov/authorities/genreForms/gf2017027269> , <http://vocab.getty.edu/aat/300041405>;
         skos:inScheme    ab:construction-methods;
@@ -657,7 +656,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/die-cutting>
         rdf:type         skos:Concept;
         rdfs:label       "Die cutting"@en;
-        skos:altLabel    "Die cutting."@en;
+        skos:altLabel    "Die cutting."@en , "Die-cutting."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/technique>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300233399>;
         skos:inScheme    ab:construction-methods;

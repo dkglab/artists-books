@@ -3,9 +3,10 @@
 This folder builds `sources/construction-methods.ttl` — a local
 [SKOS](https://www.w3.org/TR/skos-primer/) concept scheme of the construction
 techniques, materials, binding/format types, and printing methods named in the
-artists'-book MARC records. The per-book construct query uses it to attach an
-`ab:constructedUsing` link to each book (that wiring is a separate, still-to-do
-step; see the note at the bottom).
+artists'-book MARC records. The per-book construct query (`queries/artists-
+books.rq`) attaches an `ab:constructedUsing` link from each book to the concepts
+its headings map to; the per-book site page renders them (see "Using the scheme
+in the site" at the bottom).
 
 ## Why a concept scheme, instead of matching text
 
@@ -30,40 +31,50 @@ text. Instead we build one concept per idea that records **all** of it:
 Variant headings that mean the same thing — across vocabularies — collapse into
 a single concept. That reconciliation is exactly the point.
 
-## The three files
+## The files
 
 | file | what it is | who maintains it |
 |------|------------|------------------|
-| `candidates.csv` | every candidate heading mined from the MARC — the raw list to review | generated (`make`) |
+| `candidates.csv` | every candidate heading mined from the MARC, aggregated one row per concept cluster — the raw list to review | generated (`make`) |
+| `occurrences.csv` | the same headings un-aggregated: one row per (book, cluster, label, authority) occurrence — the machine-side extract everything else joins against | generated (`make`) |
 | `decisions.csv` | the curation: which headings are construction/production methods, their label, and how variants group | **edited by hand** |
 | `../construction-methods.ttl` | the finished SKOS scheme | generated (`make`) |
 
-`mine-candidates.rq` and `build-scheme.rq` are the two SPARQL queries that do
-the mining and the building.
+`mine-candidates.rq`, `mine-occurrences.rq` and `build-scheme.rq` are the SPARQL
+queries that do the mining and the building.
+
+`occurrences.csv` exists so the MARC archive is read **exactly once**. Joining
+the tiny `decisions.csv` directly to the large MARC makes ARQ re-read the whole
+archive once per decision row (a ~60x blow-up, confirmed with `--explain`);
+extracting the occurrences to a flat CSV first turns every downstream step —
+`build-scheme.rq` and the `ab:constructedUsing` join in
+`queries/artists-books.rq` — into a cheap CSV-to-CSV join.
 
 ## The pipeline
 
 ```
    MARC records
-      │  ① make -C sources -B construction/candidates.csv
+      │  ① make -C sources -B construction/candidates.csv construction/occurrences.csv
       ▼
-   candidates.csv  ──②  reviewed/edited by hand  ──▶  decisions.csv
-                                                          │  ③ make -C sources construction-methods.ttl
-                                                          ▼
+   candidates.csv ──②  reviewed/edited by hand  ──▶  decisions.csv
+   occurrences.csv ─────────────────────────────────────┐  │
+                                                         │  │ ③ make -C sources construction-methods.ttl
+                                                         ▼  ▼
                                                   ../construction-methods.ttl
 ```
 
-### ① Mine the candidates
+### ① Mine the candidates (and occurrences)
 
 ```
-make -C sources -B construction/candidates.csv
+make -C sources -B construction/candidates.csv construction/occurrences.csv
 ```
 
-Reads the MARC and lists every heading in the candidate pool — `655`
-(genre/form), `340` material headings, and `650` (topical) minus the plain
+`candidates.csv` reads the MARC and lists every heading in the candidate pool —
+`655` (genre/form), `340` material headings, and `650` (topical) minus the plain
 FAST/LCSH subject headings — one row per concept "cluster," sorted by how many
-records use it. The `-B` forces a rebuild (you'll run this after a MARC
-re-harvest to pick up new headings).
+records use it. `occurrences.csv` is the same pool un-aggregated, one row per
+(book, heading) occurrence. The `-B` forces a rebuild (you'll run this after a
+MARC re-harvest to pick up new headings).
 
 ### ② Curate — edit `decisions.csv` by hand
 
@@ -95,7 +106,7 @@ variants or URIs — those are gathered automatically from the MARC in step ③.
 make -C sources construction-methods.ttl
 ```
 
-Joins your `decisions.csv` back to the MARC and writes
+Joins your `decisions.csv` to `occurrences.csv` and writes
 `../construction-methods.ttl`: one `skos:Concept` per `conceptId`, carrying its
 `skos:prefLabel`, every `skos:altLabel` variant, an `ab:matchKey` for each
 variant (a lower-cased, punctuation-stripped form used for matching), and a
@@ -104,15 +115,19 @@ category concepts sit above them as `skos:topConceptOf` the scheme.
 
 ## After a MARC re-harvest
 
-Re-run ① to refresh `candidates.csv`, then `git diff` it: new headings show up
-as new rows. Add a decision for each new row in `decisions.csv` (existing
-decisions carry forward untouched), then re-run ③. Label variants and URIs for
-concepts you've already included refresh automatically — you only ever decide
-*new* headings.
+Re-run ① to refresh `candidates.csv` and `occurrences.csv`, then `git diff`
+`candidates.csv`: new headings show up as new rows. Add a decision for each new
+row in `decisions.csv` (existing decisions carry forward untouched), then re-run
+③. Label variants and URIs for concepts you've already included refresh
+automatically — you only ever decide *new* headings.
 
-## Still to do: use the scheme in the site
+## Using the scheme in the site
 
-Building the scheme does **not** yet change the website. Making the per-book
-page show a "Construction techniques, materials, and production methods" section
-still needs the construct query and the web query/template updated to read this
-scheme. See the pull-request discussion for what those edits are.
+`queries/artists-books.rq` joins each book's heading occurrences
+(`occurrences.csv`, keyed by canonical key) to `decisions.csv` on the cluster
+key and emits `ab:constructedUsing <concept>` for every included cluster —
+minting the same `ab:construction/<conceptId>` URIs this scheme defines. Fuseki
+loads `../construction-methods.ttl` alongside the constructed graph, so the web
+query (`web/queries/artists-books.rq`) resolves each linked concept's
+`rdfs:label` and the per-book template renders a "Construction Techniques,
+Materials, and Production Methods" section.

@@ -9,7 +9,6 @@ PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 CONSTRUCT {
   ?book a ab:ArtistsBook ;
@@ -26,6 +25,7 @@ CONSTRUCT {
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
+    ab:constructedUsing ?constructionConcept ;
     .
 
 
@@ -362,13 +362,6 @@ WHERE {
       FILTER(?relator_term = ?role_term)
     }
 
-    # TODO(#86): attach construction & production methods here. Look each book's
-    # 655 / 340 / 650 heading up in the SKOS scheme sources/construction-methods.ttl
-    # -- match on ab:matchKey (the normalized $a text) or skos:exactMatch (the $0
-    # URI) -- and emit `ab:constructedUsing <concept>` (add the property back to
-    # the CONSTRUCT block above). The old docs/construction-vocab.ttl slug lookup
-    # was removed together with that file; see the pull request for the plan.
-
     BIND(REPLACE(REPLACE(?role_term, "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?role_slug)
     BIND(COALESCE(?relator, fx:entity(ab:, "role/", ?role_slug)) AS ?roleConcept)
 
@@ -381,5 +374,39 @@ WHERE {
     BIND(IF(BOUND(?extent), fx:entity(ab:, "item/", ?canonical_key, "/extent"), ?sentinel) AS ?bookExtent)
     BIND(IF(BOUND(?summary), fx:entity(ab:, "item/", ?canonical_key, "/summary"), ?sentinel) AS ?bookSummary)
     BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
+  }
+
+  # Construction & production methods (#86). Attach ab:constructedUsing by
+  # joining each book's genre/technique/material heading occurrences
+  # (sources/construction/occurrences.csv, one row per book heading, keyed by the
+  # canonical key) to the curated decisions (sources/construction/decisions.csv)
+  # on the cluster key -- the same reconciliation unit the SKOS scheme itself is
+  # built from (sources/construction/build-scheme.rq). Only include=y clusters
+  # carry a conceptId, so a book emits one edge per distinct construction concept
+  # its headings map to. The concept URI is minted exactly as in the scheme
+  # (ab:construction/<conceptId>), so it resolves against sources/construction-
+  # methods.ttl, which Fuseki loads alongside this graph. Kept OPTIONAL so a book
+  # with no construction heading emits nothing.
+  #
+  # Both inputs are small committed CSVs -- the MARC was traversed once, offline,
+  # to produce occurrences.csv (see mine-occurrences.rq) -- so this is a cheap
+  # CSV-to-CSV join, not a second pass over the archive. Wrapped in a sub-SELECT
+  # so it is evaluated once and hash-joined to the outer books on ?canonical_key.
+  # decisions is listed first (the ~60 include=y rows drive the join) so ARQ's
+  # linear `sequence` re-reads only the occurrences CSV per decision, not vice
+  # versa.
+  OPTIONAL {
+    SELECT DISTINCT ?canonical_key ?constructionConcept WHERE {
+      SERVICE <x-sparql-anything:location=sources/construction/decisions.csv,csv.headers=true> {
+        ?dRow xyz:cluster    ?cCluster ;
+              xyz:include    "y" ;
+              xyz:conceptId  ?cConceptId .
+      }
+      SERVICE <x-sparql-anything:location=sources/construction/occurrences.csv,csv.headers=true> {
+        ?oRow xyz:canonicalKey ?canonical_key ;
+              xyz:cluster       ?cCluster .
+      }
+      BIND(fx:entity(ab:, "construction/", ?cConceptId) AS ?constructionConcept)
+    }
   }
 }
