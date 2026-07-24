@@ -37,6 +37,8 @@ from match import isbn_set, norm_title, year_of
 
 BASE = "https://dkglab.github.io/ns/artists-books/"
 
+BLOCK_DECISIONS = {"no", "unsure"}  # human says this citation is wrong -> don't emit
+
 # Page marker: "p." / "pp." not glued to a preceding word (avoids "esp.", "Press.")
 # and immediately followed by a page number (avoids the year's trailing period).
 PAGE_MARK = re.compile(r"(?<![A-Za-z])pp?\.\s*(?=\[?\d)", re.I)
@@ -176,6 +178,35 @@ def emit_ttl(path, citations):
         fh.write("\n".join(lines))
 
 
+def load_decisions(path):
+    """Load the hand-owned citation-decisions overlay, keyed by (refKey, bookKey).
+
+    Returns {(refKey, bookKey): decision} for rows carrying a recorded decision:
+    'yes' blesses an uncertain (flagged) match into the graph; 'no'/'unsure'
+    suppress a citation the matcher would otherwise emit. Blank/unreviewed rows --
+    and a missing or unspecified file -- yield no override, so emission falls back
+    to the matcher's own confidence (identical to the pre-overlay behaviour). Keyed
+    by the (reference work, artist's book) pair, which is the citation's identity:
+    the libraries are frozen and the matcher deterministic, so the pairing does not
+    drift between runs. Same discipline as artists-books-dedup-decisions.csv.
+    """
+    decisions = {}
+    if not path:
+        return decisions
+    try:
+        fh = open(path, newline="")
+    except FileNotFoundError:
+        print(f"  no decisions overlay at {path}; emission follows matcher confidence",
+              file=sys.stderr)
+        return decisions
+    with fh:
+        for r in csv.DictReader(fh):
+            d = (r.get("decision") or "").strip().lower()
+            if d:
+                decisions[(r["refKey"], r["bookKey"])] = d
+    return decisions
+
+
 # --------------------------------------------------------------------------- #
 def main():
     ap = argparse.ArgumentParser(description="Freeze citations to Turtle (#82).")
@@ -184,6 +215,8 @@ def main():
     ap.add_argument("--books", required=True, help="sources/artists-books.csv")
     ap.add_argument("--out", required=True, help="graph/citations.ttl")
     ap.add_argument("--review", required=True, help="citation review CSV")
+    ap.add_argument("--decisions", help="hand-owned citation-decisions overlay "
+                    "(sources/citations-decisions.csv); optional")
     args = ap.parse_args()
 
     refs = load_refs(args.refs)
@@ -191,6 +224,7 @@ def main():
     ref_title = {r["key"]: r["title"] for r in refs}
     paras = load_paragraphs(args.notes)
     results = match_all(paras, refs)  # index-aligned with paras
+    decisions = load_decisions(args.decisions)  # hand-owned overrides, gates emission
 
     citations = {}
     review_rows = []
@@ -198,10 +232,15 @@ def main():
     for para, res in zip(paras, results):
         book = src2canon.get(f"3:{para['citedItemKey']}", "")
         ref = res["refItemKey"]
+        decision = decisions.get((ref, book), "")     # hand-owned override
         if res["method"] == "none" and not res["review"]:
             status = "annotation"                     # editorial aside, not a citation
-        elif not ref or res["review"] == "yes":
-            status = "unmatched" if not ref else "review"
+        elif not ref:
+            status = "unmatched"                       # no reference work resolved
+        elif decision in BLOCK_DECISIONS:
+            status = "blocked"                         # human rejected this match -> suppress
+        elif res["review"] == "yes" and decision != "yes":
+            status = "review"                          # uncertain match, not yet blessed
         elif not book:
             status = "orphan"                          # cited record has no canonical AB node
         else:
@@ -242,7 +281,7 @@ def main():
     print(f"\ncitations frozen: {len(citations)} edges "
           f"linking {len(books)} artists' books to {len(works)} reference works",
           file=sys.stderr)
-    for s in ("emitted", "review", "unmatched", "orphan", "annotation"):
+    for s in ("emitted", "review", "blocked", "unmatched", "orphan", "annotation"):
         if stats[s]:
             print(f"  {s:10} {stats[s]:5} paragraphs", file=sys.stderr)
 
