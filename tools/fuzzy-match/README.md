@@ -17,7 +17,7 @@ frozen citation graph.
   `ab:Citation` per (reference work, artist's book) against the canonical URIs.
 
 Fuzzy matching uses [`rapidfuzz`](https://pypi.org/project/rapidfuzz/), installed
-into an isolated venv here (mirrors `tools/rdflib`). Everything except this
+into an isolated venv here. Everything except this
 README, `Makefile`, the `*.py` scripts, and `requirements.txt` is generated and
 gitignored.
 

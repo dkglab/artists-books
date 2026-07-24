@@ -6,12 +6,11 @@ START_FUSEKI ?= true
 all: graph/artists-books.ttl graph/reference-works.ttl web/site/index.html
 
 clean:
-	rm -f inferred.ttl diff.txt *.png docs/*.png
+	rm -f inferred.ttl diff.txt
 	rm -rf graph site .snowman web/site web/.snowman
 
 superclean: clean
 	@$(MAKE) -s -C tools/jena clean
-	@$(MAKE) -s -C tools/rdflib clean
 	@$(MAKE) -s -C tools/fuseki clean
 	@$(MAKE) -s -C tools/snowman clean
 	@$(MAKE) -s -C tools/yaz-client clean
@@ -26,12 +25,6 @@ tools/jena/bin/riot \
 tools/sparql-anything/sparql-anything.jar \
 tools/fuseki/fuseki-server \
 tools/snowman/snowman: FORCE
-	$(MAKE) -s -C $(shell echo $@ | cut -d/ -f1-2)
-
-# rdflib is a pip venv rather than a pinned download, and its sub-make target
-# is not a file that the recipe creates -- forcing this one would rebuild the
-# venv on every invocation.
-tools/rdflib/bin/rdf2dot:
 	$(MAKE) -s -C $(shell echo $@ | cut -d/ -f1-2)
 
 FORCE:
@@ -53,9 +46,6 @@ diff.txt: docs/description.ttl inferred.ttl | validate
 	[ $$? -eq 0 ] \
 	&& (echo "\033[1;31mNo triples were inferred!\033[0m" ; rm -f $@) \
 	|| echo "Triples were inferred!"
-
-%.png: %.ttl | validate tools/rdflib/bin/rdf2dot
-	./tools/rdflib/bin/rdf2dot $< 2>/dev/null | dot -Tpng > $@
 
 graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 	@mkdir -p graph

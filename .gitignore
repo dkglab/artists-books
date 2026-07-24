@@ -14,8 +14,6 @@ sources/zotero/storage/**/.zotero-ft-unprocessed
 /.sprite
 tools/jena/*
 !tools/jena/Makefile
-tools/rdflib/*
-!tools/rdflib/Makefile
 tools/sparql-anything/*
 !tools/sparql-anything/Makefile
 tools/fuseki/*
@@ -38,8 +36,5 @@ tools/fuzzy-match/venv/
 __pycache__/
 *.pyc
 # generated files
-docs/description.png
 diff.txt
-inferred.png
 inferred.ttl
-docs/vocab.png
