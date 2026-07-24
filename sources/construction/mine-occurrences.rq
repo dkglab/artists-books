@@ -1,0 +1,70 @@
+# Materialize every construction-candidate heading OCCURRENCE from the MARC, one
+# row per distinct (book canonical key, cluster, raw label, authority URI). This
+# is the single machine-side MARC extract that the rest of the construction
+# pipeline joins against, all via cheap CSV-to-CSV joins:
+#   - build-scheme.rq joins it to decisions.csv on ?cluster to build the SKOS
+#     scheme (it ignores ?canonicalKey; the DISTINCT variants per cluster are
+#     what it needs);
+#   - queries/artists-books.rq joins it to decisions.csv on ?cluster, keyed by
+#     ?canonicalKey, to attach ab:constructedUsing to each book.
+#
+# It exists as its own committed CSV, rather than being read inline by those
+# queries, for a hard performance reason: joining the (tiny) curated decisions to
+# the (large) MARC with BOTH as x-sparql-anything SERVICEs makes ARQ compile the
+# join as a linear `sequence` and RE-READ the whole archive once per decision row
+# (a ~60x blow-up; confirmed via ARQ `--explain`). Reading the archive exactly
+# once here, into a flat CSV, turns every downstream join into a CSV-to-CSV join.
+#
+# Same candidate pool and normalization as mine-candidates.rq (they MUST stay in
+# lockstep): 655 (all schemes) + 340 rdamat + 650 (all schemes except pure
+# fast/LCSH subject). Reads the per-record MARC zip archive (#81) via the nested
+# Archive->XML triplifier pattern.
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
+PREFIX marc:<http://www.loc.gov/MARC21/slim#>
+SELECT DISTINCT ?canonicalKey ?cluster ?rawLabel ?normLabel ?authority
+WHERE {
+  SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.zip> {
+    fx:properties fx:archive.matches ".*\\.xml" .
+    ?archive fx:anySlot ?file .
+
+    SERVICE <x-sparql-anything:> {
+      fx:properties
+        fx:location ?file ;
+        fx:from-archive "sources/marc/artists-books-marc.zip" ;
+        fx:media-type "application/xml" .
+
+      ?record a marc:record .
+
+      # 999 $a — the canonical key stamped on each record (#84), so each heading
+      # occurrence carries the book it belongs to.
+      ?record fx:anySlot ?f999 .
+      ?f999 a marc:datafield ; xyz:tag "999" .
+      ?f999 fx:anySlot ?sf999a .
+      ?sf999a xyz:code "a" ; rdf:_1 ?canonicalKey .
+
+      ?record fx:anySlot ?df .
+      ?df a marc:datafield ; xyz:tag ?tag .
+      # Prune to the candidate tags before the $2 scan (see mine-candidates.rq).
+      FILTER(?tag IN ("655", "340", "650"))
+      OPTIONAL { ?df fx:anySlot ?sf2 . ?sf2 xyz:code "2" ; rdf:_1 ?sr . }
+      BIND(LCASE(REPLACE(STR(?sr), "\\.$", "")) AS ?scheme)
+      FILTER(
+           ?tag = "655"
+        || (?tag = "340" && ?scheme = "rdamat")
+        || (?tag = "650" && BOUND(?scheme) && ?scheme != "fast")
+      )
+      ?df fx:anySlot ?sfa . ?sfa xyz:code "a" ; rdf:_1 ?labelRaw .
+      BIND(STR(?labelRaw) AS ?rawLabel)
+      BIND(REPLACE(REPLACE(REPLACE(LCASE(?rawLabel), "[\\s.]+$",""), "[^a-z0-9]+","-"), "(^-)|(-$)","") AS ?normLabel)
+      OPTIONAL { ?df fx:anySlot ?sf0 . ?sf0 xyz:code "0" ; rdf:_1 ?zeroRaw . BIND(STR(?zeroRaw) AS ?dollar0) }
+      BIND(COALESCE(?dollar0, CONCAT(COALESCE(?scheme,"none"), "|", ?normLabel)) AS ?cluster)
+      # Authority URI (the $0, trailing period stripped) or "" when the heading
+      # carries none. Kept as the scheme's skos:exactMatch target.
+      BIND(IF(BOUND(?dollar0), REPLACE(?dollar0, "\\.$", ""), "") AS ?authority)
+    }
+  }
+  FILTER(BOUND(?cluster))
+}
+ORDER BY ?cluster ?rawLabel ?authority

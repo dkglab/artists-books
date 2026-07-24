@@ -20,6 +20,18 @@ SELECT
   ?dimensions
   ?edition
   (SAMPLE(?summaries) AS ?summary)
+  # Each construction method as a "conceptKey<TAB>label" token, tokens newline-
+  # separated, so the template links each to its /construction/ page.
+  (GROUP_CONCAT(DISTINCT CONCAT(
+     REPLACE(STR(?constructionTerm), ".*/construction/", ""), "\t",
+     COALESCE(?constructionTermLabel, STR(?constructionTerm))
+   ); separator="\n") AS ?constructionTerms)
+  # Each subject term as a "conceptKey<TAB>label" token, tokens newline-separated,
+  # so the template links each to its /subject/ page.
+  (GROUP_CONCAT(DISTINCT CONCAT(
+     REPLACE(STR(?subjectTerm), ".*/subject/", ""), "\t",
+     COALESCE(?subjectTermLabel, STR(?subjectTerm))
+   ); separator="\n") AS ?subjectTerms)
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   (GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
   (SAMPLE(?worldcatLinks) AS ?worldcatLink)
@@ -105,6 +117,16 @@ WHERE {
 
   OPTIONAL {
     ?book foaf:isPrimaryTopicOf ?worldcatLinks .
+  }
+
+  OPTIONAL {
+    ?book ab:constructedUsing ?constructionTerm .
+    OPTIONAL { ?constructionTerm rdfs:label ?constructionTermLabel . }
+  }
+
+  OPTIONAL {
+    ?book ab:hasSubject ?subjectTerm .
+    OPTIONAL { ?subjectTerm rdfs:label ?subjectTermLabel . }
   }
 
   OPTIONAL {

@@ -25,6 +25,8 @@ CONSTRUCT {
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
+    ab:constructedUsing ?constructionConcept ;
+    ab:hasSubject ?subjectConcept ;
     .
 
 
@@ -242,9 +244,18 @@ WHERE {
 
           # creator/contributor fields: personal (100/700), corporate (110/710),
           # meeting (111/711). 6xx (subjects) and 791 (acquisition funds) excluded.
-          ?record fx:anySlot ?df .
-          ?df a marc:datafield ; xyz:tag ?ctag .
-          FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+          #
+          # The tag test is wrapped in its own group so it prunes *here*. A bare
+          # FILTER in this group would be a group filter, which SPARQL evaluates
+          # after the whole group — i.e. after the four subfield OPTIONALs below —
+          # so all 143,271 datafields carrying a $a would be pushed through those
+          # nested-loop joins instead of the 10,943 creator ones. Same answers,
+          # twice the runtime (see docs/QUERY-PERFORMANCE.md).
+          {
+            ?record fx:anySlot ?df .
+            ?df a marc:datafield ; xyz:tag ?ctag .
+            FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+          }
 
           #binds the contribution type based on the tag of the datafield. 100, 110, and 111 are considered primary contributions, while 700, 710, and 711 are considered secondary contributions.
           BIND(
@@ -371,6 +382,7 @@ WHERE {
       }
       FILTER(?relator_term = ?role_term)
     }
+
     BIND(REPLACE(REPLACE(?role_term, "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?role_slug)
     BIND(COALESCE(?relator, fx:entity(ab:, "role/", ?role_slug)) AS ?roleConcept)
 
@@ -383,5 +395,63 @@ WHERE {
     BIND(IF(BOUND(?extent), fx:entity(ab:, "item/", ?canonical_key, "/extent"), ?sentinel) AS ?bookExtent)
     BIND(IF(BOUND(?summary), fx:entity(ab:, "item/", ?canonical_key, "/summary"), ?sentinel) AS ?bookSummary)
     BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
+  }
+
+  # Construction & production methods (#86). Attach ab:constructedUsing by
+  # joining each book's genre/technique/material heading occurrences
+  # (sources/construction/occurrences.csv, one row per book heading, keyed by the
+  # canonical key) to the curated decisions (sources/construction/decisions.csv)
+  # on the cluster key -- the same reconciliation unit the SKOS scheme itself is
+  # built from (sources/construction/build-scheme.rq). Only include=y clusters
+  # carry a conceptId, so a book emits one edge per distinct construction concept
+  # its headings map to. The concept URI is minted exactly as in the scheme
+  # (ab:construction/<conceptId>), so it resolves against sources/construction-
+  # methods.ttl, which Fuseki loads alongside this graph. Kept OPTIONAL so a book
+  # with no construction heading emits nothing.
+  #
+  # Both inputs are small committed CSVs -- the MARC was traversed once, offline,
+  # to produce occurrences.csv (see mine-occurrences.rq) -- so this is a cheap
+  # CSV-to-CSV join, not a second pass over the archive. Wrapped in a sub-SELECT
+  # so it is evaluated once and hash-joined to the outer books on ?canonical_key.
+  # decisions is listed first (the ~60 include=y rows drive the join) so ARQ's
+  # linear `sequence` re-reads only the occurrences CSV per decision, not vice
+  # versa.
+  OPTIONAL {
+    SELECT DISTINCT ?canonical_key ?constructionConcept WHERE {
+      SERVICE <x-sparql-anything:location=sources/construction/decisions.csv,csv.headers=true> {
+        ?dRow xyz:cluster    ?cCluster ;
+              xyz:include    "y" ;
+              xyz:conceptId  ?cConceptId .
+      }
+      SERVICE <x-sparql-anything:location=sources/construction/occurrences.csv,csv.headers=true> {
+        ?oRow xyz:canonicalKey ?canonical_key ;
+              xyz:cluster       ?cCluster .
+      }
+      BIND(fx:entity(ab:, "construction/", ?cConceptId) AS ?constructionConcept)
+    }
+  }
+
+  # Subject terms (#105). Attach ab:hasSubject exactly as ab:constructedUsing
+  # above, but from the parallel subjects pipeline: join each book's 650/651
+  # subject-heading occurrences (sources/subjects/occurrences.csv, keyed by the
+  # canonical key) to the curated decisions (sources/subjects/decisions.csv) on
+  # the shared cluster key, and mint ab:subject/<conceptId> -- the same URI the
+  # SKOS scheme defines (sources/subjects/build-scheme.rq), so it resolves against
+  # sources/subject-terms.ttl, which Fuseki loads alongside this graph. The two
+  # SERVICEs bind the same ?sCluster so ARQ hash-joins them. Kept OPTIONAL so a
+  # book with no subject heading emits nothing.
+  OPTIONAL {
+    SELECT DISTINCT ?canonical_key ?subjectConcept WHERE {
+      SERVICE <x-sparql-anything:location=sources/subjects/decisions.csv,csv.headers=true> {
+        ?sdRow xyz:cluster    ?sCluster ;
+               xyz:include    "y" ;
+               xyz:conceptId  ?sConceptId .
+      }
+      SERVICE <x-sparql-anything:location=sources/subjects/occurrences.csv,csv.headers=true> {
+        ?soRow xyz:canonicalKey ?canonical_key ;
+               xyz:cluster       ?sCluster .
+      }
+      BIND(fx:entity(ab:, "subject/", ?sConceptId) AS ?subjectConcept)
+    }
   }
 }

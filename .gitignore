@@ -14,15 +14,14 @@ sources/zotero/storage/**/.zotero-ft-unprocessed
 /.sprite
 tools/jena/*
 !tools/jena/Makefile
-tools/rdflib/*
-!tools/rdflib/Makefile
 tools/sparql-anything/*
 !tools/sparql-anything/Makefile
 tools/fuseki/*
 !tools/fuseki/Makefile
 tools/yaz-client/*
 !tools/yaz-client/Makefile
-tools/snowman/snowman
+tools/snowman/*
+!tools/snowman/Makefile
 # fuzzy-match: commit the scripts, ignore the generated venv (issue #55)
 tools/fuzzy-match/venv/
 /graph/
@@ -37,8 +36,5 @@ tools/fuzzy-match/venv/
 __pycache__/
 *.pyc
 # generated files
-docs/description.png
 diff.txt
-inferred.png
 inferred.ttl
-docs/vocab.png

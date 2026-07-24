@@ -1,0 +1,38 @@
+{{ template "base" . }}
+
+{{ define "title" }} - construction methods{{ end }}
+
+{{ define "content" }}
+<h1>Construction Methods</h1>
+<p class="mb"><em>Construction techniques, materials, and production methods used across the collection.</em></p>
+
+{{ $rows := . }}
+
+<h2>Binding and format</h2>
+<ul class="mb">
+{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Binding and format" }}
+<li><a href="/construction/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
+{{- end }}{{ end }}
+</ul>
+
+<h2>Materials</h2>
+<ul class="mb">
+{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Materials" }}
+<li><a href="/construction/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
+{{- end }}{{ end }}
+</ul>
+
+<h2>Production and printing</h2>
+<ul class="mb">
+{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Production and printing" }}
+<li><a href="/construction/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
+{{- end }}{{ end }}
+</ul>
+
+<h2>Techniques</h2>
+<ul class="mb">
+{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Techniques" }}
+<li><a href="/construction/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
+{{- end }}{{ end }}
+</ul>
+{{ end }}

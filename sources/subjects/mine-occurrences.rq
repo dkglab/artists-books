@@ -1,0 +1,137 @@
+# Materialize every subject-heading OCCURRENCE from the artists-books MARC, one
+# row per distinct (book canonical key, cluster, heading, authority URI). This is
+# the single machine-side MARC extract the rest of the subjects pipeline joins
+# against, all via cheap CSV-to-CSV joins:
+#   - build-scheme.rq joins it to decisions.csv on ?cluster to build the SKOS
+#     scheme (it ignores ?canonicalKey; the DISTINCT variants per cluster are
+#     what it needs);
+#   - queries/artists-books.rq (follow-up) joins it to decisions.csv on ?cluster,
+#     keyed by ?canonicalKey, to attach ab:hasSubject to each book.
+#
+# It exists as its own committed CSV, rather than being read inline by those
+# queries, for a hard performance reason: joining the (tiny) curated decisions to
+# the (large) MARC with BOTH as x-sparql-anything SERVICEs makes ARQ re-read the
+# whole archive once per decision row (a ~60x blow-up; confirmed via ARQ
+# `--explain`). Reading the archive exactly once here, into a flat CSV, turns
+# every downstream join into a CSV-to-CSV join. See ../construction/README.md and
+# docs/QUERY-PERFORMANCE.md.
+#
+# Scope (the complement of the construction pool, issue #105): plain topical
+# `650` and geographic `651` -- what a book is ABOUT. Construction mines 655/340
+# and the non-plain 650s; a heading here that turns out to be a construction
+# method is simply marked include=n in decisions.csv. Must stay in lockstep with
+# mine-candidates.rq (same pool, same heading assembly, same normalization).
+#
+# Heading assembly differs from construction, which keys on a single $a: a subject
+# heading is the ordered subfields $a $x $y $z $v joined with " -- " (e.g.
+# "Prisons -- Italy -- Livorno -- History"). Document order matters (~5% of
+# subdivided headings put $z before $x), so the parts are gathered in
+# subfield-container order (rdf:_N) and concatenated by an ORDERed sub-SELECT
+# whose solution stream GROUP_CONCAT consumes in order (ARQ preserves it). This
+# is the one place we walk Facade-X members with a variable predicate (?df ?p ?sf)
+# rather than fx:anySlot -- the only way to recover position -- but the walk is
+# anchored on an already-bound, already-650/651-filtered ?df inside the
+# per-record inner graph (#81), so it stays a few seconds, not minutes.
+#
+# Reads the per-record MARC zip archive (#81) via the nested Archive->XML
+# triplifier pattern: the outer read lists the entries (fx:archive.matches); the
+# inner per-record SERVICE triplifies one record (fx:location ?file +
+# fx:from-archive), joining each heading to its book via the canonical key in
+# 999 $a (#84).
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
+PREFIX marc:<http://www.loc.gov/MARC21/slim#>
+SELECT DISTINCT ?canonicalKey ?cluster ?rawLabel ?normLabel ?authority
+WHERE {
+  # ---- per datafield: assemble the ordered heading ($a $x $y $z $v) ----
+  {
+    SELECT ?canonicalKey ?tag ?df ?scheme ?dollar0
+           (GROUP_CONCAT(?part; separator=" -- ") AS ?rawLabel)
+    WHERE {
+      # inner: one row per heading subfield, carrying its container index so the
+      # outer GROUP_CONCAT can rebuild the heading in document order.
+      {
+        SELECT ?canonicalKey ?tag ?df ?scheme ?dollar0 ?idx ?part
+        WHERE {
+          SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.zip> {
+            fx:properties fx:archive.matches ".*\\.xml" .
+            ?archive fx:anySlot ?file .
+
+            SERVICE <x-sparql-anything:> {
+              fx:properties
+                fx:location ?file ;
+                fx:from-archive "sources/marc/artists-books-marc.zip" ;
+                fx:media-type "application/xml" .
+
+              ?record a marc:record .
+
+              # 999 $a -- the canonical key stamped on each record (#84).
+              ?record fx:anySlot ?f999 .
+              ?f999 a marc:datafield ; xyz:tag "999" .
+              ?f999 fx:anySlot ?sf999a .
+              ?sf999a xyz:code "a" ; rdf:_1 ?canonicalKey .
+
+              ?record fx:anySlot ?df .
+              ?df a marc:datafield ; xyz:tag ?tag .
+              FILTER(?tag IN ("650", "651"))
+
+              # $0 authority URI and $2 scheme are reduced to ONE value per
+              # datafield by these grouped sub-SELECTs, so a heading that carries
+              # several $0 (a handful of RVM/GND headings repeat $0 per
+              # subdivision) can't cross-multiply the heading parts below. MIN
+              # makes the pick deterministic across runs.
+              OPTIONAL {
+                SELECT ?df (MIN(?d0) AS ?dollar0) WHERE {
+                  ?df fx:anySlot ?sf0 . ?sf0 xyz:code "0" ; rdf:_1 ?zeroRaw .
+                  BIND(STR(?zeroRaw) AS ?d0)
+                } GROUP BY ?df
+              }
+              OPTIONAL {
+                SELECT ?df (MIN(?s2) AS ?schemeFrom2) WHERE {
+                  ?df fx:anySlot ?sf2 . ?sf2 xyz:code "2" ; rdf:_1 ?sr .
+                  BIND(LCASE(REPLACE(STR(?sr), "\\.$", "")) AS ?s2)
+                } GROUP BY ?df
+              }
+              # vocabulary: $2 (lower-cased, trailing period stripped) if present,
+              # else inferred from the 650 second indicator (MARC 21). Joined on a
+              # private key so an absent/blank ind2 matches nothing (not every row).
+              OPTIONAL { ?df xyz:ind2 ?ind2raw }
+              BIND(IF(?tag = "650", COALESCE(?ind2raw, ""), "") AS ?ind2key)
+              OPTIONAL {
+                VALUES (?i2k ?i2scheme) {
+                  ("0" "lcsh") ("1" "lcshac") ("2" "mesh")
+                  ("3" "nal") ("4" "unspecified") ("5" "csh") ("6" "rvm")
+                }
+                FILTER(?i2k = ?ind2key)
+              }
+              BIND(COALESCE(?schemeFrom2, ?i2scheme) AS ?scheme)
+
+              # heading parts: $a $x $y $z $v in container (document) order.
+              ?df ?p ?sf .
+              FILTER(STRSTARTS(STR(?p), "http://www.w3.org/1999/02/22-rdf-syntax-ns#_"))
+              BIND(xsd:integer(STRAFTER(STR(?p), "#_")) AS ?idx)
+              ?sf xyz:code ?code ; rdf:_1 ?v .
+              FILTER(?code IN ("a", "x", "y", "z", "v"))
+              # strip trailing whitespace/period from each part, like the #89 script.
+              BIND(REPLACE(REPLACE(STR(?v), "[\\s.]+$", ""), "\\s+$", "") AS ?part)
+            }
+          }
+        }
+        ORDER BY ?df ?idx
+      }
+    }
+    GROUP BY ?canonicalKey ?tag ?df ?scheme ?dollar0
+  }
+  # drop the all-unbound phantom row a record with no 650/651 leaves (a quirk of
+  # the nested Archive->XML read): its empty GROUP_CONCAT yields ?rawLabel "".
+  FILTER(?rawLabel != "")
+
+  BIND(REPLACE(REPLACE(REPLACE(LCASE(?rawLabel), "[\\s.]+$",""), "[^a-z0-9]+","-"), "(^-)|(-$)","") AS ?normLabel)
+  BIND(COALESCE(?dollar0, CONCAT(COALESCE(?scheme,"none"), "|", ?normLabel)) AS ?cluster)
+  # authority is the $0 (trailing period stripped) or "" when the heading carries
+  # none. Kept as the concept's skos:exactMatch target.
+  BIND(IF(BOUND(?dollar0), REPLACE(?dollar0, "\\.$", ""), "") AS ?authority)
+}
+ORDER BY ?cluster ?rawLabel ?authority
