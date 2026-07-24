@@ -17,6 +17,7 @@ flowchart TD
     abddec["artists-books-dedup-decisions.csv<br/>(hand-curated: same / no / unsure)"] -->|"gates fuzzy merge"| dedup
     dedup --> csvs["artists-books.csv<br/>reference-works.csv<br/>(canonical lists)"]
     dedup -.->|"surfaces fuzzy attaches"| abdrev["artists-books-dedup-review.csv<br/>(generated — for review)"]
+    abdrev -.->|"curator reviews & edits"| abddec
 
     zotero -->|"notes_export.sh"| notes["notes.xml<br/>('Cited:' note paragraphs)"]
     notes --> freeze{{"freeze_citations.py<br/>(one-time)"}}
@@ -24,6 +25,7 @@ flowchart TD
     citdec["citations-decisions.csv<br/>(hand-curated: yes / no / unsure)"] -->|"gates emission"| freeze
     freeze --> citttl["sources/citations.ttl<br/>(frozen citation edges)"]
     freeze -.->|"surfaces fuzzy matches"| citrev["citations-review.csv<br/>(generated — for review)"]
+    citrev -.->|"curator reviews & edits"| citdec
 
     catalogs -->|"marc_harvest.py (YAZ)"| marc["artists-books-marc.zip<br/>(per-record MARC archive)"]
     catalogs -->|"marc_harvest.py (YAZ)"| refmarc["reference-works-marc.zip *"]
@@ -97,7 +99,9 @@ overlay** — the amber nodes above. Each is keyed to a stable identifier, edite
 by a person, and **never written by `make`**, so re-running the pipeline reads
 the human calls back without ever clobbering them. The two fuzzy steps also emit
 a companion `*-review.csv` (grey, generated fresh each run) that surfaces the
-uncertain matches a curator should look at.
+uncertain matches a curator should look at — the dashed *curator reviews & edits*
+edge closes the loop: a person reads the review CSV and records the call in the
+matching `*-decisions.csv`, which the next run reads back to gate the step.
 
 | decisions file | keyed by | gates | effect of a call |
 |---|---|---|---|
