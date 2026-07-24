@@ -44,7 +44,7 @@ CONSTRUCT {
 WHERE {
   # ---- curated decisions (include = y only) ----
   SERVICE <x-sparql-anything:location=sources/construction/decisions.csv,csv.headers=true> {
-    ?drow xyz:cluster ?cluster_d ;
+    ?drow xyz:cluster ?cluster ;
           xyz:include "y" ;
           xyz:conceptId ?conceptId ;
           xyz:category  ?category ;
@@ -61,16 +61,26 @@ WHERE {
   BIND(STRLANG(?prefLabel, "en") AS ?prefLabelLang)
 
   # ---- mined MARC occurrences (materialized once by mine-occurrences.rq) ----
-  # One row per distinct (cluster, raw label, authority URI). Join to the curated
-  # decisions on the cluster key.
+  # One row per distinct (cluster, raw label, authority URI). Natural-join to the
+  # curated decisions on the shared ?cluster key: binding the SAME variable in both
+  # (required, non-OPTIONAL) SERVICEs lets ARQ hash-join them. (Using a private key
+  # + FILTER(?cluster = ?cluster_d) instead forces a nested-loop cross product --
+  # 40.5 s here vs 1.6 s, and ~9 min vs ~3 s on the larger subjects inputs. Both
+  # ?cluster ends are always bound, so the private-key rule in
+  # docs/QUERY-PERFORMANCE.md -- which guards against an *unbound* OPTIONAL var
+  # fanning out to match every row -- does not apply.)
   SERVICE <x-sparql-anything:location=sources/construction/occurrences.csv,csv.headers=true> {
     ?orow xyz:cluster    ?cluster ;
           xyz:rawLabel   ?rawLabel ;
           xyz:normLabel  ?normLabel .
-    # authority is "" for headings that carry no $0; treat that as absent.
-    OPTIONAL { ?orow xyz:authority ?authRaw . FILTER(?authRaw != "") BIND(?authRaw AS ?authority) }
+    # authority is "" for headings that carry no $0; treat that as absent. Only
+    # keep a web-resolvable http(s) URI as an exactMatch target -- many $0 are bare
+    # institution-local control numbers ("(OCoLC)fst...", "(CStmoGRI)aatgf...") that
+    # IRI() below would otherwise resolve against the build directory, baking a
+    # machine-local file:// IRI into the committed scheme. Same guard as
+    # ../subjects/build-scheme.rq.
+    OPTIONAL { ?orow xyz:authority ?authRaw . FILTER(STRSTARTS(STR(?authRaw), "http")) BIND(?authRaw AS ?authority) }
   }
-  FILTER(?cluster = ?cluster_d)
 
   # normalized match key (plain literal) + variant label + exact-match IRI
   BIND(?normLabel AS ?matchKey)

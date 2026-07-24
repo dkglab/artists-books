@@ -144,6 +144,34 @@ N-Triples. Only the number of rows reaching the `OPTIONAL`s changed.
   key matches nothing. (This is how the relator-term → LC relator URI map is
   wired.)
 
+- **…but join two *required* sources on the shared variable.** The rule above
+  guards against an **unbound** variable fanning out, so it applies only where the
+  binding can be missing — an `OPTIONAL` or a `VALUES` lookup. When both sides are
+  required and always bind the key (two non-`OPTIONAL` `SERVICE`s over CSVs, say),
+  a private key + `FILTER(?a = ?b)` is the *slow* shape: ARQ has no join variable
+  to work with, so it builds the full cross product and filters it afterwards.
+  Binding the **same** variable in both lets it hash-join instead. The two
+  `build-scheme.rq` vocabularies join their curated `decisions.csv` to the mined
+  `occurrences.csv` this way:
+
+  ```sparql
+  # DON'T — cross product, then filter
+  SERVICE <…decisions.csv> { ?drow xyz:cluster ?cluster_d ; … }
+  SERVICE <…occurrences.csv> { ?orow xyz:cluster ?cluster ; … }
+  FILTER(?cluster = ?cluster_d)
+
+  # DO — shared variable, hash join
+  SERVICE <…decisions.csv> { ?drow xyz:cluster ?cluster ; … }
+  SERVICE <…occurrences.csv> { ?orow xyz:cluster ?cluster ; … }
+  ```
+
+  | scheme | `include=y` decisions × occurrences | cross product | shared var |
+  |---|---|---:|---:|
+  | `sources/subjects` (#105) | 6,406 × 11,278 | ~9 min | **~3 s** |
+  | `sources/construction` (#106) | 341 × 10,379 | 40.5 s | **1.6 s** |
+
+  Output is identical either way — only the plan changes.
+
 - **Keep `OPTIONAL` blocks small and self-contained.** Each should match a single
   subfield and bind one value; large optionals re-multiply intermediate results.
 
@@ -185,7 +213,9 @@ Two gotchas:
 
 1. Did I add any `?s ?var ?o` to walk Facade-X members? Replace with `fx:anySlot`.
 2. Can any pattern multiply rows (repeated subfields, a `VALUES` join on a shared
-   var)? Aggregate it away or join on a private key.
+   var)? Aggregate it away or join on a private key. Conversely, am I joining two
+   *required* sources with `FILTER(?a = ?b)` on private keys? Share one variable
+   instead, or ARQ cross-products them.
 3. Does a `FILTER` share a group with an `OPTIONAL`? Then it runs *after* that
    optional. Wrap the required patterns it prunes in their own `{ … }`.
 4. `time` the rebuild (`make graph/artists-books.ttl`). It should be seconds. If

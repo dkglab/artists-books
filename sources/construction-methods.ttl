@@ -321,12 +321,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/screen-printing>
         rdf:type         skos:Concept;
         rdfs:label       "Screen printing"@en;
-        skos:altLabel    "Screen prints."@en , "Screen printing."@en , "screen prints."@en , "Screen prints"@en;
+        skos:altLabel    "Screen prints"@en , "screen prints."@en , "Screen printing."@en , "Screen prints."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>;
-        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(OCoLC)fst01986255> , <http://vocab.getty.edu/aat/300178688> , <http://vocab.getty.edu/aat/300053281> , <http://id.loc.gov/authorities/genreForms/gf2017027258> , <http://id.worldcat.org/fast/1986255> , <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300178688>;
+        skos:exactMatch  <http://id.worldcat.org/fast/1986255> , <http://id.loc.gov/authorities/genreForms/gf2017027258> , <http://vocab.getty.edu/aat/300053281> , <http://vocab.getty.edu/aat/300178688>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Screen printing"@en;
-        ab:matchKey      "screen-prints" , "screen-printing" .
+        ab:matchKey      "screen-printing" , "screen-prints" .
 
 <https://dkglab.github.io/ns/artists-books/construction/category/production-printing>
         rdf:type           skos:Concept;
@@ -526,14 +526,13 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         ab:matchKey     "binding" .
 
 <https://dkglab.github.io/ns/artists-books/construction/limp-bindings>
-        rdf:type         skos:Concept;
-        rdfs:label       "Limp bindings"@en;
-        skos:altLabel    "Limp bindings."@en , "limp bindings."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300201735>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Limp bindings"@en;
-        ab:matchKey      "limp-bindings" .
+        rdf:type        skos:Concept;
+        rdfs:label      "Limp bindings"@en;
+        skos:altLabel   "Limp bindings."@en , "limp bindings."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Limp bindings"@en;
+        ab:matchKey     "limp-bindings" .
 
 <https://dkglab.github.io/ns/artists-books/construction/unbound-sheets>
         rdf:type        skos:Concept;
@@ -587,7 +586,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Pamphlet bindings"@en;
         skos:altLabel    "Pamphlets."@en , "pamphlet bindings."@en , "Pamphlet bindings."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300264218> , <http://vocab.getty.edu/aat/300264218>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300264218>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Pamphlet bindings"@en;
         ab:matchKey      "pamphlets" , "pamphlet-bindings" .
@@ -742,7 +741,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Staple bindings"@en;
         skos:altLabel    "Staple binding."@en , "staple bindings."@en , "Staple bindings."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300375674> , <http://vocab.getty.edu/aat/300375674>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300375674>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Staple bindings"@en;
         ab:matchKey      "staple-binding" , "staple-bindings" .
@@ -822,7 +821,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Slipcases"@en;
         skos:altLabel    "slipcases."@en , "Book slipcases."@en , "Slipcases."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300200341> , <http://vocab.getty.edu/aat/300422132> , <http://id.loc.gov/vocabulary/rbmscv/cv00737>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300422132> , <http://id.loc.gov/vocabulary/rbmscv/cv00737>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Slipcases"@en;
         ab:matchKey      "book-slipcases" , "slipcases" .
@@ -842,7 +841,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Pop-up books"@en;
         skos:altLabel    "Pop-up books."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(OCoLC)fst01919955> , <http://id.worldcat.org/fast/1919955> , <http://id.loc.gov/authorities/genreForms/gf2014026150> , <http://vocab.getty.edu/aat/300201034>;
+        skos:exactMatch  <http://id.worldcat.org/fast/1919955> , <http://id.loc.gov/authorities/genreForms/gf2014026150> , <http://vocab.getty.edu/aat/300201034>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Pop-up books"@en;
         ab:matchKey      "pop-up-books" .
@@ -858,12 +857,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/movable-books>
         rdf:type         skos:Concept;
         rdfs:label       "Toy and movable books"@en;
-        skos:altLabel    "Toy and movable books."@en , "Toys and movable books."@en , "Movable books"@en , "Movable books."@en;
+        skos:altLabel    "Movable books."@en , "Movable books"@en , "Toys and movable books."@en , "Toy and movable books."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
-        skos:exactMatch  <http://id.worldcat.org/fast/1726766> , <http://id.loc.gov/authorities/genreForms/gf2014026197> , <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(OCoLC)fst01726766> , <http://vocab.getty.edu/aat/300207697>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300207697> , <http://id.loc.gov/authorities/genreForms/gf2014026197> , <http://id.worldcat.org/fast/1726766>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Toy and movable books"@en;
-        ab:matchKey      "toy-and-movable-books" , "toys-and-movable-books" , "movable-books" .
+        ab:matchKey      "movable-books" , "toys-and-movable-books" , "toy-and-movable-books" .
 
 <https://dkglab.github.io/ns/artists-books/construction/painted-bindings>
         rdf:type        skos:Concept;
@@ -896,7 +895,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/accordion-fold>
         rdf:type         skos:Concept;
         rdfs:label       "Accordion fold format"@en;
-        skos:altLabel    "Accordion fold format (binding)"@en , "Accordion fold format (Binding)."@en , "Accordion fold format (Binding)"@en , "Accordion bindings."@en , "accordion books."@en , "Accordion fold format."@en , "Accordion fold books."@en , "Accordion books."@en , "Accordion folding."@en;
+        skos:altLabel    "Accordion fold format (Binding)."@en , "Accordion fold format (binding)"@en , "Accordion fold format (Binding)"@en , "Accordion bindings."@en , "accordion books."@en , "Accordion fold format."@en , "Accordion fold books."@en , "Accordion books."@en , "Accordion folding."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/binding-format>;
         skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv00024> , <http://id.loc.gov/authorities/genreForms/gf2022026082> , <http://vocab.getty.edu/aat/300438814> , <http://vocab.getty.edu/aat/300417532>;
         skos:inScheme    ab:construction-methods;
@@ -1387,14 +1386,13 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         ab:matchKey     "acrylic-sheet" .
 
 <https://dkglab.github.io/ns/artists-books/construction/vinyl>
-        rdf:type         skos:Concept;
-        rdfs:label       "Vinyl"@en;
-        skos:altLabel    "vinyl."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/material>;
-        skos:exactMatch  <file:///tmp/claude-1001/-home-sprite-artists-books/a2ba92ae-f40c-40d7-b7a1-663ac1a208d1/scratchpad/wt-construction/(CStmoGRI)aatgf300014502>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Vinyl"@en;
-        ab:matchKey      "vinyl" .
+        rdf:type        skos:Concept;
+        rdfs:label      "Vinyl"@en;
+        skos:altLabel   "vinyl."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Vinyl"@en;
+        ab:matchKey     "vinyl" .
 
 <https://dkglab.github.io/ns/artists-books/construction/kozo-paper>
         rdf:type         skos:Concept;
