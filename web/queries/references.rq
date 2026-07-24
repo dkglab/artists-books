@@ -4,6 +4,7 @@ PREFIX bflc:    <http://id.loc.gov/ontologies/bflc/>
 PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wd:      <http://www.wikidata.org/entity/>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
 
 # One row per reference work (#34) that cites at least one artists' book in the
 # ABC collection, feeding both the reference index ("Results" page) and the
@@ -25,6 +26,9 @@ SELECT
   ?place
   ?date
   ?language
+  # One OCLC number per reference work (a single 001), so SAMPLE, not concat.
+  (SAMPLE(?oclcNumbers) AS ?oclcNumber)
+  (SAMPLE(?worldcatLinks) AS ?worldcatLink)
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   # Each cited book as a "itemKey<TAB>title" token, tokens separated by newline,
   # so the template can split the pair and link each title to its /item/ page.
@@ -58,6 +62,17 @@ WHERE {
     ?reference bf:identifiedBy ?id .
     ?id rdf:value ?isbn ;
         bf:source wd:Q33057 .
+  }
+
+  OPTIONAL {
+    ?reference bf:identifiedBy ?refOCLCNum .
+    ?refOCLCNum
+      rdf:value ?oclcNumbers ;
+      bf:source wd:Q846596 .
+  }
+
+  OPTIONAL {
+    ?reference foaf:isPrimaryTopicOf ?worldcatLinks .
   }
 
   # Required: the artists' books this reference cites (#42). The cited book must

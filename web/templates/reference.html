@@ -36,6 +36,11 @@
   <dt>ISBN</dt>
   <dd>{{ . }}</dd>
   {{ end }}
+
+  {{ with .oclcNumber }}
+  <dt>WorldCat</dt>
+  <dd><a href="{{ $.worldcatLink }}">{{ . }}</a></dd>
+  {{ end }}
 </dl>
 
 {{ with .citedBooks }}

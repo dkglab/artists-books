@@ -7,6 +7,7 @@ PREFIX bf: <http://id.loc.gov/ontologies/bibframe/>
 PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX marc: <http://www.loc.gov/MARC21/slim#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
 # Reference works (#34, #42). Builds graph/reference-works.ttl.
 #
@@ -25,10 +26,9 @@ PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 # schema:CreativeWork (docs/vocab.ttl). Most fields come from
 # sources/reference-works.csv (the canonical RW list from the Phase-0 dedup);
 # a basic slice of the harvested MARC (sources/marc/reference-works-marc.zip)
-# is also read — for now just the primary creator (100 $a), to demonstrate the
-# join. The remaining MARC-derived fields the artists' books carry (OCLC/WorldCat,
-# secondary creators, relator roles, identity URIs, extent/dimensions) are still
-# absent (#40/#51).
+# is also read — the primary creator (100 $a) and the OCLC number / WorldCat link
+# (001, #51). The remaining MARC-derived fields the artists' books carry (secondary
+# creators, relator roles, identity URIs, extent/dimensions) are still absent (#40).
 #
 # The canonical RW keys are lib-3 keys, and the reference MARC was harvested
 # under those same lib-3 keys, so the 999 $a join below still works directly.
@@ -39,6 +39,8 @@ CONSTRUCT {
     bf:provisionActivity ?refPublication ;
     bf:language ?language ;
     bf:identifiedBy ?refISBN ;
+    bf:identifiedBy ?refOCLCNum ;
+    foaf:isPrimaryTopicOf ?worldcat_url ;
     bf:contribution ?refContribution ;
     .
 
@@ -59,6 +61,11 @@ CONSTRUCT {
   ?refISBN a bf:Identifier ;
     rdf:value ?ISBN ;
     bf:source wd:Q33057 ; # ISBN
+    .
+
+  ?refOCLCNum a bf:Local ;
+    rdf:value ?oclc_number ;
+    bf:source wd:Q846596 ;   # WorldCat
     .
 }
 WHERE {
@@ -129,12 +136,27 @@ WHERE {
         ?f999 fx:anySlot ?sf999a .
         ?sf999a xyz:code "a" ; rdf:_1 ?canonical_key .
 
-        # 100 $a — primary creator name. Strip trailing cataloguing punctuation.
-        ?record fx:anySlot ?df100 .
-        ?df100 a marc:datafield ; xyz:tag "100" .
-        ?df100 fx:anySlot ?sf100a .
-        ?sf100a xyz:code "a" ; rdf:_1 ?name_raw .
-        BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?creator_name)
+        # OCLC number from the 001 control field (#51). Kept OPTIONAL so a record
+        # with no 001 still yields its canonical key (and any 100 creator). 001 is
+        # a marc:controlfield, so its value is on rdf:_1, not a subfield. This is
+        # read at record level — NOT gated behind the 100 below — because most
+        # reference works have no 100 main entry yet do carry a 001 to link.
+        OPTIONAL {
+          ?record fx:anySlot ?cf001 .
+          ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
+        }
+
+        # 100 $a — primary creator name. OPTIONAL: only some reference works carry
+        # a 100 main entry (edited volumes / exhibition catalogs enter creators on
+        # 700/710 instead, not read yet), and those records must still yield their
+        # canonical key + 001. Strip trailing cataloguing punctuation.
+        OPTIONAL {
+          ?record fx:anySlot ?df100 .
+          ?df100 a marc:datafield ; xyz:tag "100" .
+          ?df100 fx:anySlot ?sf100a .
+          ?sf100a xyz:code "a" ; rdf:_1 ?name_raw .
+          BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?creator_name)
+        }
       }
     }
     # Guard on ?creator_name: the nested archive read binds ?canonical_key (from
@@ -145,5 +167,22 @@ WHERE {
     # the 100-match was a required pattern in the same SERVICE.)
     BIND(IF(BOUND(?creator_name), fx:entity(ab:, "reference/", ?canonical_key, "/contribution/primary"), ?sentinel) AS ?refContribution)
     BIND(IF(BOUND(?creator_name), fx:entity(ab:, "reference/", ?canonical_key, "/agent/primary"), ?sentinel) AS ?refAgent)
+
+    # WorldCat link + OCLC identifier from the 001 number (#51). Extract the
+    # first run of digits (dropping the on/ocn/ocm prefix, any trailing suffix
+    # such as "wcm"/"wcmasp", and leading zeros), then guard: only treat the 001
+    # as an OCLC number when it carries an OCLC prefix (on/ocn/ocm) or that digit
+    # run is at most 10 digits. A longer bare 001 is a local system id (e.g. an
+    # Ex Libris Alma MMS id), not an OCLC number, so a worldcat.org/oclc/ link
+    # minted from it would 404. All three vars below stay unbound (guarded on
+    # ?oclc_number) for a non-OCLC or absent 001, so no dangling /oclc node is minted.
+    BIND(REPLACE(REPLACE(?control_number_raw, "^\\D*(\\d+).*$", "$1"), "^0+", "") AS ?oclc_raw)
+    BIND(
+      IF(REGEX(?control_number_raw, "^(on|ocn|ocm)", "i") || REGEX(?oclc_raw, "^[0-9]{1,10}$"),
+         ?oclc_raw, ?sentinel)
+      AS ?oclc_number
+    )
+    BIND(IF(BOUND(?oclc_number), IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)), ?sentinel) AS ?worldcat_url)
+    BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "reference/", ?canonical_key, "/oclc"), ?sentinel) AS ?refOCLCNum)
   }
 }

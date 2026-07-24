@@ -308,10 +308,21 @@ WHERE {
       GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
     }
 
-    # WorldCat link + OCLC identifier, from the 001 number sampled above. Strip
-    # the on/ocn/ocm prefix and any leading zeros to get the bare OCLC number.
-    BIND(REPLACE(REPLACE(?control_number, "^\\D+", ""), "^0+", "") AS ?oclc_number)
-    BIND(IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)) AS ?worldcat_url)
+    # WorldCat link + OCLC identifier, from the 001 number sampled above. Extract
+    # the first run of digits (dropping the on/ocn/ocm prefix, any trailing suffix
+    # such as "wcm"/"wcmasp", and leading zeros), then guard: only treat the 001
+    # as an OCLC number when it carries an OCLC prefix (on/ocn/ocm) or that digit
+    # run is at most 10 digits. A longer bare 001 is a local system id (e.g. an
+    # Ex Libris Alma MMS id), not an OCLC number, so a worldcat.org/oclc/ link
+    # minted from it would 404 (#51). Both ?worldcat_url and ?bookOCLCNum stay
+    # unbound (guarded) for a non-OCLC 001.
+    BIND(REPLACE(REPLACE(?control_number, "^\\D*(\\d+).*$", "$1"), "^0+", "") AS ?oclc_raw)
+    BIND(
+      IF(REGEX(?control_number, "^(on|ocn|ocm)", "i") || REGEX(?oclc_raw, "^[0-9]{1,10}$"),
+         ?oclc_raw, ?sentinel)
+      AS ?oclc_number
+    )
+    BIND(IF(BOUND(?oclc_number), IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)), ?sentinel) AS ?worldcat_url)
 
     # Use the real-world-object URI (VIAF, else ISNI) as the creator's identity;
     # only mint an ab:creator/ URI when no such URI exists, keyed off the LC
