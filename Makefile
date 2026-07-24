@@ -1,27 +1,33 @@
 START_FUSEKI ?= true
 
-.PHONY: all clean superclean validate serve
+.PHONY: all clean superclean validate serve FORCE
 .DEFAULT_GOAL := all
 
 all: graph/artists-books.ttl graph/reference-works.ttl web/site/index.html
 
 clean:
-	rm -f inferred.ttl diff.txt *.png docs/*.png
+	rm -f inferred.ttl diff.txt
 	rm -rf graph site .snowman web/site web/.snowman
 
 superclean: clean
 	@$(MAKE) -s -C tools/jena clean
-	@$(MAKE) -s -C tools/rdflib clean
 	@$(MAKE) -s -C tools/fuseki clean
 	@$(MAKE) -s -C tools/snowman clean
 	@$(MAKE) -s -C tools/yaz-client clean
 
+# Each version-pinned tool gates its download on a version stamp (see the
+# tools/*/Makefile), but Make would never ask: the binary already exists, so
+# this rule looks up to date and the sub-make never runs. That is how the
+# Snowman 0.4.0 -> 0.8.0 bump in 7f88b24 went unnoticed on machines that had
+# already built. Force the delegation; the sub-make is a no-op when the stamp
+# matches the pinned version.
 tools/jena/bin/riot \
-tools/rdflib/bin/rdf2dot \
 tools/sparql-anything/sparql-anything.jar \
 tools/fuseki/fuseki-server \
-tools/snowman/snowman:
+tools/snowman/snowman: FORCE
 	$(MAKE) -s -C $(shell echo $@ | cut -d/ -f1-2)
+
+FORCE:
 
 validate: docs/vocab.ttl docs/description.ttl | tools/jena/bin/riot
 	./tools/jena/bin/riot --validate $^
@@ -40,9 +46,6 @@ diff.txt: docs/description.ttl inferred.ttl | validate
 	[ $$? -eq 0 ] \
 	&& (echo "\033[1;31mNo triples were inferred!\033[0m" ; rm -f $@) \
 	|| echo "Triples were inferred!"
-
-%.png: %.ttl | validate tools/rdflib/bin/rdf2dot
-	./tools/rdflib/bin/rdf2dot $< 2>/dev/null | dot -Tpng > $@
 
 graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 	@mkdir -p graph
