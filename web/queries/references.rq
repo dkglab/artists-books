@@ -4,7 +4,7 @@ PREFIX bflc:    <http://id.loc.gov/ontologies/bflc/>
 PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wd:      <http://www.wikidata.org/entity/>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
 
 # One row per reference work (#34) that cites at least one artists' book in the
 # ABC collection, feeding both the reference index ("Results" page) and the
@@ -26,8 +26,8 @@ SELECT
   ?place
   ?date
   ?language
-  #(GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
-  (SAMPLE(?oclc_number) AS ?oclcNumbers)
+  # One OCLC number per reference work (a single 001), so SAMPLE, not concat.
+  (SAMPLE(?oclc_number) AS ?oclcNumber)
   (SAMPLE(?worldcat_url) AS ?worldcatLink)
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   # Each cited book as a "itemKey<TAB>title" token, tokens separated by newline,
