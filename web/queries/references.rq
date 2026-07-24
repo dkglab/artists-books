@@ -27,8 +27,8 @@ SELECT
   ?date
   ?language
   # One OCLC number per reference work (a single 001), so SAMPLE, not concat.
-  (SAMPLE(?oclc_number) AS ?oclcNumber)
-  (SAMPLE(?worldcat_url) AS ?worldcatLink)
+  (SAMPLE(?oclcNumbers) AS ?oclcNumber)
+  (SAMPLE(?worldcatLinks) AS ?worldcatLink)
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   # Each cited book as a "itemKey<TAB>title" token, tokens separated by newline,
   # so the template can split the pair and link each title to its /item/ page.
@@ -67,12 +67,12 @@ WHERE {
   OPTIONAL {
     ?reference bf:identifiedBy ?refOCLCNum .
     ?refOCLCNum
-      rdf:value ?oclc_number ;
+      rdf:value ?oclcNumbers ;
       bf:source wd:Q846596 .
   }
 
   OPTIONAL {
-    ?reference foaf:isPrimaryTopicOf ?worldcat_url .
+    ?reference foaf:isPrimaryTopicOf ?worldcatLinks .
   }
 
   # Required: the artists' books this reference cites (#42). The cited book must

@@ -19,10 +19,10 @@ SELECT
   ?extent
   ?dimensions
   ?edition
-  (SAMPLE(?summaryLabel) AS ?summary)
+  (SAMPLE(?summaries) AS ?summary)
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   (GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
-  (SAMPLE(?worldcat_url) AS ?worldcatLink)
+  (SAMPLE(?worldcatLinks) AS ?worldcatLink)
   # Reference works that cite this book (#42), each as an "itemKey<TAB>title"
   # token (tokens newline-separated) so the template can link each to its
   # /reference/ page. Any citing reference necessarily cites an in-collection
@@ -88,7 +88,7 @@ WHERE {
 
   OPTIONAL {
     ?book bf:summary ?summaryNode .
-    ?summaryNode rdfs:label ?summaryLabel .
+    ?summaryNode rdfs:label ?summaries .
   }
 
   OPTIONAL {
@@ -104,7 +104,7 @@ WHERE {
   }
 
   OPTIONAL {
-    ?book foaf:isPrimaryTopicOf ?worldcat_url .
+    ?book foaf:isPrimaryTopicOf ?worldcatLinks .
   }
 
   OPTIONAL {
