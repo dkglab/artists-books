@@ -1,6 +1,6 @@
 START_FUSEKI ?= true
 
-.PHONY: all clean superclean validate serve
+.PHONY: all clean superclean validate serve FORCE
 .DEFAULT_GOAL := all
 
 all: graph/artists-books.ttl graph/reference-works.ttl web/site/index.html
@@ -16,12 +16,25 @@ superclean: clean
 	@$(MAKE) -s -C tools/snowman clean
 	@$(MAKE) -s -C tools/yaz-client clean
 
+# Each version-pinned tool gates its download on a version stamp (see the
+# tools/*/Makefile), but Make would never ask: the binary already exists, so
+# this rule looks up to date and the sub-make never runs. That is how the
+# Snowman 0.4.0 -> 0.8.0 bump in 7f88b24 went unnoticed on machines that had
+# already built. Force the delegation; the sub-make is a no-op when the stamp
+# matches the pinned version.
 tools/jena/bin/riot \
-tools/rdflib/bin/rdf2dot \
 tools/sparql-anything/sparql-anything.jar \
 tools/fuseki/fuseki-server \
-tools/snowman/snowman:
+tools/snowman/snowman: FORCE
 	$(MAKE) -s -C $(shell echo $@ | cut -d/ -f1-2)
+
+# rdflib is a pip venv rather than a pinned download, and its sub-make target
+# is not a file that the recipe creates -- forcing this one would rebuild the
+# venv on every invocation.
+tools/rdflib/bin/rdf2dot:
+	$(MAKE) -s -C $(shell echo $@ | cut -d/ -f1-2)
+
+FORCE:
 
 validate: docs/vocab.ttl docs/description.ttl | tools/jena/bin/riot
 	./tools/jena/bin/riot --validate $^

@@ -22,7 +22,8 @@ tools/fuseki/*
 !tools/fuseki/Makefile
 tools/yaz-client/*
 !tools/yaz-client/Makefile
-tools/snowman/snowman
+tools/snowman/*
+!tools/snowman/Makefile
 # fuzzy-match: commit the scripts, ignore the generated venv (issue #55)
 tools/fuzzy-match/venv/
 /graph/
