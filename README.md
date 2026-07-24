@@ -27,7 +27,14 @@ The stages, and where each is documented in depth:
    libraries into the canonical book (~7.9k) and reference-work lists;
    `notes_export.sh` emits the "Cited:" note paragraphs; and
    `freeze_citations.py` reconciles those paragraphs to reference works
-   and freezes the citation edges into `sources/citations.ttl`. →
+   and freezes the citation edges into `sources/citations.ttl`. Both
+   fuzzy steps are gated by a **hand-owned decisions overlay** — a
+   person's `same`/`no`/`unsure` calls in
+   `sources/artists-books-dedup-decisions.csv` (per lib-1 key) and
+   `yes`/`no`/`unsure` calls in `sources/citations-decisions.csv` (per
+   reference-work × book pair). These are read back but never rewritten
+   by `make`, so a re-run never clobbers them; each step also emits a
+   generated `*-review.csv` surfacing the uncertain matches to curate. →
    [`sources/zotero/README.md`](sources/zotero/README.md) (database,
    notes, citation data model),
    [`sources/README.md`](sources/README.md) (canonical dedup + frozen
@@ -46,25 +53,33 @@ The stages, and where each is documented in depth:
    [BIBFRAME](https://www.loc.gov/bibframe/) plus a custom `ab:`
    namespace into `graph/*.ttl`. The citation edges are not constructed
    here — they are the frozen `sources/citations.ttl` (issue #82): 5,022
-   citations link 3,896 books to 54 reference works. A local SKOS
-   vocabulary of construction techniques, materials, binding/format
-   types and printing methods is mined from the book MARC and curated by
-   hand in `sources/construction/decisions.csv`; `build-scheme.rq` emits
-   it to `sources/construction-methods.ttl`, and `artists-books.rq`
-   attaches an `ab:constructedUsing` link from each book to the concepts
-   its headings map to. → [`CLAUDE.md`](CLAUDE.md)
+   citations link 3,896 books to 54 reference works. Two parallel local
+   SKOS vocabularies are mined from the book MARC and curated by hand,
+   each gated by its own `decisions.csv` overlay (include? / concept /
+   category, per heading cluster; hand-edited, never rewritten by
+   `make`): construction techniques, materials, binding/format types and
+   printing methods (*how* a book is made) in
+   `sources/construction/decisions.csv` → `sources/construction-methods.ttl`,
+   and topical/geographic subjects (*what* it is about) in
+   `sources/subjects/decisions.csv` → `sources/subject-terms.ttl`. Their
+   `build-scheme.rq` queries emit the schemes, and `artists-books.rq`
+   attaches an `ab:constructedUsing` / `ab:hasSubject` link from each
+   book to the concepts its headings map to. → [`CLAUDE.md`](CLAUDE.md)
    (query architecture, URI minting),
-   [`sources/construction/README.md`](sources/construction/README.md)
+   [`sources/construction/README.md`](sources/construction/README.md) and
+   [`sources/subjects/README.md`](sources/subjects/README.md)
    (the mine → curate → build vocabulary pipeline),
    [`docs/QUERY-PERFORMANCE.md`](docs/QUERY-PERFORMANCE.md).
 4. **RDF graph → website.** [Apache
    Fuseki](https://jena.apache.org/documentation/fuseki2/) loads the two
    constructed graphs, the frozen citations, and the
-   `construction-methods.ttl` SKOS scheme, and serves a local SPARQL endpoint;
+   `construction-methods.ttl` and `subject-terms.ttl` SKOS schemes, and
+   serves a local SPARQL endpoint;
    [Snowman](https://github.com/glaciers-in-archives/snowman) runs the
    SELECT queries in `web/queries/` against it and renders the Go
    templates in `web/templates/` into `web/site/` — including, on each
-   book page, the construction-methods section resolved from the scheme. →
+   book page, the construction-methods and subject sections resolved from
+   the schemes. →
    [`CLAUDE.md`](CLAUDE.md) (views, templates, Snowman gotchas).
 
 ## Building
@@ -94,12 +109,13 @@ Codespaces gets these via `.devcontainer/devcontainer.json`. See
 
 The graphs emit BIBFRAME with a custom `ab:` namespace layered on top
 (`ab:ArtistsBook`, `ab:ReferenceWork`, `ab:Citation`,
-`ab:cites`/`ab:citedBy`, `ab:constructedUsing`, creator-role
-properties). The construction-method concepts that `ab:constructedUsing`
-points at live in a companion SKOS scheme,
-`sources/construction-methods.ttl` — mined from the book MARC and
-curated by hand (see
-[`sources/construction/README.md`](sources/construction/README.md)).
+`ab:cites`/`ab:citedBy`, `ab:constructedUsing`, `ab:hasSubject`,
+creator-role properties). The concepts that `ab:constructedUsing` and
+`ab:hasSubject` point at live in companion SKOS schemes,
+`sources/construction-methods.ttl` and `sources/subject-terms.ttl` —
+mined from the book MARC and curated by hand (see
+[`sources/construction/README.md`](sources/construction/README.md) and
+[`sources/subjects/README.md`](sources/subjects/README.md)).
 `docs/vocab.ttl`
 defines the vocabulary and `docs/description.ttl` is a hand-written
 worked example (Ed Ruscha's *Twentysix Gasoline Stations*); `make
