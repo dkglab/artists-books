@@ -27,6 +27,13 @@ FUZZY := ../tools/fuzzy-match
 # CSV of the uncertain lib-1 fuzzy attaches. Reads zotero/zotero.sqlite directly
 # (no intermediate export CSVs) and runs in the shared fuzzy-match venv. Grouped
 # target (&:) -- one recipe run produces all three files.
+#
+# artists-books-dedup-review.csv is GENERATED (overwritten on every run). The
+# human review of those fuzzy attaches lives in a separate hand-owned overlay,
+# artists-books-dedup-decisions.csv (same discipline as construction/decisions.csv
+# and subjects/decisions.csv): keyed by lib1Key, edited by a person, NOT generated
+# by make, so a re-run of the dedup never clobbers the decisions. Join it to the
+# generated review file on lib1Key for the full match context.
 artists-books.csv reference-works.csv artists-books-dedup-review.csv &: \
 		$(FUZZY)/dedup.py $(FUZZY)/match.py | $(FUZZY)/venv/bin/python
 	$(FUZZY)/venv/bin/python $(FUZZY)/dedup.py \
