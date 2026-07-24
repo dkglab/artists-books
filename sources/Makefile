@@ -32,15 +32,19 @@ FUZZY := ../tools/fuzzy-match
 # human review of those fuzzy attaches lives in a separate hand-owned overlay,
 # artists-books-dedup-decisions.csv (same discipline as construction/decisions.csv
 # and subjects/decisions.csv): keyed by lib1Key, edited by a person, NOT generated
-# by make, so a re-run of the dedup never clobbers the decisions. Join it to the
-# generated review file on lib1Key for the full match context.
+# by make, so a re-run of the dedup never clobbers the decisions. It is a
+# prerequisite because dedup.py reads it back to gate the fuzzy merge -- a lib-1
+# key marked 'no' or 'unsure' is kept as its own canonical node instead of
+# collapsing into its twin.
 artists-books.csv reference-works.csv artists-books-dedup-review.csv &: \
-		$(FUZZY)/dedup.py $(FUZZY)/match.py | $(FUZZY)/venv/bin/python
+		$(FUZZY)/dedup.py $(FUZZY)/match.py artists-books-dedup-decisions.csv \
+		| $(FUZZY)/venv/bin/python
 	$(FUZZY)/venv/bin/python $(FUZZY)/dedup.py \
 		--db zotero/zotero.sqlite \
 		--out-books artists-books.csv \
 		--out-refs reference-works.csv \
-		--review artists-books-dedup-review.csv
+		--review artists-books-dedup-review.csv \
+		--decisions artists-books-dedup-decisions.csv
 
 # Frozen citations (issue #82, Phase 0, task 3). Reads the Zotero "Cited:" notes
 # and emits one ab:Citation per (reference work, artist's book) against the

@@ -22,7 +22,9 @@ Two reconciliation signals, in order of authority:
   2. fuzzy       -- lib 1 records carry almost no sameAs (only 7 of the 1,341
      ABC books), so the residual lib-1 singletons are attached to their lib-2/
      lib-3 twin bibliographically, reusing match.py's ISBN / exact-title /
-     author+year signals. Every fuzzy attach is flagged in the review CSV.
+     author+year signals. Every fuzzy attach is written to the review CSV, and
+     the hand-owned decisions overlay (artists-books-dedup-decisions.csv) gates
+     it: a lib-1 key marked 'no' or 'unsure' is left as its own canonical node.
 
 Unlike the old `match.py` (a pairwise lib-1 -> lib-3-cited bridge), this produces
 one node per work across all three libraries; it *replaces* the crosswalk rather
@@ -208,6 +210,32 @@ def load_sameas(conn):
     return edges
 
 
+def load_decisions(path):
+    """Load the hand-owned review-decisions overlay, keyed by lib1Key.
+
+    Returns {lib1Key: decision} for rows carrying a recorded decision
+    ('same' / 'no' / 'unsure'); blank/unreviewed rows -- and a missing or
+    unspecified file -- yield no override, so every fuzzy attach auto-merges as
+    before. Keyed by lib1Key alone: the libraries are frozen and the matcher is
+    deterministic, so the (lib1Key -> twin) pairing does not drift between runs.
+    """
+    decisions = {}
+    if not path:
+        return decisions
+    try:
+        fh = open(path, newline="")
+    except FileNotFoundError:
+        print(f"  no decisions overlay at {path}; every fuzzy attach auto-merges",
+              file=sys.stderr)
+        return decisions
+    with fh:
+        for r in csv.DictReader(fh):
+            d = (r.get("decision") or "").strip().lower()
+            if d:
+                decisions[r["lib1Key"]] = d
+    return decisions
+
+
 # --------------------------------------------------------------------------- #
 # Clustering
 # --------------------------------------------------------------------------- #
@@ -253,11 +281,20 @@ def title_author_key(rec):
     return []
 
 
-def fuzzy_residual(uf, records, review):
+BLOCK_DECISIONS = {"no", "unsure"}  # human says distinct / unconfirmed -> don't merge
+
+
+def fuzzy_residual(uf, records, review, decisions):
     """Attach lib-1 nodes still in a lib-1-only cluster to a group twin by fuzzy
     title (author+year re-ranked). The exact signals (sameAs/ISBN/OCLC/title+
     author) already ran globally, so only near-miss titles reach here -- exactly
-    the uncertain candidates worth a human's review."""
+    the uncertain candidates worth a human's review.
+
+    The decisions overlay gates the merge: a lib-1 key marked 'no' (distinct
+    work) or 'unsure' (unconfirmed) is recorded as a candidate but NOT unioned,
+    so it stays its own canonical node -- consistent with the frozen set's safe
+    default that a wrong merge is harder to undo than a missed one. 'same' and
+    unreviewed keys attach as before."""
     group_nodes = [n for n in records if n[0] in (2, 3)]
     group_recs = [records[n] for n in group_nodes]
     title_choices = [rec["ntitle"] for rec in group_recs]  # index-aligned
@@ -270,12 +307,15 @@ def fuzzy_residual(uf, records, review):
         cand, conf = _fuzzy(abc, group_nodes, group_recs, title_choices)
         if cand is None:
             continue
-        uf.union(n, cand)
+        decision = decisions.get(n[1], "")
+        if decision not in BLOCK_DECISIONS:
+            uf.union(n, cand)
         review.append({
             "lib1Key": n[1], "twinKey": cand[1], "twinLib": cand[0],
             "method": "fuzzy", "confidence": f"{conf:.3f}",
             "review": "yes" if conf < REVIEW_BELOW else "",
             "lib1Title": abc.get("title") or "", "twinTitle": records[cand].get("title") or "",
+            "decision": decision,  # dropped by write_csv (not a review column); read by summarize
         })
 
 
@@ -334,7 +374,7 @@ def canonical_row(members, allnodes, records):
 
 
 # --------------------------------------------------------------------------- #
-def dedup(conn, scope_collections, exclude, do_fuzzy, extra_include=None):
+def dedup(conn, scope_collections, exclude, do_fuzzy, extra_include=None, decisions=None):
     records = load_scope(conn, scope_collections, exclude=exclude, extra_include=extra_include)
     provenance = defaultdict(set)
     uf = UnionFind()
@@ -357,7 +397,7 @@ def dedup(conn, scope_collections, exclude, do_fuzzy, extra_include=None):
     # 5. fuzzy residual -- only lib-1 books with no exact twin (uncertain; reviewed).
     review = []
     if do_fuzzy:
-        fuzzy_residual(uf, records, review)
+        fuzzy_residual(uf, records, review, decisions or {})
 
     clusters = build_clusters(uf, records, provenance)
     rows = [canonical_row(c["members"], c["allnodes"], records)
@@ -383,12 +423,14 @@ def summarize(label, rows, review):
           file=sys.stderr)
     if review:
         by_method = defaultdict(int)
-        flagged = 0
+        flagged = blocked = 0
         for r in review:
             by_method[r["method"]] += 1
             flagged += r["review"] == "yes"
+            blocked += r.get("decision") in BLOCK_DECISIONS
         methods = " ".join(f"{m}={n}" for m, n in sorted(by_method.items()))
-        print(f"  lib-1 fuzzy-attached: {len(review)} ({methods}); "
+        print(f"  lib-1 fuzzy candidates: {len(review)} ({methods}); "
+              f"attached: {len(review) - blocked}, blocked by review decision: {blocked}; "
               f"flagged for review: {flagged}", file=sys.stderr)
 
 
@@ -397,14 +439,17 @@ def main():
     ap.add_argument("--db", required=True, help="sources/zotero/zotero.sqlite")
     ap.add_argument("--out-books", required=True, help="sources/artists-books.csv")
     ap.add_argument("--out-refs", required=True, help="sources/reference-works.csv")
-    ap.add_argument("--review", required=True, help="lib-1 attach review CSV")
+    ap.add_argument("--review", required=True, help="lib-1 attach review CSV (generated)")
+    ap.add_argument("--decisions", help="hand-owned review-decisions overlay "
+                    "(artists-books-dedup-decisions.csv); optional")
     args = ap.parse_args()
 
     conn = sqlite3.connect(f"file:{args.db}?mode=ro", uri=True)
     conn.row_factory = sqlite3.Row
 
+    decisions = load_decisions(args.decisions)
     books, review = dedup(conn, AB_COLLECTIONS, exclude=REF_COLLECTION, do_fuzzy=True,
-                          extra_include=CITED_NOTE_INCLUDE)
+                          extra_include=CITED_NOTE_INCLUDE, decisions=decisions)
     refs, _ = dedup(conn, {3: [REF_COLLECTION[0]]}, exclude=None, do_fuzzy=False)
 
     write_csv(args.out_books, OUT_COLS, books)
