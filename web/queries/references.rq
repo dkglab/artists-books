@@ -30,9 +30,15 @@ SELECT
   (SAMPLE(?oclcNumbers) AS ?oclcNumber)
   (SAMPLE(?worldcatLinks) AS ?worldcatLink)
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
-  # Each cited book as a "itemKey<TAB>title" token, tokens separated by newline,
-  # so the template can split the pair and link each title to its /item/ page.
-  (GROUP_CONCAT(DISTINCT CONCAT(?citedBookKey, "\t", ?citedTitle); separator="\n") AS ?citedBooks)
+  (GROUP_CONCAT(
+    DISTINCT CONCAT(
+      ?citedBookKey, "\t",
+      ?citedTitle, "\t",
+      COALESCE(?pageNumbers, ""), "\t",
+      COALESCE(?imagePageNumbers, "")
+    );
+    separator="\n"
+  ) AS ?citedBooks)
   (COUNT(DISTINCT ?citedBook) AS ?citationCount)
 WHERE {
   ?reference
@@ -75,13 +81,30 @@ WHERE {
     ?reference foaf:isPrimaryTopicOf ?worldcatLinks .
   }
 
-  # Required: the artists' books this reference cites (#42). The cited book must
-  # exist in the artists-books graph (carry an ab:itemKey); fall back to that
-  # key for display when it has no label.
-  ?citation ab:citedBy ?reference ;
-            ab:cites   ?citedBook .
-  ?citedBook ab:itemKey ?citedBookKey .
-  OPTIONAL { ?citedBook rdfs:label ?citedBookLabel . }
+  # Required citation join, aggregated to one row per reference/book pair.
+  # Keeping this aggregation separate avoids a cross-product when one citation
+  # has multiple citation pages and multiple image pages.
+  {
+    SELECT
+      ?reference
+      ?citedBook
+      ?citedBookKey
+      ?citedBookLabel
+      (GROUP_CONCAT(DISTINCT ?pageNumber; separator=", ") AS ?pageNumbers)
+      (GROUP_CONCAT(DISTINCT ?imagePageNumber; separator=", ") AS ?imagePageNumbers)
+    WHERE {
+      ?citation ab:citedBy ?reference ;
+                ab:cites   ?citedBook .
+
+      ?citedBook ab:itemKey ?citedBookKey .
+
+      OPTIONAL { ?citedBook rdfs:label ?citedBookLabel . }
+      OPTIONAL { ?citation ab:onPageNumber ?pageNumber . }
+      OPTIONAL { ?citation ab:imagesOnPageNumber ?imagePageNumber . }
+    }
+    GROUP BY ?reference ?citedBook ?citedBookKey ?citedBookLabel
+  }
+
   BIND(COALESCE(?citedBookLabel, ?citedBookKey) AS ?citedTitle)
 }
 GROUP BY ?reference ?title ?itemKey ?creator ?publisher ?place ?date ?language

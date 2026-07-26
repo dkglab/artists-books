@@ -47,8 +47,18 @@
 <h2>Cites</h2>
 <ul class="mb">
 {{- range (split . "\n") }}
-{{- $pair := split . "\t" }}
-<li><a href="/item/{{ index $pair 0 }}">{{ index $pair 1 }}</a></li>
+{{- $fields := split . "\t" }}
+{{- $pageNumbers := index $fields 2 }}
+{{- $imagePageNumbers := index $fields 3 }}
+<li>
+  <a href="/item/{{ index $fields 0 }}">{{ index $fields 1 }}</a>
+  {{- with $pageNumbers }} — cited on page(s) {{ . }}{{ end }}
+  {{- with $imagePageNumbers }}
+    {{- if $pageNumbers }}; image(s) on page(s) {{ . }}
+    {{- else }} — image(s) on page(s) {{ . }}
+    {{- end }}
+  {{- end }}
+</li>
 {{- end }}
 </ul>
 {{ end }}
