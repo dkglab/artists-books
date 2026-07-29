@@ -40,6 +40,7 @@ SELECT
   # /reference/ page. Any citing reference necessarily cites an in-collection
   # book (this one), so it always has a reference page.
   (GROUP_CONCAT(DISTINCT ?citedByToken; separator="\n") AS ?citedBy)
+  (GROUP_CONCAT(DISTINCT ?relatedTitle; separator="; ") AS ?relatedTitles)
 WHERE {
   ?book
     a ab:ArtistsBook ;
@@ -136,6 +137,12 @@ WHERE {
                ab:itemKey ?citingRefKey .
     BIND(CONCAT(?citingRefKey, "\t", ?citingRefLabel) AS ?citedByToken)
   }
+
+  OPTIONAL {
+    ?book bf:relatedTo ?relatedWork .
+    ?relatedWork rdfs:label ?relatedTitle .
+  }
+
 }
 GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?dimensions ?edition
 ORDER BY LCASE(?title)
