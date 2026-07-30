@@ -344,12 +344,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
 <https://dkglab.github.io/ns/artists-books/construction/exhibition-catalog>
         rdf:type         skos:Concept;
-        rdfs:label       "Exhibition catalogs"@en , "Exhibition catalog"@en , ""@en;
-        skos:altLabel    "Catalogues d'exposition."@en , "Utställningskataloger"@en , "exhibition catalogs."@en , "Exhibition catalogs."@en , "Ausstellungskatalog"@en , "Exhibition catalogs"@en;
+        rdfs:label       "Exhibition catalog"@en;
+        skos:altLabel    "Catalogues d'exposition."@en , "Exhibition catalogs."@en , "Ausstellungskatalog"@en , "Exhibition catalogs"@en , "exhibition catalogs."@en , "Utställningskataloger"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
-        skos:exactMatch  <https://id.loc.gov/authorities/genreForms/gf2014026098> , <https://id.kb.se/term/saogf/Utst%C3%A4llningskataloger> , <http://id.worldcat.org/fast/1424028> , <http://id.loc.gov/authorities/genreForms/gf2014026098> , <http://vocab.getty.edu/aat/300026096>;
+        skos:exactMatch  <https://id.loc.gov/authorities/genreForms/gf2014026098> , <http://id.worldcat.org/fast/1424028> , <http://id.loc.gov/authorities/genreForms/gf2014026098> , <http://vocab.getty.edu/aat/300026096> , <https://id.kb.se/term/saogf/Utst%C3%A4llningskataloger>;
         skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Exhibition catalog"@en , ""@en , "Exhibition catalogs"@en;
+        skos:prefLabel   "Exhibition catalog"@en;
         ab:matchKey      "catalogues-d-exposition" , "utst-llningskataloger" , "exhibition-catalogs" , "ausstellungskatalog" .
 
 <https://dkglab.github.io/ns/artists-books/construction/poetry>
@@ -1058,13 +1058,13 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
 <https://dkglab.github.io/ns/artists-books/construction/miniature-book>
         rdf:type         skos:Concept;
-        rdfs:label       "Miniature book"@en , ""@en , "Miniature books"@en;
-        skos:altLabel    "Miniature books"@en , "Miniature books."@en , "Miniature books (Printing)"@en , "Minature books (Printing)"@en;
+        rdfs:label       "Miniature book"@en;
+        skos:altLabel    "Minature books (Printing)"@en , "Miniature books (Printing)"@en , "Miniature books."@en , "Miniature books"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv00867>;
         skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Miniature book"@en , ""@en , "Miniature books"@en;
-        ab:matchKey      "minature-books-printing" , "miniature-books" , "miniature-books-printing" .
+        skos:prefLabel   "Miniature book"@en;
+        ab:matchKey      "minature-books-printing" , "miniature-books-printing" , "miniature-books" .
 
 <https://dkglab.github.io/ns/artists-books/construction/postcard>
         rdf:type         skos:Concept;
