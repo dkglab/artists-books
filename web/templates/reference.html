@@ -47,16 +47,17 @@
 <h2>Cites</h2>
 <ul class="mb">
 {{- range (split . "\n") }}
+{{- /* itemKey <TAB> title <TAB> citation pages <TAB> image pages — see web/queries/references.rq */}}
 {{- $fields := split . "\t" }}
 {{- $pageNumbers := index $fields 2 }}
 {{- $imagePageNumbers := index $fields 3 }}
+{{- /* Both page lists may be empty. Whichever comes first is set off with an
+       em dash; a following one is joined with a semicolon. */}}
 <li>
   <a href="/item/{{ index $fields 0 }}">{{ index $fields 1 }}</a>
   {{- with $pageNumbers }} — cited on page(s) {{ . }}{{ end }}
   {{- with $imagePageNumbers }}
-    {{- if $pageNumbers }}; image(s) on page(s) {{ . }}
-    {{- else }} — image(s) on page(s) {{ . }}
-    {{- end }}
+    {{- if $pageNumbers }};{{ else }} —{{ end }} image(s) on page(s) {{ . }}
   {{- end }}
 </li>
 {{- end }}

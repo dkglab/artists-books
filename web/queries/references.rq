@@ -5,6 +5,7 @@ PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wd:      <http://www.wikidata.org/entity/>
 PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 # One row per reference work (#34) that cites at least one artists' book in the
 # ABC collection, feeding both the reference index ("Results" page) and the
@@ -30,6 +31,12 @@ SELECT
   (SAMPLE(?oclcNumbers) AS ?oclcNumber)
   (SAMPLE(?worldcatLinks) AS ?worldcatLink)
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
+  # Each cited book as a four-field TAB-separated token, tokens separated by
+  # newline, so the template can link each title to its /item/ page and print
+  # the page numbers after it. Field order is positional — the template indexes
+  # it — and every field is always present, so an absent page list is an empty
+  # field rather than a missing one:
+  #   itemKey <TAB> title <TAB> citation pages <TAB> image pages
   (GROUP_CONCAT(
     DISTINCT CONCAT(
       ?citedBookKey, "\t",
@@ -81,28 +88,63 @@ WHERE {
     ?reference foaf:isPrimaryTopicOf ?worldcatLinks .
   }
 
-  # Required citation join, aggregated to one row per reference/book pair.
-  # Keeping this aggregation separate avoids a cross-product when one citation
-  # has multiple citation pages and multiple image pages.
-  {
-    SELECT
-      ?reference
-      ?citedBook
-      ?citedBookKey
-      ?citedBookLabel
-      (GROUP_CONCAT(DISTINCT ?pageNumber; separator=", ") AS ?pageNumbers)
-      (GROUP_CONCAT(DISTINCT ?imagePageNumber; separator=", ") AS ?imagePageNumbers)
-    WHERE {
-      ?citation ab:citedBy ?reference ;
-                ab:cites   ?citedBook .
+  # Required: the artists' books this reference cites (#42). The cited book must
+  # exist in the artists-books graph (carry an ab:itemKey); fall back to that
+  # key for display when it has no label.
+  ?citation ab:citedBy ?reference ;
+            ab:cites   ?citedBook .
+  ?citedBook ab:itemKey ?citedBookKey .
+  OPTIONAL { ?citedBook rdfs:label ?citedBookLabel . }
 
-      ?citedBook ab:itemKey ?citedBookKey .
-
-      OPTIONAL { ?citedBook rdfs:label ?citedBookLabel . }
-      OPTIONAL { ?citation ab:onPageNumber ?pageNumber . }
-      OPTIONAL { ?citation ab:imagesOnPageNumber ?imagePageNumber . }
+  # The pages this citation appears on (#44) and the pages carrying an image of
+  # the book (#43). Each list is aggregated per-citation in its own subquery,
+  # for two reasons:
+  #
+  #  1. It avoids a citation-pages x image-pages cross product. A citation with
+  #     2 page numbers and 1 image page would otherwise yield 2 solutions and
+  #     so 2 near-duplicate tokens in ?citedBooks.
+  #  2. GROUP_CONCAT has no ordering guarantee, so the pages come out in hash
+  #     order ("82, 89, 12, 90, 91"). Only a scope *below* the grouping can be
+  #     ordered — ORDER BY in the aggregating subquery would apply after
+  #     GROUP BY — hence the innermost ordered SELECT. Jena carries that input
+  #     order into GROUP_CONCAT; that is implementation-defined rather than
+  #     promised by SPARQL, but Snowman exposes no template sort function, so
+  #     this is the only place to do it.
+  #
+  # Pages sort on their leading integer, which keeps ranges ("97-99") in place;
+  # every page value in the citation graph starts with a digit.
+  #
+  # NB: ab:imagesOnPageNumber is an rdfs:subPropertyOf ab:onPageNumber, so under
+  # a reasoner every image page would also match ?page and appear in *both*
+  # lists. Fuseki loads these graphs without inference and no page is asserted
+  # under both predicates, so the two lists are disjoint as emitted; enabling
+  # inference would require filtering the plain list against the image one.
+  OPTIONAL {
+    {
+      SELECT ?citation (GROUP_CONCAT(?page; separator=", ") AS ?pageNumbers)
+      WHERE {
+        {
+          SELECT DISTINCT ?citation ?page
+          WHERE { ?citation ab:onPageNumber ?page . }
+          ORDER BY xsd:integer(REPLACE(STR(?page), "[^0-9].*$", ""))
+        }
+      }
+      GROUP BY ?citation
     }
-    GROUP BY ?reference ?citedBook ?citedBookKey ?citedBookLabel
+  }
+
+  OPTIONAL {
+    {
+      SELECT ?citation (GROUP_CONCAT(?imagePage; separator=", ") AS ?imagePageNumbers)
+      WHERE {
+        {
+          SELECT DISTINCT ?citation ?imagePage
+          WHERE { ?citation ab:imagesOnPageNumber ?imagePage . }
+          ORDER BY xsd:integer(REPLACE(STR(?imagePage), "[^0-9].*$", ""))
+        }
+      }
+      GROUP BY ?citation
+    }
   }
 
   BIND(COALESCE(?citedBookLabel, ?citedBookKey) AS ?citedTitle)
