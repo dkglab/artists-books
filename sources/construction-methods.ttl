@@ -738,11 +738,11 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
 <https://dkglab.github.io/ns/artists-books/construction/limp-binding>
         rdf:type        skos:Concept;
-        rdfs:label      ""@en;
+        rdfs:label      "Limp binding"@en;
         skos:altLabel   "Limp bindings."@en , "limp bindings."@en;
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:inScheme   ab:construction-methods;
-        skos:prefLabel  ""@en;
+        skos:prefLabel  "Limp binding"@en;
         ab:matchKey     "limp-bindings" .
 
 <https://dkglab.github.io/ns/artists-books/construction/one-of-a-kind>
