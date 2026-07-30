@@ -57,13 +57,15 @@ WHERE {
   # category is not one of these six contributes NOTHING -- no concept, and none
   # of its label variants or authority URIs -- so keep this list and the category
   # column of decisions.csv in sync (and see the same list in README.md).
+  # Labels are the glossary's own section headings, verbatim (docs/bard-
+  # glossary.pdf) -- do not "tidy" the slashes or pluralize them.
   VALUES (?category ?catSlug ?catLabel) {
     ("material"                   "material"                   "Materials"@en)
-    ("process-technique"          "process-technique"          "Processes and techniques"@en)
-    ("hand-papermaking-traditions" "hand-papermaking-traditions" "Hand papermaking traditions"@en)
-    ("structure-physical-format"  "structure-physical-format"  "Structure and physical format"@en)
-    ("enclosure"                  "enclosure"                  "Enclosures"@en)
-    ("genre-form"                 "genre-form"                 "Genre and form"@en)
+    ("process-technique"          "process-technique"          "Process/Technique"@en)
+    ("hand-papermaking-traditions" "hand-papermaking-traditions" "Hand Papermaking Traditions"@en)
+    ("structure-physical-format"  "structure-physical-format"  "Structure/Physical Format"@en)
+    ("enclosure"                  "enclosure"                  "Enclosure"@en)
+    ("genre-form"                 "genre-form"                 "Genre/Form"@en)
   }
   BIND(fx:entity(ab:, "construction/", ?conceptId)       AS ?concept)
   BIND(fx:entity(ab:, "construction/category/", ?catSlug) AS ?catConcept)

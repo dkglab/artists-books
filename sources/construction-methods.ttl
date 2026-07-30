@@ -364,9 +364,9 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
 <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>
         rdf:type           skos:Concept;
-        rdfs:label         "Genre and form"@en;
+        rdfs:label         "Genre/Form"@en;
         skos:inScheme      ab:construction-methods;
-        skos:prefLabel     "Genre and form"@en;
+        skos:prefLabel     "Genre/Form"@en;
         skos:topConceptOf  ab:construction-methods .
 
 <https://dkglab.github.io/ns/artists-books/construction/box-set>
@@ -479,9 +479,9 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
 <https://dkglab.github.io/ns/artists-books/construction/category/enclosure>
         rdf:type           skos:Concept;
-        rdfs:label         "Enclosures"@en;
+        rdfs:label         "Enclosure"@en;
         skos:inScheme      ab:construction-methods;
-        skos:prefLabel     "Enclosures"@en;
+        skos:prefLabel     "Enclosure"@en;
         skos:topConceptOf  ab:construction-methods .
 
 <https://dkglab.github.io/ns/artists-books/construction/comb-binding>
@@ -1138,9 +1138,9 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
 <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>
         rdf:type           skos:Concept;
-        rdfs:label         "Structure and physical format"@en;
+        rdfs:label         "Structure/Physical Format"@en;
         skos:inScheme      ab:construction-methods;
-        skos:prefLabel     "Structure and physical format"@en;
+        skos:prefLabel     "Structure/Physical Format"@en;
         skos:topConceptOf  ab:construction-methods .
 
 <https://dkglab.github.io/ns/artists-books/construction/gocco-printing>
@@ -1705,9 +1705,9 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
 <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>
         rdf:type           skos:Concept;
-        rdfs:label         "Processes and techniques"@en;
+        rdfs:label         "Process/Technique"@en;
         skos:inScheme      ab:construction-methods;
-        skos:prefLabel     "Processes and techniques"@en;
+        skos:prefLabel     "Process/Technique"@en;
         skos:topConceptOf  ab:construction-methods .
 
 <https://dkglab.github.io/ns/artists-books/construction/vellum>
