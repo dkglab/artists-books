@@ -1,4 +1,3 @@
-@prefix ex: <http://example.org/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -11,19 +10,19 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 
-ex:ArtistsBook a rdfs:Class ;
+ab:ArtistsBook a rdfs:Class ;
     rdfs:subClassOf schema:Book ;
     rdfs:label "Artist's Book" ;
     rdfs:comment "An artist book is a work of art that utilizes the form of a book." .
 
 
-ex:imagesAt a rdfs:Property ;
+ab:imagesAt a rdfs:Property ;
     rdfs:label "images at" ;
     rdfs:comment "Indicates a URL where images of the book can be found." ;
-    rdfs:domain ex:ArtistsBook ;
+    rdfs:domain ab:ArtistsBook ;
     rdfs:range rdfs:Resource .
     
-ex:worldcatLink a rdfs:Property ;
+ab:worldcatLink a rdfs:Property ;
     rdfs:label "WorldCat link" ;
     rdfs:comment "Indicates a URL to the WorldCat record for the book." ;
     rdfs:domain schema:Book ;
@@ -35,42 +34,42 @@ ab:ReferenceWork a rdfs:Class ;
     rdfs:label "Reference Work" ;
     rdfs:comment "A reference work is a work (book, article, webpage, etc.) that cites an Artist's Book." .
 
-ex:Citation a rdfs:Class ;
+ab:Citation a rdfs:Class ;
     rdfs:label "Citation" ;
     rdfs:comment "A citation is a relationship between an Artist's Book and a Reference Book."  .
 
-ex:citedBy a rdfs:Property ;
+ab:citedBy a rdfs:Property ;
     rdfs:label "cited by" ;
     rdfs:comment "Relates a Citation to a Reference Work." ;
-    rdfs:domain ex:Citation ;
+    rdfs:domain ab:Citation ;
     rdfs:range ab:ReferenceWork .
 
-ex:cites a rdfs:Property ;
+ab:cites a rdfs:Property ;
     rdfs:label "cites" ;
     rdfs:comment "Relates a Citation to an Artist's Book." ;
-    rdfs:domain ex:Citation ;
-    rdfs:range ex:ArtistsBook .
+    rdfs:domain ab:Citation ;
+    rdfs:range ab:ArtistsBook .
 
-ex:onPageNumber a rdfs:Property ;
+ab:onPageNumber a rdfs:Property ;
     rdfs:label "on page number" ;
     rdfs:comment "Relates Citation to page number where it is found." ;
-    rdfs:domain ex:Citation .
+    rdfs:domain ab:Citation .
 
-ex:imagesOnPageNumber a rdfs:Property ;
-    rdfs:subPropertyOf ex:onPageNumber ;
+ab:imagesOnPageNumber a rdfs:Property ;
+    rdfs:subPropertyOf ab:onPageNumber ;
     rdfs:label "images on page number" ;
     rdfs:comment "Relates Citation to a page number where an image of the cited Artist_book is." ;
-    rdfs:domain ex:Citation .
+    rdfs:domain ab:Citation .
 
-ex:constructedUsing a rdfs:Property ;
+ab:constructedUsing a rdfs:Property ;
     rdfs:label "constructed using" ;
     rdfs:comment "Indicates techniques, materials, and production methods used in the construction of an Artist's Book. May also include the genre of the book like \"photographic sequence\"" ;
-    rdfs:domain ex:ArtistsBook.
+    rdfs:domain ab:ArtistsBook.
 
-ex:hasSubject a rdfs:Property ;
+ab:hasSubject a rdfs:Property ;
     rdfs:label "has subject" ;
     rdfs:comment "Relates an Artist's Book to a topical or geographic subject concept (a skos:Concept in the ab:subject-terms scheme) drawn from its MARC 650/651 headings. Indicates what the book is about." ;
-    rdfs:domain ex:ArtistsBook ;
+    rdfs:domain ab:ArtistsBook ;
     rdfs:range skos:Concept.
 
 

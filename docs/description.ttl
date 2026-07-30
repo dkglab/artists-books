@@ -1,4 +1,3 @@
-@prefix ex: <http://example.org/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -38,7 +37,7 @@ rel:bka rdfs:label "book artist" .
 rel:pht rdfs:label "photographer" .
 
 
-wd:Q7857846 a ex:ArtistsBook ;
+wd:Q7857846 a ab:ArtistsBook ;
     rdfs:label "Twentysix Gasoline Stations"@en ;
     bf:contribution [
         a bf:PrimaryContribution ;
@@ -57,12 +56,12 @@ wd:Q7857846 a ex:ArtistsBook ;
         bflc:simplePlace "Alhambra, CA, USA" ;
     ] ;
     bf:subject wd:Q128302279 ;
-    ex:constructedUsing aat:300192896 ;
+    ab:constructedUsing aat:300192896 ;
     bf:language "English" ;
-    ex:constructedUsing wd:Q1066582 ;
-    ex:constructedUsing aat:300192339 ;
-    ex:imagesAt <https://www.jstor.org/stable/community.949854> ;
-    ex:constructedUsing aat:300054225;
+    ab:constructedUsing wd:Q1066582 ;
+    ab:constructedUsing aat:300192339 ;
+    ab:imagesAt <https://www.jstor.org/stable/community.949854> ;
+    ab:constructedUsing aat:300054225;
      bf:identifiedBy [
         a bf:Identifier ;
         rdf:value "888402" ;
@@ -70,13 +69,13 @@ wd:Q7857846 a ex:ArtistsBook ;
             rdfs:label "OCLC"
     ] ;
     ] ;
-    ex:worldcatLink <https://search.worldcat.org/title/888402> ;
+    ab:worldcatLink <https://search.worldcat.org/title/888402> ;
    .
 
 
 
 
-ex:ArtistsBooksTheBookAsAWorkOfArt a ab:ReferenceWork ;
+ab:ArtistsBooksTheBookAsAWorkOfArt a ab:ReferenceWork ;
     rdfs:label "Artists' Books: The Book as a Work of Art, 1963-2000"@en ;
     bf:contribution [
         a bf:PrimaryContribution ;
@@ -93,7 +92,7 @@ ex:ArtistsBooksTheBookAsAWorkOfArt a ab:ReferenceWork ;
         bf:date "2015" ;
         bf:place wd:Q84
     ] ;
-    ex:constructedUsing aat:300247962;
+    ab:constructedUsing aat:300247962;
     bf:identifiedBy [
         a bf:Isbn ;
         rdf:value "9780956301291"
@@ -109,16 +108,16 @@ ex:ArtistsBooksTheBookAsAWorkOfArt a ab:ReferenceWork ;
             rdfs:label "OCLC"
         ]
     ] ;
-    ex:worldcatLink <https://search.worldcat.org/title/910978212> .
+    ab:worldcatLink <https://search.worldcat.org/title/910978212> .
 
-ex:Ato26Gas a ex:Citation ;
-    ex:cites wd:Q7857846 ;
-    ex:citedBy ex:ArtistsBooksTheBookAsAWorkOfArt ;
-    ex:onPageNumber "22" ;
-    ex:onPageNumber "176" ;
-    ex:imagesOnPageNumber "41" .
+ab:Ato26Gas a ab:Citation ;
+    ab:cites wd:Q7857846 ;
+    ab:citedBy ab:ArtistsBooksTheBookAsAWorkOfArt ;
+    ab:onPageNumber "22" ;
+    ab:onPageNumber "176" ;
+    ab:imagesOnPageNumber "41" .
 
-wd:Q121300913 a ex:ArtistsBook ;
+wd:Q121300913 a ab:ArtistsBook ;
     rdfs:label "Records"@en ;
     bf:contribution [
         a bf:PrimaryContribution ;
@@ -131,8 +130,8 @@ wd:Q121300913 a ex:ArtistsBook ;
         bf:role rel:pht
     ] ;
     bf:subject wd:Q1333350 ;
-    ex:constructedUsing aat:300192339;
-    ex:constructedUsing wd:Q1066582 ;
+    ab:constructedUsing aat:300192339;
+    ab:constructedUsing wd:Q1066582 ;
     bf:language "English" ;
     bf:provisionActivity [
         a bf:ProvisionActivity ;
@@ -141,8 +140,8 @@ wd:Q121300913 a ex:ArtistsBook ;
         bf:date "1971" ;
         bf:place wd:Q34006
     ] ;
-    ex:constructedUsing aat:300192896 ;
-    ex:constructedUsing aat:300054225 ;
+    ab:constructedUsing aat:300192896 ;
+    ab:constructedUsing aat:300054225 ;
     bf:identifiedBy [
         a bf:Local ;
         rdf:value "699695" ;
@@ -150,10 +149,10 @@ wd:Q121300913 a ex:ArtistsBook ;
             rdfs:label "OCLC"
         ]
     ] ;
-     ex:worldcatLink <https://search.worldcat.org/title/699695> ;
-    ex:imagesAt <library.artstor.org/#/asset/SS33469_33469_25066402> .
+     ab:worldcatLink <https://search.worldcat.org/title/699695> ;
+    ab:imagesAt <library.artstor.org/#/asset/SS33469_33469_25066402> .
 
-ex:AToRecords a ex:Citation ;
-    ex:cites wd:Q121300913 ;
-    ex:citedBy ex:ArtistsBooksTheBookAsAWorkOfArt ;
-    ex:onPageNumber "186" .
+ab:AToRecords a ab:Citation ;
+    ab:cites wd:Q121300913 ;
+    ab:citedBy ab:ArtistsBooksTheBookAsAWorkOfArt ;
+    ab:onPageNumber "186" .

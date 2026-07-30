@@ -6,7 +6,6 @@ START_FUSEKI ?= true
 all: graph/artists-books.ttl graph/reference-works.ttl web/site/index.html
 
 clean:
-	rm -f inferred.ttl diff.txt
 	rm -rf graph site .snowman web/site web/.snowman
 
 superclean: clean
@@ -35,17 +34,6 @@ validate: docs/vocab.ttl docs/description.ttl | tools/jena/bin/riot
 
 serve: web/site/index.html | tools/snowman/snowman
 	cd web && ../tools/snowman/snowman server --port 8080
-
-inferred.ttl: docs/vocab.ttl docs/description.ttl | validate
-	./tools/jena/bin/riot --formatted=ttl --rdfs $< $(word 2,$^) > $@
-
-diff.txt: docs/description.ttl inferred.ttl | validate
-	./tools/jena/bin/riot --validate inferred.ttl
-	@echo "inferred.ttl is valid."
-	./tools/jena/bin/rdfdiff $^ TTL TTL > $@ ; \
-	[ $$? -eq 0 ] \
-	&& (echo "\033[1;31mNo triples were inferred!\033[0m" ; rm -f $@) \
-	|| echo "Triples were inferred!"
 
 graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 	@mkdir -p graph
