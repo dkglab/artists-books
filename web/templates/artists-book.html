@@ -41,6 +41,11 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
+  {{ with .illustrativeContent }}
+  <dt>Illustrative content</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
   {{ with .dimensions }}
   <dt>Dimensions</dt>
   <dd>{{ . }}</dd>
