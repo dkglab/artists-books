@@ -17,6 +17,7 @@ SELECT
   ?date
   ?language
   ?extent
+  ?illustrativeContent
   ?dimensions
   ?edition
   (SAMPLE(?summaries) AS ?summary)
@@ -91,6 +92,10 @@ WHERE {
   }
 
   OPTIONAL {
+    ?book bf:illustrativeContent ?illustrativeContent .
+  }
+
+  OPTIONAL {
     ?book bf:editionStatement ?edition .
   }
 
@@ -137,5 +142,5 @@ WHERE {
     BIND(CONCAT(?citingRefKey, "\t", ?citingRefLabel) AS ?citedByToken)
   }
 }
-GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?dimensions ?edition
+GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?illustrativeContent ?dimensions ?edition
 ORDER BY LCASE(?title)

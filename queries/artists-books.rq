@@ -19,6 +19,7 @@ CONSTRUCT {
     bf:provisionActivity ?bookPublication ;
     bf:language ?language ;
     bf:extent ?bookExtent ;
+    bf:illustrativeContent ?illustrative_content ;
     bf:dimensions ?dimensions ;
     bf:editionStatement ?edition ;
     bf:summary ?bookSummary ;
@@ -132,6 +133,7 @@ WHERE {
       SELECT ?canonical_key ?df ?ctag ?role_term ?contributionType
              (SAMPLE(?control_number_raw) AS ?control_number)
              (SAMPLE(?extent_x) AS ?extent)
+             (SAMPLE(?illustrative_content_x) AS ?illustrative_content)
              (SAMPLE(?dimensions_x) AS ?dimensions)
              (SAMPLE(?edition_x) AS ?edition)
              (SAMPLE(?summary_x) AS ?summary)
@@ -183,6 +185,26 @@ WHERE {
 
             # Strip trailing cataloging punctuation such as ":".
             BIND(REPLACE(?extent_raw, "[\\s:;/]+$", "") AS ?extent_x)
+          }
+
+          # Illustrative content from MARC 300 $b, such as
+          # "illustrations" or "color illustrations".
+          OPTIONAL {
+            # Anchor the traversal independently on the record, as with 300 $c.
+            # Reusing ?df300 could cause an unbound-subject scan when 300 $a
+            # is absent but 300 $b is present.
+            ?record fx:anySlot ?df300b .
+            ?df300b a marc:datafield ; xyz:tag "300" .
+
+            ?df300b fx:anySlot ?sf300b .
+            ?sf300b
+                xyz:code "b" ;
+                rdf:_1 ?illustrative_content_raw .
+
+            BIND(
+              REPLACE(?illustrative_content_raw, "[\\s.;:/]+$", "")
+              AS ?illustrative_content_x
+            )
           }
 
           OPTIONAL {
