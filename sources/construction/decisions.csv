@@ -1,38 +1,41 @@
 cluster,labels,include,conceptId,category,prefLabel,note
-http://id.loc.gov/vocabulary/rbmscv/cv00024.,Accordion fold format.,y,accordion-binding,structure-physical-format,Accordion ,
-rbmscv|accordion-fold-format,Accordion fold format,y,accordion-binding,structure-physical-format,Accordion ,
-http://id.loc.gov/authorities/genreForms/gf2022026082.,Accordion fold books.,y,accordion-binding,structure-physical-format,Accordion ,
-http://vocab.getty.edu/aat/300438814.,Accordion books.,y,accordion-binding,structure-physical-format,Accordion ,
-http://vocab.getty.edu/aat/300417532.,Accordion folding.,y,accordion-binding,structure-physical-format,Accordion ,
-aat|accordion-books,accordion books.,y,accordion-binding,structure-physical-format,Accordion ,
-lcgft|accordion-fold-books,Accordion fold books.,y,accordion-binding,structure-physical-format,Accordion ,
-local|accordion-bindings,Accordion bindings.,y,accordion-binding,structure-physical-format,Accordion ,
-none|accordion-bindings,Accordion bindings.,y,accordion-binding,structure-physical-format,Accordion ,
-rbbind|accordion-fold-format-binding,Accordion fold format (Binding),y,accordion-binding,structure-physical-format,Accordion ,
-rbbin|accordian-fold-format-binding,Accordian fold format (Binding),y,accordion-binding,structure-physical-format,Accordion ,
-rbbin|accordion-fold-format,Accordion fold format | Accordion fold format.,y,accordion-binding,structure-physical-format,Accordion ,
-rbbin|accordion-fold-format-binding,Accordion fold format (Binding) | Accordion fold format (Binding). | Accordion fold format (binding),y,accordion-binding,structure-physical-format,Accordion ,
-rbbin|acordion-fold-format-binding,Acordion fold format (binding),y,accordion-binding,structure-physical-format,Accordion ,
-local|altered-books,Altered books,y,altered-book,structure-physical-format,Altered Book,
-aat|altered-books,Altered books.,y,altered-book,structure-physical-format,Altered Book,
-none|altered-books,Altered books.,y,altered-book,structure-physical-format,Altered Book,
+http://vocab.getty.edu/aat/300194509.,Bags (generic containers),y,bag,enclosure,Bag,
+http://vocab.getty.edu/aat/300216739.,Pockets (bags),y,bag,enclosure,Bag,
+(CStmoGRI)aatgf300194509,bags (generic containers),y,bag,enclosure,Bag,
+http://vocab.getty.edu/aat/300312364.,Sacks (generic containers),y,bag,enclosure,Bag,
+http://vocab.getty.edu/aat/300045643.,Boxes (containers),y,box,enclosure,box,OAB term
+aat|boxes-containers,Boxes (containers) | Boxes (containers).,y,box,enclosure,box,OAB term
+local|boxes,Boxes.,y,box,enclosure,box,OAB term
+rbbin|clamshell-boxes-binding,Clamshell boxes (Binding),y,box,enclosure,box,OAB term
+rbmscv|clamshell-boxes,Clamshell boxes.,y,box,enclosure,box,OAB term
+local|box-sets,Box sets.,y,box-set,enclosure,Box set,
+http://vocab.getty.edu/aat/300045659.,Cases (containers),y,case,enclosure,Case,
+http://id.loc.gov/vocabulary/rbmscv/cv00514.,Dust jackets.,y,dust-jacket,enclosure,Dust jacket,
+http://vocab.getty.edu/aat/300195133.,Book jackets.,y,dust-jacket,enclosure,Dust jacket,
+http://vocab.getty.edu/aat/300197601.,Envelopes.,y,envelope,enclosure,Envelope,
+aat|envelopes,Envelopes.,y,envelope,enclosure,Envelope,
+aat|film-canisters,Film canisters.,y,film-canister,enclosure,Film canister,
+http://vocab.getty.edu/aat/300198929.,Portfolios (containers),y,portfolio,enclosure,Portfolio,
+http://vocab.getty.edu/aat/300199780.,Ollas (vessels),y,pot,enclosure,Pot (vessel),
+rbmscv|slipcases,Slipcases,y,slipcase,enclosure,Slipcase,
+http://id.loc.gov/vocabulary/rbmscv/cv00737.,Slipcases.,y,slipcase,enclosure,Slipcase,
+http://vocab.getty.edu/aat/300422132.,Book slipcases.,y,slipcase,enclosure,Slipcase,
+(CStmoGRI)aatgf300200341,slipcases.,y,slipcase,enclosure,Slipcase,
+aat|slipcases,Slipcases.,y,slipcase,enclosure,Slipcase,
+local|slipcases,Slipcases.,y,slipcase,enclosure,Slipcase,
+http://vocab.getty.edu/aat/300211392.,Wrappers (book covers),y,wrapper,enclosure,wrapper,OAB term
+rbbin|wrappers-binding,Wrappers (Binding),y,wrapper,enclosure,wrapper,OAB term
+aat|alphabet-books,Alphabet books.,y,alphabet-book,genre-form,alphabet book,OAB term
+http://id.loc.gov/authorities/genreForms/gf2020026003.,Alphabet books.,y,alphabet-book,genre-form,alphabet book,OAB term
+http://id.worldcat.org/fast/2015172.,Alphabet books.,y,alphabet-book,genre-form,alphabet book,OAB term
+none|alphabet-books,Alphabet books,y,alphabet-book,genre-form,alphabet book,OAB term
+rbgenr|alphabet-books,Alphabet books,y,alphabet-book,genre-form,alphabet book,OAB term
+rbmscv|alphabet-books,Alphabet books,y,alphabet-book,genre-form,alphabet book,
 (DE-576)208846182,Anthologie,y,anthology,genre-form,Anthology,
 (DE-588)4002214-6,Anthologie,y,anthology,genre-form,Anthology,
 (DE-627)106394134,Anthologie,y,anthology,genre-form,Anthology,
 aat|anthologies,anthologies.,y,anthology,genre-form,Anthology,
 aat|axonometric-projections-images,axonometric projections (images),y,axonometric-projection,genre-form,Anxometric projection,
-http://vocab.getty.edu/aat/300041366.,Aquatints (prints),y,aquatint,process-technique,aquatint,OAB term
-aat|aquatints,Aquatints,y,aquatint,process-technique,aquatint,OAB term
-aat|artificial-fur,Artificial fur.,y,artificial-fur,material,Artificial fur,
-local|asemic-writing,Asemic writing.,y,asemic-writing,process-technique,asemic writing,OAB term
-http://id.loc.gov/vocabulary/rbmscv/cv00200.,Backless bindings.,y,backless-binding,structure-physical-format,Backless binding,
-http://vocab.getty.edu/aat/300194509.,Bags (generic containers),y,bag,enclosure,Bag,
-http://vocab.getty.edu/aat/300216739.,Pockets (bags),y,bag,enclosure,Bag,
-(CStmoGRI)aatgf300194509,bags (generic containers),y,bag,enclosure,Bag,
-http://vocab.getty.edu/aat/300312364.,Sacks (generic containers),y,bag,enclosure,Bag,
-lcsh|baked-products,Baked products,y,baking-cooking,process-technique,Baking or cooking,
-lcsh|puddings,Puddings.,y,baking-cooking,process-technique,Baking or cooking,
-http://vocab.getty.edu/aat/300234006.,Beads (pierced objects),y,beads,material,Beads,
 aat|bestiaries,bestiaries | bestiaries.,y,bestiary,genre-form,Bestiary,
 fast|bestiaries,Bestiaries,y,bestiary,genre-form,Bestiary,
 lcgft|bestiaries,Bestiaries,y,bestiary,genre-form,Bestiary,
@@ -47,68 +50,20 @@ http://id.loc.gov/authorities/genreForms/gf2014026049.,Biographies.,y,biography,
 https://id.kb.se/term/saogf/Biografier,Biografier,y,biography,genre-form,Biography,
 https://id.loc.gov/authorities/genreForms/gf2014026049,Biographies.,y,biography,genre-form,Biography,
 lcgft|biographies,Biographies,y,biography,genre-form,Biography,
-http://vocab.getty.edu/aat/300014614.,Blocks (shaped masses),y,blocks,structure-physical-format,Blocks (shaped masses),
-http://vocab.getty.edu/aat/300211072.,Blocks (toys),y,blocks,structure-physical-format,Blocks (shaped masses),
-(DE-576)276549368,Blu-Ray-Disc,y,blu-ray-disc,structure-physical-format,Blu-Ray Disc,
-(DE-588)7597887-8,Blu-Ray-Disc,y,blu-ray-disc,structure-physical-format,Blu-Ray Disc,
-(DE-627)556092260,Blu-Ray-Disc,y,blu-ray-disc,structure-physical-format,Blu-Ray Disc,
+lcgft|imaginary-biography,Imaginary biography.,y,biography,genre-form,Biography,
+lcgft|autobiographies,Autobiographies,y,biography,genre-form,Biography,
 http://vocab.getty.edu/aat/300257224.,Board books.,y,board-book,genre-form,board book,OAB term
-lcgft|board-books,Board books.,y,board-book,structure-physical-format,board book,OAB term
-aat|book-cloth-textile-material,Book cloth (textile material),y,book-cloth,material,Book Cloth,
-rbmscv|bookmarks,Bookmarks,y,bookmark,structure-physical-format,bookmark,OAB term
-http://vocab.getty.edu/aat/300045643.,Boxes (containers),y,box,enclosure,box,OAB term
-aat|boxes-containers,Boxes (containers) | Boxes (containers).,y,box,enclosure,box,OAB term
-local|boxes,Boxes.,y,box,enclosure,box,OAB term
-rbbin|clamshell-boxes-binding,Clamshell boxes (Binding),y,box,enclosure,box,OAB term
-rbmscv|clamshell-boxes,Clamshell boxes.,y,box,enclosure,box,OAB term
-local|box-sets,Box sets.,y,box-set,enclosure,Box set,
-http://id.loc.gov/authorities/genreForms/gf2014026053.,Braille books.,y,braille,structure-physical-format,Braille,
-http://id.worldcat.org/fast/1920770.,Braille books.,y,braille,structure-physical-format,Braille,
-http://rdaregistry.info/termList/RDAMaterial/1004.,Bristol board,y,bristol-board,material,Bristol board,
-http://vocab.getty.edu/aat/300310088.,Broadsheet (format),y,broadside,structure-physical-format,broadside,OAB term
-aat|broadsides,Broadsides. | Broadsides,y,broadside,structure-physical-format,broadside,OAB term
-rbgenr|broadsides,Broadsides,y,broadside,structure-physical-format,broadside,OAB term
-http://vocab.getty.edu/aat/300014076.,Burlap.,y,burlap,material,Burlap,
 lcgft|art-calendars,Art calendars.,y,calendar,genre-form,Calendar,
-http://vocab.getty.edu/aat/300014078.,Canvas (textile material),y,canvas,material,Canvas,
-aat|canvas-textile-material,Canvas (textile material).,y,canvas,material,Canvas,
-http://vocab.getty.edu/aat/300014224.,Cardboard.,y,cardboard,material,Cardboard,
-http://rdaregistry.info/termList/RDAMaterial/1006.,cardboard,y,cardboard,material,Cardboard,
-local|corrugated-paperboard-bindings,Corrugated paperboard bindings.,y,cardboard,material,Cardboard,
-aat|cardboard,Cardboard.,y,cardboard,material,Cardboard,
-rbbin|corrugated-board-bindings,Corrugated board bindings.,y,cardboard,material,Cardboard,
-gmgpc|baseball-cards,Baseball cards,y,cards,structure-physical-format,cards,OAB term
-aat|carousel-books,Carousel books.,y,carousel-book,structure-physical-format,Carousel Book,
-local|carousel-books,Carousel books.,y,carousel-book,structure-physical-format,Carousel Book,
-http://vocab.getty.edu/aat/300045659.,Cases (containers),y,case,enclosure,Case,
 http://vocab.getty.edu/aat/300152367.,Chapbooks.,y,chapbook,genre-form,Chapbook,
 rbmscv|chapbooks,Chapbooks,y,chapbook,genre-form,Chapbook,
 (DE-576)208896619,Diagramm,y,chart-diagram,genre-form,Chart or diagram,
 (DE-627)106350188,Diagramm,y,chart-diagram,genre-form,Chart or diagram,
 http://id.worldcat.org/fast/2003305.,Wheel charts.,y,chart-diagram,genre-form,Chart or diagram,
-aat|chine-coll-process,Chine collé (process).,y,chine-colle,process-technique,Chine-collé,
-aat|chine-colle,Chine collé,y,chine-colle,process-technique,Chine-collé,
-http://vocab.getty.edu/aat/300162391.,Cloth.,y,cloth,material,Cloth,
-http://vocab.getty.edu/aat/300263749.,Cloth books (books),y,cloth,material,Cloth,
-http://vocab.getty.edu/aat/300417761.,Cloth bindings (bookbindings),y,cloth,material,Cloth,
-aat|cloth,Cloth.,y,cloth,material,Cloth,
-aat|printed-cloth-bindings-gathered-matter-components,Printed cloth bindings (gathered matter components.,y,cloth,material,Cloth,
+(DE-588)4012044-2,Diagramm,y,chart-diagram,genre-form,Chart or diagram,
 aat|collaboration,Collaboration.,y,collaborative-work,genre-form,collaborative work,OAB term but specifically distinct from collective
-http://vocab.getty.edu/aat/300138699.,Collage (technique),y,collage,process-technique,Collage,
-lcgft|collage,Collage.,y,collage,process-technique,Collage,
-http://id.loc.gov/authorities/genreForms/gf2017027227.,Collages.,y,collage,process-technique,Collage,
-http://id.worldcat.org/fast/1986256.,Collages.,y,collage,process-technique,Collage,
-aat|collage,Collage.,y,collage,process-technique,Collage,
-aat|collage-technique,Collage (technique),y,collage,process-technique,Collage,
-aat|collages-visual-works,Collages (visual works),y,collage,process-technique,Collage,
-http://vocab.getty.edu/aat/300033963.,Collages (visual works),y,collage,process-technique,Collage,
-lcgft|collages,Collages.,y,collage,process-technique,Collage,
-aat|collograph-printing,Collograph printing.,y,collagraph-printing,process-technique,Collagraph,OAB term
-aat|collographs,Collographs.,y,collagraph-printing,process-technique,Collagraph,OAB term
 http://id.loc.gov/authorities/genreForms/gf2016026082.,Festschriften.,y,collective-work,genre-form,collective work,OAB term but specifically distinct from collaborative
 http://id.worldcat.org/fast/1941036.,Festschriften.,y,collective-work,genre-form,collective work,OAB term but specifically distinct from collaborative
 rbgenr|coloring-books,Coloring Books,y,coloring-book,genre-form,coloring book,OAB term
-rbmscv|comb-bindings,Comb bindings.,y,comb-binding,structure-physical-format,comb binding,OAB term
 http://id.loc.gov/authorities/genreForms/gf2014026266.,Comics (Graphic works),y,comix-comic,genre-form,Comix/Comic Book,
 http://id.worldcat.org/fast/1921613.,Comics (Graphic works),y,comix-comic,genre-form,Comix/Comic Book,
 aat|comic-books,Comic books,y,comix-comic,genre-form,Comix/Comic Book,
@@ -120,82 +75,19 @@ http://id.loc.gov/authorities/genreForms/gf2014026266,Comics (Graphic works),y,c
 http://id.loc.gov/authorities/genreForms/gf2014026580,Underground comics.,y,comix-comic,genre-form,Comix/Comic Book,
 http://vocab.getty.edu/aat/300203177.,Comic books.,y,comix-comic,genre-form,Comix/Comic Book,
 lcgft|comics-graphic-works,Comics (Graphic works),y,comix-comic,genre-form,Comix/Comic Book,
-none|concertina-bindings,Concertina bindings.,y,concertina-binding,structure-physical-format,Concertina,
-http://vocab.getty.edu/aat/300183668.,Construction paper.,y,construction-paper,material,Construction paper,
 http://id.loc.gov/authorities/genreForms/gf2011026169.,Cookbooks.,y,cookbook,genre-form,Cookbook,
 http://id.worldcat.org/fast/1752725.,Cookbooks.,y,cookbook,genre-form,Cookbook,
 (OCoLC)fst01752725,Cookbooks,y,cookbook,genre-form,Cookbook,
 lcgft|cookbooks,Cookbooks,y,cookbook,genre-form,Cookbook,
-http://id.loc.gov/vocabulary/rbmscv/cv00483.,Coptic bindings.,y,coptic-binding,structure-physical-format,coptic binding,OAB term
-http://vocab.getty.edu/aat/300263587.,Coptic bindings.,y,coptic-binding,structure-physical-format,coptic binding,OAB term
-aat|coptic-bindings,Coptic bindings.,y,coptic-binding,structure-physical-format,coptic binding,OAB term
-http://vocab.getty.edu/aat/300014247.,Cord (fiber product),y,cord,material,Cord,
-http://vocab.getty.edu/aat/300253051.,Cords (binding components),y,cord,material,Cord,
-http://id.loc.gov/vocabulary/rbmscv/cv00485.,Corrugated board bindings.,y,corrugated-board-bindings,structure-physical-format,Corrugated board bindings,
-rbmscv|corrugated-board-bindings,Corrugated board bindings. | Corrugated board bindings,y,corrugated-board-bindings,structure-physical-format,Corrugated board bindings,
-http://vocab.getty.edu/aat/300264038.,Crochet (needlework),y,crochet,process-technique,Crochet,
-http://vocab.getty.edu/aat/300068579.,Cut-paper work.,y,cut-paper-work,process-technique,cut-paper work,OAB term
-aat|cut-paper-work,Cut-paper work.,y,cut-paper-work,process-technique,cut-paper work,OAB term
-http://vocab.getty.edu/aat/300257411.,Cutouts.,y,cutout,structure-physical-format,cutout,OAB term
-rbmscv|paper-cutouts-paper,Paper cutouts (Paper),y,cutout,structure-physical-format,cutout,OAB term
-aat|cutouts,Cutouts.,y,cutout,structure-physical-format,cutout,OAB term
-aat|paper-cutouts,Paper cutouts,y,cutout,structure-physical-format,cutout,OAB term
-aat|debossing,Debossing.,y,deboss,process-technique,deboss,OAB term
-rbmscv|decorated-paper-bindings,Decorated paper bindings,y,decorative-paper,material,Decorative Paper,
 czenas|diaries,Diaries.,y,diary,genre-form,diary,OAB term
 http://id.worldcat.org/fast/1423794.,Diaries.,y,diary,genre-form,diary,OAB term
 http://id.loc.gov/authorities/genreForms/gf2014026086.,Dictionaries.,y,dictionary,genre-form,Dictionary,
 http://id.worldcat.org/fast/1423826.,Dictionaries.,y,dictionary,genre-form,Dictionary,
-aat|die-cutting,Die cutting,y,die-cutting,process-technique,Die-cutting,
-http://vocab.getty.edu/aat/300233399.,Die cutting.,y,die-cutting,process-technique,Die-cutting,
 aat|e-books,e-books.,y,digital-bookwork,genre-form,digital bookwork,OAB term
 none|electronic-books,Electronic books.,y,digital-bookwork,genre-form,digital bookwork,OAB term
-aat|digital-prints,Digital prints.,y,digital-printing,process-technique,Digital Printing,
-gmgpc|digital-prints,Digital prints,y,digital-printing,process-technique,Digital Printing,
-aat|dioramas,Dioramas.,y,diorama,structure-physical-format,Dioramas,
 (OCoLC)fst01423883,Discographies.,y,discography,genre-form,Discography,
 lcgft|discographies,Discographies.,y,discography,genre-form,Discography,
-http://vocab.getty.edu/aat/300253366.,Dos-à-dos bindings.,y,dos-a-dos-binding,structure-physical-format,Dos-a-dos,
-http://id.loc.gov/vocabulary/rbmscv/cv00510.,Dos-à-dos bindings.,y,dos-a-dos-binding,structure-physical-format,Dos-a-dos,
-http://vocab.getty.edu/aat/300257370.,Double leaves.,y,double-leaf,structure-physical-format,Double leaf,
-http://vocab.getty.edu/aat/300014634.,Dowels.,y,dowel,material,Dowel,
-aat|dowels,Dowels,y,dowel,material,Dowel,
-(OCoLC)fst01423718,Drawings,y,drawing,process-technique,Drawing,
-aat|drawings-visual-works,Drawings (visual works),y,drawing,process-technique,Drawing,
-aat|line-drawings,Line drawings,y,drawing,process-technique,Drawing,
-gmgpc|drawings,Drawings,y,drawing,process-technique,Drawing,
-gnd|zeichnung,Zeichnung,y,drawing,process-technique,Drawing,
-gtt|tekeningen,Tekeningen.,y,drawing,process-technique,Drawing,
-http://vocab.getty.edu/aat/300033973,Drawings (visual works),y,drawing,process-technique,Drawing,
-lcgft|drawings,Drawings.,y,drawing,process-technique,Drawing,
-local|drawings-animals,Drawings: Animals.,y,drawing,process-technique,Drawing,
-local|drawings-book-illustrations-dramatizations-representations-of-legends-etc,"Drawings: Book illustrations, dramatizations, representations of legends, etc.",y,drawing,process-technique,Drawing,
-local|drawings-figures-other-than-portraits-men-full-length,Drawings: Figures other than portraits: Men: Full length.,y,drawing,process-technique,Drawing,
-local|drawings-genre,Drawings: Genre.,y,drawing,process-technique,Drawing,
-local|drawings-old-testament,Drawings: Old Testament.,y,drawing,process-technique,Drawing,
-http://vocab.getty.edu/aat/300053228.,Drypoint (printing process),y,drypoint,process-technique,drypoint,OAB term
-http://id.loc.gov/vocabulary/rbmscv/cv00514.,Dust jackets.,y,dust-jacket,enclosure,Dust jacket,
-http://vocab.getty.edu/aat/300195133.,Book jackets.,y,dust-jacket,enclosure,Dust jacket,
-http://vocab.getty.edu/aat/300041523.,Embossed prints.,y,emboss,process-technique,emboss,OAB term
-aat|blind-embossing,Blind embossing.,y,emboss,process-technique,emboss,OAB term
-aat|embossing-technique,Embossing (technique),y,emboss,process-technique,emboss,OAB term
-http://id.loc.gov/vocabulary/rbmscv/cv00494.,Embossed paper bindings.,y,emboss,process-technique,emboss,OAB term
-aat|embroidery-visual-works,Embroidery (visual works).,y,embroidery,process-technique,embroidered content,OAB term
-rbmscv|endpapers,Endpapers,y,endpapers,structure-physical-format,endpapers,OAB term
-aat|engravings,Engravings,y,engraving,process-technique,Engraving,
-aat|engravings-prints,Engravings (prints),y,engraving,process-technique,Engraving,
-http://vocab.getty.edu/aat/300197601.,Envelopes.,y,envelope,enclosure,Envelope,
-aat|envelopes,Envelopes.,y,envelope,enclosure,Envelope,
 aat|ephemera-general-object-genre,Ephemera (general object genre).,y,ephemera,genre-form,Ephemera,
-http://id.loc.gov/authorities/genreForms/gf2016026017.,Erasure poetry.,y,erasure,process-technique,Erasure,
-http://id.worldcat.org/fast/1941322.,Erasure poetry.,y,erasure,process-technique,Erasure,
-http://vocab.getty.edu/aat/300053241.,Etching (printing process),y,etching,process-technique,Etching,
-aat|etching-printing-process,Etching (printing process).,y,etching,process-technique,Etching,
-aat|etchings,Etchings | Etchings.,y,etching,process-technique,Etching,
-aat|etchings-prints,Etchings (prints).,y,etching,process-technique,Etching,
-aat|soft-ground-etchings,Soft-ground etchings,y,etching,process-technique,Etching,
-gmgpc|etchings,Etchings | Etchings.,y,etching,process-technique,Etching,
-local|ethiopian-bindings,Ethiopian bindings.,y,ethiopian-binding,structure-physical-format,Ethiopian binding,OAB term
 http://id.worldcat.org/fast/1424028.,Exhibition catalogs.,y,exhibition-catalog,genre-form,Exhibition catalog,
 http://id.loc.gov/authorities/genreForms/gf2014026098.,Exhibition catalogs.,y,exhibition-catalog,genre-form,Exhibition catalog,
 http://vocab.getty.edu/aat/300026096.,Exhibition catalogs.,y,exhibition-catalog,genre-form,Exhibition catalog,
@@ -214,7 +106,6 @@ none|exhibition-catalogs,Exhibition catalogs. | Exhibition catalogs,y,exhibition
 rbgenr|exhibition-catalogs,Exhibition catalogs.,y,exhibition-catalog,genre-form,Exhibition catalog,
 rbmscv|exhibition-catalogs,Exhibition catalogs,y,exhibition-catalog,genre-form,Exhibition catalog,
 rvmgf|catalogues-d-exposition,Catalogues d'exposition.,y,exhibition-catalog,genre-form,Exhibition catalog,
-aat|cadavres-exquis,Cadavres exquis.,y,exquisite-corpse,structure-physical-format,exquisite corpse,OAB term
 http://id.worldcat.org/fast/1411642.,Facsimiles.,y,facsimile,genre-form,facsimile,OAB term
 (DE-576)209804548,Faksimile,y,facsimile,genre-form,facsimile,OAB term
 (DE-588)4153591-1,Faksimile,y,facsimile,genre-form,facsimile,OAB term
@@ -222,8 +113,6 @@ http://id.worldcat.org/fast/1411642.,Facsimiles.,y,facsimile,genre-form,facsimil
 aat|facsimiles-reproductions,Facsimiles (Reproductions),y,facsimile,genre-form,facsimile,OAB term
 https://id.loc.gov/authorities/genreForms/gf2014026099,Facsimiles.,y,facsimile,genre-form,facsimile,OAB term
 rbpri|facsimiles-printing,Facsimiles (Printing),y,facsimile,genre-form,facsimile,OAB term
-aat|felt-textile,Felt (textile).,y,felt,material,Felt,
-aat|felt-work,Felt work.,y,felt,material,Felt,
 http://id.loc.gov/authorities/genreForms/gf2014026339.,Fiction.,y,fiction,genre-form,Fiction,
 http://id.worldcat.org/fast/1423787.,Fiction.,y,fiction,genre-form,Fiction,
 http://id.loc.gov/authorities/genreForms/gf2014026543.,Flash fiction.,y,fiction,genre-form,Fiction,
@@ -254,203 +143,41 @@ lcgft|fiction,Fiction | Fiction.,y,fiction,genre-form,Fiction,
 lcsh|experimental-fiction,Experimental fiction.,y,fiction,genre-form,Fiction,
 lcsh|political-fiction,Political fiction.,y,fiction,genre-form,Fiction,
 none|fantasy-fiction,Fantasy fiction.,y,fiction,genre-form,Fiction,
-aat|film-canisters,Film canisters.,y,film-canister,enclosure,Film canister,
-lcgft|flag-books,Flag books.,y,flag-book,structure-physical-format,Flag Book,
-none|flag-books-toy-and-movable-books,Flag books (Toy and movable books),y,flag-book,structure-physical-format,Flag Book,
-http://vocab.getty.edu/aat/300201033.,Flip books.,y,flip-book,structure-physical-format,Flip Book,
-http://id.loc.gov/authorities/genreForms/gf2014026105.,Flip books.,y,flip-book,structure-physical-format,Flip Book,
-http://id.worldcat.org/fast/1726615.,Flip books.,y,flip-book,structure-physical-format,Flip Book,
-lcgft|flip-books,Flip books.,y,flip-book,structure-physical-format,Flip Book,
-none|fliers-printed-matter,Fliers (printed matter),y,flyer,structure-physical-format,Flyer,
-local|fold-out-books,Fold-out books.,y,fold-out-book,structure-physical-format,Fold-out book,
-http://vocab.getty.edu/aat/300200572.,Folded books.,y,folded-form,structure-physical-format,folded form,OAB term
-http://vocab.getty.edu/aat/300247923.,Folding (process),y,folded-form,structure-physical-format,folded form,OAB term
-aat|folded-books,Folded books | Folded books.,y,folded-form,structure-physical-format,folded form,OAB term
-http://vocab.getty.edu/aat/300015577.,Foldouts.,y,foldout,structure-physical-format,Foldout,
-aat|foldouts,Foldouts.,y,foldout,structure-physical-format,Foldout,
-http://vocab.getty.edu/aat/300033565.,Nails (fasteners),y,found-object,material,Found Object/s,
-http://vocab.getty.edu/aat/300045627.,Bottles.,y,found-object,material,Found Object/s,
-http://vocab.getty.edu/aat/300045657.,Cans (containers),y,found-object,material,Found Object/s,
-http://vocab.getty.edu/aat/300185694.,Sails.,y,found-object,material,Found Object/s,
-http://vocab.getty.edu/aat/300247399.,Life preservers.,y,found-object,material,Found Object/s,
-http://vocab.getty.edu/aat/300429554.,Newspaper clippings.,y,found-object,material,Found Object/s,
-aat|hinges-hardware,Hinges (hardware).,y,found-object,material,Found Object/s,
-aat|pins-fasteners,Pins (fasteners).,y,found-object,material,Found Object/s,
-http://vocab.getty.edu/aat/300036449.,Thumbtacks.,y,found-object,material,Found Object/s,
 abo.org|appropriated-text,Appropriated text.,y,found-text,genre-form,Found Text,
 http://id.loc.gov/authorities/genreForms/gf2014026084.,Derivative works.,y,found-text,genre-form,Found Text,
 http://id.loc.gov/authorities/genreForms/gf2014026346.,Found poetry.,y,found-text,genre-form,Found Text,
 http://id.worldcat.org/fast/1921663.,Found poetry.,y,found-text,genre-form,Found Text,
 http://id.worldcat.org/fast/1423910.,Adaptations.,y,found-text,genre-form,Found Text,
-gmgpc|frontispieces,Frontispieces,y,frontispiece,structure-physical-format,Frontispiece,
-http://id.worldcat.org/fast/1726787.,Games.,y,game,structure-physical-format,game,OAB term
-aat|games,games.,y,game,structure-physical-format,game,OAB term
-local|genre-games,Genre: Games.,y,game,structure-physical-format,game,OAB term
-aat|gelatin-silver-prints,Gelatin silver prints,y,gelatin-printing,process-technique,Gelatin printing,
-aat|glassine,Glassine.,y,glassine,material,Glassine,
-local|gocco,Gocco.,y,gocco-printing,process-technique,gocco print,OAB term
-aat|gouaches-paintings,Gouaches (paintings),y,gouache,material,Gouache,
 http://id.loc.gov/authorities/genreForms/gf2014026362.,Graphic novels.,y,graphic-novel,genre-form,graphic novel,OAB term
 http://id.worldcat.org/fast/1726630.,Graphic novels.,y,graphic-novel,genre-form,graphic novel,OAB term
 (OCoLC)fst01726630.,Graphic novels.,y,graphic-novel,genre-form,graphic novel,OAB term
 http://id.loc.gov/authorities/genreForms/gf2014026362,Graphic novels.,y,graphic-novel,genre-form,graphic novel,OAB term
 none|graphic-novels,Graphic novels.,y,graphic-novel,genre-form,graphic novel,OAB term
-aat|greeting-cards,Greeting cards.,y,greeting-card,structure-physical-format,greeting card,OAB term
-http://id.worldcat.org/fast/1423877.,Handbooks and manuals.,y,guide-manual,genre-form,Guide or manual,
-http://id.worldcat.org/fast/1423871.,Guidebooks.,y,guide-manual,genre-form,Guide or manual,
-(OCoLC)fst01423877.,Handbooks and manuals.,y,guide-manual,genre-form,Guide or manual,
-fast|handbooks-and-manuals,Handbooks and manuals. | Handbooks and manuals,y,guide-manual,genre-form,Guide or manual,
-aat|offset-halftones,Offset halftones,y,halftone,process-technique,Halftone (color effect),
-aat|offset-printed-halftones,Offset-printed halftones,y,halftone,process-technique,Halftone (color effect),
-aat|hand-composition,Hand composition.,y,hand-composition,process-technique,Hand composition,
-http://vocab.getty.edu/aat/300202344.,Hand binding.,y,hand-binding,process-technique,hand-bound book,OAB term
-http://vocab.getty.edu/aat/300133555.,Hand coloring.,y,hand-coloring,process-technique,Hand-coloring,
-aat|handwriting,Handwriting.,y,handwriting,process-technique,Handlettering/Handwriting,
-http://vocab.getty.edu/aat/300191818.,Handmade.,y,handmade,process-technique,Handmade,
-aat|handmade-books,Handmade books,y,handmade,process-technique,Handmade,
-http://id.loc.gov/vocabulary/rbmscv/cv01435.,Handmade papers.,y,handmade-paper,material,Handmade Paper,
-http://vocab.getty.edu/aat/300411543.,Handmade paper.,y,handmade-paper,material,Handmade Paper,
-rbmscv|handmade-papers,Handmade papers,y,handmade-paper,material,Handmade Paper,
-aat|handmade-paper,Handmade paper.,y,handmade-paper,material,Handmade Paper,
-aat|handmade-papers,Handmade papers.,y,handmade-paper,material,Handmade Paper,
-aat|handmade-papers-fiber-product,Handmade papers (fiber product),y,handmade-paper,material,Handmade Paper,
-lcsh|paper-handmade,"Paper, Handmade. | Paper, handmade.",y,handmade-paper,material,Handmade paper,
-rbpap|handmade-papers,Handmade papers.,y,handmade-paper,material,Handmade Paper,
-rbpap|handmade-papers-paper,Handmade papers (Paper),y,handmade-paper,material,Handmade Paper,
-aat|japanese-paper-handmade-paper,Japanese paper (handmade paper).,y,japanese-paper-handmade-paper,hand-papermaking-traditions,Handmade paper (Japanese),
-aat|hardcover-books,Hardcover books.,y,hardcover,structure-physical-format,Hardcover,
-http://vocab.getty.edu/aat/300379073.,Foil stamping.,y,hot-stamping,process-technique,Hot Stamping,
-aat|foil-stamping,Foil stamping.,y,hot-stamping,process-technique,Hot Stamping,
-aat|ink,Ink.,y,ink,material,Ink,
-http://vocab.getty.edu/aat/300265621.,Inkjet prints.,y,inkjet-printing,process-technique,Inkjet Printing,
-aat|color-ink-jet-printing,Color ink jet printing,y,inkjet-printing,process-technique,Inkjet Printing,
-aat|inkjet-prints,Inkjet prints. | Inkjet prints,y,inkjet-printing,process-technique,Inkjet Printing,
-gmgpc|inkjet-prints,Inkjet prints,y,inkjet-printing,process-technique,Inkjet Printing,
-aat|intaglio-prints,Intaglio prints.,y,intaglio-printing,process-technique,Intaglio Printing,
-http://vocab.getty.edu/aat/300253104.,Interleaving.,y,interleaving,structure-physical-format,Interleaving,OAB term
-aat|laser-beam-cutting,Laser beam cutting.,y,laser-cutting,process-technique,Laser Cutting/CNC cutting,
-http://vocab.getty.edu/aat/300178926.,Letterpress printing.,y,letterpress-printing,process-technique,Letterpress printing,
-aat|leterpress-printing,Leterpress printing,y,letterpress-printing,process-technique,Letterpress printing,
-aat|letterpress-printing,Letterpress printing. | Letterpress printing,y,letterpress-printing,process-technique,Letterpress printing,
-none|letterpress-prints,Letterpress prints.,y,letterpress-printing,process-technique,Letterpress printing,
+http://id.worldcat.org/fast/1423877.,Handbooks and manuals.,y,guide-manual-reference,genre-form,Guidebook/Manual/Reference,
+http://id.worldcat.org/fast/1423871.,Guidebooks.,y,guide-manual-reference,genre-form,Guidebook/Manual/Reference,
+(OCoLC)fst01423877.,Handbooks and manuals.,y,guide-manual-reference,genre-form,Guidebook/Manual/Reference,
+fast|handbooks-and-manuals,Handbooks and manuals. | Handbooks and manuals,y,guide-manual-reference,genre-form,Guidebook/Manual/Reference,
+http://id.worldcat.org/fast/1919895.,Bibliographies.,y,guide-manual-reference,genre-form,Guidebook/Manual/Reference,
+(DE-576)208865578,Bibliografie,y,guide-manual-reference,genre-form,Guidebook/Manual/Reference,
+(DE-588)4006432-3,Bibliografie,y,guide-manual-reference,genre-form,Guidebook/Manual/Reference,
+(DE-627)104814519,Bibliografie,y,guide-manual-reference,genre-form,Guidebook/Manual/Reference,
+aat|encyclopedias,Encyclopedias.,y,guide-manual-reference,genre-form,Guidebook/Manual/Reference,
+lcgft|encyclopedias,Encyclopedias.,y,guide-manual-reference,genre-form,Guidebook/Manual/Reference,
+rvmgf|encyclope-dies,Encyclopédies.,y,guide-manual-reference,genre-form,Guidebook/Manual/Reference,
 aat|letters-correspondence,Letters (correspondence).,y,letters-correspondence,genre-form,Letters (correspondence),
-(CStmoGRI)aatgf300201735,limp bindings.,y,limp-binding,structure-physical-format,limp binding,OAB term
-aat|limp-bindings,Limp bindings.,y,limp-binding,structure-physical-format,limp binding,OAB term
-none|limp-bindings,Limp bindings.,y,limp-binding,structure-physical-format,limp binding,OAB term
-http://vocab.getty.edu/aat/300041393.,Linocuts (prints),y,linoleum-block-printing,process-technique,Linoleum Block Printing,
-aat|linocuts,Linocuts | Linocuts.,y,linoleum-block-printing,process-technique,Linoleum Block Printing,
-aat|linocuts-prints,Linocuts (prints),y,linoleum-block-printing,process-technique,Linoleum Block Printing,
-http://id.loc.gov/authorities/genreForms/gf2017027240.,Linocuts.,y,linoleum-block-printing,process-technique,Linoleum Block Printing,
-http://id.worldcat.org/fast/1986235.,Linocuts.,y,linoleum-block-printing,process-technique,Linoleum Block Printing,
-lcgft|linocuts,Linocuts.,y,linoleum-block-printing,process-technique,Linoleum Block Printing,
 http://id.loc.gov/authorities/genreForms/gf2014026082.,Death registers.,y,list,genre-form,List,
 http://id.loc.gov/authorities/genreForms/gf2014026166.,Registers (Lists),y,list,genre-form,List,
 http://id.worldcat.org/fast/1919915.,Death registers.,y,list,genre-form,List,
 http://id.worldcat.org/fast/1919964.,Registers (Lists),y,list,genre-form,List,
-http://vocab.getty.edu/aat/300041379.,Lithographs.,y,lithography,process-technique,Lithography,
-http://id.loc.gov/authorities/genreForms/gf2017027241.,Lithographs.,y,lithography,process-technique,Lithography,
-http://id.worldcat.org/fast/1986261.,Lithographs.,y,lithography,process-technique,Lithography,
-aat|color-lithographs,Color lithographs,y,lithography,process-technique,Lithography,
-aat|lithographs,Lithographs | Lithographs.,y,lithography,process-technique,Lithography,
-aat|lithography,Lithography,y,lithography,process-technique,Lithography,
-gmgpc|lithographs,Lithographs.,y,lithography,process-technique,Lithography,
-lcgft|lithographs,Lithographs.,y,lithography,process-technique,Lithography,
-local|lithographs,Lithographs.,y,lithography,process-technique,Lithography,
-http://vocab.getty.edu/aat/300024549.,Magnets.,y,magnet,material,Magnet/s,
-http://id.worldcat.org/fast/1423704.,Maps.,y,map,structure-physical-format,map,OAB term
-http://id.loc.gov/authorities/genreForms/gf2011026441.,Pictorial maps.,y,map,structure-physical-format,map,OAB term
-http://id.worldcat.org/fast/1423807.,Pictorial maps.,y,map,structure-physical-format,map,OAB term
-http://id.loc.gov/vocabulary/rbmscv/cv00063.,Marbled papers.,y,marbling,process-technique,Marbling,
-http://rdaregistry.info/termList/RDAMaterial/1022.,metal,y,metal,material,Metal,
-http://id.loc.gov/vocabulary/rbmscv/cv00092.,Aluminum bindings.,y,metal,material,Metal,
-aat|brass-alloy,Brass (alloy),y,metal,material,Metal,
-rdamat|metal,metal,y,metal,material,Metal,
-aat|metallic-paper,metallic paper.,y,metallic-paper,material,Metallic paper,
-aat|flip-books,Flip books. | Flip books,y,flip-book,structure-physical-format,Flip Book,
-rbmscv|miniature-books,Miniature books,y,miniature-book,structure-physical-format,Miniature Book,
-http://id.loc.gov/vocabulary/rbmscv/cv00867.,Miniature books.,y,miniature-book,structure-physical-format,Miniature Book,
-lcgft|miniature-books,Miniature books.,y,miniature-book,structure-physical-format,Miniature Book,
-aat|miniature-books,Miniature books. | Miniature books,y,miniature-book,structure-physical-format,Miniature Book,
-none|miniature-books,Miniature books.,y,miniature-book,structure-physical-format,Miniature Book,
-rbms|miniature-books,Miniature books.,y,miniature-book,structure-physical-format,Miniature Book,
-rbpri|minature-books-printing,Minature books (Printing),y,miniature-book,structure-physical-format,Miniature Book,
-rbpri|miniature-books-printing,Miniature books (Printing),y,miniature-book,structure-physical-format,Miniature Book,
-rbpub|miniature-books,Miniature books,y,miniature-book,structure-physical-format,Miniature Book,
-http://vocab.getty.edu/aat/300163347.,Mixed media.,y,mixed-media,material,Mixed Media,
-aat|mixed-media,Mixed media.,y,mixed-media,material,Mixed Media,
-aat|monotypes,Monotypes.,y,monotype-planographic-print,process-technique,monotype (planographic print),OAB term
-aat|monotypes-planographic-prints,Monotypes (Planographic prints).,y,monotype-planographic-print,process-technique,monotype (planographic print),OAB term
-http://id.loc.gov/authorities/genreForms/gf2014026123.,Lift-the-flap books.,y,movable-element,structure-physical-format,movable element,OAB term
-http://id.worldcat.org/fast/1919936.,Lift-the-flap books.,y,movable-element,structure-physical-format,movable element,OAB term
-aat|movable-books,Movable books | Movable books.,y,movable-element,structure-physical-format,movable element,OAB term
-aat|moveable-books,Moveable books.,y,movable-element,structure-physical-format,movable element,OAB term
-http://vocab.getty.edu/aat/300207697.,Movable books.,y,movable-element,structure-physical-format,movable element,OAB term
-local|books-with-movable-illustrations,Books with movable illustrations,y,movable-element,structure-physical-format,movable element,OAB term
 aat|multimedia-works,Multimedia works,y,multimedia-work,genre-form,Multimedia work,
 aat|multiple,Multiple.,y,multiple,genre-form,multiples,OAB term
 aat|multiples,multiples. | Multiples. | Multiples,y,multiple,genre-form,multiples,OAB term
-aat|rabbit-hair,Rabbit hair.,y,animal-material,material,"Natural material from animal source (fur, bone, blood...)",
-aat|rabbit-skin,Rabbit skin.,y,animal-material,material,"Natural material from animal source (fur, bone, blood...)",
-aat|urine,Urine.,y,animal-material,material,"Natural material from animal source (fur, bone, blood...)",
-http://vocab.getty.edu/aat/300014341.,Sand.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
-http://vocab.getty.edu/aat/300011734.,Earth (soil),y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
-http://vocab.getty.edu/aat/300014681.,Sticks (object genre),y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
-http://vocab.getty.edu/aat/300124117.,Plant material.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
-aat|bamboo,Bamboo,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
-aat|organic-materials,Organic materials.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
-aat|plant-material,Plant material.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
-aat|sand,Sand.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
-aat|stone-worked-rock,Stone (worked rock).,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
-rbpap|straw-fibers,Straw fibers.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
-none|non-adhesive-bindings,Non-adhesive bindings.,y,non-adhesive-binding,structure-physical-format,non-adhesive binding,OAB term
-rbbin|non-adhesive-bindings,Non-adhesive bindings.,y,non-adhesive-binding,structure-physical-format,non-adhesive binding,OAB term
-rbbin|non-adhesive-bindings-binding,Non-adhesive bindings (Binding),y,non-adhesive-binding,structure-physical-format,non-adhesive binding,OAB term
 http://id.loc.gov/authorities/genreForms/gf2015026020.,Novels.,y,novel,genre-form,Novel,
 aat|novels,novels.,y,novel,genre-form,Novel,
 http://id.loc.gov/authorities/genreForms/gf2015026020,Novels,y,novel,genre-form,Novel,
 lcgft|novels,Novels. | Novels,y,novel,genre-form,Novel,
 http://id.worldcat.org/fast/1423821.,Obituaries.,y,obituary,genre-form,Obituary,
 http://id.loc.gov/authorities/genreForms/gf2014026134.,Obituaries.,y,obituary,genre-form,Obituary,
-local|offset-printing,Offset printing,y,offset-lithography,process-technique,Offset Lithography,
-aat|offset-lithographs,Offset lithographs | offset lithographs.,y,offset-lithography,process-technique,Offset Lithography,
-aat|offset-lithography,Offset lithography. | Offset lithography,y,offset-lithography,process-technique,Offset Lithography,
-aat|offset-printing,Offset printing. | Offset printing,y,offset-lithography,process-technique,Offset Lithography,
-gmgpc|offset-lithographs,Offset lithographs,y,offset-lithography,process-technique,Offset Lithography,
-none|offset-prints,Offset prints.,y,offset-lithography,process-technique,Offset Lithography,
-rbmscv|unique-books,Unique books,y,one-of-a-kind,structure-physical-format,one-of-a-kind,OAB term
-http://vocab.getty.edu/aat/300053324.,Overprinting.,y,overprinting,process-technique,Overprinting,
-rbmscv|painted-bindings,Painted bindings,y,paint,material,Paint,
-http://vocab.getty.edu/aat/300033618,Paintings (visual works),y,painting,process-technique,Painting (process),
-http://vocab.getty.edu/aat/300033618.,Paintings (visual works),y,painting,process-technique,Painting (process),
-aat|palladium-prints,Palladium prints.,y,palladium-process,process-technique,Palladium process,
-gmgpc|palladium-prints,Palladium prints,y,palladium-process,process-technique,Palladium process,
-http://vocab.getty.edu/aat/300264218.,Pamphlet bindings.,y,pamphlet-binding,structure-physical-format,Pamphlet Binding,
-(CStmoGRI)aatgf300264218,pamphlet bindings.,y,pamphlet-binding,structure-physical-format,Pamphlet Binding,
-aat|pamphlet-bindings,Pamphlet bindings.,y,pamphlet-binding,structure-physical-format,Pamphlet Binding,
-aat|pamphlets,Pamphlets.,y,pamphlet-binding,structure-physical-format,Pamphlet Binding,
-http://rdaregistry.info/termList/RDAMaterial/1025.,paper,y,paper,material,Paper,
-rbpap|paper-evidence-paper,Paper evidence (Paper),y,paper,material,Paper,
-aat|paperwork,Paperwork.,y,paper,material,Paper,
-none|paper-bindings,Paper bindings.,y,paper,material,Paper,
-rbbin|paper-bindings-binding,Paper bindings (Binding),y,paper,material,Paper,
-rbbin|paper-onlays-binding,Paper onlays (Binding),y,paper,material,Paper,
-rdamat|paper,paper,y,paper,material,Paper,
-http://id.loc.gov/authorities/genreForms/gf2015026060.,Paper dolls.,y,paper-doll,structure-physical-format,Paper doll,
-http://id.worldcat.org/fast/1941319.,Paper dolls.,y,paper-doll,structure-physical-format,Paper doll,
-http://vocab.getty.edu/aat/300211178.,Paper dolls.,y,paper-doll,structure-physical-format,Paper doll,
-http://id.loc.gov/vocabulary/rbmscv/cv01503.,Kozo fiber papers.,y,papermaking-fiber-paper-mulberry,material,Papermaking fiber (paper mulberry),
-http://vocab.getty.edu/aat/300183813.,Hosho.,y,papermaking-fiber-paper-mulberry,material,Papermaking fiber (paper mulberry),
-http://vocab.getty.edu/aat/300375519.,Kozo (paper),y,papermaking-fiber-paper-mulberry,material,Papermaking fiber (paper mulberry),
-aat|wood-pulp-paper,Wood pulp paper,y,papermaking-fiber-wood,material,Papermaking fiber (wood),
-http://id.loc.gov/vocabulary/rbmscv/cv01187.,Cotton fiber papers.,y,papermaking-fiber-textile,material,"Papermaking Fiber: Textiles (linen, cotton, hemp)",
-http://vocab.getty.edu/aat/300014130.,Rag paper.,y,papermaking-fiber-textile,material,"Papermaking Fiber: Textiles (linen, cotton, hemp)",
-rbpap|cotton-fibers-paper,Cotton fibers (Paper),y,papermaking-fiber-textile,material,"Papermaking Fiber: Textiles (linen, cotton, hemp)",
-aat|papier-m-ch-sculpture,Papier-mâché sculpture,y,papier-mache,material,Papier-mâché,
-aat|papier-m-ch,Papier mâché.,y,papier-mache,material,Papier-mâché,
-rbmscv|papier-m-ch-bindings,Papier-mâché bindings,y,papier-mache,material,Papier-mâché,
-rbbin|paste-papers-binding,Paste papers (Binding).,y,paste-paper,material,Paste Paper,
-aat|perfect-binding-process,Perfect binding (process). | Perfect binding (process.,y,perfect-binding,structure-physical-format,Perfect binding,
-aat|phonograph-records,phonograph records.,y,phonograph-record,structure-physical-format,Phonograph record,
 aat|photobooks,Photobooks,y,photobook,genre-form,photobook,OAB term
 http://id.loc.gov/authorities/genreForms/gf2014026144.,Photobooks.,y,photobook,genre-form,photobook,OAB term
 http://id.worldcat.org/fast/1919950.,Photobooks.,y,photobook,genre-form,photobook,OAB term
@@ -459,75 +186,7 @@ rbmscv|photobooks,Photobooks,y,photobook,genre-form,photobook,OAB term
 (OCoLC)fst01919950,Photobooks,y,photobook,genre-form,photobook,OAB term
 fast|photobooks,Photobooks,y,photobook,genre-form,photobook,OAB term
 lcgft|photobooks,Photobooks. | Photobooks,y,photobook,genre-form,photobook,OAB term
-aat|photocollages-photographic-compositions,Photocollages (photographic compositions).,y,photocollage,process-technique,photocollage,OAB term
-aat|color-photocopies,Color photocopies.,y,photocopy,process-technique,photocopy art,OAB term
-aat|photocopies,Photocopies. | photocopies.,y,photocopy,process-technique,photocopy art,OAB term
-lcgft|photography-artistic,"Photography, Artistic.",y,photography,process-technique,Photography,
-abo.org|photographic-sequence,Photographic sequence.,y,photography,process-technique,Photography,
-http://id.worldcat.org/fast/1423689.,Photographs.,y,photography,process-technique,Photography,
-lcgft|documentary-photography,Documentary photography.,y,photography,process-technique,Photography,
-aat|documentary-photography,Documentary photography,y,photography,process-technique,Photography,
-http://vocab.getty.edu/aat/300178594.,Art photography.,y,photography,process-technique,Photography,
-lcgft|landscape-photography,Landscape photography.,y,photography,process-technique,Photography,
-czenas|fotografick-publikace,Fotografické publikace.,y,photography,process-technique,Photography,
-czenas|photographical-works,Photographical works.,y,photography,process-technique,Photography,
-gmgpc|photographs,Photographs.,y,photography,process-technique,Photography,
-http://id.loc.gov/authorities/genreForms/gf2017027230.,Documentary photographs.,y,photography,process-technique,Photography,
-http://id.worldcat.org/fast/1774325.,Fotonovelas.,y,photography,process-technique,Photography,
-http://id.worldcat.org/fast/1986270.,Documentary photographs.,y,photography,process-technique,Photography,
-http://vocab.getty.edu/aat/300046300.,Photographs.,y,photography,process-technique,Photography,
-http://vocab.getty.edu/aat/300127269.,Manipulated photographs.,y,photography,process-technique,Photography,
-http://vocab.getty.edu/aat/300162056.,Black-and-white photography.,y,photography,process-technique,Photography,
-lcgft|architectural-photography,Architectural photography.,y,photography,process-technique,Photography,
-(DE-576)209067160,Fotografie,y,photography,process-technique,Photography,
-(DE-588)4045895-7,Fotografie,y,photography,process-technique,Photography,
-(DE-627)104434880,Fotografie,y,photography,process-technique,Photography,
-aat|anaglyphs,Anaglyphs.,y,photography,process-technique,Photography,
-aat|art-photography,art photography | art photography.,y,photography,process-technique,Photography,
-aat|manipulated-photographs,Manipulated photographs,y,photography,process-technique,Photography,
-aat|photographic-prints,Photographic prints.,y,photography,process-technique,Photography,
-aat|photographs,Photographs.,y,photography,process-technique,Photography,
-aat|photography,Photography.,y,photography,process-technique,Photography,
-aat|photomontages-visual-works,Photomontages (visual works).,y,photography,process-technique,Photography,
-gmgpc|glass-negatives,Glass negatives.,y,photography,process-technique,Photography,
-gtt|foto-s,Foto's.,y,photography,process-technique,Photography,
-http://id.loc.gov/authorities/genreForms/gf2017027230,Documentary photographs.,y,photography,process-technique,Photography,
-https://id.loc.gov/authorities/genreForms/gf2017027249,Photographs.,y,photography,process-technique,Photography,
-lcgft|documentary-photographs,Documentary photographs.,y,photography,process-technique,Photography,
-local|photographs-original,"Photographs, Original. | Photographs, Original",y,photography,process-technique,Photography,
-nli|photography,Photography,y,photography,process-technique,Photography,
-nli|photography-artistic,"Photography, Artistic",y,photography,process-technique,Photography,
-none|photography-artistic,"Photography, Artistic.",y,photography,process-technique,Photography,
-rswk|photoalbum,Photoalbum,y,photography,process-technique,Photography,
-aat|photogravures,Photogravures,y,photogravure,process-technique,Photogravure,
-aat|photogravures-prints,Photogravures (prints),y,photogravure,process-technique,Photogravure,
-none|photogravures,Photogravures.,y,photogravure,process-technique,Photogravure,
-http://vocab.getty.edu/aat/300053275.,Photolithography.,y,photolithography,process-technique,Photolithography,
-aat|photopolymer-plates-printing-plates,Photopolymer plates (printing plates).,y,photopolymer-print,process-technique,photopolymer print,OAB term
-aat|pigment-prints,Pigment prints | Pigment prints.,y,pigment,material,Pigments,
-http://rdaregistry.info/termList/RDAMaterial/1029.,plastic,y,plastic,material,"Plastics (acrylic, acetate, plexiglass)",
-http://vocab.getty.edu/aat/300255863.,Acetate film.,y,plastic,material,"
-Plastics (acrylic, acetate, plexiglass)",
-(CStmoGRI)aatgf300014502,vinyl.,y,plastic,material,"Plastics (acrylic, acetate, plexiglass)",
-aat|acrylic-sheet,Acrylic sheet.,y,plastic,material,"
-Plastics (acrylic, acetate, plexiglass)",
-aat|mylar-tm,Mylar (TM),y,plastic,material,"Plastics (acrylic, acetate, plexiglass)",
-aat|nylon,Nylon.,y,plastic,material,"Plastics (acrylic, acetate, plexiglass)",
-aat|plastic-laminate,Plastic laminate,y,plastic,material,"
-Plastics (acrylic, acetate, plexiglass)",
-aat|vinyl,vinyl.,y,plastic,material,"Plastics (acrylic, acetate, plexiglass)",
-rdamat|plastic,plastic,y,plastic,material,"
-Plastics (acrylic, acetate, plexiglass)",
 aat|plays,Plays,y,play-script,genre-form,Play/Script,
-aat|card-games-game-sets,Card games (game sets),y,playing-cards,structure-physical-format,playing cards,OAB term
-gmgpc|playing-cards,Playing cards.,y,playing-cards,structure-physical-format,playing cards,OAB term
-http://vocab.getty.edu/aat/300217923.,Packs of cards.,y,playing-cards,structure-physical-format,playing cards,OAB term
-aat|playing-cards,Playing cards.,y,playing-cards,structure-physical-format,playing cards,OAB term
-http://id.loc.gov/authorities/genreForms/gf2017027252.,Playing cards.,y,playing-cards,structure-physical-format,playing cards,OAB term
-http://id.worldcat.org/fast/1986271.,Playing cards.,y,playing-cards,structure-physical-format,playing cards,OAB term
-http://vocab.getty.edu/aat/300053436.,Pochoir (technique),y,pochoir,process-technique,Pochoir,
-aat|pochoir,Pochoir | Pochoir.,y,pochoir,process-technique,Pochoir,
-gmgpc|pochoir-prints,Pochoir prints,y,pochoir,process-technique,Pochoir,
 http://id.loc.gov/authorities/genreForms/gf2014026481.,Poetry.,y,poetry,genre-form,Poetry,
 http://id.worldcat.org/fast/1423828.,Poetry.,y,poetry,genre-form,Poetry,
 http://id.loc.gov/authorities/genreForms/gf2014026588.,Visual poetry.,y,poetry,genre-form,Poetry,
@@ -584,76 +243,14 @@ rbmscv|concrete-poems,Concrete poems.,y,poetry,genre-form,Poetry,
 rvmgf|poe-sie,Poésie.,y,poetry,genre-form,Poetry,
 rvmgf|poe-sie-concre-te,Poésie concrète.,y,poetry,genre-form,Poetry,
 rvmgf|poe-sie-expe-rimentale,Poésie expérimentale.,y,poetry,genre-form,Poetry,
-http://vocab.getty.edu/aat/300201034.,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
-http://id.loc.gov/authorities/genreForms/gf2014026150.,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
-http://id.worldcat.org/fast/1919955.,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
-aat|pop-up-books,Pop-up books,y,pop-up-element,structure-physical-format,Pop-up elements,
-rbmscv|pop-up-books,Pop-up books,y,pop-up-element,structure-physical-format,Pop-up elements,
-(OCoLC)fst01919955.,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
-http://id.loc.gov/authorities/genreForms/gf2014026150,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
-lcgft|pop-up-books,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
-local|books-with-pop-up-illustrations,Books with pop-up illustrations,y,pop-up-element,structure-physical-format,Pop-up elements,
-none|pop-up-books,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up element,
-http://vocab.getty.edu/aat/300198929.,Portfolios (containers),y,portfolio,enclosure,Portfolio,
-aat|postage-stamps,Postage stamps.,y,postage-stamp,structure-physical-format,Postage stamp,
-http://id.loc.gov/authorities/genreForms/gf2014026151.,Postcards.,y,postcard,structure-physical-format,Postcard,
-http://id.worldcat.org/fast/1726707.,Postcards.,y,postcard,structure-physical-format,Postcard,
-http://vocab.getty.edu/aat/300026819.,Picture postcards.,y,postcard,structure-physical-format,Postcard,
-aat|postcards,Postcards. | Postcards,y,postcard,structure-physical-format,Postcard,
-http://id.loc.gov/authorities/genreForms/gf2014026151,Postcards.,y,postcard,structure-physical-format,Postcard,
-lcgft|postcards,Postcards.,y,postcard,structure-physical-format,Postcard,
-none|postcards-aat,Postcards.aat.,y,postcard,structure-physical-format,Postcard,
-aat|posters,Posters,y,poster,structure-physical-format,Poster,
-http://vocab.getty.edu/aat/300199780.,Ollas (vessels),y,pot,enclosure,Pot (vessel),
-lcsh|pulp-painting,Pulp painting.,y,pulp-painting,process-technique,Pulp Painting (Pulp Imaging),
-none|pulp-painting,Pulp painting.,y,pulp-painting,process-technique,Pulp Painting (Pulp Imaging),
-aat|pyrography,Pyrography,y,pyrography,process-technique,Pyrography,
 http://id.worldcat.org/fast/1423792.,Quotations.,y,quotations,genre-form,Quotations,
 (OCoLC)fst01423792,Quotations.,y,quotations,genre-form,Quotations,
-aat|recycled-materials,Recycled materials.,y,recycled-material,material,Recycled material,
-http://vocab.getty.edu/aat/300041391.,Relief prints.,y,relief-printing,process-technique,Relief Printing,
-http://vocab.getty.edu/aat/300053289.,Block printing (relief printing process),y,relief-printing,process-technique,Relief Printing,
-http://vocab.getty.edu/aat/300264640.,Vinylcuts.,y,relief-printing,process-technique,Relief Printing,
-aat|relief-prints,Relief prints.,y,relief-printing,process-technique,Relief Printing,
-http://id.loc.gov/authorities/genreForms/gf2017027256.,Relief prints.,y,relief-printing,process-technique,Relief Printing,
-http://id.worldcat.org/fast/1986258.,Relief prints.,y,relief-printing,process-technique,Relief Printing,
-http://vocab.getty.edu/aat/300014668.,Ribbon (material),y,ribbon,material,Ribbon,
-aat|ribbon-material,Ribbon (material).,y,ribbon,material,Ribbon,
-aat|saddle-stitching,Saddle stitching.,y,saddle-stitching,process-technique,saddle stitch binding,OAB term
-http://vocab.getty.edu/aat/300178688.,Screen prints.,y,screen-printing,process-technique,Screen Printing,
-http://vocab.getty.edu/aat/300053281.,Screen printing.,y,screen-printing,process-technique,Screen Printing,
-http://id.loc.gov/authorities/genreForms/gf2017027258.,Screen prints.,y,screen-printing,process-technique,Screen Printing,
-http://id.worldcat.org/fast/1986255.,Screen prints.,y,screen-printing,process-technique,Screen Printing,
-(CStmoGRI)aatgf300178688,screen prints.,y,screen-printing,process-technique,Screen Printing,
-(OCoLC)fst01986255,Screen prints,y,screen-printing,process-technique,Screen Printing,
-aat|screen-printing,Screen printing,y,screen-printing,process-technique,Screen Printing,
-aat|screen-prints,Screen prints | Screen prints.,y,screen-printing,process-technique,Screen Printing,
-aat|screenprints,Screenprints,y,screen-printing,process-technique,Screen Printing,
-lcgft|screen-prints,Screen prints.,y,screen-printing,process-technique,Screen Printing,
-local|chicago-screw-binding,Chicago screw binding.,y,screw-posts,structure-physical-format,screw posts,OAB term
-http://vocab.getty.edu/aat/300028629.,Scrolls (information artifacts),y,scroll,structure-physical-format,Scroll,
-http://vocab.getty.edu/aat/300178463.,Handscrolls.,y,scroll,structure-physical-format,scroll,
-aat|scrolls-information-artifacts,Scrolls (information artifacts),y,scroll,structure-physical-format,Scroll,
-http://id.loc.gov/vocabulary/rbmscv/cv01881.,Shaped books.,y,sculptural-bookwork,structure-physical-format,Sculptural Bookwork,
-aat|shaped-books,Shaped books | Shaped books.,y,sculptural-bookwork,structure-physical-format,Sculptural Bookwork,
-local|shaped-books,Shaped books,y,sculptural-bookwork,structure-physical-format,Sculptural Bookwork,
-rbpri|shaped-books-printing,Shaped books (Printing),y,sculptural-bookwork,structure-physical-format,Sculptural Bookwork,
-aat|bas-reliefs-sculpture,Bas-reliefs (sculpture),y,sculpture,process-technique,Sculpture,
-aat|paper-scupltors,Paper scupltors.,y,sculpture,process-technique,Sculpture,
-http://vocab.getty.edu/aat/300047090,Sculpture (visual works),y,sculpture,process-technique,Sculpture,
 http://id.loc.gov/authorities/genreForms/gf2014026542.,Short stories.,y,short-stories,genre-form,Short stories,
 http://id.worldcat.org/fast/1726740.,Short stories.,y,short-stories,genre-form,Short stories,
 (CStmoGRI)aatgf300202607,short stories.,y,short-stories,genre-form,Short stories,
 (OCoLC)fst01726740,Short stories,y,short-stories,genre-form,Short stories,
 aat|short-stories,short stories.,y,short-stories,genre-form,Short stories,
 lcgft|short-stories,Short stories. | Short stories,y,short-stories,genre-form,Short stories,
-aat|side-stitching,Side stitching.,y,side-sewing,process-technique,side sewing,OAB term
-rbmscv|slipcases,Slipcases,y,slipcase,enclosure,Slipcase,
-http://id.loc.gov/vocabulary/rbmscv/cv00737.,Slipcases.,y,slipcase,enclosure,Slipcase,
-http://vocab.getty.edu/aat/300422132.,Book slipcases.,y,slipcase,enclosure,Slipcase,
-(CStmoGRI)aatgf300200341,slipcases.,y,slipcase,enclosure,Slipcase,
-aat|slipcases,Slipcases.,y,slipcase,enclosure,Slipcase,
-local|slipcases,Slipcases.,y,slipcase,enclosure,Slipcase,
 http://id.loc.gov/authorities/genreForms/gf2014026912.,Love songs.,y,song,genre-form,Song,
 http://id.worldcat.org/fast/1726662.,Love songs.,y,song,genre-form,Song,
 http://id.worldcat.org/fast/1985328.,Songs and music.,y,song,genre-form,Song,
@@ -663,77 +260,8 @@ http://id.loc.gov/authorities/genreForms/gf2014027103.,Songs.,y,song,genre-form,
 http://id.worldcat.org/fast/1726743.,Song cycles.,y,song,genre-form,Song,
 http://id.worldcat.org/fast/1726744.,Songs.,y,song,genre-form,Song,
 lcgft|songs,Songs,y,song,genre-form,Song,
-aat|sound-recordings,Sound recordings. | sound recordings.,y,sound-recording,structure-physical-format,Sound recording,
-fast|sound-recordings,Sound recordings,y,sound-recording,structure-physical-format,Sound recording,
-lcgft|sound-recordings,Sound recordings.,y,sound-recording,structure-physical-format,Sound recording,
-http://vocab.getty.edu/aat/300263000.,Spiral bindings.,y,spiral-binding,structure-physical-format,spiral binding,OAB term
-http://id.loc.gov/authorities/genreForms/gf2014026179.,Split-page books.,y,split-page-book,structure-physical-format,split-page book,OAB term
-http://id.worldcat.org/fast/1919971.,Split-page books.,y,split-page-book,structure-physical-format,split-page book,OAB term
-lcgft|split-page-books,Split-page books.,y,split-page-book,structure-physical-format,split-page book,OAB term
-local|stab-binding,Stab binding.,y,stab-binding,structure-physical-format,stab binding,OAB term
-aat|stabbing-binding,Stabbing (Binding).,y,stab-binding,structure-physical-format,stab binding,OAB term
-rbbin|stabbing-binding,Stabbing (Binding),y,stab-binding,structure-physical-format,stab binding,OAB term
-http://vocab.getty.edu/aat/300239001.,Stamping (marking),y,stamping,process-technique,Stamping,
-aat|stamping-marking,Stamping (marking) | Stamping (marking).,y,stamping,process-technique,Stamping,
-aat|rubber-stamp-art,Rubber stamp art,y,stamping-by-hand,process-technique,Stamping (by hand),
-aat|rubber-stamp-printing,Rubber stamp printing.,y,stamping-by-hand,process-technique,Stamping (by hand),
-http://vocab.getty.edu/aat/300375674.,Staple bindings.,y,staple-binding,structure-physical-format,staple binding,OAB term
-(CStmoGRI)aatgf300375674,staple bindings.,y,staple-binding,structure-physical-format,staple binding,OAB term
-aat|staple-binding,Staple binding.,y,staple-binding,structure-physical-format,staple binding,OAB term
-aat|staple-bindings,Staple bindings.,y,staple-binding,structure-physical-format,staple binding,OAB term
-http://vocab.getty.edu/aat/300435283.,Stencil prints.,y,stenciling,process-technique,Stenciling,
-aat|stenciling-process,Stenciling (process) | Stenciling (process).,y,stenciling,process-technique,Stenciling,
-aat|stencils-visual-works,Stencils (visual works),y,stenciling,process-technique,Stenciling,
-http://vocab.getty.edu/aat/300207379.,Stickers.,y,stickers,structure-physical-format,stickers,OAB term
-http://vocab.getty.edu/aat/300014249.,String (fiber product),y,string,material,String,
-local|tab-closure,Tab closure.,y,tab-binding,structure-physical-format,Tab binding,
-http://vocab.getty.edu/aat/300231732.,Printed textile materials.,y,textile,material,Textile,
-http://rdaregistry.info/termList/RDAMaterial/1039.,textile,y,textile,material,Textile,
-http://vocab.getty.edu/aat/300212499.,Shirts (main garments),y,textile,material,Textile,
-http://vocab.getty.edu/aat/300216195.,Handkerchiefs.,y,textile,material,Textile,
-aat|chevron-twill,Chevron twill.,y,textile,material,Textile,
-aat|satin,Satin.,y,textile,material,Textile,
-aat|twill,Twill.,y,textile,material,Textile,
-aat|velvet-fabric-weave,Velvet (fabric weave).,y,textile,material,Textile,
-http://rdaregistry.info/termList/RDAMaterial/1030.,polyester,y,textile,material,Textile,
-none|textured-books,Textured books.,y,textured-book,structure-physical-format,textured book,OAB term
-aat|thread,Thread.,y,thread,material,Thread,
-http://vocab.getty.edu/aat/300014145.,Tissue paper.,y,tissue-paper,material,Tissue paper,
-http://vocab.getty.edu/aat/300056219.,Translucency.,y,translucent-element,structure-physical-format,translucent element,OAB term
-gmgpc|transparencies,Transparencies,y,transparent-element,structure-physical-format,transparent element,OAB term
-aat|transparent-paper,Transparent paper. | transparent paper.,y,transparent-paper,material,Transparent paper,
-lcgft|triptychs,Triptychs.,y,triptych,structure-physical-format,triptych,OAB term
-lcgft|tunnel-books,Tunnel books.,y,tunnel-book,structure-physical-format,Tunnel Book,
-none|tunnel-books,Tunnel books.,y,tunnel-book,structure-physical-format,Tunnel Book,
-aat|typewriting,Typewriting.,y,typewriter-art,process-technique,typewriter art,OAB term
-rbmscv|unbound-sheets,Unbound sheets,y,unbound-sheets,structure-physical-format,unbound sheets,OAB term
-rbbin|unbound-sheets,Unbound sheets.,y,unbound-sheets,structure-physical-format,unbound sheets,OAB term
-http://id.loc.gov/vocabulary/rbmscv/cv00762.,Unopened books.,y,unopened-book,structure-physical-format,Unopened book,
-rbbin|vellum-bindings-binding,Vellum bindings (Binding),y,vellum,material,vellum,OAB term
 http://id.worldcat.org/fast/1726770.,Video games.,y,video-game,genre-form,Video game,
-lcgft|video-recordings-for-hard-of-hearing-people,Video recordings for hard of hearing people.,y,video-recording,structure-physical-format,Video recording,
-aat|volvelles,Volvelles.,y,volvelle,structure-physical-format,volvelle,OAB term
-aat|watercolor-paint,Watercolor (paint),y,watercolor-paint,material,watercolor,OAB term
-aat|watercolors-paintings,Watercolors (paintings),y,watercolor-paint,material,watercolor,OAB term
-lcgft|watercolors,Watercolors.,y,watercolor-paint,material,watercolor,OAB term
-http://rdaregistry.info/termList/RDAMaterial/1045.,wood,y,wood,material,Wood,
-rbmscv|wooden-bindings,Wooden bindings,y,wood,material,Wood,
-http://vocab.getty.edu/aat/300011914.,Wood (plant material),y,wood,material,Wood,
-aat|wood-plant-material,Wood (plant material).,y,wood,material,Wood,
-lcsh|wood,Wood.,y,wood,material,Wood,
-rbtyp|wood-types,Wood types,y,wood-type,process-technique,wood type,OAB term
-http://vocab.getty.edu/aat/300041405.,Woodcuts (prints),y,woodcut,process-technique,woodcut,OAB term
-aat|woodcuts-prints,Woodcuts (prints),y,woodcut,process-technique,woodcut,OAB term
-http://id.loc.gov/authorities/genreForms/gf2017027269.,Woodcuts.,y,woodcut,process-technique,woodcut,OAB term
-http://id.worldcat.org/fast/1986233.,Woodcuts.,y,woodcut,process-technique,woodcut,OAB term
-aat|woodcuts,Woodcuts,y,woodcut,process-technique,woodcut,OAB term
-fast|woodcuts,Woodcuts,y,woodcut,process-technique,woodcut,OAB term
-gmgpc|woodcuts,Woodcuts.,y,woodcut,process-technique,woodcut,OAB term
-lcgft|woodcuts,Woodcuts | Woodcuts.,y,woodcut,process-technique,woodcut,OAB term
 local|wordless-books,Wordless books.,y,wordless-book,genre-form,wordless book,OAB term
-http://vocab.getty.edu/aat/300211392.,Wrappers (book covers),y,wrapper,enclosure,wrapper,OAB term
-rbbin|wrappers-binding,Wrappers (Binding),y,wrapper,enclosure,wrapper,OAB term
-http://vocab.getty.edu/aat/300014252.,Yarn.,y,yarn,material,Yarn,
 rbmscv|zines,Zines,y,zine,genre-form,Zine,
 http://id.loc.gov/authorities/genreForms/gf2014026210.,Zines.,y,zine,genre-form,Zine,
 rbmscv|fanzines,Fanzines,y,zine,genre-form,Zine,
@@ -745,6 +273,497 @@ http://id.loc.gov/vocabulary/rbmscv/cv02058.,Zines.,y,zine,genre-form,Zine,
 http://id.loc.gov/vocabulary/rbmscv/cv02061.,Fanzines.,y,zine,genre-form,Zine,
 lcgft|zines,Zines | Zines.,y,zine,genre-form,Zine,
 local|zines,Zines,y,zine,genre-form,Zine,
+(OCoLC)fst01919987.,Zines.,y,zine,genre-form,Zine,
+aat|japanese-paper-handmade-paper,Japanese paper (handmade paper).,y,hand-papermaking-japan,hand-papermaking-traditions,Hand Papermaking Traditions (Japan),
+http://vocab.getty.edu/aat/300183813.,Hosho.,y,hand-papermaking-japan,hand-papermaking-traditions,Hand Papermaking Traditions (Japan),
+aat|rabbit-hair,Rabbit hair.,y,animal-material,material,"Natural material from animal source (fur, bone, blood...)",
+aat|rabbit-skin,Rabbit skin.,y,animal-material,material,"Natural material from animal source (fur, bone, blood...)",
+aat|urine,Urine.,y,animal-material,material,"Natural material from animal source (fur, bone, blood...)",
+aat|artificial-fur,Artificial fur.,y,artificial-fur,material,Artificial fur,
+http://vocab.getty.edu/aat/300234006.,Beads (pierced objects),y,beads,material,Beads,
+aat|book-cloth-textile-material,Book cloth (textile material),y,book-cloth,material,Book Cloth,
+http://rdaregistry.info/termList/RDAMaterial/1004.,Bristol board,y,bristol-board,material,Bristol board,
+http://vocab.getty.edu/aat/300014076.,Burlap.,y,burlap,material,Burlap,
+http://vocab.getty.edu/aat/300014078.,Canvas (textile material),y,canvas,material,Canvas,
+aat|canvas-textile-material,Canvas (textile material).,y,canvas,material,Canvas,
+http://vocab.getty.edu/aat/300014224.,Cardboard.,y,cardboard,material,Cardboard,
+http://rdaregistry.info/termList/RDAMaterial/1006.,cardboard,y,cardboard,material,Cardboard,
+local|corrugated-paperboard-bindings,Corrugated paperboard bindings.,y,cardboard,material,Cardboard,
+aat|cardboard,Cardboard.,y,cardboard,material,Cardboard,
+rbbin|corrugated-board-bindings,Corrugated board bindings.,y,cardboard,material,Cardboard,
+http://vocab.getty.edu/aat/300162391.,Cloth.,y,cloth,material,Cloth,
+http://vocab.getty.edu/aat/300263749.,Cloth books (books),y,cloth,material,Cloth,
+http://vocab.getty.edu/aat/300417761.,Cloth bindings (bookbindings),y,cloth,material,Cloth,
+aat|cloth,Cloth.,y,cloth,material,Cloth,
+aat|printed-cloth-bindings-gathered-matter-components,Printed cloth bindings (gathered matter components.,y,cloth,material,Cloth,
+http://vocab.getty.edu/aat/300183668.,Construction paper.,y,construction-paper,material,Construction paper,
+http://vocab.getty.edu/aat/300014247.,Cord (fiber product),y,cord,material,Cord,
+http://vocab.getty.edu/aat/300253051.,Cords (binding components),y,cord,material,Cord,
+rbmscv|decorated-paper-bindings,Decorated paper bindings,y,decorative-paper,material,Decorative Paper,
+http://vocab.getty.edu/aat/300014634.,Dowels.,y,dowel,material,Dowel,
+aat|dowels,Dowels,y,dowel,material,Dowel,
+aat|felt-textile,Felt (textile).,y,felt,material,Felt,
+aat|felt-work,Felt work.,y,felt,material,Felt,
+http://vocab.getty.edu/aat/300033565.,Nails (fasteners),y,found-object,material,Found Object/s,
+http://vocab.getty.edu/aat/300045627.,Bottles.,y,found-object,material,Found Object/s,
+http://vocab.getty.edu/aat/300045657.,Cans (containers),y,found-object,material,Found Object/s,
+http://vocab.getty.edu/aat/300185694.,Sails.,y,found-object,material,Found Object/s,
+http://vocab.getty.edu/aat/300247399.,Life preservers.,y,found-object,material,Found Object/s,
+http://vocab.getty.edu/aat/300429554.,Newspaper clippings.,y,found-object,material,Found Object/s,
+aat|hinges-hardware,Hinges (hardware).,y,found-object,material,Found Object/s,
+aat|pins-fasteners,Pins (fasteners).,y,found-object,material,Found Object/s,
+http://vocab.getty.edu/aat/300036449.,Thumbtacks.,y,found-object,material,Found Object/s,
+aat|glassine,Glassine.,y,glassine,material,Glassine,
+aat|gouaches-paintings,Gouaches (paintings),y,gouache,material,Gouache,
+http://id.loc.gov/vocabulary/rbmscv/cv01435.,Handmade papers.,y,handmade-paper,material,Handmade Paper,
+http://vocab.getty.edu/aat/300411543.,Handmade paper.,y,handmade-paper,material,Handmade Paper,
+rbmscv|handmade-papers,Handmade papers,y,handmade-paper,material,Handmade Paper,
+aat|handmade-paper,Handmade paper.,y,handmade-paper,material,Handmade Paper,
+aat|handmade-papers,Handmade papers.,y,handmade-paper,material,Handmade Paper,
+aat|handmade-papers-fiber-product,Handmade papers (fiber product),y,handmade-paper,material,Handmade Paper,
+lcsh|paper-handmade,"Paper, Handmade. | Paper, handmade.",y,handmade-paper,material,Handmade paper,
+rbpap|handmade-papers,Handmade papers.,y,handmade-paper,material,Handmade Paper,
+rbpap|handmade-papers-paper,Handmade papers (Paper),y,handmade-paper,material,Handmade Paper,
+aat|ink,Ink.,y,ink,material,Ink,
+http://vocab.getty.edu/aat/300024549.,Magnets.,y,magnet,material,Magnet/s,
+http://rdaregistry.info/termList/RDAMaterial/1022.,metal,y,metal,material,Metal,
+http://id.loc.gov/vocabulary/rbmscv/cv00092.,Aluminum bindings.,y,metal,material,Metal,
+aat|brass-alloy,Brass (alloy),y,metal,material,Metal,
+rdamat|metal,metal,y,metal,material,Metal,
+aat|metallic-paper,metallic paper.,y,metallic-paper,material,Metallic paper,
+http://vocab.getty.edu/aat/300163347.,Mixed media.,y,mixed-media,material,Mixed Media,
+aat|mixed-media,Mixed media.,y,mixed-media,material,Mixed Media,
+http://vocab.getty.edu/aat/300014341.,Sand.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
+http://vocab.getty.edu/aat/300011734.,Earth (soil),y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
+http://vocab.getty.edu/aat/300014681.,Sticks (object genre),y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
+http://vocab.getty.edu/aat/300124117.,Plant material.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
+aat|bamboo,Bamboo,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
+aat|organic-materials,Organic materials.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
+aat|plant-material,Plant material.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
+aat|sand,Sand.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
+aat|stone-worked-rock,Stone (worked rock).,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
+rbpap|straw-fibers,Straw fibers.,y,natural-material,material,"Natural Materials (sticks, rocks, flora…)",
+rbmscv|painted-bindings,Painted bindings,y,paint,material,Paint,
+http://rdaregistry.info/termList/RDAMaterial/1025.,paper,y,paper,material,Paper,
+rbpap|paper-evidence-paper,Paper evidence (Paper),y,paper,material,Paper,
+aat|paperwork,Paperwork.,y,paper,material,Paper,
+none|paper-bindings,Paper bindings.,y,paper,material,Paper,
+rbbin|paper-bindings-binding,Paper bindings (Binding),y,paper,material,Paper,
+rbbin|paper-onlays-binding,Paper onlays (Binding),y,paper,material,Paper,
+rdamat|paper,paper,y,paper,material,Paper,
+http://id.loc.gov/vocabulary/rbmscv/cv01503.,Kozo fiber papers.,y,papermaking-fiber-paper-mulberry,material,Papermaking Fiber: Paper Mulberry (Kozo/Dak),
+http://vocab.getty.edu/aat/300375519.,Kozo (paper),y,papermaking-fiber-paper-mulberry,material,Papermaking Fiber: Paper Mulberry (Kozo/Dak),
+aat|wood-pulp-paper,Wood pulp paper,y,papermaking-fiber-sulfite-wood,material,Papermaking Fiber: Sulfite/Wood,
+http://id.loc.gov/vocabulary/rbmscv/cv01187.,Cotton fiber papers.,y,papermaking-fiber-textile,material,"Papermaking Fiber: Textiles (linen, cotton, hemp)",
+http://vocab.getty.edu/aat/300014130.,Rag paper.,y,papermaking-fiber-textile,material,"Papermaking Fiber: Textiles (linen, cotton, hemp)",
+rbpap|cotton-fibers-paper,Cotton fibers (Paper),y,papermaking-fiber-textile,material,"Papermaking Fiber: Textiles (linen, cotton, hemp)",
+rbpap|cotton-fibers,Cotton fibers.,y,papermaking-fiber-textile,material,"Papermaking Fiber: Textiles (linen, cotton, hemp)",
+aat|papier-m-ch-sculpture,Papier-mâché sculpture,y,papier-mache,material,Papier-mâché,
+aat|papier-m-ch,Papier mâché.,y,papier-mache,material,Papier-mâché,
+rbmscv|papier-m-ch-bindings,Papier-mâché bindings,y,papier-mache,material,Papier-mâché,
+rbbin|paste-papers-binding,Paste papers (Binding).,y,paste-paper,material,Paste Paper,
+aat|pigment-prints,Pigment prints | Pigment prints.,y,pigment,material,Pigments,
+http://rdaregistry.info/termList/RDAMaterial/1029.,plastic,y,plastic,material,"Plastics (acrylic, acetate, plexiglass)",
+http://vocab.getty.edu/aat/300255863.,Acetate film.,y,plastic,material,"
+Plastics (acrylic, acetate, plexiglass)",
+(CStmoGRI)aatgf300014502,vinyl.,y,plastic,material,"Plastics (acrylic, acetate, plexiglass)",
+aat|acrylic-sheet,Acrylic sheet.,y,plastic,material,"
+Plastics (acrylic, acetate, plexiglass)",
+aat|mylar-tm,Mylar (TM),y,plastic,material,"Plastics (acrylic, acetate, plexiglass)",
+aat|nylon,Nylon.,y,plastic,material,"Plastics (acrylic, acetate, plexiglass)",
+aat|plastic-laminate,Plastic laminate,y,plastic,material,"
+Plastics (acrylic, acetate, plexiglass)",
+aat|vinyl,vinyl.,y,plastic,material,"Plastics (acrylic, acetate, plexiglass)",
+rdamat|plastic,plastic,y,plastic,material,"
+Plastics (acrylic, acetate, plexiglass)",
+aat|recycled-materials,Recycled materials.,y,recycled-material,material,Recycled material,
+http://vocab.getty.edu/aat/300014668.,Ribbon (material),y,ribbon,material,Ribbon,
+aat|ribbon-material,Ribbon (material).,y,ribbon,material,Ribbon,
+http://vocab.getty.edu/aat/300014249.,String (fiber product),y,string,material,String,
+http://vocab.getty.edu/aat/300231732.,Printed textile materials.,y,textile,material,Textile,
+http://rdaregistry.info/termList/RDAMaterial/1039.,textile,y,textile,material,Textile,
+http://vocab.getty.edu/aat/300212499.,Shirts (main garments),y,textile,material,Textile,
+http://vocab.getty.edu/aat/300216195.,Handkerchiefs.,y,textile,material,Textile,
+aat|chevron-twill,Chevron twill.,y,textile,material,Textile,
+aat|satin,Satin.,y,textile,material,Textile,
+aat|twill,Twill.,y,textile,material,Textile,
+aat|velvet-fabric-weave,Velvet (fabric weave).,y,textile,material,Textile,
+http://rdaregistry.info/termList/RDAMaterial/1030.,polyester,y,textile,material,Textile,
+aat|thread,Thread.,y,thread,material,Thread,
+http://vocab.getty.edu/aat/300014145.,Tissue paper.,y,tissue-paper,material,Tissue paper,
+aat|transparent-paper,Transparent paper. | transparent paper.,y,transparent-paper,material,Transparent paper,
+aat|twine,Twine.,y,twine,material,Twine,
+rbbin|vellum-bindings-binding,Vellum bindings (Binding),y,vellum,material,vellum,OAB term
+aat|watercolor-paint,Watercolor (paint),y,watercolor-paint,material,watercolor,OAB term
+aat|watercolors-paintings,Watercolors (paintings),y,watercolor-paint,material,watercolor,OAB term
+lcgft|watercolors,Watercolors.,y,watercolor-paint,material,watercolor,OAB term
+http://rdaregistry.info/termList/RDAMaterial/1045.,wood,y,wood,material,Wood,
+rbmscv|wooden-bindings,Wooden bindings,y,wood,material,Wood,
+http://vocab.getty.edu/aat/300011914.,Wood (plant material),y,wood,material,Wood,
+aat|wood-plant-material,Wood (plant material).,y,wood,material,Wood,
+lcsh|wood,Wood.,y,wood,material,Wood,
+http://vocab.getty.edu/aat/300014252.,Yarn.,y,yarn,material,Yarn,
+http://vocab.getty.edu/aat/300041366.,Aquatints (prints),y,aquatint,process-technique,aquatint,OAB term
+aat|aquatints,Aquatints,y,aquatint,process-technique,aquatint,OAB term
+local|asemic-writing,Asemic writing.,y,asemic-writing,process-technique,asemic writing,OAB term
+lcsh|baked-products,Baked products,y,baking-cooking,process-technique,Baking or cooking,
+lcsh|puddings,Puddings.,y,baking-cooking,process-technique,Baking or cooking,
+aat|chine-coll-process,Chine collé (process).,y,chine-colle,process-technique,Chine-collé,
+aat|chine-colle,Chine collé,y,chine-colle,process-technique,Chine-collé,
+http://vocab.getty.edu/aat/300138699.,Collage (technique),y,collage,process-technique,Collage,
+lcgft|collage,Collage.,y,collage,process-technique,Collage,
+http://id.loc.gov/authorities/genreForms/gf2017027227.,Collages.,y,collage,process-technique,Collage,
+http://id.worldcat.org/fast/1986256.,Collages.,y,collage,process-technique,Collage,
+aat|collage,Collage.,y,collage,process-technique,Collage,
+aat|collage-technique,Collage (technique),y,collage,process-technique,Collage,
+aat|collages-visual-works,Collages (visual works),y,collage,process-technique,Collage,
+http://vocab.getty.edu/aat/300033963.,Collages (visual works),y,collage,process-technique,Collage,
+lcgft|collages,Collages.,y,collage,process-technique,Collage,
+aat|collograph-printing,Collograph printing.,y,collagraph-printing,process-technique,Collagraph,OAB term
+aat|collographs,Collographs.,y,collagraph-printing,process-technique,Collagraph,OAB term
+http://vocab.getty.edu/aat/300264038.,Crochet (needlework),y,crochet,process-technique,Crochet,
+http://vocab.getty.edu/aat/300068579.,Cut-paper work.,y,cut-paper-work,process-technique,cut-paper work,OAB term
+aat|cut-paper-work,Cut-paper work.,y,cut-paper-work,process-technique,cut-paper work,OAB term
+aat|debossing,Debossing.,y,deboss,process-technique,deboss,OAB term
+aat|die-cutting,Die cutting,y,die-cutting,process-technique,Die-cutting,
+http://vocab.getty.edu/aat/300233399.,Die cutting.,y,die-cutting,process-technique,Die-cutting,
+aat|digital-prints,Digital prints.,y,digital-printing,process-technique,Digital Printing,
+gmgpc|digital-prints,Digital prints,y,digital-printing,process-technique,Digital Printing,
+(OCoLC)fst01423718,Drawings,y,drawing,process-technique,Drawing,
+aat|drawings-visual-works,Drawings (visual works),y,drawing,process-technique,Drawing,
+aat|line-drawings,Line drawings,y,drawing,process-technique,Drawing,
+gmgpc|drawings,Drawings,y,drawing,process-technique,Drawing,
+gnd|zeichnung,Zeichnung,y,drawing,process-technique,Drawing,
+gtt|tekeningen,Tekeningen.,y,drawing,process-technique,Drawing,
+http://vocab.getty.edu/aat/300033973,Drawings (visual works),y,drawing,process-technique,Drawing,
+lcgft|drawings,Drawings.,y,drawing,process-technique,Drawing,
+local|drawings-animals,Drawings: Animals.,y,drawing,process-technique,Drawing,
+local|drawings-book-illustrations-dramatizations-representations-of-legends-etc,"Drawings: Book illustrations, dramatizations, representations of legends, etc.",y,drawing,process-technique,Drawing,
+local|drawings-figures-other-than-portraits-men-full-length,Drawings: Figures other than portraits: Men: Full length.,y,drawing,process-technique,Drawing,
+local|drawings-genre,Drawings: Genre.,y,drawing,process-technique,Drawing,
+local|drawings-old-testament,Drawings: Old Testament.,y,drawing,process-technique,Drawing,
+http://vocab.getty.edu/aat/300053228.,Drypoint (printing process),y,drypoint,process-technique,drypoint,OAB term
+http://vocab.getty.edu/aat/300041523.,Embossed prints.,y,emboss,process-technique,emboss,OAB term
+aat|blind-embossing,Blind embossing.,y,emboss,process-technique,emboss,OAB term
+aat|embossing-technique,Embossing (technique),y,emboss,process-technique,emboss,OAB term
+http://id.loc.gov/vocabulary/rbmscv/cv00494.,Embossed paper bindings.,y,emboss,process-technique,emboss,OAB term
+aat|embroidery-visual-works,Embroidery (visual works).,y,embroidery,process-technique,embroidered content,OAB term
+aat|engravings,Engravings,y,engraving,process-technique,Engraving,
+aat|engravings-prints,Engravings (prints),y,engraving,process-technique,Engraving,
+http://id.loc.gov/authorities/genreForms/gf2016026017.,Erasure poetry.,y,erasure,process-technique,Erasure,
+http://id.worldcat.org/fast/1941322.,Erasure poetry.,y,erasure,process-technique,Erasure,
+http://vocab.getty.edu/aat/300053241.,Etching (printing process),y,etching,process-technique,Etching,
+aat|etching-printing-process,Etching (printing process).,y,etching,process-technique,Etching,
+aat|etchings,Etchings | Etchings.,y,etching,process-technique,Etching,
+aat|etchings-prints,Etchings (prints).,y,etching,process-technique,Etching,
+aat|soft-ground-etchings,Soft-ground etchings,y,etching,process-technique,Etching,
+gmgpc|etchings,Etchings | Etchings.,y,etching,process-technique,Etching,
+aat|gelatin-silver-prints,Gelatin silver prints,y,gelatin-printing,process-technique,Gelatin printing,
+local|gocco,Gocco.,y,gocco-printing,process-technique,gocco print,OAB term
+aat|offset-halftones,Offset halftones,y,halftone,process-technique,Halftone (color effect),
+aat|offset-printed-halftones,Offset-printed halftones,y,halftone,process-technique,Halftone (color effect),
+http://vocab.getty.edu/aat/300202344.,Hand binding.,y,hand-binding,process-technique,hand-bound book,OAB term
+http://vocab.getty.edu/aat/300133555.,Hand coloring.,y,hand-coloring,process-technique,Hand-coloring,
+aat|hand-composition,Hand composition.,y,hand-composition,process-technique,Hand composition,
+http://vocab.getty.edu/aat/300191818.,Handmade.,y,handmade,process-technique,Handmade,
+aat|handmade-books,Handmade books,y,handmade,process-technique,Handmade,
+aat|handwriting,Handwriting.,y,handwriting,process-technique,Handlettering/Handwriting,
+http://vocab.getty.edu/aat/300379073.,Foil stamping.,y,hot-stamping,process-technique,Hot Stamping,
+aat|foil-stamping,Foil stamping.,y,hot-stamping,process-technique,Hot Stamping,
+http://vocab.getty.edu/aat/300265621.,Inkjet prints.,y,inkjet-printing,process-technique,Inkjet Printing,
+aat|color-ink-jet-printing,Color ink jet printing,y,inkjet-printing,process-technique,Inkjet Printing,
+aat|inkjet-prints,Inkjet prints. | Inkjet prints,y,inkjet-printing,process-technique,Inkjet Printing,
+gmgpc|inkjet-prints,Inkjet prints,y,inkjet-printing,process-technique,Inkjet Printing,
+aat|intaglio-prints,Intaglio prints.,y,intaglio-printing,process-technique,Intaglio Printing,
+aat|laser-beam-cutting,Laser beam cutting.,y,laser-cutting,process-technique,Laser Cutting/CNC cutting,
+http://vocab.getty.edu/aat/300178926.,Letterpress printing.,y,letterpress-printing,process-technique,Letterpress printing,
+aat|leterpress-printing,Leterpress printing,y,letterpress-printing,process-technique,Letterpress printing,
+aat|letterpress-printing,Letterpress printing. | Letterpress printing,y,letterpress-printing,process-technique,Letterpress printing,
+none|letterpress-prints,Letterpress prints.,y,letterpress-printing,process-technique,Letterpress printing,
+http://vocab.getty.edu/aat/300041393.,Linocuts (prints),y,linoleum-block-printing,process-technique,Linoleum Block Printing,
+aat|linocuts,Linocuts | Linocuts.,y,linoleum-block-printing,process-technique,Linoleum Block Printing,
+aat|linocuts-prints,Linocuts (prints),y,linoleum-block-printing,process-technique,Linoleum Block Printing,
+http://id.loc.gov/authorities/genreForms/gf2017027240.,Linocuts.,y,linoleum-block-printing,process-technique,Linoleum Block Printing,
+http://id.worldcat.org/fast/1986235.,Linocuts.,y,linoleum-block-printing,process-technique,Linoleum Block Printing,
+lcgft|linocuts,Linocuts.,y,linoleum-block-printing,process-technique,Linoleum Block Printing,
+http://vocab.getty.edu/aat/300041379.,Lithographs.,y,lithography,process-technique,Lithography,
+http://id.loc.gov/authorities/genreForms/gf2017027241.,Lithographs.,y,lithography,process-technique,Lithography,
+http://id.worldcat.org/fast/1986261.,Lithographs.,y,lithography,process-technique,Lithography,
+aat|color-lithographs,Color lithographs,y,lithography,process-technique,Lithography,
+aat|lithographs,Lithographs | Lithographs.,y,lithography,process-technique,Lithography,
+aat|lithography,Lithography,y,lithography,process-technique,Lithography,
+gmgpc|lithographs,Lithographs.,y,lithography,process-technique,Lithography,
+lcgft|lithographs,Lithographs.,y,lithography,process-technique,Lithography,
+local|lithographs,Lithographs.,y,lithography,process-technique,Lithography,
+http://id.loc.gov/vocabulary/rbmscv/cv00063.,Marbled papers.,y,marbling,process-technique,Marbling,
+aat|monotypes,Monotypes.,y,monotype-planographic-print,process-technique,monotype (planographic print),OAB term
+aat|monotypes-planographic-prints,Monotypes (Planographic prints).,y,monotype-planographic-print,process-technique,monotype (planographic print),OAB term
+local|offset-printing,Offset printing,y,offset-lithography,process-technique,Offset Lithography,
+aat|offset-lithographs,Offset lithographs | offset lithographs.,y,offset-lithography,process-technique,Offset Lithography,
+aat|offset-lithography,Offset lithography. | Offset lithography,y,offset-lithography,process-technique,Offset Lithography,
+aat|offset-printing,Offset printing. | Offset printing,y,offset-lithography,process-technique,Offset Lithography,
+gmgpc|offset-lithographs,Offset lithographs,y,offset-lithography,process-technique,Offset Lithography,
+none|offset-prints,Offset prints.,y,offset-lithography,process-technique,Offset Lithography,
+http://vocab.getty.edu/aat/300053324.,Overprinting.,y,overprinting,process-technique,Overprinting,
+http://vocab.getty.edu/aat/300033618,Paintings (visual works),y,painting,process-technique,Painting (process),
+http://vocab.getty.edu/aat/300033618.,Paintings (visual works),y,painting,process-technique,Painting (process),
+aat|palladium-prints,Palladium prints.,y,palladium-process,process-technique,Palladium process,
+gmgpc|palladium-prints,Palladium prints,y,palladium-process,process-technique,Palladium process,
+aat|photocollages-photographic-compositions,Photocollages (photographic compositions).,y,photocollage,process-technique,photocollage,OAB term
+aat|color-photocopies,Color photocopies.,y,photocopy,process-technique,photocopy art,OAB term
+aat|photocopies,Photocopies. | photocopies.,y,photocopy,process-technique,photocopy art,OAB term
+lcgft|photography-artistic,"Photography, Artistic.",y,photography,process-technique,Photography,
+abo.org|photographic-sequence,Photographic sequence.,y,photography,process-technique,Photography,
+http://id.worldcat.org/fast/1423689.,Photographs.,y,photography,process-technique,Photography,
+lcgft|documentary-photography,Documentary photography.,y,photography,process-technique,Photography,
+aat|documentary-photography,Documentary photography,y,photography,process-technique,Photography,
+http://vocab.getty.edu/aat/300178594.,Art photography.,y,photography,process-technique,Photography,
+lcgft|landscape-photography,Landscape photography.,y,photography,process-technique,Photography,
+czenas|fotografick-publikace,Fotografické publikace.,y,photography,process-technique,Photography,
+czenas|photographical-works,Photographical works.,y,photography,process-technique,Photography,
+gmgpc|photographs,Photographs.,y,photography,process-technique,Photography,
+http://id.loc.gov/authorities/genreForms/gf2017027230.,Documentary photographs.,y,photography,process-technique,Photography,
+http://id.worldcat.org/fast/1774325.,Fotonovelas.,y,photography,process-technique,Photography,
+http://id.worldcat.org/fast/1986270.,Documentary photographs.,y,photography,process-technique,Photography,
+http://vocab.getty.edu/aat/300046300.,Photographs.,y,photography,process-technique,Photography,
+http://vocab.getty.edu/aat/300127269.,Manipulated photographs.,y,photography,process-technique,Photography,
+http://vocab.getty.edu/aat/300162056.,Black-and-white photography.,y,photography,process-technique,Photography,
+lcgft|architectural-photography,Architectural photography.,y,photography,process-technique,Photography,
+(DE-576)209067160,Fotografie,y,photography,process-technique,Photography,
+(DE-588)4045895-7,Fotografie,y,photography,process-technique,Photography,
+(DE-627)104434880,Fotografie,y,photography,process-technique,Photography,
+aat|anaglyphs,Anaglyphs.,y,photography,process-technique,Photography,
+aat|art-photography,art photography | art photography.,y,photography,process-technique,Photography,
+aat|manipulated-photographs,Manipulated photographs,y,photography,process-technique,Photography,
+aat|photographic-prints,Photographic prints.,y,photography,process-technique,Photography,
+aat|photographs,Photographs.,y,photography,process-technique,Photography,
+aat|photography,Photography.,y,photography,process-technique,Photography,
+aat|photomontages-visual-works,Photomontages (visual works).,y,photography,process-technique,Photography,
+gmgpc|glass-negatives,Glass negatives.,y,photography,process-technique,Photography,
+gtt|foto-s,Foto's.,y,photography,process-technique,Photography,
+http://id.loc.gov/authorities/genreForms/gf2017027230,Documentary photographs.,y,photography,process-technique,Photography,
+https://id.loc.gov/authorities/genreForms/gf2017027249,Photographs.,y,photography,process-technique,Photography,
+lcgft|documentary-photographs,Documentary photographs.,y,photography,process-technique,Photography,
+local|photographs-original,"Photographs, Original. | Photographs, Original",y,photography,process-technique,Photography,
+nli|photography,Photography,y,photography,process-technique,Photography,
+nli|photography-artistic,"Photography, Artistic",y,photography,process-technique,Photography,
+none|photography-artistic,"Photography, Artistic.",y,photography,process-technique,Photography,
+rswk|photoalbum,Photoalbum,y,photography,process-technique,Photography,
+aat|photogravures,Photogravures,y,photogravure,process-technique,Photogravure,
+aat|photogravures-prints,Photogravures (prints),y,photogravure,process-technique,Photogravure,
+none|photogravures,Photogravures.,y,photogravure,process-technique,Photogravure,
+http://vocab.getty.edu/aat/300053275.,Photolithography.,y,photolithography,process-technique,Photolithography,
+aat|photopolymer-plates-printing-plates,Photopolymer plates (printing plates).,y,photopolymer-print,process-technique,photopolymer print,OAB term
+http://vocab.getty.edu/aat/300053436.,Pochoir (technique),y,pochoir,process-technique,Pochoir,
+aat|pochoir,Pochoir | Pochoir.,y,pochoir,process-technique,Pochoir,
+gmgpc|pochoir-prints,Pochoir prints,y,pochoir,process-technique,Pochoir,
+lcsh|pulp-painting,Pulp painting.,y,pulp-painting,process-technique,Pulp Painting (Pulp Imaging),
+none|pulp-painting,Pulp painting.,y,pulp-painting,process-technique,Pulp Painting (Pulp Imaging),
+aat|pyrography,Pyrography,y,pyrography,process-technique,Pyrography,
+http://vocab.getty.edu/aat/300041391.,Relief prints.,y,relief-printing,process-technique,Relief Printing,
+http://vocab.getty.edu/aat/300053289.,Block printing (relief printing process),y,relief-printing,process-technique,Relief Printing,
+http://vocab.getty.edu/aat/300264640.,Vinylcuts.,y,relief-printing,process-technique,Relief Printing,
+aat|relief-prints,Relief prints.,y,relief-printing,process-technique,Relief Printing,
+http://id.loc.gov/authorities/genreForms/gf2017027256.,Relief prints.,y,relief-printing,process-technique,Relief Printing,
+http://id.worldcat.org/fast/1986258.,Relief prints.,y,relief-printing,process-technique,Relief Printing,
+http://vocab.getty.edu/aat/300178688.,Screen prints.,y,screen-printing,process-technique,Screen Printing,
+http://vocab.getty.edu/aat/300053281.,Screen printing.,y,screen-printing,process-technique,Screen Printing,
+http://id.loc.gov/authorities/genreForms/gf2017027258.,Screen prints.,y,screen-printing,process-technique,Screen Printing,
+http://id.worldcat.org/fast/1986255.,Screen prints.,y,screen-printing,process-technique,Screen Printing,
+(CStmoGRI)aatgf300178688,screen prints.,y,screen-printing,process-technique,Screen Printing,
+(OCoLC)fst01986255,Screen prints,y,screen-printing,process-technique,Screen Printing,
+aat|screen-printing,Screen printing,y,screen-printing,process-technique,Screen Printing,
+aat|screen-prints,Screen prints | Screen prints.,y,screen-printing,process-technique,Screen Printing,
+aat|screenprints,Screenprints,y,screen-printing,process-technique,Screen Printing,
+lcgft|screen-prints,Screen prints.,y,screen-printing,process-technique,Screen Printing,
+aat|bas-reliefs-sculpture,Bas-reliefs (sculpture),y,sculpture,process-technique,Sculpture,
+aat|paper-scupltors,Paper scupltors.,y,sculpture,process-technique,Sculpture,
+http://vocab.getty.edu/aat/300047090,Sculpture (visual works),y,sculpture,process-technique,Sculpture,
+aat|side-stitching,Side stitching.,y,side-sewing,process-technique,side sewing,OAB term
+http://vocab.getty.edu/aat/300239001.,Stamping (marking),y,stamping,process-technique,Stamping,
+aat|stamping-marking,Stamping (marking) | Stamping (marking).,y,stamping,process-technique,Stamping,
+aat|rubber-stamp-art,Rubber stamp art,y,stamping-by-hand,process-technique,Stamping (by hand),
+aat|rubber-stamp-printing,Rubber stamp printing.,y,stamping-by-hand,process-technique,Stamping (by hand),
+http://vocab.getty.edu/aat/300435283.,Stencil prints.,y,stenciling,process-technique,Stenciling,
+aat|stenciling-process,Stenciling (process) | Stenciling (process).,y,stenciling,process-technique,Stenciling,
+aat|stencils-visual-works,Stencils (visual works),y,stenciling,process-technique,Stenciling,
+aat|typewriting,Typewriting.,y,typewriter-art,process-technique,typewriter art,OAB term
+rbtyp|wood-types,Wood types,y,wood-type,process-technique,wood type,OAB term
+http://vocab.getty.edu/aat/300041405.,Woodcuts (prints),y,woodcut,process-technique,woodcut,OAB term
+aat|woodcuts-prints,Woodcuts (prints),y,woodcut,process-technique,woodcut,OAB term
+http://id.loc.gov/authorities/genreForms/gf2017027269.,Woodcuts.,y,woodcut,process-technique,woodcut,OAB term
+http://id.worldcat.org/fast/1986233.,Woodcuts.,y,woodcut,process-technique,woodcut,OAB term
+aat|woodcuts,Woodcuts,y,woodcut,process-technique,woodcut,OAB term
+fast|woodcuts,Woodcuts,y,woodcut,process-technique,woodcut,OAB term
+gmgpc|woodcuts,Woodcuts.,y,woodcut,process-technique,woodcut,OAB term
+lcgft|woodcuts,Woodcuts | Woodcuts.,y,woodcut,process-technique,woodcut,OAB term
+http://id.loc.gov/vocabulary/rbmscv/cv00024.,Accordion fold format.,y,accordion-binding,structure-physical-format,"Accordion ",
+rbmscv|accordion-fold-format,Accordion fold format,y,accordion-binding,structure-physical-format,"Accordion ",
+http://id.loc.gov/authorities/genreForms/gf2022026082.,Accordion fold books.,y,accordion-binding,structure-physical-format,"Accordion ",
+http://vocab.getty.edu/aat/300438814.,Accordion books.,y,accordion-binding,structure-physical-format,"Accordion ",
+http://vocab.getty.edu/aat/300417532.,Accordion folding.,y,accordion-binding,structure-physical-format,"Accordion ",
+aat|accordion-books,accordion books.,y,accordion-binding,structure-physical-format,"Accordion ",
+lcgft|accordion-fold-books,Accordion fold books.,y,accordion-binding,structure-physical-format,"Accordion ",
+local|accordion-bindings,Accordion bindings.,y,accordion-binding,structure-physical-format,"Accordion ",
+none|accordion-bindings,Accordion bindings.,y,accordion-binding,structure-physical-format,"Accordion ",
+rbbind|accordion-fold-format-binding,Accordion fold format (Binding),y,accordion-binding,structure-physical-format,"Accordion ",
+rbbin|accordian-fold-format-binding,Accordian fold format (Binding),y,accordion-binding,structure-physical-format,"Accordion ",
+rbbin|accordion-fold-format,Accordion fold format | Accordion fold format.,y,accordion-binding,structure-physical-format,"Accordion ",
+rbbin|accordion-fold-format-binding,Accordion fold format (Binding) | Accordion fold format (Binding). | Accordion fold format (binding),y,accordion-binding,structure-physical-format,"Accordion ",
+rbbin|acordion-fold-format-binding,Acordion fold format (binding),y,accordion-binding,structure-physical-format,"Accordion ",
+local|altered-books,Altered books,y,altered-book,structure-physical-format,Altered Book,
+aat|altered-books,Altered books.,y,altered-book,structure-physical-format,Altered Book,
+none|altered-books,Altered books.,y,altered-book,structure-physical-format,Altered Book,
+http://id.loc.gov/vocabulary/rbmscv/cv00200.,Backless bindings.,y,backless-binding,structure-physical-format,Backless binding,
+http://vocab.getty.edu/aat/300014614.,Blocks (shaped masses),y,blocks,structure-physical-format,Blocks (shaped masses),
+http://vocab.getty.edu/aat/300211072.,Blocks (toys),y,blocks,structure-physical-format,Blocks (shaped masses),
+(DE-576)276549368,Blu-Ray-Disc,y,blu-ray-disc,structure-physical-format,Blu-Ray Disc,
+(DE-588)7597887-8,Blu-Ray-Disc,y,blu-ray-disc,structure-physical-format,Blu-Ray Disc,
+(DE-627)556092260,Blu-Ray-Disc,y,blu-ray-disc,structure-physical-format,Blu-Ray Disc,
+lcgft|board-books,Board books.,y,board-book,structure-physical-format,board book,OAB term
+rbmscv|bookmarks,Bookmarks,y,bookmark,structure-physical-format,bookmark,OAB term
+http://id.loc.gov/authorities/genreForms/gf2014026053.,Braille books.,y,braille,structure-physical-format,Braille,
+http://id.worldcat.org/fast/1920770.,Braille books.,y,braille,structure-physical-format,Braille,
+http://vocab.getty.edu/aat/300310088.,Broadsheet (format),y,broadside,structure-physical-format,broadside,OAB term
+aat|broadsides,Broadsides. | Broadsides,y,broadside,structure-physical-format,broadside,OAB term
+rbgenr|broadsides,Broadsides,y,broadside,structure-physical-format,broadside,OAB term
+gmgpc|baseball-cards,Baseball cards,y,cards,structure-physical-format,cards,OAB term
+aat|carousel-books,Carousel books.,y,carousel-book,structure-physical-format,Carousel Book,
+local|carousel-books,Carousel books.,y,carousel-book,structure-physical-format,Carousel Book,
+rbmscv|comb-bindings,Comb bindings.,y,comb-binding,structure-physical-format,comb binding,OAB term
+none|concertina-bindings,Concertina bindings.,y,concertina-binding,structure-physical-format,concertina,OAB term
+http://id.loc.gov/vocabulary/rbmscv/cv00483.,Coptic bindings.,y,coptic-binding,structure-physical-format,coptic binding,OAB term
+http://vocab.getty.edu/aat/300263587.,Coptic bindings.,y,coptic-binding,structure-physical-format,coptic binding,OAB term
+aat|coptic-bindings,Coptic bindings.,y,coptic-binding,structure-physical-format,coptic binding,OAB term
+http://id.loc.gov/vocabulary/rbmscv/cv00485.,Corrugated board bindings.,y,corrugated-board-bindings,structure-physical-format,Corrugated board bindings,
+rbmscv|corrugated-board-bindings,Corrugated board bindings. | Corrugated board bindings,y,corrugated-board-bindings,structure-physical-format,Corrugated board bindings,
+http://vocab.getty.edu/aat/300257411.,Cutouts.,y,cutout,structure-physical-format,cutout,OAB term
+rbmscv|paper-cutouts-paper,Paper cutouts (Paper),y,cutout,structure-physical-format,cutout,OAB term
+aat|cutouts,Cutouts.,y,cutout,structure-physical-format,cutout,OAB term
+aat|paper-cutouts,Paper cutouts,y,cutout,structure-physical-format,cutout,OAB term
+aat|dioramas,Dioramas.,y,diorama,structure-physical-format,Dioramas,
+http://vocab.getty.edu/aat/300253366.,Dos-à-dos bindings.,y,dos-a-dos-binding,structure-physical-format,dos-à-dos,OAB term
+http://id.loc.gov/vocabulary/rbmscv/cv00510.,Dos-à-dos bindings.,y,dos-a-dos-binding,structure-physical-format,dos-à-dos,
+http://vocab.getty.edu/aat/300257370.,Double leaves.,y,double-leaf,structure-physical-format,Double leaf,
+rbmscv|endpapers,Endpapers,y,endpapers,structure-physical-format,endpapers,OAB term
+local|ethiopian-bindings,Ethiopian bindings.,y,ethiopian-binding,structure-physical-format,Ethiopian binding,OAB term
+aat|cadavres-exquis,Cadavres exquis.,y,exquisite-corpse,structure-physical-format,exquisite corpse,OAB term
+lcgft|flag-books,Flag books.,y,flag-book,structure-physical-format,Flag Book,
+none|flag-books-toy-and-movable-books,Flag books (Toy and movable books),y,flag-book,structure-physical-format,Flag Book,
+http://vocab.getty.edu/aat/300201033.,Flip books.,y,flip-book,structure-physical-format,Flip Book,
+http://id.loc.gov/authorities/genreForms/gf2014026105.,Flip books.,y,flip-book,structure-physical-format,Flip Book,
+http://id.worldcat.org/fast/1726615.,Flip books.,y,flip-book,structure-physical-format,Flip Book,
+lcgft|flip-books,Flip books.,y,flip-book,structure-physical-format,Flip Book,
+aat|flip-books,Flip books. | Flip books,y,flip-book,structure-physical-format,Flip Book,
+none|fliers-printed-matter,Fliers (printed matter),y,flyer,structure-physical-format,Flyer,
+http://vocab.getty.edu/aat/300015577.,Foldouts.,y,fold-out,structure-physical-format,fold-out,OAB term
+aat|foldouts,Foldouts.,y,fold-out,structure-physical-format,fold-out,OAB term
+local|fold-out-books,Fold-out books.,y,fold-out-book,structure-physical-format,Fold-out book,OAB term
+http://vocab.getty.edu/aat/300200572.,Folded books.,y,folded-form,structure-physical-format,folded form,OAB term
+http://vocab.getty.edu/aat/300247923.,Folding (process),y,folded-form,structure-physical-format,folded form,OAB term
+aat|folded-books,Folded books | Folded books.,y,folded-form,structure-physical-format,folded form,OAB term
+gmgpc|frontispieces,Frontispieces,y,frontispiece,structure-physical-format,Frontispiece,
+http://id.worldcat.org/fast/1726787.,Games.,y,game,structure-physical-format,game,OAB term
+aat|games,games.,y,game,structure-physical-format,game,OAB term
+local|genre-games,Genre: Games.,y,game,structure-physical-format,game,OAB term
+aat|greeting-cards,Greeting cards.,y,greeting-card,structure-physical-format,greeting card,OAB term
+aat|hardcover-books,Hardcover books.,y,hard-cover,structure-physical-format,"Hard Cover (binder’s board/wood, etc.)",
+http://vocab.getty.edu/aat/300253104.,Interleaving.,y,interleaving,structure-physical-format,Interleaving,OAB term
+(CStmoGRI)aatgf300201735,limp bindings.,y,limp-binding,structure-physical-format,limp binding,OAB term
+aat|limp-bindings,Limp bindings.,y,limp-binding,structure-physical-format,limp binding,OAB term
+none|limp-bindings,Limp bindings.,y,limp-binding,structure-physical-format,limp binding,OAB term
+http://id.worldcat.org/fast/1423704.,Maps.,y,map,structure-physical-format,map,OAB term
+http://id.loc.gov/authorities/genreForms/gf2011026441.,Pictorial maps.,y,map,structure-physical-format,map,OAB term
+http://id.worldcat.org/fast/1423807.,Pictorial maps.,y,map,structure-physical-format,map,OAB term
+rbmscv|miniature-books,Miniature books,y,miniature-book,structure-physical-format,Miniature Book,
+http://id.loc.gov/vocabulary/rbmscv/cv00867.,Miniature books.,y,miniature-book,structure-physical-format,Miniature Book,
+lcgft|miniature-books,Miniature books.,y,miniature-book,structure-physical-format,Miniature Book,
+aat|miniature-books,Miniature books. | Miniature books,y,miniature-book,structure-physical-format,Miniature Book,
+none|miniature-books,Miniature books.,y,miniature-book,structure-physical-format,Miniature Book,
+rbms|miniature-books,Miniature books.,y,miniature-book,structure-physical-format,Miniature Book,
+rbpri|minature-books-printing,Minature books (Printing),y,miniature-book,structure-physical-format,Miniature Book,
+rbpri|miniature-books-printing,Miniature books (Printing),y,miniature-book,structure-physical-format,Miniature Book,
+rbpub|miniature-books,Miniature books,y,miniature-book,structure-physical-format,Miniature Book,
+http://id.loc.gov/authorities/genreForms/gf2014026123.,Lift-the-flap books.,y,movable-element,structure-physical-format,movable element,OAB term
+http://id.worldcat.org/fast/1919936.,Lift-the-flap books.,y,movable-element,structure-physical-format,movable element,OAB term
+aat|movable-books,Movable books | Movable books.,y,movable-element,structure-physical-format,movable element,OAB term
+aat|moveable-books,Moveable books.,y,movable-element,structure-physical-format,movable element,OAB term
+http://vocab.getty.edu/aat/300207697.,Movable books.,y,movable-element,structure-physical-format,movable element,OAB term
+local|books-with-movable-illustrations,Books with movable illustrations,y,movable-element,structure-physical-format,movable element,OAB term
+none|non-adhesive-bindings,Non-adhesive bindings.,y,non-adhesive-binding,structure-physical-format,non-adhesive binding,OAB term
+rbbin|non-adhesive-bindings,Non-adhesive bindings.,y,non-adhesive-binding,structure-physical-format,non-adhesive binding,OAB term
+rbbin|non-adhesive-bindings-binding,Non-adhesive bindings (Binding),y,non-adhesive-binding,structure-physical-format,non-adhesive binding,OAB term
+rbmscv|unique-books,Unique books,y,one-of-a-kind,structure-physical-format,one-of-a-kind,OAB term
+http://vocab.getty.edu/aat/300264218.,Pamphlet bindings.,y,pamphlet-binding,structure-physical-format,Pamphlet Binding,
+(CStmoGRI)aatgf300264218,pamphlet bindings.,y,pamphlet-binding,structure-physical-format,Pamphlet Binding,
+aat|pamphlet-bindings,Pamphlet bindings.,y,pamphlet-binding,structure-physical-format,Pamphlet Binding,
+aat|pamphlets,Pamphlets.,y,pamphlet-binding,structure-physical-format,Pamphlet Binding,
+http://id.loc.gov/authorities/genreForms/gf2015026060.,Paper dolls.,y,paper-doll,structure-physical-format,Paper doll,
+http://id.worldcat.org/fast/1941319.,Paper dolls.,y,paper-doll,structure-physical-format,Paper doll,
+http://vocab.getty.edu/aat/300211178.,Paper dolls.,y,paper-doll,structure-physical-format,Paper doll,
+aat|perfect-binding-process,Perfect binding (process). | Perfect binding (process.,y,perfect-binding,structure-physical-format,Perfect binding,
+aat|phonograph-records,phonograph records.,y,phonograph-record,structure-physical-format,Phonograph record,
+aat|card-games-game-sets,Card games (game sets),y,playing-cards,structure-physical-format,playing cards,OAB term
+gmgpc|playing-cards,Playing cards.,y,playing-cards,structure-physical-format,playing cards,OAB term
+http://vocab.getty.edu/aat/300217923.,Packs of cards.,y,playing-cards,structure-physical-format,playing cards,OAB term
+aat|playing-cards,Playing cards.,y,playing-cards,structure-physical-format,playing cards,OAB term
+http://id.loc.gov/authorities/genreForms/gf2017027252.,Playing cards.,y,playing-cards,structure-physical-format,playing cards,OAB term
+http://id.worldcat.org/fast/1986271.,Playing cards.,y,playing-cards,structure-physical-format,playing cards,OAB term
+http://vocab.getty.edu/aat/300201034.,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
+http://id.loc.gov/authorities/genreForms/gf2014026150.,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
+http://id.worldcat.org/fast/1919955.,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
+aat|pop-up-books,Pop-up books,y,pop-up-element,structure-physical-format,Pop-up elements,
+rbmscv|pop-up-books,Pop-up books,y,pop-up-element,structure-physical-format,Pop-up elements,
+(OCoLC)fst01919955.,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
+http://id.loc.gov/authorities/genreForms/gf2014026150,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
+lcgft|pop-up-books,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up elements,
+local|books-with-pop-up-illustrations,Books with pop-up illustrations,y,pop-up-element,structure-physical-format,Pop-up elements,
+none|pop-up-books,Pop-up books.,y,pop-up-element,structure-physical-format,Pop-up element,
+aat|postage-stamps,Postage stamps.,y,postage-stamp,structure-physical-format,Postage stamp,
+http://id.loc.gov/authorities/genreForms/gf2014026151.,Postcards.,y,postcard,structure-physical-format,Postcard,
+http://id.worldcat.org/fast/1726707.,Postcards.,y,postcard,structure-physical-format,Postcard,
+http://vocab.getty.edu/aat/300026819.,Picture postcards.,y,postcard,structure-physical-format,Postcard,
+aat|postcards,Postcards. | Postcards,y,postcard,structure-physical-format,Postcard,
+http://id.loc.gov/authorities/genreForms/gf2014026151,Postcards.,y,postcard,structure-physical-format,Postcard,
+lcgft|postcards,Postcards.,y,postcard,structure-physical-format,Postcard,
+none|postcards-aat,Postcards.aat.,y,postcard,structure-physical-format,Postcard,
+aat|posters,Posters,y,poster,structure-physical-format,Poster,
+aat|saddle-stitching,Saddle stitching.,y,saddle-stitching,structure-physical-format,saddle stitch binding,OAB term
+local|chicago-screw-binding,Chicago screw binding.,y,screw-posts,structure-physical-format,screw posts,OAB term
+http://vocab.getty.edu/aat/300028629.,Scrolls (information artifacts),y,scroll,structure-physical-format,Scroll,
+http://vocab.getty.edu/aat/300178463.,Handscrolls.,y,scroll,structure-physical-format,scroll,
+aat|scrolls-information-artifacts,Scrolls (information artifacts),y,scroll,structure-physical-format,Scroll,
+http://id.loc.gov/vocabulary/rbmscv/cv01881.,Shaped books.,y,sculptural-bookwork,structure-physical-format,Sculptural Bookwork,
+aat|shaped-books,Shaped books | Shaped books.,y,sculptural-bookwork,structure-physical-format,Sculptural Bookwork,
+local|shaped-books,Shaped books,y,sculptural-bookwork,structure-physical-format,Sculptural Bookwork,
+rbpri|shaped-books-printing,Shaped books (Printing),y,sculptural-bookwork,structure-physical-format,Sculptural Bookwork,
+aat|sound-recordings,Sound recordings. | sound recordings.,y,sound-recording,structure-physical-format,Sound recording,
+fast|sound-recordings,Sound recordings,y,sound-recording,structure-physical-format,Sound recording,
+lcgft|sound-recordings,Sound recordings.,y,sound-recording,structure-physical-format,Sound recording,
+http://vocab.getty.edu/aat/300263000.,Spiral bindings.,y,spiral-binding,structure-physical-format,spiral binding,OAB term
+http://id.loc.gov/authorities/genreForms/gf2014026179.,Split-page books.,y,split-page-book,structure-physical-format,split-page book,OAB term
+http://id.worldcat.org/fast/1919971.,Split-page books.,y,split-page-book,structure-physical-format,split-page book,OAB term
+lcgft|split-page-books,Split-page books.,y,split-page-book,structure-physical-format,split-page book,OAB term
+local|stab-binding,Stab binding.,y,stab-binding,structure-physical-format,stab binding,OAB term
+aat|stabbing-binding,Stabbing (Binding).,y,stab-binding,structure-physical-format,stab binding,OAB term
+rbbin|stabbing-binding,Stabbing (Binding),y,stab-binding,structure-physical-format,stab binding,OAB term
+http://vocab.getty.edu/aat/300375674.,Staple bindings.,y,staple-binding,structure-physical-format,staple binding,OAB term
+(CStmoGRI)aatgf300375674,staple bindings.,y,staple-binding,structure-physical-format,staple binding,OAB term
+aat|staple-binding,Staple binding.,y,staple-binding,structure-physical-format,staple binding,OAB term
+aat|staple-bindings,Staple bindings.,y,staple-binding,structure-physical-format,staple binding,OAB term
+http://vocab.getty.edu/aat/300207379.,Stickers.,y,stickers,structure-physical-format,stickers,OAB term
+local|tab-closure,Tab closure.,y,tab-binding,structure-physical-format,Tab binding,
+none|textured-books,Textured books.,y,textured-book,structure-physical-format,textured book,OAB term
+http://vocab.getty.edu/aat/300056219.,Translucency.,y,translucent-element,structure-physical-format,translucent element,OAB term
+gmgpc|transparencies,Transparencies,y,transparent-element,structure-physical-format,transparent element,OAB term
+lcgft|triptychs,Triptychs.,y,triptych,structure-physical-format,triptych,OAB term
+lcgft|tunnel-books,Tunnel books.,y,tunnel-book,structure-physical-format,Tunnel Book,
+none|tunnel-books,Tunnel books.,y,tunnel-book,structure-physical-format,Tunnel Book,
+rbmscv|unbound-sheets,Unbound sheets,y,unbound-sheets,structure-physical-format,unbound sheets,OAB term
+rbbin|unbound-sheets,Unbound sheets.,y,unbound-sheets,structure-physical-format,unbound sheets,OAB term
+http://id.loc.gov/vocabulary/rbmscv/cv00762.,Unopened books.,y,unopened-book,structure-physical-format,Unopened book,
+lcgft|video-recordings-for-hard-of-hearing-people,Video recordings for hard of hearing people.,y,video-recording,structure-physical-format,Video recording,
+aat|volvelles,Volvelles.,y,volvelle,structure-physical-format,volvelle,OAB term
 http://id.loc.gov/authorities/genreForms/gf2017027220.,Artists' books.,n,,,,
 http://id.worldcat.org/fast/1750153.,Artists' books.,n,,,,
 aat|artists-books-books,Artists' books (books) | artists' books (books),n,,,,
@@ -785,7 +804,6 @@ http://vocab.getty.edu/aat/300041273.,Prints (visual works),n,,,,
 lcgft|conceptual-art,Conceptual art.,n,,,,
 http://id.worldcat.org/fast/1423832.,Interviews.,n,,,,
 http://id.worldcat.org/fast/1423876.,Anecdotes.,n,,,,
-http://id.worldcat.org/fast/1919895.,Bibliographies.,n,,,,
 http://id.worldcat.org/fast/2003288.,Correspondence.,n,,,,
 https://homosaurus.org/v4/homoit0001321.,Social media.,n,,,,
 aat|book-objects,Book objects,n,,,,
@@ -885,7 +903,6 @@ lcgft|address-books,Address books.,n,,,,
 lcgft|artists-book,Artists' book.,n,,,,
 lcgft|artists-writings,Artists' writings.,n,,,,
 lcgft|creative,Creative,n,,,,
-lcgft|imaginary-biography,Imaginary biography.,n,,,,
 lcgft|literature-experimental,"Literature, Experimental.",n,,,,
 lcgft|telegraphs,Telegraphs.,n,,,,
 lcgft|toys-and-movable-books,Toys and movable books.,n,,,,
@@ -902,7 +919,6 @@ rbmscv|artists-bookszunited-states,Artists' bookszUnited States.,n,,,,
 (CStmoGRI)aatgf300123016,artists' books (books),n,,,,
 (CaQQLa)RVMGF-000000187,Livres d'artistes.,n,,,,
 (DE-576)208859845,Umfrage,n,,,,
-(DE-576)208865578,Bibliografie,n,,,,
 (DE-576)208866299,Bilderbuch,n,,,,
 (DE-576)208909400,Englisch,n,,,,
 (DE-576)208918531,Film,n,,,,
@@ -922,9 +938,7 @@ rbmscv|artists-bookszunited-states,Artists' bookszUnited States.,n,,,,
 (DE-576)433375485,Konferenzschrift,n,,,,
 (DE-588)1071861417,Konferenzschrift,n,,,,
 (DE-588)4005227-8,Umfrage,n,,,,
-(DE-588)4006432-3,Bibliografie,n,,,,
 (DE-588)4006604-6,Bilderbuch,n,,,,
-(DE-588)4012044-2,Diagramm,y,,,,
 (DE-588)4014777-0,Englisch,n,,,,
 (DE-588)4017102-4,Film,n,,,,
 (DE-588)4020713-4,Gespräch,n,,,,
@@ -948,7 +962,6 @@ rbmscv|artists-bookszunited-states,Artists' bookszUnited States.,n,,,,
 (DE-627)104559683,Film,n,,,,
 (DE-627)104767812,Interview,n,,,,
 (DE-627)104768029,Umfrage,n,,,,
-(DE-627)104814519,Bibliografie,n,,,,
 (DE-627)10495146X,Künstlerbuch,n,,,,
 (DE-627)105266639,Verzeichnis,n,,,,
 (DE-627)105488402,Pressendruck,n,,,,
@@ -985,7 +998,6 @@ rbmscv|artists-bookszunited-states,Artists' bookszUnited States.,n,,,,
 (OCoLC)fst01726766,Toy and movable books.,n,,,,
 (OCoLC)fst01750153,Artists' books | Artists' books.,n,,,,
 (OCoLC)fst01750153.,Artists' books.,n,,,,
-(OCoLC)fst01919987.,Zines.,n,zine,,,
 (OCoLC)fst01922510,Prose poems,n,,,,
 (OCoLC)fst01922539,Satirical literature,n,,,,
 (OCoLC)fst01986487,Autobiographical fiction,n,,,,
@@ -996,7 +1008,6 @@ rbmscv|artists-bookszunited-states,Artists' bookszUnited States.,n,,,,
 11H(JOHN THE BAPTIST),"John the Baptist; possible attributes: book, reed cross, baptismal cup, honeycomb, lamb, staff.",n,,,,
 11H(LOUIS OF TOULOUSE),"Louis of Anjou, son of the king of Naples, Franciscan friar, and bishop of Toulouse; possible attributes: fleur-de-lis on his cope, crown and sceptre.",n,,,,
 61B2(JEAN DE BERRY),historical person (with NAME),n,,,,
-aat|alphabet-books,Alphabet books.,y,alphabet-book,,,
 aat|appropriation-art,Appropriation art.,n,,,,
 aat|aritsts-books,Aritsts' books.,n,,,,
 aat|artist-s-books,Artist's books.,n,,,,
@@ -1013,7 +1024,6 @@ aat|color-prints,Color prints,n,,,,
 aat|comics-documents,Comics (documents),n,,,,
 aat|computer-graphics,Computer graphics.,n,,,,
 aat|copy-art,Copy art. | Copy art,n,,,,
-aat|encyclopedias,Encyclopedias.,n,,,,
 aat|fluxus,Fluxus.,n,,,,
 aat|forms-documents,Forms (documents),n,,,,
 aat|graphzines,Graphzines,n,,,,
@@ -1042,7 +1052,6 @@ aat|samples,Samples.,n,,,,
 aat|signed-limited-editions,Signed limited editions,n,,,,
 aat|stamps-marks,Stamps (marks),n,,,,
 aat|three-dimensional,Three-dimensional.,n,,,,
-aat|twine,Twine.,y,twine,,,
 aat|visual-analysis,Visual analysis,n,,,,
 cct|sea-stories,Sea stories.,n,,,,
 cct|submarines-ships,Submarines (Ships),n,,,,
@@ -1084,7 +1093,6 @@ http://id.loc.gov/authorities/genreForms/gf2014026327.,Fables.,n,,,,
 http://id.loc.gov/authorities/genreForms/gf2014026415.,Literature.,n,,,,
 http://id.loc.gov/authorities/genreForms/gf2014027107.,Soundscapes (Music),n,,,,
 http://id.loc.gov/authorities/genreForms/gf2017027220,Artists' books. | Artists' books,n,,,,
-http://id.loc.gov/authorities/genreForms/gf2020026003.,Alphabet books.,y,alphabet-book,,,
 http://id.loc.gov/authorities/genreForms/gf2025026022,Translations.,n,,,,
 http://id.loc.gov/authorities/subjects/gf2017027220,Artists' books. | Artists' books,n,,,,
 http://id.loc.gov/authorities/subjects/sh85008302,Artists' books.,n,,,,
@@ -1105,7 +1113,6 @@ http://id.worldcat.org/fast/1920771.,Catalogues raisonnés.,n,,,,
 http://id.worldcat.org/fast/1921716.,Literature.,n,,,,
 http://id.worldcat.org/fast/1921743.,Soundscapes (Music),n,,,,
 http://id.worldcat.org/fast/1986487.,Autobiographical fiction.,n,,,,
-http://id.worldcat.org/fast/2015172.,Alphabet books.,y,alphabet-book,,,
 http://vocab.getty.edu/aat/300015643,Reproductions.,n,,,,
 http://vocab.getty.edu/aat/300015643.,Reproductions.,n,,,,
 http://vocab.getty.edu/aat/300053087.,Destruction (process),n,,,,
@@ -1168,12 +1175,10 @@ lcgft|art,Art,n,,,,
 lcgft|artistamps,Artistamps.,n,,,,
 lcgft|artists-boks,Artists' boks.,n,,,,
 lcgft|autobiographical-fiction,Autobiographical fiction,n,,,,
-lcgft|autobiographies,Autobiographies,n,,,,
 lcgft|comedy-films,Comedy films.,n,,,,
 lcgft|commemorative-works,Commemorative works,n,,,,
 lcgft|cutout-animation-films,Cutout animation films,n,,,,
 lcgft|documentary-television-programs,Documentary television programs.,n,,,,
-lcgft|encyclopedias,Encyclopedias.,n,,,,
 lcgft|fables,Fables,n,,,,
 lcgft|feature-films,Feature films.,n,,,,
 lcgft|fiction-films,Fiction films.,n,,,,
@@ -1237,7 +1242,6 @@ local|sculpture-mythological-and-allegorical,Sculpture: Mythological and allegor
 local|sculpture-nude-figures-single,Sculpture: Nude figures: Single.,n,,,,
 local|seascapes-and-coastal-scenes-with-land-only,Seascapes and coastal scenes: With land only.,n,,,,
 local|vehicles-etc,"Vehicles, etc.",n,,,,
-none|alphabet-books,Alphabet books,y,alphabet-book,,,
 none|art,Art,n,,,,
 none|artist-s-books,Artist's books.,n,,,,
 none|bok,Bok,n,,,,
@@ -1259,24 +1263,20 @@ ram|livres-d-artistes,Livres d'artistes. | Livres d'artistes,n,,,,
 ram|londres,Londres,n,,,,
 ram|londres-institute-of-contemporary-arts,"Londres, Institute of contemporary arts",n,,,,
 rbbin|bookbinding-binding,Bookbinding (Binding),n,,,,
-rbgenr|alphabet-books,Alphabet books,y,alphabet-book,,,
 rbgenr|arists-books,Arists' books,n,,,,
 rbgenr|metamorphic-pictures,Metamorphic pictures.,n,,,,
 rbgenr|sample-books,Sample books.,n,,,,
-rbmscv|alphabet-books,Alphabet books,y,alphabet-book,,,
 rbmscv|artists-books-provenance,Artists' books (Provenance),n,,,,
 rbmscv|authors-inscriptions,Authors' inscriptions,n,,,,
 rbmscv|autographs,Autographs.,n,,,,
 rbmscv|inscriptions,Inscriptions | Inscriptions.,n,,,,
 rbmscv|private-press-books-printing,Private press books (Printing),n,,,,
-rbpap|cotton-fibers,Cotton fibers.,n,,,,
 rbpri|limitation-statements-printing,Limitation statements (Printing),n,,,,
 rbpri|page-proofs-printing,Page proofs (Printing),n,,,,
 rbprov|association-copies-provenance,Association copies (Provenance),n,,,,
 rbprov|authors-autographs-provenance,Authors' autographs (Provenance),n,,,,
 rbprov|presentation-inscriptions-provenance,Presentation inscriptions (Provenance),n,,,,
 rbpub|limitation-statements,Limitation statements.,n,,,,
-rvmgf|encyclope-dies,Encyclopédies.,n,,,,
 rvmgf|enregistrements-sonores,Enregistrements sonores.,n,,,,
 rvmgf|fables,Fables.,n,,,,
 rvmgf|hip-hop-musique,Hip-hop (Musique),n,,,,
