@@ -4,35 +4,29 @@
 
 {{ define "content" }}
 <h1>Construction Methods</h1>
-<p class="mb"><em>Construction techniques, materials, and production methods used across the collection.</em></p>
+<p class="mb"><em>Materials, processes, structures, enclosures and genre/form types used across the collection, categorized following the <a href="https://researchbookart.uicb.uiowa.edu/glossary">Book Arts Research Database glossary</a>.</em></p>
 
 {{ $rows := . }}
 
-<h2>Binding and format</h2>
-<ul class="mb">
-{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Binding and format" }}
-<li><a href="/construction/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
-{{- end }}{{ end }}
+{{/* Sections are derived from the data, not hard-coded: construction-methods.rq
+     ORDERs BY ?categoryLabel, so rows arrive grouped and a new heading opens
+     whenever the label changes. Adding a category to sources/construction/
+     build-scheme.rq is therefore all it takes for it to appear here. */}}
+{{- $prev := "" }}
+{{- range $rows }}
+{{- $cat := printf "%s" .categoryLabel }}
+{{- if eq $cat "" }}{{ $cat = "Uncategorized" }}{{ end }}
+{{- if ne $cat $prev }}
+{{- if ne $prev "" }}
 </ul>
-
-<h2>Materials</h2>
+{{- end }}
+<h2>{{ $cat }}</h2>
 <ul class="mb">
-{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Materials" }}
+{{- $prev = $cat }}
+{{- end }}
 <li><a href="/construction/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
-{{- end }}{{ end }}
+{{- end }}
+{{- if ne $prev "" }}
 </ul>
-
-<h2>Production and printing</h2>
-<ul class="mb">
-{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Production and printing" }}
-<li><a href="/construction/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
-{{- end }}{{ end }}
-</ul>
-
-<h2>Techniques</h2>
-<ul class="mb">
-{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Techniques" }}
-<li><a href="/construction/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
-{{- end }}{{ end }}
-</ul>
+{{- end }}
 {{ end }}

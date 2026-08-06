@@ -126,9 +126,11 @@ $(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch:
 	$(MAKE) -C $(YAZ)
 
 # --- Construction & production methods concept scheme (SKOS) ---------------
-# construction-methods.ttl is a local SKOS vocabulary of the construction
-# techniques, materials, binding/format types, and printing methods named in
-# the MARC records. It is built in three mined/curated steps:
+# construction-methods.ttl is a local SKOS vocabulary of the materials,
+# processes, structures, enclosures and genre/form types named in the MARC
+# records, categorized following the Book Arts Research Database glossary
+# (https://researchbookart.uicb.uiowa.edu/glossary). It is built in three
+# mined/curated steps:
 #
 #   1. construction/candidates.csv -- every genre/technique/material heading
 #      mined from the MARC (655 + 340 materials + 650, minus plain subjects),
