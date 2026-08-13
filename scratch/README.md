@@ -35,6 +35,11 @@ step 1 is a mandatory lookup. The codec suffix varies (`_deflate.tif`, `_jpeg.ti
     `verify2.py` is the one that produced `results/verify2.json`.
   - `ratetest.py` — throughput probe against real SSIDs from `sources/artstor-ssid.csv`.
   - `poll.py`, `poll2.py` — poll until the rate-limit block clears.
+  - `probe_egress.sh` — **run this on any candidate harvester host** (fly.io sprite,
+    CI runner, laptop) to find out whether its egress IP can do the step-1 lookup.
+    Makes only 3 requests, and distinguishes the three failure modes, which look
+    nothing alike: `200` (usable), `403 Access Check` (temporary rate limit), and
+    `200` + a Fastly `Client Challenge` page (IP-reputation block, fatal for curl).
 - `results/`
   - `verify2.json` — the 6-SSID verification (all 200, with dimensions and byte counts).
   - `ratetest-2.0.json` — 40 SSIDs at 2 s spacing; 15 succeeded before the block.
