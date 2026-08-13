@@ -40,6 +40,11 @@ ab:ReferenceWork a rdfs:Class ;
     rdfs:label "Reference Work" ;
     rdfs:comment "A reference work is a work (book, article, webpage, etc.) that cites an Artist's Book." .
 
+ab:itemKey a rdf:Property ;
+    rdfs:label "item key" ;
+    rdfs:comment "The canonical Zotero item key identifying the record, as used to mint its URI. Applies to both ab:ArtistsBook and ab:ReferenceWork, so no rdfs:domain is asserted (an RDFS domain with two classes would be read as their intersection)." ;
+    rdfs:range xsd:string .
+
 ab:Citation a rdfs:Class ;
     rdfs:label "Citation" ;
     rdfs:comment "A citation is a relationship between an Artist's Book and a Reference Book."  .
