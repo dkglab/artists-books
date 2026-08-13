@@ -58,7 +58,12 @@
 
   {{ with .summary }}
   <dt>Summary</dt>
-    <dd>{{ . }}</dd>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
+  {{ with .relatedTitles }}
+  <dt>Related titles</dt>
+  <dd>{{ . }}</dd>
   {{ end }}
 
   {{ with .constructionTerms }}

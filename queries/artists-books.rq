@@ -23,6 +23,7 @@ CONSTRUCT {
     bf:dimensions ?dimensions ;
     bf:editionStatement ?edition ;
     bf:summary ?bookSummary ;
+    bf:relatedTo ?relatedWork ;
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
@@ -67,6 +68,11 @@ CONSTRUCT {
   ?bookSummary
     a bf:Summary ;
     rdfs:label ?summary .
+
+  ?relatedWork
+    a bf:Work ;
+    rdfs:label ?related_title ;
+    .
 
 }
 WHERE {
@@ -144,6 +150,7 @@ WHERE {
              (SAMPLE(?dimensions_x) AS ?dimensions)
              (SAMPLE(?edition_x) AS ?edition)
              (SAMPLE(?summary_x) AS ?summary)
+             (SAMPLE(?related_title_x) AS ?related_title)
              (SAMPLE(?name_x)  AS ?creator_name)
              (SAMPLE(?viaf_x)  AS ?viaf)
              (SAMPLE(?isni_x)  AS ?isni)
@@ -289,10 +296,11 @@ WHERE {
           # nested-loop joins instead of the 10,943 creator ones. Same answers,
           # twice the runtime (see docs/QUERY-PERFORMANCE.md).
           {
-            ?record fx:anySlot ?df .
-            ?df a marc:datafield ; xyz:tag ?ctag .
-            FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
-          }
+            {
+              ?record fx:anySlot ?df .
+              ?df a marc:datafield ; xyz:tag ?ctag .
+              FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+            }
 
           #binds the contribution type based on the tag of the datafield. 100, 110, and 111 are considered primary contributions, while 700, 710, and 711 are considered secondary contributions.
           BIND(
@@ -338,9 +346,37 @@ WHERE {
             ?sf0 xyz:code "0" ; rdf:_1 ?lc_0 .
             BIND(REPLACE(REPLACE(?lc_0, "\\.$", ""), "^.*/", "") AS ?lc_id_x)
           }
-          }  # end OPTIONAL wrapping the creator fields
-          }  # end inner per-record SERVICE
-        }  # end archive-listing SERVICE
+          }  # end creator branch
+          UNION
+            {
+              # Related titles from MARC 740 (#32).
+              ?record fx:anySlot ?df .
+              ?df a marc:datafield ; xyz:tag "740" .
+
+              ?df fx:anySlot ?sf740a .
+              ?sf740a xyz:code "a" ; rdf:_1 ?related_title_a .
+
+              OPTIONAL {
+                ?df fx:anySlot ?sf740n .
+                ?sf740n xyz:code "n" ; rdf:_1 ?related_title_n .
+              }
+
+              BIND(
+                IF(
+                  BOUND(?related_title_n),
+                  CONCAT(
+                    REPLACE(?related_title_a, "\\s+$", ""),
+                    " ",
+                    REPLACE(?related_title_n, "\\s+$", "")
+                  ),
+                  REPLACE(?related_title_a, "\\s+$", "")
+                )
+                AS ?related_title_x
+              )
+            } # end related-title branch
+          } # end OPTIONAL creator/related-title extraction
+        }  # end inner per-record SERVICE
+      }  # end archive-listing SERVICE
       }
       GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
                ?illustrative_content_x
@@ -433,6 +469,7 @@ WHERE {
     BIND(IF(BOUND(?extent), fx:entity(ab:, "item/", ?canonical_key, "/extent"), ?sentinel) AS ?bookExtent)
     BIND(IF(BOUND(?summary), fx:entity(ab:, "item/", ?canonical_key, "/summary"), ?sentinel) AS ?bookSummary)
     BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
+    BIND(IF(BOUND(?related_title), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(STR(?related_title))), ?sentinel) AS ?relatedWork)
   }
 
   # Construction & production methods (#86). Attach ab:constructedUsing by
