@@ -132,6 +132,17 @@ marc/%-marc.zip: zotero/%.csv | marc/marc_harvest.py \
 artstor-ssid.csv: | marc/resolve_artstor.py
 	python3 marc/resolve_artstor.py --archive marc/artists-books-marc.zip --out $@
 
+# SSID -> IIIF image identifiers (issue #9), the second half of the cover-image
+# lookup. artstor-ssid.csv is read for its SSIDs but is deliberately NOT a
+# prerequisite (same reasoning as above: a rebuild must never trigger a re-run
+# of an external harvest), and neither file is a prerequisite of anything the
+# pipeline builds -- ssid-iiif.csv is a frozen source, committed like
+# citations.ttl. The metadata API is aggressively rate-limited per IP, so this
+# is slow by design (~1,127 SSIDs at 8s => ~2.5h) and stops at the first 403.
+# Rerun to resume; chunk it with --limit.
+ssid-iiif.csv: | marc/harvest_iiif.py
+	python3 marc/harvest_iiif.py --ssids artstor-ssid.csv --out $@
+
 # Build the YAZ toolkit on demand (order-only prerequisite above). The same
 # make invocation produces yaz-marcdump and the zoomfetch driver (issue #85)
 # alongside yaz-client.

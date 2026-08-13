@@ -13,7 +13,8 @@ provenance:
   `reference-works-manual.xml`, and `reference-works-unresolved.csv`.
   Resumable harvest state lives under `marc/harvest/` (gitignored). Also
   `resolve_artstor.py`, which mines the harvested 856 links for the JSTOR
-  crosswalk below.
+  crosswalk below, and `harvest_iiif.py`, which takes that crosswalk's SSIDs the
+  rest of the way to IIIF image identifiers.
 - root (this file) — the committed graph inputs the construct queries read: the
   canonical `artists-books.csv` and `reference-works.csv` (the deduplicated
   lib 1 ∪ 2 ∪ 3 lists) and the frozen `citations.ttl`, plus loose external
@@ -204,8 +205,9 @@ record's other three links resolve, so no book loses coverage.
 Two shapes to be aware of when consuming this file:
 
 - **A book may have several assets** (cover, interior, multi-volume): 1,166 links
-  over 1,145 books. #9 wants the *first* image, so pick the asset whose Forum
-  `Filename` ends in `1`/`001` rather than assuming one row per book.
+  over 1,145 books, so do not assume one row per book. (An earlier note here said
+  to pick the asset whose Forum `Filename` ends in `1`/`001`; that rule does not
+  hold — see `ssid-iiif.csv` below for what actually identifies the cover.)
 - **33 SSIDs are shared by more than one canonical key.** Most are dedup misses
   from #82 — *Boundless* under three keys, *Money* under two — so this file
   doubles as a signal for that review. One (SSID 23249420) is shared by four
@@ -216,4 +218,81 @@ Two shapes to be aware of when consuming this file:
 ```sh
 make -C sources artstor-ssid.csv                                  # resumable; skips resolved
 python3 marc/resolve_artstor.py --limit 250 --delay 1             # or chunk it, from sources/
+```
+
+## SSID → IIIF images (`ssid-iiif.csv`, issue #9)
+
+The second half of the cover-image lookup: SSID → the IIIF identifiers of that
+record's images. It is a real lookup, not string manipulation — the identifier is
+a date-partitioned S3 path with a varying codec suffix, so nothing in it can be
+derived from the SSID:
+
+```
+/iiif/2016/04/29/16/e31d56f8-4cf7-4053-a74b-033fcb088b79_deflate.tif
+      └ upload time ┘ └────── media UUID ──────┘        └ codec ┘
+```
+
+> [!NOTE]
+> **Not harvested yet — `ssid-iiif.csv` is not in the tree.** The harvester and
+> its make target are in place, but every attempt from this repo's development
+> host has been met with the 403 rate limit described below, on an egress IP
+> already in an escalated block. The harvest still needs a run from an IP the
+> metadata API will talk to; the file lands here when it does.
+
+`marc/harvest_iiif.py` makes one request per distinct SSID in `artstor-ssid.csv`
+(1,127 of them) to
+`https://www.jstor.org/content-service/content-data/community.<SSID>`, and writes
+one row per image: `ssid, pageIndex, iiifPath, pageCount, imageViewDescription,
+status`. It is keyed on `ssid` alone — it joins back to books through
+`artstor-ssid.csv`, so the canonical key is not duplicated into it.
+
+```
+ssid,pageIndex,iiifPath,pageCount,imageViewDescription,status
+14183099,0,/iiif/2016/04/29/16/e31d56f8-…_deflate.tif,2,(Cover & interior images),ok
+14183099,1,/iiif/2022/09/21/13/0f370719-…_deflate.tif,2,(Cover & interior images),ok
+```
+
+`iiifLinks` is ordered and `len(iiifLinks) == pageCount`, so `pageIndex` 0 is
+page 1. But **page 1 is not always the cover**, and the file name does not say
+which one is (`strip_tease_cover2.tif` and `presente_cover3.tif` are both
+covers). `imageViewDescription` — the Forum *Image View Description* field — is
+what carries that:
+
+| `imageViewDescription`                          | cover is        |
+| ----------------------------------------------- | --------------- |
+| `(Cover & interior images)`                      | `pageIndex` 0   |
+| `(Images of the enclosure, cover, & interior)`   | `pageIndex` 1 (page 1 is the slipcase) |
+| `(Interior image)`, `(Open)`                     | no cover in this record |
+
+It is recorded verbatim and deliberately not interpreted here: `ab:coverImage`
+is not yet in `docs/vocab.ttl` and the no-cover fallback policy is undecided.
+
+Once the identifiers are known the images need no crosswalk and no credentials —
+`https://www.jstor.org{iiifPath}/info.json` and
+`…/full/full/0/default.jpg` (or `…/full/,400/0/default.jpg`) are open Cantaloupe
+IIIF Image API 2.1 level-2 endpoints that take **no headers at all** and are not
+rate-limited. Masters are 2400px on the long edge.
+
+**The one-time harvest is the constrained part.** `/content-service/` is
+rate-limited per IP and the penalty *escalates* when you keep requesting through
+a block (see `scratch/README.md`). So `harvest_iiif.py`:
+
+- defaults to `--delay 8` (~1,127 SSIDs ≈ 2.5 h) — an estimate of a sustainable
+  rate, never a measured one;
+- **stops the entire run at the first 403** and exits cleanly rather than
+  retrying, because retrying while blocked is what extends the block;
+- rewrites the CSV after every record, so an interrupted run loses nothing;
+- resumes by skipping SSIDs already recorded `ok`/`no-images`, and retries any
+  other status. SSIDs not yet attempted have no rows at all.
+
+Before harvesting from a new host, run `bash scratch/scripts/probe_egress.sh`
+there: three requests, and it distinguishes a temporary rate limit (403 *JSTOR:
+Access Check*) from a fatal IP-reputation block (200 + a Fastly *Client
+Challenge* page).
+
+**Regenerate:**
+
+```sh
+make -C sources ssid-iiif.csv                                     # resumable; skips harvested
+python3 marc/harvest_iiif.py --limit 100 --delay 8                # or chunk it, from sources/
 ```
