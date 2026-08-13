@@ -119,6 +119,19 @@ marc/%-marc.zip: zotero/%.csv | marc/marc_harvest.py \
 		$(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch
 	python3 marc/marc_harvest.py --csv $< --out $@
 
+# Artstor asset ID -> JSTOR Forum SSID crosswalk (issue #9). Resolves the MARC
+# 856 $u links, whose retired patron-side asset IDs still 301-redirect to
+# jstor.org/stable/community.<SSID> -- the key that joins our catalogue records
+# to Jstor_Artists__book_records.csv, and so to the cover images.
+#
+# Like the harvest, this hits an external server: the script is an order-only
+# prerequisite, and the committed MARC archive is read but deliberately NOT a
+# prerequisite, so a rebuild here never triggers a re-harvest. The run is
+# resumable (already-resolved asset IDs are read back from the CSV and skipped),
+# so it can be chunked with --limit.
+artstor-ssid.csv: | marc/resolve_artstor.py
+	python3 marc/resolve_artstor.py --archive marc/artists-books-marc.zip --out $@
+
 # Build the YAZ toolkit on demand (order-only prerequisite above). The same
 # make invocation produces yaz-marcdump and the zoomfetch driver (issue #85)
 # alongside yaz-client.

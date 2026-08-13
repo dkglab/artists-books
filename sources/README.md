@@ -11,7 +11,9 @@ provenance:
 - [`marc/`](marc/README.md) — the Z39.50 MARC-harvest track: `marc_harvest.py`,
   the harvested `*-marc.zip` archives, the hand-supplied
   `reference-works-manual.xml`, and `reference-works-unresolved.csv`.
-  Resumable harvest state lives under `marc/harvest/` (gitignored).
+  Resumable harvest state lives under `marc/harvest/` (gitignored). Also
+  `resolve_artstor.py`, which mines the harvested 856 links for the JSTOR
+  crosswalk below.
 - root (this file) — the committed graph inputs the construct queries read: the
   canonical `artists-books.csv` and `reference-works.csv` (the deduplicated
   lib 1 ∪ 2 ∪ 3 lists) and the frozen `citations.ttl`, plus loose external
@@ -169,4 +171,49 @@ the frozen graph lives here under `sources/`.
 
 ```sh
 make -C sources -B citations.ttl          # -> citations.ttl, citations-review.csv
+```
+
+## Artstor → JSTOR SSID crosswalk (`artstor-ssid.csv`, issue #9)
+
+Cover images live in JSTOR Forum, whose "Export Records" spreadsheet
+(`Jstor_Artists__book_records.csv`) is keyed by **SSID**. Our catalogue records
+have no SSID: their MARC 856 `$u` links carry a *patron-side Artstor asset ID*
+(`SS33469_33469_<n>`), a numbering JSTOR retired in 2024 and no longer exports.
+That missing key is what blocked #9 — title matching is fuzzy and the export's
+call number covers only ~60% of our records.
+
+The old URLs still redirect, and the redirect target *is* the key:
+
+```
+https://library.artstor.org/public/SS33469_33469_42526770
+  -> 301 https://www.jstor.org/stable/community.14183099
+```
+
+The number after `community.` is exactly the Forum SSID. `marc/resolve_artstor.py`
+walks the MARC archive, fetches each asset ID's redirect (headers only — the
+captcha is on the rendered JSTOR page, which is never requested), and writes one
+row per 856 link: `canonicalKey, assetId, ssid, status`.
+
+Current: **1,165 of 1,166 links resolved**, covering **1,145 books** and 1,127
+distinct SSIDs; 1,156 of those SSIDs are present in the Forum export (the other
+9 are presumably assets added to Forum after that export was taken). The single
+failure is a cataloguing typo — `URPYB2MG`'s third 856 has a nine-digit asset ID
+(`SS33469_33469_425301913`) that resolves to *artstor-page-not-found*; the same
+record's other three links resolve, so no book loses coverage.
+
+Two shapes to be aware of when consuming this file:
+
+- **A book may have several assets** (cover, interior, multi-volume): 1,166 links
+  over 1,145 books. #9 wants the *first* image, so pick the asset whose Forum
+  `Filename` ends in `1`/`001` rather than assuming one row per book.
+- **33 SSIDs are shared by more than one canonical key.** Most are dedup misses
+  from #82 — *Boundless* under three keys, *Money* under two — so this file
+  doubles as a signal for that review. One (SSID 23249420) is shared by four
+  records with genuinely different titles and needs a human look.
+
+**Regenerate:**
+
+```sh
+make -C sources artstor-ssid.csv                                  # resumable; skips resolved
+python3 marc/resolve_artstor.py --limit 250 --delay 1             # or chunk it, from sources/
 ```
