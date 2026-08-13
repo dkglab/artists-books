@@ -91,8 +91,40 @@ WHERE {
     ?extentNode rdfs:label ?extent .
   }
 
+  # A book may carry several bf:illustrativeContent values (multi-part items
+  # list one 300 $b per volume or format), so this is aggregated rather than
+  # grouped on. Its own subquery, as in references.rq: it keeps the values out
+  # of the outer cross product with creators/citations, and the innermost
+  # ordered SELECT gives GROUP_CONCAT a deterministic input order (only a scope
+  # *below* the grouping can be ordered).
+  #
+  # The innermost SELECT dedupes on ?icKey rather than with a plain DISTINCT.
+  # Cataloging is inconsistent about the terminal period and about case, so one
+  # record can carry two spellings of the same thing ("illustrations" and
+  # "illustrations."), which are distinct literals that DISTINCT would keep and
+  # the page would render as "illustrations; illustrations.". Folding case and
+  # a trailing period gives the comparison key; MIN picks one surface form
+  # deterministically (the period-less one, since it sorts before its own
+  # extension). Values that appear in only one form — the AACR2 abbreviations
+  # such as "ill." and "col. ill." — are single-member groups and pass through
+  # untouched, so their period is preserved.
   OPTIONAL {
-    ?book bf:illustrativeContent ?illustrativeContent .
+    {
+      SELECT ?book
+             (GROUP_CONCAT(?ic; separator="; ") AS ?illustrativeContent)
+      WHERE {
+        {
+          SELECT ?book (MIN(?icRaw) AS ?ic)
+          WHERE {
+            ?book bf:illustrativeContent ?icRaw .
+            BIND(LCASE(REPLACE(STR(?icRaw), "\\.$", "")) AS ?icKey)
+          }
+          GROUP BY ?book ?icKey
+          ORDER BY ?ic
+        }
+      }
+      GROUP BY ?book
+    }
   }
 
   OPTIONAL {
