@@ -19,6 +19,7 @@ CONSTRUCT {
     bf:provisionActivity ?bookPublication ;
     bf:language ?language ;
     bf:extent ?bookExtent ;
+    bf:illustrativeContent ?illustrative_content ;
     bf:dimensions ?dimensions ;
     bf:editionStatement ?edition ;
     bf:summary ?bookSummary ;
@@ -128,8 +129,16 @@ WHERE {
     # One row per creator field, with a single chosen name / VIAF / ISNI / LC id.
     # Multiple $1 subfields (a creator often has both VIAF and ISNI) are folded
     # together here so each creator field yields exactly one ?creator downstream.
+    #
+    # ?illustrative_content_x is a *grouping key*, not a SAMPLE: unlike extent /
+    # dimensions / edition — of which a book has exactly one — a record may
+    # legitimately carry several 300 $b values (multi-part items list one per
+    # volume or format), and all of them belong in the graph. Grouping on it
+    # yields one row per (creator field, illustrative content) pair; the extra
+    # rows re-assert identical contribution triples, which collapse in RDF.
     {
       SELECT ?canonical_key ?df ?ctag ?role_term ?contributionType
+             (?illustrative_content_x AS ?illustrative_content)
              (SAMPLE(?control_number_raw) AS ?control_number)
              (SAMPLE(?extent_x) AS ?extent)
              (SAMPLE(?dimensions_x) AS ?dimensions)
@@ -183,6 +192,34 @@ WHERE {
 
             # Strip trailing cataloging punctuation such as ":".
             BIND(REPLACE(?extent_raw, "[\\s:;/]+$", "") AS ?extent_x)
+          }
+
+          # Illustrative content from MARC 300 $b, such as
+          # "illustrations" or "color illustrations".
+          OPTIONAL {
+            # Anchor the traversal independently on the record, as with 300 $c.
+            # Reusing ?df300 could cause an unbound-subject scan when 300 $a
+            # is absent but 300 $b is present.
+            ?record fx:anySlot ?df300b .
+            ?df300b a marc:datafield ; xyz:tag "300" .
+
+            ?df300b fx:anySlot ?sf300b .
+            ?sf300b
+                xyz:code "b" ;
+                rdf:_1 ?illustrative_content_raw .
+
+            # Strip trailing cataloging punctuation such as ";", but not "."
+            # — the AACR2 abbreviations here ("ill.", "col. ill.") end in one.
+            BIND(
+              REPLACE(?illustrative_content_raw, "[\\s:;/]+$", "")
+              AS ?illustrative_content_x
+            )
+
+            # A handful of records carry a $b that is punctuation only (a bare
+            # ";"), which strips to "". Drop it: every value is emitted now, and
+            # a bound "" is truthy under the template's {{ with }}, so it would
+            # render an empty "Illustrative content" row.
+            FILTER(?illustrative_content_x != "")
           }
 
           OPTIONAL {
@@ -306,6 +343,7 @@ WHERE {
         }  # end archive-listing SERVICE
       }
       GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
+               ?illustrative_content_x
     }
 
     # WorldCat link + OCLC identifier, from the 001 number sampled above. Extract
