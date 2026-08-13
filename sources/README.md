@@ -232,12 +232,28 @@ derived from the SSID:
       └ upload time ┘ └────── media UUID ──────┘        └ codec ┘
 ```
 
-> [!NOTE]
-> **Not harvested yet — `ssid-iiif.csv` is not in the tree.** The harvester and
-> its make target are in place, but every attempt from this repo's development
-> host has been met with the 403 rate limit described below, on an egress IP
-> already in an escalated block. The harvest still needs a run from an IP the
-> metadata API will talk to; the file lands here when it does.
+> [!IMPORTANT]
+> **Not harvested — `ssid-iiif.csv` is not in the tree, and a different route is
+> probably needed.** The harvester and its make target are in place and correct,
+> but a full attempt from a residential connection (2026-08-13) harvested **0 of
+> 1,127 SSIDs**: every run was refused with a 403 at its *first* lookup.
+>
+> This is **not** a wait-and-retry situation. The block is on automation, not
+> merely on the IP. While the script was being refused, a hand-driven browser on
+> the same laptop and IP was succeeding; a headed real Chrome with a legitimate
+> session, driven by a script, was refused at request #1 and then served a
+> CAPTCHA. Solving that to unlock a bulk harvest would be circumvention, so the
+> attempt was stopped. Repeated attempts also degrade the IP's standing to where
+> ordinary browsing gets challenged.
+>
+> Because every run died at lookup 0, **`--delay` was never the operative
+> variable and its sustainable value is still unmeasured** — raising it cannot
+> help when request #1 is refused.
+>
+> The likeliest way forward is to **ask Artstor/JSTOR for SSID → media
+> identifiers directly** rather than to harvest them; see `scratch/README.md`
+> § "What the harvest attempt found" for the full sequence, the untested
+> UUID-vs-`community.<SSID>` question, and the alternatives.
 
 `marc/harvest_iiif.py` makes one request per distinct SSID in `artstor-ssid.csv`
 (1,127 of them) to
@@ -271,14 +287,19 @@ Once the identifiers are known the images need no crosswalk and no credentials �
 `https://www.jstor.org{iiifPath}/info.json` and
 `…/full/full/0/default.jpg` (or `…/full/,400/0/default.jpg`) are open Cantaloupe
 IIIF Image API 2.1 level-2 endpoints that take **no headers at all** and are not
-rate-limited. Masters are 2400px on the long edge.
+rate-limited. Masters are 2400px on the long edge. This tier was re-confirmed
+healthy during the 2026-08-13 attempt (`info.json` → 200 + JSON, `full/,400/0/`
+→ 200 `image/jpeg`) at the same moment the metadata API was refusing everything:
+only step 1 is gated.
 
 **The one-time harvest is the constrained part.** `/content-service/` is
-rate-limited per IP and the penalty *escalates* when you keep requesting through
-a block (see `scratch/README.md`). So `harvest_iiif.py`:
+rate-limited per IP, the penalty *escalates* when you keep requesting through a
+block, and — per the attempt written up in `scratch/README.md` — it also refuses
+scripted clients outright regardless of pacing. So `harvest_iiif.py`:
 
 - defaults to `--delay 8` (~1,127 SSIDs ≈ 2.5 h) — an estimate of a sustainable
-  rate, never a measured one;
+  rate, never a measured one, and **still unmeasured**: no run has yet completed
+  a single lookup, so no value of `--delay` has been shown to work;
 - **stops the entire run at the first 403** and exits cleanly rather than
   retrying, because retrying while blocked is what extends the block;
 - rewrites the CSV after every record, so an interrupted run loses nothing;
@@ -289,6 +310,12 @@ Before harvesting from a new host, run `bash scratch/scripts/probe_egress.sh`
 there: three requests, and it distinguishes a temporary rate limit (403 *JSTOR:
 Access Check*) from a fatal IP-reputation block (200 + a Fastly *Client
 Challenge* page).
+
+But treat a passing probe as necessary, not sufficient: on 2026-08-13 the probe
+returned 200 and the harvest was refused at lookup 0 seconds later, the probe's
+own request apparently having consumed the allowance. A probe that passes and a
+harvest that then fails at its first request is the *expected* shape of this
+gate, not a new problem.
 
 **Regenerate:**
 
