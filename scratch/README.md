@@ -7,14 +7,22 @@ This is **research scratch**, not part of the build. Nothing here is referenced 
 the Makefile or the construct queries. It is committed so the findings can be
 re-checked without re-running the browser capture.
 
+> [!IMPORTANT]
+> **Superseded — read `sources/README.md` § "SSID → IIIF images" first.** The
+> route this investigation pursued (`content-service`) turns out to be closed to
+> automation, and the working route came from somewhere else entirely. This file
+> is kept for the image-ordering and cover-semantics findings, which are still
+> good, and as a record of what not to retry. See
+> [Outcome](#outcome-content-service-is-a-dead-end-the-harvest-went-another-way).
+
 The findings are summarised in issue #9. Short version:
 
 1. `GET https://www.jstor.org/content-service/content-data/community.<SSID>`
    → `content.iiifLinks[]`, an **ordered** array of `/iiif/<path>` identifiers.
    Requires a browser-like `User-Agent` **and** a non-empty `Cookie` header
-   (`Cookie: x=y` is enough — no real session needed). Heavily rate-limited, and
-   — see "What the harvest attempt found" below — gated against automation, not
-   merely throttled per IP.
+   (`Cookie: x=y` is enough — no real session needed). **Closed to automation**
+   in practice — see Outcome below. Described here as it was found, not as a
+   route to use.
 2. `https://www.jstor.org{iiifLinks[i]}/info.json` and
    `https://www.jstor.org{iiifLinks[i]}/full/full/0/default.jpg`
    → open Cantaloupe IIIF Image API 2.1 level 2. **No headers of any kind
@@ -32,7 +40,8 @@ step 1 is a mandatory lookup. The codec suffix varies (`_deflate.tif`, `_jpeg.ti
     Headless is detected by the Fastly JS challenge, hence `headless=False`.
   - `capture_browse.py` — same, for the collection browse page.
   - `harvest_browser.py` — fetch `content-data` for N SSIDs from inside a
-    challenge-cleared browser context (fallback when curl is blocked).
+    challenge-cleared browser context. Written as the fallback for when curl is
+    blocked; it does **not** work — see Outcome below.
   - `verify.py`, `verify2.py` — end-to-end SSID → info.json → image-bytes check.
     `verify2.py` is the one that produced `results/verify2.json`.
   - `ratetest.py` — throughput probe against real SSIDs from `sources/artstor-ssid.csv`.
@@ -44,10 +53,6 @@ step 1 is a mandatory lookup. The codec suffix varies (`_deflate.tif`, `_jpeg.ti
     `200` + a Fastly `Client Challenge` page (IP-reputation block, fatal for curl).
     **A passing probe does not mean the harvest will run** — see below: the probe
     passed and the harvest was still refused at request #1.
-  - `harvest_iiif_browser.py` — browser-transport variant of the committed
-    `sources/marc/harvest_iiif.py`, which it imports for all parsing and CSV
-    logic. Written to test whether the block was really IP-wide. It is **not** a
-    working harvester: it establishes a real session and is refused all the same.
 - `results/`
   - `verify2.json` — the 6-SSID verification (all 200, with dimensions and byte counts).
   - `ratetest-2.0.json` — 40 SSIDs at 2 s spacing; 15 succeeded before the block.
@@ -81,62 +86,52 @@ step 1 is a mandatory lookup. The codec suffix varies (`_deflate.tif`, `_jpeg.ti
 Browser session state (`cookies.txt`, `state.json`) and the multi-MB raw page
 HTML dumps and screenshots. Re-run `scripts/capture2.py <SSID>` to regenerate.
 
-## Caveat on the rate-limit numbers
+## Outcome: `content-service` is a dead end; the harvest went another way
 
-The sustainable request rate was **not** measured — the budget was exhausted
-during testing. Observed: blocked after ~15–20 requests; a first block cleared in
-90 s; continuing to request while blocked extended it past 25 minutes. Any
-harvester must checkpoint and stop completely on the first 403.
+**Do not retry `www.jstor.org/content-service/content-data/…`.** Steps 1 above
+describes it accurately as an API, but it is closed to automation and no amount
+of pacing opens it. What was tried on 2026-08-13, all refused at the *first*
+lookup of the run: `--delay 8` after a 15-minute silence, again after 20 minutes,
+and finally a headed real Chrome holding a legitimately minted session (without
+`--disable-blink-features=AutomationControlled`, whose only function is to
+suppress the `navigator.webdriver` disclosure), which was refused and then served
+a CAPTCHA. Solving a CAPTCHA to unlock a bulk harvest is circumvention, so that
+line of attack was stopped there.
 
-It is still unmeasured. See below: `--delay` never became the operative variable.
+Consequences worth keeping:
 
-## What the harvest attempt found (2026-08-13, later the same day)
+- **`--delay` is not the knob.** It spaces requests *within* a run; every run died
+  at lookup 0. Its sustainable value was never measured and never will be here.
+- **A passing `probe_egress.sh` is not a green light.** The probe returned 200 and
+  the harvest was refused seconds later — the probe's own request appears to
+  consume the allowance.
+- **Attempts degrade the IP** to where ordinary human browsing gets challenged.
+- `browser-meta.json` was once cited as proof the block is IP-wide. It holds a
+  single 403. It is not evidence of that, and the claim was wrong: a hand-driven
+  browser on the same IP worked fine throughout.
 
-The harvest was attempted from a residential connection and **produced nothing —
-0 of 1,127 SSIDs**. What it established is that the "temporary per-IP rate limit"
-model is wrong, so the write-up above should not be read as "wait and retry".
+**The route that works** avoids this endpoint completely, using the redirect chain
+that Sloane's own Forum export publishes in its `Media URL` column:
 
-Sequence, all against `content-service`:
+```
+forum.jstor.org/assets/<SSID>/representation-view
+  ──302──▶ stor.artstor.org/stor/<uuid>                        ← the media UUID
+  ──302──▶ …s3.amazonaws.com/prod.cirrostratus.org/YYYY/MM/DD/HH/<uuid>?…
+                                            └ the date partition ┘
+```
 
-| # | request | result |
-| - | ------- | ------ |
-| 1 | `probe_egress.sh` | 403 *Access Check* — IP already blocked |
-| 2 | `probe_egress.sh`, after 15 min silence | **200**, `iiifLinks` returned |
-| 3 | `harvest_iiif.py --delay 8`, ~8 s later | 403 at lookup 0 |
-| 4 | `harvest_iiif.py --delay 8`, after 20 min silence | 403 at lookup 0 |
-| 5 | `harvest_iiif_browser.py`, headed real Chrome | 403 at lookup 0, then a CAPTCHA |
+Neither host is bot-gated. That yields the two components of the IIIF identifier
+that cannot be derived from an SSID. Implemented as `sources/marc/harvest_media.py`
+and documented in `sources/README.md` § "SSID → IIIF images" — **read that, not
+this file, for how the pipeline actually works.**
 
-Conclusions:
+Two things this scratch investigation got wrong that the write-up above corrects:
+the cover-position metadata (`Image View Description`) was already sitting in the
+local Forum export as `Image View Type[4603]`, so the 1,127 API calls were never
+needed for it; and the IIIF *image* tier was never auth-walled — it is open,
+unthrottled, and CORS-permissive, which is why the site transcludes rather than
+rehosts.
 
-- **`--delay` is not the knob, and its sustainable value remains unmeasured.** It
-  spaces requests *within* a run; every run was refused at lookup 0, so raising
-  it from 8 to 12 or 20 could not have changed the outcome. Do not report a
-  "working delay" until a run actually completes lookups.
-- **The gate is on automation, not (only) on the IP.** While the script was being
-  refused, a hand-driven browser on the *same laptop and IP* was watched
-  succeeding in the Network tab. Row 5 is the decisive test: a headed real Chrome
-  with a legitimately minted session — and deliberately **without**
-  `--disable-blink-features=AutomationControlled`, whose only function is to
-  suppress the `navigator.webdriver` disclosure — was refused at request #1 and
-  then escalated to a CAPTCHA. A CAPTCHA is the site asking whether a human is
-  driving. Having a human solve one to unlock a 1,127-request scripted harvest is
-  circumvention; the attempt was stopped there rather than taken further.
-- **A passing probe is not a green light.** Row 2 passed and row 3, seconds later,
-  did not. The probe's own request appears to consume the allowance.
-- **Attempts degrade the IP.** After this sequence, ordinary human browsing from
-  the same machine was being challenged too. Let it rest.
-
-Open question, untested: the item page's own XHR calls
-`content-data/<uuid>` (`5323aae1-a260-3bf2-b409-08849c553c48` for SSID 14183099,
-per `api-samples/network-log-14183099.json`), while the harvester calls the
-`content-data/community.<SSID>` alias. Whether the alias is treated more harshly
-was never isolated — the gate tripped before both forms could be compared in one
-session. It is not a shortcut on its own: getting 1,127 UUIDs would need one
-protected page load each.
-
-**Suggested next step: ask Artstor/JSTOR.** The Forum export already in hand
-(`Jstor_Artists__book_records.csv`) came from them, and SSID → media identifiers
-is a modest ask for a library project — potentially a single file instead of
-1,127 gated requests. Failing that, probe a different egress before harvesting
-there, bearing in mind that non-residential hosts tend to draw the Fastly JS
-challenge instead.
+`content-service` remains the only known route to a record's **second and later**
+images, so the slipcase cases (`(Images of the enclosure, cover, & interior)`)
+stay unresolved. That is the one reason to care about it at all.

@@ -1,5 +1,20 @@
 #!/usr/bin/env python3
-"""Harvest the JSTOR IIIF image identifiers for each Forum SSID (issue #9).
+"""SUPERSEDED -- harvest IIIF identifiers via `content-service` (issue #9).
+
+**This script does not work, and the endpoint it uses cannot be made to work.**
+Use `harvest_media.py` instead, which reaches the same identifiers through the
+`forum.jstor.org` -> `stor.artstor.org` redirect chain and is not gated.
+
+`content-service` is closed to *automation*, not merely rate-limited: it refuses
+scripted clients at the first lookup of a run regardless of pacing, and escalates
+to a CAPTCHA. Pacing, long backoffs and a real challenge-cleared browser session
+were all tried and all failed; see `scratch/README.md` and `sources/README.md`.
+
+It is kept for one reason only: `content-service` remains the sole known route to
+a record's **second and later** images, which `harvest_media.py` cannot reach.
+Everything below describes that endpoint as it was found -- accurate, unusable.
+
+---
 
 `artstor-ssid.csv` gets us from a catalogue record to a JSTOR Forum SSID. This
 script takes the next step: SSID -> the IIIF identifiers of that record's images.

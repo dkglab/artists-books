@@ -13,8 +13,10 @@ provenance:
   `reference-works-manual.xml`, and `reference-works-unresolved.csv`.
   Resumable harvest state lives under `marc/harvest/` (gitignored). Also
   `resolve_artstor.py`, which mines the harvested 856 links for the JSTOR
-  crosswalk below, and `harvest_iiif.py`, which takes that crosswalk's SSIDs the
-  rest of the way to IIIF image identifiers.
+  crosswalk below, and `harvest_media.py`, which takes that crosswalk's SSIDs the
+  rest of the way to IIIF image identifiers. (`harvest_iiif.py` attempted the
+  same over a JSTOR endpoint that turns out to be closed to automation; it is
+  kept only because interior images have no other known route.)
 - root (this file) — the committed graph inputs the construct queries read: the
   canonical `artists-books.csv` and `reference-works.csv` (the deduplicated
   lib 1 ∪ 2 ∪ 3 lists) and the frozen `citations.ttl`, plus loose external
@@ -207,7 +209,7 @@ Two shapes to be aware of when consuming this file:
 - **A book may have several assets** (cover, interior, multi-volume): 1,166 links
   over 1,145 books, so do not assume one row per book. (An earlier note here said
   to pick the asset whose Forum `Filename` ends in `1`/`001`; that rule does not
-  hold — see `ssid-iiif.csv` below for what actually identifies the cover.)
+  hold — see `ssid-media.csv` below for what actually identifies the cover.)
 - **33 SSIDs are shared by more than one canonical key.** Most are dedup misses
   from #82 — *Boundless* under three keys, *Money* under two — so this file
   doubles as a signal for that review. One (SSID 23249420) is shared by four
@@ -220,10 +222,10 @@ make -C sources artstor-ssid.csv                                  # resumable; s
 python3 marc/resolve_artstor.py --limit 250 --delay 1             # or chunk it, from sources/
 ```
 
-## SSID → IIIF images (`ssid-iiif.csv`, issue #9)
+## SSID → IIIF images (`ssid-media.csv`, issue #9)
 
-The second half of the cover-image lookup: SSID → the IIIF identifiers of that
-record's images. It is a real lookup, not string manipulation — the identifier is
+The second half of the cover-image lookup: SSID → the IIIF identifier of that
+record's image. It is a real lookup, not string manipulation — the identifier is
 a date-partitioned S3 path with a varying codec suffix, so nothing in it can be
 derived from the SSID:
 
@@ -232,94 +234,90 @@ derived from the SSID:
       └ upload time ┘ └────── media UUID ──────┘        └ codec ┘
 ```
 
-> [!IMPORTANT]
-> **Not harvested — `ssid-iiif.csv` is not in the tree, and a different route is
-> probably needed.** The harvester and its make target are in place and correct,
-> but a full attempt from a residential connection (2026-08-13) harvested **0 of
-> 1,127 SSIDs**: every run was refused with a 403 at its *first* lookup.
->
-> This is **not** a wait-and-retry situation. The block is on automation, not
-> merely on the IP. While the script was being refused, a hand-driven browser on
-> the same laptop and IP was succeeding; a headed real Chrome with a legitimate
-> session, driven by a script, was refused at request #1 and then served a
-> CAPTCHA. Solving that to unlock a bulk harvest would be circumvention, so the
-> attempt was stopped. Repeated attempts also degrade the IP's standing to where
-> ordinary browsing gets challenged.
->
-> Because every run died at lookup 0, **`--delay` was never the operative
-> variable and its sustainable value is still unmeasured** — raising it cannot
-> help when request #1 is refused.
->
-> The likeliest way forward is to **ask Artstor/JSTOR for SSID → media
-> identifiers directly** rather than to harvest them; see `scratch/README.md`
-> § "What the harvest attempt found" for the full sequence, the untested
-> UUID-vs-`community.<SSID>` question, and the alternatives.
-
-`marc/harvest_iiif.py` makes one request per distinct SSID in `artstor-ssid.csv`
-(1,127 of them) to
-`https://www.jstor.org/content-service/content-data/community.<SSID>`, and writes
-one row per image: `ssid, pageIndex, iiifPath, pageCount, imageViewDescription,
-status`. It is keyed on `ssid` alone — it joins back to books through
-`artstor-ssid.csv`, so the canonical key is not duplicated into it.
+`marc/harvest_media.py` recovers both unguessable components from the redirect
+chain that Sloane's own Forum export publishes in its `Media URL` column:
 
 ```
-ssid,pageIndex,iiifPath,pageCount,imageViewDescription,status
-14183099,0,/iiif/2016/04/29/16/e31d56f8-…_deflate.tif,2,(Cover & interior images),ok
-14183099,1,/iiif/2022/09/21/13/0f370719-…_deflate.tif,2,(Cover & interior images),ok
+forum.jstor.org/assets/<SSID>/representation-view
+  ──302──▶ stor.artstor.org/stor/<uuid>                       ← the media UUID
+  ──302──▶ …s3.amazonaws.com/prod.cirrostratus.org/YYYY/MM/DD/HH/<uuid>?…
+                                           └ the date partition ┘
 ```
 
-`iiifLinks` is ordered and `len(iiifLinks) == pageCount`, so `pageIndex` 0 is
-page 1. But **page 1 is not always the cover**, and the file name does not say
-which one is (`strip_tease_cover2.tif` and `presente_cover3.tif` are both
-covers). `imageViewDescription` — the Forum *Image View Description* field — is
-what carries that:
+Only the two `Location` headers are read. **The S3 URL is never fetched and never
+stored** — it is presigned, expiring, and carries live AWS credentials. The codec
+suffix is settled by confirming each candidate against `{iiifPath}/info.json`,
+which also yields `width`/`height` for the templates.
 
-| `imageViewDescription`                          | cover is        |
-| ----------------------------------------------- | --------------- |
-| `(Cover & interior images)`                      | `pageIndex` 0   |
-| `(Images of the enclosure, cover, & interior)`   | `pageIndex` 1 (page 1 is the slipcase) |
-| `(Interior image)`, `(Open)`                     | no cover in this record |
+Neither redirect host is bot-gated, so this is an ordinary polite harvest: three
+requests per SSID at `--delay 2` (~1 h for 1,127), checkpointed after every
+record and resumable.
 
-It is recorded verbatim and deliberately not interpreted here: `ab:coverImage`
-is not yet in `docs/vocab.ttl` and the no-cover fallback policy is undecided.
+> [!WARNING]
+> **Do not route this through `www.jstor.org/content-service/`.** That endpoint —
+> the one `marc/harvest_iiif.py` uses — is gated against *automation*, not merely
+> throttled: it refuses scripted clients at request #1 regardless of pacing, and
+> escalates to a CAPTCHA. Pacing, backoff and fresh sessions were all tried and
+> all failed. `harvest_media.py` avoids it entirely. See `scratch/README.md`.
 
-Once the identifiers are known the images need no crosswalk and no credentials —
-`https://www.jstor.org{iiifPath}/info.json` and
-`…/full/full/0/default.jpg` (or `…/full/,400/0/default.jpg`) are open Cantaloupe
-IIIF Image API 2.1 level-2 endpoints that take **no headers at all** and are not
-rate-limited. Masters are 2400px on the long edge. This tier was re-confirmed
-healthy during the 2026-08-13 attempt (`info.json` → 200 + JSON, `full/,400/0/`
-→ 200 `image/jpeg`) at the same moment the metadata API was refusing everything:
-only step 1 is gated.
+Output is one row per SSID, keyed on `ssid` alone — it joins back to books
+through `artstor-ssid.csv`, so the canonical key is not duplicated into it:
 
-**The one-time harvest is the constrained part.** `/content-service/` is
-rate-limited per IP, the penalty *escalates* when you keep requesting through a
-block, and — per the attempt written up in `scratch/README.md` — it also refuses
-scripted clients outright regardless of pacing. So `harvest_iiif.py`:
+```
+ssid,uuid,datePath,iiifPath,width,height,filename,fileCount,imageViewType,status
+13604309,4098b9d0-…,2016/04/04/20,/iiif/2016/04/04/20/4098b9d0-…_deflate.tif,2400,1800,Far_horizons1.tif,2,(Cover & interior images),ok
+```
 
-- defaults to `--delay 8` (~1,127 SSIDs ≈ 2.5 h) — an estimate of a sustainable
-  rate, never a measured one, and **still unmeasured**: no run has yet completed
-  a single lookup, so no value of `--delay` has been shown to work;
-- **stops the entire run at the first 403** and exits cleanly rather than
-  retrying, because retrying while blocked is what extends the block;
-- rewrites the CSV after every record, so an interrupted run loses nothing;
-- resumes by skipping SSIDs already recorded `ok`/`no-images`, and retries any
-  other status. SSIDs not yet attempted have no rows at all.
+### One image per book, and it is not always the cover
 
-Before harvesting from a new host, run `bash scratch/scripts/probe_egress.sh`
-there: three requests, and it distinguishes a temporary rate limit (403 *JSTOR:
-Access Check*) from a fatal IP-reputation block (200 + a Fastly *Client
-Challenge* page).
+`representation-view` resolves to the record's **first** image. `imageViewType` —
+carried through from the local Forum export, not fetched — is what says whether
+that first image is the cover:
 
-But treat a passing probe as necessary, not sufficient: on 2026-08-13 the probe
-returned 200 and the harvest was refused at lookup 0 seconds later, the probe's
-own request apparently having consumed the allowance. A probe that passes and a
-harvest that then fails at its first request is the *expected* shape of this
-gate, not a new problem.
+| `imageViewType`                                | image 1 is                             |
+| ---------------------------------------------- | -------------------------------------- |
+| `(Cover & interior images)`, `(Cover)`         | the cover                              |
+| `(Images of the enclosure, cover, & interior)` | the **slipcase**; the cover is image 2 |
+| `(Interior image[s])`, `(Open)`                | an interior — the record has no cover   |
+
+The file name is not a reliable signal: `strip_tease_cover2.tif` and
+`presente_cover3.tif` are both covers despite the trailing digit.
+
+Reaching **image 2 or later requires the gated endpoint**, so the slipcase
+records cannot currently be corrected automatically. `imageViewType` is recorded
+verbatim and deliberately not interpreted here: `ab:coverImage` is still not in
+`docs/vocab.ttl` and the no-cover fallback policy is undecided.
+
+### The image tier is open, so the site transcludes rather than rehosts
+
+`https://www.jstor.org{iiifPath}/info.json` and `…/full/,400/0/default.jpg` are
+open Cantaloupe **IIIF Image API 2.1 level 2** endpoints: no headers at all, no
+rate limiting, and permissive CORS (`Access-Control-Allow-Origin` echoes any
+origin, and `cors` is in the declared `supports`). Masters are 2400px on the long
+edge, with 256px tiles at scale factors 1/2/4/8, `jpg`/`webp`, `maxArea` 10M.
+
+A browser can therefore render *and* deep-zoom these images straight from JSTOR,
+so there is no reason to copy them. Planned in three stages:
+
+1. **Plain `<img>`** — index and book pages use `…/full/,400/0/default.jpg` and
+   `…/full/,1200/0/default.jpg`. No JavaScript, no manifest, no CORS needed.
+2. **OpenSeadragon** — deep zoom on the book page, pointed straight at
+   `info.json`. Still needs no manifest.
+3. **Mirador** *(maybe)* — worth adding only once a record has more than one
+   canvas, which needs the image list behind the gated endpoint.
+
+Stages 2–3 want IIIF **Presentation** manifests, a different API from the Image
+API above; JSTOR does not publish them (its own manifests are the gated part), so
+we emit our own. A `views.yaml` entry renders `manifest.json` per book from the
+graph, each canvas pointing its image service at `https://www.jstor.org/iiif/…` —
+cross-domain image services are precisely what the Presentation API is for. Two
+side benefits: v3's `requiredStatement` is the right home for the Sloane rights
+line, and the manifest isolates the JSTOR dependency, so moving to self-hosted
+images later becomes a base-URL change rather than a template rewrite.
 
 **Regenerate:**
 
 ```sh
-make -C sources ssid-iiif.csv                                     # resumable; skips harvested
-python3 marc/harvest_iiif.py --limit 100 --delay 8                # or chunk it, from sources/
+make -C sources ssid-media.csv                       # resumable; skips resolved
+python3 marc/harvest_media.py --limit 100 --delay 2  # or chunk it, from sources/
 ```

@@ -136,10 +136,19 @@ artstor-ssid.csv: | marc/resolve_artstor.py
 # lookup. artstor-ssid.csv is read for its SSIDs but is deliberately NOT a
 # prerequisite (same reasoning as above: a rebuild must never trigger a re-run
 # of an external harvest), and neither file is a prerequisite of anything the
-# pipeline builds -- ssid-iiif.csv is a frozen source, committed like
-# citations.ttl. The metadata API is aggressively rate-limited per IP, so this
-# is slow by design (~1,127 SSIDs at 8s => ~2.5h) and stops at the first 403.
-# Rerun to resume; chunk it with --limit.
+# pipeline builds -- ssid-media.csv is a frozen source, committed like
+# citations.ttl. It resolves each SSID through the forum.jstor.org ->
+# stor.artstor.org redirect chain, which is not bot-gated: ~3 requests per SSID
+# at 2s => ~1h. Checkpointed after every record; rerun to resume, chunk with
+# --limit. See sources/README.md "SSID -> IIIF images".
+ssid-media.csv: | marc/harvest_media.py
+	python3 marc/harvest_media.py --ssids artstor-ssid.csv \
+	  --export Jstor_Artists__book_records.csv --out $@
+
+# SUPERSEDED by ssid-media.csv above; kept only because content-service is the
+# sole known route to a record's second and later images. The endpoint is closed
+# to automation and refuses scripted clients at the first lookup -- this target
+# is not expected to produce anything. Do not wire it into a build.
 ssid-iiif.csv: | marc/harvest_iiif.py
 	python3 marc/harvest_iiif.py --ssids artstor-ssid.csv --out $@
 
