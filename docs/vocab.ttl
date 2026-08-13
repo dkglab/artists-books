@@ -8,6 +8,7 @@
 @prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
 @prefix ab: <https://dkglab.github.io/ns/artists-books/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
 ab:ArtistsBook a rdfs:Class ;
@@ -16,57 +17,67 @@ ab:ArtistsBook a rdfs:Class ;
     rdfs:comment "An artist book is a work of art that utilizes the form of a book." .
 
 
-ab:imagesAt a rdfs:Property ;
+ab:imagesAt a rdf:Property ;
     rdfs:label "images at" ;
     rdfs:comment "Indicates a URL where images of the book can be found." ;
     rdfs:domain ab:ArtistsBook ;
     rdfs:range rdfs:Resource .
     
-ab:worldcatLink a rdfs:Property ;
+ab:worldcatLink a rdf:Property ;
     rdfs:label "WorldCat link" ;
     rdfs:comment "Indicates a URL to the WorldCat record for the book." ;
     rdfs:domain schema:Book ;
     rdfs:range rdfs:Resource .
 
+ab:heldBySloane a rdf:Property ;
+    rdfs:label "held by Sloane" ;
+    rdfs:comment "True when the book is held locally at the Sloane Art Library, UNC. Asserted only when true." ;
+    rdfs:domain ab:ArtistsBook ;
+    rdfs:range xsd:boolean .
 
 ab:ReferenceWork a rdfs:Class ;
     rdfs:subClassOf schema:CreativeWork ;
     rdfs:label "Reference Work" ;
     rdfs:comment "A reference work is a work (book, article, webpage, etc.) that cites an Artist's Book." .
 
+ab:itemKey a rdf:Property ;
+    rdfs:label "item key" ;
+    rdfs:comment "The canonical Zotero item key identifying the record, as used to mint its URI. Applies to both ab:ArtistsBook and ab:ReferenceWork, so no rdfs:domain is asserted (an RDFS domain with two classes would be read as their intersection)." ;
+    rdfs:range xsd:string .
+
 ab:Citation a rdfs:Class ;
     rdfs:label "Citation" ;
     rdfs:comment "A citation is a relationship between an Artist's Book and a Reference Book."  .
 
-ab:citedBy a rdfs:Property ;
+ab:citedBy a rdf:Property ;
     rdfs:label "cited by" ;
     rdfs:comment "Relates a Citation to a Reference Work." ;
     rdfs:domain ab:Citation ;
     rdfs:range ab:ReferenceWork .
 
-ab:cites a rdfs:Property ;
+ab:cites a rdf:Property ;
     rdfs:label "cites" ;
     rdfs:comment "Relates a Citation to an Artist's Book." ;
     rdfs:domain ab:Citation ;
     rdfs:range ab:ArtistsBook .
 
-ab:onPageNumber a rdfs:Property ;
+ab:onPageNumber a rdf:Property ;
     rdfs:label "on page number" ;
     rdfs:comment "Relates Citation to page number where it is found." ;
     rdfs:domain ab:Citation .
 
-ab:imagesOnPageNumber a rdfs:Property ;
+ab:imagesOnPageNumber a rdf:Property ;
     rdfs:subPropertyOf ab:onPageNumber ;
     rdfs:label "images on page number" ;
     rdfs:comment "Relates Citation to a page number where an image of the cited Artist_book is." ;
     rdfs:domain ab:Citation .
 
-ab:constructedUsing a rdfs:Property ;
+ab:constructedUsing a rdf:Property ;
     rdfs:label "constructed using" ;
     rdfs:comment "Indicates techniques, materials, and production methods used in the construction of an Artist's Book. May also include the genre of the book like \"photographic sequence\"" ;
     rdfs:domain ab:ArtistsBook.
 
-ab:hasSubject a rdfs:Property ;
+ab:hasSubject a rdf:Property ;
     rdfs:label "has subject" ;
     rdfs:comment "Relates an Artist's Book to a topical or geographic subject concept (a skos:Concept in the ab:subject-terms scheme) drawn from its MARC 650/651 headings. Indicates what the book is about." ;
     rdfs:domain ab:ArtistsBook ;
