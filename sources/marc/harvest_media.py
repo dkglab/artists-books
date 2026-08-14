@@ -114,13 +114,20 @@ def location(opener, url, timeout):
 
 
 def info(url, timeout):
-    """`info.json` for a candidate IIIF path -> (width, height) or None."""
+    """`info.json` for a candidate IIIF path.
+
+    Returns `(width, height)` on success, else the HTTP status if there was one.
+    A 403 here means the asset itself is access-restricted -- distinct from a 404,
+    which just means this codec guess was wrong.
+    """
     req = urllib.request.Request(url)  # open tier: deliberately no headers
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
             d = json.loads(r.read())
         return d.get("width"), d.get("height")
-    except (urllib.error.HTTPError, urllib.error.URLError, ValueError, TimeoutError, OSError):
+    except urllib.error.HTTPError as e:
+        return e.code
+    except (urllib.error.URLError, ValueError, TimeoutError, OSError):
         return None
 
 
@@ -159,13 +166,17 @@ def resolve(opener, ssid, meta, timeout):
     if not dp:
         return row(ssid, meta, "no-datepath", uuid=uuid)
 
+    codes = set()
     for codec in CODECS:
         path = f"/iiif/{dp}/{uuid}{codec}"
-        wh = info(f"https://www.jstor.org{path}/info.json", timeout)
-        if wh:
+        res = info(f"https://www.jstor.org{path}/info.json", timeout)
+        if isinstance(res, tuple):
             return row(ssid, meta, "ok", uuid=uuid, datePath=dp, iiifPath=path,
-                       width=wh[0], height=wh[1])
-    return row(ssid, meta, "no-iiif", uuid=uuid, datePath=dp)
+                       width=res[0], height=res[1])
+        codes.add(res)
+    # Every candidate 403 => the asset is restricted, not a bad codec guess.
+    status = "restricted" if codes == {403} else "no-iiif"
+    return row(ssid, meta, status, uuid=uuid, datePath=dp)
 
 
 def write(path, ssids, harvested):

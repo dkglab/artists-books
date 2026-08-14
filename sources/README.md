@@ -268,6 +268,17 @@ ssid,uuid,datePath,iiifPath,width,height,filename,fileCount,imageViewType,status
 13604309,4098b9d0-…,2016/04/04/20,/iiif/2016/04/04/20/4098b9d0-…_deflate.tif,2400,1800,Far_horizons1.tif,2,(Cover & interior images),ok
 ```
 
+**All 1,127 SSIDs resolve; 1,118 have a IIIF path.** The remaining 9 are
+`restricted`: the redirect chain gives their UUID and date partition, but every
+candidate identifier returns **403** from the IIIF tier (not 404 — the asset is
+access-restricted, not mis-guessed; a known-good path returns 200 in the same
+breath). All 9 are also absent from the local Forum export, so they are almost
+certainly assets added to Forum after that export was taken and not publicly
+released. They are left un-`ok` so a later run retries them, in case they are
+published; a fresh Forum export would likely settle them. `no-iiif` is the
+distinct status for "resolved, but no candidate identifier worked" — currently
+none.
+
 ### One image per book, and it is not always the cover
 
 `representation-view` resolves to the record's **first** image. `imageViewType` —
