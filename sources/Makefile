@@ -3,6 +3,22 @@
 # Zotero DB exports) and marc/ (the Z39.50 MARC harvest) — while the crosswalks
 # that bridge them stay at this level.
 
+# This file uses grouped targets (`a b &:`), which need GNU Make >= 4.3. macOS
+# ships GNU Make 3.81 as /usr/bin/make, where `&:` silently degrades into
+# independent rules sharing one recipe: the recipe then runs once per requested
+# output instead of once for all of them (dedup.py twice, freeze_citations.py
+# twice), losing exactly the atomicity the grouped target exists to provide, and
+# a literal file named `&` becomes a target. Fail loudly rather than misbuild.
+# Testing .FEATURES checks for the capability itself rather than parsing a
+# version string. The top-level Makefile has no such requirement — the graph and
+# site build fine with stock macOS make; only regenerating sources/ needs this.
+# See issue #124.
+ifeq ($(filter grouped-target,$(.FEATURES)),)
+$(error GNU Make >= 4.3 required to regenerate sources/ (grouped targets); \
+  this is GNU Make $(MAKE_VERSION). On macOS: `brew install make`, then use \
+  `gmake -C sources <target>`)
+endif
+
 zotero/all-items.csv: zotero/items_export.sh zotero/items_export.sql
 	./zotero/items_export.sh > $@
 

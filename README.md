@@ -97,6 +97,12 @@ compile the vendored
 Codespaces gets these via `.devcontainer/devcontainer.json`. See
 [`CLAUDE.md`](CLAUDE.md) for the full target list and build details.
 
+Regenerating the inputs under `sources/` additionally needs **GNU Make
+≥ 4.3**, for grouped targets. macOS ships GNU Make 3.81, so there use
+`gmake` (`brew install make`) — `make -C sources …` stops with an
+explanatory error rather than misbuilding. The `make all` / `make
+serve` build above has no such requirement.
+
 | Tool | Version | Purpose |
 |---|---|---|
 | [Apache Jena](https://jena.apache.org/) | 6.1.0 | RDF validation, RDFS reasoning, graph diffing (`riot`, `arq`, `shacl`) |
