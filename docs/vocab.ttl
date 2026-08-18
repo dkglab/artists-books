@@ -85,7 +85,7 @@ ab:hasSubject a rdf:Property ;
 
 ab:IIIFImageNode a rdfs:Class ;
     rdfs:label "IIIF image node" ;
-    rdfs:comment "A node carrying a displayable IIIF image URL together with the pixel dimensions of the source image (harvested into sources/ssid-media.csv), so that templates can emit explicit width and height attributes and avoid layout shift." ;
+    rdfs:comment "A node carrying a displayable IIIF image URL together with the pixel dimensions of the image delivered at that URL, so that templates can emit explicit width and height attributes and avoid layout shift. The dimensions describe this particular rendering, not the master: they are derived from the master dimensions harvested into sources/ssid-media.csv and the size requested in ab:iiifPath's suffix. The master's own dimensions remain available from the image server's info.json." ;
     rdfs:subClassOf schema:ImageObject .
 
 ab:SourceImage a rdfs:Class ;
@@ -95,7 +95,7 @@ ab:SourceImage a rdfs:Class ;
 
 ab:Thumbnail a rdfs:Class ;
     rdfs:label "Thumbnail image" ;
-    rdfs:comment "A small derivative of an ab:SourceImage, requested from the IIIF image server at a fixed width for use in index listings. Carries no height, which varies with the aspect ratio of the source image." ;
+    rdfs:comment "A small derivative of an ab:SourceImage, requested from the IIIF image server at a fixed height for use in index listings. Its width varies with the aspect ratio of the master image, so index tiles should be laid out to tolerate a variable width." ;
     rdfs:subClassOf ab:IIIFImageNode .
 
 ab:sourceImage a rdf:Property ;
@@ -112,6 +112,18 @@ ab:representativeImage a rdf:Property ;
 
 ab:iiifPath a rdf:Property ;
     rdfs:label "IIIF path" ;
-    rdfs:comment "The path of this image on the JSTOR IIIF image server, as harvested into sources/ssid-media.csv. Prefixing it with \"https://www.jstor.org\" and appending an IIIF Image API region/size/rotation/quality suffix — for example \"/full/,400/0/default.jpg\" — yields a displayable URL." ;
+    rdfs:comment "The path of this image on the JSTOR IIIF image server, as harvested into sources/ssid-media.csv. Prefixing it with \"https://www.jstor.org\" and appending an IIIF Image API region/size/rotation/quality suffix yields a displayable URL. Note the size syntax: \",400\" requests a HEIGHT of 400 with the width derived from the aspect ratio, whereas \"400,\" requests a width of 400. These are level 2 endpoints, so any size may be requested." ;
     rdfs:domain ab:IIIFImageNode ;
     rdfs:range xsd:string .
+
+ab:pixelWidth a rdf:Property ;
+    rdfs:label "pixel width" ;
+    rdfs:comment "The width, in pixels, of the image delivered at this node's schema:contentUrl. Given as a plain integer rather than with schema:width, whose range is schema:Distance or schema:QuantitativeValue and so would require a wrapper node to be used correctly." ;
+    rdfs:domain ab:IIIFImageNode ;
+    rdfs:range xsd:integer .
+
+ab:pixelHeight a rdf:Property ;
+    rdfs:label "pixel height" ;
+    rdfs:comment "The height, in pixels, of the image delivered at this node's schema:contentUrl. Given as a plain integer rather than with schema:height, whose range is schema:Distance or schema:QuantitativeValue and so would require a wrapper node to be used correctly." ;
+    rdfs:domain ab:IIIFImageNode ;
+    rdfs:range xsd:integer .

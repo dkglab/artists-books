@@ -80,16 +80,16 @@ ab:source_ruscha_gasoline a ab:SourceImage ;
     ab:iiifPath "/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif" ;
     schema:contentUrl "https://www.jstor.org/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif/full/,1200/0/default.jpg"^^xsd:anyURI ;
     schema:encodingFormat "image/jpeg" ;
-    schema:width "1920"^^xsd:integer ;   # source width  — from ssid-media.csv
-    schema:height "2400"^^xsd:integer .  # source height — from ssid-media.csv
+    ab:pixelWidth "960"^^xsd:integer ;    # derived: master 1920x2400 rendered at height 1200
+    ab:pixelHeight "1200"^^xsd:integer .
 
 ab:thumb_ruscha_gasoline a ab:Thumbnail ;
     schema:about wd:Q7857846 ;
     ab:iiifPath "/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif" ;
     schema:contentUrl "https://www.jstor.org/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif/full/,300/0/default.jpg"^^xsd:anyURI ;
     schema:encodingFormat "image/jpeg" ;
-    schema:width "300"^^xsd:integer .
-    # no height — varies with the aspect ratio of the source image
+    ab:pixelWidth "240"^^xsd:integer ;    # derived: master 1920x2400 rendered at height 300
+    ab:pixelHeight "300"^^xsd:integer .
 
 
 
