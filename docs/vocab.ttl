@@ -85,21 +85,39 @@ ab:hasSubject a rdf:Property ;
 
 ab:representativeImage a rdf:Property ;
     rdfs:label "representative image" ;
-    rdfs:comment "Relates an Artist's Book to an image that can be used to represent it as a thumbnail." ;
+    rdfs:comment "Relates an Artist's Book to its thumbnail" ;
     rdfs:domain ab:ArtistsBook ;
-    rdfs:range ab:thumbnail .
+    rdfs:range ab:Thumbnail .
 
-ab:thumbnail a rdfs:Class ;
+ab:sourceImage a rdf:Property ;
+    rdfs:label "source image" ;
+    rdfs:comment "Relates an Artist's Book to its cover image node." ;
+    rdfs:domain ab:ArtistsBook ;
+    rdfs:range  ab:SourceImage .
+
+ab:SourceImage a rdfs:Class ;
+    rdfs:label "Source image" ;
+    rdfs:comment "An IIIF image node representing the cover of an Artist's Book. Carries a displayable URL and the source image's pixel dimensions (width and height harvested from ssid-media.csv) so that templates can emit explicit width/height attributes and avoid layout shift." ;
+    rdfs:subClassOf schema:ImageObject .
+
+ab:Thumbnail a rdfs:Class ;
     rdfs:label "Thumbnail image" ;
     rdfs:comment "A small image resource carrying a URL and optional dimensions for use as a thumbnail." ;
     rdfs:subClassOf schema:ImageObject . 
 
+ab:IIIFImageNode a rdfs:Class ;
+    rdfs:label "IIIF Image Node" ;
+    rdfs:comment "A node carrying a displayable IIIF URL together with the source image dimensions from ssid-media.csv." ;
+    rdfs:subClassOf schema:ImageObject .
+
+ab:CoverImage rdfs:subClassOf ab:IIIFImageNode .
+ab:thumbnail  rdfs:subClassOf ab:IIIFImageNode .
+
+
 ab:iiifPath a rdf:Property ;
     rdfs:label "IIIF path" ;
-    ab:iiifPath a rdf:Property ;
-    rdfs:label "IIIF path" ;
-    rdfs:comment "The IIIF image path used to construct displayable image URLs from a base server." ;
-    rdfs:domain ab:thumbnail ;
+    rdfs:comment """The IIIF image server path for this image resource";
+    rdfs:domain ab:IIIFImageNode ;
     rdfs:range  xsd:string .
 
 

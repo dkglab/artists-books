@@ -62,7 +62,8 @@ wd:Q7857846 a ab:ArtistsBook ;
     ab:constructedUsing aat:300192339 ;
     ab:imagesAt <https://www.jstor.org/stable/community.949854> ;
     ab:constructedUsing aat:300054225;
-    ab:representativeImage ab:thumbnailTwentySixGasoline ;
+    ab:sourceImage ab:source_ruscha_twenty ;
+    ab:representativeImage ab:thumb_ruscha_twenty ;
      bf:identifiedBy [
         a bf:Identifier ;
         rdf:value "888402" ;
@@ -73,7 +74,16 @@ wd:Q7857846 a ab:ArtistsBook ;
     ab:worldcatLink <https://search.worldcat.org/title/888402> ;
    .
 
-ab:thumbnailTwentySixGasoline a ab:thumbnail ;
+ab:source_ruscha_gasoline
+    a ab:SourceImage ;
+    schema:about ab:ruscha_gasoline ;
+    ab:iiifPath  "/iiif/2016/06/08/15/53d2c955-9fd1-4627-8638-ba7a73dc56ac_deflate.tif" ;
+    schema:contentUrl "https://www.jstor.org/iiif/2016/06/08/15/53d2c955-9fd1-4627-8638-ba7a73dc56ac_deflate.tif/full/,400/0/default.jpg"^^xsd:anyURI ;
+    schema:encodingFormat "image/jpeg" ;
+    schema:width "1800"^^xsd:integer ;  # source width  — from ssid-media.csv
+    schema:height "2400"^^xsd:integer .  # source height — from ssid-media.csv
+
+ab:thumb_ruscha_gasoline a ab:Thumbnail ;
     ab:iiifPath "/iiif/2016/06/08/15/53d2c955-9fd1-4627-8638-ba7a73dc56ac_deflate.tif" ;
     schema:contentUrl "https://www.jstor.org/iiif/2016/06/08/15/53d2c955-9fd1-4627-8638-ba7a73dc56ac_deflate.tif/full/,300/0/default.jpg"^^xsd:anyURI ;
     schema:width "300"^^xsd:integer .
