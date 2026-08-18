@@ -50,15 +50,20 @@ graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 # attach ab:constructedUsing (#86), and the subjects occurrences + decisions CSVs
 # to attach ab:hasSubject (#105): each occurrences.csv maps a book's canonical key
 # to its heading clusters, each decisions.csv maps included clusters to concepts.
-# The concept URIs it emits resolve against sources/construction-methods.ttl and
-# sources/subject-terms.ttl, which Fuseki loads separately.
+# It also reads sources/artstor-ssid.csv + sources/ssid-media.csv to attach the
+# JSTOR IIIF imagery (#9), joining canonical key -> SSID -> IIIF identifier.
+# The concept URIs it emits resolve against sources/construction-methods.ttl,
+# sources/subject-terms.ttl and sources/image-view-types.ttl, which Fuseki loads
+# separately.
 graph/artists-books.ttl: \
 sources/artists-books.csv \
 sources/marc/artists-books-marc.zip \
 sources/construction/occurrences.csv \
 sources/construction/decisions.csv \
 sources/subjects/occurrences.csv \
-sources/subjects/decisions.csv
+sources/subjects/decisions.csv \
+sources/artstor-ssid.csv \
+sources/ssid-media.csv
 
 graph/reference-works.ttl: \
 sources/reference-works.csv \

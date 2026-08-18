@@ -9,6 +9,8 @@ PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
   ?book a ab:ArtistsBook ;
@@ -28,6 +30,8 @@ CONSTRUCT {
     foaf:isPrimaryTopicOf ?worldcat_url ;
     ab:constructedUsing ?constructionConcept ;
     ab:hasSubject ?subjectConcept ;
+    ab:sourceImage ?sourceImage ;
+    ab:representativeImage ?thumbnail ;
     .
 
 
@@ -67,6 +71,26 @@ CONSTRUCT {
   ?bookSummary
     a bf:Summary ;
     rdfs:label ?summary .
+
+  ?sourceImage a ab:SourceImage ;
+    schema:about ?book ;
+    ab:iiifPath ?src_iiif_path ;
+    schema:contentUrl ?src_url ;
+    schema:encodingFormat "image/jpeg" ;
+    ab:pixelWidth ?src_width ;
+    ab:pixelHeight ?src_height ;
+    ab:imageViewType ?srcViewConcept ;
+    .
+
+  ?thumbnail a ab:Thumbnail ;
+    schema:about ?book ;
+    ab:iiifPath ?thumb_iiif_path ;
+    schema:contentUrl ?thumb_url ;
+    schema:encodingFormat "image/jpeg" ;
+    ab:pixelWidth ?thumb_width ;
+    ab:pixelHeight ?thumb_height ;
+    ab:imageViewType ?thumbViewConcept ;
+    .
 
 }
 WHERE {
@@ -490,6 +514,111 @@ WHERE {
                xyz:cluster       ?sCluster .
       }
       BIND(fx:entity(ab:, "subject/", ?sConceptId) AS ?subjectConcept)
+    }
+  }
+
+  # Images (#9). Attach the JSTOR IIIF imagery by joining the canonical key to a
+  # Forum SSID (sources/artstor-ssid.csv), then the SSID to its image
+  # (sources/ssid-media.csv). Both are small committed CSVs, so this is a cheap
+  # CSV-to-CSV join; the two SERVICEs bind the same ?ssid so ARQ hash-joins them.
+  # Only about 1,145 of the 7,920 books have any image at all, so both blocks are
+  # OPTIONAL and every minted node hangs off a key that only binds on a match.
+  #
+  # status "ok" is required on both sides: nine SSIDs are access-restricted and
+  # 403 at the image tier, and one crosswalk row resolved to a not-found page.
+  #
+  # The dimensions emitted are the *master's*, straight from the CSV, not those of
+  # the derivative at schema:contentUrl -- see ab:IIIFImageNode in docs/vocab.ttl
+  # for why (in short: the master's are exact and carry the same aspect ratio).
+  #
+  # One ab:SourceImage per SSID, keyed by SSID like the per-creator contributions
+  # are keyed by creator. Four books legitimately have several -- multi-volume
+  # sets and cover variants -- so the book key alone would collapse distinct
+  # images onto one node and emit multi-valued paths and dimensions.
+  OPTIONAL {
+    SELECT DISTINCT ?canonical_key ?sourceImage ?src_iiif_path ?src_url
+                    ?src_width ?src_height ?srcViewConcept
+    WHERE {
+      SERVICE <x-sparql-anything:location=sources/artstor-ssid.csv,csv.headers=true> {
+        ?imgRow xyz:canonicalKey ?canonical_key ;
+                xyz:ssid         ?ssid ;
+                xyz:status       "ok" .
+      }
+      SERVICE <x-sparql-anything:location=sources/ssid-media.csv,csv.headers=true> {
+        ?mediaRow xyz:ssid          ?ssid ;
+                  xyz:status        "ok" ;
+                  xyz:iiifPath      ?src_iiif_path ;
+                  xyz:width         ?src_width_raw ;
+                  xyz:height        ?src_height_raw ;
+                  xyz:imageViewType ?src_view_raw .
+      }
+      BIND(fx:entity(ab:, "item/", ?canonical_key, "/image/", ?ssid) AS ?sourceImage)
+      BIND(xsd:integer(?src_width_raw) AS ?src_width)
+      BIND(xsd:integer(?src_height_raw) AS ?src_height)
+      BIND(STRDT(CONCAT("https://www.jstor.org", ?src_iiif_path, "/full/,1200/0/default.jpg"), xsd:anyURI) AS ?src_url)
+
+      # Normalize Forum's free-text "Image View Type" onto the three concepts in
+      # sources/image-view-types.ttl, which Fuseki loads alongside this graph.
+      # Thirteen spellings occur; image 1 is the cover in ~1,039 records, an
+      # interior in 45, and the enclosure in the rest. Anything unrecognized
+      # leaves ?src_view_slug unbound and emits no term rather than guessing.
+      BIND(LCASE(?src_view_raw) AS ?src_view_lc)
+      BIND(IF(STRSTARTS(?src_view_lc, "(cover") || STRSTARTS(?src_view_lc, "(front"), "cover",
+           IF(STRSTARTS(?src_view_lc, "(interior"), "interior",
+           IF(CONTAINS(?src_view_lc, "enclosure") || CONTAINS(?src_view_lc, "bag"), "enclosure",
+              ?sentinel))) AS ?src_view_slug)
+      BIND(IF(BOUND(?src_view_slug),
+              fx:entity(ab:, "image-view/", ?src_view_slug), ?sentinel) AS ?srcViewConcept)
+    }
+  }
+
+  # One ab:Thumbnail per book -- the representative one, so the index gets exactly
+  # one row per book. Where a book has several SSIDs the lowest wins; they are all
+  # covers, so there is no better discriminator than picking deterministically.
+  # Both halves are self-contained sub-SELECTs joined on ?ssid afterwards, so
+  # neither pushes a bound key into a SERVICE and each CSV is triplified once.
+  OPTIONAL {
+    SELECT ?canonical_key ?thumbnail ?thumb_iiif_path ?thumb_url
+           ?thumb_width ?thumb_height ?thumbViewConcept
+    WHERE {
+      {
+        SELECT ?canonical_key (STR(MIN(?ssid_num)) AS ?ssid) WHERE {
+          SERVICE <x-sparql-anything:location=sources/artstor-ssid.csv,csv.headers=true> {
+            ?anyRow xyz:canonicalKey ?canonical_key ;
+                    xyz:ssid         ?any_ssid ;
+                    xyz:status       "ok" .
+          }
+          SERVICE <x-sparql-anything:location=sources/ssid-media.csv,csv.headers=true> {
+            ?anyMedia xyz:ssid   ?any_ssid ;
+                      xyz:status "ok" .
+          }
+          BIND(xsd:integer(?any_ssid) AS ?ssid_num)
+        }
+        GROUP BY ?canonical_key
+      }
+      {
+        SELECT ?ssid ?thumb_iiif_path ?thumb_width_raw ?thumb_height_raw ?thumb_view_raw WHERE {
+          SERVICE <x-sparql-anything:location=sources/ssid-media.csv,csv.headers=true> {
+            ?thumbRow xyz:ssid          ?ssid ;
+                      xyz:status        "ok" ;
+                      xyz:iiifPath      ?thumb_iiif_path ;
+                      xyz:width         ?thumb_width_raw ;
+                      xyz:height        ?thumb_height_raw ;
+                      xyz:imageViewType ?thumb_view_raw .
+          }
+        }
+      }
+      BIND(fx:entity(ab:, "item/", ?canonical_key, "/thumbnail") AS ?thumbnail)
+      BIND(xsd:integer(?thumb_width_raw) AS ?thumb_width)
+      BIND(xsd:integer(?thumb_height_raw) AS ?thumb_height)
+      BIND(STRDT(CONCAT("https://www.jstor.org", ?thumb_iiif_path, "/full/,300/0/default.jpg"), xsd:anyURI) AS ?thumb_url)
+      BIND(LCASE(?thumb_view_raw) AS ?thumb_view_lc)
+      BIND(IF(STRSTARTS(?thumb_view_lc, "(cover") || STRSTARTS(?thumb_view_lc, "(front"), "cover",
+           IF(STRSTARTS(?thumb_view_lc, "(interior"), "interior",
+           IF(CONTAINS(?thumb_view_lc, "enclosure") || CONTAINS(?thumb_view_lc, "bag"), "enclosure",
+              ?sentinel))) AS ?thumb_view_slug)
+      BIND(IF(BOUND(?thumb_view_slug),
+              fx:entity(ab:, "image-view/", ?thumb_view_slug), ?sentinel) AS ?thumbViewConcept)
     }
   }
 }
