@@ -92,9 +92,15 @@ ab:representativeImage a rdf:Property ;
 ab:thumbnail a rdfs:Class ;
     rdfs:label "Thumbnail image" ;
     rdfs:comment "A small image resource carrying a URL and optional dimensions for use as a thumbnail." ;
-    rdfs: subClassOf schema:ImageObject . 
+    rdfs:subClassOf schema:ImageObject . 
 
-
+ab:iiifPath a rdf:Property ;
+    rdfs:label "IIIF path" ;
+    ab:iiifPath a rdf:Property ;
+    rdfs:label "IIIF path" ;
+    rdfs:comment "The IIIF image path used to construct displayable image URLs from a base server." ;
+    rdfs:domain ab:thumbnail ;
+    rdfs:range  xsd:string .
 
 
 

@@ -62,6 +62,7 @@ wd:Q7857846 a ab:ArtistsBook ;
     ab:constructedUsing aat:300192339 ;
     ab:imagesAt <https://www.jstor.org/stable/community.949854> ;
     ab:constructedUsing aat:300054225;
+    ab:representativeImage ab:thumbnailTwentySixGasoline ;
      bf:identifiedBy [
         a bf:Identifier ;
         rdf:value "888402" ;
@@ -72,6 +73,11 @@ wd:Q7857846 a ab:ArtistsBook ;
     ab:worldcatLink <https://search.worldcat.org/title/888402> ;
    .
 
+ab:thumbnailTwentySixGasoline a ab:thumbnail ;
+    ab:iiifPath "/iiif/2016/06/08/15/53d2c955-9fd1-4627-8638-ba7a73dc56ac_deflate.tif" ;
+    schema:contentUrl "https://www.jstor.org/iiif/2016/06/08/15/53d2c955-9fd1-4627-8638-ba7a73dc56ac_deflate.tif/full/,300/0/default.jpg"^^xsd:anyURI ;
+    schema:width "300"^^xsd:integer .
+    #no height - varies by source image
 
 
 
