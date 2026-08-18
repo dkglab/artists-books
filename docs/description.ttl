@@ -80,8 +80,8 @@ ab:source_ruscha_gasoline a ab:SourceImage ;
     ab:iiifPath "/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif" ;
     schema:contentUrl "https://www.jstor.org/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif/full/,1200/0/default.jpg"^^xsd:anyURI ;
     schema:encodingFormat "image/jpeg" ;
-    ab:pixelWidth "960"^^xsd:integer ;    # derived: master 1920x2400 rendered at height 1200
-    ab:pixelHeight "1200"^^xsd:integer ;
+    ab:pixelWidth "1920"^^xsd:integer ;   # the master's dimensions — from ssid-media.csv,
+    ab:pixelHeight "2400"^^xsd:integer ;  # giving the aspect ratio of every derivative
     ab:imageViewType <https://dkglab.github.io/ns/artists-books/image-view/cover> .
 
 ab:thumb_ruscha_gasoline a ab:Thumbnail ;
@@ -89,8 +89,8 @@ ab:thumb_ruscha_gasoline a ab:Thumbnail ;
     ab:iiifPath "/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif" ;
     schema:contentUrl "https://www.jstor.org/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif/full/,300/0/default.jpg"^^xsd:anyURI ;
     schema:encodingFormat "image/jpeg" ;
-    ab:pixelWidth "240"^^xsd:integer ;    # derived: master 1920x2400 rendered at height 300
-    ab:pixelHeight "300"^^xsd:integer ;
+    ab:pixelWidth "1920"^^xsd:integer ;   # likewise the master's: this thumbnail is served
+    ab:pixelHeight "2400"^^xsd:integer ;  # at 240x300, the same 4:5 ratio
     ab:imageViewType <https://dkglab.github.io/ns/artists-books/image-view/cover> .
 
 
