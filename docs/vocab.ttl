@@ -83,48 +83,35 @@ ab:hasSubject a rdf:Property ;
     rdfs:domain ab:ArtistsBook ;
     rdfs:range skos:Concept.
 
-ab:representativeImage a rdf:Property ;
-    rdfs:label "representative image" ;
-    rdfs:comment "Relates an Artist's Book to its thumbnail" ;
-    rdfs:domain ab:ArtistsBook ;
-    rdfs:range ab:Thumbnail .
-
-ab:sourceImage a rdf:Property ;
-    rdfs:label "source image" ;
-    rdfs:comment "Relates an Artist's Book to its cover image node." ;
-    rdfs:domain ab:ArtistsBook ;
-    rdfs:range  ab:SourceImage .
+ab:IIIFImageNode a rdfs:Class ;
+    rdfs:label "IIIF image node" ;
+    rdfs:comment "A node carrying a displayable IIIF image URL together with the pixel dimensions of the source image (harvested into sources/ssid-media.csv), so that templates can emit explicit width and height attributes and avoid layout shift." ;
+    rdfs:subClassOf schema:ImageObject .
 
 ab:SourceImage a rdfs:Class ;
     rdfs:label "Source image" ;
-    rdfs:comment "An IIIF image node representing the cover of an Artist's Book. Carries a displayable URL and the source image's pixel dimensions (width and height harvested from ssid-media.csv) so that templates can emit explicit width/height attributes and avoid layout shift." ;
-    rdfs:subClassOf schema:ImageObject .
+    rdfs:comment "The full-size IIIF image that stands in for an Artist's Book. Usually the book's cover, but where the catalogue record has no cover image it may instead be an interior view or the enclosure (slipcase) — see ab:sourceImage." ;
+    rdfs:subClassOf ab:IIIFImageNode .
 
 ab:Thumbnail a rdfs:Class ;
     rdfs:label "Thumbnail image" ;
-    rdfs:comment "A small image resource carrying a URL and optional dimensions for use as a thumbnail." ;
-    rdfs:subClassOf schema:ImageObject . 
+    rdfs:comment "A small derivative of an ab:SourceImage, requested from the IIIF image server at a fixed width for use in index listings. Carries no height, which varies with the aspect ratio of the source image." ;
+    rdfs:subClassOf ab:IIIFImageNode .
 
-ab:IIIFImageNode a rdfs:Class ;
-    rdfs:label "IIIF Image Node" ;
-    rdfs:comment "A node carrying a displayable IIIF URL together with the source image dimensions from ssid-media.csv." ;
-    rdfs:subClassOf schema:ImageObject .
+ab:sourceImage a rdf:Property ;
+    rdfs:label "source image" ;
+    rdfs:comment "Relates an Artist's Book to the full-size IIIF image that stands in for it. Named for what the image is rather than what it depicts: most such images are covers, but where the record has no cover the image is an interior view or the enclosure, so \"cover image\" would misdescribe those." ;
+    rdfs:domain ab:ArtistsBook ;
+    rdfs:range ab:SourceImage .
 
-ab:CoverImage rdfs:subClassOf ab:IIIFImageNode .
-ab:thumbnail  rdfs:subClassOf ab:IIIFImageNode .
-
+ab:representativeImage a rdf:Property ;
+    rdfs:label "representative image" ;
+    rdfs:comment "Relates an Artist's Book to a thumbnail-sized rendering of its ab:sourceImage, for use in index listings." ;
+    rdfs:domain ab:ArtistsBook ;
+    rdfs:range ab:Thumbnail .
 
 ab:iiifPath a rdf:Property ;
     rdfs:label "IIIF path" ;
-    rdfs:comment """The IIIF image server path for this image resource";
+    rdfs:comment "The path of this image on the JSTOR IIIF image server, as harvested into sources/ssid-media.csv. Prefixing it with \"https://www.jstor.org\" and appending an IIIF Image API region/size/rotation/quality suffix — for example \"/full/,400/0/default.jpg\" — yields a displayable URL." ;
     rdfs:domain ab:IIIFImageNode ;
-    rdfs:range  xsd:string .
-
-
-
-
-
-
-
-    
-
+    rdfs:range xsd:string .
