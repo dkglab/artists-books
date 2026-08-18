@@ -36,6 +36,16 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
+  {{ with .languageNote }}
+  <dt>Language note</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
+  {{ with .originalLanguage }}
+  <dt>Original language</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
   {{ with .extent }}
   <dt>Extent</dt>
   <dd>{{ . }}</dd>

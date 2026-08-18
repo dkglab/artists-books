@@ -17,7 +17,10 @@ CONSTRUCT {
     ab:heldBySloane ?held_flag ;
     bf:contribution ?contribution ;
     bf:provisionActivity ?bookPublication ;
-    bf:language ?language ;
+    bf:language ?marc_language ;
+    bf:language ?language041 ;
+    bf:note ?languageNote ;
+    bf:note ?originalLanguageNote ;
     bf:extent ?bookExtent ;
     bf:illustrativeContent ?illustrative_content ;
     bf:dimensions ?dimensions ;
@@ -68,6 +71,27 @@ CONSTRUCT {
     a bf:Summary ;
     rdfs:label ?summary .
 
+  ?marc_language a bf:Language ;
+    rdfs:label ?language_label ;
+  .
+
+  ?language041 a bf:Language ;
+    rdfs:label ?language041_label .
+
+  ?originalLanguage
+    a bf:Language ;
+    rdfs:label ?original_language_label ;
+  .
+
+  ?languageNote a bf:Note ;
+    rdfs:label ?language_note ;
+  .
+
+  ?originalLanguageNote
+    a bf:Note ;
+    bf:language ?originalLanguage ;
+  .
+
 }
 WHERE {
   SERVICE <x-sparql-anything:location=sources/artists-books.csv> {
@@ -109,9 +133,6 @@ WHERE {
     OPTIONAL {
       ?bookRow xyz:place ?place
     }
-    OPTIONAL {
-      ?bookRow xyz:language ?language
-    }
     OPTIONAL { ?bookRow xyz:ISBN ?ISBN }
     BIND(fx:entity(ab:, "item/", ?canonical_key, "/identifier") AS ?isbnNode)
     BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?bookISBN)
@@ -139,7 +160,11 @@ WHERE {
     {
       SELECT ?canonical_key ?df ?ctag ?role_term ?contributionType
              (?illustrative_content_x AS ?illustrative_content)
+             (?language041_x AS ?language041_code)
+             (?original_language_x AS ?original_language_code)
              (SAMPLE(?control_number_raw) AS ?control_number)
+             (SAMPLE(?language_code_x) AS ?language_code)
+             (SAMPLE(?language_note_x) AS ?language_note)
              (SAMPLE(?extent_x) AS ?extent)
              (SAMPLE(?dimensions_x) AS ?dimensions)
              (SAMPLE(?edition_x) AS ?edition)
@@ -180,6 +205,82 @@ WHERE {
           # 001 is a marc:controlfield, so its value is on rdf:_1, not a subfield.
           ?record fx:anySlot ?cf001 .
           ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
+
+          # Primary language from MARC 008 positions 35-37.
+          OPTIONAL {
+            ?record fx:anySlot ?cf008 .
+            ?cf008
+              a marc:controlfield ;
+              xyz:tag "008" ;
+              rdf:_1 ?fixed_fields .
+            BIND(SUBSTR(?fixed_fields, 36, 3) AS ?language_code_raw)
+
+            # Blank and fill-character values mean no usable language code.
+            FILTER(?language_code_raw != "   " && ?language_code_raw != "|||")
+
+            BIND(LCASE(?language_code_raw) AS ?language_code_x)
+          }
+
+          # Languages present from MARC 041 $a.
+          # Older records may concatenate multiple 3-character MARC language
+          # codes in one subfield (e.g. "engfreger"), while newer records repeat $a.
+          OPTIONAL {
+            ?record fx:anySlot ?df041 .
+            ?df041
+                a marc:datafield ;
+                xyz:tag "041" .
+
+            ?df041 fx:anySlot ?sf041a .
+            ?sf041a
+                xyz:code "a" ;
+                rdf:_1 ?language041_raw .
+
+            BIND(LCASE(STR(?language041_raw)) AS ?language041_value)
+
+            # Only process values composed entirely of complete 3-character codes.
+            # This intentionally excludes the malformed "enger" value.
+            FILTER(REGEX(?language041_value, "^([a-z]{3})+$"))
+
+            VALUES ?language_offset { 1 4 7 10 13 16 }
+
+            BIND(
+              SUBSTR(?language041_value, ?language_offset, 3)
+              AS ?language041_x
+            )
+
+            FILTER(STRLEN(?language041_x) = 3)
+            FILTER(?language041_x != "jap")
+          }
+
+          # Original language from MARC 041 $h.
+          OPTIONAL {
+            ?record fx:anySlot ?df041h .
+            ?df041h
+                a marc:datafield ;
+                xyz:tag "041" .
+
+            ?df041h fx:anySlot ?sf041h .
+            ?sf041h
+                xyz:code "h" ;
+                rdf:_1 ?original_language_raw .
+
+            BIND(
+              LCASE(STR(?original_language_raw))
+              AS ?original_language_value
+            )
+
+            FILTER(REGEX(?original_language_value, "^([a-z]{3})+$"))
+
+            VALUES ?original_language_offset { 1 4 7 10 13 16 }
+
+            BIND(
+              SUBSTR(?original_language_value, ?original_language_offset, 3)
+              AS ?original_language_x
+            )
+
+            FILTER(STRLEN(?original_language_x) = 3)
+            FILTER(?original_language_x != "jap")
+          }
 
           # Extent from MARC 300 $a. This describes the physical scope/form
           # of the item, e.g. "64 unnumbered pages" or "1 portfolio".
@@ -275,6 +376,24 @@ WHERE {
             )
           }
 
+          # Human-readable language note from MARC 546 $a.
+          OPTIONAL {
+            ?record fx:anySlot ?df546 .
+            ?df546
+                a marc:datafield ;
+                xyz:tag "546" .
+
+            ?df546 fx:anySlot ?sf546a .
+            ?sf546a
+                xyz:code "a" ;
+                rdf:_1 ?language_note_raw .
+
+            BIND(
+              REPLACE(?language_note_raw, "[\\s]+$", "")
+              AS ?language_note_x
+            )
+          }
+
           # Creator fields are OPTIONAL: the records with no 100/110/111/700/
           # 710/711 field still yield a row carrying canonical_key + the 001 number.
           OPTIONAL {
@@ -344,6 +463,162 @@ WHERE {
       }
       GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
                ?illustrative_content_x
+               ?language041_x
+               ?original_language_x
+    }
+
+    # Convert the MARC language code to the corresponding LC language URI.
+    BIND(
+      IF(
+        BOUND(?language_code),
+        IRI(CONCAT(
+          "http://id.loc.gov/vocabulary/languages/",
+          ?language_code
+        )),
+        ?sentinel
+      )
+      AS ?marc_language
+    )
+
+    OPTIONAL {
+      VALUES (?language_code_lookup ?language_label) {
+        ("eng" "English")
+        ("spa" "Spanish")
+        ("ger" "German")
+        ("fre" "French")
+        ("und" "Undetermined")
+        ("ita" "Italian")
+        ("por" "Portuguese")
+        ("zxx" "No linguistic content")
+        ("dut" "Dutch")
+        ("swe" "Swedish")
+        ("jpn" "Japanese")
+        ("mul" "Multiple languages")
+        ("ara" "Arabic")
+        ("pol" "Polish")
+        ("cze" "Czech")
+        ("per" "Persian")
+        ("rus" "Russian")
+        ("lat" "Latin")
+        ("cat" "Catalan")
+        ("hrv" "Croatian")
+        ("dan" "Danish")
+        ("kor" "Korean")
+        ("yid" "Yiddish")
+        ("heb" "Hebrew")
+        ("urd" "Urdu")
+        ("gle" "Irish")
+        ("gre" "Greek")
+        ("nor" "Norwegian")
+        ("ice" "Icelandic")
+        ("nah" "Nahuatl")
+        ("zap" "Zapotec")
+      }
+      FILTER(?language_code_lookup = ?language_code)
+    }
+
+    # Additional languages present in MARC 041 $a.
+    BIND(
+      IF(
+        BOUND(?language041_code),
+        IRI(CONCAT(
+          "http://id.loc.gov/vocabulary/languages/",
+          ?language041_code
+        )),
+        ?sentinel
+      )
+      AS ?language041
+    )
+
+    OPTIONAL {
+      VALUES (?language041_lookup ?language041_label) {
+        ("eng" "English")
+        ("spa" "Spanish")
+        ("ger" "German")
+        ("fre" "French")
+        ("und" "Undetermined")
+        ("ita" "Italian")
+        ("por" "Portuguese")
+        ("zxx" "No linguistic content")
+        ("dut" "Dutch")
+        ("swe" "Swedish")
+        ("jpn" "Japanese")
+        ("mul" "Multiple languages")
+        ("ara" "Arabic")
+        ("pol" "Polish")
+        ("cze" "Czech")
+        ("per" "Persian")
+        ("rus" "Russian")
+        ("lat" "Latin")
+        ("cat" "Catalan")
+        ("hrv" "Croatian")
+        ("dan" "Danish")
+        ("kor" "Korean")
+        ("yid" "Yiddish")
+        ("heb" "Hebrew")
+        ("urd" "Urdu")
+        ("gle" "Irish")
+        ("gre" "Greek")
+        ("nor" "Norwegian")
+        ("ice" "Icelandic")
+        ("nah" "Nahuatl")
+        ("zap" "Zapotec")
+
+        ("chi" "Chinese")
+        ("myn" "Mayan languages")
+        ("pan" "Panjabi")
+        ("nav" "Navajo")
+        ("cpe" "Creoles and pidgins, English-based")
+        ("wel" "Welsh")
+        ("hun" "Hungarian")
+        ("bul" "Bulgarian")
+        ("fin" "Finnish")
+        ("slv" "Slovenian")
+        ("hit" "Hittite")
+        ("mao" "Maori")
+        ("oto" "Otomian languages")
+        ("vie" "Vietnamese")
+        ("fil" "Filipino")
+      }
+      FILTER(?language041_lookup = ?language041_code)
+    }
+
+    OPTIONAL {
+      VALUES (?original_language_lookup ?original_language_label) {
+        ("eng" "English")
+        ("spa" "Spanish")
+        ("ger" "German")
+        ("fre" "French")
+        ("ita" "Italian")
+        ("por" "Portuguese")
+        ("rus" "Russian")
+        ("per" "Persian")
+        ("ara" "Arabic")
+        ("jpn" "Japanese")
+        ("cze" "Czech")
+        ("myn" "Mayan languages")
+        ("mao" "Maori")
+        ("mul" "Multiple languages")
+        ("cat" "Catalan")
+        ("urd" "Urdu")
+        ("wel" "Welsh")
+        ("hun" "Hungarian")
+        ("dut" "Dutch")
+        ("yid" "Yiddish")
+        ("lat" "Latin")
+        ("dan" "Danish")
+
+        ("ton" "Tongan")
+        ("ben" "Bengali")
+        ("pli" "Pali")
+        ("que" "Quechua")
+        ("gmh" "German, Middle High")
+        ("grc" "Greek, Ancient")
+        ("ukr" "Ukrainian")
+        ("tur" "Turkish")
+      }
+
+      FILTER(?original_language_lookup = ?original_language_code)
     }
 
     # WorldCat link + OCLC identifier, from the 001 number sampled above. Extract
@@ -431,7 +706,10 @@ WHERE {
     # stay unbound and no triple is emitted.
     BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "item/", ?canonical_key, "/oclc"), ?sentinel) AS ?bookOCLCNum)
     BIND(IF(BOUND(?extent), fx:entity(ab:, "item/", ?canonical_key, "/extent"), ?sentinel) AS ?bookExtent)
+    BIND(IF(BOUND(?language_note), fx:entity(ab:, "item/", ?canonical_key, "/language-note"), ?sentinel) AS ?languageNote)
     BIND(IF(BOUND(?summary), fx:entity(ab:, "item/", ?canonical_key, "/summary"), ?sentinel) AS ?bookSummary)
+    BIND(IF(BOUND(?original_language_code), IRI(CONCAT("http://id.loc.gov/vocabulary/languages/", ?original_language_code)), ?sentinel) AS ?originalLanguage)
+    BIND(IF(BOUND(?original_language_code), fx:entity(ab:, "item/", ?canonical_key, "/original-language"), ?sentinel) AS ?originalLanguageNote)
     BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
   }
 

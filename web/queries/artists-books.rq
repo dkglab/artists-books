@@ -15,7 +15,9 @@ SELECT
   ?publisher
   ?place
   ?date
-  ?language
+  (GROUP_CONCAT(DISTINCT STR(?languageDisplay); separator=", ") AS ?language)
+  (GROUP_CONCAT(DISTINCT ?originalLanguageDisplay; separator=", ") AS ?originalLanguage)
+  (SAMPLE(?languageNoteLabel) AS ?languageNote)
   ?extent
   ?illustrativeContent
   ?dimensions
@@ -84,7 +86,43 @@ WHERE {
     OPTIONAL { ?pub bflc:simpleDate  ?date . }
   }
 
-  OPTIONAL { ?book bf:language ?language . }
+  OPTIONAL {
+    ?book bf:language ?languageValue .
+    OPTIONAL {
+      ?languageValue rdfs:label ?languageLabel .
+    }
+
+    BIND(
+      COALESCE(?languageLabel, STR(?languageValue))
+      AS ?languageDisplay
+    )
+  }
+
+  OPTIONAL {
+    ?book bf:note ?languageNoteNode .
+    ?languageNoteNode
+      a bf:Note ;
+      rdfs:label ?languageNoteLabel .
+  }
+
+  OPTIONAL {
+    ?book bf:note ?originalLanguageNote .
+    ?originalLanguageNote
+      a bf:Note ;
+      bf:language ?originalLanguageValue .
+
+    OPTIONAL {
+      ?originalLanguageValue rdfs:label ?originalLanguageLabel .
+    }
+
+    BIND(
+      COALESCE(
+        ?originalLanguageLabel,
+        STR(?originalLanguageValue)
+      )
+      AS ?originalLanguageDisplay
+    )
+  }
 
   OPTIONAL {
     ?book bf:extent ?extentNode .
@@ -174,5 +212,5 @@ WHERE {
     BIND(CONCAT(?citingRefKey, "\t", ?citingRefLabel) AS ?citedByToken)
   }
 }
-GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?illustrativeContent ?dimensions ?edition
+GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?extent ?illustrativeContent ?dimensions ?edition
 ORDER BY LCASE(?title)
