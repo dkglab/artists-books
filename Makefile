@@ -73,6 +73,7 @@ graph/reference-works.ttl \
 sources/citations.ttl \
 sources/construction-methods.ttl \
 sources/subject-terms.ttl \
+sources/image-view-types.ttl \
 $(wildcard web/*.yaml) \
 $(wildcard web/queries/*.rq) \
 $(wildcard web/templates/*.html) \

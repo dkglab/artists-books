@@ -81,7 +81,8 @@ ab:source_ruscha_gasoline a ab:SourceImage ;
     schema:contentUrl "https://www.jstor.org/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif/full/,1200/0/default.jpg"^^xsd:anyURI ;
     schema:encodingFormat "image/jpeg" ;
     ab:pixelWidth "960"^^xsd:integer ;    # derived: master 1920x2400 rendered at height 1200
-    ab:pixelHeight "1200"^^xsd:integer .
+    ab:pixelHeight "1200"^^xsd:integer ;
+    ab:imageViewType <https://dkglab.github.io/ns/artists-books/image-view/cover> .
 
 ab:thumb_ruscha_gasoline a ab:Thumbnail ;
     schema:about wd:Q7857846 ;
@@ -89,7 +90,8 @@ ab:thumb_ruscha_gasoline a ab:Thumbnail ;
     schema:contentUrl "https://www.jstor.org/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif/full/,300/0/default.jpg"^^xsd:anyURI ;
     schema:encodingFormat "image/jpeg" ;
     ab:pixelWidth "240"^^xsd:integer ;    # derived: master 1920x2400 rendered at height 300
-    ab:pixelHeight "300"^^xsd:integer .
+    ab:pixelHeight "300"^^xsd:integer ;
+    ab:imageViewType <https://dkglab.github.io/ns/artists-books/image-view/cover> .
 
 
 

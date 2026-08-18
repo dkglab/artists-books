@@ -127,3 +127,9 @@ ab:pixelHeight a rdf:Property ;
     rdfs:comment "The height, in pixels, of the image delivered at this node's schema:contentUrl. Given as a plain integer rather than with schema:height, whose range is schema:Distance or schema:QuantitativeValue and so would require a wrapper node to be used correctly." ;
     rdfs:domain ab:IIIFImageNode ;
     rdfs:range xsd:integer .
+
+ab:imageViewType a rdf:Property ;
+    rdfs:label "image view type" ;
+    rdfs:comment "What this image actually depicts: a skos:Concept in the ab:image-view-types scheme (cover, interior view, or enclosure). Most images are covers, but where the catalogue record holds no cover the image is an interior view or the enclosure, so a template should consult this before captioning one as the cover. Normalized by queries/artists-books.rq from the free-text \"Image View Type\" field JSTOR Forum carries in sources/ssid-media.csv." ;
+    rdfs:domain ab:IIIFImageNode ;
+    rdfs:range skos:Concept .
