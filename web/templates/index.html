@@ -4,11 +4,19 @@
 
 {{ define "content" }}
 <h1>Artists' Books</h1>
+{{/* $b binds the row: inside `range`, `$` is the whole result set, not the row,
+     so the thumbnail's `with` block could not otherwise reach .itemKey/.title. */}}
 <ol class="mb">
-{{ range . }}
+{{ range $b := . }}
 <li>
-  <a href="item/{{ .itemKey }}">{{ .title }}</a>
-  {{ with .citedBy }}<small>cited by {{ len (split . "\n") }}</small>{{ end }}
+  {{- with $b.thumbUrl }}
+  <a href="item/{{ $b.itemKey }}"><img src="{{ . }}"
+       width="{{ $b.thumbWidth }}" height="{{ $b.thumbHeight }}"
+       alt="{{ with $b.thumbView }}{{ . }}{{ else }}Image{{ end }} of {{ $b.title }}"
+       loading="lazy" style="max-width:100%;height:auto;vertical-align:middle"></a>
+  {{- end }}
+  <a href="item/{{ $b.itemKey }}">{{ $b.title }}</a>
+  {{ with $b.citedBy }}<small>cited by {{ len (split . "\n") }}</small>{{ end }}
 </li>
 {{ end }}
 </ol>

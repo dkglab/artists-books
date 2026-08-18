@@ -80,6 +80,11 @@ flowchart TD
     sdec["subjects/decisions.csv<br/>(hand-curated: include? / concept / category)"] --> sbuild
     sbuild --> smttl["sources/subject-terms.ttl<br/>(SKOS concept scheme)"]
 
+    %% ---- JSTOR IIIF images (what a book looks like) ----
+    marc -->|"resolve_artstor.py"| assid["artstor-ssid.csv<br/>(canonical key → Forum SSID)"]
+    jstor[("JSTOR Forum<br/>(stor.artstor.org redirects)")] -->|"harvest_media.py"| smedia
+    assid -->|"SSIDs to look up"| smedia["ssid-media.csv<br/>(SSID → IIIF path + dimensions)"]
+
     %% ---- CONSTRUCT ----
     abcsv --> abrq{{"artists-books.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
     marc --> abrq
@@ -87,13 +92,15 @@ flowchart TD
     cdec --> abrq
     socc -->|"ab:hasSubject join"| abrq
     sdec --> abrq
+    assid -->|"ab:sourceImage join"| abrq
+    smedia --> abrq
     abrq --> abttl["graph/artists-books.ttl"]
 
     classDef input fill:#e8f0fe,stroke:#4285f4,stroke-width:2px;
     classDef output fill:#e6f4ea,stroke:#34a853,stroke-width:2px;
     classDef curation fill:#fef7e0,stroke:#f9ab00,stroke-width:2px;
     classDef review fill:#f1f3f4,stroke:#9aa0a6,stroke-width:1px,stroke-dasharray:4 3;
-    class zotero,catalogs input;
+    class zotero,catalogs,jstor input;
     class abddec,cdec,sdec curation;
     class abdrev review;
     class abttl output;
@@ -116,6 +123,20 @@ concepts its headings map to. See
 [`sources/construction/README.md`](../sources/construction/README.md) and
 [`sources/subjects/README.md`](../sources/subjects/README.md) for the
 mine → curate → build pipeline.
+
+The **image** track (issue #9) is a third enrichment, but a harvest rather than a
+curation: `resolve_artstor.py` mines each MARC record for its Artstor link to get
+a JSTOR Forum SSID, and `harvest_media.py` follows the `stor.artstor.org`
+redirect chain to turn each SSID into an IIIF image identifier plus the master's
+pixel dimensions. Both CSVs are **frozen sources**, committed like
+`citations.ttl` — the harvest is a slow external job, not part of a normal build
+— and `artists-books.rq` joins them (canonical key → SSID → IIIF path) to attach
+`ab:sourceImage` / `ab:representativeImage`. Only 1,145 of the 7,920 books have
+any image. Where a record holds no cover the image is an interior view or the
+enclosure, so `ab:imageViewType` records which of the three it is, against the
+hand-written SKOS scheme `sources/image-view-types.ttl`. See
+[`sources/README.md`](../sources/README.md) § *Artstor → JSTOR SSID crosswalk*
+and § *SSID → IIIF images*.
 
 ## ② Building the reference-works graph
 
@@ -186,12 +207,14 @@ flowchart TD
     citttl["sources/citations.ttl"]
     cmttl["sources/construction-methods.ttl"]
     smttl["sources/subject-terms.ttl"]
+    ivttl["sources/image-view-types.ttl"]
 
     abttl --> fuseki[["Apache Fuseki<br/>(SPARQL endpoint)"]]
     refttl --> fuseki
     citttl -->|"loaded as-is (no query)"| fuseki
     cmttl -->|"loaded as-is (no query)"| fuseki
     smttl -->|"loaded as-is (no query)"| fuseki
+    ivttl -->|"loaded as-is (no query)"| fuseki
 
     fuseki --> snowman{{"Snowman<br/>(SELECT queries + Go templates)"}}
     selects["web/queries/*.rq"] --> snowman
@@ -202,11 +225,11 @@ flowchart TD
     class site output;
 ```
 
-Fuseki merges the two constructed graphs, the frozen citations, and the two SKOS
-schemes into a single dataset, so the web SELECT queries join across all of them
-without any per-graph plumbing — a book page resolves the reference works that
-cite it and the construction/subject concepts its headings map to, all from one
-endpoint.
+Fuseki merges the two constructed graphs, the frozen citations, and the three
+SKOS schemes into a single dataset, so the web SELECT queries join across all of
+them without any per-graph plumbing — a book page resolves the reference works
+that cite it, the construction/subject concepts its headings map to, and the
+label for what its image depicts, all from one endpoint.
 
 ## Human curation: the four `*-decisions.csv` overlays
 

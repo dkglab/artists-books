@@ -4,7 +4,9 @@ PREFIX bflc:    <http://id.loc.gov/ontologies/bflc/>
 PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wd:      <http://www.wikidata.org/entity/>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 SELECT
   ?book
@@ -41,6 +43,16 @@ SELECT
   # /reference/ page. Any citing reference necessarily cites an in-collection
   # book (this one), so it always has a reference page.
   (GROUP_CONCAT(DISTINCT ?citedByToken; separator="\n") AS ?citedBy)
+  # The index thumbnail. ab:representativeImage is single per book, so these are
+  # grouped on rather than aggregated.
+  ?thumbUrl
+  ?thumbWidth
+  ?thumbHeight
+  ?thumbView
+  # Every full-size image, each as a "url<TAB>width<TAB>height<TAB>view" token,
+  # tokens newline-separated. Multi-valued: four books carry several images
+  # (multi-volume sets, cover variants), so the book page shows them all.
+  ?images
 WHERE {
   ?book
     a ab:ArtistsBook ;
@@ -166,6 +178,54 @@ WHERE {
     OPTIONAL { ?subjectTerm rdfs:label ?subjectTermLabel . }
   }
 
+  # Imagery (#9). Only 1,145 of the 7,920 books have any, so both blocks are
+  # OPTIONAL and the fields come back unbound — which is what {{ with }} tests.
+  #
+  # The URL is built here from ab:iiifPath rather than taken from the graph's
+  # schema:contentUrl, so each view can ask the IIIF server for the size it
+  # wants. Display dimensions are derived from the master's, which is the exact
+  # figure the graph stores; the server's own rounding can differ by a pixel,
+  # which matters for the aspect ratio the browser reserves and nothing else.
+  # Note the IIIF size syntax: ",200" is height 200, width derived.
+  OPTIONAL {
+    ?book ab:representativeImage ?thumb .
+    ?thumb ab:iiifPath    ?thumbPath ;
+           ab:pixelWidth  ?thumbMasterWidth ;
+           ab:pixelHeight ?thumbMasterHeight .
+    OPTIONAL { ?thumb ab:imageViewType/skos:prefLabel ?thumbView . }
+    BIND(200 AS ?thumbHeight)
+    BIND(xsd:integer(ROUND(?thumbMasterWidth * ?thumbHeight / ?thumbMasterHeight)) AS ?thumbWidth)
+    BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/,200/0/default.jpg") AS ?thumbUrl)
+  }
+
+  # Ordered innermost so GROUP_CONCAT sees a deterministic input order, as with
+  # ?illustrativeContent above (only a scope below the grouping can be ordered).
+  OPTIONAL {
+    {
+      SELECT ?book (GROUP_CONCAT(?imageToken; separator="\n") AS ?images)
+      WHERE {
+        {
+          SELECT ?book ?imageToken
+          WHERE {
+            ?book ab:sourceImage ?image .
+            ?image ab:iiifPath    ?imagePath ;
+                   ab:pixelWidth  ?imageMasterWidth ;
+                   ab:pixelHeight ?imageMasterHeight .
+            OPTIONAL { ?image ab:imageViewType/skos:prefLabel ?imageView . }
+            BIND(xsd:integer(ROUND(?imageMasterWidth * 600 / ?imageMasterHeight)) AS ?imageWidth)
+            BIND(CONCAT(
+                   "https://www.jstor.org", ?imagePath, "/full/,600/0/default.jpg", "\t",
+                   STR(?imageWidth), "\t600\t",
+                   COALESCE(?imageView, "")
+                 ) AS ?imageToken)
+          }
+          ORDER BY ?image
+        }
+      }
+      GROUP BY ?book
+    }
+  }
+
   OPTIONAL {
     ?citation ab:cites ?book ;
               ab:citedBy ?citingRef .
@@ -175,4 +235,5 @@ WHERE {
   }
 }
 GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?language ?extent ?illustrativeContent ?dimensions ?edition
+         ?thumbUrl ?thumbWidth ?thumbHeight ?thumbView ?images
 ORDER BY LCASE(?title)

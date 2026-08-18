@@ -10,6 +10,7 @@
 @prefix rel: <http://id.loc.gov/vocabulary/relators/> .
 @prefix bflc: <http://id.loc.gov/ontologies/bflc/> .
 @prefix ab: <https://dkglab.github.io/ns/artists-books/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ulan:500024159 rdfs:label "Ed Ruscha" .
 wd:Q18763908 rdfs:label "Stephen J. Bury" .
@@ -62,6 +63,8 @@ wd:Q7857846 a ab:ArtistsBook ;
     ab:constructedUsing aat:300192339 ;
     ab:imagesAt <https://www.jstor.org/stable/community.949854> ;
     ab:constructedUsing aat:300054225;
+    ab:sourceImage ab:source_ruscha_gasoline ;
+    ab:representativeImage ab:thumb_ruscha_gasoline ;
      bf:identifiedBy [
         a bf:Identifier ;
         rdf:value "888402" ;
@@ -72,6 +75,23 @@ wd:Q7857846 a ab:ArtistsBook ;
     ab:worldcatLink <https://search.worldcat.org/title/888402> ;
    .
 
+ab:source_ruscha_gasoline a ab:SourceImage ;
+    schema:about wd:Q7857846 ;
+    ab:iiifPath "/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif" ;
+    schema:contentUrl "https://www.jstor.org/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif/full/,1200/0/default.jpg"^^xsd:anyURI ;
+    schema:encodingFormat "image/jpeg" ;
+    ab:pixelWidth "1920"^^xsd:integer ;   # the master's dimensions — from ssid-media.csv,
+    ab:pixelHeight "2400"^^xsd:integer ;  # giving the aspect ratio of every derivative
+    ab:imageViewType <https://dkglab.github.io/ns/artists-books/image-view/cover> .
+
+ab:thumb_ruscha_gasoline a ab:Thumbnail ;
+    schema:about wd:Q7857846 ;
+    ab:iiifPath "/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif" ;
+    schema:contentUrl "https://www.jstor.org/iiif/2015/05/19/17/e5ab7aef-0290-4c43-a7b9-03885c13b47d_deflate.tif/full/,300/0/default.jpg"^^xsd:anyURI ;
+    schema:encodingFormat "image/jpeg" ;
+    ab:pixelWidth "1920"^^xsd:integer ;   # likewise the master's: this thumbnail is served
+    ab:pixelHeight "2400"^^xsd:integer ;  # at 240x300, the same 4:5 ratio
+    ab:imageViewType <https://dkglab.github.io/ns/artists-books/image-view/cover> .
 
 
 

@@ -5,6 +5,28 @@
 {{ define "content" }}
 <h1>{{ .title }}</h1>
 
+{{/* Images (#9). Each token is url<TAB>width<TAB>height<TAB>view. Most books
+     have exactly one; a few multi-volume sets and cover variants have several.
+     The view is captioned only when it is not a cover, since ~106 of the 1,145
+     books with an image show an interior or the enclosure instead and the page
+     should not imply otherwise. */}}
+{{ with .images }}
+<div class="mb">
+{{- range (split . "\n") }}
+{{- $p := split . "\t" }}
+{{- $view := index $p 3 }}
+<figure style="display:inline-block;margin:0 1em 1em 0;vertical-align:top">
+  <img src="{{ index $p 0 }}" width="{{ index $p 1 }}" height="{{ index $p 2 }}"
+       alt="{{ with $view }}{{ . }}{{ else }}Image{{ end }} of {{ $.title }}"
+       style="max-width:100%;height:auto">
+  {{- if and $view (ne $view "Cover") }}
+  <figcaption><small>{{ $view }}</small></figcaption>
+  {{- end }}
+</figure>
+{{- end }}
+</div>
+{{ end }}
+
 <dl>
   {{ with .primaryCreators }}
   <dt>Primary creators</dt>
