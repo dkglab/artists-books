@@ -16,6 +16,8 @@ make superclean   # also remove downloaded tool binaries under tools/
 
 The Makefile auto-fetches all tools (Jena, Fuseki, SPARQL-Anything, Snowman) into `tools/<tool>/` on first use — no system installs beyond a JVM and `sqlite3`.
 
+`sources/Makefile` is the one exception: it uses grouped targets and so needs **GNU Make ≥ 4.3**. macOS's `/usr/bin/make` is GNU Make 3.81, where grouped targets silently degrade and generators run twice, so on macOS regenerate sources with `gmake -C sources <target>` (`brew install make`). The guard at the top of that file errors out rather than letting it misbuild (#124). The top-level build is unaffected.
+
 ### Iterating on queries and templates
 
 `web/site/index.html`'s Make recipe depends on every yaml, every `web/queries/*.rq`, every `web/templates/*.html`, every `web/templates/layouts/*.html`, and every `web/templates/includes/*.html`. Editing any of these triggers a rebuild on the next `make`. The recipe starts Fuseki, `cd`s into `web/` and runs `snowman build` there (Snowman locates its config/queries/templates in the current directory), then stops Fuseki — driven by `START_FUSEKI=true` (set `START_FUSEKI=false` if Fuseki is already running externally).
