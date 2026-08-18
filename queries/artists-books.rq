@@ -68,6 +68,10 @@ CONSTRUCT {
     a bf:Summary ;
     rdfs:label ?summary .
 
+  ?marc_language a bf:Language ;
+    rdfs:label ?language_label ;
+  .
+
 }
 WHERE {
   SERVICE <x-sparql-anything:location=sources/artists-books.csv> {
@@ -110,7 +114,7 @@ WHERE {
       ?bookRow xyz:place ?place
     }
     OPTIONAL {
-      ?bookRow xyz:language ?language
+      ?bookRow xyz:language ?csv_language
     }
     OPTIONAL { ?bookRow xyz:ISBN ?ISBN }
     BIND(fx:entity(ab:, "item/", ?canonical_key, "/identifier") AS ?isbnNode)
@@ -140,6 +144,7 @@ WHERE {
       SELECT ?canonical_key ?df ?ctag ?role_term ?contributionType
              (?illustrative_content_x AS ?illustrative_content)
              (SAMPLE(?control_number_raw) AS ?control_number)
+             (SAMPLE(?language_code_x) AS ?language_code)
              (SAMPLE(?extent_x) AS ?extent)
              (SAMPLE(?dimensions_x) AS ?dimensions)
              (SAMPLE(?edition_x) AS ?edition)
@@ -180,6 +185,21 @@ WHERE {
           # 001 is a marc:controlfield, so its value is on rdf:_1, not a subfield.
           ?record fx:anySlot ?cf001 .
           ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
+
+          # Primary language from MARC 008 positions 35-37.
+          OPTIONAL {
+            ?record fx:anySlot ?cf008 .
+            ?cf008
+              a marc:controlfield ;
+              xyz:tag "008" ;
+              rdf:_1 ?fixed_fields .
+            BIND(SUBSTR(?fixed_fields, 36, 3) AS ?language_code_raw)
+
+            # Blank and fill-character values mean no usable language code.
+            FILTER(?language_code_raw != "   " && ?language_code_raw != "|||")
+
+            BIND(LCASE(?language_code_raw) AS ?language_code_x)
+          }
 
           # Extent from MARC 300 $a. This describes the physical scope/form
           # of the item, e.g. "64 unnumbered pages" or "1 portfolio".
@@ -346,6 +366,54 @@ WHERE {
                ?illustrative_content_x
     }
 
+    # Convert the MARC language code to the corresponding LC language URI.
+    BIND(
+      IF(
+        BOUND(?language_code),
+        IRI(CONCAT(
+          "http://id.loc.gov/vocabulary/languages/",
+          ?language_code
+        )),
+        ?sentinel
+      )
+      AS ?marc_language
+    )
+
+    VALUES (?language_code_lookup ?language_label) {
+      ("eng" "English")
+      ("spa" "Spanish")
+      ("ger" "German")
+      ("fre" "French")
+      ("und" "Undetermined")
+      ("ita" "Italian")
+      ("por" "Portuguese")
+      ("zxx" "No linguistic content")
+      ("dut" "Dutch")
+      ("swe" "Swedish")
+      ("jpn" "Japanese")
+      ("mul" "Multiple languages")
+      ("ara" "Arabic")
+      ("pol" "Polish")
+      ("cze" "Czech")
+      ("per" "Persian")
+      ("rus" "Russian")
+      ("lat" "Latin")
+      ("cat" "Catalan")
+      ("hrv" "Croatian")
+      ("dan" "Danish")
+      ("kor" "Korean")
+      ("yid" "Yiddish")
+      ("heb" "Hebrew")
+      ("urd" "Urdu")
+      ("gle" "Irish")
+      ("gre" "Greek")
+      ("nor" "Norwegian")
+      ("ice" "Icelandic")
+      ("nah" "Nahuatl")
+      ("zap" "Zapotec")
+    }
+    FILTER(?language_code_lookup = ?language_code)
+
     # WorldCat link + OCLC identifier, from the 001 number sampled above. Extract
     # the first run of digits (dropping the on/ocn/ocm prefix, any trailing suffix
     # such as "wcm"/"wcmasp", and leading zeros), then guard: only treat the 001
@@ -434,6 +502,13 @@ WHERE {
     BIND(IF(BOUND(?summary), fx:entity(ab:, "item/", ?canonical_key, "/summary"), ?sentinel) AS ?bookSummary)
     BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
   }
+
+  # Prefer the controlled MARC language URI when available,
+  # otherwise retain the existing CSV language value.
+  BIND(
+    COALESCE(?marc_language, ?csv_language)
+    AS ?language
+  )
 
   # Construction & production methods (#86). Attach ab:constructedUsing by
   # joining each book's genre/technique/material heading occurrences

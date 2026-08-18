@@ -84,7 +84,17 @@ WHERE {
     OPTIONAL { ?pub bflc:simpleDate  ?date . }
   }
 
-  OPTIONAL { ?book bf:language ?language . }
+  OPTIONAL {
+    ?book bf:language ?languageValue .
+    OPTIONAL {
+      ?languageValue rdfs:label ?languageLabel .
+    }
+
+    BIND(
+      COALESCE(?languageLabel, ?languageValue)
+      AS ?language
+    )
+  }
 
   OPTIONAL {
     ?book bf:extent ?extentNode .
