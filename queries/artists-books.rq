@@ -200,10 +200,20 @@ WHERE {
           ?f999 fx:anySlot ?sf999a .
           ?sf999a xyz:code "a" ; rdf:_1 ?canonical_key .
 
-          # OCLC number from the 001 control field (per record, always present).
-          # 001 is a marc:controlfield, so its value is on rdf:_1, not a subfield.
-          ?record fx:anySlot ?cf001 .
-          ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
+          # OCLC number from the 001 control field. 001 is a marc:controlfield,
+          # so its value is on rdf:_1, not a subfield.
+          #
+          # OPTIONAL because not every record has one: records synthesized from a
+          # non-MARC source (the eHive harvest of the Visual Studies Workshop
+          # collection, #99) deliberately carry no 001, because eHive's object id
+          # is not a catalogue control number and the OCLC guard below would
+          # happily mint a worldcat.org link from a 6-digit one. Matching 001 as a
+          # required pattern would drop the *whole* MARC contribution for such a
+          # record -- creator, extent and summary along with the OCLC.
+          OPTIONAL {
+            ?record fx:anySlot ?cf001 .
+            ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
+          }
 
           # Extent from MARC 300 $a. This describes the physical scope/form
           # of the item, e.g. "64 unnumbered pages" or "1 portfolio".
