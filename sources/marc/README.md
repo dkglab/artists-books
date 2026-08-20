@@ -79,6 +79,88 @@ python3 marc/rekey_held.py --in-marc <pre-#84 lib-1 marc.xml> \
     --csv artists-books.csv --out marc/artists-books-held-marc.xml
 ```
 
+### eHive: the Visual Studies Workshop collection (#99)
+
+The largest single hole in the MARC coverage is **Visual Studies Workshop** —
+#99 measures it as more works than the next seven press clusters combined. No
+amount of adding library catalogues reaches it, because VSW catalogues its
+collection in **eHive**, a museum-collection CMS, not in a Z39.50/SRU library
+catalogue. eHive is therefore the last entry in the `SERVERS` waterfall, with its
+own `protocol: "ehive"`.
+
+It differs from every other server in the chain in three ways worth knowing:
+
+- **Credentials.** eHive's API needs a clientId/clientSecret/trackingId triple
+  (Edit My Profile > API Keys in the eHive account), read from
+  `EHIVE_CLIENT_ID`, `EHIVE_CLIENT_SECRET` and `EHIVE_TRACKING_ID`. They are
+  secrets and must stay out of the repo. `ehive_client.py` holds the
+  authorization dance — a POST that answers **303 with the access grant in a
+  response header** (following the redirect loses it), then a GET to the token
+  endpoint — and re-authorizes on the 401 that a token expiring mid-harvest
+  produces. With no credentials set the server is simply skipped.
+- **The account is the search scope.** `conn` is an API path rather than a host:
+  every query is scoped to VSW's own account (3931), so a "catalogue" here is one
+  institution's holdings. Search is relevance-ranked full text — there is no
+  fielded author index to AND against, so the probe is the bare title and
+  `verify_title` does the discriminating, exactly as it does for the
+  single-common-word titles at SCAD.
+- **The records are synthesized, not fetched.** eHive answers JSON objects, so
+  `ehive_to_marcxml()` maps its fields onto the tags the construct query reads
+  (100/700, 300, 520) plus the 245 that `verify_title` judges. `combine()` stamps
+  `999 $d ehive`, so a synthesized record stays distinguishable from real
+  cataloguing in the committed archive.
+
+Two properties of eHive's data shape the result:
+
+**Search results are truncated; candidates must be re-fetched.** The account
+search endpoint returns only a subset of each record's fields — notably *without*
+`publication_date`, `publisher`, `publication_place` or `edition`. Only
+`/api/v2/objectrecords/{id}` returns the full record. This is easy to get wrong
+in a way that quietly costs recall: a field census run over search results
+concludes eHive has no dates (one `date_made` in 977 records), when in fact ~95%
+of full records carry a `publication_date`. Since `verify_title`'s weak band
+needs the year to corroborate, mapping search hits directly would strand every
+weak-band match in `review.tsv`. `ehive_full_record()` does the re-fetch, cached
+per run.
+
+`edition` is deliberately **not** mapped to MARC 250. Its values are edition
+sizes and copy numbers ("30", "500", "1/31", "/3"), not the edition statement
+250 means — routing them there would assert `bf:editionStatement "1/31"` on the
+book. An honest home would be a new `ab:` term for edition size (out of scope
+for #99).
+
+**Copies are separate records.** VSW catalogues each physical copy as its own
+object record ("copy 1" … "copy 13"), so an undeduplicated top-3 can be three
+copies of one work with the actually-matching book pushed outside the window —
+the same show-depth ceiling #98 describes, reached by a different route.
+`ehive_candidates()` collapses on the normalized title (lowest objectRecordId
+wins, stable across runs) so `show_n` counts distinct works; `fetch_n` over-fetches
+to give it something to collapse.
+
+`residual_csv.py` builds the input — the canonical rows still missing a record,
+optionally filtered to a cluster:
+
+```sh
+# from sources/:
+python3 marc/residual_csv.py --csv artists-books.csv \
+    --archive marc/artists-books-marc.zip --publisher 'visual studies' \
+    --out marc/harvest/vsw-residual.csv
+python3 marc/marc_harvest.py --csv marc/harvest/vsw-residual.csv \
+    --out marc/harvest/vsw-ehive.zip --servers ehive
+python3 marc/merge_archives.py --base marc/artists-books-marc.zip \
+    --add marc/harvest/vsw-ehive.zip --out marc/artists-books-marc.zip
+```
+
+Probe the API directly (discovering paging, or reading a record's fields) with:
+
+```sh
+python3 marc/ehive_client.py --path /api/v2/accounts/3931/objectrecords \
+    --param 'query=year of the cow' --param limit=5
+```
+
+Paging is `offset`/`limit`; `page`/`pageSize` are silently ignored, as is
+`catalogueType` (the book slice is filtered client-side on `LIBRARY`).
+
 ### Adding a server's reach to the committed archive
 
 `combine()` rebuilds an archive wholly from the harvest state under

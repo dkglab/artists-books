@@ -67,7 +67,15 @@ def main():
 
     for i in range(0, len(batch), BATCH):
         chunk = batch[i:i + BATCH]
-        results = mh.run_zoom(cfg, server, chunk, SHOW_N)
+        # Dispatch on the server's protocol, as harvest() does -- the rejects
+        # being adjudicated may come from any of the three transports.
+        proto = server.get("protocol", "z3950")
+        if proto == "sru":
+            results = mh.run_sru(cfg, server, chunk, SHOW_N)
+        elif proto == "ehive":
+            results = mh.run_ehive(cfg, server, chunk, SHOW_N)
+        else:
+            results = mh.run_zoom(cfg, server, chunk, SHOW_N)
         if results is None:
             print(f"batch {i // BATCH}: driver timeout, stopping", flush=True)
             break
