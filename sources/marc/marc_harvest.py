@@ -201,6 +201,26 @@ SERVERS = [
     {"name": "libris", "conn": "tcp:z3950.libris.kb.se:210/libris",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
+    # 6. eHive -- the Visual Studies Workshop collection (issue #99 lever 1).
+    # Last in the waterfall on purpose: it is a museum CMS whose records we
+    # synthesize into MARC (ehive_to_marcxml), so it must only ever see what the
+    # eleven real catalogues could not resolve, and can never displace genuine
+    # cataloguing for a book one of them holds.
+    # VSW is #99's dominant single cluster -- ~200 works, more than the next
+    # seven clusters combined -- and is catalogued here rather than in any
+    # Z39.50/SRU target, which is why no amount of adding library servers reaches
+    # it. conn is an API path, not a host: the account is the search scope, so
+    # this is the one server whose "catalogue" is a single institution's holdings.
+    # Needs EHIVE_CLIENT_ID / EHIVE_CLIENT_SECRET / EHIVE_TRACKING_ID in the
+    # environment (see ehive_client.py); with none set the server is skipped.
+    # No isbn keytype: eHive's isbn_issn is on ~12% of records and its search is
+    # relevance-ranked full text, so an ISBN probe is not the exact-identifier
+    # lookup the trusted IDENTIFIER_KEYS path assumes.
+    # fetch_n over show_n: copies of one work are separate object records, so we
+    # over-fetch and let ehive_candidates() dedupe down to show_n distinct works.
+    {"name": "ehive", "conn": "/api/v2/accounts/3931/objectrecords",
+     "protocol": "ehive", "keytypes": ("title-author", "title"),
+     "batch": 25, "qsleep": 0.15, "bsleep": 1, "show_n": 5, "fetch_n": 25},
     # NOTE: SUDOC (carmin.sudoc.abes.fr/ABES-Z39-PUBLIC) is reachable and would
     # reach the French references, but its public endpoint emits records in a
     # non-standard encoding that mislabels itself UTF-8 and that yaz cannot
@@ -302,11 +322,13 @@ def item_keys(row):
             keys["title-author"] = [(
                 f"{surname} / {title}",
                 {"z3950": f'@and @attr 1=4 @attr 4=1 "{title}" @attr 1=1003 "{surname}"',
-                 "sru": f'alma.title="{title}"'})]
+                 "sru": f'alma.title="{title}"',
+                 "ehive": title})]
         else:
             keys["title"] = [(title,
                 {"z3950": f'@attr 1=4 @attr 4=1 "{title}"',
-                 "sru": f'alma.title="{title}"'})]
+                 "sru": f'alma.title="{title}"',
+                 "ehive": title})]
     return keys
 
 
@@ -618,6 +640,195 @@ def run_sru(cfg, server, batch, show_n):
     return results
 
 
+# --- eHive (issue #99) -------------------------------------------------------
+#
+# eHive is a museum-collection CMS, not a library catalogue: it answers JSON
+# object records, so there is nothing to fetch as MARC and the records below are
+# *synthesized* from its fields. That is sound only because the synthesis is
+# narrow -- title, maker, physical description, summary -- and because every
+# candidate still has to clear verify_title against the CSV before it is kept.
+# combine() stamps 999 $d "ehive", so a synthesized record is always
+# distinguishable from real cataloguing in the committed archive.
+
+EHIVE_LIBRARY_TYPE = "LIBRARY"
+
+
+def ehive_fields(obj):
+    """Flatten an eHive object record's fieldSets into {identifier: [values]}.
+
+    eHive nests every value as fieldSets -> fieldRows -> fields -> attributes,
+    where the attribute list is key/value pairs and the one we want is "value".
+    Identifiers repeat (a record may carry several primary_creator_maker), so
+    each maps to a list in catalogue order."""
+    out = {}
+    for fs in obj.get("fieldSets", []):
+        for row in fs.get("fieldRows", []):
+            for f in row.get("fields", []):
+                for a in f.get("attributes", []):
+                    if a.get("key") == "value" and (a.get("value") or "").strip():
+                        out.setdefault(f.get("identifier"), []).append(a["value"].strip())
+    return out
+
+
+def ehive_to_marcxml(obj):
+    """One eHive object record -> a MARCXML <record> Element.
+
+    Only fields the construct query actually consumes are emitted (100/700
+    contributions, 300 physical description, 520 summary), plus 245 -- which the
+    graph does not read (the title is a plain rdfs:label off the CSV, #11) but
+    verify_title does, so it is what gates the record being kept at all.
+
+    Deliberately **no 001**. queries/artists-books.rq reads 001 as an OCLC number
+    and accepts any digit run of 10 or fewer as one; an eHive objectRecordId is
+    ~6 digits, so emitting it would mint a confident link to an unrelated
+    worldcat.org record. There is no OCLC number in eHive to put there instead.
+    (The 001 match in that query is OPTIONAL for exactly this case.)
+
+    Publication data (264) is emitted for verify_title's benefit, not the
+    graph's: the query takes publisher/place/date from the CSV, but decode_record
+    reads the year off 260/264 $c, and that year is what lets a weak-band title
+    match be corroborated instead of dropped.
+
+    **Requires a full record.** The search endpoint returns a truncated field
+    set -- no publication_date, publisher, publication_place or edition -- so a
+    candidate must be re-fetched from /api/v2/objectrecords/{id} before it is
+    mapped. Mapping a search hit directly loses the date on ~95% of records and
+    silently strands their weak-band matches in review.tsv.
+
+    eHive's `edition` field is deliberately **not** mapped to MARC 250. Its
+    values are edition sizes and copy numbers ("30", "500", "1/31", "/3"), not
+    the edition statement 250 means; routing them there would assert
+    bf:editionStatement "1/31" on the book. An honest home for them would be a
+    new ab: term for edition size, which is out of scope here (#99)."""
+    f = ehive_fields(obj)
+    rec = ET.Element(f"{{{MARC_NS}}}record")
+
+    def datafield(tag, ind1=" ", ind2=" ", **subs):
+        """Append tag with the given subfields, skipping empty ones."""
+        pairs = [(c, v) for c, v in subs.items() if v]
+        if not pairs:
+            return
+        df = ET.SubElement(rec, f"{{{MARC_NS}}}datafield")
+        df.set("tag", tag); df.set("ind1", ind1); df.set("ind2", ind2)
+        for code, val in pairs:
+            sf = ET.SubElement(df, f"{{{MARC_NS}}}subfield")
+            sf.set("code", code); sf.text = val
+
+    makers = f.get("primary_creator_maker", [])
+    roles = f.get("primary_creator_maker_role", [])
+    # eHive names are already inverted ("Sesto, Carl"), matching MARC 100 $a.
+    if makers:
+        datafield("100", ind1="1", a=makers[0], e=(roles[0] if roles else ""))
+    for i, extra in enumerate(makers[1:], start=1):
+        datafield("700", ind1="1", a=extra, e=(roles[i] if i < len(roles) else ""))
+
+    datafield("245", ind1=("1" if makers else "0"), ind2="0",
+              a=" ".join(f.get("name", [])))
+    # date_made is the fallback: a handful of records use it where the rest use
+    # publication_date. "1975 circa" is fine -- decode_record pulls the \d{4}.
+    pubdate = (f.get("publication_date") or f.get("date_made") or [""])[0]
+    datafield("264", ind2="1",
+              a=(f.get("publication_place") or [""])[0],
+              b=(f.get("publisher") or [""])[0],
+              c=pubdate)
+    # 300 $b is illustrative content in the query's reading; eHive's
+    # medium_description ("offset lithography, screenless duotones") is a
+    # statement of exactly that. $c is dimensions. There is no extent ($a) in
+    # eHive -- object_type is only ever a form word like "Book".
+    datafield("300",
+              b="; ".join(f.get("medium_description", [])),
+              c="; ".join(f.get("measurement_description", [])))
+    datafield("520", a=" ".join(f.get("web_public_description", [])))
+    for isbn in clean_isbns(" ".join(f.get("isbn_issn", []))):
+        datafield("020", a=isbn)
+    return rec
+
+
+def ehive_candidates(payload, show_n):
+    """LIBRARY object records from one eHive response, de-duplicated, best first.
+
+    VSW catalogues each physical copy as its own object record ("copy 1" ...
+    "copy 13"), so an undeduplicated top-3 can be three copies of one work and
+    push the actually-matching book out of the window -- the show-depth ceiling
+    #98 describes, arrived at by a different route. Collapsing on the normalized
+    title first means show_n counts distinct works, not copies; the lowest
+    objectRecordId wins a tie, which is stable across runs."""
+    seen = {}
+    for obj in payload.get("objectRecords", []):
+        if obj.get("catalogueType") != EHIVE_LIBRARY_TYPE:
+            continue
+        title = norm(" ".join(ehive_fields(obj).get("name", [])))
+        if not title:
+            continue
+        prev = seen.get(title)
+        if prev is None or (obj.get("objectRecordId") or 0) < (prev.get("objectRecordId") or 0):
+            seen[title] = obj
+    return list(seen.values())[:show_n]
+
+
+_EHIVE_FULL = {}
+
+
+def ehive_full_record(sess, obj):
+    """Re-fetch a candidate in full, because search results are truncated.
+
+    /api/v2/accounts/{id}/objectrecords omits publication_date, publisher,
+    publication_place and edition from the fieldSets it returns; only
+    /api/v2/objectrecords/{id} carries them. Cached per run because the same
+    object can surface as a candidate for more than one probe. Returns the
+    search hit unchanged if the fetch fails, so a transient error costs the date
+    rather than the record."""
+    oid = obj.get("objectRecordId")
+    if oid not in _EHIVE_FULL:
+        try:
+            _EHIVE_FULL[oid] = sess.get_json(f"/api/v2/objectrecords/{oid}")
+        except Exception as e:
+            print(f"  !! [ehive] full record {oid}: {e}", file=sys.stderr)
+            _EHIVE_FULL[oid] = obj
+    return _EHIVE_FULL[oid]
+
+
+_EHIVE_SESSION = {}
+
+
+def ehive_session(server):
+    """One authorized eHive session per process, created on first use so a
+    harvest that never reaches the eHive server needs no credentials."""
+    if "s" not in _EHIVE_SESSION:
+        from ehive_client import Session
+        _EHIVE_SESSION["s"] = Session(qsleep=server.get("qsleep", 0.2))
+    return _EHIVE_SESSION["s"]
+
+
+def run_ehive(cfg, server, batch, show_n):
+    """eHive equivalent of run_zoom/run_sru: one account-scoped search per probe.
+
+    The reported count is the number of distinct candidates handed back, not
+    eHive's totalObjects -- a relevance search over the account reports every
+    ranked record (often thousands), which would make review.tsv read
+    "7671 candidates" for what is really a shortlist of eight."""
+    sess = ehive_session(server)
+    results = []
+    for key, plist in batch:
+        probelist = []
+        for keytype, value, query in plist:
+            try:
+                payload = sess.get_json(server["conn"],
+                                        {"query": query, "limit": server["fetch_n"]})
+            except Exception as e:
+                print(f"  !! [{server['name']}] {key}: {e}", file=sys.stderr)
+                probelist.append((keytype, value, 0, []))
+                continue
+            recs = []
+            for c in ehive_candidates(payload, show_n):
+                full = ehive_full_record(sess, c)
+                if full is not None:
+                    recs.append(marc_element_to_binary(ehive_to_marcxml(full)))
+            probelist.append((keytype, value, len(recs), recs))
+        results.append((key, probelist))
+    return results
+
+
 def _subfields(rec, tag, codes):
     out = []
     for df in rec.findall(f"{{{MARC_NS}}}datafield"):
@@ -723,6 +934,8 @@ def harvest(cfg, limit=None, servers=None):
 
             if proto == "sru":
                 results = run_sru(cfg, server, batch, show_n)
+            elif proto == "ehive":
+                results = run_ehive(cfg, server, batch, show_n)
             else:
                 # zoomfetch tags every record with its job id, so there is no
                 # positional alignment to break (issue #85): the only failure mode
