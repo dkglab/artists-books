@@ -31,23 +31,17 @@ import re
 import sys
 import zipfile
 
+# The OCLC key the residual reports on is the same one marc_harvest's uwmad
+# server searches with, so they share one definition: a residual that counted
+# OCLC-bearing rows differently from the harvest that queries them would report
+# a lever nobody could pull.
+from marc_harvest import oclc_of
+
 
 def archive_keys(path):
     """The 999 $a join keys already covered by an archive: one <key>.xml per record."""
     with zipfile.ZipFile(path) as zf:
         return {os.path.splitext(n)[0] for n in zf.namelist() if n.endswith(".xml")}
-
-
-# A real OCLC number in the Zotero url/extra columns. Guarded because those
-# columns also carry cataloguer prose -- "[No WorldCat Record Found 11/5/2020]"
-# matches a bare /oclc/i search and would inflate the count (#99 reports 781
-# OCLC-bearing misses on this stricter reading, not the ~2,400 a loose one gives).
-OCLC_RE = re.compile(r"worldcat\.org/oclc/(\d+)|\boclc[:\s#]*(\d{5,})", re.I)
-
-
-def oclc_of(row):
-    m = OCLC_RE.search((row.get("url") or "") + " " + (row.get("extra") or ""))
-    return (m.group(1) or m.group(2)) if m else None
 
 
 def main():
