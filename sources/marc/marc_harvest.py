@@ -10,17 +10,21 @@ Strategy (see sources/marc/README.md):
                   fallbacks for what UNC lacks -- the Library of Congress, the
                   K10plus (German) academic union catalogue, LIBRIS (Sweden's
                   national catalogue), Penn State, and the Getty Research
-                  Institute, Clark Art Institute, and NYARC art libraries. Most
-                  are Z39.50; the Alma art libraries are queried over SRU/CQL (see
-                  `protocol`). See SERVERS for connection strings; all yield
-                  MARC21 in UTF-8.
+                  Institute, Clark Art Institute, and NYARC art libraries, then
+                  the two sources whose records we synthesize rather than fetch --
+                  UW-Madison's catalogue JSON and eHive. Most are Z39.50; the Alma
+                  art libraries are queried over SRU/CQL (see `protocol`). See
+                  SERVERS for connection strings; all yield MARC21 in UTF-8.
   * Search keys : per item, tried in order, first hit wins. Identifier keys are
                   trusted; title keys are verified against the CSV before use.
                     - bib          UNC only,  @attr 1=12 b<digits>   (unique)
+                    - oclc         uwmad only, identifiers=<oclc number>
                     - isbn         UNC + LC,   @attr 1=7 <isbn>
                     - title-author LC only,    @and 1=4 "<title>" 1=1003 "<author>"
                     - title        LC only,    @attr 1=4 "<title>"
-                  (OCLC is not used -- neither target indexes it.)
+                  (OCLC is usable only at uwmad, whose per-record JSON lets a
+                  relevance-ranked hit be confirmed against the record's own
+                  oclc_ids; no Z39.50/SRU target in the chain indexes it -- #99.)
   * Verify      : a title / title-author hit is kept only when the retrieved
                   record's 245 (and 100/260) agree with the CSV title plus the
                   author surname or the year; otherwise it is rejected (logged to
@@ -66,6 +70,7 @@ Run (from sources/, or let `make -C sources marc/<stem>-marc.zip` drive it):
 import argparse
 import csv
 import difflib
+import json
 import os
 import re
 import subprocess
@@ -201,7 +206,26 @@ SERVERS = [
     {"name": "libris", "conn": "tcp:z3950.libris.kb.se:210/libris",
      "keytypes": ("isbn", "title-author", "title"),
      "batch": 10, "qsleep": 1.0, "bsleep": 4, "show_n": 3},
-    # 6. eHive -- the Visual Studies Workshop collection (issue #99 lever 1).
+    # 6. UW-Madison / UW System -- the Kohler Art Library's named "Artists' Book
+    # Collection" plus Memorial Special Collections, over the catalogue's own
+    # JSON front end (issue #99 lever 2). Placed after every real-MARC catalogue
+    # and before eHive for the same reason eHive is last: its records are
+    # *synthesized* (uw_to_marcxml) from a discovery-layer JSON document, which
+    # is thinner than the MARC a real catalogue serves, so it must only ever see
+    # what those catalogues could not resolve. eHive stays behind it because its
+    # scope is narrower still -- one institution's account.
+    # Alma SRU is not published for this tenant: the institution code is
+    # 01UWI_MAD (read off a record's own location_data) and the Ex Libris SRU
+    # endpoint rejects it, the same off-by-default wall CARLI/SAIC presents. The
+    # JSON front end is the only route in.
+    # It is the *UW System* union catalogue, not just Madison: confirmed hits
+    # come back held at UW Milwaukee, Stevens Point and La Crosse too.
+    # This is the only server with an `oclc` keytype -- see item_keys and
+    # uw_confirms for why that is sound here and nowhere else.
+    {"name": "uwmad", "conn": "https://search.library.wisc.edu",
+     "protocol": "uwmad", "keytypes": ("oclc", "isbn", "title-author", "title"),
+     "batch": 10, "qsleep": 0.5, "bsleep": 3, "show_n": 3},
+    # 7. eHive -- the Visual Studies Workshop collection (issue #99 lever 1).
     # Last in the waterfall on purpose: it is a museum CMS whose records we
     # synthesize into MARC (ehive_to_marcxml), so it must only ever see what the
     # eleven real catalogues could not resolve, and can never displace genuine
@@ -230,7 +254,13 @@ SERVERS = [
 # Identifier keys are trusted on a hit; title keys must be verified. Accept a
 # title hit when its normalized 245 is very close to the CSV title, or
 # reasonably close AND corroborated by the author surname or publication year.
-IDENTIFIER_KEYS = ("bib", "isbn")
+# Keys select_record trusts without a verify_title check. "oclc" is here only
+# because the one server that uses it (uwmad) confirms every candidate against
+# the retrieved record's own oclc_ids before handing it back -- see uw_confirms.
+# A server that queried an OCLC index and trusted the ranking would not be sound:
+# UW's identifiers index is relevance-ranked, and a nonexistent OCLC number still
+# returns a plausible-looking single hit.
+IDENTIFIER_KEYS = ("bib", "isbn", "oclc")
 TITLE_KEYS      = ("title-author", "title")
 TITLE_STRONG    = 0.85
 TITLE_WEAK      = 0.60
@@ -296,22 +326,48 @@ def year_of(date):
     return m.group(0) if m else None
 
 
+# A real OCLC number in the Zotero url/extra columns, for the uwmad `oclc` key.
+# Guarded because those columns also carry cataloguer prose -- "[No WorldCat
+# Record Found 11/5/2020]" matches a bare /oclc/i search. Kept identical to
+# residual_csv.py's OCLC_RE so the harvest and the residual count agree on which
+# rows carry a usable OCLC number (#99 measures the lever at 713 rows).
+OCLC_RE = re.compile(r"worldcat\.org/oclc/(\d+)|\boclc[:\s#]*(\d{5,})", re.I)
+
+
+def oclc_of(row):
+    """The OCLC number in a row's url/extra columns, or None."""
+    m = OCLC_RE.search((row.get("url") or "") + " " + (row.get("extra") or ""))
+    return (m.group(1) or m.group(2)) if m else None
+
+
 def item_keys(row):
     """Available search keys for one CSV row: keytype -> [(value, querymap), ...].
 
     value is what gets stamped into 999 $b; querymap maps a server protocol
-    ("z3950" Bib-1 prefix, "sru" CQL) to the query expression for that key. A
-    keytype with no entry for a server's protocol is simply skipped there (e.g.
-    bib is UNC-only). For SRU the title query is title-only and leans on
-    verify_title; CQL phrase-on-author is unreliable across Alma tenants.
+    ("z3950" Bib-1 prefix, "sru" CQL, "uwmad" query params) to the query
+    expression for that key. A keytype with no entry for a server's protocol is
+    simply skipped there (e.g. bib is UNC-only, oclc is uwmad-only). For SRU the
+    title query is title-only and leans on verify_title; CQL phrase-on-author is
+    unreliable across Alma tenants.
+
+    The uwmad entries are param dicts rather than query strings because that
+    catalogue's advanced search is fielded on distinct HTTP parameters
+    (title=/names=/identifiers=) rather than one query expression.
     """
     keys = {}
     m = re.search(r"/UNCb(\d+)", row.get("url") or "")
     if m:
         keys["bib"] = [("b" + m.group(1), {"z3950": f"@attr 1=12 b{m.group(1)}"})]
+    # OCLC is uwmad-only: no Z39.50/SRU target in the chain indexes it usefully
+    # (LC answers @attr 1=1007 with "[114] Unsupported Use attribute"; the Alma
+    # tenants' alma.oclc_control_number silently matches everything -- #99).
+    oclc = oclc_of(row)
+    if oclc:
+        keys["oclc"] = [(oclc, {"uwmad": {"identifiers": oclc}})]
     for i in clean_isbns(row.get("ISBN", "")):
         keys.setdefault("isbn", []).append(
-            (i, {"z3950": f"@attr 1=7 {i}", "sru": f"alma.isbn={i}"}))
+            (i, {"z3950": f"@attr 1=7 {i}", "sru": f"alma.isbn={i}",
+                 "uwmad": {"identifiers": i}}))
     # One title probe per item: prefer title+author (far more precise on Z39.50 --
     # in testing it returns a single exact hit where title alone returns dozens),
     # falling back to title alone only when the item has no author.
@@ -323,12 +379,14 @@ def item_keys(row):
                 f"{surname} / {title}",
                 {"z3950": f'@and @attr 1=4 @attr 4=1 "{title}" @attr 1=1003 "{surname}"',
                  "sru": f'alma.title="{title}"',
-                 "ehive": title})]
+                 "ehive": title,
+                 "uwmad": {"title": title, "names": surname}})]
         else:
             keys["title"] = [(title,
                 {"z3950": f'@attr 1=4 @attr 4=1 "{title}"',
                  "sru": f'alma.title="{title}"',
-                 "ehive": title})]
+                 "ehive": title,
+                 "uwmad": {"title": title}})]
     return keys
 
 
@@ -829,6 +887,290 @@ def run_ehive(cfg, server, batch, show_n):
     return results
 
 
+# --- UW-Madison / UW System (issue #99) --------------------------------------
+#
+# search.library.wisc.edu is a discovery layer over the UW System Alma tenant,
+# not a MARC service: its Alma SRU is unpublished (institution code 01UWI_MAD,
+# read off a record's own location_data, is rejected by the Ex Libris endpoint),
+# so the only route in is the catalogue's own HTML search plus its per-record
+# JSON document. Records are therefore *synthesized* here, as they are for
+# eHive -- see uw_to_marcxml for what that does and does not carry.
+#
+# Three properties of this source shape the adapter:
+#
+#   * The `identifiers` index is relevance-ranked, not an exact key. A
+#     nonexistent OCLC number (9999999999) returns one plausible-looking record
+#     -- an unrelated Thai children's book -- with no diagnostic. This is the
+#     Alma alma.oclc_control_number match-all trap in milder, more dangerous
+#     form: milder because it returns one hit rather than the whole catalogue,
+#     more dangerous because one hit looks like a successful lookup. uw_confirms
+#     therefore re-checks every identifier-key candidate against the retrieved
+#     record's own oclc_ids/isbns, which is what earns `oclc` its place in
+#     IDENTIFIER_KEYS.
+#
+#   * Search results are truncated. The results page carries only title, author
+#     and date; publication data, extent, notes, ISBNs and OCLC numbers live in
+#     the per-record JSON. This is exactly eHive's re-fetch lesson (#131) at a
+#     second source, which is why it is now stated as a rule rather than a
+#     footnote: a discovery layer's result list is a shortlist, never a record.
+#
+#   * It is a union catalogue. Confirmed hits come back held at UW Milwaukee,
+#     Stevens Point and La Crosse as well as Madison, so the reach is wider than
+#     the Kohler Art Library alone -- though Kohler's named "Artists' Book
+#     Collection" is where most of them land.
+#
+# robots.txt allows /search/catalog and /catalog for User-agent *; the requests
+# below are per-title lookups from a residual list, not a crawl, and carry a
+# descriptive User-Agent so the operator can identify and throttle them.
+
+UW_UA = ("artists-books-harvest/1.0 "
+         "(+https://github.com/dkglab/artists-books; MARC enrichment, issue #99)")
+
+# One search result item: the /catalog/<mms> link in its heading. Only the
+# heading link is matched -- a result block also links the cover image to the
+# same record, and the facet rail links elsewhere.
+UW_RESULT_RE = re.compile(r'<h2><a[^>]*href="/catalog/(\d+)"')
+
+
+def uw_get(url, tries=3, timeout=30):
+    """GET a UW catalogue URL as text, with a descriptive UA and a short retry.
+    Returns None when every attempt fails, so a probe degrades to 0 hits rather
+    than aborting a resumable harvest."""
+    req = urllib.request.Request(url, headers={"User-Agent": UW_UA})
+    for attempt in range(tries):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read().decode("utf-8", "replace")
+        except Exception:
+            if attempt == tries - 1:
+                return None
+            time.sleep(2 * (attempt + 1))
+
+
+def uw_search(base, params, show_n):
+    """Fielded advanced search -> [mms id], best first, at most show_n.
+
+    params are the advanced form's own field names (title, names, identifiers);
+    match=all ANDs them, which is what makes title+author a real conjunction
+    here rather than the title-only fallback the Alma tenants force.
+    """
+    qs = urllib.parse.urlencode(dict(params, match="all"))
+    body = uw_get(f"{base}/search/catalog?{qs}")
+    if body is None:
+        return []
+    return UW_RESULT_RE.findall(body)[:show_n]
+
+
+_UW_RECORDS = {}
+
+
+def uw_record(base, mms):
+    """One record's JSON `data` dict, cached per run (the same record can surface
+    for more than one probe). Returns None if the fetch or parse fails."""
+    if mms not in _UW_RECORDS:
+        body = uw_get(f"{base}/catalog/{mms}.json")
+        try:
+            _UW_RECORDS[mms] = json.loads(body)["document"]["data"]
+        except Exception:
+            print(f"  !! [uwmad] record {mms}: unreadable JSON", file=sys.stderr)
+            _UW_RECORDS[mms] = None
+    return _UW_RECORDS[mms]
+
+
+def uw_confirms(data, keytype, value):
+    """True if a record really carries the identifier we searched for.
+
+    The search index is relevance-ranked, so a hit is a suggestion, not a lookup:
+    a nonexistent OCLC number still returns a record. Confirming against the
+    retrieved record's own oclc_ids / isbns turns the suggestion back into an
+    exact-identifier match, which is the whole basis for select_record trusting
+    an oclc or isbn hit without verify_title. Title keys are not confirmed here
+    -- they go through verify_title like every other server's."""
+    if keytype == "oclc":
+        return value in {str(x) for x in (data.get("oclc_ids") or [])}
+    if keytype == "isbn":
+        return value in {re.sub(r"[^0-9Xx]", "", str(x)).upper()
+                         for x in (data.get("isbns") or [])}
+    return True
+
+
+def uw_oclc_control_number(data):
+    """The record's OCLC control number in prefixed form (ocm/ocn/on...), for 001.
+
+    queries/artists-books.rq reads 001 as an OCLC number and mints a worldcat.org
+    link from it, guarded to an OCLC prefix or a digit run of at most 10 -- so a
+    bare 11-digit OCLC number would be silently dropped as a local system id.
+    UW's `identifiers` array carries the prefixed cataloguing form alongside the
+    bare digits, so prefer that; fall back to bare digits only when they pass the
+    query's own guard, and otherwise emit no 001 at all rather than one that would
+    mint a link to an unrelated record (the eHive rule, #130).
+    """
+    oclcs = {str(x) for x in (data.get("oclc_ids") or [])}
+    if not oclcs:
+        return None
+    for ident in (str(x) for x in (data.get("identifiers") or [])):
+        m = re.match(r"^(?:ocm|ocn|on)0*(\d+)$", ident, re.I)
+        if m and m.group(1).lstrip("0") in {o.lstrip("0") for o in oclcs}:
+            return ident
+    bare = sorted(oclcs, key=len)[0]
+    return bare if len(bare.lstrip("0")) <= 10 else None
+
+
+def uw_authority_ids(data):
+    """{normalized heading: LC name-authority id} from the record's infocard_data.
+
+    infocard_data pairs a heading with its authority id ("Drucker, Johanna,
+    1952-" -> "n81067311"), which is what MARC 100/700 $0 carries and what the
+    construct query uses to mint a creator URI when no VIAF/ISNI is present.
+    Matching is by normalized heading because the JSON gives no other link back
+    to the name it describes."""
+    out = {}
+    try:
+        cards = json.loads(data.get("infocard_data") or "[]")
+    except Exception:
+        return out
+    for card in cards:
+        name, ident = card.get("name"), card.get("id")
+        if name and ident:
+            out[norm(name)] = ident
+    return out
+
+
+# ISBD punctuation is the subfield boundary in a flattened 300: "extent : other
+# details ; dimensions". The discovery layer serves the field as one string, so
+# splitting on that punctuation is a faithful reconstruction of $a/$b/$c rather
+# than a guess -- and the query reads those three subfields separately.
+UW_EXTENT_RE = re.compile(r"^(?P<a>[^:;]*?)(?:\s*:\s*(?P<b>[^;]*?))?(?:\s*;\s*(?P<c>.*))?$")
+
+
+def uw_physical_subfields(desc):
+    """A flattened 300 string -> (extent, other physical details, dimensions)."""
+    m = UW_EXTENT_RE.match((desc or "").strip())
+    if not m:
+        return "", "", ""
+    return (m.group("a") or "").strip(), (m.group("b") or "").strip(), \
+           (m.group("c") or "").strip()
+
+
+def uw_to_marcxml(data):
+    """One UW catalogue JSON record -> a MARCXML <record> Element.
+
+    Like ehive_to_marcxml this is a *synthesis*, sound only because it is narrow
+    and because every record still has to clear either uw_confirms (identifier
+    keys) or verify_title (title keys) before it is kept. combine() stamps
+    999 $d "uwmad", so a synthesized record stays distinguishable in the archive.
+
+    What is mapped, and why:
+      001  the OCLC control number (see uw_oclc_control_number) -- unlike eHive,
+           this source does carry a real one, so the WorldCat link the query
+           mints from 001 is correct rather than fabricated.
+      020  isbns.
+      100/700  display_author and the remaining names, already inverted as MARC
+           expects, with $0 from infocard_data where the heading matches.
+      245  title, split on ISBD " : " into $a/$b, with responsibility in $c.
+           The graph does not read 245 (the title is a plain rdfs:label off the
+           CSV, #11) but verify_title does, so this is what gates a title hit.
+      250/260/264  replayed verbatim from display_publication_data, which is not
+           a rendering but the actual MARC field, indicators and subfields.
+           decode_record reads the year off 260/264 $c, and that year is what
+           corroborates a weak-band title match.
+      300  reconstructed $a/$b/$c from the flattened physical description.
+      500  display_notes.
+
+    Deliberately **no 520**: this catalogue's JSON exposes no summary or abstract
+    field. display_notes are 500-type notes ("Quotations from: ..."), not a
+    summary of the work, and routing them to 520 would put cataloguer's notes
+    where the site renders a description. Books resolved here therefore carry no
+    summary -- an honest gap, not a bug.
+    """
+    rec = ET.Element(f"{{{MARC_NS}}}record")
+
+    def datafield(tag, ind1=" ", ind2=" ", **subs):
+        """Append tag with the given subfields, skipping empty ones."""
+        pairs = [(c, v) for c, v in subs.items() if v]
+        if not pairs:
+            return
+        df = ET.SubElement(rec, f"{{{MARC_NS}}}datafield")
+        df.set("tag", tag); df.set("ind1", ind1); df.set("ind2", ind2)
+        for code, val in pairs:
+            sf = ET.SubElement(df, f"{{{MARC_NS}}}subfield")
+            sf.set("code", code); sf.text = val
+
+    control = uw_oclc_control_number(data)
+    if control:
+        cf = ET.SubElement(rec, f"{{{MARC_NS}}}controlfield")
+        cf.set("tag", "001"); cf.text = control
+
+    for isbn in clean_isbns(" ".join(str(i) for i in (data.get("isbns") or []))):
+        datafield("020", a=isbn)
+
+    authorities = uw_authority_ids(data)
+    primary = (data.get("display_author") or "").strip()
+    if primary:
+        datafield("100", ind1="1", a=primary, **{"0": authorities.get(norm(primary), "")})
+    for name in (data.get("names") or []):
+        name = (name or "").strip()
+        if name and name != primary:
+            datafield("700", ind1="1", a=name, **{"0": authorities.get(norm(name), "")})
+
+    title = (data.get("title") or "").strip()
+    main, _sep, sub = title.partition(" : ")
+    datafield("245", ind1=("1" if primary else "0"), ind2="0",
+              a=(main + " :" if sub else main), b=sub,
+              c=(data.get("responsibility") or "").strip())
+
+    # display_publication_data is a JSON string holding real MARC fields
+    # (250/260/264) with their indicators and subfields; replay them as-is.
+    try:
+        pubfields = json.loads(data.get("display_publication_data") or "[]")
+    except Exception:
+        pubfields = []
+    for pf in pubfields:
+        subs = {}
+        for entry in pf.get("data", []):
+            for code, val in entry.items():
+                subs.setdefault(code, []).append(val)
+        datafield(str(pf.get("field") or "260"),
+                  ind1=(pf.get("i1") or " "), ind2=(pf.get("i2") or " "),
+                  **{c: " ".join(v) for c, v in subs.items()})
+
+    extent, details, dimensions = uw_physical_subfields(
+        (data.get("physical_descriptions") or [""])[0])
+    datafield("300", a=extent, b=details, c=dimensions)
+
+    for note in (data.get("display_notes") or []):
+        datafield("500", a=note)
+    return rec
+
+
+def run_uwmad(cfg, server, batch, show_n):
+    """UW equivalent of run_zoom/run_sru/run_ehive: one fielded search per probe,
+    then a per-record JSON fetch for each candidate.
+
+    The count reported is the number of candidates actually handed back -- after
+    uw_confirms has dropped identifier hits the record does not bear out -- so a
+    review.tsv line counts real candidates rather than the relevance ranking's
+    suggestions."""
+    results = []
+    for key, plist in batch:
+        probelist = []
+        for keytype, value, params in plist:
+            recs = []
+            for mms in uw_search(server["conn"], params, show_n):
+                time.sleep(server["qsleep"])
+                data = uw_record(server["conn"], mms)
+                if data is None or not uw_confirms(data, keytype, value):
+                    continue
+                recs.append(marc_element_to_binary(uw_to_marcxml(data)))
+                # An identifier key is a lookup: one confirmed record settles it.
+                if keytype in IDENTIFIER_KEYS:
+                    break
+            probelist.append((keytype, value, len(recs), recs))
+            time.sleep(server["qsleep"])
+        results.append((key, probelist))
+    return results
+
+
 def _subfields(rec, tag, codes):
     out = []
     for df in rec.findall(f"{{{MARC_NS}}}datafield"):
@@ -934,6 +1276,8 @@ def harvest(cfg, limit=None, servers=None):
 
             if proto == "sru":
                 results = run_sru(cfg, server, batch, show_n)
+            elif proto == "uwmad":
+                results = run_uwmad(cfg, server, batch, show_n)
             elif proto == "ehive":
                 results = run_ehive(cfg, server, batch, show_n)
             else:
