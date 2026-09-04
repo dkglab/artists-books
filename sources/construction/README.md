@@ -1,9 +1,10 @@
 # Construction & production methods concept scheme
 
 This folder builds `sources/construction-methods.ttl` — a local
-[SKOS](https://www.w3.org/TR/skos-primer/) concept scheme of the construction
-techniques, materials, binding/format types, and printing methods named in the
-artists'-book MARC records. The per-book construct query (`queries/artists-
+[SKOS](https://www.w3.org/TR/skos-primer/) concept scheme of the materials,
+processes, structures, enclosures and genre/form types named in the
+artists'-book MARC records, categorized following the [Book Arts Research
+Database glossary](https://researchbookart.uicb.uiowa.edu/glossary). The per-book construct query (`queries/artists-
 books.rq`) attaches an `ab:constructedUsing` link from each book to the concepts
 its headings map to; the per-book site page renders them (see "Using the scheme
 in the site" at the bottom).
@@ -91,9 +92,14 @@ ignored by the build (`build-scheme.rq` reads columns by name and only touches
 - **conceptId** — a short slug naming the concept (e.g. `accordion-fold`).
   **Give two rows the *same* conceptId to merge them into one concept** — this
   is how you fold a local heading into its authority twin, or unify the same
-  idea across AAT/RBMS/LCGFT.
-- **category** — one of `material`, `technique`, `binding-format`,
-  `production-printing`.
+  idea across AAT/RBMS/LCGFT. It is pasted straight into the concept URI, so it
+  must be a plain ASCII slug: lower-case, no spaces or accents.
+- **category** — one of `material`, `process-technique`,
+  `hand-papermaking-traditions`, `structure-physical-format`, `enclosure`,
+  `genre-form`, following the [Book Arts Research Database
+  glossary](https://researchbookart.uicb.uiowa.edu/glossary). Anything else is
+  **dropped silently** by `build-scheme.rq` — it joins the category against a
+  fixed list, so a typo costs you the whole row (labels and URIs included).
 - **prefLabel** — the preferred display label for the concept.
 - **note** — free text; used to flag borderline calls for review.
 
@@ -110,8 +116,9 @@ Joins your `decisions.csv` to `occurrences.csv` and writes
 `../construction-methods.ttl`: one `skos:Concept` per `conceptId`, carrying its
 `skos:prefLabel`, every `skos:altLabel` variant, an `ab:matchKey` for each
 variant (a lower-cased, punctuation-stripped form used for matching), and a
-`skos:exactMatch` to every authority URI that heading was seen with. Four
-category concepts sit above them as `skos:topConceptOf` the scheme.
+`skos:exactMatch` to every authority URI that heading was seen with. The
+category concepts sit above them as `skos:topConceptOf` the scheme (only
+categories actually used by a curated row get one).
 
 ## After a MARC re-harvest
 
