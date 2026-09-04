@@ -1,76 +1,76 @@
 cluster,labels,include,conceptId,category,prefLabel,exactMatch,note
-none|aalst,Aalst,y,aalst-belgium,geographic-city,"Aalst (Belgium)",http://id.loc.gov/authorities/names/n81035796,
-none|abkhazia-georgia-ethnic-relations,Abkhazia (Georgia) -- Ethnic relations,y,abkhazia-georgia-ethnic-relations,geographic,Abkhazia (Georgia) -- Ethnic relations,,
-http://id.worldcat.org/fast/1205406.,Afghanistan,y,afghanistan,geographic,Afghanistan,,
-http://id.worldcat.org/fast/1239509.,Africa,y,africa,geographic,Africa,,
-http://id.worldcat.org/fast/1204694.,Alabama,y,alabama,geographic,Alabama (United States),,
+none|aalst,Aalst,y,aalst-be,geographic-city,Aalst (Belgium),http://id.loc.gov/authorities/names/n81035796,
+none|abkhazia-georgia-ethnic-relations,Abkhazia (Georgia) -- Ethnic relations,y,abkhazia-georgia-ethnic-relations,geographic,Abkhazia (Georgia) -- Ethnic relations,,auto-seeded draft; review,""
+http://id.worldcat.org/fast/1205406.,Afghanistan,y,afghanistan,geographic-country,Afghanistan,,
+http://id.worldcat.org/fast/1239509.,Africa,y,africa,geographic-continent,Africa,,
+http://id.worldcat.org/fast/1204694.,Alabama,y,alabama-us,geographic-state-province,Alabama (United States),,
 none|alabama-rural-conditions,Alabama -- Rural conditions,y,alabama-rural-conditions,geographic,Alabama -- Rural conditions,,auto-seeded draft; review
-http://id.worldcat.org/fast/1243455.,Alaska -- Brooks Range,y,alaska,geographic,Alaska (United States),,auto-seeded draft; review
-http://id.worldcat.org/fast/1226682.,Albania,y,albania,geographic,Albania,,
+http://id.worldcat.org/fast/1243455.,Alaska -- Brooks Range,y,brooks-range,geographic-landmass,"Brooks Range (Alaska, US)",,
+http://id.worldcat.org/fast/1226682.,Albania,y,albania,geographic-country,Albania,,
 none|albania-foreign-relations-china-pictorial-works,Albania -- Foreign relations -- China -- Pictorial works,y,albania-foreign-relations-china-pictorial-works,geographic,Albania -- Foreign relations -- China -- Pictorial works,,auto-seeded draft; review
-(OCoLC)fst01204828,Alberta,y,alberta,geographic,Alberta (Canada),http://id.worldcat.org/fast/1204828,
-none|algeria-history-revolution-1954-1962-pictorial-works,"Algeria -- History -- Revolution, 1954-1962 -- Pictorial works",y,algeria-history-revolution-1954-1962-pictorial-works,geographic,"Algeria -- History -- Revolution, 1954-1962 -- Pictorial works",,auto-seeded draft; review
-http://id.worldcat.org/fast/1239786.,America,y,americas,geographic,Americas,,
-none|america-history-pictorial-works,America -- History -- Pictorial works,y,america-history-pictorial-works,geographic,America -- History -- Pictorial works,,auto-seeded draft; review
-none|amou-daria,Amou-Daria,y,amu-darya,geographic-natural,Amu-Darya (River),https://id.loc.gov/authorities/subjects/sh85004683.html,
-none|amsterdam-netherlands,Amsterdam (Netherlands),y,amsterdam-netherlands,geographic-city,Amsterdam (Netherlands),http://id.loc.gov/authorities/names/n78095634,
+(OCoLC)fst01204828,Alberta,y,alberta-ca,geographic-state-province,Alberta (Canada),http://id.worldcat.org/fast/1204828,
+none|algeria-history-revolution-1954-1962-pictorial-works,"Algeria -- History -- Revolution, 1954-1962 -- Pictorial works",y,revolution-algeria-1954-1962,event,"Revolution (Algeria : 1954-1962)",https://id.worldcat.org/fast/1354461,
+http://id.worldcat.org/fast/1239786.,America,n,,,,,too broad
+none|america-history-pictorial-works,America -- History -- Pictorial works,n,,,,,too broad/unspecific
+none|amou-daria,Amou-Daria,y,amu-darya,geographic-water,Amu-Darya (River),https://id.loc.gov/authorities/subjects/sh85004683.html,
+none|amsterdam-netherlands,Amsterdam (Netherlands),y,amsterdam-nl,geographic-city,Amsterdam (Netherlands),http://id.loc.gov/authorities/names/n78095634,
 none|amu-darya,Amu Darya,y,amu-darya,geographic,,,
-http://id.worldcat.org/fast/1240128.,Arab countries,y,arab-world,geographic,Arab world,,
-none|araucan-a-chile-description-and-travel-pictorial-works,Araucanía (Chile) -- Description and travel -- Pictorial works,y,araucan-a-chile-description-and-travel-pictorial-works,geographic,Araucanía (Chile) -- Description and travel -- Pictorial works,,auto-seeded draft; review
-http://id.worldcat.org/fast/1243320.,Arctic Ocean -- White Sea,y,white-sea,geographic-natural,White Sea,,
-http://id.worldcat.org/fast/1240227.,Arctic Regions,y,arctic,geographic,Arctic,,
-none|arctic-regions-pictorial-works,Arctic regions -- Pictorial works,y,arctic-regions-pictorial-works,geographic,Arctic regions -- Pictorial works,,auto-seeded draft; review
-http://id.worldcat.org/fast/1205614.,Argentina,y,argentina,geographic,Argentina,,
-fast|argentina,Argentina,y,argentina,geographic,Argentina,,
-http://id.worldcat.org/fast/1205786.,Argentina -- Buenos Aires,y,argentina-buenos-aires,geographic-city,Buenos Aires (Argentina),,
-http://id.worldcat.org/fast/1208241.,Argentina -- Córdoba,y,argentina-cordoba,geographic,Córdoba Province (Argentina),,
+http://id.worldcat.org/fast/1240128.,Arab countries,n,,,,,too broad
+none|araucan-a-chile-description-and-travel-pictorial-works,Araucanía (Chile) -- Description and travel -- Pictorial works,y,araucania-cl,geographic-region,Araucanía (Chile),https://www.getty.edu/vow/TGNFullDisplay?find=&place=&nation=&logic=&note=&role=&subjectid=1001692,
+http://id.worldcat.org/fast/1243320.,Arctic Ocean -- White Sea,y,white-sea,geographic-water,White Sea,,
+http://id.worldcat.org/fast/1240227.,Arctic Regions,y,arctic,geographic-region,Arctic region,,
+none|arctic-regions-pictorial-works,Arctic regions -- Pictorial works,y,arctic,geographic-region,,,
+http://id.worldcat.org/fast/1205614.,Argentina,y,argentina,geographic-country,Argentina,,
+fast|argentina,Argentina,y,argentina,geographic-country,,,
+http://id.worldcat.org/fast/1205786.,Argentina -- Buenos Aires,y,buenos-aires-ar,geographic-city,Buenos Aires (Argentina),,
+http://id.worldcat.org/fast/1208241.,Argentina -- Córdoba,y,cordoba-ar,geographic-state-province,Córdoba Province (Argentina),,
 none|argentina-moral-conditions,Argentina -- Moral conditions,y,argentina-moral-conditions,geographic,Argentina -- Moral conditions,,auto-seeded draft; review
-none|argentina-quotations-maxims-etc,"Argentina -- Quotations, maxims, etc",y,argentina-quotations-maxims-etc,geographic,"Argentina -- Quotations, maxims, etc",,auto-seeded draft; review
+none|argentina-quotations-maxims-etc,"Argentina -- Quotations, maxims, etc",y,argentina,geographic-country,"",,
 http://id.loc.gov/authorities/subjects/sh85007071.,Argentina -- Social conditions,y,argentina-social-conditions,geographic,Argentina -- Social conditions,,auto-seeded draft; review
-http://id.worldcat.org/fast/1204820.,Arizona,y,arizona,geographic,Arizona (United States),,
-http://id.worldcat.org/fast/1308848.,Arizona -- Grand Canyon National Park,y,grand-canyon-national-park,geographic-park,Grand Canyon National Park,,
-http://id.worldcat.org/fast/1240495.,Asia,y,asia,geographic,Asia,,
-(OCoLC)fst01239830,Asia - Amu Darya,y,amu-darya,geographic-natural,,,
-http://id.worldcat.org/fast/1333948.,Asia -- Mount Everest,y,mount-everest,geographic-natural,Mount Everest,,
-none|assisi-italy-in-art,Assisi (Italy) -- In art,y,assisi-italy-in-art,geographic,Assisi (Italy) -- In art,,auto-seeded draft; review
-none|atlanta-ga-fiction,Atlanta (Ga.) -- Fiction,y,atlanta-ga-fiction,geographic,Atlanta (Ga.) -- Fiction,,auto-seeded draft; review
+http://id.worldcat.org/fast/1204820.,Arizona,y,arizona-us,geographic-state-province,Arizona (United States),,
+http://id.worldcat.org/fast/1308848.,Arizona -- Grand Canyon National Park,y,grand-canyon-park,geographic-park,Grand Canyon National Park,,
+http://id.worldcat.org/fast/1240495.,Asia,y,asia,geographic-continent,Asia,,
+(OCoLC)fst01239830,Asia - Amu Darya,y,amu-darya,geographic-water,,,
+http://id.worldcat.org/fast/1333948.,Asia -- Mount Everest,y,mount-everest,geographic-landmass,Mount Everest,,
+none|assisi-italy-in-art,Assisi (Italy) -- In art,y,assisi-it,geographic-inhabited-place,Assisi (Italy),,
+none|atlanta-ga-fiction,Atlanta (Ga.) -- Fiction,y,atlanta-us,geographic-city,"",,fiction is construction term
 none|atlanta-ga-history,Atlanta (Ga.) -- History,y,atlanta-ga-history,geographic,Atlanta (Ga.) -- History,,auto-seeded draft; review
-none|atlanta-ga-pictorial-works,Atlanta (Ga.) -- Pictorial works,y,atlanta-georgia-us,geographic-city,"Atlanta, Georgia (United States)",https://id.loc.gov/authorities/names/n79023214.html,
-http://id.worldcat.org/fast/1204543.,Australia,y,australia,geographic,Australia,,
-http://id.loc.gov/authorities/names/n80006292,Baghdad (Iraq),y,baghdad-iraq,geographic-city,Baghdad (Iraq),,
-http://id.worldcat.org/fast/1241484.,Balkan Peninsula,y,balkans,geographic,Balkans,,
-none|bamako-mali-pictorial-works,Bamako (Mali) -- Pictorial works,y,bamako-mali,geographic-city,Bamako (Mali) ,,
-none|bangkok-thailand-description-and-travel,Bangkok (Thailand) -- Description and travel,y,bangkok-thailand-description-and-travel,geographic,Bangkok (Thailand) -- Description and travel,,auto-seeded draft; review
+none|atlanta-ga-pictorial-works,Atlanta (Ga.) -- Pictorial works,y,atlanta-us,geographic-city,"Atlanta, Georgia (United States)",https://id.loc.gov/authorities/names/n79023214.html,
+http://id.worldcat.org/fast/1204543.,Australia,y,australia,geographic-country,Australia,,
+http://id.loc.gov/authorities/names/n80006292,Baghdad (Iraq),y,baghdad-iq,geographic-city,Baghdad (Iraq),,
+http://id.worldcat.org/fast/1241484.,Balkan Peninsula,y,balkans,geographic-region,Balkans,,
+none|bamako-mali-pictorial-works,Bamako (Mali) -- Pictorial works,y,bamako-ml,geographic-city,"Bamako (Mali) ",,
+none|bangkok-thailand-description-and-travel,Bangkok (Thailand) -- Description and travel,y,bangkok-th,geographic-city,Bangkok (Thailand) ,,
 none|bangkok-thailand-social-life-and-customs-comic-books-strips-etc,"Bangkok (Thailand) -- Social life and customs -- Comic books, strips, etc",y,bangkok-thailand-social-life-and-customs-comic-books-strips-etc,geographic,"Bangkok (Thailand) -- Social life and customs -- Comic books, strips, etc",,auto-seeded draft; review
-none|beijing-china-pictorial-works-artists-books,Beijing (China) -- Pictorial works -- Artists' books,y,beijing-china,geographic-city,Beijing (China),https://id.loc.gov/authorities/names/n79076155.html,
-none|beirut-lebanon-pictorial-works,Beirut (Lebanon) -- Pictorial works,y,beirut-lebanon,geographic-city,Beirut (Lebanon),https://id.loc.gov/authorities/names/n83068103.html,
-none|belgi,België,y,belgium,geographic,Belgium,http://id.worldcat.org/fast/1210278.,
-http://id.worldcat.org/fast/1210278.,Belgium,y,belgium,geographic,Belgium,,
-http://id.worldcat.org/fast/1208177.,Belgium -- Charleroi,y,belgium-charleroi,geographic,Belgium -- Charleroi,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2008114395.,Belgium -- Maps,y,belgium-maps,geographic,Belgium -- Maps,,auto-seeded draft; review
-http://id.worldcat.org/fast/1876858.,Belgium -- Neuville-en-Condroz,y,belgium-neuville-en-condroz,geographic,Belgium -- Neuville-en-Condroz,,auto-seeded draft; review
+none|beijing-china-pictorial-works-artists-books,Beijing (China) -- Pictorial works -- Artists' books,y,beijing-cn,geographic-city,Beijing (China),https://id.loc.gov/authorities/names/n79076155.html,
+none|beirut-lebanon-pictorial-works,Beirut (Lebanon) -- Pictorial works,y,beirut-lb,geographic-city,Beirut (Lebanon),https://id.loc.gov/authorities/names/n83068103.html,
+none|belgi,België,y,belgium,geographic-country,Belgium,http://id.worldcat.org/fast/1210278.,
+http://id.worldcat.org/fast/1210278.,Belgium,y,belgium,geographic-country,,,
+http://id.worldcat.org/fast/1208177.,Belgium -- Charleroi,y,charleroi-be,geographic-city,Charleroi (Belgium),,
+http://id.loc.gov/authorities/subjects/sh2008114395.,Belgium -- Maps,y,belgium,geographic-country,,,maps is construction term
+http://id.worldcat.org/fast/1876858.,Belgium -- Neuville-en-Condroz,y,neuville-be,geographic-inhabited-place,Neuville-en-Condroz (Belgium),,
 none|belsunce-marseille-france-buildings-structures-etc-pictorial-works,"Belsunce (Marseille, France) -- Buildings, structures, etc -- Pictorial works",y,belsunce-marseille-france-buildings-structures-etc-pictorial-works,geographic,"Belsunce (Marseille, France) -- Buildings, structures, etc -- Pictorial works",,auto-seeded draft; review
-none|bengal-india-in-art,Bengal (India) -- In art,y,bengal-india-in-art,geographic,Bengal (India) -- In art,,auto-seeded draft; review
+none|bengal-india-in-art,Bengal (India) -- In art,y,bengal-in,geographic-region,Bengal (India),,
 http://id.loc.gov/authorities/subjects/sh2008114411,"Berlin (Germany) -- Buildings, structures, etc",y,berlin-germany-buildings-structures-etc,geographic,"Berlin (Germany) -- Buildings, structures, etc",,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2008114414.,Berlin (Germany) -- Pictorial works,y,berlin-germany-pictorial-works,geographic,Berlin (Germany) -- Pictorial works,,auto-seeded draft; review
-none|bikini-atoll-marshall-islands,Bikini Atoll (Marshall Islands),y,bikini-atoll-marshall-islands,geographic,Bikini Atoll (Marshall Islands),,auto-seeded draft; review
-none|biloxi-miss-in-art,Biloxi (Miss.) -- In art,y,biloxi-miss-in-art,geographic,Biloxi (Miss.) -- In art,,auto-seeded draft; review
-none|bogot-colombia-pictorial-works,Bogotá (Colombia) -- Pictorial works,y,bogot-colombia-pictorial-works,geographic,Bogotá (Colombia) -- Pictorial works,,auto-seeded draft; review
-http://id.worldcat.org/fast/1205549.,Bolivia,y,bolivia,geographic,Bolivia,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh93000607.,"Bowery (New York, N.Y. : Street)",y,bowery-new-york-n-y-street,geographic,"Bowery (New York, N.Y. : Street)",,auto-seeded draft; review
-http://id.worldcat.org/fast/1206830.,Brazil,y,brazil,geographic,Brazil,,auto-seeded draft; review
-http://id.loc.gov/authorities/names/n79128015,Brazil,y,brazil,geographic,Brazil,,auto-seeded draft; review
-http://id.worldcat.org/fast/1205761.,Brazil -- São Paulo,y,brazil-s-o-paulo,geographic,Brazil -- São Paulo,,auto-seeded draft; review
+http://id.loc.gov/authorities/subjects/sh2008114414.,Berlin (Germany) -- Pictorial works,y,berlin-de,geographic-city,Berlin (Germany),,
+none|bikini-atoll-marshall-islands,Bikini Atoll (Marshall Islands),y,bikini-atoll-mh,geographic-island,Bikini Atoll (Marshall Islands),,
+none|biloxi-miss-in-art,Biloxi (Miss.) -- In art,y,biloxi-us,geographic-city,"Biloxi, Mississippi (United States)",,
+none|bogot-colombia-pictorial-works,Bogotá (Colombia) -- Pictorial works,y,bogota-co,geographic-city,Bogotá (Colombia),,
+http://id.worldcat.org/fast/1205549.,Bolivia,y,bolivia,geographic-country,Bolivia,,
+http://id.loc.gov/authorities/subjects/sh93000607.,"Bowery (New York, N.Y. : Street)",y,manhattan-us,geographic-inhabited-place,"Manhattan (New York, United States)",,
+http://id.worldcat.org/fast/1206830.,Brazil,y,brazil,geographic-country,Brazil,,
+http://id.loc.gov/authorities/names/n79128015,Brazil,y,brazil,geographic-country,,,
+http://id.worldcat.org/fast/1205761.,Brazil -- São Paulo,y,sao-paulo-br,geographic,São Paulo (Brazil),,
 none|brazil-social-conditions-poetry,Brazil -- Social conditions -- Poetry,y,brazil-social-conditions-poetry,geographic,Brazil -- Social conditions -- Poetry,,auto-seeded draft; review
 none|bristol-england-history,Bristol (England) -- History,y,bristol-england-history,geographic,Bristol (England) -- History,,auto-seeded draft; review
-http://id.worldcat.org/fast/1211882.,British Columbia -- Vancouver,y,british-columbia-vancouver,geographic,British Columbia -- Vancouver,,auto-seeded draft; review
-none|brockman-s-mount-kent-england-pictorial-works,"Brockman's Mount (Kent, England) -- Pictorial works",y,brockman-s-mount-kent-england-pictorial-works,geographic,"Brockman's Mount (Kent, England) -- Pictorial works",,auto-seeded draft; review
+http://id.worldcat.org/fast/1211882.,British Columbia -- Vancouver,y,vancouver-ca,geographic-city,"Vancouver, British Columbia (Canada)",,
+none|brockman-s-mount-kent-england-pictorial-works,"Brockman's Mount (Kent, England) -- Pictorial works",y,brockmans-mount-gb,geographic-landmass,"Brockman's Mount (Kent, England)",,
 none|brockman-s-mount-kent-england-pictorial-works-exhibitions,"Brockman's Mount (Kent, England) -- Pictorial works -- Exhibitions",y,brockman-s-mount-kent-england-pictorial-works-exhibitions,geographic,"Brockman's Mount (Kent, England) -- Pictorial works -- Exhibitions",,auto-seeded draft; review
-none|brooklyn-bridge-new-york-n-y-pictorial-works,"Brooklyn Bridge (New York, N.Y.) -- Pictorial works",y,brooklyn-bridge-new-york-n-y-pictorial-works,geographic,"Brooklyn Bridge (New York, N.Y.) -- Pictorial works",,auto-seeded draft; review
-none|brooks-range-alaska-photographs,Brooks Range (Alaska) -- Photographs,y,brooks-range-alaska-photographs,geographic,Brooks Range (Alaska) -- Photographs,,auto-seeded draft; review
-none|buenos-aires-argentina-miscellanea,Buenos Aires (Argentina) -- Miscellanea,y,buenos-aires-argentina-miscellanea,geographic,Buenos Aires (Argentina) -- Miscellanea,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2008114518.,Buenos Aires (Argentina) -- Pictorial works,y,buenos-aires-argentina-pictorial-works,geographic,Buenos Aires (Argentina) -- Pictorial works,,auto-seeded draft; review
-none|byzantine-empire-in-art,Byzantine Empire -- In art,y,byzantine-empire-in-art,geographic,Byzantine Empire -- In art,,auto-seeded draft; review
+none|brooklyn-bridge-new-york-n-y-pictorial-works,"Brooklyn Bridge (New York, N.Y.) -- Pictorial works",y,brooklyn-bridge-us,geographic-structure,"Brooklyn Bridge (New York, United States)",,
+none|brooks-range-alaska-photographs,Brooks Range (Alaska) -- Photographs,y,brooks-range,geographic-landmass,,,photgraphs is construction method
+none|buenos-aires-argentina-miscellanea,Buenos Aires (Argentina) -- Miscellanea,y,buenos-aires-ar,geographic-city,,,
+http://id.loc.gov/authorities/subjects/sh2008114518.,Buenos Aires (Argentina) -- Pictorial works,y,buenos-aires-ar,geographic-city,,,
+none|byzantine-empire-in-art,Byzantine Empire -- In art,y,byzantine-empire,geographic-historical,Byzantine Empire,https://id.worldcat.org/fast/1209292,
 http://id.worldcat.org/fast/1204928.,California,y,california,geographic,California,,auto-seeded draft; review
 (OCoLC)fst01204928.,California,y,california,geographic,California,,auto-seeded draft; review
 http://id.loc.gov/authorities/names/n79041717,California,y,california,geographic,California,,auto-seeded draft; review
