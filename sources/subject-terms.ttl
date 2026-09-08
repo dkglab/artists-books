@@ -4887,20 +4887,22 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
 <https://dkglab.github.io/ns/artists-books/subject/california>
         rdf:type         skos:Concept;
-        rdfs:label       "California"@en;
+        rdfs:label       "California"@en , "California, United States"@en;
+        skos:altLabel    "California"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/subject/category/geographic>;
         skos:exactMatch  <http://id.loc.gov/authorities/names/n79041717> , <http://id.worldcat.org/fast/1204928>;
         skos:inScheme    ab:subject-terms;
-        skos:prefLabel   "California"@en;
+        skos:prefLabel   "California"@en , "California, United States"@en;
         ab:matchKey      "california" .
 
 <https://dkglab.github.io/ns/artists-books/subject/cuba-matanzas>
         rdf:type         skos:Concept;
-        rdfs:label       "Cuba -- Matanzas"@en;
+        rdfs:label       "Matanzas, Cuba"@en;
+        skos:altLabel    "Cuba -- Matanzas"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/subject/category/geographic>;
         skos:exactMatch  <http://id.worldcat.org/fast/1231371>;
         skos:inScheme    ab:subject-terms;
-        skos:prefLabel   "Cuba -- Matanzas"@en;
+        skos:prefLabel   "Matanzas, Cuba"@en;
         ab:matchKey      "cuba-matanzas" .
 
 <https://dkglab.github.io/ns/artists-books/subject/cuba>
@@ -4923,12 +4925,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
 <https://dkglab.github.io/ns/artists-books/subject/california-los-angeles>
         rdf:type         skos:Concept;
-        rdfs:label       "California -- Los Angeles"@en;
-        skos:altLabel    "California - Los Angeles"@en;
+        rdfs:label       "California -- Los Angeles"@en , "Los Angeles (California)"@en;
+        skos:altLabel    "California - Los Angeles"@en , "California -- Los Angeles"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/subject/category/geographic>;
         skos:exactMatch  <http://id.worldcat.org/fast/1204540>;
         skos:inScheme    ab:subject-terms;
-        skos:prefLabel   "California -- Los Angeles"@en;
+        skos:prefLabel   "California -- Los Angeles"@en , "Los Angeles (California)"@en;
         ab:matchKey      "california-los-angeles" .
 
 <https://dkglab.github.io/ns/artists-books/subject/colombia>
@@ -4942,11 +4944,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
 <https://dkglab.github.io/ns/artists-books/subject/new-york-state-new-york>
         rdf:type         skos:Concept;
-        rdfs:label       "New York (State) -- New York"@en;
+        rdfs:label       "New York (New York)"@en;
+        skos:altLabel    "New York (State) -- New York"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/subject/category/geographic>;
         skos:exactMatch  <http://id.worldcat.org/fast/1204333>;
         skos:inScheme    ab:subject-terms;
-        skos:prefLabel   "New York (State) -- New York"@en;
+        skos:prefLabel   "New York (New York)"@en;
         ab:matchKey      "new-york-state-new-york" .
 
 <https://dkglab.github.io/ns/artists-books/subject/chile>
@@ -6343,6 +6346,14 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:inScheme   ab:subject-terms;
         skos:prefLabel  "Portraits: Men: Portraits: Name of subject"@en;
         ab:matchKey     "portraits-men-portraits-name-of-subject" .
+
+<https://dkglab.github.io/ns/artists-books/subject/offset-printing-specimens>
+        rdf:type        skos:Concept;
+        rdfs:label      "Offset printing -- Specimens"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/subject/category/topical>;
+        skos:inScheme   ab:subject-terms;
+        skos:prefLabel  "Offset printing -- Specimens"@en;
+        ab:matchKey     "offset-printing-specimens" .
 
 <https://dkglab.github.io/ns/artists-books/subject/genre-tavern-brawls-and-other-tavern-scenes>
         rdf:type        skos:Concept;
@@ -41647,6 +41658,15 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:prefLabel   "Artists' books -- Specimens"@en;
         ab:matchKey      "artists-books-specimens" .
 
+<https://dkglab.github.io/ns/artists-books/subject/artists-books>
+        rdf:type         skos:Concept;
+        rdfs:label       "Artists' books"@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/subject/category/topical>;
+        skos:exactMatch  <https://id.kb.se/term/sao/Artists%27%20books> , <http://id.loc.gov/authorities/subjects/sh85008302> , <http://id.worldcat.org/fast/817660>;
+        skos:inScheme    ab:subject-terms;
+        skos:prefLabel   "Artists' books"@en;
+        ab:matchKey      "artists-books" .
+
 <https://dkglab.github.io/ns/artists-books/subject/photography-artistic>
         rdf:type         skos:Concept;
         rdfs:label       "Photography, Artistic"@en;
@@ -41675,33 +41695,6 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:inScheme    ab:subject-terms;
         skos:prefLabel   "Artists' books -- United States"@en;
         ab:matchKey      "artists-books-united-states" .
-
-<https://dkglab.github.io/ns/artists-books/subject/offset-printing>
-        rdf:type         skos:Concept;
-        rdfs:label       "Offset printing"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/subject/category/topical>;
-        skos:exactMatch  <http://id.worldcat.org/fast/1044269>;
-        skos:inScheme    ab:subject-terms;
-        skos:prefLabel   "Offset printing"@en;
-        ab:matchKey      "offset-printing" .
-
-<https://dkglab.github.io/ns/artists-books/subject/offset-printing-specimens>
-        rdf:type        skos:Concept;
-        rdfs:label      "Offset printing -- Specimens"@en;
-        skos:broader    <https://dkglab.github.io/ns/artists-books/subject/category/topical>;
-        skos:inScheme   ab:subject-terms;
-        skos:prefLabel  "Offset printing -- Specimens"@en;
-        ab:matchKey     "offset-printing-specimens" .
-
-<https://dkglab.github.io/ns/artists-books/subject/artists-books>
-        rdf:type         skos:Concept;
-        rdfs:label       "Artists' books"@en;
-        skos:altLabel    "Artists books"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/subject/category/topical>;
-        skos:exactMatch  <https://id.kb.se/term/sao/Artists%27%20books> , <http://id.loc.gov/authorities/subjects/sh85008302> , <http://id.worldcat.org/fast/817660>;
-        skos:inScheme    ab:subject-terms;
-        skos:prefLabel   "Artists' books"@en;
-        ab:matchKey      "artists-books" .
 
 <https://dkglab.github.io/ns/artists-books/subject/category/topical>
         rdf:type           skos:Concept;
