@@ -32,6 +32,8 @@ tools/fuzzy-match/venv/
 /site/
 # MARC harvest state (resumable; only sources/marc/*-marc.xml is committed)
 /sources/marc/harvest/
+# scratch dir for unpacked MARC records and other throwaway working files
+/tmp/
 # Python bytecode cache
 __pycache__/
 *.pyc

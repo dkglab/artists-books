@@ -84,7 +84,7 @@
   {{ end }}
 
   {{ with .constructionTerms }}
-  <dt>Construction Techniques, Materials, and Production Methods</dt>
+  <dt>Materials, Processes, Structure, and Genre</dt>
   <dd>
   {{- range $i, $t := (split . "\n") }}{{ $p := split $t "\t" }}
   {{- if $i }}; {{ end }}<a href="/construction/{{ index $p 0 }}">{{ index $p 1 }}</a>

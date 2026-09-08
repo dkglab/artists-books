@@ -1,7 +1,7 @@
 SHELL := /usr/bin/env bash
 .SHELLFLAGS := -O extglob -o pipefail -c
 JENA_HOST := https://dlcdn.apache.org/jena/binaries
-JENA_VERSION := 6.1.0
+JENA_VERSION := 6.2.0
 
 # The extracted tree records no version of its own, and the download rule's
 # target (bin/riot) exists whatever version installed it -- so a bump to
