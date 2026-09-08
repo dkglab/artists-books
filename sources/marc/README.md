@@ -79,6 +79,167 @@ python3 marc/rekey_held.py --in-marc <pre-#84 lib-1 marc.xml> \
     --csv artists-books.csv --out marc/artists-books-held-marc.xml
 ```
 
+### UW-Madison: a discovery layer as a harvest source (#99)
+
+**UW-Madison's Kohler Art Library keeps a named "Artists' Book Collection"**, and
+the UW System catalogue that describes it is reachable — but not as MARC. Its
+Alma SRU is unpublished: the institution code is `01UWI_MAD` (readable off any
+record's own `location_data`) and the Ex Libris endpoint rejects it, the same
+off-by-default wall CARLI/SAIC presents. What *is* open is the catalogue's own
+discovery layer at `search.library.wisc.edu`: a fielded advanced search
+(`/search/catalog?title=…&names=…&identifiers=…&match=all`) plus a per-record
+JSON document at `/catalog/<mms>.json`. Records are therefore **synthesized**
+from that JSON, as eHive's are, and stamped `999 $d uwmad`.
+
+It sits second-to-last in the waterfall, ahead of eHive only: a synthesized
+record is thinner than real cataloguing, so it must never pre-empt a catalogue
+that actually holds the work. It is also a *union* catalogue — confirmed hits
+come back held at UW Milwaukee, Stevens Point and La Crosse as well as Madison.
+
+Three things about this source are worth carrying to the next one:
+
+**It makes the OCLC key work — the first target in the chain that does.** #99
+measured OCLC retrieval as unreachable through every configured free target: LC
+answers `@attr 1=1007` with `[114] Unsupported Use attribute`, and the Alma
+tenants' `alma.oclc_control_number` silently matches everything. UW's
+`identifiers` index does filter on an OCLC number, which is why `oclc` exists as
+a keytype at all — and why it exists **only** here. Of the 713 OCLC-bearing
+misses, 50 resolved.
+
+**But its identifier index is relevance-ranked, not an exact key.** Searching
+`identifiers=9999999999` — an OCLC number that does not exist — returns one
+plausible-looking record (an unrelated Thai children's book) with no diagnostic.
+This is the `alma.oclc_control_number` match-all trap in milder and more
+dangerous form: milder because it returns one hit rather than the whole
+catalogue, more dangerous because one hit *looks like* a successful lookup. So
+`uw_confirms()` re-checks every identifier-key candidate against the retrieved
+record's own `oclc_ids`/`isbns`, and that confirmation — not the search — is what
+earns `oclc` its place in `IDENTIFIER_KEYS`. **A discovery layer's identifier
+search is a suggestion; only the record confirms.**
+
+**Search results are truncated; candidates must be re-fetched.** The results page
+carries title, author and date and nothing else — publication data, extent,
+notes, ISBNs and OCLC numbers all live in the per-record JSON. This is exactly
+the lesson eHive taught (its search endpoint drops `publication_date`), now
+arriving at a second, unrelated source, which is why it belongs here as a rule
+rather than a per-source footnote: **a discovery layer's result list is a
+shortlist, never a record.**
+
+What the synthesis maps, and what it does not: `001` (the OCLC control number in
+its prefixed `ocm`/`ocn`/`on` form, so the WorldCat link `artists-books.rq` mints
+from `001` is correct — unlike eHive, this source has a real one; where it does
+not, no `001` is emitted rather than a fabricated one, per #130), `020`,
+`100`/`700` with `$0` from `infocard_data`'s LC name-authority ids, `245` split
+on ISBD punctuation, `250`/`260`/`264` replayed verbatim from
+`display_publication_data` (which is not a rendering but the actual MARC field,
+indicators and subfields), `300` reconstructed into `$a`/`$b`/`$c` from the
+flattened physical description, and `500` notes. Deliberately **no `520`**: this
+catalogue's JSON exposes no summary or abstract field, and `display_notes` are
+500-type cataloguer's notes, not a summary of the work. Books resolved here carry
+no summary — an honest gap, not a bug.
+
+`robots.txt` allows `/search/catalog` and `/catalog` for `User-agent: *`; the
+harvest sends per-title lookups from a residual list, not a crawl, under a
+descriptive `User-Agent` (`UW_UA`) so the operator can identify and throttle it.
+Note that the same file carries a `User-agent: ClaudeBot / Disallow: /` rule.
+
+```sh
+# from sources/: residual -> uwmad run -> additive merge
+python3 marc/residual_csv.py --csv artists-books.csv \
+    --archive marc/artists-books-marc.zip --out marc/harvest/residual-all.csv
+python3 marc/marc_harvest.py --csv marc/harvest/residual-all.csv \
+    --out marc/harvest/uwmad-residual.zip --servers uwmad
+python3 marc/merge_archives.py --base marc/artists-books-marc.zip \
+    --add marc/harvest/uwmad-residual.zip --out marc/artists-books-marc.zip
+```
+
+That pass took the committed archive from **5,623 to 5,716** records (71.0% →
+72.2% of the 7,920 canonical works): **93 of the 2,289 residual books with a
+usable search key** — 50 by OCLC, 41 by verified title-author, 2 by ISBN. At
+~1.7 s per book the full residual run is about an hour.
+
+### eHive: the Visual Studies Workshop collection (#99)
+
+The largest single hole in the MARC coverage is **Visual Studies Workshop** —
+#99 measures it as more works than the next seven press clusters combined. No
+amount of adding library catalogues reaches it, because VSW catalogues its
+collection in **eHive**, a museum-collection CMS, not in a Z39.50/SRU library
+catalogue. eHive is therefore the last entry in the `SERVERS` waterfall, with its
+own `protocol: "ehive"`.
+
+It differs from every other server in the chain in three ways worth knowing:
+
+- **Credentials.** eHive's API needs a clientId/clientSecret/trackingId triple
+  (Edit My Profile > API Keys in the eHive account), read from
+  `EHIVE_CLIENT_ID`, `EHIVE_CLIENT_SECRET` and `EHIVE_TRACKING_ID`. They are
+  secrets and must stay out of the repo. `ehive_client.py` holds the
+  authorization dance — a POST that answers **303 with the access grant in a
+  response header** (following the redirect loses it), then a GET to the token
+  endpoint — and re-authorizes on the 401 that a token expiring mid-harvest
+  produces. With no credentials set the server is simply skipped.
+- **The account is the search scope.** `conn` is an API path rather than a host:
+  every query is scoped to VSW's own account (3931), so a "catalogue" here is one
+  institution's holdings. Search is relevance-ranked full text — there is no
+  fielded author index to AND against, so the probe is the bare title and
+  `verify_title` does the discriminating, exactly as it does for the
+  single-common-word titles at SCAD.
+- **The records are synthesized, not fetched.** eHive answers JSON objects, so
+  `ehive_to_marcxml()` maps its fields onto the tags the construct query reads
+  (100/700, 300, 520) plus the 245 that `verify_title` judges. `combine()` stamps
+  `999 $d ehive`, so a synthesized record stays distinguishable from real
+  cataloguing in the committed archive.
+
+Two properties of eHive's data shape the result:
+
+**Search results are truncated; candidates must be re-fetched.** The account
+search endpoint returns only a subset of each record's fields — notably *without*
+`publication_date`, `publisher`, `publication_place` or `edition`. Only
+`/api/v2/objectrecords/{id}` returns the full record. This is easy to get wrong
+in a way that quietly costs recall: a field census run over search results
+concludes eHive has no dates (one `date_made` in 977 records), when in fact ~95%
+of full records carry a `publication_date`. Since `verify_title`'s weak band
+needs the year to corroborate, mapping search hits directly would strand every
+weak-band match in `review.tsv`. `ehive_full_record()` does the re-fetch, cached
+per run.
+
+`edition` is deliberately **not** mapped to MARC 250. Its values are edition
+sizes and copy numbers ("30", "500", "1/31", "/3"), not the edition statement
+250 means — routing them there would assert `bf:editionStatement "1/31"` on the
+book. An honest home would be a new `ab:` term for edition size (out of scope
+for #99).
+
+**Copies are separate records.** VSW catalogues each physical copy as its own
+object record ("copy 1" … "copy 13"), so an undeduplicated top-3 can be three
+copies of one work with the actually-matching book pushed outside the window —
+the same show-depth ceiling #98 describes, reached by a different route.
+`ehive_candidates()` collapses on the normalized title (lowest objectRecordId
+wins, stable across runs) so `show_n` counts distinct works; `fetch_n` over-fetches
+to give it something to collapse.
+
+`residual_csv.py` builds the input — the canonical rows still missing a record,
+optionally filtered to a cluster:
+
+```sh
+# from sources/:
+python3 marc/residual_csv.py --csv artists-books.csv \
+    --archive marc/artists-books-marc.zip --publisher 'visual studies' \
+    --out marc/harvest/vsw-residual.csv
+python3 marc/marc_harvest.py --csv marc/harvest/vsw-residual.csv \
+    --out marc/harvest/vsw-ehive.zip --servers ehive
+python3 marc/merge_archives.py --base marc/artists-books-marc.zip \
+    --add marc/harvest/vsw-ehive.zip --out marc/artists-books-marc.zip
+```
+
+Probe the API directly (discovering paging, or reading a record's fields) with:
+
+```sh
+python3 marc/ehive_client.py --path /api/v2/accounts/3931/objectrecords \
+    --param 'query=year of the cow' --param limit=5
+```
+
+Paging is `offset`/`limit`; `page`/`pageSize` are silently ignored, as is
+`catalogueType` (the book slice is filtered client-side on `LIBRARY`).
+
 ### Adding a server's reach to the committed archive
 
 `combine()` rebuilds an archive wholly from the harvest state under
@@ -134,7 +295,7 @@ almost none. The harvester instead tries, per item:
    `verify_title` guard so a coincidental title hit isn't stamped onto the wrong
    key),
 
-across a chain of **eleven catalogues** — UNC, Library of Congress, K10plus, Penn
+across the same server chain the books use — UNC, Library of Congress, K10plus, Penn
 State, LIBRIS (Z39.50), then Getty, Clark, NYARC, Emory, Harvard (Alma SRU/CQL),
 and SCAD (Z39.50) — falling through to the next server until a record verifies.
 (Emory's Rose Library holds the Nexus Press archive and a deep artist's-book

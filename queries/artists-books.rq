@@ -9,6 +9,8 @@ PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
   ?book a ab:ArtistsBook ;
@@ -19,6 +21,7 @@ CONSTRUCT {
     bf:provisionActivity ?bookPublication ;
     bf:language ?language ;
     bf:extent ?bookExtent ;
+    bf:illustrativeContent ?illustrative_content ;
     bf:dimensions ?dimensions ;
     bf:editionStatement ?edition ;
     bf:summary ?bookSummary ;
@@ -27,6 +30,8 @@ CONSTRUCT {
     foaf:isPrimaryTopicOf ?worldcat_url ;
     ab:constructedUsing ?constructionConcept ;
     ab:hasSubject ?subjectConcept ;
+    ab:sourceImage ?sourceImage ;
+    ab:representativeImage ?thumbnail ;
     .
 
 
@@ -66,6 +71,26 @@ CONSTRUCT {
   ?bookSummary
     a bf:Summary ;
     rdfs:label ?summary .
+
+  ?sourceImage a ab:SourceImage ;
+    schema:about ?book ;
+    ab:iiifPath ?src_iiif_path ;
+    schema:contentUrl ?src_url ;
+    schema:encodingFormat "image/jpeg" ;
+    ab:pixelWidth ?src_width ;
+    ab:pixelHeight ?src_height ;
+    ab:imageViewType ?srcViewConcept ;
+    .
+
+  ?thumbnail a ab:Thumbnail ;
+    schema:about ?book ;
+    ab:iiifPath ?thumb_iiif_path ;
+    schema:contentUrl ?thumb_url ;
+    schema:encodingFormat "image/jpeg" ;
+    ab:pixelWidth ?thumb_width ;
+    ab:pixelHeight ?thumb_height ;
+    ab:imageViewType ?thumbViewConcept ;
+    .
 
 }
 WHERE {
@@ -128,8 +153,16 @@ WHERE {
     # One row per creator field, with a single chosen name / VIAF / ISNI / LC id.
     # Multiple $1 subfields (a creator often has both VIAF and ISNI) are folded
     # together here so each creator field yields exactly one ?creator downstream.
+    #
+    # ?illustrative_content_x is a *grouping key*, not a SAMPLE: unlike extent /
+    # dimensions / edition — of which a book has exactly one — a record may
+    # legitimately carry several 300 $b values (multi-part items list one per
+    # volume or format), and all of them belong in the graph. Grouping on it
+    # yields one row per (creator field, illustrative content) pair; the extra
+    # rows re-assert identical contribution triples, which collapse in RDF.
     {
       SELECT ?canonical_key ?df ?ctag ?role_term ?contributionType
+             (?illustrative_content_x AS ?illustrative_content)
              (SAMPLE(?control_number_raw) AS ?control_number)
              (SAMPLE(?extent_x) AS ?extent)
              (SAMPLE(?dimensions_x) AS ?dimensions)
@@ -167,10 +200,20 @@ WHERE {
           ?f999 fx:anySlot ?sf999a .
           ?sf999a xyz:code "a" ; rdf:_1 ?canonical_key .
 
-          # OCLC number from the 001 control field (per record, always present).
-          # 001 is a marc:controlfield, so its value is on rdf:_1, not a subfield.
-          ?record fx:anySlot ?cf001 .
-          ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
+          # OCLC number from the 001 control field. 001 is a marc:controlfield,
+          # so its value is on rdf:_1, not a subfield.
+          #
+          # OPTIONAL because not every record has one: records synthesized from a
+          # non-MARC source (the eHive harvest of the Visual Studies Workshop
+          # collection, #99) deliberately carry no 001, because eHive's object id
+          # is not a catalogue control number and the OCLC guard below would
+          # happily mint a worldcat.org link from a 6-digit one. Matching 001 as a
+          # required pattern would drop the *whole* MARC contribution for such a
+          # record -- creator, extent and summary along with the OCLC.
+          OPTIONAL {
+            ?record fx:anySlot ?cf001 .
+            ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
+          }
 
           # Extent from MARC 300 $a. This describes the physical scope/form
           # of the item, e.g. "64 unnumbered pages" or "1 portfolio".
@@ -183,6 +226,34 @@ WHERE {
 
             # Strip trailing cataloging punctuation such as ":".
             BIND(REPLACE(?extent_raw, "[\\s:;/]+$", "") AS ?extent_x)
+          }
+
+          # Illustrative content from MARC 300 $b, such as
+          # "illustrations" or "color illustrations".
+          OPTIONAL {
+            # Anchor the traversal independently on the record, as with 300 $c.
+            # Reusing ?df300 could cause an unbound-subject scan when 300 $a
+            # is absent but 300 $b is present.
+            ?record fx:anySlot ?df300b .
+            ?df300b a marc:datafield ; xyz:tag "300" .
+
+            ?df300b fx:anySlot ?sf300b .
+            ?sf300b
+                xyz:code "b" ;
+                rdf:_1 ?illustrative_content_raw .
+
+            # Strip trailing cataloging punctuation such as ";", but not "."
+            # — the AACR2 abbreviations here ("ill.", "col. ill.") end in one.
+            BIND(
+              REPLACE(?illustrative_content_raw, "[\\s:;/]+$", "")
+              AS ?illustrative_content_x
+            )
+
+            # A handful of records carry a $b that is punctuation only (a bare
+            # ";"), which strips to "". Drop it: every value is emitted now, and
+            # a bound "" is truthy under the template's {{ with }}, so it would
+            # render an empty "Illustrative content" row.
+            FILTER(?illustrative_content_x != "")
           }
 
           OPTIONAL {
@@ -306,6 +377,7 @@ WHERE {
         }  # end archive-listing SERVICE
       }
       GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
+               ?illustrative_content_x
     }
 
     # WorldCat link + OCLC identifier, from the 001 number sampled above. Extract
@@ -452,6 +524,111 @@ WHERE {
                xyz:cluster       ?sCluster .
       }
       BIND(fx:entity(ab:, "subject/", ?sConceptId) AS ?subjectConcept)
+    }
+  }
+
+  # Images (#9). Attach the JSTOR IIIF imagery by joining the canonical key to a
+  # Forum SSID (sources/artstor-ssid.csv), then the SSID to its image
+  # (sources/ssid-media.csv). Both are small committed CSVs, so this is a cheap
+  # CSV-to-CSV join; the two SERVICEs bind the same ?ssid so ARQ hash-joins them.
+  # Only about 1,145 of the 7,920 books have any image at all, so both blocks are
+  # OPTIONAL and every minted node hangs off a key that only binds on a match.
+  #
+  # status "ok" is required on both sides: nine SSIDs are access-restricted and
+  # 403 at the image tier, and one crosswalk row resolved to a not-found page.
+  #
+  # The dimensions emitted are the *master's*, straight from the CSV, not those of
+  # the derivative at schema:contentUrl -- see ab:IIIFImageNode in docs/vocab.ttl
+  # for why (in short: the master's are exact and carry the same aspect ratio).
+  #
+  # One ab:SourceImage per SSID, keyed by SSID like the per-creator contributions
+  # are keyed by creator. Four books legitimately have several -- multi-volume
+  # sets and cover variants -- so the book key alone would collapse distinct
+  # images onto one node and emit multi-valued paths and dimensions.
+  OPTIONAL {
+    SELECT DISTINCT ?canonical_key ?sourceImage ?src_iiif_path ?src_url
+                    ?src_width ?src_height ?srcViewConcept
+    WHERE {
+      SERVICE <x-sparql-anything:location=sources/artstor-ssid.csv,csv.headers=true> {
+        ?imgRow xyz:canonicalKey ?canonical_key ;
+                xyz:ssid         ?ssid ;
+                xyz:status       "ok" .
+      }
+      SERVICE <x-sparql-anything:location=sources/ssid-media.csv,csv.headers=true> {
+        ?mediaRow xyz:ssid          ?ssid ;
+                  xyz:status        "ok" ;
+                  xyz:iiifPath      ?src_iiif_path ;
+                  xyz:width         ?src_width_raw ;
+                  xyz:height        ?src_height_raw ;
+                  xyz:imageViewType ?src_view_raw .
+      }
+      BIND(fx:entity(ab:, "item/", ?canonical_key, "/image/", ?ssid) AS ?sourceImage)
+      BIND(xsd:integer(?src_width_raw) AS ?src_width)
+      BIND(xsd:integer(?src_height_raw) AS ?src_height)
+      BIND(STRDT(CONCAT("https://www.jstor.org", ?src_iiif_path, "/full/,1200/0/default.jpg"), xsd:anyURI) AS ?src_url)
+
+      # Normalize Forum's free-text "Image View Type" onto the three concepts in
+      # sources/image-view-types.ttl, which Fuseki loads alongside this graph.
+      # Thirteen spellings occur; image 1 is the cover in ~1,039 records, an
+      # interior in 45, and the enclosure in the rest. Anything unrecognized
+      # leaves ?src_view_slug unbound and emits no term rather than guessing.
+      BIND(LCASE(?src_view_raw) AS ?src_view_lc)
+      BIND(IF(STRSTARTS(?src_view_lc, "(cover") || STRSTARTS(?src_view_lc, "(front"), "cover",
+           IF(STRSTARTS(?src_view_lc, "(interior"), "interior",
+           IF(CONTAINS(?src_view_lc, "enclosure") || CONTAINS(?src_view_lc, "bag"), "enclosure",
+              ?sentinel))) AS ?src_view_slug)
+      BIND(IF(BOUND(?src_view_slug),
+              fx:entity(ab:, "image-view/", ?src_view_slug), ?sentinel) AS ?srcViewConcept)
+    }
+  }
+
+  # One ab:Thumbnail per book -- the representative one, so the index gets exactly
+  # one row per book. Where a book has several SSIDs the lowest wins; they are all
+  # covers, so there is no better discriminator than picking deterministically.
+  # Both halves are self-contained sub-SELECTs joined on ?ssid afterwards, so
+  # neither pushes a bound key into a SERVICE and each CSV is triplified once.
+  OPTIONAL {
+    SELECT ?canonical_key ?thumbnail ?thumb_iiif_path ?thumb_url
+           ?thumb_width ?thumb_height ?thumbViewConcept
+    WHERE {
+      {
+        SELECT ?canonical_key (STR(MIN(?ssid_num)) AS ?ssid) WHERE {
+          SERVICE <x-sparql-anything:location=sources/artstor-ssid.csv,csv.headers=true> {
+            ?anyRow xyz:canonicalKey ?canonical_key ;
+                    xyz:ssid         ?any_ssid ;
+                    xyz:status       "ok" .
+          }
+          SERVICE <x-sparql-anything:location=sources/ssid-media.csv,csv.headers=true> {
+            ?anyMedia xyz:ssid   ?any_ssid ;
+                      xyz:status "ok" .
+          }
+          BIND(xsd:integer(?any_ssid) AS ?ssid_num)
+        }
+        GROUP BY ?canonical_key
+      }
+      {
+        SELECT ?ssid ?thumb_iiif_path ?thumb_width_raw ?thumb_height_raw ?thumb_view_raw WHERE {
+          SERVICE <x-sparql-anything:location=sources/ssid-media.csv,csv.headers=true> {
+            ?thumbRow xyz:ssid          ?ssid ;
+                      xyz:status        "ok" ;
+                      xyz:iiifPath      ?thumb_iiif_path ;
+                      xyz:width         ?thumb_width_raw ;
+                      xyz:height        ?thumb_height_raw ;
+                      xyz:imageViewType ?thumb_view_raw .
+          }
+        }
+      }
+      BIND(fx:entity(ab:, "item/", ?canonical_key, "/thumbnail") AS ?thumbnail)
+      BIND(xsd:integer(?thumb_width_raw) AS ?thumb_width)
+      BIND(xsd:integer(?thumb_height_raw) AS ?thumb_height)
+      BIND(STRDT(CONCAT("https://www.jstor.org", ?thumb_iiif_path, "/full/,300/0/default.jpg"), xsd:anyURI) AS ?thumb_url)
+      BIND(LCASE(?thumb_view_raw) AS ?thumb_view_lc)
+      BIND(IF(STRSTARTS(?thumb_view_lc, "(cover") || STRSTARTS(?thumb_view_lc, "(front"), "cover",
+           IF(STRSTARTS(?thumb_view_lc, "(interior"), "interior",
+           IF(CONTAINS(?thumb_view_lc, "enclosure") || CONTAINS(?thumb_view_lc, "bag"), "enclosure",
+              ?sentinel))) AS ?thumb_view_slug)
+      BIND(IF(BOUND(?thumb_view_slug),
+              fx:entity(ab:, "image-view/", ?thumb_view_slug), ?sentinel) AS ?thumbViewConcept)
     }
   }
 }

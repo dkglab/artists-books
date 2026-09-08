@@ -1,0 +1,40 @@
+# Image view types (issue #9).
+# A small hand-written controlled vocabulary naming what a book's ab:SourceImage
+# actually depicts. Committed, not generated: unlike sources/subject-terms.ttl and
+# sources/construction-methods.ttl, these three concepts are not mined from the
+# MARC — they normalize the free-text "Image View Type" field that JSTOR Forum
+# carries verbatim in sources/ssid-media.csv, whose 13 observed spellings
+# queries/artists-books.rq collapses onto these terms.
+#
+# Only about 1,039 of the 1,145 books with an image show a cover; the rest show an
+# interior view or the enclosure. Naming that lets a template caption an enclosure
+# honestly rather than implying it is the cover.
+@prefix ab: <https://dkglab.github.io/ns/artists-books/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ab:image-view-types a skos:ConceptScheme ;
+    rdfs:label "Image view types"@en ;
+    skos:prefLabel "Image view types"@en .
+
+<https://dkglab.github.io/ns/artists-books/image-view/cover>
+        a skos:Concept ;
+        rdfs:label "Cover"@en ;
+        skos:inScheme ab:image-view-types ;
+        skos:prefLabel "Cover"@en ;
+        skos:definition "The image shows the book's cover."@en .
+
+<https://dkglab.github.io/ns/artists-books/image-view/interior>
+        a skos:Concept ;
+        rdfs:label "Interior view"@en ;
+        skos:inScheme ab:image-view-types ;
+        skos:prefLabel "Interior view"@en ;
+        skos:definition "The image shows an interior page or opening. The record holds no image of the cover."@en .
+
+<https://dkglab.github.io/ns/artists-books/image-view/enclosure>
+        a skos:Concept ;
+        rdfs:label "Enclosure"@en ;
+        skos:inScheme ab:image-view-types ;
+        skos:prefLabel "Enclosure"@en ;
+        skos:altLabel "Slipcase"@en ;
+        skos:definition "The image shows the enclosure the book is housed in — a slipcase, box, or bag — rather than the book itself. For some of these records a cover image does exist, but only as the record's second image, which is unreachable (see issue #9)."@en .

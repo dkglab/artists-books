@@ -3,6 +3,22 @@
 # Zotero DB exports) and marc/ (the Z39.50 MARC harvest) — while the crosswalks
 # that bridge them stay at this level.
 
+# This file uses grouped targets (`a b &:`), which need GNU Make >= 4.3. macOS
+# ships GNU Make 3.81 as /usr/bin/make, where `&:` silently degrades into
+# independent rules sharing one recipe: the recipe then runs once per requested
+# output instead of once for all of them (dedup.py twice, freeze_citations.py
+# twice), losing exactly the atomicity the grouped target exists to provide, and
+# a literal file named `&` becomes a target. Fail loudly rather than misbuild.
+# Testing .FEATURES checks for the capability itself rather than parsing a
+# version string. The top-level Makefile has no such requirement — the graph and
+# site build fine with stock macOS make; only regenerating sources/ needs this.
+# See issue #124.
+ifeq ($(filter grouped-target,$(.FEATURES)),)
+$(error GNU Make >= 4.3 required to regenerate sources/ (grouped targets); \
+  this is GNU Make $(MAKE_VERSION). On macOS: `brew install make`, then use \
+  `gmake -C sources <target>`)
+endif
+
 zotero/all-items.csv: zotero/items_export.sh zotero/items_export.sql
 	./zotero/items_export.sh > $@
 
@@ -118,6 +134,39 @@ marc/reference-works-marc.zip: reference-works.csv | marc/marc_harvest.py \
 marc/%-marc.zip: zotero/%.csv | marc/marc_harvest.py \
 		$(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch
 	python3 marc/marc_harvest.py --csv $< --out $@
+
+# Artstor asset ID -> JSTOR Forum SSID crosswalk (issue #9). Resolves the MARC
+# 856 $u links, whose retired patron-side asset IDs still 301-redirect to
+# jstor.org/stable/community.<SSID> -- the key that joins our catalogue records
+# to Jstor_Artists__book_records.csv, and so to the cover images.
+#
+# Like the harvest, this hits an external server: the script is an order-only
+# prerequisite, and the committed MARC archive is read but deliberately NOT a
+# prerequisite, so a rebuild here never triggers a re-harvest. The run is
+# resumable (already-resolved asset IDs are read back from the CSV and skipped),
+# so it can be chunked with --limit.
+artstor-ssid.csv: | marc/resolve_artstor.py
+	python3 marc/resolve_artstor.py --archive marc/artists-books-marc.zip --out $@
+
+# SSID -> IIIF image identifiers (issue #9), the second half of the cover-image
+# lookup. artstor-ssid.csv is read for its SSIDs but is deliberately NOT a
+# prerequisite (same reasoning as above: a rebuild must never trigger a re-run
+# of an external harvest), and neither file is a prerequisite of anything the
+# pipeline builds -- ssid-media.csv is a frozen source, committed like
+# citations.ttl. It resolves each SSID through the forum.jstor.org ->
+# stor.artstor.org redirect chain, which is not bot-gated: ~3 requests per SSID
+# at 2s => ~1h. Checkpointed after every record; rerun to resume, chunk with
+# --limit. See sources/README.md "SSID -> IIIF images".
+ssid-media.csv: | marc/harvest_media.py
+	python3 marc/harvest_media.py --ssids artstor-ssid.csv \
+	  --export Jstor_Artists__book_records.csv --out $@
+
+# SUPERSEDED by ssid-media.csv above; kept only because content-service is the
+# sole known route to a record's second and later images. The endpoint is closed
+# to automation and refuses scripted clients at the first lookup -- this target
+# is not expected to produce anything. Do not wire it into a build.
+ssid-iiif.csv: | marc/harvest_iiif.py
+	python3 marc/harvest_iiif.py --ssids artstor-ssid.csv --out $@
 
 # Build the YAZ toolkit on demand (order-only prerequisite above). The same
 # make invocation produces yaz-marcdump and the zoomfetch driver (issue #85)

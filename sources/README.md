@@ -11,7 +11,12 @@ provenance:
 - [`marc/`](marc/README.md) — the Z39.50 MARC-harvest track: `marc_harvest.py`,
   the harvested `*-marc.zip` archives, the hand-supplied
   `reference-works-manual.xml`, and `reference-works-unresolved.csv`.
-  Resumable harvest state lives under `marc/harvest/` (gitignored).
+  Resumable harvest state lives under `marc/harvest/` (gitignored). Also
+  `resolve_artstor.py`, which mines the harvested 856 links for the JSTOR
+  crosswalk below, and `harvest_media.py`, which takes that crosswalk's SSIDs the
+  rest of the way to IIIF image identifiers. (`harvest_iiif.py` attempted the
+  same over a JSTOR endpoint that turns out to be closed to automation; it is
+  kept only because interior images have no other known route.)
 - root (this file) — the committed graph inputs the construct queries read: the
   canonical `artists-books.csv` and `reference-works.csv` (the deduplicated
   lib 1 ∪ 2 ∪ 3 lists) and the frozen `citations.ttl`, plus loose external
@@ -169,4 +174,161 @@ the frozen graph lives here under `sources/`.
 
 ```sh
 make -C sources -B citations.ttl          # -> citations.ttl, citations-review.csv
+```
+
+## Artstor → JSTOR SSID crosswalk (`artstor-ssid.csv`, issue #9)
+
+Cover images live in JSTOR Forum, whose "Export Records" spreadsheet
+(`Jstor_Artists__book_records.csv`) is keyed by **SSID**. Our catalogue records
+have no SSID: their MARC 856 `$u` links carry a *patron-side Artstor asset ID*
+(`SS33469_33469_<n>`), a numbering JSTOR retired in 2024 and no longer exports.
+That missing key is what blocked #9 — title matching is fuzzy and the export's
+call number covers only ~60% of our records.
+
+The old URLs still redirect, and the redirect target *is* the key:
+
+```
+https://library.artstor.org/public/SS33469_33469_42526770
+  -> 301 https://www.jstor.org/stable/community.14183099
+```
+
+The number after `community.` is exactly the Forum SSID. `marc/resolve_artstor.py`
+walks the MARC archive, fetches each asset ID's redirect (headers only — the
+captcha is on the rendered JSTOR page, which is never requested), and writes one
+row per 856 link: `canonicalKey, assetId, ssid, status`.
+
+Current: **1,165 of 1,166 links resolved**, covering **1,145 books** and 1,127
+distinct SSIDs; 1,156 of those SSIDs are present in the Forum export (the other
+9 are presumably assets added to Forum after that export was taken). The single
+failure is a cataloguing typo — `URPYB2MG`'s third 856 has a nine-digit asset ID
+(`SS33469_33469_425301913`) that resolves to *artstor-page-not-found*; the same
+record's other three links resolve, so no book loses coverage.
+
+Two shapes to be aware of when consuming this file:
+
+- **A book may have several assets** (cover, interior, multi-volume): 1,166 links
+  over 1,145 books, so do not assume one row per book. (An earlier note here said
+  to pick the asset whose Forum `Filename` ends in `1`/`001`; that rule does not
+  hold — see `ssid-media.csv` below for what actually identifies the cover.)
+- **33 SSIDs are shared by more than one canonical key.** Most are dedup misses
+  from #82 — *Boundless* under three keys, *Money* under two — so this file
+  doubles as a signal for that review. One (SSID 23249420) is shared by four
+  records with genuinely different titles and needs a human look.
+
+**Regenerate:**
+
+```sh
+make -C sources artstor-ssid.csv                                  # resumable; skips resolved
+python3 marc/resolve_artstor.py --limit 250 --delay 1             # or chunk it, from sources/
+```
+
+## SSID → IIIF images (`ssid-media.csv`, issue #9)
+
+The second half of the cover-image lookup: SSID → the IIIF identifier of that
+record's image. It is a real lookup, not string manipulation — the identifier is
+a date-partitioned S3 path with a varying codec suffix, so nothing in it can be
+derived from the SSID:
+
+```
+/iiif/2016/04/29/16/e31d56f8-4cf7-4053-a74b-033fcb088b79_deflate.tif
+      └ upload time ┘ └────── media UUID ──────┘        └ codec ┘
+```
+
+`marc/harvest_media.py` recovers both unguessable components from the redirect
+chain that Sloane's own Forum export publishes in its `Media URL` column:
+
+```
+forum.jstor.org/assets/<SSID>/representation-view
+  ──302──▶ stor.artstor.org/stor/<uuid>                       ← the media UUID
+  ──302──▶ …s3.amazonaws.com/prod.cirrostratus.org/YYYY/MM/DD/HH/<uuid>?…
+                                           └ the date partition ┘
+```
+
+Only the two `Location` headers are read. **The S3 URL is never fetched and never
+stored** — it is presigned, expiring, and carries live AWS credentials. The codec
+suffix is settled by confirming each candidate against `{iiifPath}/info.json`,
+which also yields `width`/`height` for the templates.
+
+Neither redirect host is bot-gated, so this is an ordinary polite harvest: three
+requests per SSID at `--delay 2` (~1 h for 1,127), checkpointed after every
+record and resumable.
+
+> [!WARNING]
+> **Do not route this through `www.jstor.org/content-service/`.** That endpoint —
+> the one `marc/harvest_iiif.py` uses — is gated against *automation*, not merely
+> throttled: it refuses scripted clients at request #1 regardless of pacing, and
+> escalates to a CAPTCHA. Pacing, backoff and fresh sessions were all tried and
+> all failed. `harvest_media.py` avoids it entirely. See `scratch/README.md`.
+
+Output is one row per SSID, keyed on `ssid` alone — it joins back to books
+through `artstor-ssid.csv`, so the canonical key is not duplicated into it:
+
+```
+ssid,uuid,datePath,iiifPath,width,height,filename,fileCount,imageViewType,status
+13604309,4098b9d0-…,2016/04/04/20,/iiif/2016/04/04/20/4098b9d0-…_deflate.tif,2400,1800,Far_horizons1.tif,2,(Cover & interior images),ok
+```
+
+**All 1,127 SSIDs resolve; 1,118 have a IIIF path.** The remaining 9 are
+`restricted`: the redirect chain gives their UUID and date partition, but every
+candidate identifier returns **403** from the IIIF tier (not 404 — the asset is
+access-restricted, not mis-guessed; a known-good path returns 200 in the same
+breath). All 9 are also absent from the local Forum export, so they are almost
+certainly assets added to Forum after that export was taken and not publicly
+released. They are left un-`ok` so a later run retries them, in case they are
+published; a fresh Forum export would likely settle them. `no-iiif` is the
+distinct status for "resolved, but no candidate identifier worked" — currently
+none.
+
+### One image per book, and it is not always the cover
+
+`representation-view` resolves to the record's **first** image. `imageViewType` —
+carried through from the local Forum export, not fetched — is what says whether
+that first image is the cover:
+
+| `imageViewType`                                | image 1 is                             |
+| ---------------------------------------------- | -------------------------------------- |
+| `(Cover & interior images)`, `(Cover)`         | the cover                              |
+| `(Images of the enclosure, cover, & interior)` | the **slipcase**; the cover is image 2 |
+| `(Interior image[s])`, `(Open)`                | an interior — the record has no cover   |
+
+The file name is not a reliable signal: `strip_tease_cover2.tif` and
+`presente_cover3.tif` are both covers despite the trailing digit.
+
+Reaching **image 2 or later requires the gated endpoint**, so the slipcase
+records cannot currently be corrected automatically. `imageViewType` is recorded
+verbatim and deliberately not interpreted here: `ab:coverImage` is still not in
+`docs/vocab.ttl` and the no-cover fallback policy is undecided.
+
+### The image tier is open, so the site transcludes rather than rehosts
+
+`https://www.jstor.org{iiifPath}/info.json` and `…/full/,400/0/default.jpg` are
+open Cantaloupe **IIIF Image API 2.1 level 2** endpoints: no headers at all, no
+rate limiting, and permissive CORS (`Access-Control-Allow-Origin` echoes any
+origin, and `cors` is in the declared `supports`). Masters are 2400px on the long
+edge, with 256px tiles at scale factors 1/2/4/8, `jpg`/`webp`, `maxArea` 10M.
+
+A browser can therefore render *and* deep-zoom these images straight from JSTOR,
+so there is no reason to copy them. Planned in three stages:
+
+1. **Plain `<img>`** — index and book pages use `…/full/,400/0/default.jpg` and
+   `…/full/,1200/0/default.jpg`. No JavaScript, no manifest, no CORS needed.
+2. **OpenSeadragon** — deep zoom on the book page, pointed straight at
+   `info.json`. Still needs no manifest.
+3. **Mirador** *(maybe)* — worth adding only once a record has more than one
+   canvas, which needs the image list behind the gated endpoint.
+
+Stages 2–3 want IIIF **Presentation** manifests, a different API from the Image
+API above; JSTOR does not publish them (its own manifests are the gated part), so
+we emit our own. A `views.yaml` entry renders `manifest.json` per book from the
+graph, each canvas pointing its image service at `https://www.jstor.org/iiif/…` —
+cross-domain image services are precisely what the Presentation API is for. Two
+side benefits: v3's `requiredStatement` is the right home for the Sloane rights
+line, and the manifest isolates the JSTOR dependency, so moving to self-hosted
+images later becomes a base-URL change rather than a template rewrite.
+
+**Regenerate:**
+
+```sh
+make -C sources ssid-media.csv                       # resumable; skips resolved
+python3 marc/harvest_media.py --limit 100 --delay 2  # or chunk it, from sources/
 ```

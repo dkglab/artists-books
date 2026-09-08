@@ -32,7 +32,8 @@ start: fuseki-server
 	--file=../../graph/reference-works.ttl \
 	--file=../../sources/citations.ttl \
 	--file=../../sources/construction-methods.ttl \
-	--file=../../sources/subject-terms.ttl /artists-books \
+	--file=../../sources/subject-terms.ttl \
+	--file=../../sources/image-view-types.ttl /artists-books \
 	2> run/fuseki.log \
 	& echo $$! \
 	> run/fuseki.pid; \
