@@ -3,6 +3,11 @@
 A term-level comparison of our SKOS construction scheme (`sources/construction-methods.ttl`) against the
 Book Arts Research Database glossary (`docs/bard-glossary.pdf`). **Report only — no vocabulary changes have been made.**
 
+> **Snapshot, 2026-07-30.** The `our label` columns record the labels as they stood when this ran. The
+> curation pass that followed acted on it: labels are now sentence case throughout, and where a term is in
+> both this glossary and the [Opening Artists' Books vocabulary](https://oab.lib.utah.edu) the OAB wording
+> wins. Read the columns as the input to those decisions, not as the current state of the scheme.
+
 Our scheme: **225 concepts**. BARD glossary: **208 terms**.
 
 | | our concepts | |
