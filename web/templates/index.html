@@ -1,23 +1,36 @@
 {{ template "base" . }}
 
-{{ define "title" }} - list of books{{ end }}
+{{ define "title" }} - explore the collection{{ end }}
 
 {{ define "content" }}
-<h1>Artists' Books</h1>
+<div class="page-intro">
+  <h1>Explore Artists' Books</h1>
+  <p>Discover works through creators, subjects, construction methods, and scholarly references.</p>
+  <p class="count">{{ len . }} works</p>
+</div>
+
+<div class="section">
 {{/* $b binds the row: inside `range`, `$` is the whole result set, not the row,
      so the thumbnail's `with` block could not otherwise reach .itemKey/.title. */}}
-<ol class="mb">
-{{ range $b := . }}
+<ol class="book-grid">
+{{- range $b := . }}
 <li>
-  {{- with $b.thumbUrl }}
-  <a href="item/{{ $b.itemKey }}"><img src="{{ . }}"
-       width="{{ $b.thumbWidth }}" height="{{ $b.thumbHeight }}"
-       alt="{{ with $b.thumbView }}{{ . }}{{ else }}Image{{ end }} of {{ $b.title }}"
-       loading="lazy" style="max-width:100%;height:auto;vertical-align:middle"></a>
-  {{- end }}
-  <a href="item/{{ $b.itemKey }}">{{ $b.title }}</a>
-  {{ with $b.citedBy }}<small>cited by {{ len (split . "\n") }}</small>{{ end }}
+  <a href="/item/{{ $b.itemKey }}">
+    <span class="cover">
+    {{- with $b.thumbUrl }}
+      <img src="{{ . }}" width="{{ $b.thumbWidth }}" height="{{ $b.thumbHeight }}"
+           alt="{{ with $b.thumbView }}{{ . }}{{ else }}Image{{ end }} of {{ $b.title }}" loading="lazy">
+    {{- else }}
+      <span class="no-image">No image available</span>
+    {{- end }}
+    </span>
+    <span class="book-grid-title">{{ $b.title }}</span>
+    {{- if or $b.primaryCreators $b.date }}
+    <span class="book-grid-meta">{{ with $b.primaryCreators }}{{ . }}{{ end }}{{ if and $b.primaryCreators $b.date }} · {{ end }}{{ with $b.date }}{{ . }}{{ end }}</span>
+    {{- end }}
+  </a>
 </li>
-{{ end }}
+{{- end }}
 </ol>
+</div>
 {{ end }}

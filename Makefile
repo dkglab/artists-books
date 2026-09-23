@@ -84,6 +84,7 @@ $(wildcard web/queries/*.rq) \
 $(wildcard web/templates/*.html) \
 $(wildcard web/templates/layouts/*.html) \
 $(wildcard web/templates/includes/*.html) \
+$(wildcard web/static/*) \
 | tools/fuseki/fuseki-server tools/snowman/snowman
 ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki start

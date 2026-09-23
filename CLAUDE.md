@@ -20,7 +20,7 @@ The Makefile auto-fetches all tools (Jena, Fuseki, SPARQL-Anything, Snowman) int
 
 ### Iterating on queries and templates
 
-`web/site/index.html`'s Make recipe depends on every yaml, every `web/queries/*.rq`, every `web/templates/*.html`, every `web/templates/layouts/*.html`, and every `web/templates/includes/*.html`. Editing any of these triggers a rebuild on the next `make`. The recipe starts Fuseki, `cd`s into `web/` and runs `snowman build` there (Snowman locates its config/queries/templates in the current directory), then stops Fuseki — driven by `START_FUSEKI=true` (set `START_FUSEKI=false` if Fuseki is already running externally).
+`web/site/index.html`'s Make recipe depends on every yaml, every `web/queries/*.rq`, every `web/templates/*.html`, every `web/templates/layouts/*.html`, every `web/templates/includes/*.html`, and every file in `web/static/` (copied verbatim into `web/site/` by Snowman — the site stylesheet `style.css` lives there). Editing any of these triggers a rebuild on the next `make`. The recipe starts Fuseki, `cd`s into `web/` and runs `snowman build` there (Snowman locates its config/queries/templates in the current directory), then stops Fuseki — driven by `START_FUSEKI=true` (set `START_FUSEKI=false` if Fuseki is already running externally).
 
 The `snowman server` process is *not* a watcher — it only serves what's in `web/site/`. After editing, you must kill the running server, re-run `make serve` (which rebuilds), and the new server will pick up the rebuilt files.
 
@@ -67,7 +67,7 @@ Two non-obvious Snowman behaviours bite here (both learned building the referenc
 
 ### Templates
 
-`web/templates/layouts/base.html` defines a `base` template with `title` and `content` blocks; page templates start with `{{ template "base" . }}` and `{{ define "content" }}...{{ end }}`. Go `html/template` syntax. SPARQL bindings are accessed by lowercase variable name (`.title`, not `.Title`). There are four page templates: `index.html` + `artists-book.html` (books) and `references.html` + `reference.html` (reference works); the two families cross-link via the citation relationship.
+`web/templates/layouts/base.html` defines a `base` template with `title` and `content` blocks; page templates start with `{{ template "base" . }}` and `{{ define "content" }}...{{ end }}`. Go `html/template` syntax. SPARQL bindings are accessed by lowercase variable name (`.title`, not `.Title`). There are eight page templates, an index + detail pair for each of books (`index.html` + `artists-book.html`), reference works (`references.html` + `reference.html`), construction methods and subjects; they cross-link via the citation, construction and subject relationships. Every template in `layouts/` is parsed alongside each page, so shared partials go there too — `layouts/book-cards.html` defines the `book-cards` grid the two concept detail pages use. The layout follows the Penpot wireframes in the *ArtistsBooks_Design_Exploration* file (Desktop Prototype page).
 
 ### Vocabulary status
 

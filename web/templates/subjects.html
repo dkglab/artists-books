@@ -3,22 +3,43 @@
 {{ define "title" }} - subjects{{ end }}
 
 {{ define "content" }}
-<h1>Subjects</h1>
-<p class="mb"><em>Topical and geographic subjects &mdash; what the books in the collection are about.</em></p>
+<div class="page-intro">
+  <h1>Subjects</h1>
+  <p>Topical and geographic subjects &mdash; what the books in the collection are about.</p>
+</div>
 
 {{ $rows := . }}
 
-<h2>Topical subjects</h2>
-<ul class="mb">
-{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Topical subjects" }}
-<li><a href="/subject/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
-{{- end }}{{ end }}
-</ul>
+{{/* subjects.rq ORDERs BY ?initial, so rows arrive grouped by letter and a new
+     section opens whenever it changes. The jump bar is built the same way, so
+     it only offers letters that actually have subjects. */}}
+<nav class="jump-bar" aria-label="Jump to letter">
+{{- $prev := "" }}
+{{- range $rows }}
+{{- $l := printf "%s" .initial }}
+{{- if ne $l $prev }}
+  <a href="#letter-{{ if eq $l "#" }}other{{ else }}{{ $l }}{{ end }}">{{ $l }}</a>
+{{- $prev = $l }}
+{{- end }}
+{{- end }}
+</nav>
 
-<h2>Geographic subjects</h2>
-<ul class="mb">
-{{- range $rows }}{{ if eq (printf "%s" .categoryLabel) "Geographic subjects" }}
-<li><a href="/subject/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
-{{- end }}{{ end }}
+<div class="section">
+{{- $prev := "" }}
+{{- range $rows }}
+{{- $l := printf "%s" .initial }}
+{{- if ne $l $prev }}
+{{- if ne $prev "" }}
 </ul>
+{{- end }}
+<h2 class="letter" id="letter-{{ if eq $l "#" }}other{{ else }}{{ $l }}{{ end }}">{{ $l }}</h2>
+<ul class="term-list">
+{{- $prev = $l }}
+{{- end }}
+<li><a href="/subject/{{ .conceptKey }}">{{ .label }}</a><span class="n">{{ .bookCount }}</span></li>
+{{- end }}
+{{- if ne $prev "" }}
+</ul>
+{{- end }}
+</div>
 {{ end }}
