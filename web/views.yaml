@@ -23,3 +23,7 @@ views:
   - output: "subject/{{conceptKey}}/index.html"
     query: "subjects.rq"
     template: "subject.html"
+  - output: "construction-facet.json"
+    query: "construction-facet.rq"
+    template: "construction-facet.json"
+    unsafe: true

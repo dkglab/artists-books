@@ -6,15 +6,26 @@
 <div class="page-intro">
   <h1>Explore Artists' Books</h1>
   <p>Discover works through creators, subjects, construction methods, and scholarly references.</p>
-  <p class="count">{{ len . }} works</p>
+  <p class="count" aria-live="polite" data-total="{{ len . }}">{{ len . }} works</p>
 </div>
 
-<div class="section">
+<div class="section browse">
+{{/* The filter sidebar (#138) is an empty mount point, hidden until
+     /facets.js has loaded the facet index and revealed it: without JS the page
+     is just the full grid. The facet filters the grid below by the cards'
+     data-key, so the grid itself is still rendered in full here. */}}
+<aside class="filters" hidden>
+  <h2>Filters</h2>
+  <construction-facet data-label="Construction" data-src="/construction-facet.json" data-param="construction"></construction-facet>
+</aside>
+
+<div class="results">
+<p class="no-results" hidden>No works match the selected filters.</p>
 {{/* $b binds the row: inside `range`, `$` is the whole result set, not the row,
      so the thumbnail's `with` block could not otherwise reach .itemKey/.title. */}}
 <ol class="book-grid">
 {{- range $b := . }}
-<li>
+<li data-key="{{ $b.itemKey }}">
   <a href="/item/{{ $b.itemKey }}">
     <span class="cover">
     {{- with $b.thumbUrl }}
@@ -33,4 +44,7 @@
 {{- end }}
 </ol>
 </div>
+</div>
 {{ end }}
+
+{{ define "scripts" }}<script type="module" src="/facets.js"></script>{{ end }}

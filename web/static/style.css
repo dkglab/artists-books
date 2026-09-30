@@ -213,3 +213,59 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
 
 .page-intro .fields { margin-top: 1.5rem; }
 .letter { font-size: 1.75rem; margin: 0 0 1rem; scroll-margin-top: 1rem; }
+
+/* --- Browse: filter sidebar + grid (index page, #138) ------------------ */
+
+/* The sidebar is hidden until facets.js has loaded the index, so the grid
+   takes the full width without JS (or if the index fails to load). */
+.browse { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem 3rem; }
+.browse:has(> .filters:not([hidden])) { grid-template-columns: 16rem minmax(0, 1fr); }
+@media (max-width: 800px) {
+  .browse:has(> .filters:not([hidden])) { grid-template-columns: minmax(0, 1fr); }
+  /* Stacked above the grid, an opened category would push it off screen. */
+  .facet-list { max-height: 50vh; overflow-y: auto; }
+}
+.filters h2 { font-size: 1.25rem; text-transform: uppercase; margin: 0 0 1rem; }
+.no-results { margin: 0 0 1.5rem; }
+
+.facet { font-size: 1rem; }
+.facet-heading { font-size: 1.125rem; margin: 0 0 .75rem; }
+.facet-selected-count,
+.facet-cat-selected { color: var(--muted); }
+
+.facet-chips { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin-bottom: .75rem; }
+.facet-chips .chips { display: contents; list-style: none; }
+.facet-chips .chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  border: 1px solid var(--rule);
+  padding: .1rem .1rem .1rem .5rem;
+  font-size: .875rem;
+}
+.facet-chips button {
+  font: inherit;
+  background: none;
+  border: 0;
+  padding: 0 .35rem;
+  cursor: pointer;
+  color: inherit;
+}
+.facet-chips .facet-clear { text-decoration: underline; font-size: .875rem; }
+
+.facet-search {
+  width: 100%;
+  font: inherit;
+  padding: .35rem .5rem;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  margin-bottom: .75rem;
+}
+
+.facet-list details { border-top: 1px solid var(--rule); }
+.facet-list details:last-child { border-bottom: 1px solid var(--rule); }
+.facet-list summary { cursor: pointer; padding: .4rem 0; font-weight: 600; }
+.facet-list ul { list-style: none; margin: 0 0 .5rem; padding: 0; }
+.facet-list label { display: flex; align-items: baseline; gap: .4rem; padding: .1rem 0; cursor: pointer; }
+.facet-list .facet-label { flex: 1; }
+.facet-list .n { color: var(--muted); font-size: .875rem; }

@@ -20,7 +20,7 @@ The Makefile auto-fetches all tools (Jena, Fuseki, SPARQL-Anything, Snowman) int
 
 ### Iterating on queries and templates
 
-`web/site/index.html`'s Make recipe depends on every yaml, every `web/queries/*.rq`, every `web/templates/*.html`, every `web/templates/layouts/*.html`, every `web/templates/includes/*.html`, and every file in `web/static/` (copied verbatim into `web/site/` by Snowman — the site stylesheet `style.css` lives there). Editing any of these triggers a rebuild on the next `make`. The recipe starts Fuseki, `cd`s into `web/` and runs `snowman build` there (Snowman locates its config/queries/templates in the current directory), then stops Fuseki — driven by `START_FUSEKI=true` (set `START_FUSEKI=false` if Fuseki is already running externally).
+`web/site/index.html`'s Make recipe depends on every yaml, every `web/queries/*.rq`, every `web/templates/*.html` and `*.json`, every `web/templates/layouts/*.html`, every `web/templates/includes/*.html`, and every file in `web/static/` (copied verbatim into `web/site/` by Snowman — the site stylesheet `style.css` lives there). Editing any of these triggers a rebuild on the next `make`. The recipe starts Fuseki, `cd`s into `web/` and runs `snowman build` there (Snowman locates its config/queries/templates in the current directory), then stops Fuseki — driven by `START_FUSEKI=true` (set `START_FUSEKI=false` if Fuseki is already running externally).
 
 The `snowman server` process is *not* a watcher — it only serves what's in `web/site/`. After editing, you must kill the running server, re-run `make serve` (which rebuilds), and the new server will pick up the rebuilt files.
 
@@ -60,6 +60,8 @@ This means per-item SELECT queries should return **one row per output file**. Fo
 
 The index view uses the same row set but iterates with `{{ range . }}` in the template.
 
+A view may also emit **JSON** for the site's JS: `construction-facet.json` (#138) is the homepage Construction facet's index (concept → item keys, grouped by category), filtered client-side by `web/static/facets.js` + `hierarchical-facet.js` against the grid's `data-key`s. Such a view sets `unsafe: true` in `views.yaml`, which switches it to `text/template` — under the default `html/template` every quote comes out as `&#34;`. The template then escapes by hand: labels go through `printf "%q"` (valid JSON for printable text; **not** `js`, which emits `\'`), keys need none. The build runs `python3 -m json.tool` on the output and fails if it isn't valid JSON.
+
 Two non-obvious Snowman behaviours bite here (both learned building the reference views):
 
 - **A *bound* binding is always truthy under `{{ with }}` — even `0` or `""` from an `IF`/aggregate.** Only a genuinely *unbound* variable is hidden. An empty `GROUP_CONCAT` comes back unbound (so `{{ with .isbns }}` correctly hides it), but `COUNT(...)` of zero comes back as a bound `0` and would render. To hide a zero count, leave it unbound — compute it in an inner aggregate subquery, then `BIND(IF(?n > 0, STR(?n), ?sentinel) AS ?count)` in an outer non-aggregate scope (a bare unbound var is illegal in an aggregate projection). The reference index sidesteps this entirely: `references.rq` requires the citation join so the count is always ≥ 1, and the book index derives its "cited by N" with `len (split .citedBy "\n")` over a field that's absent when empty.
@@ -67,7 +69,7 @@ Two non-obvious Snowman behaviours bite here (both learned building the referenc
 
 ### Templates
 
-`web/templates/layouts/base.html` defines a `base` template with `title` and `content` blocks; page templates start with `{{ template "base" . }}` and `{{ define "content" }}...{{ end }}`. Go `html/template` syntax. SPARQL bindings are accessed by lowercase variable name (`.title`, not `.Title`). There are eight page templates, an index + detail pair for each of books (`index.html` + `artists-book.html`), reference works (`references.html` + `reference.html`), construction methods and subjects; they cross-link via the citation, construction and subject relationships. Every template in `layouts/` is parsed alongside each page, so shared partials go there too — `layouts/book-cards.html` defines the `book-cards` grid the two concept detail pages use. The layout follows the Penpot wireframes in the *ArtistsBooks_Design_Exploration* file (Desktop Prototype page).
+`web/templates/layouts/base.html` defines a `base` template with `title` and `content` blocks, plus an empty `scripts` block before `</body>` for page scripts (`index.html` loads `/facets.js` there); page templates start with `{{ template "base" . }}` and `{{ define "content" }}...{{ end }}`. Go `html/template` syntax. SPARQL bindings are accessed by lowercase variable name (`.title`, not `.Title`). There are eight page templates, an index + detail pair for each of books (`index.html` + `artists-book.html`), reference works (`references.html` + `reference.html`), construction methods and subjects; they cross-link via the citation, construction and subject relationships. Every template in `layouts/` is parsed alongside each page, so shared partials go there too — `layouts/book-cards.html` defines the `book-cards` grid the two concept detail pages use. The layout follows the Penpot wireframes in the *ArtistsBooks_Design_Exploration* file (Desktop Prototype page).
 
 ### Vocabulary status
 

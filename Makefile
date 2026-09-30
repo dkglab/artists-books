@@ -82,6 +82,7 @@ sources/image-view-types.ttl \
 $(wildcard web/*.yaml) \
 $(wildcard web/queries/*.rq) \
 $(wildcard web/templates/*.html) \
+$(wildcard web/templates/*.json) \
 $(wildcard web/templates/layouts/*.html) \
 $(wildcard web/templates/includes/*.html) \
 $(wildcard web/static/*) \
@@ -98,3 +99,7 @@ endif
 ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki stop
 endif
+	# The facet index is rendered with text/template (views.yaml `unsafe: true`),
+	# which leaves JSON escaping to the template: fail the build if it slipped,
+	# removing the target so the next `make` rebuilds rather than looking done.
+	python3 -m json.tool web/site/construction-facet.json > /dev/null || { rm -f $@; exit 1; }
