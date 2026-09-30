@@ -3,15 +3,32 @@
 {{ define "title" }} - construction methods{{ end }}
 
 {{ define "content" }}
-<h1>Construction Methods</h1>
-<p class="mb"><em>Materials, processes, structures, enclosures and genre/form types used across the collection, categorized following the <a href="https://researchbookart.uicb.uiowa.edu/glossary">Book Arts Research Database glossary</a>.</em></p>
+<div class="page-intro">
+  <h1>Construction Methods</h1>
+  <p>Explore binding styles, formats, materials, and production methods used across the collection, categorized following the <a href="https://researchbookart.uicb.uiowa.edu/glossary">Book Arts Research Database glossary</a>.</p>
+</div>
 
 {{ $rows := . }}
 
 {{/* Sections are derived from the data, not hard-coded: construction-methods.rq
      ORDERs BY ?categoryLabel, so rows arrive grouped and a new heading opens
      whenever the label changes. Adding a category to sources/construction/
-     build-scheme.rq is therefore all it takes for it to appear here. */}}
+     build-scheme.rq is therefore all it takes for it to appear here. The jump
+     bar is built the same way. (The wireframe shows an A–Z bar here, but the
+     list is grouped by category, so a letter bar would have nowhere to jump.) */}}
+<nav class="jump-bar small" aria-label="Jump to category">
+{{- $prev := "" }}
+{{- range $rows }}
+{{- $cat := printf "%s" .categoryLabel }}
+{{- if eq $cat "" }}{{ $cat = "Uncategorized" }}{{ end }}
+{{- if ne $cat $prev }}
+  <a href="#{{ with .categoryKey }}{{ . }}{{ else }}uncategorized{{ end }}">{{ $cat }}</a>
+{{- $prev = $cat }}
+{{- end }}
+{{- end }}
+</nav>
+
+<div class="section">
 {{- $prev := "" }}
 {{- range $rows }}
 {{- $cat := printf "%s" .categoryLabel }}
@@ -20,13 +37,14 @@
 {{- if ne $prev "" }}
 </ul>
 {{- end }}
-<h2>{{ $cat }}</h2>
-<ul class="mb">
+<h2 class="letter" id="{{ with .categoryKey }}{{ . }}{{ else }}uncategorized{{ end }}">{{ $cat }}</h2>
+<ul class="term-table">
 {{- $prev = $cat }}
 {{- end }}
-<li><a href="/construction/{{ .conceptKey }}">{{ .label }}</a> <small>{{ .bookCount }}</small></li>
+<li><a href="/construction/{{ .conceptKey }}">{{ .label }}</a> <a class="n arrow" href="/construction/{{ .conceptKey }}">{{ .bookCount }} work{{ if ne (printf "%s" .bookCount) "1" }}s{{ end }}</a></li>
 {{- end }}
 {{- if ne $prev "" }}
 </ul>
 {{- end }}
+</div>
 {{ end }}

@@ -1,0 +1,29 @@
+{{- /* The homepage Construction facet's index (#138): the construction-method
+       concepts that at least one book uses, grouped by category, each with the
+       item keys of its books. Rendered with `unsafe: true` (text/template, no
+       HTML escaping), so this template is responsible for valid JSON itself:
+       keys are [A-Za-z0-9-] and need no escaping; labels go through `printf
+       "%q"`, whose Go string syntax is valid JSON for printable text (the build
+       validates the output). Rows arrive ORDERed BY category, so a new category
+       object opens whenever the label changes, as in construction-methods.html. */ -}}
+{"categories": [
+{{- $prev := "" }}
+{{- range $i, $r := . }}
+{{- $cat := printf "%s" $r.categoryLabel }}
+{{- if eq $cat "" }}{{ $cat = "Uncategorized" }}{{ end }}
+{{- if ne $cat $prev }}
+{{- if ne $prev "" }}
+  ]},
+{{- end }}
+  {"key": "{{ with $r.categoryKey }}{{ . }}{{ else }}uncategorized{{ end }}", "label": {{ printf "%q" $cat }}, "concepts": [
+{{- $prev = $cat }}
+{{- else }},
+{{- end }}
+    {"key": "{{ $r.conceptKey }}", "label": {{ printf "%q" (printf "%s" $r.label) }}, "books": [
+{{- range $j, $k := split (printf "%s" $r.bookKeys) " " }}{{ if $j }}, {{ end }}"{{ $k }}"{{ end -}}
+]}
+{{- end }}
+{{- if ne $prev "" }}
+  ]}
+{{- end }}
+]}

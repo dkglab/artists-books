@@ -1,23 +1,50 @@
 {{ template "base" . }}
 
-{{ define "title" }} - list of books{{ end }}
+{{ define "title" }} - explore the collection{{ end }}
 
 {{ define "content" }}
-<h1>Artists' Books</h1>
+<div class="page-intro">
+  <h1>Explore Artists' Books</h1>
+  <p>Discover works through creators, subjects, construction methods, and scholarly references.</p>
+  <p class="count" aria-live="polite" data-total="{{ len . }}">{{ len . }} works</p>
+</div>
+
+<div class="section browse">
+{{/* The filter sidebar (#138) is an empty mount point, hidden until
+     /facets.js has loaded the facet index and revealed it: without JS the page
+     is just the full grid. The facet filters the grid below by the cards'
+     data-key, so the grid itself is still rendered in full here. */}}
+<aside class="filters" hidden>
+  <h2>Filters</h2>
+  <construction-facet data-label="Construction" data-src="/construction-facet.json" data-param="construction"></construction-facet>
+</aside>
+
+<div class="results">
+<p class="no-results" hidden>No works match the selected filters.</p>
 {{/* $b binds the row: inside `range`, `$` is the whole result set, not the row,
      so the thumbnail's `with` block could not otherwise reach .itemKey/.title. */}}
-<ol class="mb">
-{{ range $b := . }}
-<li>
-  {{- with $b.thumbUrl }}
-  <a href="item/{{ $b.itemKey }}"><img src="{{ . }}"
-       width="{{ $b.thumbWidth }}" height="{{ $b.thumbHeight }}"
-       alt="{{ with $b.thumbView }}{{ . }}{{ else }}Image{{ end }} of {{ $b.title }}"
-       loading="lazy" style="max-width:100%;height:auto;vertical-align:middle"></a>
-  {{- end }}
-  <a href="item/{{ $b.itemKey }}">{{ $b.title }}</a>
-  {{ with $b.citedBy }}<small>cited by {{ len (split . "\n") }}</small>{{ end }}
+<ol class="book-grid">
+{{- range $b := . }}
+<li data-key="{{ $b.itemKey }}">
+  <a href="/item/{{ $b.itemKey }}">
+    <span class="cover">
+    {{- with $b.thumbUrl }}
+      <img src="{{ . }}" width="{{ $b.thumbWidth }}" height="{{ $b.thumbHeight }}"
+           alt="{{ with $b.thumbView }}{{ . }}{{ else }}Image{{ end }} of {{ $b.title }}" loading="lazy">
+    {{- else }}
+      <span class="no-image">No image available</span>
+    {{- end }}
+    </span>
+    <span class="book-grid-title">{{ $b.title }}</span>
+    {{- if or $b.primaryCreators $b.date }}
+    <span class="book-grid-meta">{{ with $b.primaryCreators }}{{ . }}{{ end }}{{ if and $b.primaryCreators $b.date }} · {{ end }}{{ with $b.date }}{{ . }}{{ end }}</span>
+    {{- end }}
+  </a>
 </li>
-{{ end }}
+{{- end }}
 </ol>
+</div>
+</div>
 {{ end }}
+
+{{ define "scripts" }}<script type="module" src="/facets.js"></script>{{ end }}

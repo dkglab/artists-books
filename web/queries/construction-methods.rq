@@ -1,4 +1,6 @@
 PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
+PREFIX bf:      <http://id.loc.gov/ontologies/bibframe/>
+PREFIX bflc:    <http://id.loc.gov/ontologies/bflc/>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
 
@@ -19,10 +21,15 @@ SELECT
   ?label
   ?category
   ?categoryLabel
-  # Each book using this method as an "itemKey<TAB>title" token, tokens
-  # newline-separated, so the template can split the pair and link each title to
-  # its /item/ page.
-  (GROUP_CONCAT(DISTINCT CONCAT(?bookKey, "\t", ?title); separator="\n") AS ?books)
+  # The category's URI slug, used as the index's in-page anchor.
+  (REPLACE(STR(?category), ".*/category/", "") AS ?categoryKey)
+  # Each book as a TAB-separated token, tokens newline-separated, so the
+  # template can render a card per book (thumbnail, title link, creator · date).
+  # Field order is positional — the template indexes it — and every field is
+  # always present, so a missing value is an empty field rather than a missing
+  # one:
+  #   itemKey <TAB> title <TAB> creators <TAB> date <TAB> thumbUrl
+  (GROUP_CONCAT(DISTINCT ?bookToken; separator="\n") AS ?books)
   (COUNT(DISTINCT ?book) AS ?bookCount)
 WHERE {
   ?concept
@@ -47,6 +54,40 @@ WHERE {
     ab:itemKey ?bookKey ;
     rdfs:label ?title ;
     .
+
+  # Card details for each book. Creators and date are aggregated per book in
+  # their own subqueries so a book with two primary creators (or two dates)
+  # still yields one token rather than several near-duplicates.
+  OPTIONAL {
+    {
+      SELECT ?book (GROUP_CONCAT(DISTINCT ?creatorName; separator="; ") AS ?creators)
+      WHERE {
+        ?book bf:contribution ?c .
+        ?c a bflc:PrimaryContribution ;
+           bf:agent/rdfs:label ?creatorName .
+      }
+      GROUP BY ?book
+    }
+  }
+  OPTIONAL {
+    {
+      SELECT ?book (SAMPLE(?d) AS ?date)
+      WHERE { ?book bf:provisionActivity/bflc:simpleDate ?d . }
+      GROUP BY ?book
+    }
+  }
+  # ab:representativeImage is single per book. ",180" asks the IIIF server for
+  # height 180, the card's thumbnail size.
+  OPTIONAL {
+    ?book ab:representativeImage/ab:iiifPath ?thumbPath .
+    BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/,180/0/default.jpg") AS ?thumbUrl)
+  }
+  BIND(CONCAT(
+         ?bookKey, "\t", ?title, "\t",
+         COALESCE(?creators, ""), "\t",
+         COALESCE(STR(?date), ""), "\t",
+         COALESCE(?thumbUrl, "")
+       ) AS ?bookToken)
 }
 GROUP BY ?concept ?label ?category ?categoryLabel
 ORDER BY ?categoryLabel LCASE(?label)
