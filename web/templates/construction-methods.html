@@ -11,7 +11,7 @@
 {{ $rows := . }}
 
 {{/* Sections are derived from the data, not hard-coded: construction-methods.rq
-     ORDERs BY ?categoryLabel, so rows arrive grouped and a new heading opens
+     ORDERs BY category (glossary rank, #120), so rows arrive grouped and a new heading opens
      whenever the label changes. Adding a category to sources/construction/
      build-scheme.rq is therefore all it takes for it to appear here. The jump
      bar is built the same way. (The wireframe shows an A–Z bar here, but the

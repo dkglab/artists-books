@@ -29,6 +29,7 @@ WHERE {
   OPTIONAL {
     ?concept skos:broader ?category .
     ?category rdfs:label ?categoryLabel .
+    OPTIONAL { ?category ab:categoryRank ?categoryRank . }
   }
 
   ?book
@@ -38,5 +39,8 @@ WHERE {
     rdfs:label ?title ;
     .
 }
-GROUP BY ?concept ?label ?category ?categoryLabel
-ORDER BY ?categoryLabel LCASE(?label)
+GROUP BY ?concept ?label ?category ?categoryLabel ?categoryRank
+# Categories in the BARD glossary's order (ab:categoryRank, #120), not
+# alphabetically; the label breaks ties so a category missing its rank still
+# stays contiguous. Unranked/uncategorized concepts sort last.
+ORDER BY COALESCE(?categoryRank, 1000) ?categoryLabel LCASE(?label)

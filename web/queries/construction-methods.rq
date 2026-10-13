@@ -40,11 +40,12 @@ WHERE {
   OPTIONAL { ?concept rdfs:label ?rdfsLabel . }
   BIND(COALESCE(?prefLabel, ?rdfsLabel) AS ?label)
 
-  # Category top-concept (Binding and format / Materials / Production and
-  # printing / Techniques), for grouping the index.
+  # Category top-concept (the BARD glossary sections: Materials,
+  # Process/Technique, ...), for grouping the index, with its glossary rank.
   OPTIONAL {
     ?concept skos:broader ?category .
     ?category rdfs:label ?categoryLabel .
+    OPTIONAL { ?category ab:categoryRank ?categoryRank . }
   }
 
   # Required: the artists' books constructed using this method.
@@ -89,5 +90,8 @@ WHERE {
          COALESCE(?thumbUrl, "")
        ) AS ?bookToken)
 }
-GROUP BY ?concept ?label ?category ?categoryLabel
-ORDER BY ?categoryLabel LCASE(?label)
+GROUP BY ?concept ?label ?category ?categoryLabel ?categoryRank
+# Categories in the BARD glossary's order (ab:categoryRank, #120), not
+# alphabetically; the label breaks ties so a category missing its rank still
+# stays contiguous. Unranked/uncategorized concepts sort last.
+ORDER BY COALESCE(?categoryRank, 1000) ?categoryLabel LCASE(?label)
