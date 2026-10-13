@@ -105,7 +105,7 @@ WHERE {
     }
 
     BIND(
-      COALESCE(?languageLabel, STR(?languageValue))
+      COALESCE(?languageLabel, REPLACE(STR(?languageValue), "^.*/", ""))
       AS ?languageDisplay
     )
   }
@@ -130,7 +130,7 @@ WHERE {
     BIND(
       COALESCE(
         ?originalLanguageLabel,
-        STR(?originalLanguageValue)
+        REPLACE(STR(?originalLanguageValue), "^.*/", "")
       )
       AS ?originalLanguageDisplay
     )
