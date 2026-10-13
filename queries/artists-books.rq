@@ -503,33 +503,37 @@ WHERE {
           }
           }  # end creator branch
           UNION
-            {
-              # Related titles from MARC 740 (#32).
-              ?record fx:anySlot ?df .
-              ?df a marc:datafield ; xyz:tag "740" .
+          {
+            # Related titles from MARC 740 (#32): one row per 740 field, carrying
+            # ?df but none of the creator variables, so the GROUP BY below gives
+            # each field its own group. Trailing cataloguing punctuation is
+            # stripped as for the other MARC fields -- except from $a when a $n
+            # follows, where "Tabe." + "#11." reads correctly as "Tabe. #11".
+            ?record fx:anySlot ?df .
+            ?df a marc:datafield ; xyz:tag "740" .
 
-              ?df fx:anySlot ?sf740a .
-              ?sf740a xyz:code "a" ; rdf:_1 ?related_title_a .
+            ?df fx:anySlot ?sf740a .
+            ?sf740a xyz:code "a" ; rdf:_1 ?related_title_a .
 
-              OPTIONAL {
-                ?df fx:anySlot ?sf740n .
-                ?sf740n xyz:code "n" ; rdf:_1 ?related_title_n .
-              }
+            OPTIONAL {
+              ?df fx:anySlot ?sf740n .
+              ?sf740n xyz:code "n" ; rdf:_1 ?related_title_n .
+            }
 
-              BIND(
-                IF(
-                  BOUND(?related_title_n),
-                  CONCAT(
-                    REPLACE(?related_title_a, "\\s+$", ""),
-                    " ",
-                    REPLACE(?related_title_n, "\\s+$", "")
-                  ),
-                  REPLACE(?related_title_a, "\\s+$", "")
-                )
-                AS ?related_title_x
+            BIND(
+              IF(
+                BOUND(?related_title_n),
+                CONCAT(
+                  REPLACE(?related_title_a, "\\s+$", ""),
+                  " ",
+                  REPLACE(?related_title_n, "[\\s.,;:/]+$", "")
+                ),
+                REPLACE(?related_title_a, "[\\s.,;:/]+$", "")
               )
-            } # end related-title branch
-          } # end OPTIONAL creator/related-title extraction
+              AS ?related_title_x
+            )
+          }  # end related-title branch
+          }  # end OPTIONAL creator/related-title extraction
         }  # end inner per-record SERVICE
       }  # end archive-listing SERVICE
       }
@@ -722,6 +726,12 @@ WHERE {
     BIND(IF(BOUND(?original_language_code), IRI(CONCAT("http://id.loc.gov/vocabulary/languages/", ?original_language_code)), ?sentinel) AS ?originalLanguage)
     BIND(IF(BOUND(?original_language_code), fx:entity(ab:, "item/", ?canonical_key, "/original-language"), ?sentinel) AS ?originalLanguageNote)
     BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
+    # Related works (740) are deliberately scoped per book and left unreconciled
+    # for now (#32): the same title on two books is two bf:Work nodes, and one
+    # matching a book already in the collection is not yet linked to its item/
+    # URI. The title is hashed rather than slugged because 740 titles are long,
+    # punctuation-heavy and often non-Latin, which a slug would mangle or
+    # collide.
     BIND(IF(BOUND(?related_title), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(STR(?related_title))), ?sentinel) AS ?relatedWork)
   }
 
