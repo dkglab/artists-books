@@ -2,8 +2,8 @@
 # joined against the mined occurrences.csv. For every include=y cluster the
 # matching occurrences contribute their raw $a variants (as skos:altLabel + a
 # normalized ab:matchKey) and their $0 authority URIs (as skos:exactMatch).
-# Concepts are minted in the ab: namespace and grouped under four category top
-# concepts.
+# Concepts are minted in the ab: namespace and grouped under the category top
+# concepts of the Book Arts Research Database glossary (see the VALUES block).
 #
 # Both inputs are small local CSVs, so this join is cheap. occurrences.csv is
 # the MARC extract materialized once by mine-occurrences.rq -- reading the MARC
@@ -50,11 +50,22 @@ WHERE {
           xyz:category  ?category ;
           xyz:prefLabel ?prefLabel .
   }
+  # The category vocabulary follows the Book Arts Research Database glossary at
+  # the University of Iowa Center for the Book
+  # (https://researchbookart.uicb.uiowa.edu/glossary), adopted so our categories
+  # line up with the reference vocabulary art librarians already use. A row whose
+  # category is not one of these six contributes NOTHING -- no concept, and none
+  # of its label variants or authority URIs -- so keep this list and the category
+  # column of decisions.csv in sync (and see the same list in README.md).
+  # Labels are the glossary's own section headings, verbatim (docs/bard-
+  # glossary.pdf) -- do not "tidy" the slashes or pluralize them.
   VALUES (?category ?catSlug ?catLabel) {
-    ("material"            "material"            "Materials"@en)
-    ("technique"           "technique"           "Techniques"@en)
-    ("binding-format"      "binding-format"      "Binding and format"@en)
-    ("production-printing" "production-printing" "Production and printing"@en)
+    ("material"                   "material"                   "Materials"@en)
+    ("process-technique"          "process-technique"          "Process/Technique"@en)
+    ("hand-papermaking-traditions" "hand-papermaking-traditions" "Hand Papermaking Traditions"@en)
+    ("structure-physical-format"  "structure-physical-format"  "Structure/Physical Format"@en)
+    ("enclosure"                  "enclosure"                  "Enclosure"@en)
+    ("genre-form"                 "genre-form"                 "Genre/Form"@en)
   }
   BIND(fx:entity(ab:, "construction/", ?conceptId)       AS ?concept)
   BIND(fx:entity(ab:, "construction/category/", ?catSlug) AS ?catConcept)

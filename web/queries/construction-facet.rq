@@ -1,0 +1,42 @@
+PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+
+# One row per construction-method concept that at least one artists' book is
+# linked to via ab:constructedUsing, carrying just the item keys of those books.
+# Feeds the homepage's Construction facet index (construction-facet.json, #138),
+# which the facet's JS uses to filter the grid index.html already renders — so,
+# unlike construction-methods.rq, no card fields (title, creators, date,
+# thumbnail) are needed here. The concept/category join is otherwise the same,
+# so each concept's book list matches its /construction/<key>/ page.
+SELECT
+  (REPLACE(STR(?concept), ".*/construction/", "") AS ?conceptKey)
+  ?label
+  ?categoryLabel
+  (REPLACE(STR(?category), ".*/category/", "") AS ?categoryKey)
+  # Item keys are [A-Za-z0-9] only, so a space separates them safely and the
+  # template can split on it.
+  (GROUP_CONCAT(DISTINCT ?bookKey; separator=" ") AS ?bookKeys)
+WHERE {
+  ?concept
+    a skos:Concept ;
+    skos:inScheme ab:construction-methods ;
+    .
+  OPTIONAL { ?concept skos:prefLabel ?prefLabel . }
+  OPTIONAL { ?concept rdfs:label ?rdfsLabel . }
+  BIND(COALESCE(?prefLabel, ?rdfsLabel) AS ?label)
+
+  OPTIONAL {
+    ?concept skos:broader ?category .
+    ?category rdfs:label ?categoryLabel .
+  }
+
+  ?book
+    a ab:ArtistsBook ;
+    ab:constructedUsing ?concept ;
+    ab:itemKey ?bookKey ;
+    rdfs:label ?title ;
+    .
+}
+GROUP BY ?concept ?label ?category ?categoryLabel
+ORDER BY ?categoryLabel LCASE(?label)
