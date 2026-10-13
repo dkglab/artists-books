@@ -29,6 +29,7 @@ CONSTRUCT {
     bf:dimensions ?dimensions ;
     bf:editionStatement ?edition ;
     bf:summary ?bookSummary ;
+    bf:relatedTo ?relatedWork ;
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
@@ -113,6 +114,11 @@ CONSTRUCT {
     ab:imageViewType ?thumbViewConcept ;
     .
 
+  ?relatedWork
+    a bf:Work ;
+    rdfs:label ?related_title ;
+    .
+
 }
 WHERE {
   SERVICE <x-sparql-anything:location=sources/artists-books.csv> {
@@ -191,6 +197,7 @@ WHERE {
              (SAMPLE(?dimensions_x) AS ?dimensions)
              (SAMPLE(?edition_x) AS ?edition)
              (SAMPLE(?summary_x) AS ?summary)
+             (SAMPLE(?related_title_x) AS ?related_title)
              (SAMPLE(?name_x)  AS ?creator_name)
              (SAMPLE(?viaf_x)  AS ?viaf)
              (SAMPLE(?isni_x)  AS ?isni)
@@ -444,10 +451,11 @@ WHERE {
           # nested-loop joins instead of the 10,943 creator ones. Same answers,
           # twice the runtime (see docs/QUERY-PERFORMANCE.md).
           {
-            ?record fx:anySlot ?df .
-            ?df a marc:datafield ; xyz:tag ?ctag .
-            FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
-          }
+            {
+              ?record fx:anySlot ?df .
+              ?df a marc:datafield ; xyz:tag ?ctag .
+              FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+            }
 
           #binds the contribution type based on the tag of the datafield. 100, 110, and 111 are considered primary contributions, while 700, 710, and 711 are considered secondary contributions.
           BIND(
@@ -493,9 +501,41 @@ WHERE {
             ?sf0 xyz:code "0" ; rdf:_1 ?lc_0 .
             BIND(REPLACE(REPLACE(?lc_0, "\\.$", ""), "^.*/", "") AS ?lc_id_x)
           }
-          }  # end OPTIONAL wrapping the creator fields
-          }  # end inner per-record SERVICE
-        }  # end archive-listing SERVICE
+          }  # end creator branch
+          UNION
+          {
+            # Related titles from MARC 740 (#32): one row per 740 field, carrying
+            # ?df but none of the creator variables, so the GROUP BY below gives
+            # each field its own group. Trailing cataloguing punctuation is
+            # stripped as for the other MARC fields -- except from $a when a $n
+            # follows, where "Tabe." + "#11." reads correctly as "Tabe. #11".
+            ?record fx:anySlot ?df .
+            ?df a marc:datafield ; xyz:tag "740" .
+
+            ?df fx:anySlot ?sf740a .
+            ?sf740a xyz:code "a" ; rdf:_1 ?related_title_a .
+
+            OPTIONAL {
+              ?df fx:anySlot ?sf740n .
+              ?sf740n xyz:code "n" ; rdf:_1 ?related_title_n .
+            }
+
+            BIND(
+              IF(
+                BOUND(?related_title_n),
+                CONCAT(
+                  REPLACE(?related_title_a, "\\s+$", ""),
+                  " ",
+                  REPLACE(?related_title_n, "[\\s.,;:/]+$", "")
+                ),
+                REPLACE(?related_title_a, "[\\s.,;:/]+$", "")
+              )
+              AS ?related_title_x
+            )
+          }  # end related-title branch
+          }  # end OPTIONAL creator/related-title extraction
+        }  # end inner per-record SERVICE
+      }  # end archive-listing SERVICE
       }
       GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
                ?illustrative_content_x
@@ -686,6 +726,13 @@ WHERE {
     BIND(IF(BOUND(?original_language_code), IRI(CONCAT("http://id.loc.gov/vocabulary/languages/", ?original_language_code)), ?sentinel) AS ?originalLanguage)
     BIND(IF(BOUND(?original_language_code), fx:entity(ab:, "item/", ?canonical_key, "/original-language"), ?sentinel) AS ?originalLanguageNote)
     BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
+    # Related works (740) are deliberately scoped per book and left unreconciled
+    # for now (#32): the same title on two books is two bf:Work nodes, and one
+    # matching a book already in the collection is not yet linked to its item/
+    # URI. The title is hashed rather than slugged because 740 titles are long,
+    # punctuation-heavy and often non-Latin, which a slug would mangle or
+    # collide.
+    BIND(IF(BOUND(?related_title), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(STR(?related_title))), ?sentinel) AS ?relatedWork)
   }
 
   # Language falls back to the Zotero string (a plain literal) when the book's

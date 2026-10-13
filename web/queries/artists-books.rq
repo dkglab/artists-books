@@ -55,6 +55,7 @@ SELECT
   # tokens newline-separated. Multi-valued: four books carry several images
   # (multi-volume sets, cover variants), so the book page shows them all.
   ?images
+  (GROUP_CONCAT(DISTINCT ?relatedTitle; separator="; ") AS ?relatedTitles)
 WHERE {
   ?book
     a ab:ArtistsBook ;
@@ -271,6 +272,12 @@ WHERE {
                ab:itemKey ?citingRefKey .
     BIND(CONCAT(?citingRefKey, "\t", ?citingRefLabel) AS ?citedByToken)
   }
+
+  OPTIONAL {
+    ?book bf:relatedTo ?relatedWork .
+    ?relatedWork rdfs:label ?relatedTitle .
+  }
+
 }
 GROUP BY ?book ?title ?itemKey ?publisher ?place ?date ?extent ?illustrativeContent ?dimensions ?edition
          ?thumbUrl ?thumbWidth ?thumbHeight ?thumbView ?images
