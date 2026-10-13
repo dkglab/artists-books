@@ -9,6 +9,8 @@ PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
   ?book a ab:ArtistsBook ;
@@ -17,8 +19,13 @@ CONSTRUCT {
     ab:heldBySloane ?held_flag ;
     bf:contribution ?contribution ;
     bf:provisionActivity ?bookPublication ;
-    bf:language ?language ;
+    bf:language ?marc_language ;
+    bf:language ?language041 ;
+    bf:language ?zoteroLanguage ;
+    bf:note ?languageNote ;
+    bf:note ?originalLanguageNote ;
     bf:extent ?bookExtent ;
+    bf:illustrativeContent ?illustrative_content ;
     bf:dimensions ?dimensions ;
     bf:editionStatement ?edition ;
     bf:summary ?bookSummary ;
@@ -28,6 +35,8 @@ CONSTRUCT {
     foaf:isPrimaryTopicOf ?worldcat_url ;
     ab:constructedUsing ?constructionConcept ;
     ab:hasSubject ?subjectConcept ;
+    ab:sourceImage ?sourceImage ;
+    ab:representativeImage ?thumbnail ;
     .
 
 
@@ -67,6 +76,43 @@ CONSTRUCT {
   ?bookSummary
     a bf:Summary ;
     rdfs:label ?summary .
+
+  ?marc_language a bf:Language .
+
+  ?language041 a bf:Language .
+
+  ?originalLanguage a bf:Language .
+
+  ?labelledLanguage rdfs:label ?language_label .
+
+  ?languageNote a bf:Note ;
+    rdfs:label ?language_note ;
+  .
+
+  ?originalLanguageNote
+    a bf:Note ;
+    bf:language ?originalLanguage ;
+  .
+
+  ?sourceImage a ab:SourceImage ;
+    schema:about ?book ;
+    ab:iiifPath ?src_iiif_path ;
+    schema:contentUrl ?src_url ;
+    schema:encodingFormat "image/jpeg" ;
+    ab:pixelWidth ?src_width ;
+    ab:pixelHeight ?src_height ;
+    ab:imageViewType ?srcViewConcept ;
+    .
+
+  ?thumbnail a ab:Thumbnail ;
+    schema:about ?book ;
+    ab:iiifPath ?thumb_iiif_path ;
+    schema:contentUrl ?thumb_url ;
+    schema:encodingFormat "image/jpeg" ;
+    ab:pixelWidth ?thumb_width ;
+    ab:pixelHeight ?thumb_height ;
+    ab:imageViewType ?thumbViewConcept ;
+    .
 
   ?relatedWork
     a bf:Work ;
@@ -114,9 +160,7 @@ WHERE {
     OPTIONAL {
       ?bookRow xyz:place ?place
     }
-    OPTIONAL {
-      ?bookRow xyz:language ?language
-    }
+    OPTIONAL { ?bookRow xyz:language ?zotero_language }
     OPTIONAL { ?bookRow xyz:ISBN ?ISBN }
     BIND(fx:entity(ab:, "item/", ?canonical_key, "/identifier") AS ?isbnNode)
     BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?bookISBN)
@@ -134,9 +178,21 @@ WHERE {
     # One row per creator field, with a single chosen name / VIAF / ISNI / LC id.
     # Multiple $1 subfields (a creator often has both VIAF and ISNI) are folded
     # together here so each creator field yields exactly one ?creator downstream.
+    #
+    # ?illustrative_content_x is a *grouping key*, not a SAMPLE: unlike extent /
+    # dimensions / edition — of which a book has exactly one — a record may
+    # legitimately carry several 300 $b values (multi-part items list one per
+    # volume or format), and all of them belong in the graph. Grouping on it
+    # yields one row per (creator field, illustrative content) pair; the extra
+    # rows re-assert identical contribution triples, which collapse in RDF.
     {
       SELECT ?canonical_key ?df ?ctag ?role_term ?contributionType
+             (?illustrative_content_x AS ?illustrative_content)
+             (?language041_x AS ?language041_code)
+             (?original_language_x AS ?original_language_code)
              (SAMPLE(?control_number_raw) AS ?control_number)
+             (SAMPLE(?language_code_x) AS ?language_code)
+             (SAMPLE(?language_note_x) AS ?language_note)
              (SAMPLE(?extent_x) AS ?extent)
              (SAMPLE(?dimensions_x) AS ?dimensions)
              (SAMPLE(?edition_x) AS ?edition)
@@ -174,10 +230,100 @@ WHERE {
           ?f999 fx:anySlot ?sf999a .
           ?sf999a xyz:code "a" ; rdf:_1 ?canonical_key .
 
-          # OCLC number from the 001 control field (per record, always present).
-          # 001 is a marc:controlfield, so its value is on rdf:_1, not a subfield.
-          ?record fx:anySlot ?cf001 .
-          ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
+          # OCLC number from the 001 control field. 001 is a marc:controlfield,
+          # so its value is on rdf:_1, not a subfield.
+          #
+          # OPTIONAL because not every record has one: records synthesized from a
+          # non-MARC source (the eHive harvest of the Visual Studies Workshop
+          # collection, #99) deliberately carry no 001, because eHive's object id
+          # is not a catalogue control number and the OCLC guard below would
+          # happily mint a worldcat.org link from a 6-digit one. Matching 001 as a
+          # required pattern would drop the *whole* MARC contribution for such a
+          # record -- creator, extent and summary along with the OCLC.
+          OPTIONAL {
+            ?record fx:anySlot ?cf001 .
+            ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
+          }
+
+          # Primary language from MARC 008 positions 35-37.
+          OPTIONAL {
+            ?record fx:anySlot ?cf008 .
+            ?cf008
+              a marc:controlfield ;
+              xyz:tag "008" ;
+              rdf:_1 ?fixed_fields .
+            BIND(SUBSTR(?fixed_fields, 36, 3) AS ?language_code_raw)
+
+            # Only a real three-letter code: blanks and fill characters ("|||")
+            # mean none, and a short 008 (the synthesized eHive/UW records)
+            # yields "" from SUBSTR, which would mint .../languages/ with no code.
+            FILTER(REGEX(?language_code_raw, "^[A-Za-z]{3}$"))
+
+            BIND(LCASE(?language_code_raw) AS ?language_code_x)
+          }
+
+          # Languages present from MARC 041 $a.
+          # Older records may concatenate multiple 3-character MARC language
+          # codes in one subfield (e.g. "engfreger"), while newer records repeat $a.
+          OPTIONAL {
+            ?record fx:anySlot ?df041 .
+            ?df041
+                a marc:datafield ;
+                xyz:tag "041" .
+
+            ?df041 fx:anySlot ?sf041a .
+            ?sf041a
+                xyz:code "a" ;
+                rdf:_1 ?language041_raw .
+
+            BIND(LCASE(STR(?language041_raw)) AS ?language041_value)
+
+            # Only process values composed entirely of complete 3-character codes.
+            # This intentionally excludes the malformed "enger" value.
+            FILTER(REGEX(?language041_value, "^([a-z]{3})+$"))
+
+            VALUES ?language_offset { 1 4 7 10 13 16 }
+
+            BIND(
+              SUBSTR(?language041_value, ?language_offset, 3)
+              AS ?language041_s
+            )
+
+            FILTER(STRLEN(?language041_s) = 3)
+            # "jap" is MARC's discontinued code for Japanese.
+            BIND(IF(?language041_s = "jap", "jpn", ?language041_s) AS ?language041_x)
+          }
+
+          # Original language from MARC 041 $h.
+          OPTIONAL {
+            ?record fx:anySlot ?df041h .
+            ?df041h
+                a marc:datafield ;
+                xyz:tag "041" .
+
+            ?df041h fx:anySlot ?sf041h .
+            ?sf041h
+                xyz:code "h" ;
+                rdf:_1 ?original_language_raw .
+
+            BIND(
+              LCASE(STR(?original_language_raw))
+              AS ?original_language_value
+            )
+
+            FILTER(REGEX(?original_language_value, "^([a-z]{3})+$"))
+
+            VALUES ?original_language_offset { 1 4 7 10 13 16 }
+
+            BIND(
+              SUBSTR(?original_language_value, ?original_language_offset, 3)
+              AS ?original_language_s
+            )
+
+            FILTER(STRLEN(?original_language_s) = 3)
+            # "jap" is MARC's discontinued code for Japanese.
+            BIND(IF(?original_language_s = "jap", "jpn", ?original_language_s) AS ?original_language_x)
+          }
 
           # Extent from MARC 300 $a. This describes the physical scope/form
           # of the item, e.g. "64 unnumbered pages" or "1 portfolio".
@@ -190,6 +336,34 @@ WHERE {
 
             # Strip trailing cataloging punctuation such as ":".
             BIND(REPLACE(?extent_raw, "[\\s:;/]+$", "") AS ?extent_x)
+          }
+
+          # Illustrative content from MARC 300 $b, such as
+          # "illustrations" or "color illustrations".
+          OPTIONAL {
+            # Anchor the traversal independently on the record, as with 300 $c.
+            # Reusing ?df300 could cause an unbound-subject scan when 300 $a
+            # is absent but 300 $b is present.
+            ?record fx:anySlot ?df300b .
+            ?df300b a marc:datafield ; xyz:tag "300" .
+
+            ?df300b fx:anySlot ?sf300b .
+            ?sf300b
+                xyz:code "b" ;
+                rdf:_1 ?illustrative_content_raw .
+
+            # Strip trailing cataloging punctuation such as ";", but not "."
+            # — the AACR2 abbreviations here ("ill.", "col. ill.") end in one.
+            BIND(
+              REPLACE(?illustrative_content_raw, "[\\s:;/]+$", "")
+              AS ?illustrative_content_x
+            )
+
+            # A handful of records carry a $b that is punctuation only (a bare
+            # ";"), which strips to "". Drop it: every value is emitted now, and
+            # a bound "" is truthy under the template's {{ with }}, so it would
+            # render an empty "Illustrative content" row.
+            FILTER(?illustrative_content_x != "")
           }
 
           OPTIONAL {
@@ -242,6 +416,24 @@ WHERE {
             BIND(
                 REPLACE(?summary_raw, "[\\s]+$", "")
                 AS ?summary_x
+            )
+          }
+
+          # Human-readable language note from MARC 546 $a.
+          OPTIONAL {
+            ?record fx:anySlot ?df546 .
+            ?df546
+                a marc:datafield ;
+                xyz:tag "546" .
+
+            ?df546 fx:anySlot ?sf546a .
+            ?sf546a
+                xyz:code "a" ;
+                rdf:_1 ?language_note_raw .
+
+            BIND(
+              REPLACE(?language_note_raw, "[\\s]+$", "")
+              AS ?language_note_x
             )
           }
 
@@ -342,7 +534,103 @@ WHERE {
       }  # end archive-listing SERVICE
       }
       GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
+               ?illustrative_content_x
+               ?language041_x
+               ?original_language_x
     }
+
+    # Convert the MARC language code to the corresponding LC language URI.
+    BIND(
+      IF(
+        BOUND(?language_code),
+        IRI(CONCAT(
+          "http://id.loc.gov/vocabulary/languages/",
+          ?language_code
+        )),
+        ?sentinel
+      )
+      AS ?marc_language
+    )
+
+    # Display labels for every language code the 008/041 reads emit, from one
+    # table. Matching any of the row's three codes can yield up to three label
+    # rows; CONSTRUCT collapses the duplicate triples. The lookup binds its own
+    # key and joins by FILTER (like the relator table below) so an unbound code
+    # matches nothing. A code missing here still gets its bf:language edge; the
+    # site then shows the bare code.
+    OPTIONAL {
+      VALUES (?language_lookup ?language_label) {
+        ("ara" "Arabic")
+        ("ben" "Bengali")
+        ("bul" "Bulgarian")
+        ("cat" "Catalan")
+        ("chi" "Chinese")
+        ("cpe" "Creoles and pidgins, English-based")
+        ("cze" "Czech")
+        ("dan" "Danish")
+        ("dut" "Dutch")
+        ("eng" "English")
+        ("fil" "Filipino")
+        ("fin" "Finnish")
+        ("fre" "French")
+        ("ger" "German")
+        ("gle" "Irish")
+        ("gmh" "German, Middle High")
+        ("grc" "Greek, Ancient")
+        ("gre" "Greek")
+        ("heb" "Hebrew")
+        ("hit" "Hittite")
+        ("hrv" "Croatian")
+        ("hun" "Hungarian")
+        ("ice" "Icelandic")
+        ("ita" "Italian")
+        ("jpn" "Japanese")
+        ("kor" "Korean")
+        ("lat" "Latin")
+        ("mao" "Maori")
+        ("mul" "Multiple languages")
+        ("myn" "Mayan languages")
+        ("nah" "Nahuatl")
+        ("nav" "Navajo")
+        ("nor" "Norwegian")
+        ("oto" "Otomian languages")
+        ("pan" "Panjabi")
+        ("per" "Persian")
+        ("pli" "Pali")
+        ("pol" "Polish")
+        ("por" "Portuguese")
+        ("que" "Quechua")
+        ("rus" "Russian")
+        ("slv" "Slovenian")
+        ("spa" "Spanish")
+        ("swe" "Swedish")
+        ("ton" "Tongan")
+        ("tur" "Turkish")
+        ("ukr" "Ukrainian")
+        ("und" "Undetermined")
+        ("urd" "Urdu")
+        ("vie" "Vietnamese")
+        ("wel" "Welsh")
+        ("yid" "Yiddish")
+        ("zap" "Zapotec")
+        ("zxx" "No linguistic content")
+      }
+      FILTER(?language_lookup IN (?language_code, ?language041_code, ?original_language_code))
+      BIND(IRI(CONCAT("http://id.loc.gov/vocabulary/languages/", ?language_lookup)) AS ?labelledLanguage)
+    }
+
+    # Additional languages present in MARC 041 $a.
+    BIND(
+      IF(
+        BOUND(?language041_code),
+        IRI(CONCAT(
+          "http://id.loc.gov/vocabulary/languages/",
+          ?language041_code
+        )),
+        ?sentinel
+      )
+      AS ?language041
+    )
 
     # WorldCat link + OCLC identifier, from the 001 number sampled above. Extract
     # the first run of digits (dropping the on/ocn/ocm prefix, any trailing suffix
@@ -429,10 +717,19 @@ WHERE {
     # stay unbound and no triple is emitted.
     BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "item/", ?canonical_key, "/oclc"), ?sentinel) AS ?bookOCLCNum)
     BIND(IF(BOUND(?extent), fx:entity(ab:, "item/", ?canonical_key, "/extent"), ?sentinel) AS ?bookExtent)
+    BIND(IF(BOUND(?language_note), fx:entity(ab:, "item/", ?canonical_key, "/language-note"), ?sentinel) AS ?languageNote)
     BIND(IF(BOUND(?summary), fx:entity(ab:, "item/", ?canonical_key, "/summary"), ?sentinel) AS ?bookSummary)
+    BIND(IF(BOUND(?original_language_code), IRI(CONCAT("http://id.loc.gov/vocabulary/languages/", ?original_language_code)), ?sentinel) AS ?originalLanguage)
+    BIND(IF(BOUND(?original_language_code), fx:entity(ab:, "item/", ?canonical_key, "/original-language"), ?sentinel) AS ?originalLanguageNote)
     BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
     BIND(IF(BOUND(?related_title), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(STR(?related_title))), ?sentinel) AS ?relatedWork)
   }
+
+  # Language falls back to the Zotero string (a plain literal) when the book's
+  # MARC record carries no 008 language code -- or when the book has no MARC
+  # record at all, as most non-held works don't until the harvest completes
+  # (#99). Without this ~640 books would lose the language they had.
+  BIND(IF(BOUND(?language_code), ?sentinel, ?zotero_language) AS ?zoteroLanguage)
 
   # Construction & production methods (#86). Attach ab:constructedUsing by
   # joining each book's genre/technique/material heading occurrences
@@ -489,6 +786,111 @@ WHERE {
                xyz:cluster       ?sCluster .
       }
       BIND(fx:entity(ab:, "subject/", ?sConceptId) AS ?subjectConcept)
+    }
+  }
+
+  # Images (#9). Attach the JSTOR IIIF imagery by joining the canonical key to a
+  # Forum SSID (sources/artstor-ssid.csv), then the SSID to its image
+  # (sources/ssid-media.csv). Both are small committed CSVs, so this is a cheap
+  # CSV-to-CSV join; the two SERVICEs bind the same ?ssid so ARQ hash-joins them.
+  # Only about 1,145 of the 7,920 books have any image at all, so both blocks are
+  # OPTIONAL and every minted node hangs off a key that only binds on a match.
+  #
+  # status "ok" is required on both sides: nine SSIDs are access-restricted and
+  # 403 at the image tier, and one crosswalk row resolved to a not-found page.
+  #
+  # The dimensions emitted are the *master's*, straight from the CSV, not those of
+  # the derivative at schema:contentUrl -- see ab:IIIFImageNode in docs/vocab.ttl
+  # for why (in short: the master's are exact and carry the same aspect ratio).
+  #
+  # One ab:SourceImage per SSID, keyed by SSID like the per-creator contributions
+  # are keyed by creator. Four books legitimately have several -- multi-volume
+  # sets and cover variants -- so the book key alone would collapse distinct
+  # images onto one node and emit multi-valued paths and dimensions.
+  OPTIONAL {
+    SELECT DISTINCT ?canonical_key ?sourceImage ?src_iiif_path ?src_url
+                    ?src_width ?src_height ?srcViewConcept
+    WHERE {
+      SERVICE <x-sparql-anything:location=sources/artstor-ssid.csv,csv.headers=true> {
+        ?imgRow xyz:canonicalKey ?canonical_key ;
+                xyz:ssid         ?ssid ;
+                xyz:status       "ok" .
+      }
+      SERVICE <x-sparql-anything:location=sources/ssid-media.csv,csv.headers=true> {
+        ?mediaRow xyz:ssid          ?ssid ;
+                  xyz:status        "ok" ;
+                  xyz:iiifPath      ?src_iiif_path ;
+                  xyz:width         ?src_width_raw ;
+                  xyz:height        ?src_height_raw ;
+                  xyz:imageViewType ?src_view_raw .
+      }
+      BIND(fx:entity(ab:, "item/", ?canonical_key, "/image/", ?ssid) AS ?sourceImage)
+      BIND(xsd:integer(?src_width_raw) AS ?src_width)
+      BIND(xsd:integer(?src_height_raw) AS ?src_height)
+      BIND(STRDT(CONCAT("https://www.jstor.org", ?src_iiif_path, "/full/,1200/0/default.jpg"), xsd:anyURI) AS ?src_url)
+
+      # Normalize Forum's free-text "Image View Type" onto the three concepts in
+      # sources/image-view-types.ttl, which Fuseki loads alongside this graph.
+      # Thirteen spellings occur; image 1 is the cover in ~1,039 records, an
+      # interior in 45, and the enclosure in the rest. Anything unrecognized
+      # leaves ?src_view_slug unbound and emits no term rather than guessing.
+      BIND(LCASE(?src_view_raw) AS ?src_view_lc)
+      BIND(IF(STRSTARTS(?src_view_lc, "(cover") || STRSTARTS(?src_view_lc, "(front"), "cover",
+           IF(STRSTARTS(?src_view_lc, "(interior"), "interior",
+           IF(CONTAINS(?src_view_lc, "enclosure") || CONTAINS(?src_view_lc, "bag"), "enclosure",
+              ?sentinel))) AS ?src_view_slug)
+      BIND(IF(BOUND(?src_view_slug),
+              fx:entity(ab:, "image-view/", ?src_view_slug), ?sentinel) AS ?srcViewConcept)
+    }
+  }
+
+  # One ab:Thumbnail per book -- the representative one, so the index gets exactly
+  # one row per book. Where a book has several SSIDs the lowest wins; they are all
+  # covers, so there is no better discriminator than picking deterministically.
+  # Both halves are self-contained sub-SELECTs joined on ?ssid afterwards, so
+  # neither pushes a bound key into a SERVICE and each CSV is triplified once.
+  OPTIONAL {
+    SELECT ?canonical_key ?thumbnail ?thumb_iiif_path ?thumb_url
+           ?thumb_width ?thumb_height ?thumbViewConcept
+    WHERE {
+      {
+        SELECT ?canonical_key (STR(MIN(?ssid_num)) AS ?ssid) WHERE {
+          SERVICE <x-sparql-anything:location=sources/artstor-ssid.csv,csv.headers=true> {
+            ?anyRow xyz:canonicalKey ?canonical_key ;
+                    xyz:ssid         ?any_ssid ;
+                    xyz:status       "ok" .
+          }
+          SERVICE <x-sparql-anything:location=sources/ssid-media.csv,csv.headers=true> {
+            ?anyMedia xyz:ssid   ?any_ssid ;
+                      xyz:status "ok" .
+          }
+          BIND(xsd:integer(?any_ssid) AS ?ssid_num)
+        }
+        GROUP BY ?canonical_key
+      }
+      {
+        SELECT ?ssid ?thumb_iiif_path ?thumb_width_raw ?thumb_height_raw ?thumb_view_raw WHERE {
+          SERVICE <x-sparql-anything:location=sources/ssid-media.csv,csv.headers=true> {
+            ?thumbRow xyz:ssid          ?ssid ;
+                      xyz:status        "ok" ;
+                      xyz:iiifPath      ?thumb_iiif_path ;
+                      xyz:width         ?thumb_width_raw ;
+                      xyz:height        ?thumb_height_raw ;
+                      xyz:imageViewType ?thumb_view_raw .
+          }
+        }
+      }
+      BIND(fx:entity(ab:, "item/", ?canonical_key, "/thumbnail") AS ?thumbnail)
+      BIND(xsd:integer(?thumb_width_raw) AS ?thumb_width)
+      BIND(xsd:integer(?thumb_height_raw) AS ?thumb_height)
+      BIND(STRDT(CONCAT("https://www.jstor.org", ?thumb_iiif_path, "/full/,300/0/default.jpg"), xsd:anyURI) AS ?thumb_url)
+      BIND(LCASE(?thumb_view_raw) AS ?thumb_view_lc)
+      BIND(IF(STRSTARTS(?thumb_view_lc, "(cover") || STRSTARTS(?thumb_view_lc, "(front"), "cover",
+           IF(STRSTARTS(?thumb_view_lc, "(interior"), "interior",
+           IF(CONTAINS(?thumb_view_lc, "enclosure") || CONTAINS(?thumb_view_lc, "bag"), "enclosure",
+              ?sentinel))) AS ?thumb_view_slug)
+      BIND(IF(BOUND(?thumb_view_slug),
+              fx:entity(ab:, "image-view/", ?thumb_view_slug), ?sentinel) AS ?thumbViewConcept)
     }
   }
 }

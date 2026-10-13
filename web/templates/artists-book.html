@@ -3,9 +3,44 @@
 {{ define "title" }} - {{ .title }}{{ end }}
 
 {{ define "content" }}
+<div class="record">
+<div>
+<a class="back" href="/">Back to Artists' Books</a>
 <h1>{{ .title }}</h1>
 
-<dl>
+{{/* Images (#9). Each token is url<TAB>width<TAB>height<TAB>view. Most books
+     have exactly one; a few multi-volume sets and cover variants have several,
+     which sit side by side in a scroll-snapped strip (the wireframe's prev/next
+     arrows would need JavaScript). The view is captioned only when it is not a
+     cover, since ~106 of the 1,145 books with an image show an interior or the
+     enclosure instead and the page should not imply otherwise. */}}
+{{ with .images }}
+{{- $tokens := split . "\n" }}
+{{- if gt (len $tokens) 1 }}
+<p class="images-hint">{{ len $tokens }} images — scroll sideways to see them all.</p>
+{{- end }}
+<div class="images">
+{{- range $tokens }}
+{{- $p := split . "\t" }}
+{{- $view := index $p 3 }}
+<figure>
+  <img src="{{ index $p 0 }}" width="{{ index $p 1 }}" height="{{ index $p 2 }}"
+       alt="{{ with $view }}{{ . }}{{ else }}Image{{ end }} of {{ $.title }}">
+  {{- if and $view (ne $view "Cover") }}
+  <figcaption>{{ $view }}</figcaption>
+  {{- end }}
+</figure>
+{{- end }}
+</div>
+{{ else }}
+<div class="no-image">
+  <span>No image available</span>
+  <span>Image not provided for this record</span>
+</div>
+{{ end }}
+</div>
+
+<dl class="fields">
   {{ with .primaryCreators }}
   <dt>Primary creators</dt>
   <dd>{{ . }}</dd>
@@ -36,8 +71,23 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
+  {{ with .languageNote }}
+  <dt>Language note</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
+  {{ with .originalLanguage }}
+  <dt>Original language</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
   {{ with .extent }}
   <dt>Extent</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
+  {{ with .illustrativeContent }}
+  <dt>Illustrative content</dt>
   <dd>{{ . }}</dd>
   {{ end }}
 
@@ -84,21 +134,22 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
- {{ with .oclcNumbers }}
+  {{ with .oclcNumbers }}
   <dt>WorldCat</dt>
-  <dd>
-    <a href="{{ $.worldcatLink }}">{{ . }}</a>
-  </dd>
+  <dd><a href="{{ $.worldcatLink }}">{{ . }}</a></dd>
   {{ end }}
 </dl>
+</div>
 
 {{ with .citedBy }}
-<h2>Cited by</h2>
-<ul class="mb">
+<div class="section">
+<h2>Cited by:</h2>
+<ul class="chevron-list">
 {{- range (split . "\n") }}
 {{- $pair := split . "\t" }}
 <li><a href="/reference/{{ index $pair 0 }}">{{ index $pair 1 }}</a></li>
 {{- end }}
 </ul>
+</div>
 {{ end }}
 {{ end }}

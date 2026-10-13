@@ -1,4 +1,3 @@
-@prefix ex: <http://example.org/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -9,77 +8,128 @@
 @prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
 @prefix ab: <https://dkglab.github.io/ns/artists-books/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
-ex:ArtistsBook a rdfs:Class ;
+ab:ArtistsBook a rdfs:Class ;
     rdfs:subClassOf schema:Book ;
     rdfs:label "Artist's Book" ;
     rdfs:comment "An artist book is a work of art that utilizes the form of a book." .
 
 
-ex:imagesAt a rdfs:Property ;
+ab:imagesAt a rdf:Property ;
     rdfs:label "images at" ;
     rdfs:comment "Indicates a URL where images of the book can be found." ;
-    rdfs:domain ex:ArtistsBook ;
+    rdfs:domain ab:ArtistsBook ;
     rdfs:range rdfs:Resource .
     
-ex:worldcatLink a rdfs:Property ;
+ab:worldcatLink a rdf:Property ;
     rdfs:label "WorldCat link" ;
     rdfs:comment "Indicates a URL to the WorldCat record for the book." ;
     rdfs:domain schema:Book ;
     rdfs:range rdfs:Resource .
 
+ab:heldBySloane a rdf:Property ;
+    rdfs:label "held by Sloane" ;
+    rdfs:comment "True when the book is held locally at the Sloane Art Library, UNC. Asserted only when true." ;
+    rdfs:domain ab:ArtistsBook ;
+    rdfs:range xsd:boolean .
 
 ab:ReferenceWork a rdfs:Class ;
     rdfs:subClassOf schema:CreativeWork ;
     rdfs:label "Reference Work" ;
     rdfs:comment "A reference work is a work (book, article, webpage, etc.) that cites an Artist's Book." .
 
-ex:Citation a rdfs:Class ;
+ab:itemKey a rdf:Property ;
+    rdfs:label "item key" ;
+    rdfs:comment "The canonical Zotero item key identifying the record, as used to mint its URI. Applies to both ab:ArtistsBook and ab:ReferenceWork, so no rdfs:domain is asserted (an RDFS domain with two classes would be read as their intersection)." ;
+    rdfs:range xsd:string .
+
+ab:Citation a rdfs:Class ;
     rdfs:label "Citation" ;
     rdfs:comment "A citation is a relationship between an Artist's Book and a Reference Book."  .
 
-ex:citedBy a rdfs:Property ;
+ab:citedBy a rdf:Property ;
     rdfs:label "cited by" ;
     rdfs:comment "Relates a Citation to a Reference Work." ;
-    rdfs:domain ex:Citation ;
+    rdfs:domain ab:Citation ;
     rdfs:range ab:ReferenceWork .
 
-ex:cites a rdfs:Property ;
+ab:cites a rdf:Property ;
     rdfs:label "cites" ;
     rdfs:comment "Relates a Citation to an Artist's Book." ;
-    rdfs:domain ex:Citation ;
-    rdfs:range ex:ArtistsBook .
+    rdfs:domain ab:Citation ;
+    rdfs:range ab:ArtistsBook .
 
-ex:onPageNumber a rdfs:Property ;
+ab:onPageNumber a rdf:Property ;
     rdfs:label "on page number" ;
     rdfs:comment "Relates Citation to page number where it is found." ;
-    rdfs:domain ex:Citation .
+    rdfs:domain ab:Citation .
 
-ex:imagesOnPageNumber a rdfs:Property ;
-    rdfs:subPropertyOf ex:onPageNumber ;
+ab:imagesOnPageNumber a rdf:Property ;
+    rdfs:subPropertyOf ab:onPageNumber ;
     rdfs:label "images on page number" ;
     rdfs:comment "Relates Citation to a page number where an image of the cited Artist_book is." ;
-    rdfs:domain ex:Citation .
+    rdfs:domain ab:Citation .
 
-ex:constructedUsing a rdfs:Property ;
+ab:constructedUsing a rdf:Property ;
     rdfs:label "constructed using" ;
     rdfs:comment "Indicates techniques, materials, and production methods used in the construction of an Artist's Book. May also include the genre of the book like \"photographic sequence\"" ;
-    rdfs:domain ex:ArtistsBook.
+    rdfs:domain ab:ArtistsBook.
 
-ex:hasSubject a rdfs:Property ;
+ab:hasSubject a rdf:Property ;
     rdfs:label "has subject" ;
     rdfs:comment "Relates an Artist's Book to a topical or geographic subject concept (a skos:Concept in the ab:subject-terms scheme) drawn from its MARC 650/651 headings. Indicates what the book is about." ;
-    rdfs:domain ex:ArtistsBook ;
+    rdfs:domain ab:ArtistsBook ;
     rdfs:range skos:Concept.
 
+ab:IIIFImageNode a rdfs:Class ;
+    rdfs:label "IIIF image node" ;
+    rdfs:comment "A node carrying a displayable IIIF image URL together with the pixel dimensions of the full-resolution master, as harvested into sources/ssid-media.csv. The dimensions are the master's rather than those of the particular derivative at schema:contentUrl, because only the master's are exact: the image server serves some sizes from precomputed tiers and scales others on the fly, and the two round a derived width differently, so a computed derivative width can be off by a pixel. The master's ratio is what a template needs anyway — a browser uses an img element's width and height only to derive the aspect ratio for the placeholder box, and that ratio is the same at every size." ;
+    rdfs:subClassOf schema:ImageObject .
 
+ab:SourceImage a rdfs:Class ;
+    rdfs:label "Source image" ;
+    rdfs:comment "The full-size IIIF image that stands in for an Artist's Book. Usually the book's cover, but where the catalogue record has no cover image it may instead be an interior view or the enclosure (slipcase) — see ab:sourceImage." ;
+    rdfs:subClassOf ab:IIIFImageNode .
 
+ab:Thumbnail a rdfs:Class ;
+    rdfs:label "Thumbnail image" ;
+    rdfs:comment "A small derivative of an ab:SourceImage, requested from the IIIF image server at a fixed height for use in index listings. Its width varies with the aspect ratio of the master, so index tiles should be laid out to tolerate a variable width." ;
+    rdfs:subClassOf ab:IIIFImageNode .
 
+ab:sourceImage a rdf:Property ;
+    rdfs:label "source image" ;
+    rdfs:comment "Relates an Artist's Book to the full-size IIIF image that stands in for it. Named for what the image is rather than what it depicts: most such images are covers, but where the record has no cover the image is an interior view or the enclosure, so \"cover image\" would misdescribe those." ;
+    rdfs:domain ab:ArtistsBook ;
+    rdfs:range ab:SourceImage .
 
+ab:representativeImage a rdf:Property ;
+    rdfs:label "representative image" ;
+    rdfs:comment "Relates an Artist's Book to a thumbnail-sized rendering of its ab:sourceImage, for use in index listings." ;
+    rdfs:domain ab:ArtistsBook ;
+    rdfs:range ab:Thumbnail .
 
+ab:iiifPath a rdf:Property ;
+    rdfs:label "IIIF path" ;
+    rdfs:comment "The path of this image on the JSTOR IIIF image server, as harvested into sources/ssid-media.csv. Prefixing it with \"https://www.jstor.org\" and appending an IIIF Image API region/size/rotation/quality suffix yields a displayable URL. Note the size syntax: \",400\" requests a HEIGHT of 400 with the width derived from the aspect ratio, whereas \"400,\" requests a width of 400. These are level 2 endpoints, so any size may be requested." ;
+    rdfs:domain ab:IIIFImageNode ;
+    rdfs:range xsd:string .
 
+ab:pixelWidth a rdf:Property ;
+    rdfs:label "pixel width" ;
+    rdfs:comment "The width, in pixels, of the full-resolution master behind this image, from sources/ssid-media.csv. Not the width of the derivative at schema:contentUrl — see ab:IIIFImageNode for why the master's is the figure worth stating. Given as a plain integer rather than with schema:width, whose range is schema:Distance or schema:QuantitativeValue and so would require a wrapper node to be used correctly." ;
+    rdfs:domain ab:IIIFImageNode ;
+    rdfs:range xsd:integer .
 
+ab:pixelHeight a rdf:Property ;
+    rdfs:label "pixel height" ;
+    rdfs:comment "The height, in pixels, of the full-resolution master behind this image, from sources/ssid-media.csv. Not the height of the derivative at schema:contentUrl — see ab:IIIFImageNode for why the master's is the figure worth stating. Given as a plain integer rather than with schema:height, whose range is schema:Distance or schema:QuantitativeValue and so would require a wrapper node to be used correctly." ;
+    rdfs:domain ab:IIIFImageNode ;
+    rdfs:range xsd:integer .
 
-    
-
+ab:imageViewType a rdf:Property ;
+    rdfs:label "image view type" ;
+    rdfs:comment "What this image actually depicts: a skos:Concept in the ab:image-view-types scheme (cover, interior view, or enclosure). Most images are covers, but where the catalogue record holds no cover the image is an interior view or the enclosure, so a template should consult this before captioning one as the cover. Normalized by queries/artists-books.rq from the free-text \"Image View Type\" field JSTOR Forum carries in sources/ssid-media.csv." ;
+    rdfs:domain ab:IIIFImageNode ;
+    rdfs:range skos:Concept .
