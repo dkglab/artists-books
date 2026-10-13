@@ -30,7 +30,8 @@ CONSTRUCT {
     skos:inScheme ab:construction-methods ;
     skos:topConceptOf ab:construction-methods ;
     skos:prefLabel ?catLabel ;
-    rdfs:label ?catLabel .
+    rdfs:label ?catLabel ;
+    ab:categoryRank ?catRank .
 
   ?concept a skos:Concept ;
     skos:inScheme ab:construction-methods ;
@@ -59,13 +60,18 @@ WHERE {
   # column of decisions.csv in sync (and see the same list in README.md).
   # Labels are the glossary's own section headings, verbatim (docs/bard-
   # glossary.pdf) -- do not "tidy" the slashes or pluralize them.
-  VALUES (?category ?catSlug ?catLabel) {
-    ("material"                   "material"                   "Materials"@en)
-    ("process-technique"          "process-technique"          "Process/Technique"@en)
-    ("hand-papermaking-traditions" "hand-papermaking-traditions" "Hand Papermaking Traditions"@en)
-    ("structure-physical-format"  "structure-physical-format"  "Structure/Physical Format"@en)
-    ("enclosure"                  "enclosure"                  "Enclosure"@en)
-    ("genre-form"                 "genre-form"                 "Genre/Form"@en)
+  # ?catRank is the glossary's own section order (what a book is made of, how it
+  # is made, what it ends up as), emitted as ab:categoryRank so the site can
+  # render the categories in that order rather than alphabetically (#120). Keep
+  # the ranks in glossary order; a category that draws no concepts (currently
+  # hand-papermaking-traditions) still keeps its slot.
+  VALUES (?category ?catSlug ?catLabel ?catRank) {
+    ("material"                   "material"                   "Materials"@en                   1)
+    ("process-technique"          "process-technique"          "Process/Technique"@en           2)
+    ("hand-papermaking-traditions" "hand-papermaking-traditions" "Hand Papermaking Traditions"@en 3)
+    ("structure-physical-format"  "structure-physical-format"  "Structure/Physical Format"@en   4)
+    ("enclosure"                  "enclosure"                  "Enclosure"@en                   5)
+    ("genre-form"                 "genre-form"                 "Genre/Form"@en                  6)
   }
   BIND(fx:entity(ab:, "construction/", ?conceptId)       AS ?concept)
   BIND(fx:entity(ab:, "construction/category/", ?catSlug) AS ?catConcept)

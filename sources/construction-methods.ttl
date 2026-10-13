@@ -396,7 +396,8 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label         "Genre/Form"@en;
         skos:inScheme      ab:construction-methods;
         skos:prefLabel     "Genre/Form"@en;
-        skos:topConceptOf  ab:construction-methods .
+        skos:topConceptOf  ab:construction-methods;
+        ab:categoryRank    6 .
 
 <https://dkglab.github.io/ns/artists-books/construction/wrapper>
         rdf:type         skos:Concept;
@@ -511,7 +512,8 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label         "Enclosure"@en;
         skos:inScheme      ab:construction-methods;
         skos:prefLabel     "Enclosure"@en;
-        skos:topConceptOf  ab:construction-methods .
+        skos:topConceptOf  ab:construction-methods;
+        ab:categoryRank    5 .
 
 <https://dkglab.github.io/ns/artists-books/construction/sculptural-bookwork>
         rdf:type         skos:Concept;
@@ -1151,7 +1153,8 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label         "Structure/Physical Format"@en;
         skos:inScheme      ab:construction-methods;
         skos:prefLabel     "Structure/Physical Format"@en;
-        skos:topConceptOf  ab:construction-methods .
+        skos:topConceptOf  ab:construction-methods;
+        ab:categoryRank    4 .
 
 <https://dkglab.github.io/ns/artists-books/construction/hand-papermaking-japan>
         rdf:type         skos:Concept;
@@ -1168,7 +1171,8 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label         "Hand Papermaking Traditions"@en;
         skos:inScheme      ab:construction-methods;
         skos:prefLabel     "Hand Papermaking Traditions"@en;
-        skos:topConceptOf  ab:construction-methods .
+        skos:topConceptOf  ab:construction-methods;
+        ab:categoryRank    3 .
 
 <https://dkglab.github.io/ns/artists-books/construction/woodcut>
         rdf:type         skos:Concept;
@@ -1726,7 +1730,8 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label         "Process/Technique"@en;
         skos:inScheme      ab:construction-methods;
         skos:prefLabel     "Process/Technique"@en;
-        skos:topConceptOf  ab:construction-methods .
+        skos:topConceptOf  ab:construction-methods;
+        ab:categoryRank    2 .
 
 <https://dkglab.github.io/ns/artists-books/construction/yarn>
         rdf:type         skos:Concept;
@@ -2162,7 +2167,8 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label         "Materials"@en;
         skos:inScheme      ab:construction-methods;
         skos:prefLabel     "Materials"@en;
-        skos:topConceptOf  ab:construction-methods .
+        skos:topConceptOf  ab:construction-methods;
+        ab:categoryRank    1 .
 
 ab:construction-methods
         rdf:type        skos:ConceptScheme;

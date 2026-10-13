@@ -77,6 +77,12 @@ ab:constructedUsing a rdf:Property ;
     rdfs:comment "Indicates techniques, materials, and production methods used in the construction of an Artist's Book. May also include the genre of the book like \"photographic sequence\"" ;
     rdfs:domain ab:ArtistsBook.
 
+ab:categoryRank a rdf:Property ;
+    rdfs:label "category rank" ;
+    rdfs:comment "The position of a category top concept of the ab:construction-methods scheme in the Book Arts Research Database glossary's section order (Materials = 1 ... Genre/Form = 6). Used to present the categories in the glossary's order rather than alphabetically." ;
+    rdfs:domain skos:Concept ;
+    rdfs:range xsd:integer .
+
 ab:hasSubject a rdf:Property ;
     rdfs:label "has subject" ;
     rdfs:comment "Relates an Artist's Book to a topical or geographic subject concept (a skos:Concept in the ab:subject-terms scheme) drawn from its MARC 650/651 headings. Indicates what the book is about." ;
