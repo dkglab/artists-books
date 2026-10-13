@@ -1,6 +1,10 @@
 SHELL := /usr/bin/env bash
 .SHELLFLAGS := -O extglob -o pipefail -c
-JENA_HOST := https://dlcdn.apache.org/jena/binaries
+# archive.apache.org, not dlcdn.apache.org: the CDN keeps only the current
+# Jena release, so a pinned version 404s there as soon as the next one ships
+# (#139). The archive keeps every release; it is slower, but this is a
+# one-time fetch.
+JENA_HOST := https://archive.apache.org/dist/jena/binaries
 JENA_VERSION := 6.1.0
 ENDPOINT := http://localhost:3030/artists-books/sparql
 
