@@ -3,13 +3,25 @@
 {{ define "title" }} - reference works{{ end }}
 
 {{ define "content" }}
-<h1>Reference Works</h1>
-<ol class="mb">
-{{ range . }}
+<div class="page-intro">
+  <h1>Reference Works</h1>
+  <p>Scholarly books and publications that document artists' books in the collection.</p>
+</div>
+
+<div class="section">
+<ol class="ref-list">
+{{- range . }}
+{{- /* Catalogue titles separate title from subtitle with " : " (ISBD); the
+       wireframe sets the subtitle on its own line. */}}
+{{- $parts := split .title " : " }}
 <li>
-  <a href="reference/{{ .itemKey }}">{{ .title }}</a>
-  <small>cites {{ .citationCount }}</small>
+  <a href="/reference/{{ .itemKey }}">{{ index $parts 0 }}</a>
+  {{- if gt (len $parts) 1 }}
+  <span class="subtitle">{{ index $parts 1 }}</span>
+  {{- end }}
+  <br><a class="cites arrow" href="/reference/{{ .itemKey }}">{{ .citationCount }} artists' books cited</a>
 </li>
-{{ end }}
+{{- end }}
 </ol>
+</div>
 {{ end }}

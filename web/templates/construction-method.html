@@ -3,16 +3,16 @@
 {{ define "title" }} - {{ .label }}{{ end }}
 
 {{ define "content" }}
-<h1>{{ .label }}</h1>
-<p class="mb"><em>Construction method{{ with .categoryLabel }} &middot; {{ . }}{{ end }}</em></p>
+<div class="page-intro">
+<a class="back" href="/construction.html">Construction Methods</a>
+<h1 class="concept-label">{{ .label }}</h1>
+<p>{{ .bookCount }} work{{ if ne (printf "%s" .bookCount) "1" }}s{{ end }} in the collection{{ with .categoryLabel }} &middot; {{ . }}{{ end }}</p>
+</div>
 
 {{ with .books }}
-<h2>Artists' books using this method</h2>
-<ul class="mb">
-{{- range (split . "\n") }}
-{{- $pair := split . "\t" }}
-<li><a href="/item/{{ index $pair 0 }}">{{ index $pair 1 }}</a></li>
-{{- end }}
-</ul>
+<div class="section">
+<h2>Artists' Books using this method</h2>
+{{ template "book-cards" . }}
+</div>
 {{ end }}
 {{ end }}

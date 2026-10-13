@@ -2,14 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Artists' Books{{ block "title" . }}{{ end }}</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
   </head>
-  <body class="mx max-width line-height">
-    <div class="my"><a href="/">Artists' Books</a> &middot; <a href="/references.html">Reference Works</a> &middot; <a href="/construction.html">Construction Methods</a> &middot; <a href="/subjects.html">Subjects</a></div>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="/">Artists' Books</a>
+      <nav>
+        <a href="/construction.html">Construction</a>
+        <a href="/references.html">Reference Works</a>
+        <a href="/subjects.html">Subjects</a>
+      </nav>
+    </header>
+    <main>
     {{ block "content" . }}{{ end }}
+    </main>
+    {{ block "scripts" . }}{{ end }}
   </body>
 </html>
 {{ end }}
- 
-{{/* ordering: author, date, title */}}

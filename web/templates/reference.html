@@ -3,10 +3,12 @@
 {{ define "title" }} - {{ .title }}{{ end }}
 
 {{ define "content" }}
+<div class="page-intro">
+<a class="back" href="/references.html">Back to Reference Works</a>
 <h1>{{ .title }}</h1>
-<p class="mb"><em>Reference work</em></p>
+<p>Reference work</p>
 
-<dl>
+<dl class="fields">
   {{ with .creator }}
   <dt>Creator</dt>
   <dd>{{ . }}</dd>
@@ -42,10 +44,12 @@
   <dd><a href="{{ $.worldcatLink }}">{{ . }}</a></dd>
   {{ end }}
 </dl>
+</div>
 
 {{ with .citedBooks }}
+<div class="section">
 <h2>Cites</h2>
-<ul class="mb">
+<ul class="chevron-list">
 {{- range (split . "\n") }}
 {{- /* itemKey <TAB> title <TAB> citation pages <TAB> image pages — see web/queries/references.rq */}}
 {{- $fields := split . "\t" }}
@@ -62,5 +66,6 @@
 </li>
 {{- end }}
 </ul>
+</div>
 {{ end }}
 {{ end }}
