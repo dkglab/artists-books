@@ -158,10 +158,10 @@ flowchart TD
     class refttl output;
 ```
 
-`*` `reference-works-marc.zip` is harvested but only minimally consumed: the
-construct query pulls just the primary creator (`100 $a`) from it, joined by
-`999 $a`; the rest of the reference graph comes from the CSV, and the remaining
-MARC fields (OCLC/WorldCat, secondary creators, …) are still pending.
+`*` `reference-works-marc.zip` is read only for the creators (every 1xx/7xx
+field, with roles and VIAF/ISNI identity, as for the books — #40) and the OCLC
+number / WorldCat link (`001`, #51), joined by `999 $a`; the rest of the
+reference graph comes from the CSV.
 
 ## ③ Building the citation links
 

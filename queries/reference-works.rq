@@ -25,10 +25,10 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 # (book + journalArticle + webpage), so ab:ReferenceWork is a subclass of
 # schema:CreativeWork (docs/vocab.ttl). Most fields come from
 # sources/reference-works.csv (the canonical RW list from the Phase-0 dedup);
-# a basic slice of the harvested MARC (sources/marc/reference-works-marc.zip)
-# is also read — the primary creator (100 $a) and the OCLC number / WorldCat link
-# (001, #51). The remaining MARC-derived fields the artists' books carry (secondary
-# creators, relator roles, identity URIs, extent/dimensions) are still absent (#40).
+# the harvested MARC (sources/marc/reference-works-marc.zip) supplies the
+# creators — every 1xx/7xx field, with relator roles and identity URIs, exactly
+# as artists-books.rq reads them (#40, #46) — and the OCLC number / WorldCat
+# link (001, #51). Extent/dimensions are not read from the reference MARC.
 #
 # The canonical RW keys are lib-3 keys, and the reference MARC was harvested
 # under those same lib-3 keys, so the 999 $a join below still works directly.
@@ -41,14 +41,19 @@ CONSTRUCT {
     bf:identifiedBy ?refISBN ;
     bf:identifiedBy ?refOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
-    bf:contribution ?refContribution ;
+    bf:contribution ?contribution ;
     .
 
-  ?refContribution a bflc:PrimaryContribution ;
-    bf:agent ?refAgent ;
+  ?contribution a ?contributionType ;
+    bf:agent ?creator ;
+    bf:role ?roleConcept ;
     .
 
-  ?refAgent a bf:Agent ;
+  ?roleConcept a bf:Role ;
+    rdfs:label ?role_term ;
+    .
+
+  ?creator a bf:Agent ;
     rdfs:label ?creator_name ;
     .
 
@@ -102,71 +107,119 @@ WHERE {
     BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?refISBN)
   }
 
-  # Basic MARC slice: the primary creator (100 $a) from the harvested reference
-  # MARC. The MARC is a per-record archive (#81): sources/marc/reference-works-marc.zip
-  # holds one <itemKey>.xml document per record, read with SPARQL-Anything's
-  # nested Archive -> XML triplifiers. The outer archive read lists the entries
+  # Creators and the OCLC number from the harvested reference MARC. The MARC is
+  # a per-record archive (#81): sources/marc/reference-works-marc.zip holds one
+  # <itemKey>.xml document per record, read with SPARQL-Anything's nested
+  # Archive -> XML triplifiers. The outer archive read lists the entries
   # (fx:archive.matches) and the inner SERVICE triplifies just that one record
   # (fx:location ?file + fx:from-archive), joining to the CSV row on the record's
-  # own 999 $a — the key is read from the record data, not the filename. Each
-  # entry is triplified once and joined after, so it is no slower than the old
-  # single-file read. Per-record traversal uses fx:anySlot (docs/QUERY-PERFORMANCE.md).
+  # own 999 $a — the key is read from the record data, not the filename.
+  # Per-record traversal uses fx:anySlot (docs/QUERY-PERFORMANCE.md).
   #
-  # Kept OPTIONAL — most reference works have a MARC record but only some carry a
-  # 100 main entry (edited volumes / exhibition catalogs enter creators on
-  # 700/710 instead, not read yet). Name only for now — no roles / identity URIs (#46).
+  # The creator extraction is the one artists-books.rq uses, minus the fields
+  # the reference works don't carry: 100/110/111 become bflc:PrimaryContribution
+  # and 700/710/711 bf:Contribution (#40, #46). Many reference works are edited
+  # volumes or exhibition catalogues with no 1xx main entry, whose only creators
+  # are on 700/710 — reading just the 100, as this query used to, left them
+  # creatorless.
+  #
+  # One group per (record, creator field, role): SAMPLE collapses the per-field
+  # subfield matches, so each creator field yields exactly one ?creator, while a
+  # field with several $e roles keeps every one of them.
   OPTIONAL {
-    SERVICE <x-sparql-anything:location=sources/marc/reference-works-marc.zip> {
-      fx:properties fx:archive.matches ".*\\.xml" .
-      ?archive fx:anySlot ?file .
+    {
+      SELECT ?canonical_key ?df ?ctag ?role_term ?contributionType
+             (SAMPLE(?control_number_raw) AS ?control_number)
+             (SAMPLE(?name_x)  AS ?creator_name)
+             (SAMPLE(?viaf_x)  AS ?viaf)
+             (SAMPLE(?isni_x)  AS ?isni)
+             (SAMPLE(?lc_id_x) AS ?lc_id)
+      WHERE {
+        SERVICE <x-sparql-anything:location=sources/marc/reference-works-marc.zip> {
+          fx:properties fx:archive.matches ".*\\.xml" .
+          ?archive fx:anySlot ?file .
 
-      SERVICE <x-sparql-anything:> {
-        fx:properties
-          fx:location ?file ;
-          fx:from-archive "sources/marc/reference-works-marc.zip" ;
-          fx:media-type "application/xml" .
+          SERVICE <x-sparql-anything:> {
+            fx:properties
+              fx:location ?file ;
+              fx:from-archive "sources/marc/reference-works-marc.zip" ;
+              fx:media-type "application/xml" .
 
-        ?record a marc:record .
+            ?record a marc:record .
 
-        # 999 $a — the canonical key stamped on each record at harvest; join to
-        # the CSV row above. The key is read from the record data, not the
-        # filename, so the archive entries could be named anything.
-        ?record fx:anySlot ?f999 .
-        ?f999 a marc:datafield ; xyz:tag "999" .
-        ?f999 fx:anySlot ?sf999a .
-        ?sf999a xyz:code "a" ; rdf:_1 ?canonical_key .
+            # 999 $a — the canonical key stamped on each record at harvest; join
+            # to the CSV row above.
+            ?record fx:anySlot ?f999 .
+            ?f999 a marc:datafield ; xyz:tag "999" .
+            ?f999 fx:anySlot ?sf999a .
+            ?sf999a xyz:code "a" ; rdf:_1 ?canonical_key .
 
-        # OCLC number from the 001 control field (#51). Kept OPTIONAL so a record
-        # with no 001 still yields its canonical key (and any 100 creator). 001 is
-        # a marc:controlfield, so its value is on rdf:_1, not a subfield. This is
-        # read at record level — NOT gated behind the 100 below — because most
-        # reference works have no 100 main entry yet do carry a 001 to link.
-        OPTIONAL {
-          ?record fx:anySlot ?cf001 .
-          ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
-        }
+            # OCLC number from the 001 control field (#51). OPTIONAL so a record
+            # with no 001 still yields its creators. 001 is a marc:controlfield,
+            # so its value is on rdf:_1, not a subfield.
+            OPTIONAL {
+              ?record fx:anySlot ?cf001 .
+              ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
+            }
 
-        # 100 $a — primary creator name. OPTIONAL: only some reference works carry
-        # a 100 main entry (edited volumes / exhibition catalogs enter creators on
-        # 700/710 instead, not read yet), and those records must still yield their
-        # canonical key + 001. Strip trailing cataloguing punctuation.
-        OPTIONAL {
-          ?record fx:anySlot ?df100 .
-          ?df100 a marc:datafield ; xyz:tag "100" .
-          ?df100 fx:anySlot ?sf100a .
-          ?sf100a xyz:code "a" ; rdf:_1 ?name_raw .
-          BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?creator_name)
-        }
+            # Creator fields are OPTIONAL: a record with no 1xx/7xx still yields
+            # a row carrying canonical_key + the 001 number.
+            OPTIONAL {
+              # The tag test is wrapped in its own group so it prunes here,
+              # before the subfield OPTIONALs below, rather than as a group
+              # filter evaluated after them (docs/QUERY-PERFORMANCE.md).
+              {
+                ?record fx:anySlot ?df .
+                ?df a marc:datafield ; xyz:tag ?ctag .
+                FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+              }
+
+              BIND(
+                IF(?ctag IN ("100", "110", "111"),
+                   bflc:PrimaryContribution,
+                   bf:Contribution
+                ) AS ?contributionType
+              )
+
+              # $a — name. Strip trailing cataloguing punctuation.
+              ?df fx:anySlot ?sfa .
+              ?sfa xyz:code "a" ; rdf:_1 ?name_raw .
+              BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?name_x)
+
+              # $e — relator term (role), lower-cased to match the lookup table.
+              OPTIONAL {
+                ?df fx:anySlot ?sfe .
+                ?sfe xyz:code "e" ; rdf:_1 ?role_raw .
+                BIND(LCASE(REPLACE(?role_raw, "[\\s.,;:/]+$", "")) AS ?role_term)
+              }
+
+              # $1 — real-world-object URI. Prefer VIAF, else ISNI. Strip the
+              # leaked trailing "." (see docs/MARC-RECORDS.md).
+              OPTIONAL {
+                ?df fx:anySlot ?sfv .
+                ?sfv xyz:code "1" ; rdf:_1 ?rwo_v .
+                FILTER(CONTAINS(STR(?rwo_v), "viaf.org"))
+                BIND(REPLACE(?rwo_v, "\\.$", "") AS ?viaf_x)
+              }
+              OPTIONAL {
+                ?df fx:anySlot ?sfi .
+                ?sfi xyz:code "1" ; rdf:_1 ?rwo_i .
+                FILTER(CONTAINS(STR(?rwo_i), "isni.org"))
+                BIND(REPLACE(?rwo_i, "\\.$", "") AS ?isni_x)
+              }
+
+              # $0 — LC name-authority URI; keep just the local id.
+              OPTIONAL {
+                ?df fx:anySlot ?sf0 .
+                ?sf0 xyz:code "0" ; rdf:_1 ?lc_0 .
+                BIND(REPLACE(REPLACE(?lc_0, "\\.$", ""), "^.*/", "") AS ?lc_id_x)
+              }
+            }
+          }  # end inner per-record SERVICE
+        }  # end archive-listing SERVICE
       }
+      GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
     }
-    # Guard on ?creator_name: the nested archive read binds ?canonical_key (from
-    # 999 $a) for every record, including those with no 100 $a (the inner per-
-    # record SERVICE then simply binds no ?creator_name), so mint the
-    # contribution/agent only when a name was actually found — otherwise a
-    # nameless agent leaks. (The old single-file read dropped such rows because
-    # the 100-match was a required pattern in the same SERVICE.)
-    BIND(IF(BOUND(?creator_name), fx:entity(ab:, "reference/", ?canonical_key, "/contribution/primary"), ?sentinel) AS ?refContribution)
-    BIND(IF(BOUND(?creator_name), fx:entity(ab:, "reference/", ?canonical_key, "/agent/primary"), ?sentinel) AS ?refAgent)
 
     # WorldCat link + OCLC identifier from the 001 number (#51). Extract the
     # first run of digits (dropping the on/ocn/ocm prefix, any trailing suffix
@@ -176,13 +229,75 @@ WHERE {
     # Ex Libris Alma MMS id), not an OCLC number, so a worldcat.org/oclc/ link
     # minted from it would 404. All three vars below stay unbound (guarded on
     # ?oclc_number) for a non-OCLC or absent 001, so no dangling /oclc node is minted.
-    BIND(REPLACE(REPLACE(?control_number_raw, "^\\D*(\\d+).*$", "$1"), "^0+", "") AS ?oclc_raw)
+    BIND(REPLACE(REPLACE(?control_number, "^\\D*(\\d+).*$", "$1"), "^0+", "") AS ?oclc_raw)
     BIND(
-      IF(REGEX(?control_number_raw, "^(on|ocn|ocm)", "i") || REGEX(?oclc_raw, "^[0-9]{1,10}$"),
+      IF(REGEX(?control_number, "^(on|ocn|ocm)", "i") || REGEX(?oclc_raw, "^[0-9]{1,10}$"),
          ?oclc_raw, ?sentinel)
       AS ?oclc_number
     )
     BIND(IF(BOUND(?oclc_number), IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)), ?sentinel) AS ?worldcat_url)
     BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "reference/", ?canonical_key, "/oclc"), ?sentinel) AS ?refOCLCNum)
+
+    # Creator identity, minted exactly as in artists-books.rq so that a person
+    # who both made a book in the collection and wrote about artists' books is
+    # one node across the two graphs: the real-world-object URI (VIAF, else
+    # ISNI), else ab:creator/ keyed off the LC authority id, else a name slug.
+    # All unbound for a row with no creator field (?creator_name unbound).
+    BIND(COALESCE(?viaf, ?isni) AS ?rwo)
+    BIND(REPLACE(REPLACE(LCASE(?creator_name), "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?name_slug)
+    BIND(COALESCE(?lc_id, ?name_slug) AS ?creator_key)
+    BIND(IF(BOUND(?rwo), IRI(?rwo), fx:entity(ab:, "creator/", ?creator_key)) AS ?creator)
+    BIND(IF(BOUND(?creator_key), fx:entity(ab:, "reference/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
+
+    # Map the relator term to its LC relator URI, falling back to a minted
+    # ab:role/ URI. Joined via FILTER on a separate key variable so an unbound
+    # ?role_term doesn't match every row. Keep this table in sync with the one
+    # in artists-books.rq.
+    OPTIONAL {
+      VALUES (?relator_term ?relator) {
+        ("artist"                                       <http://id.loc.gov/vocabulary/relators/art>)
+        ("author"                                       <http://id.loc.gov/vocabulary/relators/aut>)
+        ("publisher"                                    <http://id.loc.gov/vocabulary/relators/pbl>)
+        ("photographer"                                 <http://id.loc.gov/vocabulary/relators/pht>)
+        ("book artist"                                  <http://id.loc.gov/vocabulary/relators/bka>)
+        ("book designer"                                <http://id.loc.gov/vocabulary/relators/bkd>)
+        ("illustrator"                                  <http://id.loc.gov/vocabulary/relators/ill>)
+        ("editor"                                       <http://id.loc.gov/vocabulary/relators/edt>)
+        ("printer"                                      <http://id.loc.gov/vocabulary/relators/prt>)
+        ("translator"                                   <http://id.loc.gov/vocabulary/relators/trl>)
+        ("host institution"                             <http://id.loc.gov/vocabulary/relators/his>)
+        ("papermaker"                                   <http://id.loc.gov/vocabulary/relators/ppm>)
+        ("issuing body"                                 <http://id.loc.gov/vocabulary/relators/isb>)
+        ("contributor"                                  <http://id.loc.gov/vocabulary/relators/ctb>)
+        ("writer of added text"                         <http://id.loc.gov/vocabulary/relators/wat>)
+        ("interviewer"                                  <http://id.loc.gov/vocabulary/relators/ivr>)
+        ("interviewee"                                  <http://id.loc.gov/vocabulary/relators/ive>)
+        ("binder"                                       <http://id.loc.gov/vocabulary/relators/bnd>)
+        ("designer"                                     <http://id.loc.gov/vocabulary/relators/dsr>)
+        ("composer"                                     <http://id.loc.gov/vocabulary/relators/cmp>)
+        ("compiler"                                     <http://id.loc.gov/vocabulary/relators/com>)
+        ("book producer"                                <http://id.loc.gov/vocabulary/relators/bkp>)
+        ("writer of introduction"                       <http://id.loc.gov/vocabulary/relators/win>)
+        ("writer of added commentary"                   <http://id.loc.gov/vocabulary/relators/wac>)
+        ("writer of supplementary textual content"      <http://id.loc.gov/vocabulary/relators/wst>)
+        ("curator"                                      <http://id.loc.gov/vocabulary/relators/cur>)
+        ("distributor"                                  <http://id.loc.gov/vocabulary/relators/dst>)
+        ("author of introduction, etc"                  <http://id.loc.gov/vocabulary/relators/aui>)
+        ("author of afterword, colophon, etc"           <http://id.loc.gov/vocabulary/relators/aft>)
+        ("typographer"                                  <http://id.loc.gov/vocabulary/relators/tyg>)
+        ("sponsor"                                      <http://id.loc.gov/vocabulary/relators/spn>)
+        ("researcher"                                   <http://id.loc.gov/vocabulary/relators/res>)
+        ("printmaker"                                   <http://id.loc.gov/vocabulary/relators/prm>)
+        ("organizer"                                    <http://id.loc.gov/vocabulary/relators/orm>)
+        ("honouree"                                     <http://id.loc.gov/vocabulary/relators/hnr>)
+        ("creator"                                      <http://id.loc.gov/vocabulary/relators/cre>)
+        ("cover designer"                               <http://id.loc.gov/vocabulary/relators/cov>)
+        ("collector"                                    <http://id.loc.gov/vocabulary/relators/col>)
+      }
+      FILTER(?relator_term = ?role_term)
+    }
+
+    BIND(REPLACE(REPLACE(?role_term, "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?role_slug)
+    BIND(COALESCE(?relator, fx:entity(ab:, "role/", ?role_slug)) AS ?roleConcept)
   }
 }

@@ -19,6 +19,20 @@
   {{- if gt (len $parts) 1 }}
   <span class="subtitle">{{ index $parts 1 }}</span>
   {{- end }}
+  {{- /* Credit line: the 1xx creators, else the 7xx contributors (with roles)
+         for the edited volumes and catalogues that have no main entry. A 7xx
+         list can run to printers and cover designers, so the index shows the
+         first three names; the reference page lists them all. */}}
+  {{- $credit := or .primaryCreators .contributors }}
+  {{- if or $credit .date }}
+  <span class="ref-meta">
+    {{- with $credit }}{{ $names := split . "; " }}
+      {{- range $i, $n := $names }}{{ if lt $i 3 }}{{ if $i }}; {{ end }}{{ $n }}{{ end }}{{ end }}
+      {{- if gt (len $names) 3 }} et al.{{ end }}
+    {{- end }}
+    {{- if and $credit .date }} · {{ end }}{{ with .date }}{{ . }}{{ end -}}
+  </span>
+  {{- end }}
   <br><a class="cites arrow" href="/reference/{{ .itemKey }}">{{ .citationCount }} artists' books cited</a>
 </li>
 {{- end }}
