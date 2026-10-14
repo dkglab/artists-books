@@ -9,8 +9,13 @@
 <p>Reference work</p>
 
 <dl class="fields">
-  {{ with .creator }}
+  {{ with .primaryCreators }}
   <dt>Creator</dt>
+  <dd>{{ . }}</dd>
+  {{ end }}
+
+  {{ with .contributors }}
+  <dt>Contributors</dt>
   <dd>{{ . }}</dd>
   {{ end }}
 

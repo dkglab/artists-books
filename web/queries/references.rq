@@ -22,7 +22,11 @@ SELECT
   ?reference
   ?title
   ?itemKey
-  ?creator
+  # Creators as display strings ("name [role]"), aggregated so a work with
+  # several creators stays one row (one output page). Primary = MARC 1xx,
+  # contributors = 7xx (#40, #46).
+  (GROUP_CONCAT(DISTINCT ?primaryCreatorDisplay; separator="; ") AS ?primaryCreators)
+  (GROUP_CONCAT(DISTINCT ?otherCreatorDisplay; separator="; ") AS ?contributors)
   ?publisher
   ?place
   ?date
@@ -54,12 +58,26 @@ WHERE {
     ab:itemKey ?itemKey ;
     .
 
-  # Primary creator from MARC 100 $a (basic MARC slice, #46). Present for only
-  # some reference works (edited volumes carry no 100 main entry).
+  # Creators from MARC 1xx (primary) and 7xx (other), as in artists-books.rq.
+  # Edited volumes and exhibition catalogues often have no 1xx, so their only
+  # creators are the 7xx contributors (#40, #46).
   OPTIONAL {
     ?reference bf:contribution ?c .
     ?c a bflc:PrimaryContribution ;
-       bf:agent/rdfs:label ?creator .
+       bf:agent ?agent .
+    ?agent rdfs:label ?name .
+    OPTIONAL { ?c bf:role/rdfs:label ?role . }
+    BIND(IF(BOUND(?role), CONCAT(?name, " [", ?role, "]"), ?name) AS ?primaryCreatorDisplay)
+  }
+
+  OPTIONAL {
+    ?reference bf:contribution ?c2 .
+    ?c2 a bf:Contribution ;
+        bf:agent ?agent2 .
+    FILTER NOT EXISTS { ?c2 a bflc:PrimaryContribution }
+    ?agent2 rdfs:label ?name2 .
+    OPTIONAL { ?c2 bf:role/rdfs:label ?role2 . }
+    BIND(IF(BOUND(?role2), CONCAT(?name2, " [", ?role2, "]"), ?name2) AS ?otherCreatorDisplay)
   }
 
   OPTIONAL {
@@ -149,5 +167,5 @@ WHERE {
 
   BIND(COALESCE(?citedBookLabel, ?citedBookKey) AS ?citedTitle)
 }
-GROUP BY ?reference ?title ?itemKey ?creator ?publisher ?place ?date ?language
+GROUP BY ?reference ?title ?itemKey ?publisher ?place ?date ?language
 ORDER BY LCASE(?title)
