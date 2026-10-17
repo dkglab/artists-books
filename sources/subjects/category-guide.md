@@ -6,13 +6,11 @@ Mostly deferred to wikidata for terms with multiple names and what category of g
 
 Parenthesis for dates only. Quotes and comma for subdivisions "Aesthetics, Modern".
 
-Construction terms marked as n -> construction unless accompanied by genre or geographic subheading that suggests it is the topic instead of the technique (all lacking a link to URI or id number are marked construction or genre).
-
-Genre terms marked y if they appear alone in the first position (less likely to be form subdivision, all unspecified are n).
+Construction terms marked as n -> construction unless accompanied by genre or geographic subheading that suggests it is the topic instead of the technique (all lacking a link to URI or id number are marked construction or genre). Genre terms marked y if they appear alone in the first position (less likely to be form subdivision, all unspecified are n).
 
 Genre terms that are clearly not subjects that would be good to have but not sure if they should go in subject list or construction list are noted genre.In some cases I cannot remember if they are a construction term already and I am working on a reduced version of the codespace with only two files so it runs smoother on my laptop.
 
-Subject headings needing split marked y with note "complex" (so i could sort for easier checking)
+Subject headings to be split marked y with note "complex" (so i could sort for easier checking)
 
 Categories:
 
