@@ -12,6 +12,8 @@ Genre terms marked y if they appear alone in the first position (less likely to 
 
 Genre terms that are clearly not subjects that would be good to have but not sure if they should go in subject list or construction list are noted genre.In some cases I cannot remember if they are a construction term already and I am working on a reduced version of the codespace with only two files so it runs smoother on my laptop.
 
+Subject headings needing split marked y with note "complex" (so i could sort for easier checking)
+
 Categories:
 
 Geographic
@@ -42,5 +44,5 @@ Topical
 Chronological
     event (time bound)
 
-    ---
+
   
