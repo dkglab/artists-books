@@ -7,7 +7,7 @@ none|aalst,Aalst,y,aalst-be,geographic-city,Aalst (Belgium),http://id.loc.gov/au
 none|abkhazia-georgia-ethnic-relations,Abkhazia (Georgia) -- Ethnic relations,y,,geographic,,,auto-seeded draft; review
 http://id.worldcat.org/fast/794440.,Abkhazians,y,abkhazians,topical-people,Abkhazians,,
 lcsh|abkhazians-georgia-republic,Abkhazians -- Georgia (Republic),y,abkhazians,,,https://id.loc.gov/authorities/subjects/sh85000173.html,
-lcsh|abnormalities-human-in-art-exhibitions,"Abnormalities, Human, in art -- Exhibitions",y,abnormalities-human,topical-condition,"""Abnormalities, Human""","http://id.loc.gov/authorities/subjects/sh96010970",
+lcsh|abnormalities-human-in-art-exhibitions,"Abnormalities, Human, in art -- Exhibitions",y,abnormalities-human,topical-condition,"""Abnormalities, Human""",http://id.loc.gov/authorities/subjects/sh96010970,
 http://id.worldcat.org/fast/794582.,Abortion,y,abortion,topical-people,Abortion,,
 http://id.loc.gov/authorities/subjects/sh2009113356.,Abortion -- Psychological aspects,y,abortion,,,,
 http://id.worldcat.org/fast/794614.,Abortion -- Psychological aspects,y,abortion,,,,
@@ -149,7 +149,7 @@ lcsh|aleatory-music,Aleatory music,y,aleatoric-music,topical-arts,Aleatoric musi
 fast|aleatory-music,Aleatory music,y,aleatoric-music,,,http://id.worldcat.org/fast/804693.,
 http://id.loc.gov/authorities/subjects/sh85022486.,Aleatory music,y,aleatoric-music,,,,
 http://id.worldcat.org/fast/804693.,Aleatory music,y,aleatoric-music,,,,
-none|algeria-history-revolution-1954-1962-pictorial-works,"Algeria -- History -- Revolution, 1954-1962 -- Pictorial works",y,algerian-war,chronological-event,Algerian War (1954-1962),http://id.loc.gov/authorities/subjects/sh85003462,""
+none|algeria-history-revolution-1954-1962-pictorial-works,"Algeria -- History -- Revolution, 1954-1962 -- Pictorial works",y,algerian-war,chronological-event,Algerian War (1954-1962),http://id.loc.gov/authorities/subjects/sh85003462,
 lcsh|algerians-france-housing-pictorial-works,Algerians -- France -- Housing -- Pictorial works,n,,,,,
 lcsh|allegories,Allegories,y,allegories,topical-concept,Allegories,http://id.loc.gov/authorities/subjects/sh85003641,
 http://id.worldcat.org/fast/805945.,Alphabet,y,alphabet,topical-concept,Alphabets,,
@@ -192,7 +192,7 @@ http://id.loc.gov/authorities/subjects/sh2009114743.,Alzheimer's disease -- Pati
 http://id.worldcat.org/fast/1239786.,America,n,,,,,
 none|america-history-pictorial-works,America -- History -- Pictorial works,n,,,,,
 lcsh|american-fiction-21st-century,American fiction -- 21st century,y,fiction-american,topical-arts,"Fiction, American",http://id.loc.gov/authorities/subjects/sh85004317,
-lcsh|american-fiction-women-authors-history-and-criticism,American fiction -- Women authors -- History and criticism,y,"authors-women-fiction-american",topical-people,"Authors, Women, Fiction, American",http://id.loc.gov/authorities/subjects/sh2007100757,
+lcsh|american-fiction-women-authors-history-and-criticism,American fiction -- Women authors -- History and criticism,y,authors-women-fiction-american,topical-people,"Authors, Women, Fiction, American",http://id.loc.gov/authorities/subjects/sh2007100757,
 http://id.worldcat.org/fast/807113.,American literature,y,american-literature,topical-arts,"""Literature, American""",,
 http://id.loc.gov/authorities/subjects/sh85004336.,American literature,y,american-literature,,,,
 http://id.loc.gov/authorities/subjects/sh85004341.,American literature -- 20th century,y,american-literature,,,,
@@ -209,10 +209,10 @@ lcsh|american-poetry-20th-century-periodicals,American poetry -- 20th century --
 http://id.loc.gov/authorities/subjects/sh2007100768.,American poetry -- 21st century,y,american-poetry,,,,
 http://id.loc.gov/authorities/subjects/sh2007100768,American poetry -- 21st century,y,american-poetry,,,,
 lcsh|american-poetry-21st-century,American poetry -- 21st century,y,american-poetry,,,http://id.loc.gov/authorities/subjects/sh2007100768,
-lcsh|american-poetry-women-authors,American poetry -- Women authors,y,"authors-women-poetry- american",topical-people,"Authors, Women, Poetry, American",https://id.loc.gov/authorities/subjects/sh85004404,
-http://id.worldcat.org/fast/807422.,American prose literature,y,american-literature,,"",,
+lcsh|american-poetry-women-authors,American poetry -- Women authors,y,authors-women-poetry- american,topical-people,"Authors, Women, Poetry, American",https://id.loc.gov/authorities/subjects/sh85004404,
+http://id.worldcat.org/fast/807422.,American prose literature,y,american-literature,,,,
 http://id.loc.gov/authorities/subjects/sh2007101031.,American prose literature -- 20th century,y,american-literature,,,,
-http://id.loc.gov/authorities/subjects/sh85004412.,"American Revolution Bicentennial, 1976",y,american-revolution-bicentennial-1976,chronological-event,"American Revolution Bicentennial (1976)",,
+http://id.loc.gov/authorities/subjects/sh85004412.,"American Revolution Bicentennial, 1976",y,american-revolution-bicentennial-1976,chronological-event,American Revolution Bicentennial (1976),,
 lcsh|american-wit-and-humor,American wit and humor,y,american-wit-and-humor,topical,"Wit and humor, American",https://id.loc.gov/authorities/subjects/sh85004424,
 lcsh|american-wit-and-humor-pictorial,"American wit and humor, Pictorial",y,american-wit-and-humor,,,,
 sao|amerikansk-konst-1900-talet-1945,Amerikansk konst -- 1900-talet -- 1945-,y,american-art,topical-arts,"Visual arts, American",https://id.kb.se/term/sao/Amerikansk%20konst,
@@ -252,12 +252,12 @@ http://id.worldcat.org/fast/809757.,Anniversaries,y,anniversaries,chronological-
 http://id.worldcat.org/fast/1746829.,Anonymous persons,y,anonymous-persons,topical-people,Anonymous persons,,
 lcsh|anonymous-persons-fiction,Anonymous persons -- Fiction,y,anonymous-persons,,,https://id.loc.gov/authorities/subjects/sh2008008440,
 lcsh|anthologies,Anthologies,n,,,,,genre
-unspecified|antin-eleanor,"Antin, Eleanor",y,antin-eleanor,topical-people,"Eleanor Antin",http://id.loc.gov/authorities/names/n84018003,
+unspecified|antin-eleanor,"Antin, Eleanor",y,antin-eleanor,topical-people,Eleanor Antin,http://id.loc.gov/authorities/names/n84018003,
 http://id.loc.gov/authorities/subjects/sh85005721.,Antinuclear movement,y,antinuclear-movement,topical-organization,Antinuclear movement,,
 http://id.worldcat.org/fast/810626.,Antinuclear movement,,antinuclear-movement,,,,
 http://id.worldcat.org/fast/810800.,Antislavery movements,y,antislavery-movements,topical-organization,Antislavery movements,,
 lcsh|antislavery-movements-cuba-history-19th-century,Antislavery movements -- Cuba -- History -- 19th century,y,antislavery-movements,,,https://id.loc.gov/authorities/subjects/sh85123315,
-http://id.loc.gov/authorities/subjects/sh85005791.,Antlers,y,antlers,topical-animals,Antlers,,
+http://id.loc.gov/authorities/subjects/sh85005791.,Antlers,y,antlers,topical-anatomy,Antlers,,
 http://id.worldcat.org/fast/810877.,Antlers,y,antlers,,,,
 http://id.loc.gov/authorities/subjects/sh96012263.,Anxiety in art,y,anxiety,topical-condition,Anxiety,,
 http://id.worldcat.org/fast/810981.,Anxiety in art,y,anxiety,,,,
@@ -296,7 +296,7 @@ lcsh|arapaho-art-20th-century-exhibitions,Arapaho art -- 20th century -- Exhibit
 none|araucan-a-chile-description-and-travel-pictorial-works,Araucanía (Chile) -- Description and travel -- Pictorial works,y,araucania-cl,geographic-region,Araucanía (Chile),https://www.getty.edu/vow/TGNFullDisplay?find=&place=&nation=&logic=&note=&role=&subjectid=1001692,
 http://id.loc.gov/authorities/subjects/sh2002000955.,Archaeology in art,y,archaeology,topical-concept,Archaeology,,
 http://id.worldcat.org/fast/813010.,Archaeology in art,y,archaeology,,,,
-http://id.worldcat.org/fast/813226.,Architectural drawing,n,,,"",,construction
+http://id.worldcat.org/fast/813226.,Architectural drawing,n,,,,,construction
 http://id.loc.gov/authorities/subjects/sh85006587.,Architectural drawing,n,,,,,construction
 lcsh|architectural-drawing-in-art,Architectural drawing -- In art,n,,,,,construction
 lcsh|architectural-drawing-pictorial-works,Architectural drawing -- Pictorial works,n,,,,,construction
@@ -331,15 +331,15 @@ http://id.loc.gov/authorities/subjects/sh85006905.,Architecture in art,y,archite
 http://id.worldcat.org/fast/813596.,Architecture in art,y,architecture,,,,
 lcsh|architecture-in-art,Architecture in art,y,architecture,,,http://id.loc.gov/authorities/subjects/sh85006905.,
 http://id.worldcat.org/fast/813666.,"Architecture, Domestic",y,architecture-domestic,topical-arts,"Architecture, Domestic",,
-lcsh|architecture-domestic-michigan,"Architecture, Domestic -- Michigan",y,architecture-domestic,,"",,
+lcsh|architecture-domestic-michigan,"Architecture, Domestic -- Michigan",y,architecture-domestic,,,,
 lcsh|architecture-domestic-poetry,"Architecture, Domestic -- Poetry",y,architecture-domestic,,,,
-http://id.loc.gov/authorities/subjects/sh85006795.,"Architecture, Greek",y,architecture,,"",,
+http://id.loc.gov/authorities/subjects/sh85006795.,"Architecture, Greek",y,architecture,,,,
 http://id.worldcat.org/fast/813766.,"Architecture, Greek",y,architecture,,,,
 http://id.loc.gov/authorities/subjects/sh85006803.,"Architecture, Industrial",y,architecture-industrial,topical-arts,"Architecture, Industrial",,
 http://id.worldcat.org/fast/813786.,"Architecture, Industrial",y,architecture-industrial,,,,
 http://id.worldcat.org/fast/813842.,"Architecture, Modern",y,architecture-modern,topical-arts,"Architecture, Modern",,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85006834.,"Architecture, Modern -- 20th century",y,architecture-modern,,"",,
-lcsh|architecture-modern-20th-century-georgia-atlanta,"Architecture, Modern -- 20th century -- Georgia -- Atlanta",y,architecture-modern,,"",,
+http://id.loc.gov/authorities/subjects/sh85006834.,"Architecture, Modern -- 20th century",y,architecture-modern,,,,
+lcsh|architecture-modern-20th-century-georgia-atlanta,"Architecture, Modern -- 20th century -- Georgia -- Atlanta",y,architecture-modern,,,,
 (OCoLC)fst00814030,Archives,y,archives,topical-concept,Archives,,
 lcsh|archives,Archives,y,archives,,,,
 http://id.loc.gov/authorities/subjects/sh2008005503.,Archives in art,y,archives,,,,
@@ -381,7 +381,7 @@ lcsh|art-21st-century,Art -- 21st century,y,visual-arts,,,,
 http://id.loc.gov/authorities/subjects/sh85007464,Art -- Anecdotes,y,visual-arts,,,,
 http://id.loc.gov/authorities/subjects/sh85007470.,Art -- Censorship,y,art-censorship,topical-arts,"Art, Censorship",,
 http://id.worldcat.org/fast/815190.,Art -- Censorship,y,art-censorship,,,,
-lcsh|art-chile-periodicals,Art -- Chile -- Periodicals,y,visual-arts,,"",,
+lcsh|art-chile-periodicals,Art -- Chile -- Periodicals,y,visual-arts,,,,
 http://id.loc.gov/authorities/subjects/sh2007101418.,Art -- Economic aspects,y,visual-arts,,,,
 http://id.worldcat.org/fast/815231.,Art -- Economic aspects,y,visual-arts,,,,
 lcsh|art-germany-aachen,Art -- Germany -- Aachen,y,visual-arts,,,,
@@ -417,8 +417,8 @@ lcsh|art-study-and-teaching-argentina-humor,Art -- Study and teaching -- Argenti
 lcsh|art-study-and-teaching-colombia-bogot-21st-century,Art -- Study and teaching -- Colombia -- Bogotá -- 21st century,y,art-study-and-teaching-,,,,
 lcsh|art-study-and-teaching-humor,Art -- Study and teaching -- Humor,y,art-study-and-teaching-,,,,
 lcsh|art-terminology-humor,Art -- Terminology -- Humor,y,art-terminology,topical-arts,"Art, Terminology",,
-http://id.worldcat.org/fast/815381.,"Art -- Themes, motives",y,visual-arts,,"",,
-lcsh|art-themes-motives-dictionaries-portuguese,"Art -- Themes, motives -- Dictionaries -- Portuguese",y,visual-arts,,"",,
+http://id.worldcat.org/fast/815381.,"Art -- Themes, motives",y,visual-arts,,,,
+lcsh|art-themes-motives-dictionaries-portuguese,"Art -- Themes, motives -- Dictionaries -- Portuguese",y,visual-arts,,,,
 lcsh|art-united-arab-emirates,Art -- United Arab Emirates,y,visual-arts,,,,
 unspecified|art-political-aspects,Art ; Political aspects,y,art-politics,,,,
 http://id.loc.gov/authorities/subjects/sh2006007630.,Art and computers,n,,,,,
@@ -510,46 +510,46 @@ http://id.loc.gov/authorities/subjects/sh85007557.,"Art, Aboriginal Australian",
 http://id.worldcat.org/fast/815847.,"Art, Aboriginal Australian",y,art-aboriginal-australian,,,,
 (OCoLC)fst00815850.,"Art, Abstract",y,art-abstract,topical-arts,"Art, Abstract",,
 lcsh|art-abstract,"Art, abstract",y,art-abstract,,,,
-lcsh|art-abstract-21st-century,"Art, Abstract -- 21st century",y,art-abstract,,"",,
+lcsh|art-abstract-21st-century,"Art, Abstract -- 21st century",y,art-abstract,,,,
 http://id.loc.gov/authorities/subjects/sh85007537,"Art, American",y,art-american,topical-arts,"Art, American",,
 http://id.worldcat.org/fast/815895.,"Art, American",y,art-american,,,,
 http://id.loc.gov/authorities/subjects/sh85007537.,"Art, American",y,art-american,,,,
 unspecified|art-american,"Art, American",y,art-american,,,,
-http://id.loc.gov/authorities/subjects/sh2007101378.,"Art, American -- 20th century -- Catalogs",y,art-american,,"",,
-http://id.loc.gov/authorities/subjects/sh2007101376,"Art, American -- 20th century -- Exhibitions",y,art-american,,"",,
-lcsh|art-american-21st-century,"Art, American -- 21st century",y,art-american,,"",,
-lcsh|art-american-21st-century-exhibitions,"Art, American -- 21st century -- Exhibitions",y,art-american,,"",,
-lcsh|art-american-california-southern-20th-century-periodicals,"Art, American -- California, Southern -- 20th century -- Periodicals",y,art-american,,"",,
+http://id.loc.gov/authorities/subjects/sh2007101378.,"Art, American -- 20th century -- Catalogs",y,art-american,,,,
+http://id.loc.gov/authorities/subjects/sh2007101376,"Art, American -- 20th century -- Exhibitions",y,art-american,,,,
+lcsh|art-american-21st-century,"Art, American -- 21st century",y,art-american,,,,
+lcsh|art-american-21st-century-exhibitions,"Art, American -- 21st century -- Exhibitions",y,art-american,,,,
+lcsh|art-american-california-southern-20th-century-periodicals,"Art, American -- California, Southern -- 20th century -- Periodicals",y,art-american,,,,
 http://id.loc.gov/authorities/subjects/sh2007101386,"Art, American -- Exhibitions",y,art-american,,,,
-lcsh|art-american-rhode-island,"Art, American -- Rhode Island",y,art-american,,"",,
-lcsh|art-american-united-states-21st-century-exhibitions,"Art, American -- United States -- 21st century -- Exhibitions",y,art-american,,"",,
+lcsh|art-american-rhode-island,"Art, American -- Rhode Island",y,art-american,,,,
+lcsh|art-american-united-states-21st-century-exhibitions,"Art, American -- United States -- 21st century -- Exhibitions",y,art-american,,,,
 http://id.loc.gov/authorities/subjects/sh85007545,"Art, Argentine",y,art-argentine,topical-arts,"Art, Argentine",,
 http://id.worldcat.org/fast/815969.,"Art, Australian",y,art-australian,topical-arts,"Art, Australian",,
-lcsh|art-australian-21st-century-exhibitions,"Art, Australian -- 21st century -- Exhibitions",y,art-australian,,"",,
+lcsh|art-australian-21st-century-exhibitions,"Art, Australian -- 21st century -- Exhibitions",y,art-australian,,,,
 http://id.loc.gov/authorities/subjects/sh85007558,"Art, Austrian",y,art-austrian,topical-arts,"Art, Austrian",,
 http://id.loc.gov/authorities/subjects/sh85007579,"Art, Brazilian",y,art-brazilian,topical-arts,"Art, Brazilian",,
 http://id.loc.gov/authorities/subjects/sh85007581,"Art, British",y,art-british,topical-arts,"Art, British",,
 http://id.worldcat.org/fast/816044.,"Art, British",y,art-british,,,,
-http://id.loc.gov/authorities/subjects/sh2007101408.,"Art, British -- 20th century -- Exhibitions",y,art-british,,"",,
-(OCoLC)fst00816079,"Art, Canadian",y,art-canadian,,"",,
+http://id.loc.gov/authorities/subjects/sh2007101408.,"Art, British -- 20th century -- Exhibitions",y,art-british,,,,
+(OCoLC)fst00816079,"Art, Canadian",y,art-canadian,,,,
 lcsh|art-canadian,"Art, Canadian",y,art-canadian,,,,
-lcsh|art-canadian-alberta-periodicals,"Art, Canadian -- Alberta -- Periodicals",y,art-canadian,,"",,
+lcsh|art-canadian-alberta-periodicals,"Art, Canadian -- Alberta -- Periodicals",y,art-canadian,,,,
 http://id.worldcat.org/fast/816159.,"Art, Cuban",y,art-cuban,topical-arts,"Art, Cuban",,
-http://id.loc.gov/authorities/subjects/sh2004003786.,"Art, Cuban -- 20th century",y,art-cuban,,"",,
+http://id.loc.gov/authorities/subjects/sh2004003786.,"Art, Cuban -- 20th century",y,art-cuban,,,,
 lcsh|art-cuban-exhibitions,"Art, Cuban -- Exhibitions",y,art-cuban,,,,
 lcsh|art-european-20th-century,"Art, European -- 20th century",y,art-european,topical-arts,"Art, European",,
 http://id.loc.gov/authorities/subjects/sh85007659,"Art, Flemish",y,art-flemish,topical-arts,"Art, Flemish",,
 http://id.loc.gov/authorities/subjects/sh85007662,"Art, French",y,art-french,topical-arts,"Art, French",,
 http://id.worldcat.org/fast/816279.,"Art, French",y,art-french,,,,
 lcsh|art-french,"Art, French",y,art-french,,,,
-http://id.loc.gov/authorities/subjects/sh85007811.,"Art, French -- 20th century",y,art-french,,"",,
-lcsh|art-french-paris-20th-century,"Art, French -- Paris -- 20th century",y,art-french,,"",,
+http://id.loc.gov/authorities/subjects/sh85007811.,"Art, French -- 20th century",y,art-french,,,,
+lcsh|art-french-paris-20th-century,"Art, French -- Paris -- 20th century",y,art-french,,,,
 (OCoLC)fst00816307.,"Art, German",y,art-german,topical-arts,"Art, German",,
 http://id.worldcat.org/fast/816307.,"Art, German",y,art-german,,,,
-http://id.loc.gov/authorities/subjects/sh2005001363.,"Art, German -- 21st century",y,art-german,,"",,
-http://id.loc.gov/authorities/subjects/sh2009115640,"Art, German -- 21st century -- Exhibitions",y,art-german,,"",,
+http://id.loc.gov/authorities/subjects/sh2005001363.,"Art, German -- 21st century",y,art-german,,,,
+http://id.loc.gov/authorities/subjects/sh2009115640,"Art, German -- 21st century -- Exhibitions",y,art-german,,,,
 http://id.worldcat.org/fast/816391.,"Art, Indic",y,art-indic,topical-arts,"Art, Indic",,
-lcsh|art-indic-21st-century,"Art, Indic -- 21st century",y,art-indic,,"",,
+lcsh|art-indic-21st-century,"Art, Indic -- 21st century",y,art-indic,,,,
 lcsh|art-indic-india,"Art, Indic -- India",y,art-indic,,,,
 http://id.loc.gov/authorities/subjects/sh85007718,"Art, Italian",y,art-italian,topical-arts,"Art, Italian",,
 http://id.loc.gov/authorities/subjects/sh85007718.,"Art, Italian",y,art-italian,,,,
@@ -559,32 +559,32 @@ http://id.worldcat.org/fast/816615.,"Art, Modern",y,,,,,
 (OCoLC)fst00816615,"Art, Modern",y,,,,,
 lcsh|art-modern,"Art, Modern",y,,,,,
 unspecified|art-modern,"Art, Modern",y,,,,,
-lcsh|art-modern-20th-century,"Art, Modern -- 20th century",y,art-modern,,"",,
-http://id.loc.gov/authorities/subjects/sh85007805.,"Art, Modern -- 20th century",y,art-modern,,"",,
-lcsh|art-modern-20th-century-bibliography-catalogs,"Art, Modern -- 20th century -- Bibliography -- Catalogs",y,art-modern,,"",,
-lcsh|art-modern-20th-century-canada,"Art, Modern -- 20th century -- Canada",y,art-modern,,"",,
-lcsh|art-modern-20th-century-catalogs,"Art, Modern -- 20th century -- Catalogs",y,art-modern,,"",,
-lcsh|art-modern-20th-century-denmark,"Art, Modern -- 20th century -- Denmark",y,art-modern,,"",,
-lcsh|art-modern-20th-century-exhibitions,"Art, Modern -- 20th century -- Exhibitions",y,art-modern,,"",,
-http://id.loc.gov/authorities/subjects/sh2007101136,"Art, Modern -- 20th century -- Exhibitions",y,art-modern,,"",,
-http://id.loc.gov/authorities/subjects/sh2007101136.,"Art, Modern -- 20th century -- Exhibitions",y,art-modern,,"",,
-lcsh|art-modern-20th-century-periodicals,"Art, Modern -- 20th century -- Periodicals",y,art-modern,,"",,
-http://id.loc.gov/authorities/subjects/sh2007101461,"Art, Modern -- 20th century -- Periodicals",y,art-modern,,"",,
-http://id.loc.gov/authorities/subjects/sh2007101461.,"Art, Modern -- 20th century -- Periodicals",y,art-modern,,"",,
-http://id.loc.gov/authorities/subjects/sh2002000548.,"Art, Modern -- 21st century",y,art-modern,,"",,
-http://id.loc.gov/authorities/subjects/sh2009115813.,"Art, Modern -- 21st century -- Catalogs",y,art-modern,,"",,
-lcsh|art-modern-21st-century-economic-aspects,"Art, Modern -- 21st century -- Economic aspects",y,art-modern,,"",,
-http://id.loc.gov/authorities/subjects/sh2007101370.,"Art, Modern -- 21st century -- Exhibitions",y,art-modern,,"",,
-http://id.loc.gov/authorities/subjects/sh2009115876.,"Art, Modern -- 21st century -- Periodicals",y,art-modern,,"",,
-lcsh|art-modern-21st-century-themes-motives,"Art, Modern -- 21st century -- Themes, motives",y,art-modern,,"",,
-lcsh|art-modern-21st-century-united-states,"Art, Modern -- 21st century -- United States",y,art-modern,,"",,
-lcsh|art-modern-canada-20th-century,"Art, Modern -- Canada -- 20th century",y,art-modern,,"",,
+lcsh|art-modern-20th-century,"Art, Modern -- 20th century",y,art-modern,,,,
+http://id.loc.gov/authorities/subjects/sh85007805.,"Art, Modern -- 20th century",y,art-modern,,,,
+lcsh|art-modern-20th-century-bibliography-catalogs,"Art, Modern -- 20th century -- Bibliography -- Catalogs",y,art-modern,,,,
+lcsh|art-modern-20th-century-canada,"Art, Modern -- 20th century -- Canada",y,art-modern,,,,
+lcsh|art-modern-20th-century-catalogs,"Art, Modern -- 20th century -- Catalogs",y,art-modern,,,,
+lcsh|art-modern-20th-century-denmark,"Art, Modern -- 20th century -- Denmark",y,art-modern,,,,
+lcsh|art-modern-20th-century-exhibitions,"Art, Modern -- 20th century -- Exhibitions",y,art-modern,,,,
+http://id.loc.gov/authorities/subjects/sh2007101136,"Art, Modern -- 20th century -- Exhibitions",y,art-modern,,,,
+http://id.loc.gov/authorities/subjects/sh2007101136.,"Art, Modern -- 20th century -- Exhibitions",y,art-modern,,,,
+lcsh|art-modern-20th-century-periodicals,"Art, Modern -- 20th century -- Periodicals",y,art-modern,,,,
+http://id.loc.gov/authorities/subjects/sh2007101461,"Art, Modern -- 20th century -- Periodicals",y,art-modern,,,,
+http://id.loc.gov/authorities/subjects/sh2007101461.,"Art, Modern -- 20th century -- Periodicals",y,art-modern,,,,
+http://id.loc.gov/authorities/subjects/sh2002000548.,"Art, Modern -- 21st century",y,art-modern,,,,
+http://id.loc.gov/authorities/subjects/sh2009115813.,"Art, Modern -- 21st century -- Catalogs",y,art-modern,,,,
+lcsh|art-modern-21st-century-economic-aspects,"Art, Modern -- 21st century -- Economic aspects",y,art-modern,,,,
+http://id.loc.gov/authorities/subjects/sh2007101370.,"Art, Modern -- 21st century -- Exhibitions",y,art-modern,,,,
+http://id.loc.gov/authorities/subjects/sh2009115876.,"Art, Modern -- 21st century -- Periodicals",y,art-modern,,,,
+lcsh|art-modern-21st-century-themes-motives,"Art, Modern -- 21st century -- Themes, motives",y,art-modern,,,,
+lcsh|art-modern-21st-century-united-states,"Art, Modern -- 21st century -- United States",y,art-modern,,,,
+lcsh|art-modern-canada-20th-century,"Art, Modern -- Canada -- 20th century",y,art-modern,,,,
 lcsh|art-modern-exhibitions,"Art, Modern -- Exhibitions",y,art-modern,,,,
-http://id.worldcat.org/fast/816650.,"Art, Modern -- Philosophy",y,art-modern,,"",,
-lcsh|art-modern-philosophy,"Art, Modern -- Philosophy",y,art-modern,,"",,
+http://id.worldcat.org/fast/816650.,"Art, Modern -- Philosophy",y,art-modern,,,,
+lcsh|art-modern-philosophy,"Art, Modern -- Philosophy",y,art-modern,,,,
 http://id.worldcat.org/fast/816651.,"Art, Modern -- Political aspects",y,art-modern,,,,
 lcsh|art-modern-political-aspects,"Art, Modern -- Political aspects",y,art-modern,,,,
-lcsh|art-modern-21st-century,"Art, Modern--21st century | Art, Modern -- 21st century",y,art-modern,,"",,
+lcsh|art-modern-21st-century,"Art, Modern--21st century | Art, Modern -- 21st century",y,art-modern,,,,
 http://id.loc.gov/authorities/subjects/sh2001010404.,"Art, Papua New Guinean",y,art-papua-new-guinean,topical-arts,"Art, Papua New Guinean",,
 http://id.worldcat.org/fast/1429797.,"Art, Papua New Guinean",y,art-papua-new-guinean,,,,
 http://id.loc.gov/authorities/subjects/sh2007101434,"Art, Russian -- 20th century -- Exhibitions",y,art-russian,topical-arts,"Art, Russian",,
@@ -827,7 +827,7 @@ lcsh|artists-books-united-states-exhibitions,Artists' books -- United States -- 
 http://id.loc.gov/authorities/subjects/sh2009115980.,Artists' books -- United States -- Exhibitions,n,,,,,
 lcsh|artists-books-united-states-new-york,Artists' books -- United States -- New York,n,,,,,
 lcsh|artists-books-united-states-specimens,Artists' books -- United States -- Specimens,n,,,,,
-lcsh|artists-books-united-states-themes-motives,"Artists' books -- United States -- Themes, motives",y,artists-books-themes,,"",,
+lcsh|artists-books-united-states-themes-motives,"Artists' books -- United States -- Themes, motives",y,artists-books-themes,,,,
 lcsh|artists-books-vermont-newark,Artists' books -- Vermont -- Newark,n,,,,,
 lcsh|artists-books-virginia,Artists' books -- Virginia,n,,,,,
 lcsh|artists-books-virginia-charlottesville,Artists' books -- Virginia -- Charlottesville,n,,,,,
@@ -869,7 +869,7 @@ lcsh|artitsts-books-united-states,Artitsts' books -- United States,n,,,,,
 http://id.worldcat.org/fast/817721.,Arts,y,the-arts,,,,
 http://id.loc.gov/authorities/subjects/sh85008324.,Arts,y,the-arts,,,,
 lcsh|arts-california-los-angeles-21st-century,Arts -- California -- Los Angeles -- 21st century,n,,,,,
-lcsh|arts-canada-western-periodicals,"Arts -- Canada, Western -- Periodicals",n,,,"",,
+lcsh|arts-canada-western-periodicals,"Arts -- Canada, Western -- Periodicals",n,,,,,
 http://id.worldcat.org/fast/817731.,Arts -- Censorship,y,art-censorship,,,,
 lcsh|arts-censorship,Arts -- Censorship,y,art-censorship,,,,
 lcsh|arts-censorship-united-states-exhibitions,Arts -- Censorship -- United States -- Exhibitions,y,art-censorship,,,,
@@ -881,19 +881,19 @@ lcsh|arts-united-states-directories,Arts -- United States -- Directories,y,the-a
 lcsh|arts-united-states-marketing,Arts -- United States -- Marketing,y,art-economic,,,,
 unspecified|arts-graphiques,Arts graphiques,y,arts-graphic,topical-arts,"Art, Graphic",,
 unspecified|arts-graphiques-aspect-social,Arts graphiques - Aspect social,y,arts-graphic,topical,,,
-http://id.worldcat.org/fast/817891.,"Arts, American",y,art-american,,"",,
-http://id.loc.gov/authorities/subjects/sh85008337.,"Arts, American",y,art-american,,"",,
-http://id.loc.gov/authorities/subjects/sh85008423.,"Arts, American -- 20th century",y,art-american,,"",,
-lcsh|arts-american-california-san-francisco-bay-area-20th-century-catalogs,"Arts, American -- California -- San Francisco Bay Area -- 20th century -- Catalogs",y,art-american,,"",,
-lcsh|arts-american-georgia-atlanta-20th-century-periodicals,"Arts, American -- Georgia -- Atlanta -- 20th century -- Periodicals",y,art-american,,"",,
-http://id.loc.gov/authorities/subjects/sh89006640.,"Arts, Argentine",y,art-argentine,,"",,
-http://id.worldcat.org/fast/817903.,"Arts, Argentine",y,art-argentine,,"",,
-lcsh|arts-canadian-20th-century,"Arts, Canadian -- 20th century",y,art-canadian,,"",,
-http://id.loc.gov/authorities/subjects/sh85008409.,"Arts, Latin American",y,art-latin-american,,"",,
-http://id.worldcat.org/fast/818112.,"Arts, Latin American",y,art-latin-american,,"",,
-http://id.worldcat.org/fast/818137.,"Arts, Modern",y,art-modern,,"",,
-http://id.loc.gov/authorities/subjects/sh85008419.,"Arts, Modern -- 20th century",y,art-modern,,"",,
-http://id.loc.gov/authorities/subjects/sh2007101521,"Arts, Modern -- 20th century -- Periodicals",y,art-modern,,"",,
+http://id.worldcat.org/fast/817891.,"Arts, American",y,art-american,,,,
+http://id.loc.gov/authorities/subjects/sh85008337.,"Arts, American",y,art-american,,,,
+http://id.loc.gov/authorities/subjects/sh85008423.,"Arts, American -- 20th century",y,art-american,,,,
+lcsh|arts-american-california-san-francisco-bay-area-20th-century-catalogs,"Arts, American -- California -- San Francisco Bay Area -- 20th century -- Catalogs",y,art-american,,,,
+lcsh|arts-american-georgia-atlanta-20th-century-periodicals,"Arts, American -- Georgia -- Atlanta -- 20th century -- Periodicals",y,art-american,,,,
+http://id.loc.gov/authorities/subjects/sh89006640.,"Arts, Argentine",y,art-argentine,,,,
+http://id.worldcat.org/fast/817903.,"Arts, Argentine",y,art-argentine,,,,
+lcsh|arts-canadian-20th-century,"Arts, Canadian -- 20th century",y,art-canadian,,,,
+http://id.loc.gov/authorities/subjects/sh85008409.,"Arts, Latin American",y,art-latin-american,,,,
+http://id.worldcat.org/fast/818112.,"Arts, Latin American",y,art-latin-american,,,,
+http://id.worldcat.org/fast/818137.,"Arts, Modern",y,art-modern,,,,
+http://id.loc.gov/authorities/subjects/sh85008419.,"Arts, Modern -- 20th century",y,art-modern,,,,
+http://id.loc.gov/authorities/subjects/sh2007101521,"Arts, Modern -- 20th century -- Periodicals",y,art-modern,,,,
 lcsh|arts-swiss-20th-century,"Arts, Swiss -- 20th century",y,art-swiss,topical-arts,"Art, Swiss",,
 lcsh|asemantic-poetry,Asemantic poetry,n,,,,,construction
 local|asemic-writing,Asemic writing,n,,,,,construction
@@ -925,7 +925,7 @@ unspecified|author-s-presentation-copies-provenance,Author's presentation copies
 http://id.worldcat.org/fast/821688.,Authors,y,authors,topical-people,Authors,,
 http://id.loc.gov/authorities/subjects/sh2009116332.,Authors -- Quotations,y,authors,,,,
 (OCoLC)fst00821764,"Authors, American",y,authors-american,topical-people,"Authors, American",,
-lcsh|authors-american-kentucky,"Authors, American -- Kentucky",y,authors-american,,"",,
+lcsh|authors-american-kentucky,"Authors, American -- Kentucky",y,authors-american,,,,
 http://id.loc.gov/authorities/subjects/sh85010030.,Authorship,y,authorship,topical-concept,Authorship,,
 http://id.worldcat.org/fast/822442.,Authorship,y,authorship,,,,
 lcsh|authorship,Authorship,y,authorship,,,,
@@ -980,10 +980,10 @@ http://id.worldcat.org/fast/826018.,Ballet -- Costume,y,ballet,,,,
 lcsh|ballet-costume-exhibitions,Ballet -- Costume -- Exhibitions,y,ballet,,,,
 http://id.worldcat.org/fast/826030.,Ballet -- Stage-setting and scenery,y,ballet,,,,
 lcsh|ballet-stage-setting-and-scenery-exhibitions,Ballet -- Stage-setting and scenery -- Exhibitions,y,ballet,,,,
-none|bamako-mali-pictorial-works,Bamako (Mali) -- Pictorial works,y,bamako-ml,geographic-city,"Bamako (Mali) ",,
-none|bangkok-thailand-description-and-travel,Bangkok (Thailand) -- Description and travel,y,bangkok-th,geographic-city,"Bangkok (Thailand) ",,
+none|bamako-mali-pictorial-works,Bamako (Mali) -- Pictorial works,y,bamako-ml,geographic-city,Bamako (Mali) ,,
+none|bangkok-thailand-description-and-travel,Bangkok (Thailand) -- Description and travel,y,bangkok-th,geographic-city,Bangkok (Thailand) ,,
 none|bangkok-thailand-social-life-and-customs-comic-books-strips-etc,"Bangkok (Thailand) -- Social life and customs -- Comic books, strips, etc",y,bangkok-thailand-social-life-and-customs-comic-books-strips-etc,geographic,"Bangkok (Thailand) -- Social life and customs -- Comic books, strips, etc",,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh96011397,Baseball in art,y,baseball,topical-sport,Baseball,,
+http://id.loc.gov/authorities/subjects/sh96011397,Baseball in art,y,baseball,topical-gamec,Baseball,,
 unspecified|bathrooms,Bathrooms,y,bathrooms,topical-place,Bathrooms,,
 lcsh|bathrooms-pictorial-works,Bathrooms -- Pictorial works,y,bathrooms,,,,
 lcsh|battles-in-art,Battles in art,y,battles,topical-event,Battles,,
@@ -991,7 +991,7 @@ fast|beaches,Beaches,y,beaches,topical-place,Beaches,,
 lcsh|beaches-pictorial-works,Beaches -- Pictorial works,y,beaches,,,,
 lcsh|beaches-in-art,Beaches in art,y,beaches,,,,
 http://id.worldcat.org/fast/829163.,Beadwork,n,,,,,construction
-lcsh|beadwork-handbooks-manuals-etc,"Beadwork -- Handbooks, manuals, etc",y,beadwork,topical-arts,"Beadwork",,
+lcsh|beadwork-handbooks-manuals-etc,"Beadwork -- Handbooks, manuals, etc",y,beadwork,topical-arts,Beadwork,,
 http://id.loc.gov/authorities/subjects/sh93009395.,Beadwork -- United States,y,beadwork,,,,
 lcsh|beans-miscellanea,Beans -- Miscellanea,y,beans,topical-plant,Beans,,
 http://id.loc.gov/authorities/subjects/sh2007001582,Beans in art,y,beans,,,,
@@ -1017,7 +1017,7 @@ http://id.worldcat.org/fast/1208177.,Belgium -- Charleroi,y,charleroi-be,geograp
 http://id.loc.gov/authorities/subjects/sh2008114395.,Belgium -- Maps,y,belgium,geographic-country,,,
 http://id.worldcat.org/fast/1876858.,Belgium -- Neuville-en-Condroz,y,neuville-be,geographic-inhabited-place,Neuville-en-Condroz (Belgium),,
 lcsh|belle-isle-prison-biography,Belle Isle (Prison) -- Biography,y,belle-isle-prison-biography,geographic,Belle Isle (Prison) -- Biography,,auto-seeded draft; review
-lcsh|belly-button-pictorial-works,Belly button -- Pictorial works,n,,,,,
+lcsh|belly-button-pictorial-works,Belly button -- Pictorial works,y,belly-button,topical-anatomy,Belly button,,
 lcsh|belly-dance,Belly dance,y,belly-dance,topical-arts,Belly dance,,
 none|belsunce-marseille-france-buildings-structures-etc-pictorial-works,"Belsunce (Marseille, France) -- Buildings, structures, etc -- Pictorial works",y,belsunce-marseille-france-buildings-structures-etc-pictorial-works,geographic,"Belsunce (Marseille, France) -- Buildings, structures, etc -- Pictorial works",,auto-seeded draft; review
 none|bengal-india-in-art,Bengal (India) -- In art,y,bengal-in,geographic-region,Bengal (India),,
@@ -1056,201 +1056,201 @@ http://id.worldcat.org/fast/832970.,Birds,y,birds,topical-animals,Birds,,
 lcsh|birds-argentina,Birds -- Argentina,y,birds,,,,
 lcsh|birds-behavior-pictorial-works,Birds -- Behavior -- Pictorial works,y,birds,,,,
 lcsh|birds-climatic-factors,Birds -- Climatic factors,y,birds,,,,
-http://id.worldcat.org/fast/833036.,Birds -- Models,y,birds-models,topical,Birds -- Models,,auto-seeded draft; review
-lcsh|birds-models-pictorial-works,Birds -- Models -- Pictorial works,y,birds-models-pictorial-works,topical,Birds -- Models -- Pictorial works,,auto-seeded draft; review
-lcsh|birds-north-america,Birds -- North America,y,birds-north-america,topical,Birds -- North America,,auto-seeded draft; review
-lcsh|birds-pictorial-works,Birds -- Pictorial works,y,birds-pictorial-works,topical,Birds -- Pictorial works,,auto-seeded draft; review
-lcsh|birds-in-art,Birds in art,y,birds-in-art,topical,Birds in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85014342.,Birds in art,y,birds-in-art,topical,Birds in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/833087.,Birds in art,y,birds-in-art,topical,Birds in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85014342,Birds in art,y,birds-in-art,topical,Birds in art,,auto-seeded draft; review
-lcsh|birthdays,Birthdays,y,birthdays,topical,Birthdays,,auto-seeded draft; review
-lcsh|birthdays-fiction,Birthdays -- Fiction,y,birthdays-fiction,topical,Birthdays -- Fiction,,auto-seeded draft; review
-lcsh|birthdays-in-art,Birthdays in art,y,birthdays-in-art,topical,Birthdays in art,,auto-seeded draft; review
-lcsh|black-holes-astronomy-juvenile-literature,Black holes (Astronomy) -- Juvenile literature,y,black-holes-astronomy-juvenile-literature,topical,Black holes (Astronomy) -- Juvenile literature,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2004003291,Black humor in art,y,black-humor-in-art,topical,Black humor in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85014578.,Black in art,y,black-in-art,topical,Black in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/833715.,Black in art,y,black-in-art,topical,Black in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/1940193.,Black lives matter movement,y,black-lives-matter-movement,topical,Black lives matter movement,,auto-seeded draft; review
-https://homosaurus.org/v4/homoit0002398.,Black Lives Matter movement,y,black-lives-matter-movement,topical,Black lives matter movement,,auto-seeded draft; review
-lcsh|black-lives-matter-movement-pictorial-works,Black lives matter movement -- Pictorial works,y,black-lives-matter-movement-pictorial-works,topical,Black lives matter movement -- Pictorial works,,auto-seeded draft; review
-lcsh|black-people-west-indies-british-biography,"Black people -- West Indies, British -- Biography",y,black-people-west-indies-british-biography,topical,"Black people -- West Indies, British -- Biography",,auto-seeded draft; review
-lcsh|black-people-west-indies-british-portraits,"Black people -- West Indies, British -- Portraits",y,black-people-west-indies-british-portraits,topical,"Black people -- West Indies, British -- Portraits",,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85014706.,Black people in art,y,black-people-in-art,topical,Black people in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/834024.,Black people in art,y,black-people-in-art,topical,Black people in art,,auto-seeded draft; review
-lcsh|black-people-in-art,Black people in art,y,black-people-in-art,topical,Black people in art,,auto-seeded draft; review
-lcsh|black-people-in-art-catalogs,Black people in art -- Catalogs,y,black-people-in-art-catalogs,topical,Black people in art -- Catalogs,,auto-seeded draft; review
-unspecified|blank-books,Blank-books,n,,,,,
-lcsh|blank-books-specimens,Blank-books -- Specimens,n,,,,,
-http://id.worldcat.org/fast/834291.,Blind,y,blind,topical,Blind,,auto-seeded draft; review
-lcsh|blind,Blind,y,blind,topical,Blind,,auto-seeded draft; review
-lcsh|blind-czech-republic-fiction,Blind -- Czech Republic -- Fiction,y,blind-czech-republic-fiction,topical,Blind -- Czech Republic -- Fiction,,auto-seeded draft; review
-lcsh|blind-czech-republic-pictorial-works,Blind -- Czech Republic -- Pictorial works,y,blind-czech-republic-pictorial-works,topical,Blind -- Czech Republic -- Pictorial works,,auto-seeded draft; review
-lcsh|blind-portraits,Blind -- Portraits,y,blind-portraits,topical,Blind -- Portraits,,auto-seeded draft; review
-lcsh|blind-in-art,Blind in art,y,blind-in-art,topical,Blind in art,,auto-seeded draft; review
-lcsh|blindness,Blindness,y,blindness,topical,Blindness,,auto-seeded draft; review
+http://id.worldcat.org/fast/833036.,Birds -- Models,y,birds,,,,
+lcsh|birds-models-pictorial-works,Birds -- Models -- Pictorial works,y,birds,,,,
+lcsh|birds-north-america,Birds -- North America,y,birds,,,,
+lcsh|birds-pictorial-works,Birds -- Pictorial works,y,birds,,,,
+lcsh|birds-in-art,Birds in art,y,birds,,,,
+http://id.loc.gov/authorities/subjects/sh85014342.,Birds in art,y,birds,,,,
+http://id.worldcat.org/fast/833087.,Birds in art,y,birds,,,,
+http://id.loc.gov/authorities/subjects/sh85014342,Birds in art,y,birds,,,,
+lcsh|birthdays,Birthdays,y,birthdays,chronological-event,Birthdays,,
+lcsh|birthdays-fiction,Birthdays -- Fiction,y,birthdays,,,,
+lcsh|birthdays-in-art,Birthdays in art,y,birthdays,,,,
+lcsh|black-holes-astronomy-juvenile-literature,Black holes (Astronomy) -- Juvenile literature,y,Black-holes-astronomy,topical-phenomena,"Astronomy, Black holes",,
+http://id.loc.gov/authorities/subjects/sh2004003291,Black humor in art,y,Black-humor,topical-concept,Black humor,,
+http://id.loc.gov/authorities/subjects/sh85014578.,Black in art,y,Black-color,topical-concept,"Color, Black",,
+http://id.worldcat.org/fast/833715.,Black in art,y,Black-color,,,,
+http://id.worldcat.org/fast/1940193.,Black lives matter movement,y,black-lives-matter-movement,topical-organization,Black lives matter movement,,
+https://homosaurus.org/v4/homoit0002398.,Black Lives Matter movement,y,black-lives-matter-movement,,,,
+lcsh|black-lives-matter-movement-pictorial-works,Black lives matter movement -- Pictorial works,y,black-lives-matter-movement,,,,
+lcsh|black-people-west-indies-british-biography,"Black people -- West Indies, British -- Biography",y,Black-people,topical-people,Black people ,,
+lcsh|black-people-west-indies-british-portraits,"Black people -- West Indies, British -- Portraits",y,Black-people,,,,
+http://id.loc.gov/authorities/subjects/sh85014706.,Black people in art,y,Black-people,,,,
+http://id.worldcat.org/fast/834024.,Black people in art,y,Black-people,,,,
+lcsh|black-people-in-art,Black people in art,y,Black-people,,,,
+lcsh|black-people-in-art-catalogs,Black people in art -- Catalogs,y,Black-people,,,,
+unspecified|blank-books,Blank-books,n,,,,,construction
+lcsh|blank-books-specimens,Blank-books -- Specimens,n,,,,,construction
+http://id.worldcat.org/fast/834291.,Blind,y,blind,topical-people,Blind people,,
+lcsh|blind,Blind,y,blind,,,,
+lcsh|blind-czech-republic-fiction,Blind -- Czech Republic -- Fiction,y,blind,,,,
+lcsh|blind-czech-republic-pictorial-works,Blind -- Czech Republic -- Pictorial works,y,blind,,,,
+lcsh|blind-portraits,Blind -- Portraits,y,blind,,,,
+lcsh|blind-in-art,Blind in art,y,blind,,,,
+lcsh|blindness,Blindness,y,blindness,topical-condition,Blindness,,
 lcsh|blocks-toys-specimens,Blocks (Toys) -- Specimens,n,,,,,construction
-http://id.loc.gov/authorities/subjects/sh85015069,Blue in art,y,blue-in-art,topical,Blue in art,,auto-seeded draft; review
-lcsh|blushing-in-art,Blushing in art,y,blushing-in-art,topical,Blushing in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh96011700.,Boats and boating in art,y,boats-and-boating-in-art,topical,Boats and boating in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/835230.,Boats and boating in art,y,boats-and-boating-in-art,topical,Boats and boating in art,,auto-seeded draft; review
-(OCoLC)fst00835316,Body art,y,body-art,topical,Body art,,auto-seeded draft; review
-lcsh|body-art,Body art,y,body-art,topical,Body art,,auto-seeded draft; review
-lcsh|body-image-in-art,Body image in art,y,body-image-in-art,topical,Body image in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2002000168.,Body image in art,y,body-image-in-art,topical,Body image in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/835355.,Body image in art,y,body-image-in-art,topical,Body image in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85092369.,Body language,y,body-language,topical,Body language,,auto-seeded draft; review
-http://id.worldcat.org/fast/835365.,Body language,y,body-language,topical,Body language,,auto-seeded draft; review
-lcsh|body-human-in-literature,"Body, Human, in literature",y,body-human-in-literature,topical,"Body, Human, in literature",,auto-seeded draft; review
+http://id.loc.gov/authorities/subjects/sh85015069,Blue in art,y,Blue-color,topical-concept,"Color, Blue",,
+lcsh|blushing-in-art,Blushing in art,y,blushing,topical-phenomena,Blushing,,
+http://id.loc.gov/authorities/subjects/sh96011700.,Boats and boating in art,y,boats,topical-objects,Boats,,
+http://id.worldcat.org/fast/835230.,Boats and boating in art,y,boats,,,,
+(OCoLC)fst00835316,Body art,y,body-art,topical-arts,Body art,,
+lcsh|body-art,Body art,y,body-art,,,,
+lcsh|body-image-in-art,Body image in art,y,body-image,topical-concept,Body image,,
+http://id.loc.gov/authorities/subjects/sh2002000168.,Body image in art,y,body-image,,,,
+http://id.worldcat.org/fast/835355.,Body image in art,y,body-image,,,,
+http://id.loc.gov/authorities/subjects/sh85092369.,Body language,y,body-language,topical-concept,Body language,,
+http://id.worldcat.org/fast/835365.,Body language,y,body-language,,,,
+lcsh|body-human-in-literature,"Body, Human, in literature",y,body-human,topical-people,"Body, Human",,
 none|bogot-colombia-pictorial-works,Bogotá (Colombia) -- Pictorial works,y,bogota-co,geographic-city,Bogotá (Colombia),,
 http://id.worldcat.org/fast/1205549.,Bolivia,y,bolivia,geographic-country,Bolivia,,
-lcsh|bombing-and-gunnery-ranges-wales-epynt-mountain,Bombing and gunnery ranges -- Wales -- Epynt Mountain,y,bombing-and-gunnery-ranges-wales-epynt-mountain,topical,Bombing and gunnery ranges -- Wales -- Epynt Mountain,,auto-seeded draft; review
-http://id.worldcat.org/fast/835818.,Bombings,y,bombings,topical,Bombings,,auto-seeded draft; review
-lcsh|bombings-iraq-baghdad,Bombings -- Iraq -- Baghdad,y,bombings-iraq-baghdad,topical,Bombings -- Iraq -- Baghdad,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85015477.,Bombs,y,bombs,topical,Bombs,,auto-seeded draft; review
-http://id.worldcat.org/fast/835825.,Bombs,y,bombs,topical,Bombs,,auto-seeded draft; review
-http://id.worldcat.org/fast/836125.,Book burning,y,book-burning,topical,Book burning,,auto-seeded draft; review
-lcsh|book-burning,Book burning,y,book-burning,topical,Book burning,,auto-seeded draft; review
-lcsh|book-burning-history,Book burning -- History,y,book-burning-history,topical,Book burning -- History,,auto-seeded draft; review
-lcsh|book-burning-latin-america,Book burning -- Latin America,y,book-burning-latin-america,topical,Book burning -- Latin America,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85015610.,Book collecting,y,book-collecting,topical,Book collecting,,auto-seeded draft; review
-http://id.worldcat.org/fast/836132.,Book collecting,y,book-collecting,topical,Book collecting,,auto-seeded draft; review
-http://id.worldcat.org/fast/836147.,Book covers,y,book-covers,topical,Book covers,,auto-seeded draft; review
+lcsh|bombing-and-gunnery-ranges-wales-epynt-mountain,Bombing and gunnery ranges -- Wales -- Epynt Mountain,n,,,,,
+http://id.worldcat.org/fast/835818.,Bombings,y,bombings,topical-event,Bombings,,
+lcsh|bombings-iraq-baghdad,Bombings -- Iraq -- Baghdad,y,bombings,,,,
+http://id.loc.gov/authorities/subjects/sh85015477.,Bombs,y,bombs,topical-objects,Bombs,,
+http://id.worldcat.org/fast/835825.,Bombs,y,bombs,,,,
+http://id.worldcat.org/fast/836125.,Book burning,y,book-burning,topical-object,"Book, Burning",,
+lcsh|book-burning,Book burning,y,book-burning,,,,
+lcsh|book-burning-history,Book burning -- History,y,book-burning,,,,
+lcsh|book-burning-latin-america,Book burning -- Latin America,y,book-burning,,,,
+http://id.loc.gov/authorities/subjects/sh85015610.,Book collecting,y,book-collecting,topical-object,"Book, Collecting",,
+http://id.worldcat.org/fast/836132.,Book collecting,y,book-collecting,,,,
+http://id.worldcat.org/fast/836147.,Book covers,n,,,,,construction
 lcsh|book-covers-exhibitions,Book covers -- Exhibitions,n,,,,,
-http://id.loc.gov/authorities/subjects/sh85015614.,Book design,y,book-design,topical,Book design,,auto-seeded draft; review
-http://id.worldcat.org/fast/836152.,Book design,y,book-design,topical,Book design,,auto-seeded draft; review
-lcsh|book-design,Book design,y,book-design,topical,Book design,,auto-seeded draft; review
-lcsh|book-design-exhibitions,Book design -- Exhibitions,y,book-design-exhibitions,topical,Book design -- Exhibitions,,auto-seeded draft; review
-lcsh|book-design-handbooks-manuals-etc,"Book design -- Handbooks, manuals, etc",y,book-design-handbooks-manuals-etc,topical,"Book design -- Handbooks, manuals, etc",,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85015630.,Book jackets,y,book-jackets,topical,Book jackets,,auto-seeded draft; review
-http://id.worldcat.org/fast/836218.,Book jackets,y,book-jackets,topical,Book jackets,,auto-seeded draft; review
-http://id.worldcat.org/fast/836265.,Bookbinding,y,bookbinding,topical,Bookbinding,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2007102086.,"Bookbinding -- Handbooks, manuals, etc",y,bookbinding-handbooks-manuals-etc,topical,"Bookbinding -- Handbooks, manuals, etc",,auto-seeded draft; review
-lcsh|bookbinding-handbooks-manuals-etc,"Bookbinding -- Handbooks, manuals, etc",y,bookbinding-handbooks-manuals-etc,topical,"Bookbinding -- Handbooks, manuals, etc",,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85015720,Bookbinding -- Repairing,y,bookbinding-repairing,topical,Bookbinding -- Repairing,,auto-seeded draft; review
+http://id.loc.gov/authorities/subjects/sh85015614.,Book design,y,book-design,topical-object,"Book, Design",,
+http://id.worldcat.org/fast/836152.,Book design,y,book-design,,,,
+lcsh|book-design,Book design,y,book-design,,,,
+lcsh|book-design-exhibitions,Book design -- Exhibitions,y,book-design,,,,
+lcsh|book-design-handbooks-manuals-etc,"Book design -- Handbooks, manuals, etc",y,book-design,,,,
+http://id.loc.gov/authorities/subjects/sh85015630.,Book jackets,n,,,,,construction
+http://id.worldcat.org/fast/836218.,Book jackets,n,,,,,
+http://id.worldcat.org/fast/836265.,Bookbinding,y,bookbinding,topical-arts,Bookbinding,,
+http://id.loc.gov/authorities/subjects/sh2007102086.,"Bookbinding -- Handbooks, manuals, etc",y,bookbinding,,,,
+lcsh|bookbinding-handbooks-manuals-etc,"Bookbinding -- Handbooks, manuals, etc",y,bookbinding,,,,
+http://id.loc.gov/authorities/subjects/sh85015720,Bookbinding -- Repairing,y,bookbinding,,,,
 lcsh|bookbinding-specimens,Bookbinding -- Specimens,n,,,,,
-http://id.loc.gov/authorities/subjects/sh85015736.,Bookmarks,y,bookmarks,topical,Bookmarks,,auto-seeded draft; review
-http://id.worldcat.org/fast/836338.,Bookmarks,y,bookmarks,topical,Bookmarks,,auto-seeded draft; review
-lcsh|bookplates-competitions,Bookplates -- Competitions,y,bookplates-competitions,topical,Bookplates -- Competitions,,auto-seeded draft; review
-http://id.worldcat.org/fast/836401.,Books,y,books,topical,Books,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85015739,Books -- Conservation and restoration,y,books-conservation-and-restoration,topical,Books -- Conservation and restoration,,auto-seeded draft; review
-lcsh|books-digitization,Books -- Digitization,y,books-digitization,topical,Books -- Digitization,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85015744.,Books -- History,y,books-history,topical,Books -- History,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2009117403,Books -- Marketing,y,books-marketing,topical,Books -- Marketing,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2009117403.,Books -- Marketing,y,books-marketing,topical,Books -- Marketing,,auto-seeded draft; review
-http://id.worldcat.org/fast/836426.,Books -- Marketing,y,books-marketing,topical,Books -- Marketing,,auto-seeded draft; review
-http://id.worldcat.org/fast/836439.,Books -- Private collections,y,books-private-collections,topical,Books -- Private collections,,auto-seeded draft; review
-lcsh|books-private-collections,Books -- Private collections,y,books-private-collections,topical,Books -- Private collections,,auto-seeded draft; review
-lcsh|books-private-collections-in-art,Books -- Private collections -- In art,y,books-private-collections-in-art,topical,Books -- Private collections -- In art,,auto-seeded draft; review
-lcsh|books-quotations-maxims-etc,"Books -- Quotations, maxims, etc",y,books-quotations-maxims-etc,topical,"Books -- Quotations, maxims, etc",,auto-seeded draft; review
-lcsh|books-social-aspects-history,Books -- Social aspects -- History,y,books-social-aspects-history,topical,Books -- Social aspects -- History,,auto-seeded draft; review
-lcsh|books-sociological-aspects,Books -- Sociological aspects,y,books-sociological-aspects,topical,Books -- Sociological aspects,,auto-seeded draft; review
-http://id.worldcat.org/fast/836454.,Books and reading,y,books-and-reading,topical,Books and reading,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85015758.,Books and reading,y,books-and-reading,topical,Books and reading,,auto-seeded draft; review
-lcsh|books-and-reading,Books and reading,y,books-and-reading,topical,Books and reading,,auto-seeded draft; review
-lcsh|books-and-reading-iraq-baghdad,Books and reading -- Iraq -- Baghdad,y,books-and-reading-iraq-baghdad,topical,Books and reading -- Iraq -- Baghdad,,auto-seeded draft; review
-lcsh|books-and-reading-philosophy,Books and reading -- Philosophy,y,books-and-reading-philosophy,topical,Books and reading -- Philosophy,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh96011709.,Books and reading in art,y,books-and-reading-in-art,topical,Books and reading in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/836477.,Books and reading in art,y,books-and-reading-in-art,topical,Books and reading in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/836479.,Books in art,y,books-in-art,topical,Books in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85015760.,Books in art,y,books-in-art,topical,Books in art,,auto-seeded draft; review
-lcsh|books-in-art-exhibitions,Books in art -- Exhibitions,y,books-in-art-exhibitions,topical,Books in art -- Exhibitions,,auto-seeded draft; review
-lcsh|books-in-art-philosophy,Books in art -- Philosophy,y,books-in-art-philosophy,topical,Books in art -- Philosophy,,auto-seeded draft; review
-lcsh|books-of-hours,Books of hours,y,books-of-hours,topical,Books of hours,,auto-seeded draft; review
-http://id.worldcat.org/fast/836492.,Booksellers and bookselling,y,booksellers-and-bookselling,topical,Booksellers and bookselling,,auto-seeded draft; review
-lcsh|booksellers-and-bookselling-alabama,Booksellers and bookselling -- Alabama,y,booksellers-and-bookselling-alabama,topical,Booksellers and bookselling -- Alabama,,auto-seeded draft; review
-lcsh|booksellers-and-bookselling-iraq-baghdad,Booksellers and bookselling -- Iraq -- Baghdad,y,booksellers-and-bookselling-iraq-baghdad,topical,Booksellers and bookselling -- Iraq -- Baghdad,,auto-seeded draft; review
-lcsh|booksellers-catalogs-california-san-francisco,Booksellers' catalogs -- California -- San Francisco,y,booksellers-catalogs-california-san-francisco,topical,Booksellers' catalogs -- California -- San Francisco,,auto-seeded draft; review
-aat|bookworks,bookworks,y,bookworks,topical,bookworks,,auto-seeded draft; review
-(CStmoGRI)aat300178842,bookworks,y,bookworks,topical,bookworks,,auto-seeded draft; review
-lcsh|bookworks-art,Bookworks (Art),y,bookworks-art,topical,Bookworks (Art),,auto-seeded draft; review
-lcsh|bop-music,Bop (Music),y,bop-music,topical,Bop (Music),,auto-seeded draft; review
-http://id.worldcat.org/fast/1715649.,Border crossing,y,border-crossing,topical,Border crossing,,auto-seeded draft; review
-lcsh|border-crossing-mexican-american-border-region-fiction,Border crossing -- Mexican-American Border Region -- Fiction,y,border-crossing-mexican-american-border-region-fiction,topical,Border crossing -- Mexican-American Border Region -- Fiction,,auto-seeded draft; review
-lcsh|border-crossing-mexican-american-border-region-juvenile-fiction,Border crossing -- Mexican-American Border Region -- Juvenile fiction,y,border-crossing-mexican-american-border-region-juvenile-fiction,topical,Border crossing -- Mexican-American Border Region -- Juvenile fiction,,auto-seeded draft; review
-lcsh|botanical-gardens-pictorial-works,Botanical gardens -- Pictorial works,y,botanical-gardens-pictorial-works,topical,Botanical gardens -- Pictorial works,,auto-seeded draft; review
-lcsh|botany-georgia-atlanta-pictorial-works,Botany -- Georgia -- Atlanta -- Pictorial works,y,botany-georgia-atlanta-pictorial-works,topical,Botany -- Georgia -- Atlanta -- Pictorial works,,auto-seeded draft; review
-unspecified|botany-pictorial-works,Botany -- Pictorial works,y,botany-pictorial-works,topical,Botany -- Pictorial works,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh96011714.,Boundaries in art,y,boundaries-in-art,topical,Boundaries in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/837087.,Boundaries in art,y,boundaries-in-art,topical,Boundaries in art,,auto-seeded draft; review
+http://id.loc.gov/authorities/subjects/sh85015736.,Bookmarks,y,bookmarks,topical-object,Bookmarks,,
+http://id.worldcat.org/fast/836338.,Bookmarks,y,,,,,
+lcsh|bookplates-competitions,Bookplates -- Competitions,n,,,,,
+http://id.worldcat.org/fast/836401.,Books,n,,,,,
+http://id.loc.gov/authorities/subjects/sh85015739,Books -- Conservation and restoration,y,books-conservation-and-restoration,topical-object,"Books, Conservation and restoration",,
+lcsh|books-digitization,Books -- Digitization,y,books-digitization,topical-object,"Books, Digitization",,
+http://id.loc.gov/authorities/subjects/sh85015744.,Books -- History,y,books-history,topical-object,"Books, History",,
+http://id.loc.gov/authorities/subjects/sh2009117403,Books -- Marketing,y,books-marketing,topical-object,"Books, Marketing",,
+http://id.loc.gov/authorities/subjects/sh2009117403.,Books -- Marketing,y,books-marketing,,,,
+http://id.worldcat.org/fast/836426.,Books -- Marketing,y,books-marketing,,,,
+http://id.worldcat.org/fast/836439.,Books -- Private collections,n,,,,,
+lcsh|books-private-collections,Books -- Private collections,n,,,,,
+lcsh|books-private-collections-in-art,Books -- Private collections -- In art,n,,,,,
+lcsh|books-quotations-maxims-etc,"Books -- Quotations, maxims, etc",n,,,,,
+lcsh|books-social-aspects-history,Books -- Social aspects -- History,y,books-history,,,,
+lcsh|books-sociological-aspects,Books -- Sociological aspects,n,,,,,
+http://id.worldcat.org/fast/836454.,Books and reading,y,books-and-reading,topical-object,Books and reading,,
+http://id.loc.gov/authorities/subjects/sh85015758.,Books and reading,y,,,Books and reading,,
+lcsh|books-and-reading,Books and reading,y,,,Books and reading,,
+lcsh|books-and-reading-iraq-baghdad,Books and reading -- Iraq -- Baghdad,y,books-and-reading,,,,
+lcsh|books-and-reading-philosophy,Books and reading -- Philosophy,y,books-and-reading,,,,
+http://id.loc.gov/authorities/subjects/sh96011709.,Books and reading in art,y,books-and-reading,,,,
+http://id.worldcat.org/fast/836477.,Books and reading in art,y,books-and-reading,,,,
+http://id.worldcat.org/fast/836479.,Books in art,n,,,,,
+http://id.loc.gov/authorities/subjects/sh85015760.,Books in art,n,,,,,
+lcsh|books-in-art-exhibitions,Books in art -- Exhibitions,n,,,,,
+lcsh|books-in-art-philosophy,Books in art -- Philosophy,n,,,,,
+lcsh|books-of-hours,Books of hours,n,,,,,genre
+http://id.worldcat.org/fast/836492.,Booksellers and bookselling,n,booksellers-and-bookselling,topical-people,Booksellers and bookselling,,
+lcsh|booksellers-and-bookselling-alabama,Booksellers and bookselling -- Alabama,y,booksellers-and-bookselling,,,,
+lcsh|booksellers-and-bookselling-iraq-baghdad,Booksellers and bookselling -- Iraq -- Baghdad,y,booksellers-and-bookselling,,,,
+lcsh|booksellers-catalogs-california-san-francisco,Booksellers' catalogs -- California -- San Francisco,n,,,,,
+aat|bookworks,bookworks,n,,,,,
+(CStmoGRI)aat300178842,bookworks,n,,,,,
+lcsh|bookworks-art,Bookworks (Art),n,,,,,
+lcsh|bop-music,Bop (Music),y,bop-music,topical-arts,Bop (Music),,
+http://id.worldcat.org/fast/1715649.,Border crossing,y,border-crossing,topical-event,Border crossing,,
+lcsh|border-crossing-mexican-american-border-region-fiction,Border crossing -- Mexican-American Border Region -- Fiction,y,border-crossing,,,,
+lcsh|border-crossing-mexican-american-border-region-juvenile-fiction,Border crossing -- Mexican-American Border Region -- Juvenile fiction,y,border-crossing,,,,
+lcsh|botanical-gardens-pictorial-works,Botanical gardens -- Pictorial works,y,botanical-gardens,topical-place,Botanical gardens,,
+lcsh|botany-georgia-atlanta-pictorial-works,Botany -- Georgia -- Atlanta -- Pictorial works,y,botany,topical-concept,Botany,,
+unspecified|botany-pictorial-works,Botany -- Pictorial works,y,botany,,,,
+http://id.loc.gov/authorities/subjects/sh96011714.,Boundaries in art,y,boundaries,topical-concept, Boundaries,,
+http://id.worldcat.org/fast/837087.,Boundaries in art,y,boundaries,,,,
 http://id.loc.gov/authorities/subjects/sh93000607.,"Bowery (New York, N.Y. : Street)",y,manhattan-us,geographic-inhabited-place,"Manhattan (New York, United States)",,
-lcsh|boxes,Boxes,y,boxes,topical,Boxes,,auto-seeded draft; review
-http://id.worldcat.org/fast/837358.,Boys,y,boys,topical,Boys,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2007101907.,Boys -- Fiction,y,boys-fiction,topical,Boys -- Fiction,,auto-seeded draft; review
-lcsh|boys-mexico-fiction,Boys -- Mexico -- Fiction,y,boys-mexico-fiction,topical,Boys -- Mexico -- Fiction,,auto-seeded draft; review
-lcsh|braille-in-art,Braille -- In art,y,braille-in-art,topical,Braille -- In art,,auto-seeded draft; review
-http://id.worldcat.org/fast/837570.,Brain,y,brain,topical,Brain,,auto-seeded draft; review
-http://id.worldcat.org/fast/837694.,Brain -- Wounds and injuries,y,brain-wounds-and-injuries,topical,Brain -- Wounds and injuries,,auto-seeded draft; review
-http://id.worldcat.org/fast/837701.,Brain -- Wounds and injuries -- Patients -- Family relationships,y,brain-wounds-and-injuries-patients-family-relationships,topical,Brain -- Wounds and injuries -- Patients -- Family relationships,,auto-seeded draft; review
-lcsh|brain-wounds-and-injuries-patients-family-relationships,Brain -- Wounds and injuries -- Patients -- Family relationships,y,brain-wounds-and-injuries-patients-family-relationships,topical,Brain -- Wounds and injuries -- Patients -- Family relationships,,auto-seeded draft; review
-http://id.nlm.nih.gov/mesh/D001930Q000523.,Brain Injuries -- psychology,y,brain-injuries-psychology,topical,Brain Injuries -- psychology,,auto-seeded draft; review
-http://id.nlm.nih.gov/mesh/D001930Q000534.,Brain Injuries -- rehabilitation,y,brain-injuries-rehabilitation,topical,Brain Injuries -- rehabilitation,,auto-seeded draft; review
-lcsh|brass-quartets-trombones-4,Brass quartets (Trombones (4)),y,brass-quartets-trombones-4,topical,Brass quartets (Trombones (4)),,auto-seeded draft; review
+lcsh|boxes,Boxes,y,boxes,topical-object,Boxes,,
+http://id.worldcat.org/fast/837358.,Boys,y,boys,topical-people,Boys,,
+http://id.loc.gov/authorities/subjects/sh2007101907.,Boys -- Fiction,y,boys,,,,
+lcsh|boys-mexico-fiction,Boys -- Mexico -- Fiction,y,boys,,,,
+lcsh|braille-in-art,Braille -- In art,y,braille,topical-concept,Braille,,
+http://id.worldcat.org/fast/837570.,Brain,y,brain,topical-anatomy,Brain,,
+http://id.worldcat.org/fast/837694.,Brain -- Wounds and injuries,y,brain-injury,topical-condition,"Injury, Brain",,
+http://id.worldcat.org/fast/837701.,Brain -- Wounds and injuries -- Patients -- Family relationships,y,brain-injury,,,,
+lcsh|brain-wounds-and-injuries-patients-family-relationships,Brain -- Wounds and injuries -- Patients -- Family relationships,y,brain-injury,,,,
+http://id.nlm.nih.gov/mesh/D001930Q000523.,Brain Injuries -- psychology,y,brain-injury,,,,
+http://id.nlm.nih.gov/mesh/D001930Q000534.,Brain Injuries -- rehabilitation,y,brain-injury,,,,
+lcsh|brass-quartets-trombones-4,Brass quartets (Trombones (4)),n,,,,,
 http://id.worldcat.org/fast/1206830.,Brazil,y,brazil,geographic-country,Brazil,,
 http://id.loc.gov/authorities/names/n79128015,Brazil,y,brazil,geographic-country,,,
 http://id.worldcat.org/fast/1205761.,Brazil -- São Paulo,y,sao-paulo-br,geographic,São Paulo (Brazil),,
 none|brazil-social-conditions-poetry,Brazil -- Social conditions -- Poetry,y,brazil-social-conditions-poetry,geographic,Brazil -- Social conditions -- Poetry,,auto-seeded draft; review
-http://id.worldcat.org/fast/1198482.,Bread,y,bread,topical,Bread,,auto-seeded draft; review
-lcsh|bread-mexico-pictorial-works,Bread -- Mexico -- Pictorial works,y,bread-mexico-pictorial-works,topical,Bread -- Mexico -- Pictorial works,,auto-seeded draft; review
-lcsh|breakfasts,Breakfasts,y,breakfasts,topical,Breakfasts,,auto-seeded draft; review
-http://id.worldcat.org/fast/838255.,Breast,y,breast,topical,Breast,,auto-seeded draft; review
-http://id.worldcat.org/fast/838293.,Breast -- Cancer -- Patients,y,breast-cancer-patients,topical,Breast -- Cancer -- Patients,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2007102150.,Breast -- Cancer -- Patients -- United States -- Biography,y,breast-cancer-patients-united-states-biography,topical,Breast -- Cancer -- Patients -- United States -- Biography,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2001006038.,Breast cancer in art,y,breast-cancer-in-art,topical,Breast cancer in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/838355.,Breast cancer in art,y,breast-cancer-in-art,topical,Breast cancer in art,,auto-seeded draft; review
-lcsh|breeding,Breeding,y,breeding,topical,Breeding,,auto-seeded draft; review
-lcsh|brides-in-art,Brides in art,y,brides-in-art,topical,Brides in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/838671.,Bridges,y,bridges,topical,Bridges,,auto-seeded draft; review
-lcshac|bridges,Bridges,y,bridges,topical,Bridges,,auto-seeded draft; review
-lcsh|bridges-cuba-matanzas-pictorial-works,Bridges -- Cuba -- Matanzas -- Pictorial works,y,bridges-cuba-matanzas-pictorial-works,topical,Bridges -- Cuba -- Matanzas -- Pictorial works,,auto-seeded draft; review
-lcsh|bridges-juvenile-literature,Bridges -- Juvenile literature,y,bridges-juvenile-literature,topical,Bridges -- Juvenile literature,,auto-seeded draft; review
+http://id.worldcat.org/fast/1198482.,Bread,y,bread,topical-object,Bread,,
+lcsh|bread-mexico-pictorial-works,Bread -- Mexico -- Pictorial works,y,bread,,,,
+lcsh|breakfasts,Breakfasts,y,breakfasts,topical-objects,Breakfasts,,
+http://id.worldcat.org/fast/838255.,Breast,y,breast,topical-anatomy,Breast,,
+http://id.worldcat.org/fast/838293.,Breast -- Cancer -- Patients,y,cancer-breast,topical-condition,"Cancer, Breast",,
+http://id.loc.gov/authorities/subjects/sh2007102150.,Breast -- Cancer -- Patients -- United States -- Biography,y,cancer-breast,,,,
+http://id.loc.gov/authorities/subjects/sh2001006038.,Breast cancer in art,y,cancer-breast,,,,
+http://id.worldcat.org/fast/838355.,Breast cancer in art,y,cancer-breast,,,,
+lcsh|breeding,Breeding,y,breeding,topical-concept,Breeding,,
+lcsh|brides-in-art,Brides in art,y,brides,topical-people,Brides,,
+http://id.worldcat.org/fast/838671.,Bridges,y,bridges,topical-places,Bridges,,
+lcshac|bridges,Bridges,y,bridges,,,,
+lcsh|bridges-cuba-matanzas-pictorial-works,Bridges -- Cuba -- Matanzas -- Pictorial works,y,bridges,,,,
+lcsh|bridges-juvenile-literature,Bridges -- Juvenile literature,y,bridges,,,,
 none|bristol-england-history,Bristol (England) -- History,y,bristol-england-history,geographic,Bristol (England) -- History,,auto-seeded draft; review
 http://id.worldcat.org/fast/1211882.,British Columbia -- Vancouver,y,vancouver-ca,geographic-city,"Vancouver, British Columbia (Canada)",,
-lcsh|broadcast-journalism-fiction,Broadcast journalism -- Fiction,y,broadcast-journalism-fiction,topical,Broadcast journalism -- Fiction,,auto-seeded draft; review
-unspecified|broadside-poems,Broadside poems,y,broadside-poems,topical,Broadside poems,,auto-seeded draft; review
-http://id.worldcat.org/fast/839252.,Broadsides,y,broadsides,topical,Broadsides,,auto-seeded draft; review
-lcsh|broadsides,Broadsides,y,broadsides,topical,Broadsides,,auto-seeded draft; review
+lcsh|broadcast-journalism-fiction,Broadcast journalism -- Fiction,y,broadcast-journalism,topical-concept,Broadcast journalism,,
+unspecified|broadside-poems,Broadside poems,n,,,,,construction
+http://id.worldcat.org/fast/839252.,Broadsides,n,,,,,construction
+lcsh|broadsides,Broadsides,n,,,,,construction
 lcsh|broadsides-united-states-specimens,Broadsides -- United States -- Specimens,n,,,,,construction
-lcsh|brochures-design,Brochures -- Design,y,brochures-design,topical,Brochures -- Design,,auto-seeded draft; review
+lcsh|brochures-design,Brochures -- Design,y,,,,,construction
 none|brockman-s-mount-kent-england-pictorial-works,"Brockman's Mount (Kent, England) -- Pictorial works",y,brockmans-mount-gb,geographic-landform,Brockman's Mount (England),,
 none|brockman-s-mount-kent-england-pictorial-works-exhibitions,"Brockman's Mount (Kent, England) -- Pictorial works -- Exhibitions",y,brockman-s-mount-kent-england-pictorial-works-exhibitions,geographic,"Brockman's Mount (Kent, England) -- Pictorial works -- Exhibitions",,auto-seeded draft; review
 none|brooklyn-bridge-new-york-n-y-pictorial-works,"Brooklyn Bridge (New York, N.Y.) -- Pictorial works",y,brooklyn-bridge-us,geographic-structure,"Brooklyn Bridge (New York, United States)",,
 none|brooks-range-alaska-photographs,Brooks Range (Alaska) -- Photographs,y,brooks-range,geographic-landform,,,photgraphs is construction method
 none|buenos-aires-argentina-miscellanea,Buenos Aires (Argentina) -- Miscellanea,y,buenos-aires-ar,geographic-city,,,
 http://id.loc.gov/authorities/subjects/sh2008114518.,Buenos Aires (Argentina) -- Pictorial works,y,buenos-aires-ar,geographic-city,,,
-lcsh|building-materials-art,Building materials -- Art,y,building-materials-art,topical,Building materials -- Art,,auto-seeded draft; review
-http://id.worldcat.org/fast/840962.,Buildings,y,buildings,topical,Buildings,,auto-seeded draft; review
-fast|buildings,Buildings,y,buildings,topical,Buildings,,auto-seeded draft; review
-(OCoLC)fst00840962,Buildings,y,buildings,topical,Buildings,,auto-seeded draft; review
-lcsh|buildings-argentina-buenos-aires,Buildings -- Argentina -- Buenos Aires,y,buildings-argentina-buenos-aires,topical,Buildings -- Argentina -- Buenos Aires,,auto-seeded draft; review
-lcsh|buildings-arizona-grand-canyon-national-park,Buildings -- Arizona -- Grand Canyon National Park,y,buildings-arizona-grand-canyon-national-park,topical,Buildings -- Arizona -- Grand Canyon National Park,,auto-seeded draft; review
-lcsh|buildings-california-los-angeles-pictorial-works,Buildings -- California -- Los Angeles -- Pictorial works,y,buildings-california-los-angeles-pictorial-works,topical,Buildings -- California -- Los Angeles -- Pictorial works,,auto-seeded draft; review
-lcsh|buildings-europe-pictorial-works,Buildings -- Europe -- Pictorial works,y,buildings-europe-pictorial-works,topical,Buildings -- Europe -- Pictorial works,,auto-seeded draft; review
-lcsh|buildings-lebanon-beirut,Buildings -- Lebanon -- Beirut,y,buildings-lebanon-beirut,topical,Buildings -- Lebanon -- Beirut,,auto-seeded draft; review
-lcsh|buildings-mexico-campeche-campeche-pictorial-works,Buildings -- Mexico -- Campeche (Campeche) -- Pictorial works,y,buildings-mexico-campeche-campeche-pictorial-works,topical,Buildings -- Mexico -- Campeche (Campeche) -- Pictorial works,,auto-seeded draft; review
-lcsh|buildings-pictorial-works,Buildings -- Pictorial works,y,buildings-pictorial-works,topical,Buildings -- Pictorial works,,auto-seeded draft; review
-lcsh|buildings-united-states-pictorial-works,Buildings -- United States -- Pictorial works,y,buildings-united-states-pictorial-works,topical,Buildings -- United States -- Pictorial works,,auto-seeded draft; review
-http://id.worldcat.org/fast/841702.,Bureaucracy,y,bureaucracy,topical,Bureaucracy,,auto-seeded draft; review
-lcsh|bureaucracy-pictorial-works,Bureaucracy -- Pictorial works,y,bureaucracy-pictorial-works,topical,Bureaucracy -- Pictorial works,,auto-seeded draft; review
-lcsh|bus-stops-in-art,Bus stops in art,y,bus-stops-in-art,topical,Bus stops in art,,auto-seeded draft; review
-lcsh|buses-seats,Buses -- Seats,y,buses-seats,topical,Buses -- Seats,,auto-seeded draft; review
-http://id.worldcat.org/fast/842262.,Business,y,business,topical,Business,,auto-seeded draft; review
-lcsh|business-pictorial-works,Business -- Pictorial works,y,business-pictorial-works,topical,Business -- Pictorial works,,auto-seeded draft; review
-lcsh|business-cards-memphis-tenn,Business cards -- Memphis (Tenn.),y,business-cards-memphis-tenn,topical,Business cards -- Memphis (Tenn.),,auto-seeded draft; review
-lcsh|business-cards-pictorial-works,Business cards -- Pictorial works,y,business-cards-pictorial-works,topical,Business cards -- Pictorial works,,auto-seeded draft; review
-lcsh|businessmen-drama,Businessmen -- Drama,y,businessmen-drama,topical,Businessmen -- Drama,,auto-seeded draft; review
-lcsh|butterflies-in-art,Butterflies in art,y,butterflies-in-art,topical,Butterflies in art,,auto-seeded draft; review
-lcsh|butterflies-on-postage-stamps,Butterflies on postage stamps,y,butterflies-on-postage-stamps,topical,Butterflies on postage stamps,,auto-seeded draft; review
+lcsh|building-materials-art,Building materials -- Art,y,building-materials,topical-object,Building materials,,
+http://id.worldcat.org/fast/840962.,Buildings,y,buildings,topical-place,Buildings,,
+fast|buildings,Buildings,y,buildings,,,,
+(OCoLC)fst00840962,Buildings,y,buildings,,,,
+lcsh|buildings-argentina-buenos-aires,Buildings -- Argentina -- Buenos Aires,y,buildings,,,,
+lcsh|buildings-arizona-grand-canyon-national-park,Buildings -- Arizona -- Grand Canyon National Park,y,buildings,,,,
+lcsh|buildings-california-los-angeles-pictorial-works,Buildings -- California -- Los Angeles -- Pictorial works,y,buildings,,,,
+lcsh|buildings-europe-pictorial-works,Buildings -- Europe -- Pictorial works,y,buildings,,,,
+lcsh|buildings-lebanon-beirut,Buildings -- Lebanon -- Beirut,y,buildings,,,,
+lcsh|buildings-mexico-campeche-campeche-pictorial-works,Buildings -- Mexico -- Campeche (Campeche) -- Pictorial works,y,buildings,,,,
+lcsh|buildings-pictorial-works,Buildings -- Pictorial works,y,buildings,,,,
+lcsh|buildings-united-states-pictorial-works,Buildings -- United States -- Pictorial works,y,buildings,,,,
+http://id.worldcat.org/fast/841702.,Bureaucracy,y,bureaucracy,topical-concept,Bureaucracy,,
+lcsh|bureaucracy-pictorial-works,Bureaucracy -- Pictorial works,y,bureaucracy,,,,
+lcsh|bus-stops-in-art,Bus stops in art,y,bus-stops,topical-places,Bus stops,,
+lcsh|buses-seats,Buses,y,buses,topical-object,Buses,,
+http://id.worldcat.org/fast/842262.,Business,y,business,topical-concept,Business,,
+lcsh|business-pictorial-works,Business -- Pictorial works,y,business,,,,
+lcsh|business-cards-memphis-tenn,Business cards -- Memphis (Tenn.),y,business-cards,topical-object,Business cards,,
+lcsh|business-cards-pictorial-works,Business cards -- Pictorial works,y,business-cards,,,,
+lcsh|businessmen-drama,Businessmen -- Drama,y,businessmen,topical-people,Businessmen,,
+lcsh|butterflies-in-art,Butterflies in art,y,butterfiles,topical-animals,Butterflies,,
+lcsh|butterflies-on-postage-stamps,Butterflies on postage stamps,y,butterfiles,,,,
 none|byzantine-empire-in-art,Byzantine Empire -- In art,y,byzantine-empire,geographic-historical,Byzantine Empire,https://id.worldcat.org/fast/1209292,
-fast|cabala,Cabala,y,cabala,topical,Cabala,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85018546.,Cabala,y,cabala,topical,Cabala,,auto-seeded draft; review
-http://id.worldcat.org/fast/843481.,Cabala,y,cabala,topical,Cabala,,auto-seeded draft; review
-lcsh|cabala,Cabala,y,cabala,topical,Cabala,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2002010501.,Cabinets of curiosities,y,cabinets-of-curiosities,topical,Cabinets of curiosities,,auto-seeded draft; review
-http://id.worldcat.org/fast/843565.,Cabinets of curiosities,y,cabinets-of-curiosities,topical,Cabinets of curiosities,,auto-seeded draft; review
-http://id.worldcat.org/fast/843694.,Cactus,y,cactus,topical,Cactus,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2009118136,Cactus -- Pictorial works,y,cactus-pictorial-works,topical,Cactus -- Pictorial works,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2009118136.,Cactus -- Pictorial works,y,cactus-pictorial-works,topical,Cactus -- Pictorial works,,auto-seeded draft; review
+fast|cabala,Cabala,y,cabala,topical-concept,Cabala,,
+http://id.loc.gov/authorities/subjects/sh85018546.,Cabala,y,,,,,
+http://id.worldcat.org/fast/843481.,Cabala,y,,,,,
+lcsh|cabala,Cabala,y,,,,,
+http://id.loc.gov/authorities/subjects/sh2002010501.,Cabinets of curiosities,y,cabinets-of-curiosities,topical-object,Cabinets of curiosities,,
+http://id.worldcat.org/fast/843565.,Cabinets of curiosities,y,cabinets-of-curiosities,,,,
+http://id.worldcat.org/fast/843694.,Cactus,y,cactus,topical,Cactus,,
+http://id.loc.gov/authorities/subjects/sh2009118136,Cactus -- Pictorial works,y,cactus,,,,
+http://id.loc.gov/authorities/subjects/sh2009118136.,Cactus -- Pictorial works,y,cactus,,,,
 lcsh|calendars-specimens,Calendars -- Specimens,n,,,,,construction
 http://id.worldcat.org/fast/1204928.,California,y,california-us,geographic-state-province,California (United States),,
 (OCoLC)fst01204928.,California,y,california-us,geographic-state-province,,,
@@ -1276,173 +1276,173 @@ http://id.loc.gov/authorities/subjects/sh85019084.,Cambodia -- History,y,cambodi
 none|cambodia-pictorial-works,Cambodia -- Pictorial works,y,cambodia-pictorial-works,geographic,Cambodia -- Pictorial works,,auto-seeded draft; review
 http://id.loc.gov/authorities/subjects/sh85019096.,"Cambodian-Vietnamese Conflict, 1977-1991",y,cambodian-vietnamese-conflict-1977-1991,topical,"Cambodian-Vietnamese Conflict, 1977-1991",,auto-seeded draft; review
 lcsh|cambodian-vietnamese-conflict-1977-1991-pictorial-works,"Cambodian-Vietnamese Conflict, 1977-1991 -- Pictorial works",y,cambodian-vietnamese-conflict-1977-1991-pictorial-works,topical,"Cambodian-Vietnamese Conflict, 1977-1991 -- Pictorial works",,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85019128.,Camera obscuras,y,camera-obscuras,topical,Camera obscuras,,auto-seeded draft; review
-http://id.worldcat.org/fast/844725.,Camera obscuras,y,camera-obscuras,topical,Camera obscuras,,auto-seeded draft; review
-http://id.worldcat.org/fast/844732.,Cameras,y,cameras,topical,Cameras,,auto-seeded draft; review
-lcsh|cameras-pictorial-works,Cameras -- Pictorial works,y,cameras-pictorial-works,topical,Cameras -- Pictorial works,,auto-seeded draft; review
+http://id.loc.gov/authorities/subjects/sh85019128.,Camera obscuras,y,camera-obscuras,topical-object,Camera obscuras,,
+http://id.worldcat.org/fast/844725.,Camera obscuras,y,camera-obscuras,,,,
+http://id.worldcat.org/fast/844732.,Cameras,y,cameras,topical-object,Cameras,,
+lcsh|cameras-pictorial-works,Cameras -- Pictorial works,y,cameras,,,,
 none|campeche-campeche-mexico-pictorial-works,"Campeche (Campeche, Mexico) -- Pictorial works",y,campeche-campeche-mexico-pictorial-works,geographic,"Campeche (Campeche, Mexico) -- Pictorial works",,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85019231.,Camping,y,camping,topical,Camping,,auto-seeded draft; review
-http://id.worldcat.org/fast/844926.,Camping,y,camping,topical,Camping,,auto-seeded draft; review
-lcsh|camping,Camping,y,camping,topical,Camping,,auto-seeded draft; review
-mesh|camping,Camping,y,camping,topical,Camping,,auto-seeded draft; review
-http://id.worldcat.org/fast/845039.,Camsa Indians,y,camsa-indians,topical,Camsa Indians,,auto-seeded draft; review
-lcsh|camsa-indians-folklore,Camsa Indians -- Folklore,y,camsa-indians-folklore,topical,Camsa Indians -- Folklore,,auto-seeded draft; review
-unspecified|canada,Canada,y,canada-topical,topical,Canada,,auto-seeded draft; review
+http://id.loc.gov/authorities/subjects/sh85019231.,Camping,y,camping,topical-event,Camping,,
+http://id.worldcat.org/fast/844926.,Camping,y,camping,,,,
+lcsh|camping,Camping,y,camping,,,,
+mesh|camping,Camping,y,camping,,,,
+http://id.worldcat.org/fast/845039.,Camsa Indians,y,camsa-indians,topical-people,Camsa Indians,,
+lcsh|camsa-indians-folklore,Camsa Indians -- Folklore,y,camsa-indians,,,,
+unspecified|canada,Canada,y,canada-topical,geographic,Canada,,auto-seeded draft; review
 http://id.worldcat.org/fast/1204310.,Canada,y,canada-geographic,geographic,Canada,,auto-seeded draft; review
 fast|canada,Canada,y,canada-geographic,geographic,Canada,,auto-seeded draft; review
 none|canada,Canada,y,canada-geographic,geographic,Canada,,auto-seeded draft; review
-lcsh|canadian-poetry,Canadian poetry,y,canadian-poetry,topical,Canadian poetry,,auto-seeded draft; review
-lcsh|canadian-poetry-20th-century,Canadian poetry -- 20th century,y,canadian-poetry-20th-century,topical,Canadian poetry -- 20th century,,auto-seeded draft; review
-lcsh|canadian-poetry-asian-authors-21st-century,Canadian poetry -- Asian authors -- 21st century,y,canadian-poetry-asian-authors-21st-century,topical,Canadian poetry -- Asian authors -- 21st century,,auto-seeded draft; review
-http://id.worldcat.org/fast/845317.,Cancer,y,cancer,topical,Cancer,,auto-seeded draft; review
-http://id.worldcat.org/fast/845411.,Cancer -- Patients,y,cancer-patients,topical,Cancer -- Patients,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85019520.,Cancer -- Patients -- Biography,y,cancer-patients-biography,topical,Cancer -- Patients -- Biography,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2009118257.,Cancer -- United States -- Statistics,y,cancer-united-states-statistics,topical,Cancer -- United States -- Statistics,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2001006039.,Cancer in art,y,cancer-in-art,topical,Cancer in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/845580.,Cancer in art,y,cancer-in-art,topical,Cancer in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh97008236.,Cancer in women,y,cancer-in-women,topical,Cancer in women,,auto-seeded draft; review
-http://id.worldcat.org/fast/845592.,Cancer in women,y,cancer-in-women,topical,Cancer in women,,auto-seeded draft; review
-http://id.worldcat.org/fast/845678.,Candy,y,candy,topical,Candy,,auto-seeded draft; review
-lcsh|candy-miscellanea,Candy -- Miscellanea,y,candy-miscellanea,topical,Candy -- Miscellanea,,auto-seeded draft; review
-lcsh|candy-social-aspects,Candy -- Social aspects,y,candy-social-aspects,topical,Candy -- Social aspects,,auto-seeded draft; review
-lcsh|candy-containers-miscellanea,Candy containers -- Miscellanea,y,candy-containers-miscellanea,topical,Candy containers -- Miscellanea,,auto-seeded draft; review
+lcsh|canadian-poetry,Canadian poetry,y,canadian-poetry,topical,"Poetry, Canadian",,
+lcsh|canadian-poetry-20th-century,Canadian poetry -- 20th century,y,canadian-poetry,,,,
+lcsh|canadian-poetry-asian-authors-21st-century,Canadian poetry -- Asian authors -- 21st century,y,canadian-poetry-asian-authors,topical-people,"Authors, Asian, Poetry, Canadian",,
+http://id.worldcat.org/fast/845317.,Cancer,y,cancer,topical-condition,Cancer,,
+http://id.worldcat.org/fast/845411.,Cancer -- Patients,y,cancer,,,,
+http://id.loc.gov/authorities/subjects/sh85019520.,Cancer -- Patients -- Biography,y,cancer,,,,
+http://id.loc.gov/authorities/subjects/sh2009118257.,Cancer -- United States -- Statistics,y,cancer,,,,
+http://id.loc.gov/authorities/subjects/sh2001006039.,Cancer in art,y,cancer,,,,
+http://id.worldcat.org/fast/845580.,Cancer in art,y,cancer,,,,
+http://id.loc.gov/authorities/subjects/sh97008236.,Cancer in women,y,cancer,,,,
+http://id.worldcat.org/fast/845592.,Cancer in women,y,cancer,,,,
+http://id.worldcat.org/fast/845678.,Candy,y,candy,topical-object,,,
+lcsh|candy-miscellanea,Candy -- Miscellanea,y,candy,,,,
+lcsh|candy-social-aspects,Candy -- Social aspects,y,candy,,,,
+lcsh|candy-containers-miscellanea,Candy containers -- Miscellanea,n,,,,,construction
 lcsh|cantatas-instrumental-settings,Cantatas -- Instrumental settings,n,,,,,genre
 lcsh|canvas-embroidery-specimens,Canvas embroidery -- Specimens,n,,,,,construction
-(OCoLC)fst00846374,Capital Flows,y,capital-flows,topical,Capital Flows,,auto-seeded draft; review
-lcsh|capital-movements,Capital movements,y,capital-movements,topical,Capital movements,,auto-seeded draft; review
-http://id.worldcat.org/fast/846425.,Capitalism,y,capitalism,topical,Capitalism,,auto-seeded draft; review
-lcsh|capitalism,Capitalism,y,capitalism,topical,Capitalism,,auto-seeded draft; review
-lcsh|capitalism-latin-america-history-pictorial-works,Capitalism -- Latin America -- History -- Pictorial works,y,capitalism-latin-america-history-pictorial-works,topical,Capitalism -- Latin America -- History -- Pictorial works,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2008100104.,Capitalism -- Social aspects,y,capitalism-social-aspects,topical,Capitalism -- Social aspects,,auto-seeded draft; review
-http://id.worldcat.org/fast/846453.,Capitalism -- Social aspects,y,capitalism-social-aspects,topical,Capitalism -- Social aspects,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh96012272,Card games in art,y,card-games-in-art,topical,Card games in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh96012272.,Card games in art,y,card-games-in-art,topical,Card games in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/847024.,Card games in art,y,card-games-in-art,topical,Card games in art,,auto-seeded draft; review
+(OCoLC)fst00846374,Capital Flows,n,,,,,
+lcsh|capital-movements,Capital movements,n,,,,,
+http://id.worldcat.org/fast/846425.,Capitalism,y,capitalism,topical-concept,Capitalism,,
+lcsh|capitalism,Capitalism,y,capitalism,,,,
+lcsh|capitalism-latin-america-history-pictorial-works,Capitalism -- Latin America -- History -- Pictorial works,y,capitalism,,,,
+http://id.loc.gov/authorities/subjects/sh2008100104.,Capitalism -- Social aspects,y,capitalism,,,,
+http://id.worldcat.org/fast/846453.,Capitalism -- Social aspects,y,capitalism,,,,
+http://id.loc.gov/authorities/subjects/sh96012272,Card games in art,y,card-games,topical-object,Card games,,
+http://id.loc.gov/authorities/subjects/sh96012272.,Card games in art,y,card-games,,,,
+http://id.worldcat.org/fast/847024.,Card games in art,y,card-games,,,,
 http://id.worldcat.org/fast/1244080.,Caribbean Area,y,caribbean-area,geographic,Caribbean Area,,auto-seeded draft; review
-http://id.worldcat.org/fast/847532.,Caricatures and cartoons,y,caricatures-and-cartoons,topical,Caricatures and cartoons,,auto-seeded draft; review
-lcsh|caricatures-and-cartoons,Caricatures and cartoons,y,caricatures-and-cartoons,topical,Caricatures and cartoons,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85020315.,Caricatures and cartoons -- United States,y,caricatures-and-cartoons-united-states,topical,Caricatures and cartoons -- United States,,auto-seeded draft; review
+http://id.worldcat.org/fast/847532.,Caricatures and cartoons,n,,,,,construction
+lcsh|caricatures-and-cartoons,Caricatures and cartoons,n,,,,,construction
+http://id.loc.gov/authorities/subjects/sh85020315.,Caricatures and cartoons -- United States,n,,,,,construction
 none|carlisle-mass-pictorial-works,Carlisle (Mass.) -- Pictorial works,y,carlisle-mass-pictorial-works,geographic,Carlisle (Mass.) -- Pictorial works,,auto-seeded draft; review
-http://id.worldcat.org/fast/847651.,Carnival,y,carnival,topical,Carnival,,auto-seeded draft; review
-lcsh|carnival-history,Carnival -- History,y,carnival-history,topical,Carnival -- History,,auto-seeded draft; review
-lcsh|carnival-united-states-pictorial-works,Carnival -- United States -- Pictorial works,y,carnival-united-states-pictorial-works,topical,Carnival -- United States -- Pictorial works,,auto-seeded draft; review
-lcsh|cartographers-fiction,Cartographers -- Fiction,y,cartographers-fiction,topical,Cartographers -- Fiction,,auto-seeded draft; review
-lcsh|cartographers-pictorial-works,Cartographers -- Pictorial works,y,cartographers-pictorial-works,topical,Cartographers -- Pictorial works,,auto-seeded draft; review
-lcsh|cartography,Cartography,y,cartography,topical,Cartography,,auto-seeded draft; review
-(OCoLC)fst00848025,Cartography,y,cartography,topical,Cartography,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85020515.,Cartography,y,cartography,topical,Cartography,,auto-seeded draft; review
-http://id.worldcat.org/fast/848025.,Cartography,y,cartography,topical,Cartography,,auto-seeded draft; review
-lcsh|cartography-social-aspects,Cartography -- Social aspects,y,cartography-social-aspects,topical,Cartography -- Social aspects,,auto-seeded draft; review
+http://id.worldcat.org/fast/847651.,Carnival,y,carnival,chronological-event,Carnival,,
+lcsh|carnival-history,Carnival -- History,y,carnival,,,,
+lcsh|carnival-united-states-pictorial-works,Carnival -- United States -- Pictorial works,y,carnival,,,,
+lcsh|cartographers-fiction,Cartographers -- Fiction,y,cartographers,topical-people,Cartographers,,
+lcsh|cartographers-pictorial-works,Cartographers -- Pictorial works,y,cartographers,,,,
+lcsh|cartography,Cartography,y,cartography,topical-concept,Cartography,,
+(OCoLC)fst00848025,Cartography,y,cartography,,,,
+http://id.loc.gov/authorities/subjects/sh85020515.,Cartography,y,cartography,,,,
+http://id.worldcat.org/fast/848025.,Cartography,y,cartography,,,,
+lcsh|cartography-social-aspects,Cartography -- Social aspects,y,cartography,,,,
 http://id.loc.gov/authorities/subjects/sh2014002440.,Cartonera books,n,,,,,construction
 http://id.worldcat.org/fast/1921898.,Cartonera books,n,,,,,construction
-http://id.loc.gov/authorities/subjects/sh85020586.,Cash registers,y,cash-registers,topical,Cash registers,,auto-seeded draft; review
-http://id.worldcat.org/fast/848207.,Cash registers,y,cash-registers,topical,Cash registers,,auto-seeded draft; review
-lcsh|cash-registers-in-art,Cash registers in art,y,cash-registers-in-art,topical,Cash registers in art,,auto-seeded draft; review
-lcshac|castles-fiction,Castles -- Fiction,y,castles-fiction,topical,Castles -- Fiction,,auto-seeded draft; review
-lcsh|catalog-cards-in-art,Catalog cards in art,y,catalog-cards-in-art,topical,Catalog cards in art,,auto-seeded draft; review
+http://id.loc.gov/authorities/subjects/sh85020586.,Cash registers,y,cash-registers,topical-object,Cash registers,,
+http://id.worldcat.org/fast/848207.,Cash registers,y,cash-registers,,,,
+lcsh|cash-registers-in-art,Cash registers in art,y,cash-registers,,,,
+lcshac|castles-fiction,Castles -- Fiction,y,castles,topical-place,Castles,,
+lcsh|catalog-cards-in-art,Catalog cards in art,n,,,,,
 unspecified|catalogs,Catalogs,n,,,,,genre
 unspecified|catling-brian-exhibitions,Catling -- Brian -- Exhibitions,n,,,,,
-lcsh|cats-poetry,Cats -- Poetry,y,cats-poetry,topical,Cats -- Poetry,,auto-seeded draft; review
-(OCoLC)fst00849456,Cats in art,y,cats-in-art,topical,Cats in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85021279,Cats in art,y,cats-in-art,topical,Cats in art,,auto-seeded draft; review
-lcsh|cats-in-art,Cats in art,y,cats-in-art,topical,Cats in art,,auto-seeded draft; review
+lcsh|cats-poetry,Cats -- Poetry,y,cats,topical-animals,Cats,,
+(OCoLC)fst00849456,Cats in art,y,,,,,
+http://id.loc.gov/authorities/subjects/sh85021279,Cats in art,y,,,,,
+lcsh|cats-in-art,Cats in art,y,,,,,
 http://id.worldcat.org/fast/1244425.,Caucasus,y,caucasus,geographic,Caucasus,,auto-seeded draft; review
 none|caucasus-in-art-exhibitions,Caucasus -- In art -- Exhibitions,y,caucasus-in-art-exhibitions,geographic,Caucasus -- In art -- Exhibitions,,auto-seeded draft; review
 http://id.worldcat.org/fast/1343044.,Caucasus Region,y,caucasus-region,geographic,Caucasus Region,,auto-seeded draft; review
-http://id.worldcat.org/fast/849907.,Caves,y,caves,topical,Caves,,auto-seeded draft; review
-lcsh|caves-pictorial-works,Caves -- Pictorial works,y,caves-pictorial-works,topical,Caves -- Pictorial works,,auto-seeded draft; review
+http://id.worldcat.org/fast/849907.,Caves,y,caves,topical-place,Caves,,
+lcsh|caves-pictorial-works,Caves -- Pictorial works,y,caves,,,,
 http://id.loc.gov/authorities/names/no2024012546,Cayuga Nation,y,cayuga-nation,geographic,Cayuga Nation,,auto-seeded draft; review
 none|cayuga-nation-history-pictorial-works,Cayuga Nation -- History -- Pictorial works,y,cayuga-nation-history-pictorial-works,geographic,Cayuga Nation -- History -- Pictorial works,,auto-seeded draft; review
-http://id.worldcat.org/fast/850072.,Celebrities,y,celebrities,topical,Celebrities,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2009118588.,Celebrities -- Quotations,y,celebrities-quotations,topical,Celebrities -- Quotations,,auto-seeded draft; review
-lcsh|celebrities-quotations-maxims-etc,"Celebrities -- Quotations, maxims, etc",y,celebrities-quotations-maxims-etc,topical,"Celebrities -- Quotations, maxims, etc",,auto-seeded draft; review
-lcsh|cells-pictorial-works,Cells -- Pictorial works,y,cells-pictorial-works,topical,Cells -- Pictorial works,,auto-seeded draft; review
-http://id.worldcat.org/fast/850386.,Celtic languages,y,celtic-languages,topical,Celtic languages,,auto-seeded draft; review
-lcsh|celtic-languages-alphabet,Celtic languages -- Alphabet,y,celtic-languages-alphabet,topical,Celtic languages -- Alphabet,,auto-seeded draft; review
-lcsh|cemeteries-connecticut-new-haven,Cemeteries -- Connecticut -- New Haven,y,cemeteries-connecticut-new-haven,topical,Cemeteries -- Connecticut -- New Haven,,auto-seeded draft; review
-lcsh|cemeteries-maine-sweden-town,Cemeteries -- Maine -- Sweden (Town),y,cemeteries-maine-sweden-town,topical,Cemeteries -- Maine -- Sweden (Town),,auto-seeded draft; review
-http://id.worldcat.org/fast/850568.,Censorship,y,censorship,topical,Censorship,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85021828.,Censorship,y,censorship,topical,Censorship,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2009118752.,Censorship -- Fiction,y,censorship-fiction,topical,Censorship -- Fiction,,auto-seeded draft; review
-lcsh|censorship-in-art,Censorship -- In art,y,censorship-in-art,topical,Censorship -- In art,,auto-seeded draft; review
-lcsh|censorship-united-states-exhibitions,Censorship -- United States -- Exhibitions,y,censorship-united-states-exhibitions,topical,Censorship -- United States -- Exhibitions,,auto-seeded draft; review
+http://id.worldcat.org/fast/850072.,Celebrities,y,celebrities,topical-people,Celebrities,,
+http://id.loc.gov/authorities/subjects/sh2009118588.,Celebrities -- Quotations,y,celebrities,topical,Celebrities -- Quotations,,
+lcsh|celebrities-quotations-maxims-etc,"Celebrities -- Quotations, maxims, etc",y,celebrities,topical,"Celebrities -- Quotations, maxims, etc",,
+lcsh|cells-pictorial-works,Cells -- Pictorial works,n,,,,,
+http://id.worldcat.org/fast/850386.,Celtic languages,y,celtic-languages,topical-concept,Celtic languages,,
+lcsh|celtic-languages-alphabet,Celtic languages -- Alphabet,y,celtic-languages-alphabet,topical-concept,"Alphabet, Celtic languages",,
+lcsh|cemeteries-connecticut-new-haven,Cemeteries -- Connecticut -- New Haven,y,cemeteries,topical-places,Cemeteries,,
+lcsh|cemeteries-maine-sweden-town,Cemeteries -- Maine -- Sweden (Town),y,cemeteries,,,,
+http://id.worldcat.org/fast/850568.,Censorship,y,censorship,topical-concept,Censorship,,
+http://id.loc.gov/authorities/subjects/sh85021828.,Censorship,y,censorship,,,,
+http://id.loc.gov/authorities/subjects/sh2009118752.,Censorship -- Fiction,y,censorship,,,,
+lcsh|censorship-in-art,Censorship -- In art,y,censorship,,,,
+lcsh|censorship-united-states-exhibitions,Censorship -- United States -- Exhibitions,y,censorship,,,,
 http://id.worldcat.org/fast/1240497.,Central Asia,y,central-asia,geographic,Central Asia,,auto-seeded draft; review
 http://id.worldcat.org/fast/1244544.,Central Europe,y,central-europe,geographic,Central Europe,,auto-seeded draft; review
-lcsh|ceramic-sculpture-chinese-20th-century-exhibitions,"Ceramic sculpture, Chinese -- 20th century -- Exhibitions",y,ceramic-sculpture-chinese-20th-century-exhibitions,topical,"Ceramic sculpture, Chinese -- 20th century -- Exhibitions",,auto-seeded draft; review
-unspecified|cerd-jordi,"Cerdà, Jordi",y,cerd-jordi,topical,"Cerdà, Jordi",,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85022357.,Chairs in art,y,chairs-in-art,topical,Chairs in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/851824.,Chairs in art,y,chairs-in-art,topical,Chairs in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/851884.,Challenged books,y,challenged-books,topical,Challenged books,,auto-seeded draft; review
-lcsh|challenged-books-united-states,Challenged books -- United States,y,challenged-books-united-states,topical,Challenged books -- United States,,auto-seeded draft; review
-lcsh|challenged-books-united-states-bibliography,Challenged books -- United States -- Bibliography,y,challenged-books-united-states-bibliography,topical,Challenged books -- United States -- Bibliography,,auto-seeded draft; review
-http://id.worldcat.org/fast/852032.,Chance,y,chance,topical,Chance,,auto-seeded draft; review
-lcsh|chance-anecdotes,Chance -- Anecdotes,y,chance-anecdotes,topical,Chance -- Anecdotes,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh97000008.,Chance in art,y,chance-in-art,topical,Chance in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/852034.,Chance in art,y,chance-in-art,topical,Chance in art,,auto-seeded draft; review
-lcsh|chance-in-art,Chance in art,y,chance-in-art,topical,Chance in art,,auto-seeded draft; review
-lcsh|chapbooks-american,"Chapbooks, American",y,chapbooks-american,topical,"Chapbooks, American",,auto-seeded draft; review
-http://id.worldcat.org/fast/1748695.,"Chapbooks, Argentine",y,chapbooks-argentine,topical,"Chapbooks, Argentine",,auto-seeded draft; review
-lcsh|chapbooks-argentine-specimens,"Chapbooks, Argentine -- Specimens",y,chapbooks-argentine-specimens,topical,"Chapbooks, Argentine -- Specimens",,auto-seeded draft; review
-http://id.worldcat.org/fast/1763432.,"Chapbooks, Mexican",y,chapbooks-mexican,topical,"Chapbooks, Mexican",,auto-seeded draft; review
-lcsh|chapbooks-mexican-specimens,"Chapbooks, Mexican -- Specimens",y,chapbooks-mexican-specimens,topical,"Chapbooks, Mexican -- Specimens",,auto-seeded draft; review
-http://id.worldcat.org/fast/852211.,"Chapbooks, Spanish",y,chapbooks-spanish,topical,"Chapbooks, Spanish",,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85022574.,"Chapbooks, Spanish",y,chapbooks-spanish,topical,"Chapbooks, Spanish",,auto-seeded draft; review
-lcsh|chapbooks-spanish-spain-madrid-specimens,"Chapbooks, Spanish -- Spain -- Madrid -- Specimens",y,chapbooks-spanish-spain-madrid-specimens,topical,"Chapbooks, Spanish -- Spain -- Madrid -- Specimens",,auto-seeded draft; review
-lcsh|chapbooks-spanish-spain-seville-specimens,"Chapbooks, Spanish -- Spain -- Seville -- Specimens",y,chapbooks-spanish-spain-seville-specimens,topical,"Chapbooks, Spanish -- Spain -- Seville -- Specimens",,auto-seeded draft; review
-lcsh|chapbooks-spanish-specimens,"Chapbooks, Spanish -- Specimens",y,chapbooks-spanish-specimens,topical,"Chapbooks, Spanish -- Specimens",,auto-seeded draft; review
+lcsh|ceramic-sculpture-chinese-20th-century-exhibitions,"Ceramic sculpture, Chinese -- 20th century -- Exhibitions",y,ceramic-sculpture-chinese-20th-century-exhibitions,topical-arts,"Ceramic sculpture, Chinese",,
+unspecified|cerd-jordi,"Cerdà, Jordi",y,cerd-jordi,topical-people,Jordi Cerdà,,
+http://id.loc.gov/authorities/subjects/sh85022357.,Chairs in art,y,chairs,topical-object,Chairs,,
+http://id.worldcat.org/fast/851824.,Chairs in art,y,chairs,,,,
+http://id.worldcat.org/fast/851884.,Challenged books,y,challenged-books,topical-object,"Books, Challenged",,
+lcsh|challenged-books-united-states,Challenged books -- United States,y,challenged-books,,,,
+lcsh|challenged-books-united-states-bibliography,Challenged books -- United States -- Bibliography,y,challenged-books,,,,
+http://id.worldcat.org/fast/852032.,Chance,y,chance,topical-concept,Chance,,
+lcsh|chance-anecdotes,Chance -- Anecdotes,y,chance,,,,
+http://id.loc.gov/authorities/subjects/sh97000008.,Chance in art,y,chance,,,,
+http://id.worldcat.org/fast/852034.,Chance in art,y,chance,,,,
+lcsh|chance-in-art,Chance in art,y,chance,,,,
+lcsh|chapbooks-american,"Chapbooks, American",n,,,,,construction
+http://id.worldcat.org/fast/1748695.,"Chapbooks, Argentine",n,,,,,construction
+lcsh|chapbooks-argentine-specimens,"Chapbooks, Argentine -- Specimens",n,,,,,construction
+http://id.worldcat.org/fast/1763432.,"Chapbooks, Mexican",n,,,,,construction
+lcsh|chapbooks-mexican-specimens,"Chapbooks, Mexican -- Specimens",n,,,,,construction
+http://id.worldcat.org/fast/852211.,"Chapbooks, Spanish",n,,,,,construction
+http://id.loc.gov/authorities/subjects/sh85022574.,"Chapbooks, Spanish",n,,,,,construction
+lcsh|chapbooks-spanish-spain-madrid-specimens,"Chapbooks, Spanish -- Spain -- Madrid -- Specimens",n,,,,,construction
+lcsh|chapbooks-spanish-spain-seville-specimens,"Chapbooks, Spanish -- Spain -- Seville -- Specimens",n,,,,,construction
+lcsh|chapbooks-spanish-specimens,"Chapbooks, Spanish -- Specimens",n,,,,,construction
 none|charleroi-belgium-environmental-conditions,Charleroi (Belgium) -- Environmental conditions,y,charleroi-belgium-environmental-conditions,geographic,Charleroi (Belgium) -- Environmental conditions,,auto-seeded draft; review
 none|charlottesville-va-fiction,Charlottesville (Va.) -- Fiction,y,charlottesville-va-fiction,geographic,Charlottesville (Va.) -- Fiction,,auto-seeded draft; review
 none|chattanooga-tenn-pictorial-works,Chattanooga (Tenn.) -- Pictorial works,y,chattanooga-tenn-pictorial-works,geographic,Chattanooga (Tenn.) -- Pictorial works,,auto-seeded draft; review
-lcsh|checks-in-art,Checks in art,y,checks-in-art,topical,Checks in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85022897.,Chemical elements,y,chemical-elements,topical,Chemical elements,,auto-seeded draft; review
-http://id.worldcat.org/fast/852883.,Chemical elements,y,chemical-elements,topical,Chemical elements,,auto-seeded draft; review
-lcsh|chemical-elements-pictorial-works,Chemical elements -- Pictorial works,y,chemical-elements-pictorial-works,topical,Chemical elements -- Pictorial works,,auto-seeded draft; review
-lcsh|chess,Chess,y,chess,topical,Chess,,auto-seeded draft; review
-lcsh|chess-in-art,Chess in art,y,chess-in-art,topical,Chess in art,,auto-seeded draft; review
-lcsh|cheyenne-art-20th-century-exhibitions,Cheyenne art -- 20th century -- Exhibitions,y,cheyenne-art-20th-century-exhibitions,topical,Cheyenne art -- 20th century -- Exhibitions,,auto-seeded draft; review
+lcsh|checks-in-art,Checks in art,n,,,,,
+http://id.loc.gov/authorities/subjects/sh85022897.,Chemical elements,y,chemical-elements,topical-phenomena,Chemical elements,,
+http://id.worldcat.org/fast/852883.,Chemical elements,y,chemical-elements,,,,
+lcsh|chemical-elements-pictorial-works,Chemical elements -- Pictorial works,y,chemical-elements,,,,
+lcsh|chess,Chess,y,chess,topical-game,Chess,,
+lcsh|chess-in-art,Chess in art,y,chess,,,,
+lcsh|cheyenne-art-20th-century-exhibitions,Cheyenne art -- 20th century -- Exhibitions,y,cheyenne-art,topical-arts,"Art, Cheyenne",,
 http://id.loc.gov/authorities/subjects/sh94005637.,"Chiapas (Mexico) -- History -- Peasant Uprising, 1994-",y,chiapas-mexico-history-peasant-uprising-1994,geographic,"Chiapas (Mexico) -- History -- Peasant Uprising, 1994-",,auto-seeded draft; review
 none|chicago-ill-views,Chicago (Ill.) -- Views,y,chicago-ill-views,geographic,Chicago (Ill.) -- Views,,auto-seeded draft; review
-lcsh|chickens-miscellanea,Chickens -- Miscellanea,y,chickens-miscellanea,topical,Chickens -- Miscellanea,,auto-seeded draft; review
-lcsh|chickens-poetry,Chickens -- Poetry,y,chickens-poetry,topical,Chickens -- Poetry,,auto-seeded draft; review
-http://id.worldcat.org/fast/854393.,Child development,y,child-development,topical,Child development,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2009118946.,Child development -- Case studies,y,child-development-case-studies,topical,Child development -- Case studies,,auto-seeded draft; review
-http://id.worldcat.org/fast/854588.,Child rearing,y,child-rearing,topical,Child rearing,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85023387.,Child rearing,y,child-rearing,topical,Child rearing,,auto-seeded draft; review
-lcsh|child-rearing-case-studies,Child rearing -- Case studies,y,child-rearing-case-studies,topical,Child rearing -- Case studies,,auto-seeded draft; review
-http://id.worldcat.org/fast/854640.,Child sexual abuse,y,child-sexual-abuse,topical,Child sexual abuse,,auto-seeded draft; review
-lcsh|child-sexual-abuse,Child sexual abuse,y,child-sexual-abuse,topical,Child sexual abuse,,auto-seeded draft; review
-lcsh|child-sexual-abuse-india,Child sexual abuse -- India,y,child-sexual-abuse-india,topical,Child sexual abuse -- India,,auto-seeded draft; review
-http://id.worldcat.org/fast/854780.,Childbirth,y,childbirth,topical,Childbirth,,auto-seeded draft; review
-http://id.worldcat.org/fast/854812.,Childbirth at home,y,childbirth-at-home,topical,Childbirth at home,,auto-seeded draft; review
-lcsh|childbirth-at-home-fiction,Childbirth at home -- Fiction,y,childbirth-at-home-fiction,topical,Childbirth at home -- Fiction,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh96011758.,Childbirth in art,y,childbirth-in-art,topical,Childbirth in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/854813.,Childbirth in art,y,childbirth-in-art,topical,Childbirth in art,,auto-seeded draft; review
-lcsh|childbirth-in-art,Childbirth in art,y,childbirth-in-art,topical,Childbirth in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/854835.,Children,y,children,topical,Children,,auto-seeded draft; review
-(OCoLC)fst00854835,Children,y,children,topical,Children,,auto-seeded draft; review
-homoit|children,Children,y,children,topical,Children,,auto-seeded draft; review
-http://id.worldcat.org/fast/854849.,Children -- Books and reading,y,children-books-and-reading,topical,Children -- Books and reading,,auto-seeded draft; review
-lcsh|children-books-and-reading-gaza-strip-pictorial-works-juvenile-literature,Children -- Books and reading -- Gaza Strip -- Pictorial works -- Juvenile literature,y,children-books-and-reading-gaza-strip-pictorial-works-juvenile-literature,topical,Children -- Books and reading -- Gaza Strip -- Pictorial works -- Juvenile literature,,auto-seeded draft; review
-lcsh|children-pictorial-works,Children -- Pictorial works,y,children-pictorial-works,topical,Children -- Pictorial works,,auto-seeded draft; review
-lcsh|children-united-states-folklore,Children -- United States -- Folklore,y,children-united-states-folklore,topical,Children -- United States -- Folklore,,auto-seeded draft; review
-lcsh|children-united-states-pictorial-works,Children -- United States -- Pictorial works,y,children-united-states-pictorial-works,topical,Children -- United States -- Pictorial works,,auto-seeded draft; review
-lcsh|children-and-death-juvenile-fiction,Children and death -- Juvenile fiction,y,children-and-death-juvenile-fiction,topical,Children and death -- Juvenile fiction,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85023533,Children in art,y,children-in-art,topical,Children in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85023533.,Children in art,y,children-in-art,topical,Children in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/855249.,Children in art,y,children-in-art,topical,Children in art,,auto-seeded draft; review
-lcsh|children-in-art,Children in art,y,children-in-art,topical,Children in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/855337.,Children of divorced parents,y,children-of-divorced-parents,topical,Children of divorced parents,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2008100490.,Children of divorced parents -- Fiction,y,children-of-divorced-parents-fiction,topical,Children of divorced parents -- Fiction,,auto-seeded draft; review
-http://id.worldcat.org/fast/2033380.,Children of exiles,y,children-of-exiles,topical,Children of exiles,,auto-seeded draft; review
-lcsh|children-of-exiles-chile-pictorial-works,Children of exiles -- Chile -- Pictorial works,y,children-of-exiles-chile-pictorial-works,topical,Children of exiles -- Chile -- Pictorial works,,auto-seeded draft; review
-lcsh|children-of-holocaust-survivors,Children of Holocaust survivors,y,children-of-holocaust-survivors,topical,Children of Holocaust survivors,,auto-seeded draft; review
-(OCoLC)fst00855720,Children's books,y,children-s-books,topical,Children's books,,auto-seeded draft; review
-lcsh|children-s-books-illustrations,Children's books -- Illustrations,y,children-s-books-illustrations,topical,Children's books -- Illustrations,,auto-seeded draft; review
-lcshac|children-s-literature-periodicals,Children's literature -- Periodicals,y,children-s-literature-periodicals,topical,Children's literature -- Periodicals,,auto-seeded draft; review
-lcshac|children-s-periodicals,Children's periodicals,y,children-s-periodicals,topical,Children's periodicals,,auto-seeded draft; review
-http://id.worldcat.org/fast/856632.,Children's stories,y,children-s-stories,topical,Children's stories,,auto-seeded draft; review
-lcsh|children-s-stories,Children's stories,y,children-s-stories,topical,Children's stories,,auto-seeded draft; review
-lcsh|children-s-stories-american,"Children's stories, American",y,children-s-stories-american,topical,"Children's stories, American",,auto-seeded draft; review
+lcsh|chickens-miscellanea,Chickens -- Miscellanea,y,chickens,topical-animals,Chickens,,
+lcsh|chickens-poetry,Chickens -- Poetry,y,chickens,,Chickens -- Poetry,,
+http://id.worldcat.org/fast/854393.,Child development,y,child-development,topical-concept,Child development,,
+http://id.loc.gov/authorities/subjects/sh2009118946.,Child development -- Case studies,y,child-development,,,,
+http://id.worldcat.org/fast/854588.,Child rearing,y,child-rearing,topical-concept,Child rearing,,
+http://id.loc.gov/authorities/subjects/sh85023387.,Child rearing,y,child-rearing,,,,
+lcsh|child-rearing-case-studies,Child rearing -- Case studies,y,child-rearing,,,,
+http://id.worldcat.org/fast/854640.,Child sexual abuse,y,child-abuse,topical-concept,Child abuse,,
+lcsh|child-sexual-abuse,Child sexual abuse,y,child-abuse,,,,
+lcsh|child-sexual-abuse-india,Child sexual abuse -- India,y,child-abuse,,,,
+http://id.worldcat.org/fast/854780.,Childbirth,y,childbirth,topical-event,Childbirth,,
+http://id.worldcat.org/fast/854812.,Childbirth at home,y,childbirth,,,,
+lcsh|childbirth-at-home-fiction,Childbirth at home -- Fiction,y,childbirth,,,,
+http://id.loc.gov/authorities/subjects/sh96011758.,Childbirth in art,y,childbirth,,,,
+http://id.worldcat.org/fast/854813.,Childbirth in art,y,childbirth,,,,
+lcsh|childbirth-in-art,Childbirth in art,y,childbirth,,,,
+http://id.worldcat.org/fast/854835.,Children,y,children,topical-people,Children,,
+(OCoLC)fst00854835,Children,y,children,,,,
+homoit|children,Children,y,children,,,,
+http://id.worldcat.org/fast/854849.,Children -- Books and reading,y,children,,,,
+lcsh|children-books-and-reading-gaza-strip-pictorial-works-juvenile-literature,Children -- Books and reading -- Gaza Strip -- Pictorial works -- Juvenile literature,y,children,,,,
+lcsh|children-pictorial-works,Children -- Pictorial works,y,children,,,,
+lcsh|children-united-states-folklore,Children -- United States -- Folklore,y,children,,,,
+lcsh|children-united-states-pictorial-works,Children -- United States -- Pictorial works,y,children,,,,
+lcsh|children-and-death-juvenile-fiction,Children and death -- Juvenile fiction,n,,,,,
+http://id.loc.gov/authorities/subjects/sh85023533,Children in art,y,children,,,,
+http://id.loc.gov/authorities/subjects/sh85023533.,Children in art,y,children,,,,
+http://id.worldcat.org/fast/855249.,Children in art,y,children,,,,
+lcsh|children-in-art,Children in art,y,children,,,,
+http://id.worldcat.org/fast/855337.,Children of divorced parents,y,children,,,,
+http://id.loc.gov/authorities/subjects/sh2008100490.,Children of divorced parents -- Fiction,y,children,,,,
+http://id.worldcat.org/fast/2033380.,Children of exiles,y,children,,,,
+lcsh|children-of-exiles-chile-pictorial-works,Children of exiles -- Chile -- Pictorial works,y,children,,,,
+lcsh|children-of-holocaust-survivors,Children of Holocaust survivors,y,children,,,,genre
+(OCoLC)fst00855720,Children's books,n,,,,,genre
+lcsh|children-s-books-illustrations,Children's books -- Illustrations,n,,,,,genre
+lcshac|children-s-literature-periodicals,Children's literature -- Periodicals,n,,,,,genre
+lcshac|children-s-periodicals,Children's periodicals,n,,,,,genre
+http://id.worldcat.org/fast/856632.,Children's stories,y,childrens-stories,topical-concept,Children's stories,,
+lcsh|children-s-stories,Children's stories,y,childrens-stories,,,,
+lcsh|children-s-stories-american,"Children's stories, American",y,childrens-stories,,,,
 http://id.worldcat.org/fast/1205362.,Chile,y,chile,geographic,Chile,,auto-seeded draft; review
 http://id.worldcat.org/fast/1246236.,Chile -- Araucanía,y,chile-araucan-a,geographic,Chile -- Araucanía,,auto-seeded draft; review
 none|chile-history-1973-1988-in-art,Chile -- History -- 1973-1988 -- In art,y,chile-history-1973-1988-in-art,geographic,Chile -- History -- 1973-1988 -- In art,,auto-seeded draft; review
@@ -1461,59 +1461,59 @@ none|china-history-tiananmen-square-incident-1989-press-coverage,"China -- Histo
 http://id.loc.gov/authorities/subjects/sh85024186.,China -- Social life and customs,y,china-social-life-and-customs,geographic,China -- Social life and customs,,auto-seeded draft; review
 http://id.worldcat.org/fast/1328820.,China -- Suzhou (Jiangsu Sheng),y,china-suzhou-jiangsu-sheng,geographic,China -- Suzhou (Jiangsu Sheng),,auto-seeded draft; review
 http://id.worldcat.org/fast/1212006.,China -- Xinjiang Uygur Zizhiqu,y,china-xinjiang-uygur-zizhiqu,geographic,China -- Xinjiang Uygur Zizhiqu,,auto-seeded draft; review
-lcsh|chinese-americans-race-identity,Chinese Americans -- Race identity,y,chinese-americans-race-identity,topical,Chinese Americans -- Race identity,,auto-seeded draft; review
-lcsh|chinese-language-china-writing,Chinese language -- China -- Writing,y,chinese-language-china-writing,topical,Chinese language -- China -- Writing,,auto-seeded draft; review
-lcsh|chocolate,Chocolate,y,chocolate,topical,Chocolate,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85024618.,Choice (Psychology),y,choice-psychology,topical,Choice (Psychology),,auto-seeded draft; review
-http://id.worldcat.org/fast/858327.,Choice (Psychology),y,choice-psychology,topical,Choice (Psychology),,auto-seeded draft; review
-lcsh|choice-psychology,Choice (Psychology),y,choice-psychology,topical,Choice (Psychology),,auto-seeded draft; review
-mesh|choice-behavior,Choice Behavior,y,choice-behavior,topical,Choice Behavior,,auto-seeded draft; review
+lcsh|chinese-americans-race-identity,Chinese Americans -- Race identity,y,chinese-americans-race-identity,topical-concept,"Race identity, Chinese American",,
+lcsh|chinese-language-china-writing,Chinese language -- China -- Writing,y,chinese-language-china-writing,topical-concept,"Chinese language, Writing",,
+lcsh|chocolate,Chocolate,y,chocolate,topical-object,Chocolate,,
+http://id.loc.gov/authorities/subjects/sh85024618.,Choice (Psychology),y,choice,topical-concept,Choice ,,
+http://id.worldcat.org/fast/858327.,Choice (Psychology),y,choice,,,,
+lcsh|choice-psychology,Choice (Psychology),y,choice,,,,
+mesh|choice-behavior,Choice Behavior,y,choice,,,,auto-seeded draft; review
 lcsh|choruses-sacred-women-s-voices-unaccompanied,"Choruses, Sacred (Women's voices), Unaccompanied",n,,,,,genre
 unspecified|chr-1991,CHR 1991,n,,,,,
-lcsh|christian-life-juvenile-fiction,Christian life -- Juvenile fiction,y,christian-life-juvenile-fiction,topical,Christian life -- Juvenile fiction,,auto-seeded draft; review
-lcsh|christian-poetry-english-19th-century,"Christian poetry, English -- 19th century",y,christian-poetry-english-19th-century,topical,"Christian poetry, English -- 19th century",,auto-seeded draft; review
-lcsh|christianity-and-art,Christianity and art,y,christianity-and-art,topical,Christianity and art,,auto-seeded draft; review
-lcsh|christmas,Christmas,y,christmas,topical,Christmas,,auto-seeded draft; review
-lcsh|christmas-stories-norway,Christmas stories -- Norway,y,christmas-stories-norway,topical,Christmas stories -- Norway,,auto-seeded draft; review
-lcsh|christmas-stories-english,"Christmas stories, English",y,christmas-stories-english,topical,"Christmas stories, English",,auto-seeded draft; review
-lcsh|christmas-trees-pictorial-works,Christmas trees -- Pictorial works,y,christmas-trees-pictorial-works,topical,Christmas trees -- Pictorial works,,auto-seeded draft; review
-http://id.worldcat.org/fast/860049.,Chromolithography,y,chromolithography,topical,Chromolithography,,auto-seeded draft; review
+lcsh|christian-life-juvenile-fiction,Christian life -- Juvenile fiction,y,christianity,topical-concept,Christianity,,
+lcsh|christian-poetry-english-19th-century,"Christian poetry, English -- 19th century",y,christianity,,,,
+lcsh|christianity-and-art,Christianity and art,y,christianity,,,,
+lcsh|christmas,Christmas,y,christmas,chronological-event,Christmas,,
+lcsh|christmas-stories-norway,Christmas stories -- Norway,y,christmas,,,,
+lcsh|christmas-stories-english,"Christmas stories, English",y,christmas,,,,
+lcsh|christmas-trees-pictorial-works,Christmas trees -- Pictorial works,y,christmas-trees,topical-object,Christmas trees,,
+http://id.worldcat.org/fast/860049.,Chromolithography,n,,,,,construction
 lcsh|chromolithography-specimens,Chromolithography -- Specimens,n,,,,,construction
-http://id.loc.gov/authorities/subjects/sh85025412.,"Chronology, Historical",y,chronology-historical,topical,"Chronology, Historical",,auto-seeded draft; review
-http://id.worldcat.org/fast/860207.,"Chronology, Historical",y,chronology-historical,topical,"Chronology, Historical",,auto-seeded draft; review
-http://id.worldcat.org/fast/860599.,Church buildings,y,church-buildings,topical,Church buildings,,auto-seeded draft; review
-lcsh|church-buildings-pictorial-works,Church buildings -- Pictorial works,y,church-buildings-pictorial-works,topical,Church buildings -- Pictorial works,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85026014.,Cinematography,y,cinematography,topical,Cinematography,,auto-seeded draft; review
-http://id.worldcat.org/fast/861484.,Cinematography,y,cinematography,topical,Cinematography,,auto-seeded draft; review
-lcsh|cinematography-abstract,"Cinematography, Abstract",y,cinematography-abstract,topical,"Cinematography, Abstract",,auto-seeded draft; review
-lcsh|circus-in-art,Circus in art,y,circus-in-art,topical,Circus in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85026090.,Circus performers,y,circus-performers,topical,Circus performers,,auto-seeded draft; review
-http://id.worldcat.org/fast/861671.,Circus performers,y,circus-performers,topical,Circus performers,,auto-seeded draft; review
-lcsh|cities-and-towns-england-kent-pictorial-works,Cities and towns -- England -- Kent -- Pictorial works,y,cities-and-towns-england-kent-pictorial-works,topical,Cities and towns -- England -- Kent -- Pictorial works,,auto-seeded draft; review
-lcsh|cities-and-towns-in-art,Cities and towns in art,y,cities-and-towns-in-art,topical,Cities and towns in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/862081.,City and town life,y,city-and-town-life,topical,City and town life,,auto-seeded draft; review
-lcsh|city-and-town-life-fiction,City and town life -- Fiction,y,city-and-town-life-fiction,topical,City and town life -- Fiction,,auto-seeded draft; review
-lcsh|city-and-town-life-pictorial-works,City and town life -- Pictorial works,y,city-and-town-life-pictorial-works,topical,City and town life -- Pictorial works,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85026282.,City planning,y,city-planning,topical,City planning,,auto-seeded draft; review
-http://id.worldcat.org/fast/862177.,City planning,y,city-planning,topical,City planning,,auto-seeded draft; review
-lcsh|city-planning-georgia-atlanta,City planning -- Georgia -- Atlanta,y,city-planning-georgia-atlanta,topical,City planning -- Georgia -- Atlanta,,auto-seeded draft; review
-lcsh|city-traffic-in-art,City traffic -- In art,y,city-traffic-in-art,topical,City traffic -- In art,,auto-seeded draft; review
-http://id.worldcat.org/fast/862627.,Civil rights,y,civil-rights,topical,Civil rights,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85026371.,Civil rights,y,civil-rights,topical,Civil rights,,auto-seeded draft; review
-lcsh|civil-rights-poetry,Civil rights -- Poetry,y,civil-rights-poetry,topical,Civil rights -- Poetry,,auto-seeded draft; review
-lcsh|civil-rights-united-states-personal-narratives,Civil rights -- United States -- Personal narratives,y,civil-rights-united-states-personal-narratives,topical,Civil rights -- United States -- Personal narratives,,auto-seeded draft; review
-http://id.worldcat.org/fast/862898.,Civilization,y,civilization,topical,Civilization,,auto-seeded draft; review
-lcsh|civilization,Civilization,y,civilization,topical,Civilization,,auto-seeded draft; review
-http://id.worldcat.org/fast/862900.,Civilization -- African influences,y,civilization-african-influences,topical,Civilization -- African influences,,auto-seeded draft; review
-http://id.worldcat.org/fast/864229.,Climatic changes,y,climatic-changes,topical,Climatic changes,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85027037.,Climatic changes,y,climatic-changes,topical,Climatic changes,,auto-seeded draft; review
-lcsh|climatic-changes-pictorial-works,Climatic changes -- Pictorial works,y,climatic-changes-pictorial-works,topical,Climatic changes -- Pictorial works,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2019000286.,Climatic changes in art,y,climatic-changes-in-art,topical,Climatic changes in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/2004119.,Climatic changes in art,y,climatic-changes-in-art,topical,Climatic changes in art,,auto-seeded draft; review
-lcsh|clippings-books-newspapers-etc-in-art,"Clippings (Books, newspapers, etc.) in art",y,clippings-books-newspapers-etc-in-art,topical,"Clippings (Books, newspapers, etc.) in art",,auto-seeded draft; review
-lcsh|clocks-and-watches-in-art,Clocks and watches in art,y,clocks-and-watches-in-art,topical,Clocks and watches in art,,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh85033274.,Clothing and dress in art,y,clothing-and-dress-in-art,topical,Clothing and dress in art,,auto-seeded draft; review
-http://id.worldcat.org/fast/1199302.,Clothing and dress in art,y,clothing-and-dress-in-art,topical,Clothing and dress in art,,auto-seeded draft; review
+http://id.loc.gov/authorities/subjects/sh85025412.,"Chronology, Historical",y,chronology-historical,topical-concept,"Chronology, Historical",,
+http://id.worldcat.org/fast/860207.,"Chronology, Historical",y,chronology-historical,,,,
+http://id.worldcat.org/fast/860599.,Church buildings,y,churches,,,,
+lcsh|church-buildings-pictorial-works,Church buildings -- Pictorial works,y,churches,,,,
+http://id.loc.gov/authorities/subjects/sh85026014.,Cinematography,y,cinematography,topical-arts,Cinematography,,
+http://id.worldcat.org/fast/861484.,Cinematography,y,cinematography,,,,
+lcsh|cinematography-abstract,"Cinematography, Abstract",y,cinematography,,,,
+lcsh|circus-in-art,Circus in art,y,circus,topical-event,Circus,,
+http://id.loc.gov/authorities/subjects/sh85026090.,Circus performers,y,circus-performers,topical-people,Circus performers,,
+http://id.worldcat.org/fast/861671.,Circus performers,y,circus-performers,,,,
+lcsh|cities-and-towns-england-kent-pictorial-works,Cities and towns -- England -- Kent -- Pictorial works,y,cities-and-towns-england-kent-pictorial-works,geographic,Cities and towns -- England -- Kent -- Pictorial works,,auto-seeded draft; review
+lcsh|cities-and-towns-in-art,Cities and towns in art,y,cities-and-towns,topical-place,Cities and towns,,
+http://id.worldcat.org/fast/862081.,City and town life,y,cities-and-towns,,,,
+lcsh|city-and-town-life-fiction,City and town life -- Fiction,y,cities-and-towns,,,,
+lcsh|city-and-town-life-pictorial-works,City and town life -- Pictorial works,y,cities-and-towns,,,,
+http://id.loc.gov/authorities/subjects/sh85026282.,City planning,y,city-planning,topical-concept,City planning,,
+http://id.worldcat.org/fast/862177.,City planning,y,city-planning,,,,
+lcsh|city-planning-georgia-atlanta,City planning -- Georgia -- Atlanta,y,city-planning,,,,
+lcsh|city-traffic-in-art,City traffic -- In art,y,Traffic,topical-concept,Traffic,,
+http://id.worldcat.org/fast/862627.,Civil rights,y,civil-rights,topical-concept,Civil rights,,
+http://id.loc.gov/authorities/subjects/sh85026371.,Civil rights,y,civil-rights,,,,
+lcsh|civil-rights-poetry,Civil rights -- Poetry,y,civil-rights,,,,
+lcsh|civil-rights-united-states-personal-narratives,Civil rights -- United States -- Personal narratives,y,civil-rights,,,,
+http://id.worldcat.org/fast/862898.,Civilization,y,civilization,topical-concept,Civilization,,
+lcsh|civilization,Civilization,y,civilization,,,,
+http://id.worldcat.org/fast/862900.,Civilization -- African influences,y,civilization,,,,
+http://id.worldcat.org/fast/864229.,Climatic changes,y,climatic-change,topical-environment,Climatic change,,
+http://id.loc.gov/authorities/subjects/sh85027037.,Climatic changes,y,climatic-change,,,,
+lcsh|climatic-changes-pictorial-works,Climatic changes -- Pictorial works,y,climatic-change,,,,
+http://id.loc.gov/authorities/subjects/sh2019000286.,Climatic changes in art,y,climatic-change,,,,
+http://id.worldcat.org/fast/2004119.,Climatic changes in art,y,climatic-change,,,,
+lcsh|clippings-books-newspapers-etc-in-art,"Clippings (Books, newspapers, etc.) in art",n,,,,,construction
+lcsh|clocks-and-watches-in-art,Clocks and watches in art,y,Clocks and watches,topical-objects,Clocks and watches,,
+http://id.loc.gov/authorities/subjects/sh85033274.,Clothing and dress in art,y,clothing,topical-object,Clothing,,
+http://id.worldcat.org/fast/1199302.,Clothing and dress in art,y,clothing,,,,
 http://id.worldcat.org/fast/864856.,Clouds,y,clouds,topical,Clouds,,auto-seeded draft; review
 lcsh|clouds-diurnal-variations-photographs,Clouds -- Diurnal variations -- Photographs,y,clouds-diurnal-variations-photographs,topical,Clouds -- Diurnal variations -- Photographs,,auto-seeded draft; review
 lcsh|clouds-photographs,Clouds -- Photographs,y,clouds-photographs,topical,Clouds -- Photographs,,auto-seeded draft; review

@@ -34,13 +34,13 @@ Topical
     arts (terms specific to an art form like African American art or Aleatoric music, terms like abstraction that are used in multiple study areas are concepts)
     phenomena (includes sensorial phenomena that are not specific to humans or can be used as a concept or human medical term like afterimage)
     condition (includes diseases)
-    environment (natural enivronment but not geographical like air, period table elements and terms like conditions in rural areas)
+    environment (natural enivronment but not geographical like air and terms like conditions in rural areas)
     event (not time bound like accident)
     organization (includes industries and movements)
     entities (living thing, including mythological, that is not a animal, plant, or person)
     animals (includes features of animals)
     place
-    sport
+    game
     plant 
 
 Chronological
