@@ -1,7 +1,7 @@
 cluster,labels,include,conceptId,category,prefLabel,exactMatch,note
 unspecified|aartists-books-zbelgium-vspecimens,‡aArtists' books‡zBelgium‡vSpecimens,n,,,,,
 kao//eng|20th-century,20th century,n,,,,,
-(NL-LeOCL)077600088,21.22 history of drawing,n,,,,,noise
+(NL-LeOCL)077600088,21.22 history of drawing,n,,,,,
 kao|1900-talet,1900-talet,y,20th-century,chronological,20th century,https://id.kb.se/term/sao/1900-talet,
 none|aalst,Aalst,y,aalst-be,geographic-city,Aalst (Belgium),http://id.loc.gov/authorities/names/n81035796,
 none|abkhazia-georgia-ethnic-relations,Abkhazia (Georgia) -- Ethnic relations,y,,geographic,,,auto-seeded draft; review
@@ -1022,40 +1022,40 @@ lcsh|belly-dance,Belly dance,y,belly-dance,topical-arts,Belly dance,,
 none|belsunce-marseille-france-buildings-structures-etc-pictorial-works,"Belsunce (Marseille, France) -- Buildings, structures, etc -- Pictorial works",y,belsunce-marseille-france-buildings-structures-etc-pictorial-works,geographic,"Belsunce (Marseille, France) -- Buildings, structures, etc -- Pictorial works",,auto-seeded draft; review
 none|bengal-india-in-art,Bengal (India) -- In art,y,bengal-in,geographic-region,Bengal (India),,
 lcsh|bereavement-fiction,Bereavement -- Fiction,y,bereavement,topical,Bereavement -- Fiction,,
-lcsh|bereavement-new-york-state-new-york,Bereavement -- New York (State) -- New York,y,bereavment,topical,Bereavement -- New York (State) -- New York,,
+lcsh|bereavement-new-york-state-new-york,Bereavement -- New York (State) -- New York,y,bereavement,,,,
 http://id.loc.gov/authorities/subjects/sh2008114411,"Berlin (Germany) -- Buildings, structures, etc",y,berlin-germany-buildings-structures-etc,geographic,"Berlin (Germany) -- Buildings, structures, etc",,auto-seeded draft; review
 http://id.loc.gov/authorities/subjects/sh2008114414.,Berlin (Germany) -- Pictorial works,y,berlin-de,geographic-city,Berlin (Germany),,
 http://id.loc.gov/authorities/subjects/sh85013357,"Berlin Wall, Berlin, Germany, 1961-1989",y,berlin-wall-berlin-germany-1961-1989,geographic,"Berlin Wall, Berlin, Germany, 1961-1989",,auto-seeded draft; review
-http://id.worldcat.org/fast/1709753.,"Berlin Wall, Berlin, Germany, 1961-1989",y,berlin-wall-berlin-germany-1961-1989,topical,"Berlin Wall, Berlin, Germany, 1961-1989",,auto-seeded draft; review
-http://id.loc.gov/authorities/subjects/sh2009116949.,"Berlin Wall, Berlin, Germany, 1961-1989 -- Pictorial works",y,berlin-wall-berlin-germany-1961-1989-pictorial-works,topical,"Berlin Wall, Berlin, Germany, 1961-1989 -- Pictorial works",,auto-seeded draft; review
-rvm|bestiaires,Bestiaires,y,bestiaires,topical,Bestiaires,,auto-seeded draft; review
-lcsh|bestiality-in-art,Bestiality in art,y,bestiality-in-art,topical,Bestiality in art,,auto-seeded draft; review
-lcsh|bestiaries,Bestiaries,y,bestiaries,topical,Bestiaries,,auto-seeded draft; review
-aat|bestiaries,bestiaries,y,bestiaries,topical,Bestiaries,,auto-seeded draft; review
-fast|bestiaries,Bestiaries,y,bestiaries,topical,Bestiaries,,auto-seeded draft; review
-http://id.worldcat.org/fast/830884.,Bestiaries,y,bestiaries,topical,Bestiaries,,auto-seeded draft; review
-lcsh|bestiaries-india,Bestiaries -- India,y,bestiaries-india,topical,Bestiaries -- India,,auto-seeded draft; review
-unspecified|bewegung-2-juni,Bewegung 2. Juni,y,bewegung-2-juni,topical,Bewegung 2. Juni,,auto-seeded draft; review
-(OCoLC)fst00824866,BGP (Computer network protocol),y,bgp-computer-network-protocol,topical,BGP (Computer network protocol),,auto-seeded draft; review
-lcsh|bgp-computer-network-protocol,BGP (Computer network protocol),y,bgp-computer-network-protocol,topical,BGP (Computer network protocol),,auto-seeded draft; review
-lcsh|bible-o-t-job,Bible -- O.T -- Job,y,bible-o-t-job,topical,Bible -- O.T -- Job,,auto-seeded draft; review
-lcsh|big-churches-california-los-angeles-metropolitan-area-pictorial-works,Big churches -- California -- Los Angeles Metropolitan Area -- Pictorial works,y,big-churches-california-los-angeles-metropolitan-area-pictorial-works,topical,Big churches -- California -- Los Angeles Metropolitan Area -- Pictorial works,,auto-seeded draft; review
-lcsh|big-churches-united-states-pictorial-works,Big churches -- United States -- Pictorial works,y,big-churches-united-states-pictorial-works,topical,Big churches -- United States -- Pictorial works,,auto-seeded draft; review
+http://id.worldcat.org/fast/1709753.,"Berlin Wall, Berlin, Germany, 1961-1989",y,berlin-wall-berlin-germany-1961-1989,geographic,"Berlin Wall, Berlin, Germany, 1961-1989",,auto-seeded draft; review
+http://id.loc.gov/authorities/subjects/sh2009116949.,"Berlin Wall, Berlin, Germany, 1961-1989 -- Pictorial works",y,berlin-wall-berlin-germany-1961-1989-pictorial-works,geographic,"Berlin Wall, Berlin, Germany, 1961-1989 -- Pictorial works",,auto-seeded draft; review
+rvm|bestiaires,Bestiaires,n,,,,,construction
+lcsh|bestiality-in-art,Bestiality in art,n,,,,,
+lcsh|bestiaries,Bestiaries,n,,,,,construction 
+aat|bestiaries,bestiaries,n,,,,,construction
+fast|bestiaries,Bestiaries,n,,,,,construction
+http://id.worldcat.org/fast/830884.,Bestiaries,n,,,,,construction
+lcsh|bestiaries-india,Bestiaries -- India,n,,,,,construction
+unspecified|bewegung-2-juni,Bewegung 2. Juni,y,2-June-movement,topical-organization,2 June Movement,,
+(OCoLC)fst00824866,BGP (Computer network protocol),y,bgp-computer-network-protocol,topical-object,BGP (Computer network protocol),,
+lcsh|bgp-computer-network-protocol,BGP (Computer network protocol),y,bgp-computer-network-protocol,,,,
+lcsh|bible-o-t-job,Bible -- O.T -- Job,y,bible-job,topical-object,"Bible, Book of Job",,
+lcsh|big-churches-california-los-angeles-metropolitan-area-pictorial-works,Churches,y,churches,topical-place,Churches,,
+lcsh|big-churches-united-states-pictorial-works,Big churches -- United States -- Pictorial works,y,churches,,,,
 none|bikini-atoll-marshall-islands,Bikini Atoll (Marshall Islands),y,bikini-atoll-mh,geographic-island,Bikini Atoll (Marshall Islands),,
 gnd|bildband,Bildband,n,,,,,
 swd|bildband,Bildband,n,,,,,
 lcsh|bildband-1981,Bildband;1981,n,,,,,
-http://id.loc.gov/authorities/subjects/sh85014030.,Bilingualism,y,bilingualism,topical,Bilingualism,,auto-seeded draft; review
-http://id.worldcat.org/fast/831739.,Bilingualism,y,bilingualism,topical,Bilingualism,,auto-seeded draft; review
+http://id.loc.gov/authorities/subjects/sh85014030.,Bilingualism,y,bilingualism,topical-concept,Bilingualism,,
+http://id.worldcat.org/fast/831739.,Bilingualism,y,bilingualism,,,,
 none|biloxi-miss-in-art,Biloxi (Miss.) -- In art,y,biloxi-us,geographic-city,"Biloxi, Mississippi (United States)",,
-lcsh|binary-system-mathematics,Binary system (Mathematics),y,binary-system-mathematics,topical,Binary system (Mathematics),,auto-seeded draft; review
-http://id.worldcat.org/fast/832149.,Biography,y,biography,topical,Biography,,auto-seeded draft; review
-(OCoLC)fst00832383,Biology,y,biology,topical,Biology,,auto-seeded draft; review
-lcsh|biology,Biology,y,biology,topical,Biology,,auto-seeded draft; review
-http://id.worldcat.org/fast/832970.,Birds,y,birds,topical,Birds,,auto-seeded draft; review
-lcsh|birds-argentina,Birds -- Argentina,y,birds-argentina,topical,Birds -- Argentina,,auto-seeded draft; review
-lcsh|birds-behavior-pictorial-works,Birds -- Behavior -- Pictorial works,y,birds-behavior-pictorial-works,topical,Birds -- Behavior -- Pictorial works,,auto-seeded draft; review
-lcsh|birds-climatic-factors,Birds -- Climatic factors,y,birds-climatic-factors,topical,Birds -- Climatic factors,,auto-seeded draft; review
+lcsh|binary-system-mathematics,Binary system (Mathematics),y,binary-system-mathematics,topical-concept,"Mathematics, Binary system",,
+http://id.worldcat.org/fast/832149.,Biography,n,,,,,genre
+(OCoLC)fst00832383,Biology,y,biology,topical-concept,Biology,,
+lcsh|biology,Biology,y,biology,,,,
+http://id.worldcat.org/fast/832970.,Birds,y,birds,topical-animals,Birds,,
+lcsh|birds-argentina,Birds -- Argentina,y,birds,,,,
+lcsh|birds-behavior-pictorial-works,Birds -- Behavior -- Pictorial works,y,birds,,,,
+lcsh|birds-climatic-factors,Birds -- Climatic factors,y,birds,,,,
 http://id.worldcat.org/fast/833036.,Birds -- Models,y,birds-models,topical,Birds -- Models,,auto-seeded draft; review
 lcsh|birds-models-pictorial-works,Birds -- Models -- Pictorial works,y,birds-models-pictorial-works,topical,Birds -- Models -- Pictorial works,,auto-seeded draft; review
 lcsh|birds-north-america,Birds -- North America,y,birds-north-america,topical,Birds -- North America,,auto-seeded draft; review
