@@ -1,0 +1,85 @@
+
+PREFIX ab:   <https://dkglab.github.io/ns/artists-books/>
+PREFIX bf:   <http://id.loc.gov/ontologies/bibframe/>
+PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT
+  ?creator
+  ?creatorKey
+  ?creatorName
+  ?initial
+  (COUNT(DISTINCT ?book) AS ?bookCount)
+  (GROUP_CONCAT(DISTINCT ?bookToken; separator="\n") AS ?books)
+WHERE {
+  ?book
+    a ab:ArtistsBook ;
+    ab:itemKey ?bookKey ;
+    rdfs:label ?title ;
+    bf:contribution ?contribution .
+
+  ?contribution bf:agent ?creator .
+  ?creator rdfs:label ?creatorName .
+
+  # Stable, URL-safe key based on the creator's RDF identifier.
+  BIND(SHA256(STR(?creator)) AS ?creatorKey)
+
+  # Alphabetical grouping: # followed by A–Z.
+  BIND(UCASE(SUBSTR(STR(?creatorName), 1, 1)) AS ?firstChar)
+  BIND(
+    IF(REGEX(?firstChar, "^[A-Z]$"), ?firstChar, "#")
+    AS ?initial
+  )
+
+  # Primary creators displayed on each book card.
+  OPTIONAL {
+    {
+      SELECT ?book
+        (GROUP_CONCAT(DISTINCT ?name; separator="; ") AS ?creators)
+      WHERE {
+        ?book bf:contribution ?c .
+        ?c a bflc:PrimaryContribution ;
+           bf:agent/rdfs:label ?name .
+      }
+      GROUP BY ?book
+    }
+  }
+
+  # Publication date.
+  OPTIONAL {
+    {
+      SELECT ?book (SAMPLE(?d) AS ?date)
+      WHERE {
+        ?book bf:provisionActivity/bflc:simpleDate ?d .
+      }
+      GROUP BY ?book
+    }
+  }
+
+  # Representative image for each book.
+  OPTIONAL {
+    ?book ab:representativeImage/ab:iiifPath ?thumbPath .
+    BIND(
+      CONCAT(
+        "https://www.jstor.org",
+        ?thumbPath,
+        "/full/,180/0/default.jpg"
+      )
+      AS ?thumbUrl
+    )
+  }
+
+  # Format expected by the shared book-cards template.
+  BIND(
+    CONCAT(
+      STR(?bookKey), "\t",
+      STR(?title), "\t",
+      COALESCE(?creators, ""), "\t",
+      COALESCE(STR(?date), ""), "\t",
+      COALESCE(?thumbUrl, "")
+    )
+    AS ?bookToken
+  )
+}
+GROUP BY ?creator ?creatorKey ?creatorName ?initial
+ORDER BY ?initial LCASE(?creatorName)
