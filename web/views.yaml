@@ -27,3 +27,9 @@ views:
     query: "construction-facet.rq"
     template: "construction-facet.json"
     unsafe: true
+  - output: "creator.html"
+    query: "creators.rq"
+    template: "creator.html"
+  - output: "creator/{{creatorKey}}/index.html"
+    query: "creators.rq"
+    template: "creators_detail.html"
