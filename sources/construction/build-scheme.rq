@@ -86,17 +86,34 @@ WHERE {
   # ?cluster ends are always bound, so the private-key rule in
   # docs/QUERY-PERFORMANCE.md -- which guards against an *unbound* OPTIONAL var
   # fanning out to match every row -- does not apply.)
-  SERVICE <x-sparql-anything:location=sources/construction/occurrences.csv,csv.headers=true> {
-    ?orow xyz:cluster    ?cluster ;
-          xyz:rawLabel   ?rawLabel ;
-          xyz:normLabel  ?normLabel .
-    # authority is "" for headings that carry no $0; treat that as absent. Only
-    # keep a web-resolvable http(s) URI as an exactMatch target -- many $0 are bare
-    # institution-local control numbers ("(OCoLC)fst...", "(CStmoGRI)aatgf...") that
-    # IRI() below would otherwise resolve against the build directory, baking a
-    # machine-local file:// IRI into the committed scheme. Same guard as
-    # ../subjects/build-scheme.rq.
-    OPTIONAL { ?orow xyz:authority ?authRaw . FILTER(STRSTARTS(STR(?authRaw), "http")) BIND(?authRaw AS ?authority) }
+  #
+  # The subject-track occurrences (../subjects/occurrences.csv, same columns and
+  # cluster keys) are UNIONed in so a decisions.csv row can claim a 650 heading
+  # the construction pool doesn't mine -- e.g. LCSH "Songs" or "Aleatory music",
+  # which name what a work *is* (sheet music) rather than what it is about (#148).
+  # Only clusters with an include=y construction decision are kept by the join,
+  # and those headings are marked include=n "-> construction" in the subjects
+  # decisions, so the partition between the two schemes still holds.
+  {
+    SERVICE <x-sparql-anything:location=sources/construction/occurrences.csv,csv.headers=true> {
+      ?orow xyz:cluster    ?cluster ;
+            xyz:rawLabel   ?rawLabel ;
+            xyz:normLabel  ?normLabel .
+      # authority is "" for headings that carry no $0; treat that as absent. Only
+      # keep a web-resolvable http(s) URI as an exactMatch target -- many $0 are bare
+      # institution-local control numbers ("(OCoLC)fst...", "(CStmoGRI)aatgf...") that
+      # IRI() below would otherwise resolve against the build directory, baking a
+      # machine-local file:// IRI into the committed scheme. Same guard as
+      # ../subjects/build-scheme.rq.
+      OPTIONAL { ?orow xyz:authority ?authRaw . FILTER(STRSTARTS(STR(?authRaw), "http")) BIND(?authRaw AS ?authority) }
+    }
+  } UNION {
+    SERVICE <x-sparql-anything:location=sources/subjects/occurrences.csv,csv.headers=true> {
+      ?orow xyz:cluster    ?cluster ;
+            xyz:rawLabel   ?rawLabel ;
+            xyz:normLabel  ?normLabel .
+      OPTIONAL { ?orow xyz:authority ?authRaw . FILTER(STRSTARTS(STR(?authRaw), "http")) BIND(?authRaw AS ?authority) }
+    }
   }
 
   # normalized match key (plain literal) + variant label + exact-match IRI
