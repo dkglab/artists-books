@@ -12,11 +12,16 @@
 <div class="section browse">
 {{/* The filter sidebar (#138) is an empty mount point, hidden until
      /facets.js has loaded the facet index and revealed it: without JS the page
-     is just the full grid. The facet filters the grid below by the cards'
+     is just the full grid. The facets filter the grid below by the cards'
      data-key, so the grid itself is still rendered in full here. */}}
 <aside class="filters" hidden>
   <h2>Filters</h2>
   <construction-facet data-label="Construction" data-src="/construction-facet.json" data-param="construction"></construction-facet>
+  {{/* Subject and Place share one index (#143), each taking one category of
+       it. data-min is how many works a term needs to be listed before anything
+       is typed; the rest are reached through the facet's text box. */}}
+  <subject-facet data-label="Subject" data-src="/subject-facet.json" data-category="topical" data-param="subject" data-min="5"></subject-facet>
+  <place-facet data-label="Place" data-search="Find a place" data-src="/subject-facet.json" data-category="geographic" data-param="place" data-min="5"></place-facet>
 </aside>
 
 <div class="results">

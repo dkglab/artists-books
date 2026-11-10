@@ -99,7 +99,9 @@ endif
 ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki stop
 endif
-	# The facet index is rendered with text/template (views.yaml `unsafe: true`),
+	# The facet indexes are rendered with text/template (views.yaml `unsafe: true`),
 	# which leaves JSON escaping to the template: fail the build if it slipped,
 	# removing the target so the next `make` rebuilds rather than looking done.
-	python3 -m json.tool web/site/construction-facet.json > /dev/null || { rm -f $@; exit 1; }
+	for f in construction-facet subject-facet; do \
+	  python3 -m json.tool web/site/$$f.json > /dev/null || { rm -f $@; exit 1; }; \
+	done
