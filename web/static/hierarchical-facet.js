@@ -41,9 +41,10 @@ export class HierarchicalFacet extends Facet {
     }
   }
 
-  // Narrow the list to concepts whose label contains the typed text, hiding
-  // categories with no match and opening the ones that have one. Ticks are
-  // untouched. Clearing the box restores the categories' open states.
+  // Narrow the list to concepts whose label contains the typed text and that
+  // would leave some works, hiding categories with nothing left and, while
+  // searching, opening the ones that have a match. Ticks are untouched.
+  // Clearing the box restores the categories' open states.
   narrow() {
     const q = this.query;
     const categories = [...this.querySelectorAll(".facet-list > details")];
@@ -52,9 +53,10 @@ export class HierarchicalFacet extends Facet {
     }
     for (const details of categories) {
       let matches = 0;
-      for (const li of details.querySelectorAll("li")) {
-        const hit = !q || li.querySelector(".facet-label").textContent.toLowerCase().includes(q);
-        li.hidden = !hit;
+      for (const box of details.querySelectorAll("input[type=checkbox]")) {
+        const row = this.rows.get(box.value);
+        const hit = !row.empty && (!q || row.label.toLowerCase().includes(q));
+        row.li.hidden = !hit;
         if (hit) matches += 1;
       }
       details.hidden = matches === 0;

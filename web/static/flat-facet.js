@@ -7,7 +7,8 @@
 // `data-min` works are shown (plus any that are ticked, so a selection from the
 // URL or from a search stays visible); typing searches every term. The
 // threshold is on the overall counts, not the ones narrowed by other facets,
-// so the list doesn't change shape as other facets change.
+// so the list doesn't change shape as other facets change. Terms that would
+// leave no works given the other facets' selections are hidden either way.
 
 import { Facet, el } from "./facet.js";
 
@@ -32,14 +33,15 @@ export class FlatFacet extends Facet {
     const q = this.query;
     const min = this.min;
     let shown = 0;
+    let rest = 0;
     for (const row of this.rows.values()) {
-      const visible = q
+      const visible = !row.empty && (q
         ? row.label.toLowerCase().includes(q)
-        : row.count >= min || row.box.checked;
+        : row.count >= min || row.box.checked);
       row.li.hidden = !visible;
       if (visible) shown += 1;
+      else if (!row.empty) rest += 1;
     }
-    const rest = this.rows.size - shown;
     if (q) this.#hint.textContent = shown ? "" : "No matching terms.";
     else this.#hint.textContent = rest ? `${rest} less-used terms: type above to find them.` : "";
     this.#hint.hidden = !this.#hint.textContent;

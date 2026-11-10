@@ -55,15 +55,15 @@ export class Facet extends HTMLElement {
 
   // Each concept's book count narrowed by the *other* facets' selections, as a
   // Map from concept key, or null for the overall counts. A concept that would
-  // leave no works is dimmed rather than hidden, so the list doesn't jump about
-  // as other facets change; a ticked one is never dimmed, so it stays easy to
-  // find and untick.
+  // leave no works is marked `empty` and hidden by the subclass's narrow(); a
+  // ticked one is never empty, so it stays visible to untick.
   set counts(counts) {
     for (const row of this.#rows.values()) {
       const n = counts ? (counts.get(row.key) ?? 0) : row.count;
       row.n.textContent = String(n);
-      row.li.classList.toggle("facet-empty", n === 0 && !row.box.checked);
+      row.empty = n === 0 && !row.box.checked;
     }
+    this.narrow();
   }
 
   // For the subclasses.
@@ -77,13 +77,14 @@ export class Facet extends HTMLElement {
     const li = el("li", {},
       el("label", {}, box, " ", el("span", { className: "facet-label", textContent: concept.label }),
         " ", n));
-    this.#rows.set(concept.key, { li, box, n, ...concept });
+    this.#rows.set(concept.key, { li, box, n, empty: false, ...concept });
     return li;
   }
 
   // Hooks. buildList(list, tree) fills the list container with rows (via
   // row()); syncList(previous) runs after the checkboxes have been set to a new
-  // selection; narrow() runs when the text box changes.
+  // selection; narrow() runs when the text box or the counts change, and shows
+  // only rows that match the text and aren't `empty`.
   buildList(_list, _tree) {}
   syncList(_previous) {}
   narrow() {}
@@ -137,7 +138,7 @@ export class Facet extends HTMLElement {
 
     for (const row of this.#rows.values()) {
       row.box.checked = this.#selected.has(row.key);
-      if (row.box.checked) row.li.classList.remove("facet-empty");
+      if (row.box.checked) row.empty = false;
     }
     this.syncList(previous);
 
