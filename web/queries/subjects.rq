@@ -3,6 +3,7 @@ PREFIX bf:      <http://id.loc.gov/ontologies/bibframe/>
 PREFIX bflc:    <http://id.loc.gov/ontologies/bflc/>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 # One row per subject-term concept that at least one artists' book is linked to
 # via ab:hasSubject. Feeds both the subjects index ("Subjects" page) and the
@@ -25,11 +26,13 @@ SELECT
   # A–Z (digits, punctuation, accented initials) files under "#".
   ?initial
   # Each book as a TAB-separated token, tokens newline-separated, so the
-  # template can render a card per book (thumbnail, title link, creator · date).
+  # template can render a card per book (thumbnail, title link, creator · date,
+  # place: publisher).
   # Field order is positional — the template indexes it — and every field is
   # always present, so a missing value is an empty field rather than a missing
   # one:
-  #   itemKey <TAB> title <TAB> creators <TAB> date <TAB> thumbUrl
+  #   itemKey <TAB> title <TAB> creators <TAB> date <TAB> imprint
+  #     <TAB> thumbUrl <TAB> thumbWidth <TAB> thumbHeight
   (GROUP_CONCAT(DISTINCT ?bookToken; separator="\n") AS ?books)
   (COUNT(DISTINCT ?book) AS ?bookCount)
 WHERE {
@@ -57,9 +60,9 @@ WHERE {
     rdfs:label ?title ;
     .
 
-  # Card details for each book. Creators and date are aggregated per book in
-  # their own subqueries so a book with two primary creators (or two dates)
-  # still yields one token rather than several near-duplicates.
+  # Card details for each book. Creators and the imprint are aggregated per
+  # book in their own subqueries so a book with two primary creators (or two
+  # dates) still yields one token rather than several near-duplicates.
   OPTIONAL {
     {
       SELECT ?book (GROUP_CONCAT(DISTINCT ?creatorName; separator="; ") AS ?creators)
@@ -73,22 +76,42 @@ WHERE {
   }
   OPTIONAL {
     {
-      SELECT ?book (SAMPLE(?d) AS ?date)
-      WHERE { ?book bf:provisionActivity/bflc:simpleDate ?d . }
+      SELECT ?book (SAMPLE(?d) AS ?date) (SAMPLE(?pl) AS ?place) (SAMPLE(?pb) AS ?publisher)
+      WHERE {
+        ?book bf:provisionActivity ?pub .
+        OPTIONAL { ?pub bflc:simpleDate  ?d . }
+        OPTIONAL { ?pub bflc:simplePlace ?pl . }
+        OPTIONAL { ?pub bflc:simpleAgent ?pb . }
+      }
       GROUP BY ?book
     }
   }
-  # ab:representativeImage is single per book. ",180" asks the IIIF server for
-  # height 180, the card's thumbnail size.
+  # ab:representativeImage is single per book. The cards are the index's
+  # masonry grid, so the thumbnail is requested by width ("400," is width 400,
+  # height derived) and its height computed from the master's aspect ratio, so
+  # the browser reserves the right box before the lazy image loads.
   OPTIONAL {
-    ?book ab:representativeImage/ab:iiifPath ?thumbPath .
-    BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/,180/0/default.jpg") AS ?thumbUrl)
+    ?book ab:representativeImage ?thumb .
+    ?thumb ab:iiifPath    ?thumbPath ;
+           ab:pixelWidth  ?thumbMasterWidth ;
+           ab:pixelHeight ?thumbMasterHeight .
+    BIND(400 AS ?thumbWidth)
+    BIND(xsd:integer(ROUND(?thumbMasterHeight * ?thumbWidth / ?thumbMasterWidth)) AS ?thumbHeight)
+    BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/400,/0/default.jpg") AS ?thumbUrl)
   }
+  BIND(CONCAT(
+         COALESCE(STR(?place), ""),
+         IF(BOUND(?place) && BOUND(?publisher), ": ", ""),
+         COALESCE(STR(?publisher), "")
+       ) AS ?imprint)
   BIND(CONCAT(
          ?bookKey, "\t", ?title, "\t",
          COALESCE(?creators, ""), "\t",
          COALESCE(STR(?date), ""), "\t",
-         COALESCE(?thumbUrl, "")
+         ?imprint, "\t",
+         COALESCE(?thumbUrl, ""), "\t",
+         COALESCE(STR(?thumbWidth), ""), "\t",
+         COALESCE(STR(?thumbHeight), "")
        ) AS ?bookToken)
 }
 GROUP BY ?concept ?label ?category ?categoryLabel ?initial

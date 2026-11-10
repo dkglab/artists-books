@@ -87,7 +87,7 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
 .jump-bar a:hover { text-decoration: underline; }
 .jump-bar.small { font-size: 1.125rem; gap: .5rem 1.5rem; }
 
-/* --- Book grid (index page) -------------------------------------------- */
+/* --- Book grid (index and concept pages) ------------------------------- */
 
 /* Masonry: fixed-width lanes (columns), cards stacked into the shortest one.
    Where display: grid-lanes is unsupported this is an ordinary grid with
@@ -137,26 +137,6 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
   width: 100%;
   height: 100%;
 }
-
-/* --- Book cards (concept detail pages) --------------------------------- */
-
-.book-cards {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 34rem), 1fr));
-  gap: 2rem 3rem;
-}
-.book-card { display: flex; align-items: center; gap: 1.5rem; }
-.book-card .cover { display: block; flex: 0 0 120px; height: 180px; }
-.book-card .cover img { width: 120px; height: 180px; object-fit: cover; border: 1px solid var(--rule); display: block; }
-.book-card a { text-decoration: none; }
-.book-card a:hover { text-decoration: underline; }
-/* Chevron hangs in the margin so wrapped titles and the meta line align. */
-.book-card > div { position: relative; padding-left: 1em; }
-.book-card > div::before { content: "›"; position: absolute; left: 0; }
-.book-card .meta { display: block; }
 
 /* --- Arrowed link lists ------------------------------------------------ */
 
