@@ -104,24 +104,23 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
 @supports (display: grid-lanes) {
   .book-grid { display: grid-lanes; }
 }
-.book-grid a { text-decoration: none; display: block; }
+/* Every card is bordered; an image sits edge to edge at the top, ruled off
+   from the text below it. A book without an image is just the text. */
+.book-grid a { text-decoration: none; display: block; border: 1px solid var(--rule); }
 .book-grid a:hover .book-grid-title { text-decoration: underline; }
 /* Width-driven, height from the width/height attributes' ratio: no cropping. */
-.book-grid img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); margin-bottom: .4rem; }
+.book-grid img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--rule); }
+.book-grid-text { display: block; padding: .6rem .7rem .7rem; }
 .book-grid-title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   overflow: hidden;
-  font-size: .875rem;
+  font-size: .95rem;
 }
 .book-grid-meta, .book-grid-imprint { display: block; font-size: .8rem; color: var(--muted); }
 .book-grid-imprint { margin-top: .25rem; }
 
-/* Books without an image: a bordered text card, no placeholder. With no image
-   competing for space the title gets more lines. */
-.book-grid .text-card a { border: 1px solid var(--rule); padding: .6rem .7rem .7rem; }
-.book-grid .text-card .book-grid-title { -webkit-line-clamp: 5; font-size: .95rem; }
 
 /* Placeholder for books with no image (most of the collection). */
 .no-image {
