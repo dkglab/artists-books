@@ -27,3 +27,7 @@ views:
     query: "construction-facet.rq"
     template: "construction-facet.json"
     unsafe: true
+  - output: "subject-facet.json"
+    query: "subject-facet.rq"
+    template: "subject-facet.json"
+    unsafe: true

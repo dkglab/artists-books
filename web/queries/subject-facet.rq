@@ -1,0 +1,44 @@
+PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+
+# One row per subject-term concept that at least one artists' book is linked to
+# via ab:hasSubject, carrying just the item keys of those books. Feeds the
+# homepage's Subject and Place facets (subject-facet.json, #143): both read this
+# one index, each taking one category (Topical / Geographic subjects). Every
+# used term is included, not only the common ones: the facet shows the terms at
+# or above its threshold and reaches the rest through its search box. The
+# concept/category join is the same as subjects.rq, so each term's book list
+# matches its /subject/<key>/ page.
+SELECT
+  (REPLACE(STR(?concept), ".*/subject/", "") AS ?conceptKey)
+  ?label
+  ?categoryLabel
+  (REPLACE(STR(?category), ".*/category/", "") AS ?categoryKey)
+  # Item keys are [A-Za-z0-9] only, so a space separates them safely and the
+  # template can split on it.
+  (GROUP_CONCAT(DISTINCT ?bookKey; separator=" ") AS ?bookKeys)
+WHERE {
+  ?concept
+    a skos:Concept ;
+    skos:inScheme ab:subject-terms ;
+    .
+  OPTIONAL { ?concept skos:prefLabel ?prefLabel . }
+  OPTIONAL { ?concept rdfs:label ?rdfsLabel . }
+  BIND(COALESCE(?prefLabel, ?rdfsLabel) AS ?label)
+
+  OPTIONAL {
+    ?concept skos:broader ?category .
+    ?category rdfs:label ?categoryLabel .
+  }
+
+  ?book
+    a ab:ArtistsBook ;
+    ab:hasSubject ?concept ;
+    ab:itemKey ?bookKey ;
+    .
+}
+GROUP BY ?concept ?label ?category ?categoryLabel
+# Grouped by category so the template can open one category object per run of
+# rows; within one, alphabetical. The facet re-sorts by book count itself.
+ORDER BY ?categoryLabel LCASE(?label)
