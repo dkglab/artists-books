@@ -103,6 +103,14 @@ ignored by the build (`build-scheme.rq` reads columns by name and only touches
 - **prefLabel** — the preferred display label for the concept.
 - **note** — free text; used to flag borderline calls for review.
 
+A row may also claim a cluster from the **subjects** track
+(`../subjects/occurrences.csv`, same cluster keys): both `build-scheme.rq` and
+the `ab:constructedUsing` join read the two occurrence files as a `UNION`. Use
+this for a plain 650 heading that names what a work *is* rather than what it is
+about (e.g. LCSH *Songs*, *Aleatory music* → the `music` genre, #148), and mark
+the same cluster `include=n` with note `→ construction` in
+`../subjects/decisions.csv`.
+
 Rows left `include=n` need no other columns. You don't need to touch the label
 variants or URIs — those are gathered automatically from the MARC in step ③.
 

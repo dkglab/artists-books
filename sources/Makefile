@@ -213,7 +213,7 @@ construction/candidates.csv: construction/mine-candidates.rq | $(SA)
 construction/occurrences.csv: construction/mine-occurrences.rq | $(SA)
 	cd .. && $(SA_RUN) -q sources/construction/mine-occurrences.rq -f CSV > sources/construction/occurrences.csv
 
-construction-methods.ttl: construction/build-scheme.rq construction/decisions.csv construction/occurrences.csv | $(SA)
+construction-methods.ttl: construction/build-scheme.rq construction/decisions.csv construction/occurrences.csv subjects/occurrences.csv | $(SA)
 	cd .. && $(SA_RUN) -q sources/construction/build-scheme.rq -f TTL > sources/construction-methods.ttl
 
 # subject-terms.ttl -- the subject-headings SKOS scheme (650/651), built exactly

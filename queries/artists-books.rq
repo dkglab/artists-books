@@ -767,9 +767,19 @@ WHERE {
               xyz:include    "y" ;
               xyz:conceptId  ?cConceptId .
       }
-      SERVICE <x-sparql-anything:location=sources/construction/occurrences.csv,csv.headers=true> {
-        ?oRow xyz:canonicalKey ?canonical_key ;
-              xyz:cluster       ?cCluster .
+      # Subject-track occurrences are UNIONed in so a construction decision can
+      # claim a 650 heading the construction pool doesn't mine (#148; see
+      # sources/construction/build-scheme.rq).
+      {
+        SERVICE <x-sparql-anything:location=sources/construction/occurrences.csv,csv.headers=true> {
+          ?oRow xyz:canonicalKey ?canonical_key ;
+                xyz:cluster       ?cCluster .
+        }
+      } UNION {
+        SERVICE <x-sparql-anything:location=sources/subjects/occurrences.csv,csv.headers=true> {
+          ?oRow xyz:canonicalKey ?canonical_key ;
+                xyz:cluster       ?cCluster .
+        }
       }
       BIND(fx:entity(ab:, "construction/", ?cConceptId) AS ?constructionConcept)
     }

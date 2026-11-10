@@ -7649,15 +7649,6 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:prefLabel   "Sound Installations (art)"@en;
         ab:matchKey      "sound-installations-art" .
 
-<https://dkglab.github.io/ns/artists-books/subject/songs-spanish>
-        rdf:type         skos:Concept;
-        rdfs:label       "Songs, Spanish"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/subject/category/topical>;
-        skos:exactMatch  <http://id.worldcat.org/fast/1126526>;
-        skos:inScheme    ab:subject-terms;
-        skos:prefLabel   "Songs, Spanish"@en;
-        ab:matchKey      "songs-spanish" .
-
 <https://dkglab.github.io/ns/artists-books/subject/solitude>
         rdf:type         skos:Concept;
         rdfs:label       "Solitude"@en;
