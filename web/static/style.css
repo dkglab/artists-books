@@ -87,29 +87,40 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
 .jump-bar a:hover { text-decoration: underline; }
 .jump-bar.small { font-size: 1.125rem; gap: .5rem 1.5rem; }
 
-/* --- Book grid (index page) -------------------------------------------- */
+/* --- Book grid (index and concept pages) ------------------------------- */
 
+/* Masonry: fixed-width lanes (columns), cards stacked into the shortest one.
+   Where display: grid-lanes is unsupported this is an ordinary grid with
+   ragged rows — each row as tall as its tallest card, cards top-aligned. */
 .book-grid {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 1fr));
+  align-items: start;
   gap: 1.5rem 1rem;
 }
-.book-grid a { text-decoration: none; display: block; }
+@supports (display: grid-lanes) {
+  .book-grid { display: grid-lanes; }
+}
+/* Every card is bordered; an image sits edge to edge at the top, ruled off
+   from the text below it. A book without an image is just the text. */
+.book-grid a { text-decoration: none; display: block; border: 1px solid var(--rule); }
 .book-grid a:hover .book-grid-title { text-decoration: underline; }
-.book-grid .cover { display: block; aspect-ratio: 2 / 3; }
-.book-grid img { width: 100%; height: 100%; object-fit: cover; display: block; border: 1px solid var(--rule); }
+/* Width-driven, height from the width/height attributes' ratio: no cropping. */
+.book-grid img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--rule); }
+.book-grid-text { display: block; padding: .6rem .7rem .7rem; }
 .book-grid-title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   overflow: hidden;
-  font-size: .875rem;
-  margin-top: .4rem;
+  font-size: .95rem;
 }
-.book-grid-meta { display: block; font-size: .8rem; color: var(--muted); }
+.book-grid-meta, .book-grid-imprint { display: block; font-size: .8rem; color: var(--muted); }
+.book-grid-imprint { margin-top: .25rem; }
+
 
 /* Placeholder for books with no image (most of the collection). */
 .no-image {
@@ -126,26 +137,6 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
   width: 100%;
   height: 100%;
 }
-
-/* --- Book cards (concept detail pages) --------------------------------- */
-
-.book-cards {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 34rem), 1fr));
-  gap: 2rem 3rem;
-}
-.book-card { display: flex; align-items: center; gap: 1.5rem; }
-.book-card .cover { display: block; flex: 0 0 120px; height: 180px; }
-.book-card .cover img { width: 120px; height: 180px; object-fit: cover; border: 1px solid var(--rule); display: block; }
-.book-card a { text-decoration: none; }
-.book-card a:hover { text-decoration: underline; }
-/* Chevron hangs in the margin so wrapped titles and the meta line align. */
-.book-card > div { position: relative; padding-left: 1em; }
-.book-card > div::before { content: "›"; position: absolute; left: 0; }
-.book-card .meta { display: block; }
 
 /* --- Arrowed link lists ------------------------------------------------ */
 

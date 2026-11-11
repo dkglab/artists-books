@@ -225,16 +225,18 @@ WHERE {
   # wants. Display dimensions are derived from the master's, which is the exact
   # figure the graph stores; the server's own rounding can differ by a pixel,
   # which matters for the aspect ratio the browser reserves and nothing else.
-  # Note the IIIF size syntax: ",200" is height 200, width derived.
+  # The index grid lays thumbnails out in fixed-width lanes at their own aspect
+  # ratio, so they are requested by width: IIIF "400," is width 400, height
+  # derived (about twice the lane width, for high-density screens).
   OPTIONAL {
     ?book ab:representativeImage ?thumb .
     ?thumb ab:iiifPath    ?thumbPath ;
            ab:pixelWidth  ?thumbMasterWidth ;
            ab:pixelHeight ?thumbMasterHeight .
     OPTIONAL { ?thumb ab:imageViewType/skos:prefLabel ?thumbView . }
-    BIND(200 AS ?thumbHeight)
-    BIND(xsd:integer(ROUND(?thumbMasterWidth * ?thumbHeight / ?thumbMasterHeight)) AS ?thumbWidth)
-    BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/,200/0/default.jpg") AS ?thumbUrl)
+    BIND(400 AS ?thumbWidth)
+    BIND(xsd:integer(ROUND(?thumbMasterHeight * ?thumbWidth / ?thumbMasterWidth)) AS ?thumbHeight)
+    BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/400,/0/default.jpg") AS ?thumbUrl)
   }
 
   # Ordered innermost so GROUP_CONCAT sees a deterministic input order, as with

@@ -26,24 +26,32 @@
 
 <div class="results">
 <p class="no-results" hidden>No works match the selected filters.</p>
-{{/* $b binds the row: inside `range`, `$` is the whole result set, not the row,
+{{/* A masonry grid: fixed-width lanes, cards stacked in each (display:
+     grid-lanes, where supported). A book with an image shows it at its own
+     aspect ratio — width/height carry the master's ratio, so the box is
+     reserved before the lazy image loads and the stacking never shifts. A book
+     without one (most of the collection) is the same card without the image —
+     no placeholder.
+
+     $b binds the row: inside `range`, `$` is the whole result set, not the row,
      so the thumbnail's `with` block could not otherwise reach .itemKey/.title. */}}
 <ol class="book-grid">
 {{- range $b := . }}
 <li data-key="{{ $b.itemKey }}">
   <a href="/item/{{ $b.itemKey }}">
-    <span class="cover">
     {{- with $b.thumbUrl }}
-      <img src="{{ . }}" width="{{ $b.thumbWidth }}" height="{{ $b.thumbHeight }}"
-           alt="{{ with $b.thumbView }}{{ . }}{{ else }}Image{{ end }} of {{ $b.title }}" loading="lazy">
-    {{- else }}
-      <span class="no-image">No image available</span>
+    <img src="{{ . }}" width="{{ $b.thumbWidth }}" height="{{ $b.thumbHeight }}"
+         alt="{{ with $b.thumbView }}{{ . }}{{ else }}Image{{ end }} of {{ $b.title }}" loading="lazy">
     {{- end }}
-    </span>
+    <span class="book-grid-text">
     <span class="book-grid-title">{{ $b.title }}</span>
     {{- if or $b.primaryCreators $b.date }}
     <span class="book-grid-meta">{{ with $b.primaryCreators }}{{ . }}{{ end }}{{ if and $b.primaryCreators $b.date }} · {{ end }}{{ with $b.date }}{{ . }}{{ end }}</span>
     {{- end }}
+    {{- if or $b.publisher $b.place }}
+    <span class="book-grid-imprint">{{ with $b.place }}{{ . }}{{ end }}{{ if and $b.place $b.publisher }}: {{ end }}{{ with $b.publisher }}{{ . }}{{ end }}</span>
+    {{- end }}
+    </span>
   </a>
 </li>
 {{- end }}
