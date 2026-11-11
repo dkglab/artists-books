@@ -32,8 +32,8 @@ SELECT
   # one:
   #   itemKey <TAB> title <TAB> creators <TAB> date <TAB> imprint
   #     <TAB> thumbUrl <TAB> thumbWidth <TAB> thumbHeight
-  (GROUP_CONCAT(DISTINCT ?bookToken; separator="\n") AS ?books)
-  (COUNT(DISTINCT ?book) AS ?bookCount)
+  ?books
+  ?bookCount
 WHERE {
   ?concept
     a skos:Concept ;
@@ -52,68 +52,86 @@ WHERE {
   }
 
   # Required: the artists' books constructed using this method.
-  ?book
-    a ab:ArtistsBook ;
-    ab:constructedUsing ?concept ;
-    ab:itemKey ?bookKey ;
-    rdfs:label ?title ;
-    .
+  # One aggregated row per concept, so a concept no in-collection book uses
+  # earns no page. The cards come out sorted by title: GROUP_CONCAT keeps its
+  # input order, and only a scope *below* the grouping can be ordered, so the
+  # innermost SELECT builds one token per book and sorts them (item key breaks
+  # ties between identically titled books, keeping the build deterministic).
+  {
+    SELECT ?concept
+           (GROUP_CONCAT(?bookToken; separator="\n") AS ?books)
+           (COUNT(DISTINCT ?book) AS ?bookCount)
+    WHERE {
+      {
+        SELECT DISTINCT ?concept ?book ?bookToken
+        WHERE {
+          ?book
+            a ab:ArtistsBook ;
+            ab:constructedUsing ?concept ;
+            ab:itemKey ?bookKey ;
+            rdfs:label ?title ;
+            .
 
-  # Card details for each book. Creators and the imprint are aggregated per
-  # book in their own subqueries so a book with two primary creators (or two
-  # dates) still yields one token rather than several near-duplicates.
-  OPTIONAL {
-    {
-      SELECT ?book (GROUP_CONCAT(DISTINCT ?creatorName; separator="; ") AS ?creators)
-      WHERE {
-        ?book bf:contribution ?c .
-        ?c a bflc:PrimaryContribution ;
-           bf:agent/rdfs:label ?creatorName .
+          # Card details for each book. Creators and the imprint are aggregated per
+          # book in their own subqueries so a book with two primary creators (or two
+          # dates) still yields one token rather than several near-duplicates.
+          OPTIONAL {
+            {
+              SELECT ?book (GROUP_CONCAT(DISTINCT ?creatorName; separator="; ") AS ?creators)
+              WHERE {
+                ?book bf:contribution ?c .
+                ?c a bflc:PrimaryContribution ;
+                   bf:agent/rdfs:label ?creatorName .
+              }
+              GROUP BY ?book
+            }
+          }
+          OPTIONAL {
+            {
+              SELECT ?book (SAMPLE(?d) AS ?date) (SAMPLE(?pl) AS ?place) (SAMPLE(?pb) AS ?publisher)
+              WHERE {
+                ?book bf:provisionActivity ?pub .
+                OPTIONAL { ?pub bflc:simpleDate  ?d . }
+                OPTIONAL { ?pub bflc:simplePlace ?pl . }
+                OPTIONAL { ?pub bflc:simpleAgent ?pb . }
+              }
+              GROUP BY ?book
+            }
+          }
+          # ab:representativeImage is single per book. The cards are the index's
+          # masonry grid, so the thumbnail is requested by width ("400," is width 400,
+          # height derived) and its height computed from the master's aspect ratio, so
+          # the browser reserves the right box before the lazy image loads.
+          OPTIONAL {
+            ?book ab:representativeImage ?thumb .
+            ?thumb ab:iiifPath    ?thumbPath ;
+                   ab:pixelWidth  ?thumbMasterWidth ;
+                   ab:pixelHeight ?thumbMasterHeight .
+            BIND(400 AS ?thumbWidth)
+            BIND(xsd:integer(ROUND(?thumbMasterHeight * ?thumbWidth / ?thumbMasterWidth)) AS ?thumbHeight)
+            BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/400,/0/default.jpg") AS ?thumbUrl)
+          }
+          BIND(CONCAT(
+                 COALESCE(STR(?place), ""),
+                 IF(BOUND(?place) && BOUND(?publisher), ": ", ""),
+                 COALESCE(STR(?publisher), "")
+               ) AS ?imprint)
+          BIND(CONCAT(
+                 ?bookKey, "\t", ?title, "\t",
+                 COALESCE(?creators, ""), "\t",
+                 COALESCE(STR(?date), ""), "\t",
+                 ?imprint, "\t",
+                 COALESCE(?thumbUrl, ""), "\t",
+                 COALESCE(STR(?thumbWidth), ""), "\t",
+                 COALESCE(STR(?thumbHeight), "")
+               ) AS ?bookToken)
+        }
+        ORDER BY LCASE(?title) ?bookKey
       }
-      GROUP BY ?book
     }
+    GROUP BY ?concept
   }
-  OPTIONAL {
-    {
-      SELECT ?book (SAMPLE(?d) AS ?date) (SAMPLE(?pl) AS ?place) (SAMPLE(?pb) AS ?publisher)
-      WHERE {
-        ?book bf:provisionActivity ?pub .
-        OPTIONAL { ?pub bflc:simpleDate  ?d . }
-        OPTIONAL { ?pub bflc:simplePlace ?pl . }
-        OPTIONAL { ?pub bflc:simpleAgent ?pb . }
-      }
-      GROUP BY ?book
-    }
-  }
-  # ab:representativeImage is single per book. The cards are the index's
-  # masonry grid, so the thumbnail is requested by width ("400," is width 400,
-  # height derived) and its height computed from the master's aspect ratio, so
-  # the browser reserves the right box before the lazy image loads.
-  OPTIONAL {
-    ?book ab:representativeImage ?thumb .
-    ?thumb ab:iiifPath    ?thumbPath ;
-           ab:pixelWidth  ?thumbMasterWidth ;
-           ab:pixelHeight ?thumbMasterHeight .
-    BIND(400 AS ?thumbWidth)
-    BIND(xsd:integer(ROUND(?thumbMasterHeight * ?thumbWidth / ?thumbMasterWidth)) AS ?thumbHeight)
-    BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/400,/0/default.jpg") AS ?thumbUrl)
-  }
-  BIND(CONCAT(
-         COALESCE(STR(?place), ""),
-         IF(BOUND(?place) && BOUND(?publisher), ": ", ""),
-         COALESCE(STR(?publisher), "")
-       ) AS ?imprint)
-  BIND(CONCAT(
-         ?bookKey, "\t", ?title, "\t",
-         COALESCE(?creators, ""), "\t",
-         COALESCE(STR(?date), ""), "\t",
-         ?imprint, "\t",
-         COALESCE(?thumbUrl, ""), "\t",
-         COALESCE(STR(?thumbWidth), ""), "\t",
-         COALESCE(STR(?thumbHeight), "")
-       ) AS ?bookToken)
 }
-GROUP BY ?concept ?label ?category ?categoryLabel ?categoryRank
 # Categories in the BARD glossary's order (ab:categoryRank, #120), not
 # alphabetically; the label breaks ties so a category missing its rank still
 # stays contiguous. Unranked/uncategorized concepts sort last.
