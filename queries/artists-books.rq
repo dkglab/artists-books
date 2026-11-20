@@ -1,5 +1,6 @@
 PREFIX xyz: <http://sparql.xyz/facade-x/data/>
 PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX fxe: <http://sparql.xyz/facade-x/engine/>
 PREFIX ab: <https://dkglab.github.io/ns/artists-books/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -138,9 +139,9 @@ CONSTRUCT {
 WHERE {
   SERVICE <x-sparql-anything:location=sources/artists-books.csv> {
     # Facade-X configuration for CSV data
-    fx:properties
-      fx:csv.headers "true" ;  # create xyz:header properties
-      fx:csv.null-string  "" ; # treat empty strings as null values
+    fxe:properties
+      fxe:csv.headers "true" ;  # create xyz:header properties
+      fxe:csv.null-string  "" ; # treat empty strings as null values
       .
 
     # For each row in the canonical artists'-book list (#82: lib 1 ∪ 2 ∪ 3,
@@ -216,19 +217,19 @@ WHERE {
       WHERE {
         SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc/> {
           # Per-record MARC directory (#81): one MARCXML document per record. The
-          # outer folder read lists the files (fx:archive.matches); the inner
-          # SERVICE triplifies just that one record (fx:location ?file) and
+          # outer folder read lists the files (fxe:archive.matches); the inner
+          # SERVICE triplifies just that one record (fxe:location ?file) and
           # joins to the CSV row on the record's own 999 $a —
           # the key is read from the record data, not the filename. Each file is
           # triplified once (per-record traversal still uses fx:anySlot, not a
           # variable predicate — docs/QUERY-PERFORMANCE.md).
-          fx:properties fx:archive.matches ".*\\.xml" .
+          fxe:properties fxe:archive.matches ".*\\.xml" .
           ?folder fx:anySlot ?file .
 
           SERVICE <x-sparql-anything:> {
-            fx:properties
-              fx:location ?file ;
-              fx:media-type "application/xml" .
+            fxe:properties
+              fxe:location ?file ;
+              fxe:media-type "application/xml" .
 
           # For each MARC record
           ?record a marc:record .
@@ -345,7 +346,7 @@ WHERE {
             ?sf300a xyz:code "a" ; rdf:_1 ?extent_raw .
 
             # Strip trailing cataloging punctuation such as ":".
-            BIND(REPLACE(?extent_raw, "[\\s:;/]+$", "") AS ?extent_x)
+            BIND(REPLACE(?extent_raw, "^\\s+|[\\s:;/]+$", "") AS ?extent_x)
           }
 
           # Illustrative content from MARC 300 $b, such as
@@ -365,7 +366,7 @@ WHERE {
             # Strip trailing cataloging punctuation such as ";", but not "."
             # — the AACR2 abbreviations here ("ill.", "col. ill.") end in one.
             BIND(
-              REPLACE(?illustrative_content_raw, "[\\s:;/]+$", "")
+              REPLACE(?illustrative_content_raw, "^\\s+|[\\s:;/]+$", "")
               AS ?illustrative_content_x
             )
 
@@ -390,7 +391,7 @@ WHERE {
                 rdf:_1 ?dimensions_raw .
 
             BIND(
-              REPLACE(?dimensions_raw, "[\\s.;:/]+$", "")
+              REPLACE(?dimensions_raw, "^\\s+|[\\s.;:/]+$", "")
               AS ?dimensions_x
             )
           }
@@ -407,7 +408,7 @@ WHERE {
                 rdf:_1 ?edition_raw .
 
             BIND(
-                REPLACE(?edition_raw, "[\\s.;:/]+$", "")
+                REPLACE(?edition_raw, "^\\s+|[\\s.;:/]+$", "")
                 AS ?edition_x
             )
           }
@@ -424,7 +425,7 @@ WHERE {
                 rdf:_1 ?summary_raw .
 
             BIND(
-                REPLACE(?summary_raw, "[\\s]+$", "")
+                REPLACE(?summary_raw, "^\\s+|[\\s]+$", "")
                 AS ?summary_x
             )
           }
@@ -442,7 +443,7 @@ WHERE {
                 rdf:_1 ?language_note_raw .
 
             BIND(
-              REPLACE(?language_note_raw, "[\\s]+$", "")
+              REPLACE(?language_note_raw, "^\\s+|[\\s]+$", "")
               AS ?language_note_x
             )
           }
@@ -478,7 +479,7 @@ WHERE {
           # $a — name. Strip trailing cataloguing punctuation.
           ?df fx:anySlot ?sfa .
           ?sfa xyz:code "a" ; rdf:_1 ?name_raw .
-          BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?name_x)
+          BIND(REPLACE(?name_raw, "^\\s+|[\\s.,;:/]+$", "") AS ?name_x)
 
           # $e — relator term (role). A creator field may carry several; each
           # becomes its own group below so every role survives. Lower-cased to
@@ -486,7 +487,7 @@ WHERE {
           OPTIONAL {
             ?df fx:anySlot ?sfe .
             ?sfe xyz:code "e" ; rdf:_1 ?role_raw .
-            BIND(LCASE(REPLACE(?role_raw, "[\\s.,;:/]+$", "")) AS ?role_term)
+            BIND(LCASE(REPLACE(?role_raw, "^\\s+|[\\s.,;:/]+$", "")) AS ?role_term)
           }
 
           }  # end creator branch
@@ -512,11 +513,11 @@ WHERE {
               IF(
                 BOUND(?related_title_n),
                 CONCAT(
-                  REPLACE(?related_title_a, "\\s+$", ""),
+                  REPLACE(?related_title_a, "^\\s+|\\s+$", ""),
                   " ",
-                  REPLACE(?related_title_n, "[\\s.,;:/]+$", "")
+                  REPLACE(?related_title_n, "^\\s+|[\\s.,;:/]+$", "")
                 ),
-                REPLACE(?related_title_a, "[\\s.,;:/]+$", "")
+                REPLACE(?related_title_a, "^\\s+|[\\s.,;:/]+$", "")
               )
               AS ?related_title_x
             )

@@ -107,7 +107,7 @@ serve` build above has no such requirement.
 |---|---|---|
 | [Apache Jena](https://jena.apache.org/) | 6.1.0 | RDF validation, RDFS reasoning, graph diffing (`riot`, `arq`, `shacl`) |
 | [Apache Fuseki](https://jena.apache.org/documentation/fuseki2/) | 6.1.0 | In-process SPARQL endpoint server |
-| [SPARQL-Anything](https://sparql-anything.cc/) | 1.1.0 | CSV/MARCXML-to-RDF transformation via SPARQL CONSTRUCT |
+| [SPARQL-Anything](https://sparql-anything.cc/) | 1.3.0 | CSV/MARCXML-to-RDF transformation via SPARQL CONSTRUCT |
 | [Snowman](https://github.com/glaciers-in-archives/snowman) | 0.8.0 | SPARQL-driven static site generator |
 | [YAZ](https://www.indexdata.com/resources/software/yaz/) | 5.37.3 | `yaz-client`/`yaz-marcdump` — Z39.50/SRU MARC harvest; built from source |
 

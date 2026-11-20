@@ -184,10 +184,10 @@ N-Triples. Only the number of rows reaching the `OPTIONAL`s changed.
 
 The MARC is a per-record directory (`*-marc/`, one `<key>.xml` per record),
 read with a **nested** pattern: an outer `SERVICE` pointed at the folder lists
-its files (`fx:archive.matches` + `?folder fx:anySlot ?file` — the option keeps
+its files (`fxe:archive.matches` + `?folder fx:anySlot ?file` — the option keeps
 its archive-era name but filters folder listings too) and an inner
-`SERVICE <x-sparql-anything:>` triplifies one file (`fx:location ?file` +
-`fx:media-type "application/xml"`). The join key is read from each record's
+`SERVICE <x-sparql-anything:>` triplifies one file (`fxe:location ?file` +
+`fxe:media-type "application/xml"`). The join key is read from each record's
 `999 $a`, **not** the filename, so files could be named anything; `fx:anySlot`
 still governs the per-record traversal.
 

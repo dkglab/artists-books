@@ -94,9 +94,11 @@ longer exists is reported as `stale-decision`.
 The queries join `agents.csv` on `?canonical_key ?ctag ?creator_name` inside a
 sub-SELECT (one CSV read, hash join — see `docs/QUERY-PERFORMANCE.md`).
 `name` must therefore be byte-identical to the query's `?creator_name`.
-`mine.py` mirrors SPARQL-Anything here: its XML reader trims each text chunk and
-an entity splits the chunks, so `Peter &amp; Donna Thomas` reaches SPARQL as
-`Peter&Donna Thomas` (which is also why the old graph *labelled* it that way).
+`mine.py`'s `query_name()` mirrors the queries' cleanup of `$a` (strip leading
+whitespace and trailing cataloguing punctuation). Before SPARQL-Anything 1.3.0
+it also had to mirror a reader bug — each text chunk was trimmed and an entity
+split the chunks, so `Peter &amp; Donna Thomas` reached SPARQL as
+`Peter&Donna Thomas` — but 1.3.0 reads the text intact.
 A record with two same-tag fields that share `$a` but differ in `$b`/`$d`
 (`Scripps College` / `Scripps College. Press`) joins both agents.
 

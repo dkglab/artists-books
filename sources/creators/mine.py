@@ -46,16 +46,16 @@ DIRS = [("book", "sources/marc/artists-books-marc"),
 
 def query_name(raw):
     """The string the construct queries see as ?creator_name, so agents.csv can
-    be joined on it exactly.
+    be joined on it exactly: the queries' REPLACE(?name_raw,
+    "^\\s+|[\\s.,;:/]+$", ""). (Java's \\s is ASCII whitespace only, so the
+    class is spelled out: Python's \\s would also eat NBSP.)
 
-    SPARQL-Anything's XML reader trims each text chunk, and an entity reference
-    splits the chunks: "Peter &amp; Donna Thomas" arrives as "Peter&Donna
-    Thomas", and a leading space is lost. Mirror that, then the queries'
-    REPLACE(?name_raw, "[\\s.,;:/]+$", ""). (Java's \\s is ASCII whitespace
-    only, so the class is spelled out: Python's \\s would also eat NBSP.)"""
+    Before SPARQL-Anything 1.3.0 the XML reader trimmed each text chunk, and an
+    entity reference split the chunks, so "Peter &amp; Donna Thomas" arrived as
+    "Peter&Donna Thomas" and this function had to mirror that. 1.3.0 reads the
+    text intact."""
     ws = " \t\n\x0B\f\r"
-    s = re.sub(f"[{ws}]*([&<>])[{ws}]*", r"\1", raw).strip(ws)
-    return re.sub(f"[{ws}.,;:/]+$", "", s)
+    return re.sub(f"^[{ws}]+|[{ws}.,;:/]+$", "", raw)
 
 
 def tidy(s):
