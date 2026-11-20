@@ -1,0 +1,41 @@
+{{ template "base" . }}
+
+{{ define "title" }} - {{ .label }}{{ end }}
+
+{{ define "content" }}
+<div class="page-intro">
+<a class="back" href="/creators.html">Creators</a>
+<h1 class="concept-label">{{ .label }}</h1>
+{{- /* A count is shown only alongside its list: creators.rq leaves both
+       unbound when the agent has no works of that kind. */}}
+<p>
+{{- with .references }}{{ $.referenceCount }} reference work{{ if ne (printf "%s" $.referenceCount) "1" }}s{{ end }}{{ end }}
+{{- if and .references .books }} &middot; {{ end }}
+{{- with .books }}{{ $.bookCount }} artists' book{{ if ne (printf "%s" $.bookCount) "1" }}s{{ end }}{{ end -}}
+</p>
+</div>
+
+{{ with .references }}
+<div class="section">
+<h2>Reference Works</h2>
+<ul class="chevron-list">
+{{- range (split . "\n") }}
+{{- /* itemKey <TAB> title <TAB> date <TAB> roles — see web/queries/creators.rq */}}
+{{- $f := split . "\t" }}
+<li>
+  <a href="/reference/{{ index $f 0 }}">{{ index $f 1 }}</a>
+  {{- with index $f 2 }} ({{ . }}){{ end }}
+  {{- with index $f 3 }} — {{ . }}{{ end }}
+</li>
+{{- end }}
+</ul>
+</div>
+{{ end }}
+
+{{ with .books }}
+<div class="section">
+<h2>Artists' Books</h2>
+{{ template "book-cards" . }}
+</div>
+{{ end }}
+{{ end }}

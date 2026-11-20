@@ -134,6 +134,8 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
 }
 .book-grid-meta, .book-grid-imprint { display: block; font-size: .8rem; color: var(--muted); }
 .book-grid-imprint { margin-top: .25rem; }
+/* On a creator's page: that creator's role(s) on the book. */
+.book-grid-role { display: block; margin-top: .25rem; font-size: .8rem; font-style: italic; }
 
 
 /* Placeholder for books with no image (most of the collection). */
