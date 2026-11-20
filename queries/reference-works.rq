@@ -1,5 +1,6 @@
 PREFIX xyz: <http://sparql.xyz/facade-x/data/>
 PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX fxe: <http://sparql.xyz/facade-x/engine/>
 PREFIX ab: <https://dkglab.github.io/ns/artists-books/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -77,9 +78,9 @@ CONSTRUCT {
 WHERE {
   SERVICE <x-sparql-anything:location=sources/reference-works.csv> {
     # Facade-X configuration for CSV data
-    fx:properties
-      fx:csv.headers "true" ;  # create xyz:header properties
-      fx:csv.null-string  "" ; # treat empty strings as null values
+    fxe:properties
+      fxe:csv.headers "true" ;  # create xyz:header properties
+      fxe:csv.null-string  "" ; # treat empty strings as null values
       .
 
     # For each row in reference-works.csv. Only canonicalKey and title are
@@ -112,8 +113,8 @@ WHERE {
   # a per-record directory (#81): sources/marc/reference-works-marc/ holds one
   # <itemKey>.xml document per record, read with SPARQL-Anything's nested
   # Folder -> XML triplifiers. The outer folder read lists the files
-  # (fx:archive.matches) and the inner SERVICE triplifies just that one record
-  # (fx:location ?file), joining to the CSV row on the record's
+  # (fxe:archive.matches) and the inner SERVICE triplifies just that one record
+  # (fxe:location ?file), joining to the CSV row on the record's
   # own 999 $a — the key is read from the record data, not the filename.
   # Per-record traversal uses fx:anySlot (docs/QUERY-PERFORMANCE.md).
   #
@@ -134,13 +135,13 @@ WHERE {
              (SAMPLE(?name_x)  AS ?creator_name)
       WHERE {
         SERVICE <x-sparql-anything:location=sources/marc/reference-works-marc/> {
-          fx:properties fx:archive.matches ".*\\.xml" .
+          fxe:properties fxe:archive.matches ".*\\.xml" .
           ?folder fx:anySlot ?file .
 
           SERVICE <x-sparql-anything:> {
-            fx:properties
-              fx:location ?file ;
-              fx:media-type "application/xml" .
+            fxe:properties
+              fxe:location ?file ;
+              fxe:media-type "application/xml" .
 
             ?record a marc:record .
 
@@ -181,13 +182,13 @@ WHERE {
               # $a — name. Strip trailing cataloguing punctuation.
               ?df fx:anySlot ?sfa .
               ?sfa xyz:code "a" ; rdf:_1 ?name_raw .
-              BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?name_x)
+              BIND(REPLACE(?name_raw, "^\\s+|[\\s.,;:/]+$", "") AS ?name_x)
 
               # $e — relator term (role), lower-cased to match the lookup table.
               OPTIONAL {
                 ?df fx:anySlot ?sfe .
                 ?sfe xyz:code "e" ; rdf:_1 ?role_raw .
-                BIND(LCASE(REPLACE(?role_raw, "[\\s.,;:/]+$", "")) AS ?role_term)
+                BIND(LCASE(REPLACE(?role_raw, "^\\s+|[\\s.,;:/]+$", "")) AS ?role_term)
               }
             }
           }  # end inner per-record SERVICE

@@ -1,7 +1,7 @@
 SHELL := /usr/bin/env bash
 .SHELLFLAGS := -O extglob -c
 SA_HOST := https://github.com/SPARQL-Anything/sparql.anything/releases/download
-SA_VERSION := v1.1.0
+SA_VERSION := v1.3.0
 
 # The jar's filename records no version, so a bump to SA_VERSION above would
 # otherwise be ignored on any machine that already built once. Gate the
