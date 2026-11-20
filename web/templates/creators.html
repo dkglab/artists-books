@@ -5,7 +5,7 @@
 {{ define "content" }}
 <div class="page-intro">
   <h1>Creators</h1>
-  <p>Artists, authors, editors, photographers and other contributors credited on the books in the collection.</p>
+  <p>Artists, authors, editors, photographers and other contributors credited on the books in the collection and the reference works that cite them.</p>
 </div>
 
 {{ $rows := . }}
@@ -37,7 +37,7 @@
 <ul class="term-list">
 {{- $prev = $l }}
 {{- end }}
-<li><a href="/creator/{{ .creatorKey }}">{{ .label }}</a><span class="n">{{ .bookCount }}</span></li>
+<li><a href="/creator/{{ .creatorKey }}">{{ .label }}</a><span class="n">{{ .workCount }}</span></li>
 {{- end }}
 {{- if ne $prev "" }}
 </ul>

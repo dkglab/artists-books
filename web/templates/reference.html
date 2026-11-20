@@ -9,14 +9,14 @@
 <p>Reference work</p>
 
 <dl class="fields">
-  {{ with .primaryCreators }}
+  {{ with .primaryCreatorLinks }}
   <dt>Creator</dt>
-  <dd>{{ . }}</dd>
+  <dd>{{ template "creator-links" . }}</dd>
   {{ end }}
 
-  {{ with .contributors }}
+  {{ with .contributorLinks }}
   <dt>Contributors</dt>
-  <dd>{{ . }}</dd>
+  <dd>{{ template "creator-links" . }}</dd>
   {{ end }}
 
   {{ with .publisher }}

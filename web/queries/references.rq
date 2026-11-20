@@ -27,6 +27,9 @@ SELECT
   # contributors = 7xx (#40, #46).
   (GROUP_CONCAT(DISTINCT ?primaryCreatorDisplay; separator="; ") AS ?primaryCreators)
   (GROUP_CONCAT(DISTINCT ?otherCreatorDisplay; separator="; ") AS ?contributors)
+  # Linkable creator tokens for the detail page; see the subqueries below.
+  (SAMPLE(?primaryCreatorLinksAgg) AS ?primaryCreatorLinks)
+  (SAMPLE(?contributorLinksAgg) AS ?contributorLinks)
   ?publisher
   ?place
   ?date
@@ -78,6 +81,74 @@ WHERE {
     ?agent2 rdfs:label ?name2 .
     OPTIONAL { ?c2 bf:role/rdfs:label ?role2 . }
     BIND(IF(BOUND(?role2), CONCAT(?name2, " [", ?role2, "]"), ?name2) AS ?otherCreatorDisplay)
+  }
+
+  # The same creators as linkable tokens, for the detail page: each
+  # "agentKey<TAB>name<TAB>roles", tokens newline-separated, one per
+  # contribution with its roles aggregated (a contribution can carry several),
+  # sorted by name. The agentKey ends every contribution URI and is the
+  # creator's /creator/<agentKey> page slug (see creators.rq, which gives every
+  # agent credited here a page). Built in per-work subqueries so the outer
+  # cross product of OPTIONALs can't duplicate them; SAMPLE'd in the projection.
+  # A role-less contribution contributes an empty role (COALESCE keeps it from
+  # voiding the GROUP_CONCAT, which an unbound row would); the REPLACEs tidy
+  # its separator away.
+  OPTIONAL {
+    {
+      SELECT ?reference (GROUP_CONCAT(?linkToken; separator="\n") AS ?primaryCreatorLinksAgg)
+      WHERE {
+        {
+          SELECT ?reference ?linkToken
+          WHERE {
+            {
+              SELECT ?reference ?lc ?lagent
+                     (GROUP_CONCAT(DISTINCT COALESCE(?lrole, ""); separator=", ") AS ?lrolesRaw)
+              WHERE {
+                ?reference bf:contribution ?lc .
+                ?lc a bflc:PrimaryContribution ;
+                    bf:agent ?lagent .
+                OPTIONAL { ?lc bf:role/rdfs:label ?lrole . }
+              }
+              GROUP BY ?reference ?lc ?lagent
+            }
+            ?lagent rdfs:label ?lname .
+            BIND(REPLACE(REPLACE(?lrolesRaw, "(, ){2,}", ", "), "^, |, $", "") AS ?lroles)
+            BIND(CONCAT(REPLACE(STR(?lc), "^.*/contribution/", ""), "\t", ?lname, "\t", ?lroles) AS ?linkToken)
+          }
+          ORDER BY LCASE(?lname) ?linkToken
+        }
+      }
+      GROUP BY ?reference
+    }
+  }
+  OPTIONAL {
+    {
+      SELECT ?reference (GROUP_CONCAT(?linkToken; separator="\n") AS ?contributorLinksAgg)
+      WHERE {
+        {
+          SELECT ?reference ?linkToken
+          WHERE {
+            {
+              SELECT ?reference ?lc ?lagent
+                     (GROUP_CONCAT(DISTINCT COALESCE(?lrole, ""); separator=", ") AS ?lrolesRaw)
+              WHERE {
+                ?reference bf:contribution ?lc .
+                ?lc a bf:Contribution ;
+                    bf:agent ?lagent .
+                  FILTER NOT EXISTS { ?lc a bflc:PrimaryContribution }
+                OPTIONAL { ?lc bf:role/rdfs:label ?lrole . }
+              }
+              GROUP BY ?reference ?lc ?lagent
+            }
+            ?lagent rdfs:label ?lname .
+            BIND(REPLACE(REPLACE(?lrolesRaw, "(, ){2,}", ", "), "^, |, $", "") AS ?lroles)
+            BIND(CONCAT(REPLACE(STR(?lc), "^.*/contribution/", ""), "\t", ?lname, "\t", ?lroles) AS ?linkToken)
+          }
+          ORDER BY LCASE(?lname) ?linkToken
+        }
+      }
+      GROUP BY ?reference
+    }
   }
 
   OPTIONAL {

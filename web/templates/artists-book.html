@@ -41,14 +41,14 @@
 </div>
 
 <dl class="fields">
-  {{ with .primaryCreators }}
+  {{ with .primaryCreatorLinks }}
   <dt>Primary creators</dt>
-  <dd>{{ . }}</dd>
+  <dd>{{ template "creator-links" . }}</dd>
   {{ end }}
 
-  {{ with .contributors }}
+  {{ with .contributorLinks }}
   <dt>Contributors</dt>
-  <dd>{{ . }}</dd>
+  <dd>{{ template "creator-links" . }}</dd>
   {{ end }}
 
   {{ with .publisher }}

@@ -5,9 +5,11 @@ PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 # One row per agent credited (bf:contribution/bf:agent, any role, primary or
-# not) on at least one artists' book. Feeds both the creators index ("Creators"
-# page) and the per-creator detail page. Mirrors subjects.rq: the book join is
-# REQUIRED, so an agent credited only on reference works earns no page (yet).
+# not) on at least one artists' book or on a reference work that has a page of
+# its own (one that cites an in-collection book; see references.rq). Feeds both
+# the creators index ("Creators" page) and the per-creator detail page (#145).
+# That is exactly the set of agents the book and reference pages link to, so
+# every /creator/ link on the site resolves.
 #
 # Since #170 each agent is one corpus-wide cluster with a single rdfs:label
 # (sources/creators/agents.csv), so grouping by agent yields exactly one row,
@@ -24,11 +26,19 @@ SELECT
   # The label's first letter, for the index's A–Z sections (see ?sortKey).
   ?initial
   # Each book as a TAB-separated token, tokens newline-separated, in the shape
-  # the shared book-cards partial (layouts/book-cards.html) expects:
+  # the shared book-cards partial (layouts/book-cards.html) expects, plus its
+  # optional ninth field, this agent's role(s) on the book:
   #   itemKey <TAB> title <TAB> creators <TAB> date <TAB> imprint
-  #     <TAB> thumbUrl <TAB> thumbWidth <TAB> thumbHeight
+  #     <TAB> thumbUrl <TAB> thumbWidth <TAB> thumbHeight <TAB> roles
+  # Unbound when the agent has no books (an empty GROUP_CONCAT), so the
+  # template's {{ with .books }} hides the section; likewise ?references.
   ?books
   ?bookCount
+  # Each reference work as  itemKey <TAB> title <TAB> date <TAB> roles.
+  ?references
+  ?referenceCount
+  # Books + reference works, for the index's count.
+  ?workCount
 WHERE {
   ?creator rdfs:label ?label .
   # The sort key: the label lower-cased with leading punctuation dropped and
@@ -54,84 +64,168 @@ WHERE {
   BIND(UCASE(SUBSTR(?sortKey, 1, 1)) AS ?firstChar)
   BIND(IF(REGEX(?firstChar, "^[A-Z]$"), ?firstChar, "#") AS ?initial)
 
-  # Required: the artists' books crediting this agent. The cards come out
-  # sorted by title: GROUP_CONCAT keeps its input order, and only a scope
-  # *below* the grouping can be ordered, so the innermost SELECT builds one
-  # token per book and sorts them (item key breaks ties between identically
-  # titled books, keeping the build deterministic).
+  # The agent's works. Books and reference works are aggregated per agent in
+  # the two branches of a UNION, and the (at most two) rows per agent merged
+  # by an outer GROUP BY with SAMPLE -- rather than two OPTIONAL aggregate
+  # subqueries, which Jena may re-evaluate once per agent. Each branch must
+  # aggregate on its own: in Jena a GROUP_CONCAT over a group in which some
+  # row leaves its variable unbound comes back unbound altogether, whereas
+  # SAMPLE (and COUNT) skip unbound rows. A branch with no rows for an agent
+  # leaves its list and count unbound, which the template's {{ with }} hides.
+  #
+  # Within each branch an ordered SELECT sorts the works by title:
+  # GROUP_CONCAT keeps its input order, and only a scope *below* the grouping
+  # can be ordered (item key breaks ties between identically titled works,
+  # keeping the build deterministic).
   {
     SELECT ?creator
-           (SAMPLE(?key) AS ?creatorKey)
-           (GROUP_CONCAT(?bookToken; separator="\n") AS ?books)
-           (COUNT(DISTINCT ?book) AS ?bookCount)
+           (SAMPLE(?k) AS ?creatorKey)
+           (SAMPLE(?bookList) AS ?books)
+           (SAMPLE(?nBooks) AS ?bookCount)
+           (SAMPLE(?refList) AS ?references)
+           (SAMPLE(?nRefs) AS ?referenceCount)
+           ((COALESCE(SAMPLE(?nBooks), 0) + COALESCE(SAMPLE(?nRefs), 0)) AS ?workCount)
     WHERE {
       {
-        SELECT DISTINCT ?creator ?key ?book ?bookToken
+        SELECT ?creator (SAMPLE(?key) AS ?k)
+               (GROUP_CONCAT(?bookToken; separator="\n") AS ?bookList)
+               (COUNT(DISTINCT ?book) AS ?nBooks)
         WHERE {
-          ?book
-            a ab:ArtistsBook ;
-            bf:contribution ?contribution ;
-            ab:itemKey ?bookKey ;
-            rdfs:label ?title ;
-            .
-          ?contribution bf:agent ?creator .
-          BIND(REPLACE(STR(?contribution), "^.*/contribution/", "") AS ?key)
+          {
+            SELECT ?creator ?key ?book ?bookToken
+            WHERE {
+              # One row per (agent, book), its roles aggregated: an agent can hold
+              # several roles on one book, or both a 1xx and a 7xx, which would
+              # otherwise yield near-duplicate cards.
+              {
+                SELECT ?creator ?book (SAMPLE(?k) AS ?key)
+                       (GROUP_CONCAT(DISTINCT COALESCE(?roleLabel, ""); separator=", ") AS ?rolesRaw)
+                WHERE {
+                  ?book a ab:ArtistsBook ;
+                        bf:contribution ?contribution .
+                  ?contribution bf:agent ?creator .
+                  BIND(REPLACE(STR(?contribution), "^.*/contribution/", "") AS ?k)
+                  OPTIONAL { ?contribution bf:role/rdfs:label ?roleLabel . }
+                }
+                GROUP BY ?creator ?book
+              }
+              # A role-less contribution adds an empty role ("author, , printer"
+              # or ", author"): COALESCE keeps it from voiding the whole
+              # GROUP_CONCAT, which an unbound row would. Tidy its separator away.
+              BIND(REPLACE(REPLACE(?rolesRaw, "(, ){2,}", ", "), "^, |, $", "") AS ?roles)
+              ?book ab:itemKey ?bookKey ;
+                    rdfs:label ?title .
 
-          # Card details for each book. Creators and the imprint are aggregated per
-          # book in their own subqueries so a book with two primary creators (or two
-          # dates) still yields one token rather than several near-duplicates.
-          OPTIONAL {
-            {
-              SELECT ?book (GROUP_CONCAT(DISTINCT ?creatorName; separator="; ") AS ?creators)
-              WHERE {
-                ?book bf:contribution ?c .
-                ?c a bflc:PrimaryContribution ;
-                   bf:agent/rdfs:label ?creatorName .
+              # Card details for each book. Creators and the imprint are aggregated per
+              # book in their own subqueries so a book with two primary creators (or two
+              # dates) still yields one token rather than several near-duplicates.
+              OPTIONAL {
+                {
+                  SELECT ?book (GROUP_CONCAT(DISTINCT ?creatorName; separator="; ") AS ?creators)
+                  WHERE {
+                    ?book bf:contribution ?c .
+                    ?c a bflc:PrimaryContribution ;
+                       bf:agent/rdfs:label ?creatorName .
+                  }
+                  GROUP BY ?book
+                }
               }
-              GROUP BY ?book
-            }
-          }
-          OPTIONAL {
-            {
-              SELECT ?book (SAMPLE(?d) AS ?date) (SAMPLE(?pl) AS ?place) (SAMPLE(?pb) AS ?publisher)
-              WHERE {
-                ?book bf:provisionActivity ?pub .
-                OPTIONAL { ?pub bflc:simpleDate  ?d . }
-                OPTIONAL { ?pub bflc:simplePlace ?pl . }
-                OPTIONAL { ?pub bflc:simpleAgent ?pb . }
+              OPTIONAL {
+                {
+                  SELECT ?book (SAMPLE(?d) AS ?date) (SAMPLE(?pl) AS ?place) (SAMPLE(?pb) AS ?publisher)
+                  WHERE {
+                    ?book bf:provisionActivity ?pub .
+                    OPTIONAL { ?pub bflc:simpleDate  ?d . }
+                    OPTIONAL { ?pub bflc:simplePlace ?pl . }
+                    OPTIONAL { ?pub bflc:simpleAgent ?pb . }
+                  }
+                  GROUP BY ?book
+                }
               }
-              GROUP BY ?book
+              # ab:representativeImage is single per book. The thumbnail is requested by
+              # width ("400," is width 400, height derived) and its height computed from
+              # the master's aspect ratio, so the browser reserves the right box before
+              # the lazy image loads.
+              OPTIONAL {
+                ?book ab:representativeImage ?thumb .
+                ?thumb ab:iiifPath    ?thumbPath ;
+                       ab:pixelWidth  ?thumbMasterWidth ;
+                       ab:pixelHeight ?thumbMasterHeight .
+                BIND(400 AS ?thumbWidth)
+                BIND(xsd:integer(ROUND(?thumbMasterHeight * ?thumbWidth / ?thumbMasterWidth)) AS ?thumbHeight)
+                BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/400,/0/default.jpg") AS ?thumbUrl)
+              }
+              BIND(CONCAT(
+                     COALESCE(STR(?place), ""),
+                     IF(BOUND(?place) && BOUND(?publisher), ": ", ""),
+                     COALESCE(STR(?publisher), "")
+                   ) AS ?imprint)
+              BIND(CONCAT(
+                     ?bookKey, "\t", ?title, "\t",
+                     COALESCE(?creators, ""), "\t",
+                     COALESCE(STR(?date), ""), "\t",
+                     ?imprint, "\t",
+                     COALESCE(?thumbUrl, ""), "\t",
+                     COALESCE(STR(?thumbWidth), ""), "\t",
+                     COALESCE(STR(?thumbHeight), ""), "\t",
+                     COALESCE(?roles, "")
+                   ) AS ?bookToken)
             }
+            ORDER BY LCASE(?title) ?bookKey
           }
-          # ab:representativeImage is single per book. The thumbnail is requested by
-          # width ("400," is width 400, height derived) and its height computed from
-          # the master's aspect ratio, so the browser reserves the right box before
-          # the lazy image loads.
-          OPTIONAL {
-            ?book ab:representativeImage ?thumb .
-            ?thumb ab:iiifPath    ?thumbPath ;
-                   ab:pixelWidth  ?thumbMasterWidth ;
-                   ab:pixelHeight ?thumbMasterHeight .
-            BIND(400 AS ?thumbWidth)
-            BIND(xsd:integer(ROUND(?thumbMasterHeight * ?thumbWidth / ?thumbMasterWidth)) AS ?thumbHeight)
-            BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/400,/0/default.jpg") AS ?thumbUrl)
-          }
-          BIND(CONCAT(
-                 COALESCE(STR(?place), ""),
-                 IF(BOUND(?place) && BOUND(?publisher), ": ", ""),
-                 COALESCE(STR(?publisher), "")
-               ) AS ?imprint)
-          BIND(CONCAT(
-                 ?bookKey, "\t", ?title, "\t",
-                 COALESCE(?creators, ""), "\t",
-                 COALESCE(STR(?date), ""), "\t",
-                 ?imprint, "\t",
-                 COALESCE(?thumbUrl, ""), "\t",
-                 COALESCE(STR(?thumbWidth), ""), "\t",
-                 COALESCE(STR(?thumbHeight), "")
-               ) AS ?bookToken)
         }
-        ORDER BY LCASE(?title) ?bookKey
+        GROUP BY ?creator
+      }
+      UNION
+      {
+        SELECT ?creator (SAMPLE(?key) AS ?k)
+               (GROUP_CONCAT(?refToken; separator="\n") AS ?refList)
+               (COUNT(DISTINCT ?ref) AS ?nRefs)
+        WHERE {
+          {
+            SELECT ?creator ?key ?ref ?refToken
+            WHERE {
+              {
+                SELECT ?creator ?ref (SAMPLE(?k) AS ?key)
+                       (GROUP_CONCAT(DISTINCT COALESCE(?roleLabel, ""); separator=", ") AS ?rolesRaw)
+                WHERE {
+                  ?ref a ab:ReferenceWork ;
+                       bf:contribution ?contribution .
+                  ?contribution bf:agent ?creator .
+                  BIND(REPLACE(STR(?contribution), "^.*/contribution/", "") AS ?k)
+                  OPTIONAL { ?contribution bf:role/rdfs:label ?roleLabel . }
+                }
+                GROUP BY ?creator ?ref
+              }
+              # A role-less contribution adds an empty role ("author, , printer"
+              # or ", author"): COALESCE keeps it from voiding the whole
+              # GROUP_CONCAT, which an unbound row would. Tidy its separator away.
+              BIND(REPLACE(REPLACE(?rolesRaw, "(, ){2,}", ", "), "^, |, $", "") AS ?roles)
+              # Only reference works with a page: the condition references.rq
+              # requires (a citation of a book carrying an ab:itemKey).
+              FILTER EXISTS {
+                ?citation ab:citedBy ?ref ;
+                          ab:cites/ab:itemKey ?citedBookKey .
+              }
+              ?ref ab:itemKey ?refKey ;
+                   rdfs:label ?refTitle .
+              OPTIONAL {
+                {
+                  SELECT ?ref (SAMPLE(?d) AS ?refDate)
+                  WHERE { ?ref bf:provisionActivity/bflc:simpleDate ?d . }
+                  GROUP BY ?ref
+                }
+              }
+              BIND(CONCAT(
+                     ?refKey, "\t", ?refTitle, "\t",
+                     COALESCE(STR(?refDate), ""), "\t",
+                     COALESCE(?roles, "")
+                   ) AS ?refToken)
+            }
+            ORDER BY LCASE(?refTitle) ?refKey
+          }
+        }
+        GROUP BY ?creator
       }
     }
     GROUP BY ?creator

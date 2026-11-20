@@ -1,0 +1,11 @@
+{{/* A credit list on the book and reference detail pages, each creator linked
+     to their /creator/ page. Expects the ?primaryCreatorLinks /
+     ?contributorLinks token string from artists-books.rq / references.rq:
+       agentKey <TAB> name <TAB> roles
+     tokens newline-separated; roles may be empty. */}}
+{{ define "creator-links" }}
+{{- range $i, $t := split . "\n" }}
+{{- $f := split $t "\t" }}
+{{- if $i }}; {{ end }}<a href="/creator/{{ index $f 0 }}">{{ index $f 1 }}</a>{{ with index $f 2 }} [{{ . }}]{{ end }}
+{{- end }}
+{{- end }}
