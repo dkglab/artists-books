@@ -1,4 +1,5 @@
 PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
+PREFIX arq:     <http://jena.apache.org/ARQ/function#>
 PREFIX bf:      <http://id.loc.gov/ontologies/bibframe/>
 PREFIX bflc:    <http://id.loc.gov/ontologies/bflc/>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
@@ -21,8 +22,10 @@ SELECT
   # (…/item/<book>/contribution/<agentKey>), so it is read back from there.
   ?creatorKey
   ?label
-  # The label's first letter, for the index's A–Z sections; anything outside
-  # A–Z (digits, punctuation, accented initials) files under "#".
+  # The label's first letter, for the index's A–Z sections: leading
+  # punctuation is skipped ("[Anonymous]" files under A) and an accented
+  # capital files under its base letter ("Álvarez" under A, "Øvstebø" under
+  # O); anything else (a leading digit) files under "#".
   ?initial
   # Each book as a TAB-separated token, tokens newline-separated, in the shape
   # the shared book-cards partial (layouts/book-cards.html) expects:
@@ -32,8 +35,17 @@ SELECT
   ?bookCount
 WHERE {
   ?creator rdfs:label ?label .
-  BIND(UCASE(SUBSTR(STR(?label), 1, 1)) AS ?firstChar)
-  BIND(IF(REGEX(?firstChar, "^[A-Z]$"), ?firstChar, "#") AS ?initial)
+  BIND(REPLACE(STR(?label), "^[^\\p{L}\\p{N}]+", "") AS ?sortLabel)
+  BIND(UCASE(SUBSTR(?sortLabel, 1, 1)) AS ?firstChar)
+  # SPARQL has no accent folding, so the Latin-1 / Latin Extended-A capitals
+  # are mapped by position: the character at offset n of ?accented folds to
+  # the one at offset n of ?folded.
+  BIND("ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝĀĂĄĆĈĊČĎĐĒĔĖĘĚĜĞĠĢĤĦĨĪĬĮİĴĶĹĻĽĿŁŃŅŇŊŌŎŐŒŔŖŘŚŜŞŠŢŤŦŨŪŬŮŰŲŴŶŸŹŻŽ" AS ?accented)
+  BIND("AAAAAAACEEEEIIIINOOOOOOUUUUYAAACCCCDDEEEEEGGGGHHIIIIIJKLLLLLNNNNOOOORRRSSSSTTTUUUUUUWYYZZZ" AS ?folded)
+  BIND(IF(CONTAINS(?accented, ?firstChar),
+          SUBSTR(?folded, STRLEN(STRBEFORE(?accented, ?firstChar)) + 1, 1),
+          ?firstChar) AS ?baseChar)
+  BIND(IF(REGEX(?baseChar, "^[A-Z]$"), ?baseChar, "#") AS ?initial)
 
   # Required: the artists' books crediting this agent. The cards come out
   # sorted by title: GROUP_CONCAT keeps its input order, and only a scope
@@ -119,5 +131,7 @@ WHERE {
   }
 }
 # A–Z, so the index's letter sections come out contiguous ("#" sorts before
-# "A"); the key breaks ties between identically labelled agents.
-ORDER BY ?initial LCASE(?label) ?creatorKey
+# "A"). Within a section, Jena's locale collation sorts accented names among
+# the unaccented ones ("Álvarez" beside "Alvarez", not after "Azz…"); the key
+# breaks ties between identically labelled agents.
+ORDER BY ?initial arq:collation("en", ?sortLabel) ?creatorKey
