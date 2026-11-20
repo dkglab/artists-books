@@ -283,12 +283,25 @@ ssid,uuid,datePath,iiifPath,width,height,filename,fileCount,imageViewType,status
 13604309,4098b9d0-…,2016/04/04/20,/iiif/2016/04/04/20/4098b9d0-…_deflate.tif,2400,1800,Far_horizons1.tif,2,(Cover & interior images),ok
 ```
 
-> [!NOTE]
-> **68 SSIDs are not harvested yet.** These are the bare-number links described
-> above, added to `artstor-ssid.csv` on 2026-11-20. By then `forum.jstor.org`
-> answered *every* `representation-view` request from this host with **403**,
-> including SSIDs that had already resolved. Re-run `make -C sources -B ssid-media.csv`
-> once that clears. The script resumes and skips the 1,118 rows that are already done.
+> [!WARNING]
+> **The redirect route is gone (#168).** Since 2026-11-20 `forum.jstor.org`
+> answers *every* `representation-view` request with **403**, including SSIDs that
+> had already resolved, from this host and from a laptop, with or without VPN.
+> It looks retired or put behind a login, not an IP block, so re-running
+> `harvest_media.py` is not expected to work again. The 1,118 rows it produced
+> are frozen.
+>
+> The 68 bare-SSID records added to `artstor-ssid.csv` in #167 were instead read
+> **by hand** off their `www.jstor.org/stable/community.<ssid>` item pages
+> (Claude in Chrome, ~30 s between pages, stopping at any pushback) into the
+> frozen `ssid-iiif-links.csv` — `ssid,status,iiifLinks`, every image of the
+> record in viewer order, `|`-joined. `marc/import_media.py` merges the first
+> link of each into `ssid-media.csv`: it splits out `uuid`/`datePath`, confirms
+> the path and reads `width`/`height` from the open `info.json`, and carries
+> `filename`/`fileCount`/`imageViewType` through from the Forum export (all 68
+> are in it, and every record's link count equals its `File Count`). Existing
+> rows are never touched. For any future SSIDs, the same by-hand route (see the
+> prompt in #168) plus `make -C sources ssid-media-import` is the way in.
 
 **Of the 1,127 SSIDs harvested before that, all resolve and 1,118 have a IIIF path.** The remaining 9 are
 `restricted`: the redirect chain gives their UUID and date partition, but every
@@ -296,8 +309,8 @@ candidate identifier returns **403** from the IIIF tier (not 404 — the asset i
 access-restricted, not mis-guessed; a known-good path returns 200 in the same
 breath). All 9 are also absent from the local Forum export, so they are almost
 certainly assets added to Forum after that export was taken and not publicly
-released. They are left un-`ok` so a later run retries them, in case they are
-published; a fresh Forum export would likely settle them. `no-iiif` is the
+released. Their item pages, checked by hand for #168, show **no image** either
+(`noimage` in `ssid-iiif-links.csv`); a fresh Forum export would likely settle them. `no-iiif` is the
 distinct status for "resolved, but no candidate identifier worked" — currently
 none.
 
@@ -317,7 +330,9 @@ The file name is not a reliable signal: `strip_tease_cover2.tif` and
 `presente_cover3.tif` are both covers despite the trailing digit.
 
 Reaching **image 2 or later requires the gated endpoint**, so the slipcase
-records cannot currently be corrected automatically. `imageViewType` is recorded
+records cannot currently be corrected automatically. (The exception is the 68
+records in `ssid-iiif-links.csv`, whose later images were read by hand and are
+kept there, unused for now.) `imageViewType` is recorded
 verbatim and deliberately not interpreted here: `ab:coverImage` is still not in
 `docs/vocab.ttl` and the no-cover fallback policy is undecided.
 
@@ -351,6 +366,6 @@ images later becomes a base-URL change rather than a template rewrite.
 **Regenerate:**
 
 ```sh
-make -C sources ssid-media.csv                       # resumable; skips resolved
-python3 marc/harvest_media.py --limit 100 --delay 2  # or chunk it, from sources/
+make -C sources ssid-media-import   # merge ssid-iiif-links.csv; adds only missing SSIDs
+# make -C sources ssid-media.csv    # the original redirect harvest: 403s since 2026-11-20
 ```

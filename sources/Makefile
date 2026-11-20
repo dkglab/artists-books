@@ -160,9 +160,19 @@ artstor-ssid.csv: | marc/resolve_artstor.py
 # stor.artstor.org redirect chain, which is not bot-gated: ~3 requests per SSID
 # at 2s => ~1h. Checkpointed after every record; rerun to resume, chunk with
 # --limit. See sources/README.md "SSID -> IIIF images".
+# NOTE (#168): forum.jstor.org has 403'd every SSID since 2026-11-20; this route
+# appears to be gone. Use ssid-media-import below for new SSIDs.
 ssid-media.csv: | marc/harvest_media.py
 	python3 marc/harvest_media.py --ssids artstor-ssid.csv \
 	  --export Jstor_Artists__book_records.csv --out $@
+
+# Merge the hand-collected IIIF paths in ssid-iiif-links.csv (read off the
+# www.jstor.org item pages, #168) into ssid-media.csv. Only SSIDs missing from
+# ssid-media.csv are added; width/height come from the open info.json.
+.PHONY: ssid-media-import
+ssid-media-import: | marc/import_media.py
+	python3 marc/import_media.py --links ssid-iiif-links.csv --ssids artstor-ssid.csv \
+	  --export Jstor_Artists__book_records.csv --out ssid-media.csv
 
 # SUPERSEDED by ssid-media.csv above; kept only because content-service is the
 # sole known route to a record's second and later images. The endpoint is closed
