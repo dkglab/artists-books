@@ -1,6 +1,11 @@
 START_FUSEKI ?= true
 
 .PHONY: all clean superclean validate serve FORCE
+
+# A failed recipe must not leave its target behind looking up to date: a
+# java error half-way through `> $@` would otherwise leave a truncated
+# graph/*.ttl that the next `make` happily serves (#178).
+.DELETE_ON_ERROR:
 .DEFAULT_GOAL := all
 
 all: graph/artists-books.ttl graph/reference-works.ttl web/site/index.html
@@ -100,10 +105,22 @@ endif
 	# template prerequisites, so always re-query Fuseki. Snowman's default cache
 	# is keyed by query text only, so a changed graph (same query) would other-
 	# wise serve stale results (e.g. the old lib-1-only book set).
-	cd web && ../tools/snowman/snowman build --cache-sparql never 2>&1 | tee .snowman/build_log.txt
+	#
+	# Make's /bin/sh has no pipefail, so the pipeline's status is tee's (always
+	# 0) and a Snowman failure would pass silently over a partial web/site/
+	# (#178). Record Snowman's own status instead, stop Fuseki either way, then
+	# fail. The target is removed explicitly: .DELETE_ON_ERROR only deletes a
+	# target the recipe has modified, and Snowman may abort before rewriting it.
+	cd web && { ../tools/snowman/snowman build --cache-sparql never 2>&1; \
+	  echo $$? > .snowman/exit-status; } | tee .snowman/build_log.txt
 ifeq ($(START_FUSEKI),true)
 	$(MAKE) -s -C tools/fuseki stop
 endif
+	@status=$$(cat web/.snowman/exit-status); \
+	if [ "$$status" != 0 ]; then \
+	  echo "snowman build failed (exit $$status); see web/.snowman/build_log.txt" >&2; \
+	  rm -f $@; exit $$status; \
+	fi
 	# The facet indexes are rendered with text/template (views.yaml `unsafe: true`),
 	# which leaves JSON escaping to the template: fail the build if it slipped,
 	# removing the target so the next `make` rebuilds rather than looking done.
