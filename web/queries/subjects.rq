@@ -22,8 +22,7 @@ SELECT
   ?label
   ?category
   ?categoryLabel
-  # The label's first letter, for the index's A–Z sections; anything outside
-  # A–Z (digits, punctuation, accented initials) files under "#".
+  # The label's first letter, for the index's A–Z sections (see ?sortKey).
   ?initial
   # Each book as a TAB-separated token, tokens newline-separated, so the
   # template can render a card per book (thumbnail, title link, creator · date,
@@ -43,7 +42,27 @@ WHERE {
   OPTIONAL { ?concept skos:prefLabel ?prefLabel . }
   OPTIONAL { ?concept rdfs:label ?rdfsLabel . }
   BIND(COALESCE(?prefLabel, ?rdfsLabel) AS ?label)
-  BIND(UCASE(SUBSTR(STR(?label), 1, 1)) AS ?firstChar)
+  # The sort key: the label lower-cased with leading punctuation dropped and
+  # Latin accents folded ("Álvarez" -> "alvarez", "Øvstebø" -> "ovstebo"), so
+  # accented labels sort among the unaccented ones and file under their base
+  # letter. Plain code-point order on the folded key keeps the index
+  # word-by-word ("art brut" < "art history" < "artists"); a locale collation
+  # (arq:collation) would not, since Java's collator ignores spaces.
+  BIND(REPLACE(LCASE(STR(?label)), "^[^\\p{L}\\p{N}]+", "") AS ?key0)
+  BIND(REPLACE(?key0, "\\p{M}", "") AS ?key1)
+  BIND(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(?key1,
+         "[àáâãäåāăą]", "a"), "æ", "ae"), "[çćĉċč]", "c"), "[ďđð]", "d"),
+         "[èéêëēĕėęě]", "e"), "[ĝğġģ]", "g"), "[ĥħ]", "h") AS ?key2)
+  BIND(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(?key2,
+         "[ìíîïĩīĭįı]", "i"), "ĵ", "j"), "ķ", "k"), "[ĺļľŀł]", "l"),
+         "[ñńņňŉŋ]", "n"), "[òóôõöøōŏő]", "o"), "œ", "oe") AS ?key3)
+  BIND(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(?key3,
+         "[ŕŗř]", "r"), "[śŝşšſ]", "s"), "ß", "ss"), "[ţťŧ]", "t"), "þ", "th"),
+         "[ùúûüũūŭůűų]", "u"), "ŵ", "w"), "[ýÿŷ]", "y") AS ?key4)
+  BIND(REPLACE(?key4, "[źżž]", "z") AS ?sortKey)
+  # The index's A–Z section is the sort key's first letter ("[Anonymous]"
+  # under A, "Éluard" under E); anything else (a leading digit) files under "#".
+  BIND(UCASE(SUBSTR(?sortKey, 1, 1)) AS ?firstChar)
   BIND(IF(REGEX(?firstChar, "^[A-Z]$"), ?firstChar, "#") AS ?initial)
 
   # Category top-concept (Topical subjects / Geographic subjects).
@@ -134,5 +153,5 @@ WHERE {
   }
 }
 # A–Z across both categories, so the index's letter sections come out
-# contiguous ("#" sorts before "A").
-ORDER BY ?initial LCASE(?label)
+# contiguous ("#" sorts before "A"); the concept breaks ties.
+ORDER BY ?initial ?sortKey ?concept
