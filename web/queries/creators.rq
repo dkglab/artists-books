@@ -1,5 +1,4 @@
 PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
-PREFIX arq:     <http://jena.apache.org/ARQ/function#>
 PREFIX bf:      <http://id.loc.gov/ontologies/bibframe/>
 PREFIX bflc:    <http://id.loc.gov/ontologies/bflc/>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
@@ -22,10 +21,7 @@ SELECT
   # (…/item/<book>/contribution/<agentKey>), so it is read back from there.
   ?creatorKey
   ?label
-  # The label's first letter, for the index's A–Z sections: leading
-  # punctuation is skipped ("[Anonymous]" files under A) and an accented
-  # capital files under its base letter ("Álvarez" under A, "Øvstebø" under
-  # O); anything else (a leading digit) files under "#".
+  # The label's first letter, for the index's A–Z sections (see ?sortKey).
   ?initial
   # Each book as a TAB-separated token, tokens newline-separated, in the shape
   # the shared book-cards partial (layouts/book-cards.html) expects:
@@ -35,17 +31,28 @@ SELECT
   ?bookCount
 WHERE {
   ?creator rdfs:label ?label .
-  BIND(REPLACE(STR(?label), "^[^\\p{L}\\p{N}]+", "") AS ?sortLabel)
-  BIND(UCASE(SUBSTR(?sortLabel, 1, 1)) AS ?firstChar)
-  # SPARQL has no accent folding, so the Latin-1 / Latin Extended-A capitals
-  # are mapped by position: the character at offset n of ?accented folds to
-  # the one at offset n of ?folded.
-  BIND("ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝĀĂĄĆĈĊČĎĐĒĔĖĘĚĜĞĠĢĤĦĨĪĬĮİĴĶĹĻĽĿŁŃŅŇŊŌŎŐŒŔŖŘŚŜŞŠŢŤŦŨŪŬŮŰŲŴŶŸŹŻŽ" AS ?accented)
-  BIND("AAAAAAACEEEEIIIINOOOOOOUUUUYAAACCCCDDEEEEEGGGGHHIIIIIJKLLLLLNNNNOOOORRRSSSSTTTUUUUUUWYYZZZ" AS ?folded)
-  BIND(IF(CONTAINS(?accented, ?firstChar),
-          SUBSTR(?folded, STRLEN(STRBEFORE(?accented, ?firstChar)) + 1, 1),
-          ?firstChar) AS ?baseChar)
-  BIND(IF(REGEX(?baseChar, "^[A-Z]$"), ?baseChar, "#") AS ?initial)
+  # The sort key: the label lower-cased with leading punctuation dropped and
+  # Latin accents folded ("Álvarez" -> "alvarez", "Øvstebø" -> "ovstebo"), so
+  # accented labels sort among the unaccented ones and file under their base
+  # letter. Plain code-point order on the folded key keeps the index
+  # word-by-word ("art brut" < "art history" < "artists"); a locale collation
+  # (arq:collation) would not, since Java's collator ignores spaces.
+  BIND(REPLACE(LCASE(STR(?label)), "^[^\\p{L}\\p{N}]+", "") AS ?key0)
+  BIND(REPLACE(?key0, "\\p{M}", "") AS ?key1)
+  BIND(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(?key1,
+         "[àáâãäåāăą]", "a"), "æ", "ae"), "[çćĉċč]", "c"), "[ďđð]", "d"),
+         "[èéêëēĕėęě]", "e"), "[ĝğġģ]", "g"), "[ĥħ]", "h") AS ?key2)
+  BIND(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(?key2,
+         "[ìíîïĩīĭįı]", "i"), "ĵ", "j"), "ķ", "k"), "[ĺļľŀł]", "l"),
+         "[ñńņňŉŋ]", "n"), "[òóôõöøōŏő]", "o"), "œ", "oe") AS ?key3)
+  BIND(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(?key3,
+         "[ŕŗř]", "r"), "[śŝşšſ]", "s"), "ß", "ss"), "[ţťŧ]", "t"), "þ", "th"),
+         "[ùúûüũūŭůűų]", "u"), "ŵ", "w"), "[ýÿŷ]", "y") AS ?key4)
+  BIND(REPLACE(?key4, "[źżž]", "z") AS ?sortKey)
+  # The index's A–Z section is the sort key's first letter ("[Anonymous]"
+  # under A, "Éluard" under E); anything else (a leading digit) files under "#".
+  BIND(UCASE(SUBSTR(?sortKey, 1, 1)) AS ?firstChar)
+  BIND(IF(REGEX(?firstChar, "^[A-Z]$"), ?firstChar, "#") AS ?initial)
 
   # Required: the artists' books crediting this agent. The cards come out
   # sorted by title: GROUP_CONCAT keeps its input order, and only a scope
@@ -131,7 +138,5 @@ WHERE {
   }
 }
 # A–Z, so the index's letter sections come out contiguous ("#" sorts before
-# "A"). Within a section, Jena's locale collation sorts accented names among
-# the unaccented ones ("Álvarez" beside "Alvarez", not after "Azz…"); the key
-# breaks ties between identically labelled agents.
-ORDER BY ?initial arq:collation("en", ?sortLabel) ?creatorKey
+# "A"); the key breaks ties between identically labelled agents.
+ORDER BY ?initial ?sortKey ?creatorKey
