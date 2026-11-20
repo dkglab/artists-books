@@ -208,8 +208,8 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
 
 /* --- Browse: filter sidebar + grid (index page, #138) ------------------ */
 
-/* The sidebar is hidden until facets.js has loaded the index, so the grid
-   takes the full width without JS (or if the index fails to load). */
+/* The sidebar is hidden until facets.js has revealed it, so the grid takes
+   the full width without JS. */
 .browse { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem 3rem; }
 .browse:has(> .filters:not([hidden])) { grid-template-columns: 16rem minmax(0, 1fr); }
 @media (max-width: 800px) {
@@ -266,8 +266,42 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
 .facet-list .facet-label { flex: 1; }
 .facet-list .n { color: var(--muted); font-size: .875rem; }
 
+/* The boolean facets (#160) are a switch: a checkbox restyled as a track
+   with a sliding knob, at the end of its row. */
+.facet-list .facet-switch { align-items: center; gap: .6rem; }
+.switch {
+  appearance: none;
+  flex: none;
+  position: relative;
+  width: 2.5rem;
+  height: 1.5rem;
+  margin: 0;
+  border-radius: .75rem;
+  background: #bbb;
+  cursor: pointer;
+  transition: background-color .15s;
+}
+.switch::before {
+  content: "";
+  position: absolute;
+  top: .1875rem;
+  left: .1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 1px 2px rgb(0 0 0 / .3);
+  transition: transform .15s;
+}
+.switch:checked { background: var(--ink); }
+.switch:checked::before { transform: translateX(1rem); }
+.switch:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  .switch, .switch::before { transition: none; }
+}
+
 /* Facets after the first get a rule and some air above them. */
-.filters > [data-src] ~ [data-src] > .facet { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+.filters > [data-param] ~ [data-param] > .facet { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
 
 /* The flat facets (Subject, Place, #143) list up to ~80 terms before anything
    is typed; scroll them in place rather than pushing the next facet down. */

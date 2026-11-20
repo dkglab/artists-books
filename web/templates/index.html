@@ -6,16 +6,20 @@
 <div class="page-intro">
   <h1>Explore Artists' Books</h1>
   <p>Discover works through creators, subjects, construction methods, and scholarly references.</p>
-  <p class="count" aria-live="polite" data-total="{{ len . }}">{{ len . }} works</p>
+  <p class="count" aria-live="polite" data-total="{{ len . }}">{{ len . }} books</p>
 </div>
 
 <div class="section browse">
 {{/* The filter sidebar (#138) is an empty mount point, hidden until
-     /facets.js has loaded the facet index and revealed it: without JS the page
-     is just the full grid. The facets filter the grid below by the cards'
+     /facets.js has revealed it: without JS the page is just the full grid (the
+     images facet's default only applies with JS). The facets filter the grid below by the cards'
      data-key, so the grid itself is still rendered in full here. */}}
 <aside class="filters" hidden>
   <h2>Filters</h2>
+  {{/* A boolean facet (#160), on by default: the grid shows only the works
+       with an image until it is unticked (?images=off). Its works are the
+       cards matching data-cards, so it needs no index. */}}
+  <image-facet data-label="Images" data-text="Only books with images" data-key="with-images" data-param="images" data-default="on" data-cards=":has(img)"></image-facet>
   <construction-facet data-label="Construction" data-src="/construction-facet.json" data-param="construction"></construction-facet>
   {{/* Subject and Place share one index (#143), each taking one category of
        it. data-min is how many works a term needs to be listed before anything
@@ -25,7 +29,7 @@
 </aside>
 
 <div class="results">
-<p class="no-results" hidden>No works match the selected filters.</p>
+<p class="no-results" hidden>No books match the selected filters.</p>
 {{/* A masonry grid: fixed-width lanes, cards stacked in each (display:
      grid-lanes, where supported). A book with an image shows it at its own
      aspect ratio — width/height carry the master's ratio, so the box is
