@@ -1,0 +1,53 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "schedule:weekly"],
+  "enabledManagers": ["custom.regex"],
+  "automerge": false,
+  "labels": ["dependencies"],
+  "prBodyNotes": [
+    "**Don't merge this until the bump has been tested.** A new tool release can change the build output without any error. The SPARQL-Anything 1.3.0 upgrade (#174) needed query changes, and only a diff of the graphs caught the regressions. Before merging, check out this branch, run `make clean all`, and diff `graph/*.ttl` and `web/site/` against `main`."
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "SPARQL-Anything jar (tools/sparql-anything/Makefile)",
+      "managerFilePatterns": ["/^tools/sparql-anything/Makefile$/"],
+      "matchStrings": ["SA_VERSION := (?<currentValue>\\S+)"],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "SPARQL-Anything/sparql.anything",
+      "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "description": "Snowman binary (tools/snowman/Makefile)",
+      "managerFilePatterns": ["/^tools/snowman/Makefile$/"],
+      "matchStrings": ["SM_VERSION := (?<currentValue>\\S+)"],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "glaciers-in-archives/snowman",
+      "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "description": "Jena command-line tools tarball (tools/jena/Makefile)",
+      "managerFilePatterns": ["/^tools/jena/Makefile$/"],
+      "matchStrings": ["JENA_VERSION := (?<currentValue>\\S+)"],
+      "datasourceTemplate": "maven",
+      "depNameTemplate": "org.apache.jena:apache-jena"
+    },
+    {
+      "customType": "regex",
+      "description": "Fuseki server tarball (tools/fuseki/Makefile)",
+      "managerFilePatterns": ["/^tools/fuseki/Makefile$/"],
+      "matchStrings": ["JENA_VERSION := (?<currentValue>\\S+)"],
+      "datasourceTemplate": "maven",
+      "depNameTemplate": "org.apache.jena:apache-jena-fuseki"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Jena and Fuseki ship together from one Apache release, so bump them in one PR",
+      "matchDepNames": ["org.apache.jena:apache-jena", "org.apache.jena:apache-jena-fuseki"],
+      "groupName": "Apache Jena"
+    }
+  ]
+}
