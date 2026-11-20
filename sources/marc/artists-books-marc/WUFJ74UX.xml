@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03561nrm a2200553Ii 4500</leader>
+  <controlfield tag="001">on1015376117</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20250801232712.0</controlfield>
+  <controlfield tag="008">171215s2016    mx nnn j          gnzap d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1015376117</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NOC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">zap</subfield>
+    <subfield code="a">spa</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.T65</subfield>
+    <subfield code="b">L33 2016</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Toledo, Francisco,</subfield>
+    <subfield code="d">1940-2019.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n85266012</subfield>
+    <subfield code="1">http://viaf.org/viaf/98262574</subfield>
+    <subfield code="1">http://isni.org/isni/0000000107865910.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Ladi miati' :</subfield>
+    <subfield code="b">lotería de las partes del cuerpo humano en zapoteco de Juchitán /</subfield>
+    <subfield code="c">[created by Francisco Toledo, Natalia Toledo, Víctor Cata].</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Juchitán de Zaragoza] :</subfield>
+    <subfield code="b">[publisher not identified],</subfield>
+    <subfield code="c">[2016?]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 game (24 boards, 54 cards) :</subfield>
+    <subfield code="b">cardboard, color ;</subfield>
+    <subfield code="c">in container 21 x 15 x 4 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">three-dimensional form</subfield>
+    <subfield code="b">tdf</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1021.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">object</subfield>
+    <subfield code="b">nr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1059.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="a">cardboard</subfield>
+    <subfield code="2">rdamat</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMaterial/1006.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="g">polychrome</subfield>
+    <subfield code="2">rdacc</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAColourContent/1003.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Container  title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Boards and cards illustrated with Renaissance drawings of human body parts with the corresponding words in Zapotec and Spanish. Instructions on bottom of container.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Zapotec language</subfield>
+    <subfield code="x">Study and teaching (Elementary)</subfield>
+    <subfield code="x">Spanish speakers.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2021016059.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Human body</subfield>
+    <subfield code="v">Terminology.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2009103111.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Zapotec language</subfield>
+    <subfield code="v">Glossaries, vocabularies, etc.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Spanish language</subfield>
+    <subfield code="v">Glossaries, vocabularies, etc.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008111765.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Spanish language</subfield>
+    <subfield code="x">Glossaries, vocabularies, etc.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1128389.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Zapotec language.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1184085.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Human body.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1730057.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Zapotec language</subfield>
+    <subfield code="x">Study and teaching (Elementary)</subfield>
+    <subfield code="x">Spanish speakers.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/2039787.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Puzzles and games.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026158.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Card games (game sets)</subfield>
+    <subfield code="z">Mexico</subfield>
+    <subfield code="y">21st century.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="z">Mexico</subfield>
+    <subfield code="y">21st century.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Puzzles and games.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1919958.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Glossaries, vocabularies, etc.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423786.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Terminology.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423880.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Spanish language.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1128292.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Mexico.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1211700.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Toledo Paz, Natalia,</subfield>
+    <subfield code="d">1967-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2002082470</subfield>
+    <subfield code="1">http://viaf.org/viaf/45456815</subfield>
+    <subfield code="1">http://isni.org/isni/0000000078773792.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Cata, Víctor.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n2010009152</subfield>
+    <subfield code="1">http://viaf.org/viaf/107335989</subfield>
+    <subfield code="1">http://isni.org/isni/0000000076981360.</subfield>
+  </datafield>
+  <datafield tag="791" ind1="2" ind2=" ">
+    <subfield code="a">Howard Holsenbeck Library Fund.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.4.T65</subfield>
+    <subfield code="b">L33 2016</subfield>
+    <subfield code="z">090</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00052873835</subfield>
+    <subfield code="l">aart</subfield>
+    <subfield code="n">dls</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="t">78</subfield>
+    <subfield code="u">-</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">12-15-17</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">zap</subfield>
+    <subfield code="g">mx </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">WUFJ74UX</subfield><subfield code="b">b8993876</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

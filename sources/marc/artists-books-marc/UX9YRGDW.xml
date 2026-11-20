@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03857cam a2200721 i 4500</leader>
+  <controlfield tag="001">18116037</controlfield>
+  <controlfield tag="005">20250607060534.5</controlfield>
+  <controlfield tag="007">sd fsngnn|||nd</controlfield>
+  <controlfield tag="008">140415s2001    vtua          000 0deng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">18116037</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">he06 2014-04-15 z-processor</subfield>
+    <subfield code="i">he06 2014-04-15</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2013660903</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">INU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">INU</subfield>
+    <subfield code="d">GZM</subfield>
+    <subfield code="d">WAU</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="041" ind1="1" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">lat</subfield>
+    <subfield code="h">lat</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">BV469.H534</subfield>
+    <subfield code="b">S36 2001</subfield>
+  </datafield>
+  <datafield tag="100" ind1="0" ind2=" ">
+    <subfield code="a">Hildegard,</subfield>
+    <subfield code="c">Saint,</subfield>
+    <subfield code="d">1098-1179.</subfield>
+  </datafield>
+  <datafield tag="240" ind1="1" ind2="0">
+    <subfield code="a">Symphonia armonie celestium revelationum.</subfield>
+    <subfield code="k">Selections</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Sanctae Hildegardis Circulus sapientiae =</subfield>
+    <subfield code="b">Hildegard von Bingen 1098-1179, Circle of wisdom /</subfield>
+    <subfield code="c">introduction and notes by Elizabeth Thompson ; with English translation by W.R. Johnson.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">Hildegard von Bingen 1098-1179, Circle of wisdom</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">Circulus sapientiae</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">Circle of wisdom</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Newark, Vermont :</subfield>
+    <subfield code="b">Printed at the Janus Press,</subfield>
+    <subfield code="c">2001.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">16 unnumbered pages :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">33 x 16 cm +</subfield>
+    <subfield code="e">1 sound disc (digital ; 4 3/4 in.) + 1 booklet (19 unnumbered pages : illustrations ; 22 cm)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">performed music</subfield>
+    <subfield code="b">prm</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">audio</subfield>
+    <subfield code="b">s</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">audio disc</subfield>
+    <subfield code="b">sd</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from page 1 of booklet.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Songs performed by Anima were selected from the Symphonia armonie celestium revelationum, Symphony of the harmony of celestial revelations."</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Limited edition of 120 copies.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"To celebrate Hildegard's nine hundredth birthday. Claire Van Vliet made the pulp paintings with Katie MacGregor in Whiting, Me., who also made the colored sheets and covers ... the popups were executed by Audrey Holden, the chemise &amp; slipcase by Judi Conant &amp; Mary Richardson in Maidstone, Vermont ... The cover lettering is Circulus Sapientiae in Hildegard's secret alphabet"--Colophon in booklet.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Accordion-fold format with seven pop-up illustrations.  In a cloth covered portfolio with the booklet and music CD in a paper pocket, in a slipcase.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC copy inscribed to the Library of Congress by Claire Van Vliet.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC copy has laid in: Letter from Van Vliet to standing order patrons and a poster for the "In black and white" exhibition in 2001.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">1. O virtus sapientie -- 2. O quam mirabilis est -- 3. O viriditas digiti dei -- 4. O tu suavissima virga -- 5. O lucidissima apostolorum -- 7. O Bonifaci -- 9. O beata infantia -- 10. O nobillissima viriditas -- 11. O ignee spiritus -- 12. Vos flores rosarum.</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">In Latin with English translation and notes.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Hymns, Latin.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Choruses, Sacred (Women's voices), Unaccompanied.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Gregorian chants.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Pop-up books</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Pulp painting</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Vermont</subfield>
+    <subfield code="z">Newark.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Vermont</subfield>
+    <subfield code="z">Newark.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2001.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="0">
+    <subfield code="a">Toy and movable books.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="0">
+    <subfield code="a">Pop-up books.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Pulp painting.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Johnson, W. R.</subfield>
+    <subfield code="q">(Walter Ralph),</subfield>
+    <subfield code="d">1933-,</subfield>
+    <subfield code="e">translator.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Thompson, Elizabeth.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Van Vliet, Claire,</subfield>
+    <subfield code="e">printer.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">MacGregor, Katie,</subfield>
+    <subfield code="e">papermaker.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Holden, Audrey.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Conant, Judi,</subfield>
+    <subfield code="e">binder.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Richardson, Mary</subfield>
+    <subfield code="c">(Bookbinder)</subfield>
+    <subfield code="e">binder.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Van Vliet, Claire,</subfield>
+    <subfield code="e">inscriber.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Anima (Musical group)</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Janus Press.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Janus Press Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">UX9YRGDW</subfield><subfield code="b">hildegard / sanctae hildegardis circulus sapientiae hildegard von bingen 1098 1179 circle of wisdom</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

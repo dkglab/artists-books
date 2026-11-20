@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01219cim a22003132cc4500</leader>
+  <controlfield tag="001">1177746883</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20170516092658.0</controlfield>
+  <controlfield tag="007">sd uuuuuuuuuuu</controlfield>
+  <controlfield tag="008">031029s2002    xx ||nn| |||||||  n ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1177746883</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)107746883</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ107746883</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)984360011</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Iggy und der große Ben</subfield>
+    <subfield code="n">CD 1</subfield>
+    <subfield code="p">"Am Abend vorgestellt im WDR 3: Autorenlesung Thomas Günther, "Iggy und der große Ben" am 5. November 1990</subfield>
+    <subfield code="c">von Thomas Günther</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Berlin</subfield>
+    <subfield code="b">Ed. Savod Progress</subfield>
+    <subfield code="c">2002</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 CD</subfield>
+    <subfield code="b">12 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">gesprochenes Wort</subfield>
+    <subfield code="b">spw</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">audio</subfield>
+    <subfield code="b">s</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Audiodisk</subfield>
+    <subfield code="b">sd</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Günther, Thomas</subfield>
+    <subfield code="d">1952-2018</subfield>
+    <subfield code="0">(DE-588)119068443</subfield>
+    <subfield code="0">(DE-627)079859208</subfield>
+    <subfield code="0">(DE-576)211032867</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Klimek, Harald-Alexander</subfield>
+    <subfield code="d">1959-</subfield>
+    <subfield code="0">(DE-588)122062299</subfield>
+    <subfield code="0">(DE-627)08171288X</subfield>
+    <subfield code="0">(DE-576)170782433</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="w">(DE-627)1177043475</subfield>
+    <subfield code="w">(DE-576)107043475</subfield>
+    <subfield code="g">CD 1</subfield>
+    <subfield code="q">CD 1</subfield>
+    <subfield code="7">nnim</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2620720206</subfield>
+    <subfield code="b">DE-Mar1</subfield>
+    <subfield code="9">Mar 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">TTS:D 4252</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2635043760</subfield>
+    <subfield code="b">DE-N1</subfield>
+    <subfield code="9">N 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">[CD] Om 200/18 [2]</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="c">soto</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">MV</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">T3ZDYC6H</subfield><subfield code="b">günther / iggy und der grosse ben</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

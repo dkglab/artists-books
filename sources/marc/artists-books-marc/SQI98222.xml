@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01659cam a2200349Ia 4500</leader>
+  <controlfield tag="001">990030524890302486</controlfield>
+  <controlfield tag="005">20160111235610.0</controlfield>
+  <controlfield tag="008">930526s1975    caua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(Aleph)003052489EMU01</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)28167439</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">WTU</subfield>
+    <subfield code="c">WTU</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">AJ#A</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">PS3537.N79</subfield>
+    <subfield code="b">G37</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Gary Snyder brand pine nuts ... as eaten in Turtle Island.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[San Francisco] :</subfield>
+    <subfield code="b">[Zephyrus Image],</subfield>
+    <subfield code="c">[1975]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 sheet (2 unnumbered pages) :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">6 x 11 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nb</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Imprint and date of publication from Johnston.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Two pine nuts packaged in plastic bag; label printed in red and black on beige paper on two sides. Red front label bears facsimile signature of Gary Snyder in blue ink; beige back label bears "Ma Nominee's favorite receipt" and two red illustrations.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Plastic bag measures: 12 x 10 cm.</subfield>
+  </datafield>
+  <datafield tag="510" ind1="4" ind2=" ">
+    <subfield code="a">Johnston, A. Zephyrus Image,</subfield>
+    <subfield code="c">p. 202</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">Manuscript, Archives, and Rare Book Library copy forms part of the Raymond Danowski Poetry Library.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Snyder, Gary,</subfield>
+    <subfield code="d">1930-</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Zephyrus Image (Firm)</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Raymond Danowski Poetry Library (Emory University. General Libraries)</subfield>
+    <subfield code="5">GEU</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">EMU</subfield>
+    <subfield code="b">dmf</subfield>
+    <subfield code="2">20120322</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">AJ#</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">990030524890302486</subfield>
+    <subfield code="8">22260334870002486</subfield>
+    <subfield code="a">01GALI_EMORY</subfield>
+    <subfield code="b">MARBL</subfield>
+    <subfield code="c">Locked Stacks</subfield>
+    <subfield code="d">DANOWSKI 2012 126</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">STACK</subfield>
+    <subfield code="k">4</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Stuart A. Rose Manuscript, Archives, and Rare Book Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">SQI98222</subfield><subfield code="b">snyder / gary snyder brand pine nuts as eaten in turtle island</subfield><subfield code="c">title-author</subfield><subfield code="d">emory</subfield></datafield></record>
+</collection>

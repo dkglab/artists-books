@@ -7,7 +7,7 @@
 #
 # Both inputs are small local CSVs, so this join is cheap. occurrences.csv is
 # the MARC extract materialized once by mine-occurrences.rq -- reading the MARC
-# archive directly here instead would make ARQ re-read the whole archive once
+# directly here instead would make ARQ re-read all of it once
 # per decision row (confirmed via `--explain`; see mine-occurrences.rq).
 #
 # Matching-key normalization was applied when occurrences.csv was mined and MUST

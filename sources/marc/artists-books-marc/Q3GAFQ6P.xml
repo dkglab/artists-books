@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01000nam a2200241Ia 4500</leader>
+  <controlfield tag="001">ocn127492181</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20070515051249.0</controlfield>
+  <controlfield tag="008">070515s1976    xxua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)127492181</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">GSE</subfield>
+    <subfield code="c">GSE</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4 .S537</subfield>
+    <subfield code="b">X4 1976</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Sheridan, Sonia Landy.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">[Xerox art compilation]</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Chicago, Ill.] :</subfield>
+    <subfield code="b">[Art Institute of Chicago] ,</subfield>
+    <subfield code="c">1976.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged) :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">22 cm. x 35.5 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Spiral bound collection of copy art, art created with the use of a xerox machine.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="1" ind2=" ">
+    <subfield code="a">Contributing Artists: Gerda Meyer Bernstein, Kathy Cottong, Mary Jane Dougherty, Craig Goldwyn, Laurick Heitzman, Ron Kohn, Philip Malkin, Holly Smith Pedlosky, Mitch Petchenik, Elsie Pickering, Gary Ramey, Martha Ray, Scott Stephens, Will Thornton, Michael Unher.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Copy art</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Generative Systems.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">Q3GAFQ6P</subfield><subfield code="b">sheridan / xerox art compilation</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

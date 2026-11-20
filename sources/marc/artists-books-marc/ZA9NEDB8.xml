@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01082cam a2200277 c 4500</leader>
+  <controlfield tag="001">514931841</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20130408004315.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">060725s1972    be |||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)514931841</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV514931841</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)836296140</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-BE</subfield>
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Notes on the development of a show ; (Sonnabend, New York, January 15 - 29, 1972) ; notes toward performing a gallery</subfield>
+    <subfield code="c">Vito Acconci</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Bruxelles</subfield>
+    <subfield code="a">Hamburg</subfield>
+    <subfield code="b">Edition Lebeer Hossmann</subfield>
+    <subfield code="c">1972</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[24] Bl</subfield>
+    <subfield code="b">Ill. (montierte Orig.-Fotogr.)</subfield>
+    <subfield code="c">15 x 31 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Acconci, Vito</subfield>
+    <subfield code="d">1940-2017</subfield>
+    <subfield code="0">(DE-588)118958143</subfield>
+    <subfield code="0">(DE-627)07973751X</subfield>
+    <subfield code="0">(DE-576)160020301</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Sonnabend Gallery</subfield>
+    <subfield code="0">(DE-588)5198938-4</subfield>
+    <subfield code="0">(DE-627)225406314</subfield>
+    <subfield code="0">(DE-576)196119448</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">772577110</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB Marzona 1 7</subfield>
+    <subfield code="g">NB::Marzona:1:7:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ZA9NEDB8</subfield><subfield code="b">acconci / notes on the development of a show sonnabend new york january 15 29 1972</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

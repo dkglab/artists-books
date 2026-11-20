@@ -20,18 +20,18 @@ import argparse
 import sys
 import xml.etree.ElementTree as ET
 
-from marc_harvest import MARC_NS, write_record_zip
+from marc_harvest import MARC_NS, write_records
 
 
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--in", dest="in_xml", required=True, help="MARCXML <collection>")
-    ap.add_argument("--out", required=True, help="output zip of per-record <key>.xml")
+    ap.add_argument("--out", required=True, help="output directory (or .zip) of per-record <key>.xml")
     args = ap.parse_args()
 
     records = ET.parse(args.in_xml).getroot().findall(f"{{{MARC_NS}}}record")
-    n_written, n_no_key = write_record_zip(records, args.out)
+    n_written, n_no_key = write_records(records, args.out)
     print(f"wrote {args.out}: {n_written} records "
           f"({n_no_key} without 999 $a skipped)")
     if n_no_key:

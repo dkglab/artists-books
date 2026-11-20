@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01583cam a22003497a 4500</leader>
+  <controlfield tag="001">2k1cqjn50gx4fxf1</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20230525104952.0</controlfield>
+  <controlfield tag="008">230525s1982    fr a|||||b||||000 0|fre|d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)ocn221511765</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">Ko</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">AU@</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="e">a</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="110" ind1="2" ind2=" ">
+    <subfield code="a">Musée des beaux-arts de Calais.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Victor Burgin :</subfield>
+    <subfield code="b">Hôtel Latone /</subfield>
+    <subfield code="c">[exhibition held Musée des beaux-arts de Calais, 10 décembre 1982 au 7 février 1983].</subfield>
+  </datafield>
+  <datafield tag="246" ind1="1" ind2=" ">
+    <subfield code="a">Victor Burgin/Travaux</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Calais :</subfield>
+    <subfield code="b">Musée des beaux-arts de Calais,</subfield>
+    <subfield code="c">1982</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">46 pages</subfield>
+    <subfield code="b">illustrations</subfield>
+    <subfield code="c">22 x 31 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Ce livre a été édité à l'occasion de la présentation de l'exposition "Victor Burgin/Travaux."</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Conception et réalisation de l'exposition: Dominique Viéville.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references.</subfield>
+  </datafield>
+  <datafield tag="599" ind1=" " ind2=" ">
+    <subfield code="a">Imported from: zcat.oclc.org:210/OLUCWorldCat (Do not remove)</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Burgin, Victor,</subfield>
+    <subfield code="d">1941-</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Ej skönlitteratur</subfield>
+    <subfield code="0">https://id.kb.se/term/ktg/NonFictionLiterature</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Burgin, Victor,</subfield>
+    <subfield code="d">1941-</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Viéville, Dominique</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Ko</subfield>
+    <subfield code="a">u  a</subfield>
+    <subfield code="b">230525||0000|||||000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Ko</subfield>
+    <subfield code="b">Ko</subfield>
+    <subfield code="c">FOTOGRAFI -</subfield>
+    <subfield code="h">Inz Burgin, Victor</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"2k1cqjn50gx4fxf1","modified":"2023-05-25T10:49:52.727+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Ko</subfield>
+    <subfield code="a">{"@id":"l3kw84qlj6b4rz0s","modified":"2023-05-25T10:50:11.495+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">DR4T7ANM</subfield><subfield code="b">burgin / hôtel latone</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

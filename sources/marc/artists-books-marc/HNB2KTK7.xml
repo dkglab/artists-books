@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02806cam a2200553 i 4500</leader>
+  <controlfield tag="001">in00024411492</controlfield>
+  <controlfield tag="003">DLC</controlfield>
+  <controlfield tag="005">20260221143252.2</controlfield>
+  <controlfield tag="007">t|</controlfield>
+  <controlfield tag="008">260221s1966    stka          000 0 eng d</controlfield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">3</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="a">Purchase</subfield>
+    <subfield code="d">20260115</subfield>
+    <subfield code="i">FY26 RBSCD</subfield>
+    <subfield code="n">379967</subfield>
+    <subfield code="s">Triolet</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">ACQ 26-022</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">hh20 2026-01-15 on order for RBSCD</subfield>
+    <subfield code="i">he19 2026-02-21 z-processor</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2026292764</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">001237634</subfield>
+    <subfield code="2">UK</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)ocm04405911</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)4405911</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="z">(OCoLC)213820069</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="z">(OCoLC)1008365875</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="z">(OCoLC)1170582448</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="z">(OCoLC)1555361224</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">IBS</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">IBS</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">UKTTE</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">UKMGB</subfield>
+    <subfield code="d">PUL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">DLC</subfield>
+    <subfield code="d">DLC-MRC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PR6056.I5</subfield>
+    <subfield code="b">T44 1966</subfield>
+  </datafield>
+  <datafield tag="080" ind1=" " ind2=" ">
+    <subfield code="a">7 FINL (ARTISTS' BOOKS)</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">821.9</subfield>
+    <subfield code="b">F511t</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Finlay, Ian Hamilton</subfield>
+    <subfield code="e">author</subfield>
+    <subfield code="4">aut</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/aut</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n80045844</subfield>
+    <subfield code="1">http://id.loc.gov/rwo/agents/n80045844</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Tea-leaves &amp; fishes /</subfield>
+    <subfield code="c">Ian Hamilton Finlay.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Tea-leaves and fishes</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Edinburgh] :</subfield>
+    <subfield code="b">The Wild Hawthorn Press,</subfield>
+    <subfield code="c">1966.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="3">
+    <subfield code="a">[Edinburgh] :</subfield>
+    <subfield code="b">The Salamander Press</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">28 leaves</subfield>
+    <subfield code="b">illustrations</subfield>
+    <subfield code="c">11 x 26 cm</subfield>
+  </datafield>
+  <datafield tag="334" ind1=" " ind2=" ">
+    <subfield code="a">single unit</subfield>
+    <subfield code="b">mono</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/issuance/mono</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/contentTypes/txt</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/mediaTypes/n</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/carriers/nc</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustrations</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/millus/ill</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Imprint and printer from colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Printed in various colors on different types and colors of paper.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Concrete poetry, English</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85030737</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Concrete poetry, English</subfield>
+    <subfield code="2">fast</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Wild Hawthorn Press</subfield>
+    <subfield code="e">publisher</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/pbl</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n87822343</subfield>
+    <subfield code="1">http://id.loc.gov/rwo/agents/n87822343</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Salamander Press (Edinburgh, Scotland)</subfield>
+    <subfield code="e">printer</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/prt</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2019077219</subfield>
+    <subfield code="1">http://id.loc.gov/rwo/agents/no2019077219</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="1">http://id.loc.gov/resources/instances/in00024411492</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="4">http://id.loc.gov/ontologies/bibframe/instanceOf</subfield>
+    <subfield code="1">http://id.loc.gov/resources/works/in00024411492</subfield>
+  </datafield>
+  <datafield tag="884" ind1=" " ind2=" ">
+    <subfield code="a">DLC bibframe2marc v3.1-dev</subfield>
+    <subfield code="g">20260221</subfield>
+    <subfield code="q">DLC</subfield>
+    <subfield code="u">https://github.com/lcnetdev/bibframe2marc/tree/v3.1-dev</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="e">BIBFRAME</subfield>
+    <subfield code="d">2026-02-21T09:31:44</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">HNB2KTK7</subfield><subfield code="b">finlay / tea leaves fishes</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

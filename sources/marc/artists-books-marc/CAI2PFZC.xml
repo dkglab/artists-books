@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02151nam a2200373Ia 4500</leader>
+  <controlfield tag="001">ocm11873873</controlfield>
+  <controlfield tag="005">20260127114849.0</controlfield>
+  <controlfield tag="008">880405s1984    enka          000 0 ita d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">47713139</subfield>
+    <subfield code="a">729773890</subfield>
+    <subfield code="a">1099704560</subfield>
+    <subfield code="a">1112858061</subfield>
+    <subfield code="a">1114861316</subfield>
+    <subfield code="a">1124353096</subfield>
+    <subfield code="a">1315052740</subfield>
+    <subfield code="a">1533522450</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)11873873</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NDD</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">NDD</subfield>
+    <subfield code="d">m/c</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">ita</subfield>
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Cucchi, Enzo.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n83204834</subfield>
+    <subfield code="1">http://viaf.org/viaf/121648245</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121042048.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Italia /</subfield>
+    <subfield code="c">Enzo Cucchi.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Anthony d'Offay,</subfield>
+    <subfield code="c">1984.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">27 unnumbered leaves :</subfield>
+    <subfield code="b">chiefly illustrations (some color) ;</subfield>
+    <subfield code="c">44 x 20 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Text of a poem, Italia, by Cucchi in Italian and English: leaves [7]-[8]</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Condition: library markings.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Cucchi, Enzo.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n83204834</subfield>
+    <subfield code="1">http://viaf.org/viaf/121648245</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121042048.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Cucchi, Enzo.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/120324.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="z">Italy.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Anthony d'Offay (Firm)</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50071197</subfield>
+    <subfield code="1">http://viaf.org/viaf/126421147</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121122013.</subfield>
+  </datafield>
+  <datafield tag="790" ind1="0" ind2=" ">
+    <subfield code="a">Gift of the Ackland Art Museum.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/#/asset/SS33469_33469_42527964</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">ita</subfield>
+    <subfield code="g">enk</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">CAI2PFZC</subfield><subfield code="b">b2025378</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01574nam a2200397Ia 4500</leader>
+  <controlfield tag="001">990023125170302486</controlfield>
+  <controlfield tag="005">20160418234518.0</controlfield>
+  <controlfield tag="006">m        d f</controlfield>
+  <controlfield tag="008">090407s2007    mdu     s    f000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(Aleph)002312517EMU01</subfield>
+  </datafield>
+  <datafield tag="035" ind1="9" ind2=" ">
+    <subfield code="a">u3217257</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">ocn317951084</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">GPO</subfield>
+    <subfield code="c">GPO</subfield>
+    <subfield code="d">MvI</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">EMU#</subfield>
+  </datafield>
+  <datafield tag="074" ind1=" " ind2=" ">
+    <subfield code="a">0447-A-12 (online)</subfield>
+  </datafield>
+  <datafield tag="086" ind1="0" ind2=" ">
+    <subfield code="a">HE 20.3861:F 73/2/2007</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Foot care.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Gaithersburg, Md.] :</subfield>
+    <subfield code="b">National Institute on Aging, U.S. Dept. of Health and Human Services, Public Health Service, National Insitutes of Health,</subfield>
+    <subfield code="c">[2007]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">8 pages :</subfield>
+    <subfield code="b">digital, PDF file ;</subfield>
+    <subfield code="c">cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">computer</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">unspecified</subfield>
+    <subfield code="b">zu</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Age page</subfield>
+  </datafield>
+  <datafield tag="538" ind1=" " ind2=" ">
+    <subfield code="a">Mode of access: Internet from NIA web site. Address as of 04/0609: http://www.nia.nih.gov/NR/rdonlyres/78E81AFA-74F2-4435-B7F2-9B09 51265FBE/8273/Foot%5FCare.pdf ; current access available via PURL.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from title screen (viewed Apr. 6, 2009).</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"May 2007"--P. 8.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Foot</subfield>
+    <subfield code="x">Care and hygiene.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Foot</subfield>
+    <subfield code="x">Diseases</subfield>
+    <subfield code="x">Prevention.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">National Institute on Aging.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Age page.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://purl.access.gpo.gov/GPO/LPS111013</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="940" ind1=" " ind2=" ">
+    <subfield code="a">MARCIVE</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">9DT</subfield>
+    <subfield code="2">20090510</subfield>
+  </datafield>
+  <datafield tag="AVE" ind1=" " ind2=" ">
+    <subfield code="8">53289987980002486</subfield>
+    <subfield code="c">61301356550002486</subfield>
+    <subfield code="e">Available</subfield>
+    <subfield code="l">UNIV</subfield>
+    <subfield code="m">Marcive -- Electronic US Government Documents (Woodruff)</subfield>
+    <subfield code="a">01GALI_EMORY</subfield>
+    <subfield code="0">990023125170302486</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NM6TQNWI</subfield><subfield code="b">colby / foot care</subfield><subfield code="c">title-author</subfield><subfield code="d">emory</subfield></datafield></record>
+</collection>

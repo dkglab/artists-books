@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00578nam a2200217 a 4500</leader>
+  <controlfield tag="001">ocm45234150</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20080711092357.0</controlfield>
+  <controlfield tag="008">001026s1994    meua          000 0 eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)45234150</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">ORU</subfield>
+    <subfield code="c">ORU</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.M375</subfield>
+    <subfield code="b">M37 1994</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Martin, Ross.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Marginal /</subfield>
+    <subfield code="c">[Ross Martin].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Portland, ME., USA :</subfield>
+    <subfield code="b">R. Martin,</subfield>
+    <subfield code="c">c1994]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">58 unnumbered pages : </subfield>
+    <subfield code="b"> illustrations ; </subfield>
+    <subfield code="c"> 28 cm.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Martin, Ross.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Copy art.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">9B534IYX</subfield><subfield code="b">martin / marginal</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

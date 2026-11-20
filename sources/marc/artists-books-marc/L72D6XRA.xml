@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02248cam a2200397 c 4500</leader>
+  <controlfield tag="001">1120315107</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260610203155.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">960212s1966    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1120315107</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)050315102</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ050315102</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)19284877</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)03314900</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+    <subfield code="c">XA-DE</subfield>
+    <subfield code="c">XA-FR</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">700</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LH 65830</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/94562:13114</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LI 94010</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/97366:</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Vostell, Wolf</subfield>
+    <subfield code="d">1932-1998</subfield>
+    <subfield code="0">(DE-588)118627988</subfield>
+    <subfield code="0">(DE-627)079416055</subfield>
+    <subfield code="0">(DE-576)163445265</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Dé-coll/age happenings</subfield>
+    <subfield code="c">by Wolf Vostell</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York [u.a.]</subfield>
+    <subfield code="b">Something Else Press</subfield>
+    <subfield code="c">1966</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">94 S.</subfield>
+    <subfield code="e">19 Beil. in Holzkiste mit Plexiglas-Schiebedeckel</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Beil.: 1 signierter und nummerierter Siebdruck, 15 plakatartige Reproduktionen von Situationszeichnungen, 1 Scheibe Matze-Brot in Pergamintüte, 1 "Bromo-Seltzer"-Tütchen auf Stanniolblatt, 1 Foto auf Holzkistenboden geklebt</subfield>
+  </datafield>
+  <datafield tag="787" ind1="0" ind2="8">
+    <subfield code="i">Beschrieben in</subfield>
+    <subfield code="t">Buchstäblich wörtlich - wörtlich buchstäblich</subfield>
+    <subfield code="d">Berlin : Staatl. Museen Preuß. Kulturbesitz, 1987</subfield>
+    <subfield code="h">281 S</subfield>
+    <subfield code="w">(DE-627)021059691</subfield>
+    <subfield code="w">(DE-576)013995081</subfield>
+    <subfield code="z">3886092097</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3550440537</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 8 2019 6009</subfield>
+    <subfield code="g">NB::8:2019:6009:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2274908281</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LH 65830</subfield>
+    <subfield code="b">neueste Stile Aktionskunst, Fluxus, Happening, Performance, Body art</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeines. Allgemeine Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeine Kunstgeschichte: Darstellungen</subfield>
+    <subfield code="k">Darstellungen einzelner Epochen</subfield>
+    <subfield code="k">Mittlere und neuere Kunstgeschichte</subfield>
+    <subfield code="k">Neuzeit</subfield>
+    <subfield code="k">19. und 20. Jahrhundert</subfield>
+    <subfield code="k">20. Jahrhundert</subfield>
+    <subfield code="k">neueste Stile Aktionskunst, Fluxus, Happening, Performance, Body art</subfield>
+    <subfield code="0">(DE-627)127063612X</subfield>
+    <subfield code="0">(DE-625)rvk/94562:13114</subfield>
+    <subfield code="0">(DE-576)20063612X</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LI 94010</subfield>
+    <subfield code="b">Vostell, Wolf</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Künstler-Monografien</subfield>
+    <subfield code="k">Alphabetische Künstlerliste</subfield>
+    <subfield code="k">Künstler V</subfield>
+    <subfield code="k">Vostell, Wolf</subfield>
+    <subfield code="0">(DE-627)1270641646</subfield>
+    <subfield code="0">(DE-625)rvk/97366:</subfield>
+    <subfield code="0">(DE-576)200641646</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">L72D6XRA</subfield><subfield code="b">vostell / dé coll age happenings</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

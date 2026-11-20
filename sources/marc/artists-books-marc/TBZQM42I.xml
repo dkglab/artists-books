@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00884cam a2200265 cc4500</leader>
+  <controlfield tag="001">722230796</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20190524232106.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">120824s1982    gw |||||      00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)722230796</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV722230796</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Olbrich, Bernd</subfield>
+    <subfield code="d">1938-</subfield>
+    <subfield code="0">(DE-588)172298377</subfield>
+    <subfield code="0">(DE-627)697207226</subfield>
+    <subfield code="0">(DE-576)133165426</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Rubberstamp show</subfield>
+    <subfield code="n">[1]</subfield>
+    <subfield code="c">Bernd [und Jürgen O.] Olbrich</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Kassel</subfield>
+    <subfield code="c">1982</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[70] Bl.</subfield>
+    <subfield code="b">nur Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Olbrich, Jürgen O.</subfield>
+    <subfield code="d">1955-</subfield>
+    <subfield code="0">(DE-588)119215136</subfield>
+    <subfield code="0">(DE-627)08001349X</subfield>
+    <subfield code="0">(DE-576)167609149</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="w">(DE-627)722230621</subfield>
+    <subfield code="w">(DE-576)972223062X</subfield>
+    <subfield code="g">[1]</subfield>
+    <subfield code="q">1.1982</subfield>
+    <subfield code="7">nnam</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">MV</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">TBZQM42I</subfield><subfield code="b">olbrich / rubberstamp show</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

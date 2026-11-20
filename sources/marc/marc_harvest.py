@@ -55,17 +55,19 @@ Strategy (see sources/marc/README.md):
   * Encoding    : both targets return UTF-8 bytes. UNC mislabels leader/09 as
                   MARC-8, so we rewrite leader/09 to 'a' (LC is already honest);
                   we do NOT transcode (that would double-encode).
-  * Output      : a per-record zip archive (#81) -- one <key>.xml MARCXML document
-                  per record, read by the construct queries via nested Archive ->
-                  XML triplifiers. Reproducible bytes (entries sorted, fixed 1980
-                  mtimes) so a re-harvest that changes one record touches one entry.
+  * Output      : a per-record directory (#81) -- one <key>.xml MARCXML document
+                  per record, committed as plain files so collaborators can read
+                  and diff them, and read by the construct queries via nested
+                  Folder -> XML triplifiers. A re-harvest that changes one record
+                  touches one file. (An --out ending in .zip writes a reproducible
+                  zip instead, the form scratch runs under harvest/ use.)
                   Per-CSV harvest state lives under harvest/<csv-stem>/
                   (combined.marc is append-only and resumable).
 
-Run (from sources/, or let `make -C sources marc/<stem>-marc.zip` drive it):
-    python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc.zip
-    python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc.zip --limit 15
-    python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc.zip --combine
+Run (from sources/, or let `make -C sources marc/<stem>-marc` drive it):
+    python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc
+    python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc --limit 15
+    python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc --combine
 """
 import argparse
 import csv
@@ -73,6 +75,7 @@ import difflib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -433,13 +436,32 @@ def record_document(rec):
     return ET.tostring(coll, encoding="unicode", xml_declaration=True)
 
 
-def write_record_zip(records, out_zip):
-    """Write records to a reproducible per-record zip archive (#81): one <key>.xml
-    per record (key from 999 $a), entries sorted with fixed 1980 mtimes so an
-    unchanged input gives byte-identical bytes and git shows no churn -- the same
-    discipline notes.zip uses (#79). The queries read the key from 999, not the
-    filename, so the <key>.xml naming is just for a stable, debuggable layout.
-    Returns (n_written, n_no_key)."""
+def iter_record_files(path):
+    """Yield (filename, bytes) for each <key>.xml in a per-record store, sorted by
+    name. The store is either a directory -- the committed form, browsable on
+    GitHub -- or a zip archive, the form the scratch outputs under harvest/ take."""
+    if os.path.isdir(path):
+        for name in sorted(os.listdir(path)):
+            if name.endswith(".xml"):
+                with open(os.path.join(path, name), "rb") as fh:
+                    yield name, fh.read()
+    else:
+        with zipfile.ZipFile(path) as zf:
+            for name in sorted(zf.namelist()):
+                if name.endswith(".xml"):
+                    yield name, zf.read(name)
+
+
+def write_records(records, out):
+    """Write records as a per-record store (#81): one <key>.xml MARCXML document
+    per record (key from 999 $a). `out` ending in .zip writes a zip archive
+    (entries sorted, fixed 1980 mtimes, so the bytes are reproducible); anything
+    else writes a directory, the committed form, which collaborators can browse
+    and diff record by record. The directory is replaced as a whole -- built
+    beside the target and swapped in -- so a record dropped from the input does
+    not linger as a stale file, and a failed write leaves the old one intact.
+    The queries read the key from 999, not the filename, so the <key>.xml naming
+    is just for a stable, debuggable layout. Returns (n_written, n_no_key)."""
     ET.register_namespace("", MARC_NS)
     docs, no_key = {}, 0
     for rec in records:
@@ -448,11 +470,25 @@ def write_record_zip(records, out_zip):
             no_key += 1
             continue
         docs[key] = record_document(rec)  # last wins on a duplicate key
-    with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED) as zf:
-        for key in sorted(docs):
-            info = zipfile.ZipInfo(f"{key}.xml", date_time=(1980, 1, 1, 0, 0, 0))
-            info.compress_type = zipfile.ZIP_DEFLATED
-            zf.writestr(info, docs[key])
+    out = out.rstrip("/")
+    if out.endswith(".zip"):
+        with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zf:
+            for key in sorted(docs):
+                info = zipfile.ZipInfo(f"{key}.xml", date_time=(1980, 1, 1, 0, 0, 0))
+                info.compress_type = zipfile.ZIP_DEFLATED
+                zf.writestr(info, docs[key])
+        return len(docs), no_key
+    tmp, old = out + ".tmp", out + ".old"
+    for d in (tmp, old):
+        shutil.rmtree(d, ignore_errors=True)
+    os.makedirs(tmp)
+    for key in sorted(docs):
+        with open(os.path.join(tmp, f"{key}.xml"), "w", encoding="utf-8") as fh:
+            fh.write(docs[key])
+    if os.path.exists(out):
+        os.rename(out, old)
+    os.rename(tmp, out)
+    shutil.rmtree(old, ignore_errors=True)
     return len(docs), no_key
 
 
@@ -1418,10 +1454,10 @@ def combine(cfg):
             harvested_keys.add(key)
             n_manual += 1
 
-    # Emit a per-record zip archive (#81), not one big <collection> file: one
-    # <key>.xml per record, read by the construct queries via nested Archive -> XML
-    # triplifiers. Diffable (a re-harvest that changes one record touches one entry).
-    n_archive, n_nokey = write_record_zip(root.findall(f"{{{MARC_NS}}}record"), cfg["out"])
+    # Emit a per-record store (#81), not one big <collection> file: one <key>.xml
+    # per record, read by the construct queries via nested Folder -> XML
+    # triplifiers. Diffable (a re-harvest that changes one record touches one file).
+    n_archive, n_nokey = write_records(root.findall(f"{{{MARC_NS}}}record"), cfg["out"])
     total = len(records) + n_premerged + n_manual
     print(f"wrote {cfg['out']}: {len(records)} harvested + {n_premerged} premerged "
           f"+ {n_manual} manual = {total} records -> {n_archive} archive entries "
@@ -1435,7 +1471,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--csv", required=True, help="input Zotero CSV")
-    ap.add_argument("--out", required=True, help="output per-record zip archive (#81)")
+    ap.add_argument("--out", required=True, help="output per-record directory (#81), or a .zip")
     ap.add_argument("--limit", type=int, help="only process first N pending per server")
     ap.add_argument("--combine", action="store_true",
                     help="just (re)build the output XML from existing harvest state")

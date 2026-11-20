@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02314cam a2200337Ii 4500</leader>
+  <controlfield tag="001">ocn897371864</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20150428052723.0</controlfield>
+  <controlfield tag="008">141203s2012    cau           000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)897371864</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">VGM</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">VGM</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.S23</subfield>
+    <subfield code="b">C93 2012</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Scheel, Dina,</subfield>
+    <subfield code="e">book artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The Cycle of censorship /</subfield>
+    <subfield code="c">by Dina Scheel.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Los Altos, CA] :</subfield>
+    <subfield code="b">Dina Scheel,</subfield>
+    <subfield code="c">2012.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 artist's book ; </subfield>
+    <subfield code="c"> 18 x 8 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">object</subfield>
+    <subfield code="b">nr</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition of 25. SCAD Atlanta owns copy 5 of 25.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Publication information from 23 Sandy Gallery website (viewed Dec. 3, 2014).</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">The book structure is based on Yami Yamauchi's origami form called "Fireworks".  It consists of 12 sections; each of these contains a bound booklets with burnt pages in various languages.  Materials used are Tyvek, found papers, linen thread, acrylic paint and cotton linen material.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"This is a moveable book - to tell its story, it rotates through the middle.  Push down on the outside while raising the center to operate; begin with the whiter side on the outside.  The burnt paper should be facing upwards.  The cycle begins with the aftermath of an act of censorship, such as the bombing of Al-Mutanabbi Street on March 5, 2007.  The black represents censorship and oppression of ideas, which the censorship is attempting to control.  However, ideas cannot be contained.  As the book moves, gold - symbolizing ideas - begins to emerge amidst the darkness.  It then radiates outward as gold lines as it spreads.  Finally the ideas are accepted and adopted into the culture as shown by the gold flecks.  The original ideas then breed new ideas, which in turn raise hackles and cause some to want to suppress or censor them.  Thus the black begins to return until we are back to the start with an act of censorship and the cycle begins anew". -- Colophon.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Toy and movable books</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Arts</subfield>
+    <subfield code="x">Censorship.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Book burning.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Intellectual freedom.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">23 Sandy Gallery.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">6J8NYHGH</subfield><subfield code="b">scheel / the cycle of censorship</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

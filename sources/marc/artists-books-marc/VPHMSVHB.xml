@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02860cgm a2200541 c 4500</leader>
+  <controlfield tag="001">1945746793</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260126012648.0</controlfield>
+  <controlfield tag="007">vd usuuuu</controlfield>
+  <controlfield tag="008">251210s2019    xx ||| |      |   v|eng c</controlfield>
+  <datafield tag="024" ind1="3" ind2=" ">
+    <subfield code="a">5027035020730</subfield>
+  </datafield>
+  <datafield tag="028" ind1="4" ind2="2">
+    <subfield code="a">FCD1904</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1945746793</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1945746793</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1559970554</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="j">eng</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Crime and punishment</subfield>
+    <subfield code="c">a film by Josef von Sternberg ; [starring] Peter Lorre, Edward Arnold, Marian Marsh ; screenplay by S.K. Lauren and Joseph Anthony ; directed by Josef von Sternberg</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">Special edition</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[UK]</subfield>
+    <subfield code="b">Arrow Films</subfield>
+    <subfield code="c">[2019]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">© 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Blu-Ray-Disc (88 min)</subfield>
+    <subfield code="b">schwarz-weiß, Region B, Dolby Audio 1.0</subfield>
+    <subfield code="c">12 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">zweidimensionales bewegtes Bild</subfield>
+    <subfield code="b">tdi</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">video</subfield>
+    <subfield code="b">v</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Videodisk</subfield>
+    <subfield code="b">vd</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">Arrow Academy</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Bildformat: 1.37:1</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">FSK Großbritannien: U</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Enthält Bonusmaterial</subfield>
+  </datafield>
+  <datafield tag="508" ind1=" " ind2=" ">
+    <subfield code="a">Musik: R.H. Bassett, Louis Silvers ; Kamera: Lucien Ballard</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">Sprachfassung: Englisch</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">Untertitel für Hörgeschädigte: Englisch</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Film</subfield>
+    <subfield code="0">(DE-588)4017102-4</subfield>
+    <subfield code="0">(DE-627)104559683</subfield>
+    <subfield code="0">(DE-576)208918531</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Blu-Ray-Disc</subfield>
+    <subfield code="0">(DE-588)7597887-8</subfield>
+    <subfield code="0">(DE-627)556092260</subfield>
+    <subfield code="0">(DE-576)276549368</subfield>
+    <subfield code="2">gnd-carrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Sternberg, Josef von</subfield>
+    <subfield code="d">1894-1969</subfield>
+    <subfield code="e">FilmregisseurIn</subfield>
+    <subfield code="0">(DE-588)118753630</subfield>
+    <subfield code="0">(DE-627)079533868</subfield>
+    <subfield code="0">(DE-576)163192871</subfield>
+    <subfield code="4">fmd</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Lorre, Peter</subfield>
+    <subfield code="d">1904-1964</subfield>
+    <subfield code="e">SchauspielerIn</subfield>
+    <subfield code="0">(DE-588)118640623</subfield>
+    <subfield code="0">(DE-627)190879211</subfield>
+    <subfield code="0">(DE-576)164165940</subfield>
+    <subfield code="4">act</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Arnold, Edward</subfield>
+    <subfield code="d">1890-1956</subfield>
+    <subfield code="e">SchauspielerIn</subfield>
+    <subfield code="0">(DE-588)138693005</subfield>
+    <subfield code="0">(DE-627)605255113</subfield>
+    <subfield code="0">(DE-576)308629256</subfield>
+    <subfield code="4">act</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Marsh, Marian</subfield>
+    <subfield code="d">1913-2006</subfield>
+    <subfield code="e">SchauspielerIn</subfield>
+    <subfield code="0">(DE-588)120756818X</subfield>
+    <subfield code="0">(DE-627)1694044424</subfield>
+    <subfield code="4">act</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Lauren, Samuel K.</subfield>
+    <subfield code="d">1893-1979</subfield>
+    <subfield code="e">DrehbuchautorIn</subfield>
+    <subfield code="0">(DE-588)1031898727</subfield>
+    <subfield code="0">(DE-627)737510218</subfield>
+    <subfield code="0">(DE-576)379598450</subfield>
+    <subfield code="4">aus</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Anthony, Joseph</subfield>
+    <subfield code="d">1912-1993</subfield>
+    <subfield code="e">DrehbuchautorIn</subfield>
+    <subfield code="0">(DE-588)122803175</subfield>
+    <subfield code="0">(DE-627)70605010X</subfield>
+    <subfield code="0">(DE-576)183678885</subfield>
+    <subfield code="4">aus</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bassett, R.H.</subfield>
+    <subfield code="d">1878-1951</subfield>
+    <subfield code="e">KomponistIn</subfield>
+    <subfield code="0">(DE-588)106239920X</subfield>
+    <subfield code="0">(DE-627)806725117</subfield>
+    <subfield code="0">(DE-576)418369968</subfield>
+    <subfield code="4">cmp</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Silvers, Louis</subfield>
+    <subfield code="d">1889-1954</subfield>
+    <subfield code="e">KomponistIn</subfield>
+    <subfield code="0">(DE-588)102077326X</subfield>
+    <subfield code="0">(DE-627)691345317</subfield>
+    <subfield code="0">(DE-576)177953535</subfield>
+    <subfield code="4">cmp</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ballard, Lucien</subfield>
+    <subfield code="d">1904-1988</subfield>
+    <subfield code="e">Kameramann/Kamerafrau</subfield>
+    <subfield code="0">(DE-588)137737009</subfield>
+    <subfield code="0">(DE-627)595591833</subfield>
+    <subfield code="0">(DE-576)164383646</subfield>
+    <subfield code="4">cng</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Dostoevskij, Fëdor Michajlovič</subfield>
+    <subfield code="d">1821-1881</subfield>
+    <subfield code="e">VerfasserIn des Bezugswerks</subfield>
+    <subfield code="0">(DE-588)118527053</subfield>
+    <subfield code="0">(DE-627)124056156</subfield>
+    <subfield code="0">(DE-576)160773342</subfield>
+    <subfield code="4">ant</subfield>
+  </datafield>
+  <datafield tag="787" ind1="0" ind2="8">
+    <subfield code="i">Filmbearbeitung von</subfield>
+    <subfield code="a">Dostoevskij, Fëdor Michajlovič, 1821-1881</subfield>
+    <subfield code="t">Prestuplenie i nakazanie</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4826118848</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="c">vide</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">VPHMSVHB</subfield><subfield code="b">arnold / crime and punishment</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

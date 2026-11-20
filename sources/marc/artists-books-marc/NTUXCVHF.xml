@@ -1,0 +1,608 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>05691cam a22013817i 4500</leader>
+  <controlfield tag="001">k5c6j9h6hwdbsx0n</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20260303134713.0</controlfield>
+  <controlfield tag="008">260122s2001    xxk|||||||||||000 f|eng|c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780099410768</subfield>
+    <subfield code="q">pocket</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(Adlibris)9780099410768</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">Adli</subfield>
+    <subfield code="b">swe</subfield>
+    <subfield code="d">Um</subfield>
+    <subfield code="e">i</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">813.54</subfield>
+    <subfield code="2">21</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Palmer, Michael</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Side effects /</subfield>
+    <subfield code="c">Michael Palmer.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Arrow books,</subfield>
+    <subfield code="c">2001</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">344 sidor</subfield>
+    <subfield code="c">18 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Patologer</subfield>
+    <subfield code="0">https://id.kb.se/term/sao/Patologer</subfield>
+    <subfield code="2">sao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Kvinnor</subfield>
+    <subfield code="0">https://id.kb.se/term/sao/Kvinnor</subfield>
+    <subfield code="2">sao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Hemligheter</subfield>
+    <subfield code="0">https://id.kb.se/term/sao/Hemligheter</subfield>
+    <subfield code="2">sao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Patienter</subfield>
+    <subfield code="0">https://id.kb.se/term/sao/Patienter</subfield>
+    <subfield code="2">sao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Secrecy</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Patients</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Pathologists</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Women</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Romaner</subfield>
+    <subfield code="0">https://id.kb.se/term/saogf/Romaner</subfield>
+    <subfield code="2">saogf</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Thrillers</subfield>
+    <subfield code="0">https://id.kb.se/term/saogf/Thrillers</subfield>
+    <subfield code="2">saogf</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Um</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">260122||0000|||||000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Um</subfield>
+    <subfield code="b">Um</subfield>
+    <subfield code="h">Roman</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"k5c6j9h6hwdbsx0n","modified":"2026-03-03T13:47:13.303+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Um</subfield>
+    <subfield code="a">{"@id":"p9hbnfmgmfnxkhs9","modified":"2026-01-22T08:09:18.78+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Familjehemligheter</subfield>
+    <subfield code="u">Hemligheter</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Företagshemligheter</subfield>
+    <subfield code="u">Hemligheter</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Dubbelliv</subfield>
+    <subfield code="u">Hemligheter</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Hemlighetsmakeri</subfield>
+    <subfield code="u">Hemligheter</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Vårdare-patientrelationer</subfield>
+    <subfield code="u">Patienter</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Läkare-patientrelationer</subfield>
+    <subfield code="u">Patienter</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Tandläkare-patientrelationer</subfield>
+    <subfield code="u">Patienter</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Psykoterapeut-patientrelationer</subfield>
+    <subfield code="u">Patienter</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnliga patienter</subfield>
+    <subfield code="u">Patienter</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Sjuksköterska-patientrelationer</subfield>
+    <subfield code="u">Patienter</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Sjuka</subfield>
+    <subfield code="u">Patienter</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">g</subfield>
+    <subfield code="a">Läkare</subfield>
+    <subfield code="u">Patologer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Patologi</subfield>
+    <subfield code="u">Patologer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="s">
+    <subfield code="6">650</subfield>
+    <subfield code="w">lle</subfield>
+    <subfield code="a">Kvinnan</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="s">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Kvinnofrågor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor som misshandlar</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Muslimska kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Medelklasskvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Afroamerikanska kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor i populärkulturen</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor i pressen</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Tamilska kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor med funktionsnedsättning</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Svarta kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Adelskvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Överklasskvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Lärda kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor från amerikanska urfolk</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Mayakvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor och slaveri</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kristna kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Fattiga kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Hinduiska kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Ensamstående kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Äldre kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor i filmbranschen</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Asiat-amerikanska kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Samiska kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor som lever med hiv</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Unga kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kines-amerikanska kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Gifta kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor och fascism</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor på landsbygden</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Frånskilda kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Bisexuella kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor med synskada</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Hemlösa kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor och krig</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor och fred</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Transkvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Arbetslösa kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Judiska kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Döttrar</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Brott mot kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Apachekvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Borgarkvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor och film</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnor i städer</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Arbetarkvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Hustrur</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Gravida kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Depression hos kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Fysisk träning för kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Relationer till kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Socialt arbete med kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Styrketräning för kvinnor</subfield>
+    <subfield code="u">Kvinnor</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="s">
+    <subfield code="6">655</subfield>
+    <subfield code="a">Agentberättelser</subfield>
+    <subfield code="u">Thrillers</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="s">
+    <subfield code="6">655</subfield>
+    <subfield code="a">Agentromaner</subfield>
+    <subfield code="u">Thrillers</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="s">
+    <subfield code="6">655</subfield>
+    <subfield code="w">||e</subfield>
+    <subfield code="a">Psykologiska thrillers</subfield>
+    <subfield code="u">Thrillers</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="s">
+    <subfield code="6">655</subfield>
+    <subfield code="a">Spionberättelser</subfield>
+    <subfield code="u">Thrillers</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="s">
+    <subfield code="6">655</subfield>
+    <subfield code="w">||e</subfield>
+    <subfield code="a">Spionromaner</subfield>
+    <subfield code="u">Thrillers</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="s">
+    <subfield code="6">655</subfield>
+    <subfield code="a">Spänningsromaner</subfield>
+    <subfield code="u">Thrillers</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">g</subfield>
+    <subfield code="a">Skönlitteratur</subfield>
+    <subfield code="u">Thrillers</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">g</subfield>
+    <subfield code="a">Skönlitteratur</subfield>
+    <subfield code="u">Romaner</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Nyckelromaner</subfield>
+    <subfield code="u">Romaner</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Dagboksromaner</subfield>
+    <subfield code="u">Romaner</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kollektivromaner</subfield>
+    <subfield code="u">Romaner</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Pikareskromaner</subfield>
+    <subfield code="u">Romaner</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Brevromaner</subfield>
+    <subfield code="u">Romaner</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Utvecklingsromaner</subfield>
+    <subfield code="u">Romaner</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kortromaner</subfield>
+    <subfield code="u">Romaner</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Serieromaner</subfield>
+    <subfield code="u">Romaner</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NTUXCVHF</subfield><subfield code="b">michaels / side effects</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

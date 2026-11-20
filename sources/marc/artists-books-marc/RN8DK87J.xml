@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01467cam a2200337Ia 4500</leader>
+  <controlfield tag="001">990021908500203941</controlfield>
+  <controlfield tag="005">20020606093309.7</controlfield>
+  <controlfield tag="008">920728s1991    at abc   b    001 1 eng d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">0195530869</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0195530896 (corrected) :</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)26273558</subfield>
+    <subfield code="z">(OCoLC)29016492</subfield>
+    <subfield code="z">(OCoLC)221129781</subfield>
+    <subfield code="z">(OCoLC)224326595</subfield>
+    <subfield code="z">(OCoLC)317425908</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">ALM</subfield>
+    <subfield code="c">ALM</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">AUT</subfield>
+    <subfield code="d">HLS</subfield>
+  </datafield>
+  <datafield tag="050" ind1="1" ind2="4">
+    <subfield code="a">PR6011.U75</subfield>
+    <subfield code="b">S8 1991x</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">A823.2</subfield>
+    <subfield code="2">20</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Furphy, Joseph,</subfield>
+    <subfield code="d">1843-1912.</subfield>
+  </datafield>
+  <datafield tag="240" ind1="1" ind2="0">
+    <subfield code="a">Such is life</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The annotated Such is life :</subfield>
+    <subfield code="b">such is life : being certain extracts from the diary of Tom Collins /</subfield>
+    <subfield code="c">by Joseph Furphy ; with an introduction and notes by Frances Devlin-Glass ... [et al.].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Melbourne ;</subfield>
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Oxford,</subfield>
+    <subfield code="c">1991.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">xi, 592 p. :</subfield>
+    <subfield code="b">ill., maps, ports. ;</subfield>
+    <subfield code="c">20 cm.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references (p. 308-310) and index.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Furphy, Joseph,</subfield>
+    <subfield code="d">1843-1912.</subfield>
+    <subfield code="t">Such is life</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Furphy, Joseph.</subfield>
+    <subfield code="t">Such is life.</subfield>
+    <subfield code="2">swd</subfield>
+  </datafield>
+  <datafield tag="700" ind1="2" ind2=" ">
+    <subfield code="a">Devlin-Glass, Frances.</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Online version:</subfield>
+    <subfield code="a">Furphy, Joseph, 1843-1912.</subfield>
+    <subfield code="s">Such is life.</subfield>
+    <subfield code="t">Annotated Such is life.</subfield>
+    <subfield code="d">Melbourne ; New York : Oxford, 1991</subfield>
+    <subfield code="w">(OCoLC)645792864</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">002190850</subfield>
+  </datafield>
+  <datafield tag="901" ind1="2" ind2=" ">
+    <subfield code="a">AKR9890</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">MHAKR98902HU</subfield>
+  </datafield>
+  <datafield tag="905" ind1=" " ind2=" ">
+    <subfield code="a">PR^9619</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-07-14</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2025-02-13</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 019, 020, 600</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">NO-OVERLAY</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">RN8DK87J</subfield><subfield code="b">crombie / such is life</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

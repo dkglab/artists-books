@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00461    a2200121   4500</leader>
+  <controlfield tag="001">ocm79856274</controlfield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Heimbach, Elmar, book artist</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Heimbach, Elmar</subfield>
+    <subfield code="0">no2023053743</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Mosing, Michael</subfield>
+    <subfield code="0">n85366357</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Zeichen :</subfield>
+    <subfield code="b">eine Drucksache</subfield>
+    <subfield code="c">Elmar Heimbach ; mit einem Text von Michael Mosing</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Aachen :</subfield>
+    <subfield code="b">Leporello,</subfield>
+    <subfield code="c">[1984]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 folded sheet (32 unnumbered pages)</subfield>
+    <subfield code="b">illustrations</subfield>
+    <subfield code="c">21 x 7 cm</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Auflage ... 220 signiert und numeriert."</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NFI3MS3H</subfield><subfield code="b">79856274</subfield><subfield code="c">oclc</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

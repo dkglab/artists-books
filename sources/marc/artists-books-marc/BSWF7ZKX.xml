@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01598cam a2200325 c 4500</leader>
+  <controlfield tag="001">561560684</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20221125224134.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">080415s1973    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)561560684</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV561560684</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)836818907</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+    <subfield code="c">XA-IT</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Huebler, Douglas</subfield>
+    <subfield code="d">1924-1997</subfield>
+    <subfield code="0">(DE-588)119204584</subfield>
+    <subfield code="0">(DE-627)080002951</subfield>
+    <subfield code="0">(DE-576)167441736</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Duration piece #8, Global (Part I/Part II)</subfield>
+    <subfield code="c">Douglas Huebler. [Produced by the Lithography Workshop, Nova Scotia College of Art and Design]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York</subfield>
+    <subfield code="b">Castelli Gallery</subfield>
+    <subfield code="c">1973</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">50 S</subfield>
+    <subfield code="b">Ill</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">3827093090</subfield>
+    <subfield code="s">Ku GV C 19</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="a">Vries, Gerd de</subfield>
+    <subfield code="0">(DE-588)108048241</subfield>
+    <subfield code="0">(DE-627)477580750</subfield>
+    <subfield code="0">(DE-576)163446547</subfield>
+    <subfield code="f">Exemplar: Donator</subfield>
+    <subfield code="f">Stempel</subfield>
+    <subfield code="f">Datum 1993</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">3827093090</subfield>
+    <subfield code="s">Ku GV C 19</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="a">Kunstsammlungen zu Weimar</subfield>
+    <subfield code="0">(DE-588)2162571-2</subfield>
+    <subfield code="0">(DE-627)225635186</subfield>
+    <subfield code="0">(DE-576)196128587</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="a">Sammlung Gerd de Vries</subfield>
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">3827093090</subfield>
+    <subfield code="s">Ku GV C 19</subfield>
+    <subfield code="o">Sammlung</subfield>
+    <subfield code="0">(DE-588)1250787343</subfield>
+    <subfield code="0">(DE-627)1788018842</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Nova Scotia College of Art and Design</subfield>
+    <subfield code="g">Halifax, Nova Scotia</subfield>
+    <subfield code="b">Lithography Workshop</subfield>
+    <subfield code="0">(DE-588)10054985-8</subfield>
+    <subfield code="0">(DE-627)363993762</subfield>
+    <subfield code="0">(DE-576)199470529</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3827093090</subfield>
+    <subfield code="b">DE-32</subfield>
+    <subfield code="9">32</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Ku GV C 19</subfield>
+    <subfield code="h">MAG</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">868361046</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB Marzona 1 2099</subfield>
+    <subfield code="g">NB::Marzona:1:2099:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">BSWF7ZKX</subfield><subfield code="b">huebler / duration piece 8 global</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

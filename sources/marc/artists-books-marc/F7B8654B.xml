@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01500cam a22004217a 4500</leader>
+  <controlfield tag="001">2095081</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20181030230000.0</controlfield>
+  <controlfield tag="008">011211s1993    gw |||||||||||000 0|ger|c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a" />
+    <subfield code="q">HFT.</subfield>
+    <subfield code="c">DM 38.00</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">389408032X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">9922018306</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">G</subfield>
+    <subfield code="e">a</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">709.04074</subfield>
+    <subfield code="2">22 (machine generated)</subfield>
+  </datafield>
+  <datafield tag="083" ind1="0" ind2=" ">
+    <subfield code="a">709.43</subfield>
+    <subfield code="2">22 (machine generated)</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">Ibh</subfield>
+    <subfield code="2">kssb/6</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">Ib-fa.58</subfield>
+    <subfield code="2">kssb/6</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">G</subfield>
+    <subfield code="a">Ibh</subfield>
+    <subfield code="2">kssb/6</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">G</subfield>
+    <subfield code="a">Ib-fa.58</subfield>
+    <subfield code="2">kssb/6</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Copyshop :</subfield>
+    <subfield code="b">Kunstpraxis &amp; politische Öffentlichkeit /</subfield>
+    <subfield code="c">ein Sampler von BüroBert.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1. Aufl.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Berlin :</subfield>
+    <subfield code="b">Ed. ID-Archiv,</subfield>
+    <subfield code="c">1993</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">226 s.</subfield>
+    <subfield code="b">ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Politisk konst</subfield>
+    <subfield code="z">Tyskland</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="5">G</subfield>
+    <subfield code="a">Politisk konst</subfield>
+    <subfield code="z">Tyskland</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="4">
+    <subfield code="a">Köln</subfield>
+    <subfield code="x">Kunst</subfield>
+    <subfield code="x">Öffentlichkeit</subfield>
+    <subfield code="x">Projekt</subfield>
+    <subfield code="y">Geschichte 1992</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Ej skönlitteratur</subfield>
+    <subfield code="0">https://id.kb.se/term/ktg/NonFictionLiterature</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">BüroBert (Düsseldorf)</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">G</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">G</subfield>
+    <subfield code="b">G</subfield>
+    <subfield code="h">ÖM Ib</subfield>
+    <subfield code="j">96/388</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"p60n8lw11xclnd6","modified":"2018-10-30T23:00:00+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">G</subfield>
+    <subfield code="a">{"@id":"jnt985pp4qrbc48","modified":"2018-06-05T15:26:47.418+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="976" ind1=" " ind2="0">
+    <subfield code="a">Ibh</subfield>
+    <subfield code="b">Otraditionella konstformer</subfield>
+  </datafield>
+  <datafield tag="976" ind1=" " ind2="0">
+    <subfield code="a">Ib-fa.58</subfield>
+    <subfield code="b">Konsthistoria: Tyskland: 1980-</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">F7B8654B</subfield><subfield code="b">bürobert / copyshop</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

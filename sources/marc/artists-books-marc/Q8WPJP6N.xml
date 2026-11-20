@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01644cam a2200325 a 4500</leader>
+  <controlfield tag="001">15334279</controlfield>
+  <controlfield tag="005">20250607024428.6</controlfield>
+  <controlfield tag="008">080618s2005    wiua          000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">15334279</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">nh13 for Rare Book</subfield>
+    <subfield code="i">he03 2010-04-21</subfield>
+    <subfield code="a">Copy 2: revisit for RBSCD selection</subfield>
+    <subfield code="a">he01 2017-02-24 no RBSCD selection made for Copy 2</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-644</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2010367889</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PS3558.A42</subfield>
+    <subfield code="b">H84 2005</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Hamady, Walter Samuel Haatoum,</subfield>
+    <subfield code="d">1940-2019.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Hunkering :</subfield>
+    <subfield code="b">the last gaebberjabb number eight and IX/XVIths or aleatory annexations or odd bondings or fortuitous encounters with incompatible realities or love, anguish, wonder  ... /</subfield>
+    <subfield code="c">largely by Walter Samuel Haatoum Hamady ; augmented by Henrik Drescher, Patrick Flynn, David McLimans, Peter Sis, and William Stafford.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="1" ind2="5">
+    <subfield code="a">Hunkering, the last gabbrejabb no. 8 9/16 being the fade-out volume of an (unforeseen) series</subfield>
+  </datafield>
+  <datafield tag="246" ind1="1" ind2="5">
+    <subfield code="a">Hunkering, aleatory annexations</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Dane County, Wis. :</subfield>
+    <subfield code="b">Perishable Press Limited,</subfield>
+    <subfield code="c">2005.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[160] p. :</subfield>
+    <subfield code="b">ill. (some col.) ;</subfield>
+    <subfield code="c">27 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">The eighth book in Hamady's "series" known as Interminable gabberjabbs.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Drescher, Henrik.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Perishable Press Limited.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Press Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">#ACQ 08-19 no. 1. Vendor:  Joshua Heller, Rare Books</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">Q8WPJP6N</subfield><subfield code="b">hamady / hunkering</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

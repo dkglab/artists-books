@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00885nam a2200253 a 4500</leader>
+  <controlfield tag="001">990030990120203941</controlfield>
+  <controlfield tag="005">20020606093309.7</controlfield>
+  <controlfield tag="008">930607s1930    fr a         |||||||fre|d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)30718365</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Proust, Marcel,</subfield>
+    <subfield code="d">1871-1922</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="3">
+    <subfield code="a">Un amour de Swann /</subfield>
+    <subfield code="c">Marcel Proust ; eaux-fortes originales de P. Laprade.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Paris] :</subfield>
+    <subfield code="b">NRF,</subfield>
+    <subfield code="c">1930.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">239 p. :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">29 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition limited to 348 copies.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Published under the editorial direction of André Malraux.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Laprade, Pierre,</subfield>
+    <subfield code="d">1875-1931,</subfield>
+    <subfield code="e">ill.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Malraux, André,</subfield>
+    <subfield code="d">1901-1976,</subfield>
+    <subfield code="e">ed.</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">France</subfield>
+    <subfield code="d">Paris.</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">003099012</subfield>
+  </datafield>
+  <datafield tag="901" ind1="2" ind2=" ">
+    <subfield code="a">APD2376</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">MHAPD23762HU</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2024-01-28</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 758</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2026-02-12</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">NO-OVERLAY</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">B5362VW8</subfield><subfield code="b">diamantini / un amour de swann</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

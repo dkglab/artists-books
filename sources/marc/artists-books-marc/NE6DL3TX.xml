@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01149nam a22003131a 4500</leader>
+  <controlfield tag="001">a1026450</controlfield>
+  <controlfield tag="003">SIRSI</controlfield>
+  <controlfield tag="005">20151215010254.0</controlfield>
+  <controlfield tag="008">860610t19821982xx            000 0 eng d</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   82050789</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0898220289</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">LIAS1162902</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">PSt</subfield>
+    <subfield code="c">PSt</subfield>
+    <subfield code="d">WaOLN</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Gordon, Bonnie.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The anatomy of the image maps :</subfield>
+    <subfield code="b">according to Merriam-Webster's Third new international dictionary of the English language unabridged /</subfield>
+    <subfield code="c">Bonnie Gordon.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Rochester, N.Y. :</subfield>
+    <subfield code="b">Visual Studies Workshop Press,</subfield>
+    <subfield code="c">[1982]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©1982</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">48 pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">26 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="596" ind1=" " ind2=" ">
+    <subfield code="a">31</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Gordon, Bonnie.</subfield>
+  </datafield>
+  <datafield tag="630" ind1="0" ind2="0">
+    <subfield code="a">Webster's third new international dictionary of the English language</subfield>
+    <subfield code="v">In art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">United States.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Words in art.</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.G66A4 1982</subfield>
+    <subfield code="w">LC</subfield>
+    <subfield code="i">000011698531</subfield>
+    <subfield code="m">UP-PAT</subfield>
+    <subfield code="d">07/22/1986</subfield>
+    <subfield code="k">PATTEE-W3</subfield>
+    <subfield code="l">PATTEE-W3</subfield>
+    <subfield code="r">Y</subfield>
+    <subfield code="s">Y</subfield>
+    <subfield code="t">BOOK</subfield>
+  </datafield>
+  <datafield tag="926" ind1=" " ind2=" ">
+    <subfield code="a">UP-PAT</subfield>
+    <subfield code="b">PATTEE-W3</subfield>
+    <subfield code="c">N7433.4.G66A4 1982</subfield>
+    <subfield code="d">BOOK</subfield>
+    <subfield code="f">1</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NE6DL3TX</subfield><subfield code="b">0898220289</subfield><subfield code="c">isbn</subfield><subfield code="d">psu</subfield></datafield></record>
+</collection>

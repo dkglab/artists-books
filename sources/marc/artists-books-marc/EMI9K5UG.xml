@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00596cam a2200217Ii 4500</leader>
+  <controlfield tag="001">ocm04199312</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20060908022118.0</controlfield>
+  <controlfield tag="008">780906s1975    be a          000 0 eng d</controlfield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">KKU</subfield>
+    <subfield code="c">KKU</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">NK1570</subfield>
+    <subfield code="b">.L484 1975</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lewitt, Sol,</subfield>
+    <subfield code="d">1928-2007.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Grids.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Brussels :</subfield>
+    <subfield code="b">Pour Ecrire La Liberte,</subfield>
+    <subfield code="c">1975]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">300  [8] pages : </subfield>
+    <subfield code="b"> all illustrations ; </subfield>
+    <subfield code="c"> 25 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Lewitt, Sol,</subfield>
+    <subfield code="d">1928-2007.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Grids (Cartography) in art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">EMI9K5UG</subfield><subfield code="b">lewitt / grids</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00958cga a2200277 c 4500</leader>
+  <controlfield tag="001">738515035</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20191002234755.0</controlfield>
+  <controlfield tag="007">vd uuuuuu</controlfield>
+  <controlfield tag="008">130318s2005    xx ||| |      |   v|und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)738515035</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV738515035</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Gently down the stream</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="c">2005</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">(14 Min.)</subfield>
+    <subfield code="b">s/w</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">zweidimensionales bewegtes Bild</subfield>
+    <subfield code="b">tdi</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">video</subfield>
+    <subfield code="b">v</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Videodisk</subfield>
+    <subfield code="b">vd</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">USA 1981</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Friedrich, Su</subfield>
+    <subfield code="d">1954-</subfield>
+    <subfield code="0">(DE-588)137102461</subfield>
+    <subfield code="0">(DE-627)589930001</subfield>
+    <subfield code="0">(DE-576)302144447</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2="8">
+    <subfield code="i">Enthalten in</subfield>
+    <subfield code="t">The films of Su Friedrich ; Vol. 4: Hide and seek</subfield>
+    <subfield code="d">[New York, NY] : Outcast Films, 2005</subfield>
+    <subfield code="g">(2005), 1</subfield>
+    <subfield code="h">1 DVD-Video (Ländercode 0, 65 Min.)</subfield>
+    <subfield code="w">(DE-627)738514691</subfield>
+    <subfield code="7">nngm</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="g">year:2005</subfield>
+    <subfield code="g">number:1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1371555516</subfield>
+    <subfield code="b">DE-834</subfield>
+    <subfield code="9">834</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="c">vide</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">AR</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">683EMBNK</subfield><subfield code="b">friedrich / gently down the stream</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

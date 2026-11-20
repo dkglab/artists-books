@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00973ncm a22003013a 4500</leader>
+  <controlfield tag="001">99155225001203941</controlfield>
+  <controlfield tag="005">20140902105120.0</controlfield>
+  <controlfield tag="006">m|||||o||d||||||||</controlfield>
+  <controlfield tag="007">cr |n||||||||a</controlfield>
+  <controlfield tag="007">q|</controlfield>
+  <controlfield tag="008">140902s2008    nmu  a||o||||||n    zxx d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(VaAlASP)2181841</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CKB)4940000000305209</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)894092694</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(VaAlASP)ASP2181841/shm3</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(EXLCZ)994940000000305209</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">VaAlASP</subfield>
+    <subfield code="c">VaAlASP</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Bach, Johann Sebastian,</subfield>
+    <subfield code="d">1685-1750.</subfield>
+  </datafield>
+  <datafield tag="240" ind1="1" ind2="0">
+    <subfield code="a">Feste Burg ist unser Gott (Cantata);</subfield>
+    <subfield code="o">arranged</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">A Mighty Fortress /</subfield>
+    <subfield code="c">[by] Johann Sebastian Bach ; arr. Joe Cea.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Farmington, NM] :</subfield>
+    <subfield code="b">Brassworks 4,</subfield>
+    <subfield code="c">2008.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 online resource (3 p.)</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from HTML t.p. (viewed Sep. 2, 2014).</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Written in 1731.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Cantatas</subfield>
+    <subfield code="v">Instrumental settings.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Brass quartets (Trombones (4))</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Cea, Joe,</subfield>
+    <subfield code="d">1957-</subfield>
+    <subfield code="4">arr</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">SCORE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">5LXEAIG2</subfield><subfield code="b">meador / mighty fortress</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

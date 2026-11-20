@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>05654nam a2200613Ii 4500</leader>
+  <controlfield tag="001">ocn953841892</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115010.0</controlfield>
+  <controlfield tag="008">160721s2016    cu a          000 1 spa d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">984985000</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)953841892</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CLU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">CLU</subfield>
+    <subfield code="d">IQU</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">nwcu---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/nwcu</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Fernández, Teresita,</subfield>
+    <subfield code="d">1930-2013,</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2002078806</subfield>
+    <subfield code="1">http://viaf.org/viaf/26737138</subfield>
+    <subfield code="1">http://isni.org/isni/0000000045982694.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="3">
+    <subfield code="a">Lo feo =</subfield>
+    <subfield code="b">The ugly thing /</subfield>
+    <subfield code="c">Teresita Fernández.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="1">
+    <subfield code="a">Ugly thing.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Matanzas, Cuba :</subfield>
+    <subfield code="b">Ediciones Vigía,</subfield>
+    <subfield code="c">2016.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">3 unnumbered leaves :</subfield>
+    <subfield code="b">colored portrait ;</subfield>
+    <subfield code="c">26 cm +</subfield>
+    <subfield code="e">+ 1 audio disc (digital ; 4 3/4/ in).</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">performed music</subfield>
+    <subfield code="b">prm</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1011.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">audio</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1001.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">audio disc</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1004.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="g">polychrome</subfield>
+    <subfield code="2">rdacc</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAColourContent/1003.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">portrait</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1012.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Colección Andante.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Esta edición...consta de doscientos ejemplares manufacturados e iluminados a mano por las Ediciones Vigía en su Colección Andante. Para su realización fueron usados papeles reciclados obtenios del bagazo de la caña del azúcar, lienzo, hilos, acrílicos y acuarelas. Cada plaquette contiene un disco con la voz de Teresita Fernández interpretando este tema y versiones de otros músicos cubanos.  Los apliques que aparecen en la cubierta nacieron de las manos de Gladys Luejes. La traducción de la letra de la canción fue hecha por el amigo Wayne Grinstead"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Diseño, dibujos y grafia: Marialva Ríos. Edición: Agustina Ponce"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Book is constructed of a sheet of cardboard covered with beige cotton fabric, and folded in thirds, the two end panels folding inward over the center panel; lyrics to "Lo feo" ("The ugly thing") are printed separately in English and Spanish on two leaves of brown paper with hand-painted ornamental border in black and tipped in on verso of first and recto of third panels; full-page paper cut-out of a portrait of the poet holding her cat is affixed to second (center) panel, layered over pieces of red fabric and brown paper; under the leaf of English lyrics on first panel is a drawing of a flower hand-painted in watercolor in purple, green, and orange; under the leaf of Spanish lyrics on third panel is a colophon leaf, decorated with a leafy border and the iconic Vigía oil lamp with flame hand-painted in orange; verso of third panel contains a paper pocket with flap, containing a CD audio disc of Teresita Fernández performing "Lo feo" and versions by other artists as well; recto of first panel (front "cover") is decorated with a crocheted spider web in white string, with a paper cut-out of a flower on a long stem woven through the web; painted in purple, green, and orange.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Part of a collection of handmade books published by Ediciones Vigía under the auspices of the Cuban Ministry of Culture.</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">RBC has copy no. 097.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Cuba</subfield>
+    <subfield code="z">Matanzas</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Cuba</subfield>
+    <subfield code="z">Matanzas.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1231371.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Limitation statements.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv01531.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Collage (technique)</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300138699.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Cord (fiber product)</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300014247.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Crochet (needlework)</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300264038.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Envelopes.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300197601.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Cuba</subfield>
+    <subfield code="z">Matanzas</subfield>
+    <subfield code="y">2013.</subfield>
+    <subfield code="2">rbmscv.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423861.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Fiction.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026339.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ponce, Agustina,</subfield>
+    <subfield code="e">editor.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2003075416</subfield>
+    <subfield code="1">http://viaf.org/viaf/48921268</subfield>
+    <subfield code="1">http://isni.org/isni/0000000053861702.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Grinstead, Wayne,</subfield>
+    <subfield code="d">1946-</subfield>
+    <subfield code="e">translator.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n85336009</subfield>
+    <subfield code="1">http://viaf.org/viaf/18679991</subfield>
+    <subfield code="1">http://isni.org/isni/0000000035106674.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ríos, Marialva,</subfield>
+    <subfield code="e">illustrator,</subfield>
+    <subfield code="e">book designer.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2004074934</subfield>
+    <subfield code="1">http://viaf.org/viaf/26778883</subfield>
+    <subfield code="1">http://isni.org/isni/0000000048570038.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Ediciones Vigía,</subfield>
+    <subfield code="e">publisher.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n99007950</subfield>
+    <subfield code="1">http://viaf.org/viaf/135053837</subfield>
+    <subfield code="1">http://isni.org/isni/0000000092149363.</subfield>
+  </datafield>
+  <datafield tag="791" ind1="2" ind2=" ">
+    <subfield code="a">Howard Holsenbeck Library Fund.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Colección Andante.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n99009473</subfield>
+    <subfield code="1">http://viaf.org/viaf/179147340.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/public/SS33469_33469_42529916</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="a">wc</subfield>
+    <subfield code="b">03-10-17</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">spa</subfield>
+    <subfield code="g">cu </subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">DFMDL54I</subfield><subfield code="b">b8710984</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

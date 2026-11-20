@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>04266ntm a2200553Ia 4500</leader>
+  <controlfield tag="001">ocn856934430</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20250801221049.0</controlfield>
+  <controlfield tag="008">130826s1875    stka          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)856934430</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NOH</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">NOH</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-uk-st</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/e-uk-st</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOHB</subfield>
+  </datafield>
+  <datafield tag="096" ind1=" " ind2=" ">
+    <subfield code="a">WO 9</subfield>
+    <subfield code="b">C533n 1875</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Chiene, John,</subfield>
+    <subfield code="d">1843-1923.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n96801429</subfield>
+    <subfield code="1">http://viaf.org/viaf/55889623</subfield>
+    <subfield code="1">http://isni.org/isni/0000000031604553.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Notebook,</subfield>
+    <subfield code="f">1875.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="3">
+    <subfield code="a">Surgery.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">125 leaves, bound :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">21 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Surgery, Doctor Chiene, Roy: Coll: Surg:, 1875-6"--flyleaf.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Initials "JS" inscribed on flyleaf.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Illustrations drawn on the verso of some leaves.</subfield>
+  </datafield>
+  <datafield tag="520" ind1="8" ind2=" ">
+    <subfield code="a">Notes, dated November 2, 1875-December 3, 1875, on surgery from the lectures of Dr. John Chiene, of the University of Edinburgh.</subfield>
+  </datafield>
+  <datafield tag="545" ind1="0" ind2=" ">
+    <subfield code="a">Professor John Chiene, MD (1843-1923), surgeon, was born in Edinburgh, the son of a chartered accountant.</subfield>
+    <subfield code="b">He was educated at Edinburgh Academy and Edinburgh University, and also studied medicine in Paris, Berlin and Vienna during 1860. He graduated MD with Honours from Edinburgh in 1865. Chiene then became a House Surgeon for James Syme, and demonstrated in Anatomy under John Goodsir. 'Honest John' Chiene held the post of Professor of Surgery at Edinburgh University from 1882-1909. He instituted a small laboratory at the Royal Infirmary of Edinburgh for the examination of pathological and bacteriological specimens and was a pioneer of the Edinburgh Ambulance Service. During the Boer War he was consulting surgeon to HM Roces in South Africa. Professor Chiene was President of the Royal College of Surgeons of Edinburgh,1897-1899.</subfield>
+  </datafield>
+  <datafield tag="561" ind1=" " ind2=" ">
+    <subfield code="a">"Dalhousie University, Medical Library, Halifax, N.S." embossed on flyleaf.</subfield>
+  </datafield>
+  <datafield tag="541" ind1=" " ind2=" ">
+    <subfield code="a">Martha Riggins Anderson and H. McLeod Riggins Rare Book Fund</subfield>
+    <subfield code="c">(Purchase :</subfield>
+    <subfield code="d">2009 :</subfield>
+    <subfield code="f">Health Sciences Library,</subfield>
+    <subfield code="3">c. 1)</subfield>
+  </datafield>
+  <datafield tag="610" ind1="2" ind2="0">
+    <subfield code="a">University of Edinburgh.</subfield>
+    <subfield code="b">Faculty of Medicine.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50061868</subfield>
+    <subfield code="1">http://viaf.org/viaf/145930623</subfield>
+    <subfield code="1">http://isni.org/isni/0000000110937612.</subfield>
+  </datafield>
+  <datafield tag="610" ind1="2" ind2="7">
+    <subfield code="a">University of Edinburgh.</subfield>
+    <subfield code="b">Faculty of Medicine.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/515600.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Medicine</subfield>
+    <subfield code="x">Study and teaching.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85083104.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Medicine</subfield>
+    <subfield code="z">Scotland</subfield>
+    <subfield code="z">Edinburgh</subfield>
+    <subfield code="x">History.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Medicine.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1014893.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Medicine</subfield>
+    <subfield code="x">Study and teaching.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1015121.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Scotland</subfield>
+    <subfield code="z">Edinburgh.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1205145.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Notebooks.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv01639.</subfield>
+  </datafield>
+  <datafield tag="610" ind1="2" ind2="7">
+    <subfield code="a">University of Edinburgh.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/540791.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">History.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1411628.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="2">
+    <subfield code="a">General Surgery</subfield>
+    <subfield code="x">history.</subfield>
+    <subfield code="0">http://id.nlm.nih.gov/mesh/D013502Q000266.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="2">
+    <subfield code="a">General Surgery.</subfield>
+    <subfield code="0">http://id.nlm.nih.gov/mesh/D013502.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="2">
+    <subfield code="a">Scotland.</subfield>
+    <subfield code="0">http://id.nlm.nih.gov/mesh/D012606.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="2">
+    <subfield code="a">Lecture Note.</subfield>
+    <subfield code="0">http://id.nlm.nih.gov/mesh/D019528.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Anderson-Riggins Memorial Fund.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2023001611</subfield>
+    <subfield code="1">http://viaf.org/viaf/660167391522783590002.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">WO 9</subfield>
+    <subfield code="b">C533n 1875</subfield>
+    <subfield code="z">096</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="t">43</subfield>
+    <subfield code="y">The HSL History Collection is accessible by appointment from Monday through Thursday, 8:30 am to 4:30 pm, except for University holidays. To arrange an appointment, contact HSL at 919-966-1776 or 919-962-0500.</subfield>
+    <subfield code="n">Purchase: Anderson-Riggins Memorial Fund</subfield>
+    <subfield code="u">-</subfield>
+    <subfield code="h">1</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="l">NOHB</subfield>
+    <subfield code="i">H00457757Z</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">wc</subfield>
+    <subfield code="b">08-26-13</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">t  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">stk</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOH</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">KTYGFT5K</subfield><subfield code="b">anderson / notebook</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

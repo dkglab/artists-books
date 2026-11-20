@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01484cam a2200349Ii 4500</leader>
+  <controlfield tag="001">990130866720203941</controlfield>
+  <controlfield tag="005">20120227105213.0</controlfield>
+  <controlfield tag="008">780817s1975    gw a          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)4147675</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">IAI</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">IAI</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">OCLCQ</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">engfreger</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">ND553.B985</subfield>
+    <subfield code="b">B87</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Buren, Daniel.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Voile/toile, toile/voile :</subfield>
+    <subfield code="b">Sail/canvas, canvas/sail : 9 arbeiten /</subfield>
+    <subfield code="c">von Daniel Buren ; texte von Daniel Buren, Bernd Mahr, und Horst Merten.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Berlin :</subfield>
+    <subfield code="b">Reiter Druck,</subfield>
+    <subfield code="c">1975.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[24] p. :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">27 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Eine Ausstellung in der Akademie der Künste, veranstaltet vom Berliner Künstlerprogramm (DAAD) und der Galerie Folker Skulima [Teil 1, 20. September 1975 ; Teil 2, 30. Nov. 1975-1. Jan. 1976]."</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Text in French, English, and German.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Buren, Daniel.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Sails</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Exhibition catalogs</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01424028</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Mahr, B.</subfield>
+    <subfield code="q">(Bernd)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Merten, Horst.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Akademie der Künste (Berlin, Germany)</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Galerie Folker Skulima.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Deutscher Akademischer Austauschdienst.</subfield>
+    <subfield code="b">Berliner Künstlerprogramm.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2=" ">
+    <subfield code="a">Sail/canvas, canvas/sail.</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">013086672</subfield>
+  </datafield>
+  <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">415.36820..565913.651123.0000.00000</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-10-25</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2024-12-12</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 655</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">NO-OVERLAY</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">3QFQ3WIP</subfield><subfield code="b">buren / voile toile toile voile</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

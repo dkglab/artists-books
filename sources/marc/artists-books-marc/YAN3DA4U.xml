@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00807cam a22002412c 4500</leader>
+  <controlfield tag="001">720765080</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20160808160259.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">120807s1978    xx |||||      00| ||und c</controlfield>
+  <datafield tag="024" ind1="8" ind2=" ">
+    <subfield code="a">15710645</subfield>
+    <subfield code="q">Identnummer</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)720765080</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV720765080</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-604)18776378x</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Nannucci, Maurizio</subfield>
+    <subfield code="d">1939-</subfield>
+    <subfield code="0">(DE-588)118737953</subfield>
+    <subfield code="0">(DE-627)079518605</subfield>
+    <subfield code="0">(DE-576)20937831X</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Art as social environment</subfield>
+    <subfield code="c">Maurizio Nannucci</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="c">1978</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">(1. print.)&lt;br&gt;(Amsterdam: Exit ed., Lugo &amp; Other books&lt;br&gt;and so 1978). Ohne Pag.&lt;br&gt;Abreißblätter.</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">YAN3DA4U</subfield><subfield code="b">nannucci / art as social environment</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

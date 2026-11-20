@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01136cam a2200349u  4500</leader>
+  <controlfield tag="001">9925177180001551</controlfield>
+  <controlfield tag="005">20170410095556.0</controlfield>
+  <controlfield tag="008">920730s1971    cau          |||| ||eng c</controlfield>
+  <controlfield tag="009">277518</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">92-B18023</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">277518</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CMalG)277518-gettydb-Voyager</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1126368</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">Brown University Library</subfield>
+    <subfield code="d">CStRLIN</subfield>
+    <subfield code="d">CMalG</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.M991</subfield>
+    <subfield code="b">M58 1971</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Mustill, Norman Ogue.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Mess kit.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[San Francisco]</subfield>
+    <subfield code="b">Nova Broadcast [Press,</subfield>
+    <subfield code="c">1971]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 v.</subfield>
+    <subfield code="b">illus.</subfield>
+    <subfield code="c">23 x 23 cm.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="905" ind1=" " ind2="1">
+    <subfield code="a">1</subfield>
+    <subfield code="b">07/30/92 AM</subfield>
+    <subfield code="c">MAI</subfield>
+    <subfield code="e">DC</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2="1">
+    <subfield code="a">BRW</subfield>
+  </datafield>
+  <datafield tag="909" ind1=" " ind2="1">
+    <subfield code="a">JME</subfield>
+  </datafield>
+  <datafield tag="911" ind1=" " ind2="1">
+    <subfield code="a">Jean Brown Collection</subfield>
+  </datafield>
+  <datafield tag="921" ind1=" " ind2=" ">
+    <subfield code="a">b12804034</subfield>
+    <subfield code="b">04-30-97</subfield>
+    <subfield code="c">04-21-95</subfield>
+    <subfield code="d">sc</subfield>
+    <subfield code="e">02-08-96</subfield>
+    <subfield code="f">a</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">c</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">OCLC D160707.R807889 20160728</subfield>
+  </datafield>
+  <datafield tag="960" ind1=" " ind2="1">
+    <subfield code="b">0</subfield>
+  </datafield>
+  <datafield tag="981" ind1=" " ind2="1">
+    <subfield code="b">1</subfield>
+    <subfield code="c">07/30/92 REC</subfield>
+    <subfield code="d">MAIN</subfield>
+    <subfield code="e">MAIN</subfield>
+  </datafield>
+  <datafield tag="995" ind1=" " ind2=" ">
+    <subfield code="a">92-B18023</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="s">9665</subfield>
+    <subfield code="n">CMalG</subfield>
+    <subfield code="l">CJPA</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">9925177180001551</subfield>
+    <subfield code="8">22126175580001551</subfield>
+    <subfield code="a">01GRI_INST</subfield>
+    <subfield code="b">SC</subfield>
+    <subfield code="c">SPECIAL COLLECTIONS - CONTACT REFERENCE</subfield>
+    <subfield code="d">N7433.4.M991 M58 1971</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">2AB</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">GRI Special Collections</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">LVWL8ENP</subfield><subfield code="b">mustill / mess kit</subfield><subfield code="c">title-author</subfield><subfield code="d">getty</subfield></datafield></record>
+</collection>

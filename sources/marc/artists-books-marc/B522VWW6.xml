@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00786cam a2200229Ia 4500</leader>
+  <controlfield tag="001">ocm57004024</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20070119014102.0</controlfield>
+  <controlfield tag="008">041119s1980    ve a     c    000 0 spa d</controlfield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">INU</subfield>
+    <subfield code="c">INU</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">s-ve---</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4 .Z3</subfield>
+    <subfield code="b">C1 1980</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Zerpa, Carlos,</subfield>
+    <subfield code="d">1950-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Cada cual con su santo propio :</subfield>
+    <subfield code="b">proyecto para una muestra de artes plasticas /</subfield>
+    <subfield code="c">Carlos Zerpa.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Valencia, Venezuela :</subfield>
+    <subfield code="b">Universidad de Carabobo,</subfield>
+    <subfield code="c">1980.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">20 unnumbered pages : </subfield>
+    <subfield code="b"> illustrations ; </subfield>
+    <subfield code="c"> 29 cm.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Zerpa, Carlos,</subfield>
+    <subfield code="d">1950-</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Collage</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Sculpture, Modern</subfield>
+    <subfield code="y">20th century</subfield>
+    <subfield code="z">Venezuela.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Art, Modern</subfield>
+    <subfield code="y">20th century</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">B522VWW6</subfield><subfield code="b">zerpa / cada cual con su santo propio</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

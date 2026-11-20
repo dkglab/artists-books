@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00995nam a2200193Ma 4500</leader>
+  <controlfield tag="001">99157739137003941</controlfield>
+  <controlfield tag="005">20240508192308.0</controlfield>
+  <controlfield tag="008">050503s2003    it            000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1159862064</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">U@M</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">U@M</subfield>
+    <subfield code="d">U@M</subfield>
+    <subfield code="d">OCLCL</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">709.05</subfield>
+    <subfield code="2">22</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lorenz, Angela</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Maxims by the yard - some in meter :</subfield>
+    <subfield code="b">spools of knowledge vol. 1 /</subfield>
+    <subfield code="c">by Angela Lorenz.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Bologna :</subfield>
+    <subfield code="b">Angela Lorenz,</subfield>
+    <subfield code="c">2003.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Artists's book: Blue cardboard box 26.5cm x 21.5cm embossed with the logo of Smythson of Bond Street. Enclosed is a cream cardboard box, bound with ribbon and containing a spool of ribbon decorated with proverbs. Also includes a sheet of A4 describing the piece.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Ltd. ed. of 100 copies.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="0" ind2=" ">
+    <subfield code="a">Palatino,</subfield>
+    <subfield code="c">typeface.</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="i">has work:</subfield>
+    <subfield code="a">Maxims by the yard (Text)</subfield>
+    <subfield code="1">https://id.oclc.org/worldcat/entity/E39PCFRYjQwmf6Mv4RckmHgvVC</subfield>
+    <subfield code="4">https://id.oclc.org/worldcat/ontology/hasWork</subfield>
+  </datafield>
+  <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">415.36820..565109.651123.0000.00000</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">XC3BANIG</subfield><subfield code="b">lorenz / maxims by the yard</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

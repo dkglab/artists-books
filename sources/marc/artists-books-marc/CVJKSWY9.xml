@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01653cam a2200397 c 4500</leader>
+  <controlfield tag="001">1613558015</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20241120224901.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">111028s1975    sz |||||      00| ||eng c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">80A510702</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="q">: sfr 20.00</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1613558015</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)352430737</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV054661315</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)985147523</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-CH</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lüthi, Urs</subfield>
+    <subfield code="d">1947-</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)118575112</subfield>
+    <subfield code="0">(DE-627)079370373</subfield>
+    <subfield code="0">(DE-576)167277243</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">The desert is across the street</subfield>
+    <subfield code="c">a work by Urs Lüthi; Elke Kilga; David Weiss</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Amsterdam</subfield>
+    <subfield code="b">Edition De Appel</subfield>
+    <subfield code="c">1975</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Zürich</subfield>
+    <subfield code="b">Edition Galerie Stähli</subfield>
+    <subfield code="c">1975</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[32] S.</subfield>
+    <subfield code="b">nur Ill.</subfield>
+    <subfield code="c">21 x 30 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Kilga, Elke</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)1089305443</subfield>
+    <subfield code="0">(DE-627)853096147</subfield>
+    <subfield code="0">(DE-576)459735063</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Weiss, David</subfield>
+    <subfield code="d">1946-2012</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)11863044X</subfield>
+    <subfield code="0">(DE-627)079418155</subfield>
+    <subfield code="0">(DE-576)209157283</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Stichting De Appel</subfield>
+    <subfield code="0">(DE-588)5093818-6</subfield>
+    <subfield code="0">(DE-627)131980491</subfield>
+    <subfield code="0">(DE-576)194582647</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Galerie &amp; Edition Stähli</subfield>
+    <subfield code="0">(DE-588)2100113-3</subfield>
+    <subfield code="0">(DE-627)100869890</subfield>
+    <subfield code="0">(DE-576)193030411</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3176411340</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3176411413</subfield>
+    <subfield code="b">DE-Stg120</subfield>
+    <subfield code="9">Stg 120</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">FX Amsterdam 1975</subfield>
+    <subfield code="h">Fotobibliothek</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">CVJKSWY9</subfield><subfield code="b">lüthi / the desert is across the street</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

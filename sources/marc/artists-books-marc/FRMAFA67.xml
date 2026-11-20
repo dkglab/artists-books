@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01527nam a2200373 c 4500</leader>
+  <controlfield tag="001">1619492431</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20121101132022.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">121101s1985    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0932325211</subfield>
+    <subfield code="q">pbk.</subfield>
+    <subfield code="9">0-932325-21-1</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780932325211</subfield>
+    <subfield code="q">pbk.</subfield>
+    <subfield code="9">978-0-932325-21-1</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1619492431</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)373190271</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ373190271</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)13824658</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">NX512.A525</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">China night</subfield>
+    <subfield code="c">Terry Allen</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Fresno</subfield>
+    <subfield code="b">[Fresno Arts Center and Museum]</subfield>
+    <subfield code="c">1985</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">69 S.</subfield>
+    <subfield code="b">Ill.</subfield>
+    <subfield code="c">18 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Issued in conjunction with an exhibition held at the Fresno Arts Center and Museum and the Florida State University Fine Arts Gallery, Tallahassee, as part of the author's "Youth in Asia" series. - Worldwide Books no. 51459</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Allen, Terry 1943-</subfield>
+    <subfield code="x">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Allen, Terry</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Allen, Terry</subfield>
+    <subfield code="d">1943-</subfield>
+    <subfield code="0">(DE-588)119283654</subfield>
+    <subfield code="0">(DE-627)080089135</subfield>
+    <subfield code="0">(DE-576)163993661</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Fresno Arts Center</subfield>
+    <subfield code="g">Fresno, Calif.</subfield>
+    <subfield code="0">(DE-588)16308244-3</subfield>
+    <subfield code="0">(DE-627)711986177</subfield>
+    <subfield code="0">(DE-576)130775207</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Florida State University Gallery &amp; Museum</subfield>
+    <subfield code="g">Tallahassee, Fla.</subfield>
+    <subfield code="0">(DE-588)5070521-0</subfield>
+    <subfield code="0">(DE-627)12124878X</subfield>
+    <subfield code="0">(DE-576)194177734</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3225233706</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">FRMAFA67</subfield><subfield code="b">0932325211</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

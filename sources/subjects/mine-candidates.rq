@@ -9,12 +9,12 @@
 # stay in lockstep). The heading is the ordered subfields $a $x $y $z $v joined
 # with " -- ", rebuilt in document order via an ORDERed sub-SELECT feeding
 # GROUP_CONCAT (see the long note in mine-occurrences.rq for the ordering and the
-# one variable-predicate walk it requires). ?recs counts distinct archive entries
+# one variable-predicate walk it requires). ?recs counts distinct files
 # (one .xml per record), robust regardless of per-record blank-node identity.
 #
-# Reads the per-record MARC zip archive (#81) via the nested Archive->XML
+# Reads the per-record MARC directory (#81) via the nested Folder->XML
 # triplifier pattern (the outer fx:archive.matches listing + inner per-record
-# fx:location ?file + fx:from-archive).
+# fx:location ?file).
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX xyz: <http://sparql.xyz/facade-x/data/>
@@ -36,14 +36,13 @@ WHERE {
       {
         SELECT ?file ?tag ?df ?scheme ?dollar0 ?idx ?part
         WHERE {
-          SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.zip> {
+          SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc/> {
             fx:properties fx:archive.matches ".*\\.xml" .
-            ?archive fx:anySlot ?file .
+            ?folder fx:anySlot ?file .
 
             SERVICE <x-sparql-anything:> {
               fx:properties
                 fx:location ?file ;
-                fx:from-archive "sources/marc/artists-books-marc.zip" ;
                 fx:media-type "application/xml" .
 
               ?record a marc:record .

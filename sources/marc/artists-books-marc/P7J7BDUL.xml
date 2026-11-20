@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00426nam a2200157 a 4500</leader>
+  <controlfield tag="001">991001571409708431</controlfield>
+  <controlfield tag="005">20250612211747.0</controlfield>
+  <controlfield tag="008">240112s2022####xx######r#####000#0#eng#d</controlfield>
+  <datafield tag="099" ind1=" " ind2=" ">
+    <subfield code="a">DESIDERATUM</subfield>
+  </datafield>
+  <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">Long, Richard,</subfield>
+    <subfield code="d">1945-</subfield>
+  </datafield>
+  <datafield tag="245" ind1=" " ind2="0">
+    <subfield code="a">Muddy water marks</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Noordwijk, MW Press, 1985</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">20 p. :</subfield>
+    <subfield code="b">ill.</subfield>
+  </datafield>
+  <datafield tag="440" ind1=" " ind2=" ">
+    <subfield code="a">MW ; 9</subfield>
+  </datafield>
+  <datafield tag="907" ind1=" " ind2=" ">
+    <subfield code="a">.b11676632</subfield>
+    <subfield code="b">09-13-23</subfield>
+    <subfield code="c">07-05-05</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">stbib</subfield>
+    <subfield code="b">-  -</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">-</subfield>
+    <subfield code="e">n</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="h">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">P7J7BDUL</subfield><subfield code="b">long / muddy water marks</subfield><subfield code="c">title-author</subfield><subfield code="d">clark</subfield></datafield></record>
+</collection>

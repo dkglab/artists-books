@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03668cam a2200529 a 4500</leader>
+  <controlfield tag="001">ocm45805168</controlfield>
+  <controlfield tag="005">20260127114907.0</controlfield>
+  <controlfield tag="008">000302s2000    maua     b    001 0 eng  </controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   00028354</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">1022688204</subfield>
+    <subfield code="a">1097287380</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0262133776</subfield>
+    <subfield code="q">paperback</subfield>
+    <subfield code="q">set</subfield>
+    <subfield code="q">alkaline paper</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">071234666X</subfield>
+    <subfield code="q">paperback</subfield>
+    <subfield code="q">v. 1</subfield>
+    <subfield code="q">alkaline paper</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0712346678</subfield>
+    <subfield code="q">paperback</subfield>
+    <subfield code="q">v. 2</subfield>
+    <subfield code="q">alkaline paper</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0712346694</subfield>
+    <subfield code="q">paperback</subfield>
+    <subfield code="q">v. 3</subfield>
+    <subfield code="q">alkaline paper</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="041" ind1="1" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">rus</subfield>
+    <subfield code="h">rus</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PG3476.M3</subfield>
+    <subfield code="b">D5713 2000</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/PG1-PG9665</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Mayakovsky, Vladimir,</subfield>
+    <subfield code="d">1893-1930.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79021383</subfield>
+    <subfield code="1">http://viaf.org/viaf/24611716</subfield>
+    <subfield code="1">http://isni.org/isni/0000000120957668.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">For the voice /</subfield>
+    <subfield code="c">Vladimir Mayakovsky and El Lissitzky.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1st MIT Press ed.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Cambridge, Mass. :</subfield>
+    <subfield code="b">MIT Press,</subfield>
+    <subfield code="c">2000.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">3 volumes :</subfield>
+    <subfield code="b">illustrations (some color) ;</subfield>
+    <subfield code="c">19 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Issued in container.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Art library copy condition: no library markings, in protective enclosure.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references and index.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">v. 1. For the voice : a facsimile of the 1923 Russian edition / Vladimir Mayakovsky ; El Lissitzky, book constructor -- v. 2. For the voice / Vlaidimir [i.e. Vladimir] Mayakovsky ; El Lissitzky, book constructor ; English translation by Peter France ; visual translation by Martha Scotford -- v. 3. For the voice : voices of revolution : a collection of essays / edited by Patricia Railing.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Mayakovsky, Vladimir,</subfield>
+    <subfield code="d">1893-1930.</subfield>
+    <subfield code="t">Dli︠a︡ golosa.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2024072162</subfield>
+    <subfield code="1">http://viaf.org/viaf/91145857796623020517.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Facsimiles.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Facsimiles.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1411642.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Mayakovsky, Vladimir,</subfield>
+    <subfield code="d">1893-1930.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/31688.</subfield>
+  </datafield>
+  <datafield tag="630" ind1="0" ind2="7">
+    <subfield code="a">Dli͡a golosa (Mayakovsky, Vladimir)</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1394846.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Lissitzky, El,</subfield>
+    <subfield code="d">1890-1941.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79132147</subfield>
+    <subfield code="1">http://viaf.org/viaf/41890867</subfield>
+    <subfield code="1">http://isni.org/isni/0000000118041140.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Railing, Patricia.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n90724012</subfield>
+    <subfield code="1">http://viaf.org/viaf/22226661</subfield>
+    <subfield code="1">http://isni.org/isni/0000000028444827.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2="2">
+    <subfield code="a">Mayakovsky, Vladimir,</subfield>
+    <subfield code="d">1893-1930.</subfield>
+    <subfield code="t">Dli︠a︡ golosa.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2024072162</subfield>
+    <subfield code="1">http://viaf.org/viaf/91145857796623020517.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2="2">
+    <subfield code="a">Mayakovsky, Vladimir,</subfield>
+    <subfield code="d">1893-1930.</subfield>
+    <subfield code="t">Dli︠a︡ golosa.</subfield>
+    <subfield code="l">English.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2013028960</subfield>
+    <subfield code="1">http://viaf.org/viaf/298402277.</subfield>
+  </datafield>
+  <datafield tag="791" ind1="2" ind2=" ">
+    <subfield code="a">T. Henry and Penelope Clarke Library Fund in Honor of Margaret Bland Clarke.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's covers and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/asset/SS33469_33469_15286219</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="a">(3)dd</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">mau</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">GGXTG7D7</subfield><subfield code="b">b3796363</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

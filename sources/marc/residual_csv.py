@@ -16,11 +16,11 @@ state rather than colliding with the main artists-books run.
 
     # every canonical work still missing MARC
     python3 marc/residual_csv.py --csv artists-books.csv \
-        --archive marc/artists-books-marc.zip --out marc/harvest/residual.csv
+        --archive marc/artists-books-marc --out marc/harvest/residual.csv
 
     # just the Visual Studies Workshop cluster (#99 lever 1, the eHive target)
     python3 marc/residual_csv.py --csv artists-books.csv \
-        --archive marc/artists-books-marc.zip --publisher 'visual studies' \
+        --archive marc/artists-books-marc --publisher 'visual studies' \
         --out marc/harvest/vsw-residual.csv
 """
 
@@ -39,16 +39,20 @@ from marc_harvest import oclc_of
 
 
 def archive_keys(path):
-    """The 999 $a join keys already covered by an archive: one <key>.xml per record."""
-    with zipfile.ZipFile(path) as zf:
-        return {os.path.splitext(n)[0] for n in zf.namelist() if n.endswith(".xml")}
+    """The 999 $a join keys already covered by a store: one <key>.xml per record."""
+    if os.path.isdir(path):
+        names = os.listdir(path)
+    else:
+        with zipfile.ZipFile(path) as zf:
+            names = zf.namelist()
+    return {os.path.splitext(n)[0] for n in names if n.endswith(".xml")}
 
 
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--csv", required=True, help="canonical CSV (artists-books.csv)")
-    ap.add_argument("--archive", required=True, help="committed *-marc.zip to diff against")
+    ap.add_argument("--archive", required=True, help="committed marc/*-marc directory (or a .zip) to diff against")
     ap.add_argument("--out", required=True, help="residual CSV to write")
     ap.add_argument("--publisher", help="only rows whose publisher matches this regex")
     ap.add_argument("--held", choices=("true", "false"),

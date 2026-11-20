@@ -1,0 +1,551 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>05591cam a2201225 c 4500</leader>
+  <controlfield tag="001">162794463X</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260620215348.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">981007s1998    gw |||||      00| ||ger c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">98,N36,1336</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">99,A20,1960</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">954334531</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3933485010</subfield>
+    <subfield code="q"> : DM 24.80 (brosch.)</subfield>
+    <subfield code="9">3-933485-01-0</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)162794463X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-603)059582162</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)069158304</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)DNB954334531</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)260119606</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)49774789</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-H357)his15372</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">63</subfield>
+    <subfield code="2">sdnb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">MG 15096</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/122818:12055</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">MG 15090</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/122818:12051</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">21.42</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Feldmann, Hans-Peter</subfield>
+    <subfield code="d">1941-2023</subfield>
+    <subfield code="0">(DE-588)118901168</subfield>
+    <subfield code="0">(DE-627)079677576</subfield>
+    <subfield code="0">(DE-576)210340452</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">Die Toten: 1967 - 1993</subfield>
+    <subfield code="b">Studentenbewegung, APO, Baader-Meinhof, Bewegung 2. Juni, Revolutionäre Zellen, RAF, ...</subfield>
+    <subfield code="c">Hans-Peter Feldmann</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Düsseldorf</subfield>
+    <subfield code="b">Feldmann</subfield>
+    <subfield code="c">1998</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[192] S.</subfield>
+    <subfield code="b">überw. Ill.</subfield>
+    <subfield code="c">21 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20240324</subfield>
+    <subfield code="f">DE-4165</subfield>
+    <subfield code="z">2</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">Geschichte 1967-1993</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="650" ind1="0" ind2="7">
+    <subfield code="0">(DE-588)4059534-1</subfield>
+    <subfield code="0">(DE-627)106143212</subfield>
+    <subfield code="0">(DE-576)209131136</subfield>
+    <subfield code="a">Terrorismus</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="650" ind1="0" ind2="7">
+    <subfield code="0">(DE-588)4185770-7</subfield>
+    <subfield code="0">(DE-627)104449705</subfield>
+    <subfield code="0">(DE-576)21003467X</subfield>
+    <subfield code="a">Toter</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Terrorismus</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Stadtguerilla</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Militanter Widerstand</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Studentenbewegung</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">APO</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Baader-Meinhof-Gruppe</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Bewegung 2. Juni</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">RAF</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Rote Armee Fraktion</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Revolutionäre Zellen</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Fotoband</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Ohnesorg, Benno</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">RZ</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Außerparlamentarische Opposition</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="0">(DE-588)4011889-7</subfield>
+    <subfield code="0">(DE-627)104732423</subfield>
+    <subfield code="0">(DE-576)208896201</subfield>
+    <subfield code="a">Deutschland</subfield>
+    <subfield code="g">Bundesrepublik</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bildband</subfield>
+    <subfield code="0">(DE-588)4145395-5</subfield>
+    <subfield code="0">(DE-627)104450835</subfield>
+    <subfield code="0">(DE-576)209741139</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">g</subfield>
+    <subfield code="0">(DE-588)4011889-7</subfield>
+    <subfield code="0">(DE-627)104732423</subfield>
+    <subfield code="0">(DE-576)208896201</subfield>
+    <subfield code="a">Deutschland</subfield>
+    <subfield code="g">Bundesrepublik</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4059534-1</subfield>
+    <subfield code="0">(DE-627)106143212</subfield>
+    <subfield code="0">(DE-576)209131136</subfield>
+    <subfield code="a">Terrorismus</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4185770-7</subfield>
+    <subfield code="0">(DE-627)104449705</subfield>
+    <subfield code="0">(DE-576)21003467X</subfield>
+    <subfield code="a">Toter</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="3">
+    <subfield code="A">z</subfield>
+    <subfield code="2">gnd</subfield>
+    <subfield code="a">Geschichte 1967-1993</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">DE-101</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-576)9247975352</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-576)471026883</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-627)247975354</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">362129797</subfield>
+    <subfield code="b">DE-8</subfield>
+    <subfield code="9">8</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">F D/1</subfield>
+    <subfield code="h">8/45</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">383302056</subfield>
+    <subfield code="b">DE-27</subfield>
+    <subfield code="9">27</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">2016 NA 8295</subfield>
+    <subfield code="h">Mag</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1604427523</subfield>
+    <subfield code="b">DE-547</subfield>
+    <subfield code="9">547</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">627640</subfield>
+    <subfield code="h">MAG</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1810678706</subfield>
+    <subfield code="b">DE-Ha125</subfield>
+    <subfield code="9">Ha 125</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Feldmann 1998</subfield>
+    <subfield code="g">A 42816</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">645489298</subfield>
+    <subfield code="b">DE-18-301</subfield>
+    <subfield code="9">18/301</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">pol 690/38</subfield>
+    <subfield code="h">18/301</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">317613030</subfield>
+    <subfield code="b">DE-Va1</subfield>
+    <subfield code="9">Va 1</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">304891</subfield>
+    <subfield code="h">Magazin</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">825731038</subfield>
+    <subfield code="b">DE-18-26</subfield>
+    <subfield code="9">18/26</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">J. Feldm : 4</subfield>
+    <subfield code="h">18/26</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">622110497</subfield>
+    <subfield code="b">DE-834</subfield>
+    <subfield code="9">834</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">K 5.1 Feldmann,H 6</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">678776954</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 24268 d kl</subfield>
+    <subfield code="g">NB::24268:d:kl</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">859688275</subfield>
+    <subfield code="b">DE-572</subfield>
+    <subfield code="9">572</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">FK Mon Feld 3037</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1497856906</subfield>
+    <subfield code="b">DE-H357</subfield>
+    <subfield code="9">H 357</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">SBe 670/47</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149155</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">1998 8 021713</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149163</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3783901952</subfield>
+    <subfield code="b">DE-15</subfield>
+    <subfield code="9">15</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4886527450</subfield>
+    <subfield code="b">DE-77</subfield>
+    <subfield code="9">77</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">203.239</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149279</subfield>
+    <subfield code="b">DE-Frei85</subfield>
+    <subfield code="9">Frei 85</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149333</subfield>
+    <subfield code="b">DE-Mar1</subfield>
+    <subfield code="9">Mar 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">U</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149384</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">7 Feldmann, H.-P. 3 1998</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149422</subfield>
+    <subfield code="b">DE-L242</subfield>
+    <subfield code="9">L 242</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149503</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">B Fel17 0013</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149554</subfield>
+    <subfield code="b">DE-Stg269</subfield>
+    <subfield code="9">Stg 269</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Llb1 TOT 52 /Lpo</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149619</subfield>
+    <subfield code="b">DE-1975</subfield>
+    <subfield code="9">1975</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">05/99</subfield>
+    <subfield code="h">Rara</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149651</subfield>
+    <subfield code="b">DE-1975</subfield>
+    <subfield code="9">1975</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">05/99a</subfield>
+    <subfield code="h">Künstler der Sammlung</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">327214966X</subfield>
+    <subfield code="b">DE-1975</subfield>
+    <subfield code="9">1975</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">05/99b</subfield>
+    <subfield code="h">Künstler der Sammlung</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149724</subfield>
+    <subfield code="b">DE-1973</subfield>
+    <subfield code="9">1973</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Magazin Kü Feldmann, H.-P. 1998</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3272149805</subfield>
+    <subfield code="b">DE-B478</subfield>
+    <subfield code="9">B 478</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3628057604</subfield>
+    <subfield code="b">DE-2279</subfield>
+    <subfield code="9">2279</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">327214983X</subfield>
+    <subfield code="b">DE-L330</subfield>
+    <subfield code="9">L 330</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">08 Feldm H 1998:1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4571518951</subfield>
+    <subfield code="b">DE-N39</subfield>
+    <subfield code="9">N 39</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">50 Fel / 98</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">mkri</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">mdedup</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">MG 15096</subfield>
+    <subfield code="b">Politisches Verbrechen, Terror, Gewalt</subfield>
+    <subfield code="k">Politologie</subfield>
+    <subfield code="k">Politische Systeme einzelner Länder</subfield>
+    <subfield code="k">Europa, Nordamerika</subfield>
+    <subfield code="k">Westeuropa, Mitteleuropa</subfield>
+    <subfield code="k">Bundesrepublik Deutschland</subfield>
+    <subfield code="k">Bundesrepublik Deutschland</subfield>
+    <subfield code="k">Formen politischer Auseinandersetzung</subfield>
+    <subfield code="k">Politisches Verbrechen, Terror, Gewalt</subfield>
+    <subfield code="0">(DE-627)1271478641</subfield>
+    <subfield code="0">(DE-625)rvk/122818:12055</subfield>
+    <subfield code="0">(DE-576)201478641</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">MG 15090</subfield>
+    <subfield code="b">Allgemeines</subfield>
+    <subfield code="k">Politologie</subfield>
+    <subfield code="k">Politische Systeme einzelner Länder</subfield>
+    <subfield code="k">Europa, Nordamerika</subfield>
+    <subfield code="k">Westeuropa, Mitteleuropa</subfield>
+    <subfield code="k">Bundesrepublik Deutschland</subfield>
+    <subfield code="k">Bundesrepublik Deutschland</subfield>
+    <subfield code="k">Formen politischer Auseinandersetzung</subfield>
+    <subfield code="k">Allgemeines</subfield>
+    <subfield code="0">(DE-627)1271520346</subfield>
+    <subfield code="0">(DE-625)rvk/122818:12051</subfield>
+    <subfield code="0">(DE-576)201520346</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">21.42</subfield>
+    <subfield code="j">Geschichte der Photographie</subfield>
+    <subfield code="0">(DE-627)106405713</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+    <subfield code="j">Bildende Künstler</subfield>
+    <subfield code="0">(DE-627)181571080</subfield>
+  </datafield>
+  <datafield tag="936" ind1="s" ind2="n">
+    <subfield code="a">m100</subfield>
+    <subfield code="2">mzub</subfield>
+  </datafield>
+  <datafield tag="936" ind1="s" ind2="n">
+    <subfield code="a">n100</subfield>
+    <subfield code="2">mzub</subfield>
+  </datafield>
+  <datafield tag="936" ind1="s" ind2="n">
+    <subfield code="a">n200</subfield>
+    <subfield code="2">mzub</subfield>
+  </datafield>
+  <datafield tag="936" ind1="s" ind2="n">
+    <subfield code="a">n300</subfield>
+    <subfield code="2">mzub</subfield>
+  </datafield>
+  <datafield tag="936" ind1="s" ind2="n">
+    <subfield code="a">n400</subfield>
+    <subfield code="2">mzub</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">W6ASFQ9T</subfield><subfield code="b">9783933485014</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

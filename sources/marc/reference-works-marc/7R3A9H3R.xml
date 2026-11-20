@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01421cam a2200361 a 4500</leader>
+  <controlfield tag="001">9927539030001551</controlfield>
+  <controlfield tag="005">20170410105017.0</controlfield>
+  <controlfield tag="008">000926s1999    enkac         000 0 eng^^</controlfield>
+  <controlfield tag="009">724301</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">GBA0-53640</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0953607607</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780953607600</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">2724-301</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">724301</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CMalG)724301-gettydb-Voyager</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)45315687</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">UKM</subfield>
+    <subfield code="c">UKM</subfield>
+    <subfield code="d">OCLCQ</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-uk---</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">JPGA</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.3</subfield>
+    <subfield code="b">.B66 1999</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">709.41</subfield>
+    <subfield code="2">21</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Books by artists.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Bristol :</subfield>
+    <subfield code="b">Impact Press,</subfield>
+    <subfield code="c">c1999.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">iv, 60 p. :</subfield>
+    <subfield code="b">ill., ports. ;</subfield>
+    <subfield code="c">26 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Catalogue to accompany the exhibition at the University of the West of England, Bristol, 21-30 September 1999.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Great Britain</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">University of the West of England, Bristol.</subfield>
+  </datafield>
+  <datafield tag="921" ind1=" " ind2=" ">
+    <subfield code="d">cc</subfield>
+    <subfield code="e">20070327</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">c</subfield>
+  </datafield>
+  <datafield tag="936" ind1=" " ind2=" ">
+    <subfield code="c">!kh</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">OCLC D160706.R807645 20160725</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">9927539030001551</subfield>
+    <subfield code="8">22157857360001551</subfield>
+    <subfield code="a">01GRI_INST</subfield>
+    <subfield code="b">GC</subfield>
+    <subfield code="c">LIBRARY ANNEX</subfield>
+    <subfield code="d">N7433.3 .B66 1999</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="v">from:ID: 2724-301 until:ID: 2724-301</subfield>
+    <subfield code="j">ANXA</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">GRI General Collections</subfield>
+  </datafield>
+  <datafield tag="AVE" ind1=" " ind2=" ">
+    <subfield code="8">53271352850001551</subfield>
+    <subfield code="c">61266714150001551</subfield>
+    <subfield code="e">Available</subfield>
+    <subfield code="m">Getty HathiTrust ETAS</subfield>
+    <subfield code="n">Temporarily available to Getty Staff and Scholars via HathiTrust's Emergency Temporary Access Service (ETAS)</subfield>
+    <subfield code="a">01GRI_INST</subfield>
+    <subfield code="0">9927539030001551</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">7R3A9H3R</subfield><subfield code="b">matter / books by artists</subfield><subfield code="c">title-author</subfield><subfield code="d">getty</subfield></datafield></record>
+</collection>

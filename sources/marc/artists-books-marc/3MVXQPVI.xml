@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00927nam a22002532c 4500</leader>
+  <controlfield tag="001">1900321343</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20240828175507.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">240828s1969    xx |||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1900321343</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1900321343</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Sculpture by Richard Long</subfield>
+    <subfield code="b">Made for Martin &amp; Mia Visser, Bergeijk</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Erscheinungsort nicht ermittelbar]</subfield>
+    <subfield code="b">Fernsehgalerie Gerry Schum</subfield>
+    <subfield code="c">1969</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">9 Bl.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Long, Richard</subfield>
+    <subfield code="d">1945-</subfield>
+    <subfield code="0">(DE-588)118780395</subfield>
+    <subfield code="0">(DE-627)079558496</subfield>
+    <subfield code="0">(DE-576)164475931</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Fernsehgalerie Gerry Schum</subfield>
+    <subfield code="g">Berlin</subfield>
+    <subfield code="0">(DE-588)10030129-0</subfield>
+    <subfield code="0">(DE-627)336446004</subfield>
+    <subfield code="0">(DE-576)198868065</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4572270090</subfield>
+    <subfield code="b">DE-N39</subfield>
+    <subfield code="9">N 39</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Formalerfassung / 69</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">3MVXQPVI</subfield><subfield code="b">long / sculpture by richard long made for martin mia visser bergeijk</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

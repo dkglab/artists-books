@@ -11,28 +11,27 @@
 # It exists as its own committed CSV, rather than being read inline by those
 # queries, for a hard performance reason: joining the (tiny) curated decisions to
 # the (large) MARC with BOTH as x-sparql-anything SERVICEs makes ARQ compile the
-# join as a linear `sequence` and RE-READ the whole archive once per decision row
-# (a ~60x blow-up; confirmed via ARQ `--explain`). Reading the archive exactly
+# join as a linear `sequence` and RE-READ the whole MARC once per decision row
+# (a ~60x blow-up; confirmed via ARQ `--explain`). Reading the MARC exactly
 # once here, into a flat CSV, turns every downstream join into a CSV-to-CSV join.
 #
 # Same candidate pool and normalization as mine-candidates.rq (they MUST stay in
 # lockstep): 655 (all schemes) + 340 rdamat + 650 (all schemes except pure
-# fast/LCSH subject). Reads the per-record MARC zip archive (#81) via the nested
-# Archive->XML triplifier pattern.
+# fast/LCSH subject). Reads the per-record MARC directory (#81) via the nested
+# Folder->XML triplifier pattern.
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xyz: <http://sparql.xyz/facade-x/data/>
 PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
 PREFIX marc:<http://www.loc.gov/MARC21/slim#>
 SELECT DISTINCT ?canonicalKey ?cluster ?rawLabel ?normLabel ?authority
 WHERE {
-  SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.zip> {
+  SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc/> {
     fx:properties fx:archive.matches ".*\\.xml" .
-    ?archive fx:anySlot ?file .
+    ?folder fx:anySlot ?file .
 
     SERVICE <x-sparql-anything:> {
       fx:properties
         fx:location ?file ;
-        fx:from-archive "sources/marc/artists-books-marc.zip" ;
         fx:media-type "application/xml" .
 
       ?record a marc:record .

@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02608cam a22006613  4500</leader>
+  <controlfield tag="001">5491314</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20040116112749.0</controlfield>
+  <controlfield tag="008">011211r19681964xxk|||||||||||000 0|eng|c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">071315084X</subfield>
+    <subfield code="q">Hft.</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0713150858</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">071315084X</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">Li</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">820.9004</subfield>
+    <subfield code="2">22 (machine generated)</subfield>
+  </datafield>
+  <datafield tag="083" ind1="0" ind2=" ">
+    <subfield code="a">820.9</subfield>
+    <subfield code="2">22 (machine generated)</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">Ge.42</subfield>
+    <subfield code="2">kssb/5</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">Gez</subfield>
+    <subfield code="2">kssb/6</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">G</subfield>
+    <subfield code="a">Gez Donne, John</subfield>
+    <subfield code="2">kssb/5</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">O</subfield>
+    <subfield code="a">Gez Donne, John</subfield>
+    <subfield code="2">kssb/6</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">S</subfield>
+    <subfield code="a">Ge.42</subfield>
+    <subfield code="2">kssb/5</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">Uh</subfield>
+    <subfield code="a">Gez Donne, John</subfield>
+    <subfield code="2">kssb/6</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Smith, Albert James</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">John Donne: The songs and sonets</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">E. Arnold</subfield>
+    <subfield code="c">(1964)1968</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">72 s.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Studies in English literature (London),</subfield>
+    <subfield code="x">0585-668X ;</subfield>
+    <subfield code="v">17</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="4">
+    <subfield code="5">Li</subfield>
+    <subfield code="a">Donne, John</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="4">
+    <subfield code="5">O</subfield>
+    <subfield code="a">Donne, John</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="4">
+    <subfield code="5">S</subfield>
+    <subfield code="a">Donne, John</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="4">
+    <subfield code="5">Uh</subfield>
+    <subfield code="a">Donne, John</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Ej skönlitteratur</subfield>
+    <subfield code="0">https://id.kb.se/term/ktg/NonFictionLiterature</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Donne, John,</subfield>
+    <subfield code="d">1572-1631</subfield>
+    <subfield code="t">The *songs and sonets</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2=" ">
+    <subfield code="a">John Donne</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Studies in English literature (London),</subfield>
+    <subfield code="x">0585-668X ;</subfield>
+    <subfield code="v">17</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">G</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Li</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000|||||000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">O</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">S</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Uh</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">G</subfield>
+    <subfield code="b">G</subfield>
+    <subfield code="h">ÖM G</subfield>
+    <subfield code="j">3984</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Li</subfield>
+    <subfield code="b">Li</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">O</subfield>
+    <subfield code="8">1.1</subfield>
+    <subfield code="b">O</subfield>
+    <subfield code="h">Ge</subfield>
+    <subfield code="j">Studies in English literature. 17</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">O</subfield>
+    <subfield code="8">1.2</subfield>
+    <subfield code="b">O</subfield>
+    <subfield code="z">Repr. 1968</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">S</subfield>
+    <subfield code="8">1.1</subfield>
+    <subfield code="b">S</subfield>
+    <subfield code="h">65</subfield>
+    <subfield code="j">141</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">S</subfield>
+    <subfield code="8">1.2</subfield>
+    <subfield code="b">S</subfield>
+    <subfield code="z">I KB: London 1964</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Uh</subfield>
+    <subfield code="8">1.1</subfield>
+    <subfield code="b">Uh</subfield>
+    <subfield code="h">Gez</subfield>
+    <subfield code="l">[Donne Smith]</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Uh</subfield>
+    <subfield code="8">1.2</subfield>
+    <subfield code="b">Uh</subfield>
+    <subfield code="z">HSC: Pr. 1964</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"gzrk757s0vbkw4l","modified":"2004-01-16T11:27:49+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">G</subfield>
+    <subfield code="a">{"@id":"v05sl6n141g9fzp","modified":"2020-05-05T16:00:08.407+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Li</subfield>
+    <subfield code="a">{"@id":"w16tm7p217xrrhr","modified":"2024-05-06T17:03:21.676+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">O</subfield>
+    <subfield code="a">{"@id":"049xqbs53vdm00q","modified":"2018-06-05T18:07:28.906+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">S</subfield>
+    <subfield code="a">{"@id":"x27vn8q31hjpsnw","modified":"2018-06-05T18:07:28.897+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Uh</subfield>
+    <subfield code="a">{"@id":"z38wp9r454c7z8d","modified":"2006-03-09T15:26:23+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="976" ind1=" " ind2="0">
+    <subfield code="a">Gez</subfield>
+    <subfield code="b">Litteraturhistoria: engelska: särskilda författare</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">5QRC3Q24</subfield><subfield code="b">donne / john donne</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

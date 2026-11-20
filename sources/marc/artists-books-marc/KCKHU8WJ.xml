@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01897cam a22004217a 4500</leader>
+  <controlfield tag="001">991006837279707141</controlfield>
+  <controlfield tag="005">20200618050910.0</controlfield>
+  <controlfield tag="008">961118s1980    onca          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b6087309-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)9493039</subfield>
+    <subfield code="9">ExL</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="z">(NNMoMA)Backlog</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CStRLIN)NYMX96-B10299</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CValA</subfield>
+    <subfield code="c">CValA</subfield>
+    <subfield code="d">CLU</subfield>
+    <subfield code="d">CLSU</subfield>
+    <subfield code="d">CStRLIN</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">AEC LEGR 1980 9610299</subfield>
+    <subfield code="i">12/11/96 C</subfield>
+    <subfield code="3">:us</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Legrady, George,</subfield>
+    <subfield code="d">1950-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n87847938</subfield>
+    <subfield code="1">http://viaf.org/viaf/57448952</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Everyday stories, image-text series, theoretical studies, object narratives /</subfield>
+    <subfield code="c">George Legrady ; text and production by Joyan Saunders.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Toronto?] :</subfield>
+    <subfield code="b">G. Legrady,</subfield>
+    <subfield code="c">c1980.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[14] p. :</subfield>
+    <subfield code="b">chiefly ill. ;</subfield>
+    <subfield code="c">23 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Published with the assistance of the Canada Council and the Ontario Arts Council.</subfield>
+  </datafield>
+  <datafield tag="510" ind1="4" ind2=" ">
+    <subfield code="a">Umbrella,</subfield>
+    <subfield code="c">vol. 4, no. 1, Jan. 1981, p. 13.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Legrady, George,</subfield>
+    <subfield code="d">1950-</subfield>
+    <subfield code="v">Catalogs.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Saunders, Joyan,</subfield>
+    <subfield code="d">1954-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n89626682</subfield>
+    <subfield code="1">http://viaf.org/viaf/50831767</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">200722</subfield>
+    <subfield code="d">081121</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081206</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b6087309</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">178555 (NNMoMA)</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">AEC LEGRADY 1980 0611</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300006303</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqe</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">0</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i1545289x</subfield>
+    <subfield code="z">081206</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">LTI 11/14/2008</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="l">PD</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="l">PD</subfield>
+    <subfield code="q">961118dn</subfield>
+    <subfield code="i">12/11/96 C</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">1</subfield>
+    <subfield code="c">081119</subfield>
+    <subfield code="d">m</subfield>
+    <subfield code="e">a</subfield>
+    <subfield code="f">-</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mq</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">12/11/96</subfield>
+    <subfield code="t">c</subfield>
+    <subfield code="s">9555</subfield>
+    <subfield code="l">NYMX</subfield>
+    <subfield code="n">NNMoMA</subfield>
+    <subfield code="w">NYMX96B10299</subfield>
+    <subfield code="d">11/18/96</subfield>
+    <subfield code="b">DN</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991006837279707141</subfield>
+    <subfield code="8">2291504890007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMAQNS</subfield>
+    <subfield code="c">MoMA Offsite AEC</subfield>
+    <subfield code="d">AEC LEGRADY 1980 0611</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mqe</subfield>
+    <subfield code="k">8</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">MoMA QNS Library Offsite Storage</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">KCKHU8WJ</subfield><subfield code="b">legrady / everyday stories image text series theoretical studies object narratives</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

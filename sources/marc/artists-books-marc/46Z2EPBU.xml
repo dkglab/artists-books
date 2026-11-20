@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01635cmm a22003614a 4500</leader>
+  <controlfield tag="001">5002208</controlfield>
+  <controlfield tag="005">20250607174928.2</controlfield>
+  <controlfield tag="007">co |||||||||||</controlfield>
+  <controlfield tag="008">961022s1995    cau        m        eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">5002208</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencompf</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">Acquire</subfield>
+    <subfield code="b">2 shelf copies</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">vb25 10-22-96</subfield>
+    <subfield code="i">vb27 2002-03-20</subfield>
+    <subfield code="e">vb27 2002-03-20 to BCCD</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   96802318 </subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1887701028</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781887701020</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.85.D59</subfield>
+  </datafield>
+  <datafield tag="082" ind1="1" ind2="0">
+    <subfield code="a">760</subfield>
+    <subfield code="2">13</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Dixon, Tennessee.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">ScruTiny in the great round</subfield>
+    <subfield code="h">[electronic resource] /</subfield>
+    <subfield code="c">interactive art by Tennessee Rice Dixon &amp; Jim Gasperini ; music &amp; sounds by Charlie Morrow.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Santa Monica, Calif. :</subfield>
+    <subfield code="b">Calliope Media,</subfield>
+    <subfield code="c">c1995.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 CD-ROM :</subfield>
+    <subfield code="b">sd, col. ;</subfield>
+    <subfield code="c">4 3/4 in. +</subfield>
+    <subfield code="e">1 insert.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from disc label.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">An abstract collage of images, sounds, texts, textures, musings, music, and animations. Based on a book of collages by artist Tennessee Dixon.</subfield>
+  </datafield>
+  <datafield tag="538" ind1=" " ind2=" ">
+    <subfield code="a">System requirements for Windows: 486/33MHz multimedia PC; 8MB RAM; Windows 3.1 or higher; 256-color, 640 x 480 pixel SVGA display; 8-bit MPC-compatible sound card and speakers; 2X CD-ROM drive.</subfield>
+  </datafield>
+  <datafield tag="538" ind1=" " ind2=" ">
+    <subfield code="a">System requirements for Macintosh: 16MHz 68030 processor or faster; 5MB RAM; System 7 or higher; 256-color, 640 x 480 pixel display; 2X CD-ROM drive.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Dixon, Tennessee.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Computer art.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Gasperini, Jim.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Calliope Media.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">46Z2EPBU</subfield><subfield code="b">dixon / scrutiny in the great round</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

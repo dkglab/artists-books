@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01422nam a2200361Ma 4500</leader>
+  <controlfield tag="001">990126717630203941</controlfield>
+  <controlfield tag="005">20110324153028.0</controlfield>
+  <controlfield tag="008">101011s2010    gw a          000 0 eng d</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">GBB0C6143</subfield>
+    <subfield code="2">bnb</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783865608406 (hbk.)</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">386560840X (hbk.)</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)700399474</subfield>
+    <subfield code="z">(OCoLC)694828428</subfield>
+    <subfield code="z">(OCoLC)1263608417</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">ERL</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">ERL</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">fre</subfield>
+    <subfield code="a">ger</subfield>
+    <subfield code="a">ita</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N6797.A975</subfield>
+    <subfield code="b">O56 2010</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">709.2</subfield>
+    <subfield code="2">22</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Avery, Charles,</subfield>
+    <subfield code="d">1973-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Onomatopaeia, the port /</subfield>
+    <subfield code="c">Charles Avery.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Koenig,</subfield>
+    <subfield code="c">2010.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">78 p :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">31 cm.</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">Text in English, French, German and Italian.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Catalog of an exhibition held at Le Plateau/Frac Ile-de-France, Paris, May 26-Aug. 8, 2010; Kunstverein Hannover, Aug. 28-Nov. 7, 2010; Ex3 Centro per l'arte contemporanea, Florence, Nov. 17, 2010-Jan. 9, 2011.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Avery, Charles,</subfield>
+    <subfield code="d">1973-</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Exhibition catalogs</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01424028</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Plateau (Gallery : Paris, France)</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Kunstverein Hannover.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Ex3 Centro per l'arte contemporanea.</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">012671763</subfield>
+  </datafield>
+  <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">415.36820..565195.651123.0000.00000</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2025-07-15</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2025-09-22</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 655</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">NO-OVERLAY</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">KBNBWDEQ</subfield><subfield code="b">guđbrandsdóttir / onomatopæia</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

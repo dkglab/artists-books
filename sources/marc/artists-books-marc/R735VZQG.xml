@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00454    a2200133   4500</leader>
+  <controlfield tag="001">ocm28355808</controlfield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Cauley, Stewart, artist</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Cauley, Stewart</subfield>
+    <subfield code="0">no2002092312</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Spirit world</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Place of publication not identified] :</subfield>
+    <subfield code="b">[Stewart Cauley],</subfield>
+    <subfield code="c">[1992]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 case</subfield>
+    <subfield code="b">illustrations</subfield>
+    <subfield code="c">21 cm</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Fourteen bookmarks and one information card in case.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title appears at head of each bookmark.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Date on case: 1991.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">R735VZQG</subfield><subfield code="b">cauley / spirit world</subfield><subfield code="c">title-author</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

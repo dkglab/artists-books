@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>04456cam a2200649 i 4500</leader>
+  <controlfield tag="001">15912718</controlfield>
+  <controlfield tag="005">20250607032704.9</controlfield>
+  <controlfield tag="007">t|</controlfield>
+  <controlfield tag="007">cr |||||||||||</controlfield>
+  <controlfield tag="008">090918t20072007njua    o     000 0 eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">15912718</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">pccadap</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">hh08 2009-09-18 books already received in RBSCD</subfield>
+    <subfield code="i">he19 2025-03-18 z-processor</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-893</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2025294722</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)219856228</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DLC)15912718</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CUY</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">YUS</subfield>
+    <subfield code="d">CUY</subfield>
+    <subfield code="d">VRC</subfield>
+    <subfield code="d">WAU</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">IUL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">ZCU</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">UCW</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">SNN</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">DLC</subfield>
+    <subfield code="d">DLC-MRC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-ny</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us-ny</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.P545</subfield>
+    <subfield code="b">H43 2007</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Pisano, Maria G.</subfield>
+    <subfield code="e">book artist</subfield>
+    <subfield code="4">bka</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/bka</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no96054191</subfield>
+    <subfield code="1">http://id.loc.gov/rwo/agents/no96054191</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Hecatombe 9-11 /</subfield>
+    <subfield code="c">by Maria G. Pisano.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Plainsboro, NJ :</subfield>
+    <subfield code="b">Memory Press,</subfield>
+    <subfield code="c">2007.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©2007</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged)</subfield>
+    <subfield code="b">illustrations (some color)</subfield>
+    <subfield code="c">28 x 11 cm</subfield>
+  </datafield>
+  <datafield tag="334" ind1=" " ind2=" ">
+    <subfield code="a">single unit</subfield>
+    <subfield code="b">mono</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/issuance/mono</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/contentTypes/txt</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/mediaTypes/n</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="3">List of names of the dead</subfield>
+    <subfield code="a">computer</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/mediaTypes/c</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/carriers/nc</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="3">List of names of the dead</subfield>
+    <subfield code="a">online resource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/carriers/cr</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustrations</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/millus/ill</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Hecatombe, a limited edition artist's book, is a response to the 9-11 attacks on the United States. The structure of the book symbolically reflects the two towers, which are connected by a wall of images in the center accordion structure. The photographs were taken by the artist and the victim's names are from the web site http://www.september11victims.com designed by Alex Spektor. ... The book was written, designed and printed by the artist. The text and images are laser printed, using Mohawk for the accordion images, Fabriano Tiziano for the endsheets, and Pergamena for the covers. The cover title is laser stenciled to create a void. The end sheets are relief printed"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Front and back sections have hand-sewn exposed spine binding and are connected by twelve plates glued into an accordion fold construction. Issued in a handmade illustrated box.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition of 50.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has copy 22 signed by the book artist.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="530" ind1=" " ind2=" ">
+    <subfield code="a">Full list of victim's names also issued online.</subfield>
+  </datafield>
+  <datafield tag="610" ind1="2" ind2="0">
+    <subfield code="a">World Trade Center (New York, N.Y. : 1970-2001)</subfield>
+    <subfield code="v">Pictorial works</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">September 11 Terrorist Attacks, 2001</subfield>
+    <subfield code="v">Pictorial works</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2010112651</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Specimens</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2023000629</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Victims of terrorism</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">New York</subfield>
+    <subfield code="v">Pictorial works</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Bereavement</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">New York</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New Jersey</subfield>
+    <subfield code="z">Plainsboro</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2007</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' boks.</subfield>
+    <subfield code="2">lcgft</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Illustrated works.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2014026111</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Memory Press</subfield>
+    <subfield code="e">publisher</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/pbl</subfield>
+    <subfield code="1">http://id.loc.gov/rwo/agents/no97054728</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Artists' Books Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n90708968</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="4">https://id.oclc.org/worldcat/ontology/hasWork</subfield>
+    <subfield code="1">https://id.oclc.org/worldcat/entity/E39PCGJqWgrgP66bQXp8wMMH83</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="1">http://id.loc.gov/resources/instances/15912718</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="4">http://id.loc.gov/ontologies/bibframe/instanceOf</subfield>
+    <subfield code="1">http://id.loc.gov/resources/works/15912718</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="3">List of names of the dead</subfield>
+    <subfield code="u">http://www.september11victims.com</subfield>
+  </datafield>
+  <datafield tag="884" ind1=" " ind2=" ">
+    <subfield code="a">DLC bibframe2marc v2.10-dev</subfield>
+    <subfield code="g">20250319</subfield>
+    <subfield code="q">DLC</subfield>
+    <subfield code="u">https://github.com/lcnetdev/bibframe2marc/releases/tag/v2.10-dev</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="a">20090918</subfield>
+    <subfield code="n">271238</subfield>
+    <subfield code="s">Maria Pisano</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">ACQ 07-042</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="e">BIBFRAME Prod</subfield>
+    <subfield code="d">2025-03-19T13:48:46</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">5JD7U4FU</subfield><subfield code="b">pisano / hecatombe 9 11</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

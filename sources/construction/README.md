@@ -44,9 +44,9 @@ a single concept. That reconciliation is exactly the point.
 `mine-candidates.rq`, `mine-occurrences.rq` and `build-scheme.rq` are the SPARQL
 queries that do the mining and the building.
 
-`occurrences.csv` exists so the MARC archive is read **exactly once**. Joining
+`occurrences.csv` exists so the MARC is read **exactly once**. Joining
 the tiny `decisions.csv` directly to the large MARC makes ARQ re-read the whole
-archive once per decision row (a ~60x blow-up, confirmed with `--explain`);
+MARC once per decision row (a ~60x blow-up, confirmed with `--explain`);
 extracting the occurrences to a flat CSV first turns every downstream step —
 `build-scheme.rq` and the `ab:constructedUsing` join in
 `queries/artists-books.rq` — into a cheap CSV-to-CSV join.

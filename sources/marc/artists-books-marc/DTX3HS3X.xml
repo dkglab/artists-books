@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01186nam a22002892c 4500</leader>
+  <controlfield tag="001">190038521X</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20240828180525.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">240828s1977    xx |||||      00| ||hrv c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)190038521X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP190038521X</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">hrv</subfield>
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Fototot : Ulay, 1975-77; Galerija Suvremene Umjetnosti, Zagreb, Izložba, ambijent, 21. 4. - 8. 5. 1977</subfield>
+    <subfield code="b">Exhibition, Environment April 21th, till May 8th, 1977</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Zagreb</subfield>
+    <subfield code="b">Galerija Suvremene Umjetnosti</subfield>
+    <subfield code="c">1977</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[44] S.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="0" ind2=" ">
+    <subfield code="a">Ulay</subfield>
+    <subfield code="d">1943-2020</subfield>
+    <subfield code="e">KünstlerIn</subfield>
+    <subfield code="0">(DE-588)119080869</subfield>
+    <subfield code="0">(DE-627)07987293X</subfield>
+    <subfield code="0">(DE-576)166528218</subfield>
+    <subfield code="4">art</subfield>
+  </datafield>
+  <datafield tag="700" ind1="0" ind2=" ">
+    <subfield code="a">Ulay</subfield>
+    <subfield code="d">1943-2020</subfield>
+    <subfield code="e">Fotogr.</subfield>
+    <subfield code="0">(DE-588)119080869</subfield>
+    <subfield code="0">(DE-627)07987293X</subfield>
+    <subfield code="0">(DE-576)166528218</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bek, Božo</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Susovski, Marijan</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Galerija Suvremene Umjetnosti</subfield>
+    <subfield code="g">Zagreb</subfield>
+    <subfield code="0">(DE-588)2075725-6</subfield>
+    <subfield code="0">(DE-627)103881174</subfield>
+    <subfield code="0">(DE-576)192197401</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4572351317</subfield>
+    <subfield code="b">DE-N39</subfield>
+    <subfield code="9">N 39</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Formalerfassung / 77</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">DTX3HS3X</subfield><subfield code="b">ulay / fototot ulay 1975 77</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

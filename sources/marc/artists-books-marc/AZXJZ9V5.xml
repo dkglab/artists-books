@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>04412cam a2200589 i 4500</leader>
+  <controlfield tag="001">24017382</controlfield>
+  <controlfield tag="005">20250607132450.2</controlfield>
+  <controlfield tag="007">t|</controlfield>
+  <controlfield tag="008">250203s1995    cauaf         000 p eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">24017382</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">he19 2025-02-03 z-processor</subfield>
+    <subfield code="i">he19 2025-02-03</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2025294274</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)34994542</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DLC)24017382</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CUS</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">CUS</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">DRB</subfield>
+    <subfield code="d">WAU</subfield>
+    <subfield code="d">PUL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">SFR</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">OSU</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">DLC</subfield>
+    <subfield code="d">DLC-MRC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-ca</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us-ca</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PS3523.A8245</subfield>
+    <subfield code="b">H43 1995</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Laughlin, James,</subfield>
+    <subfield code="d">1914-1997</subfield>
+    <subfield code="e">author</subfield>
+    <subfield code="4">aut</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/aut</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n83177320</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Heart Island &amp; other epigrams /</subfield>
+    <subfield code="c">James Laughlin.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="1" ind2=" ">
+    <subfield code="a">Heart Island and other epigrams</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">Heart Island</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Isla Vista [Calif.] :</subfield>
+    <subfield code="b">Turkey Press,</subfield>
+    <subfield code="c">1995.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">52 unnumbered pages, 21 unnumbered leaves of plates</subfield>
+    <subfield code="b">illustrations</subfield>
+    <subfield code="c">22 cm</subfield>
+  </datafield>
+  <datafield tag="334" ind1=" " ind2=" ">
+    <subfield code="a">single unit</subfield>
+    <subfield code="b">mono</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/issuance/mono</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/contentTypes/txt</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/mediaTypes/n</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/carriers/nc</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustrations</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/millus/ill</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">plates</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/millus/plt</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"[P]rinted on Nideggen and Kitakata papers. The type is Walbaum, cast by Michael Bixler. The wood engravings, reproduced here from polymer plates, were made by M.L. Breton whose work appears in the 1863 edition of Dictionnaire Infernal published by Jacques Collin de Plancy ... Originally published in 1818, it was revised and reprinted several times. All design, [letterpress] printing and binding by Sandra and Harry Reese. The edition is 200 signed copies ..."--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Binding is Gary Frost's sewn board design in red cloth with paper over the front board which has same illustration as frontispiece, handcolored. Paper label with title inset into spine.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has number 9 signed by the author. Prospectus letter laid in.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Collin de Plancy, J.-A.-S.</subfield>
+    <subfield code="q">(Jacques-Albin-Simon),</subfield>
+    <subfield code="d">1794-1881.</subfield>
+    <subfield code="t">Dictionnaire infernal.</subfield>
+    <subfield code="1">http://id.loc.gov/resources/hubs/cdfca7c5-599b-36c7-6a4a-67967eed796e</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">California</subfield>
+    <subfield code="z">Isla Vista.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Poetry</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026481</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Love poetry</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026419</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Breton, M. L.</subfield>
+    <subfield code="e">wood engraver</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/wde</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n2025005260</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Reese, Sandra Liddell</subfield>
+    <subfield code="e">book designer</subfield>
+    <subfield code="e">printer</subfield>
+    <subfield code="e">binder</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/bkd</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/prt</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/bnd</subfield>
+    <subfield code="1">http://id.loc.gov/rwo/agents/n87837570</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Reese, Harry</subfield>
+    <subfield code="e">book designer</subfield>
+    <subfield code="e">printer</subfield>
+    <subfield code="e">binder</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/bkd</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/prt</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/bnd</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n81078486</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bixler, Michael</subfield>
+    <subfield code="e">caster</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/cas</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr94012247</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Collin de Plancy, J.-A.-S.</subfield>
+    <subfield code="q">(Jacques-Albin-Simon),</subfield>
+    <subfield code="d">1794-1881.</subfield>
+    <subfield code="t">Dictionnaire infernal.</subfield>
+    <subfield code="1">http://id.loc.gov/resources/hubs/cdfca7c5-599b-36c7-6a4a-67967eed796e</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Turkey Press</subfield>
+    <subfield code="e">publisher</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/pbl</subfield>
+    <subfield code="1">http://id.loc.gov/rwo/agents/n85349114</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Artists' Books Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n90708968</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="1">http://id.loc.gov/resources/instances/24017382</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="4">http://id.loc.gov/ontologies/bibframe/instanceOf</subfield>
+    <subfield code="1">http://id.loc.gov/resources/works/24017382</subfield>
+  </datafield>
+  <datafield tag="884" ind1=" " ind2=" ">
+    <subfield code="a">DLC bibframe2marc v2.9.0</subfield>
+    <subfield code="g">20250203160804.0</subfield>
+    <subfield code="q">DLC</subfield>
+    <subfield code="u">https://github.com/lcnetdev/bibframe2marc/releases/tag/v2.9.0</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">ACQ 23-018</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="e">BIBFRAME Prod</subfield>
+    <subfield code="d">2025-02-03T16:08:04</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">AZXJZ9V5</subfield><subfield code="b">laughlin / heart island other epigrams</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

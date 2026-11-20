@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01873cam a22002652c 4500</leader>
+  <controlfield tag="001">1911507273</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250326001611.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">241209s1994    xx |||||      00| ||fre c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1911507273</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1911507273</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+    <subfield code="a">swe</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Boltanski, Christian</subfield>
+    <subfield code="d">1944-2021</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)118661221</subfield>
+    <subfield code="0">(DE-627)079445675</subfield>
+    <subfield code="0">(DE-576)164728104</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">Les Habitants de Malmö</subfield>
+    <subfield code="c">Christian Boltanski</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Malmö</subfield>
+    <subfield code="b">[Verlag nicht ermittelbar]</subfield>
+    <subfield code="c">1994</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">getr. Pag.+</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Telefonbuch von Malmö durch Aufkleber auf Umschlag und durch Erratazettel zum Künstlerbuch umfunktioniert : Ein Telefonbuch hatte früher fast jeder zu Hause. In Zeiten ohne Internet war es ein wichtiges Hilfsmittel, um jemanden erreichen zu können. Der Künstler Christian Boltanski (*1944) hat hier aus einem aus der schwedischen Stadt Malmö stammenden Telefonbuch und einer Errata-Beilage ein Künstlerbuch geschaffen. Ein Errata ist bekanntlich ein Korrekturverzeichnis, das Fehler, die erst nach dem Druck eines Buches entdeckt werden, nachträglich berichtigt. Boltanskis Werk kreist um die Themen Leben, Tod und Erinnerung, und auch diese Arbeit beschäftigt sich damit. Die Errata-Beilage listet nämlich die Personen auf, die im vorliegenden Telefonbuch aufgeführt und im Jahr 1993 verstorben sind. So erhält das Gefühl von Vergänglichkeit einen intensiven Ausdruck - Menschen, die noch im Telefonbuch aufgeführt, aber über das Telefon nicht mehr erreichbar sind</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Malmö Konsthall : 1994</subfield>
+    <subfield code="e">MitwirkendeR</subfield>
+    <subfield code="4">ctb</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20250301</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">W5RZR5Y8</subfield><subfield code="b">boltanski / les habitants de malmö</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

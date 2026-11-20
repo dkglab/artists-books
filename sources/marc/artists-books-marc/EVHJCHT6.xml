@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00326    a2200085   4500</leader>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Weaver, Nancy</subfield>
+    <subfield code="e">Artist</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Letter</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Rochester, NY</subfield>
+    <subfield code="b">Visual Studies Workshop</subfield>
+    <subfield code="c">1980</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="b">offset</subfield>
+    <subfield code="c">9 x 12"</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Adhesive - one text plate repeated for each page; different ink application on each page highlights different names and messages.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">EVHJCHT6</subfield><subfield code="b">manual</subfield><subfield code="c">manual</subfield><subfield code="d">ehive</subfield></datafield></record>
+</collection>

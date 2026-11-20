@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01086cam a2200325 c 4500</leader>
+  <controlfield tag="001">59758205X</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20191212014957.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">090414s2008    ie |||||      00| ||eng c</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2009379718</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)59758205X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV59758205X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)836974006</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-IE</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">MLCS 2009/40990 (N)</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Held, John</subfield>
+    <subfield code="d">1947-</subfield>
+    <subfield code="0">(DE-588)12247077X</subfield>
+    <subfield code="0">(DE-627)08196370X</subfield>
+    <subfield code="0">(DE-576)213961903</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">We'll chop his suey when he's gone</subfield>
+    <subfield code="b">an homage to Ray Johnson</subfield>
+    <subfield code="c">John Held &amp; Mike Dickau</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Dugort</subfield>
+    <subfield code="b">Redfoxpress</subfield>
+    <subfield code="c">[2008]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[18] Bl.</subfield>
+    <subfield code="b">nur Ill</subfield>
+    <subfield code="c">15 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">C'est mon dada</subfield>
+    <subfield code="v">23</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Dickau, Mike</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">"C'est mon dada"</subfield>
+    <subfield code="v">23</subfield>
+    <subfield code="9">23</subfield>
+    <subfield code="w">(DE-627)543264149</subfield>
+    <subfield code="w">(DE-576)9543264147</subfield>
+    <subfield code="w">(DE-600)2401115-0</subfield>
+    <subfield code="7">am</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1234204738</subfield>
+    <subfield code="b">DE-18</subfield>
+    <subfield code="9">18</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">A/551166</subfield>
+    <subfield code="h">SUB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">YRCL5ZR5</subfield><subfield code="b">held / we ll chop his suey when he s gone</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

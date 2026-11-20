@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>04747cam a2200673 i 4500</leader>
+  <controlfield tag="001">22368640</controlfield>
+  <controlfield tag="005">20250607112055.7</controlfield>
+  <controlfield tag="008">220102r20201972nyuaho        000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">22368640</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">hh05 2022-01-02 z-processor on order for RBSCD</subfield>
+    <subfield code="i">he19 2022-07-25</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2021660000</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781943039173</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1943039178</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1198605722</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">VVPCS</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">VVPCS</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">CUS</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OSU</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">HFL</subfield>
+    <subfield code="d">CUT</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+    <subfield code="a">n-us-ny</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.S355</subfield>
+    <subfield code="b">P37 2020</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Schneemann, Carolee,</subfield>
+    <subfield code="d">1939-2019,</subfield>
+    <subfield code="e">book artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Parts of a body house book /</subfield>
+    <subfield code="c">artist, Carolee Schneemann ; [photograph(s) by Anthony McCall, Natalie Renganeschi].</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Rosendale, NY :</subfield>
+    <subfield code="b">Women's Studio Workshop,</subfield>
+    <subfield code="c">[2020]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="3">
+    <subfield code="a">Kansas City, MO :</subfield>
+    <subfield code="b">Oddities Prints</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©2020</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">70 unnumbered pages :</subfield>
+    <subfield code="b">illustrations (some color), facsimiles (some color), photographs ;</subfield>
+    <subfield code="c">34 x 22 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Parts of a Body House Book was originally published in 1972 by Beau Geste Press, which was run by Felipe Ehrenberg in Devon, England. This reprinting is a facsimile of Carolee's personal copy from the first edition."--Publisher's website https://wsworkshop.org/collection/parts-of-a-body-house-book/ (viewed 08/10/2021)</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Issued with one leaf of insert (2 unnumbered pages : color illustrations ; 32 cm) with "credits" and publication information.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This reprinting is a facsimile of Carolee's personal copy from the first edition. Her intentions were to paint the back cover of each book and create a new set of hand interventions for the present day. This publication was in production at the time of her death in 2019. All hand interventions including corrections, stamping, staining, drawing, and highlighting were recreated to the artist's exact wishes. Each copy in this edition is signed by Carolee's beloved feline, La Niña, using a pigment mixed from beet juice and dirt gathered from the grounds of Carolee's eighteenth century farmhouse in New Paltz, NY. -- This book includes the first publishing of an excerpt from Schneemann's Sexual Parameters Chart, Americana I Ching Apple Pie, film positives from two of Carolee's films, notes and sketches on Kinetic Painting, a very special menstrual-blood-blotted paper work, and more"--Provided by publisher.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This book was Risograph printed by Oddities Prints in Kansas City, Mo. All digital pre-production was performed by Kelsey Borch. The front and back cover images were printed at Women's Studio Workshop by Courtney Parbs and Savannah Bustillo. The hand stamping, stains, and drawings were recreated by Erin Zona. Book binding and assembly was finished by Chris Petrone, Natalie Renganeschi designed the colophon insert.  Menstrual blood for this edition was provided by Lilah Dougherty and Rachel Mesplay Helm. La Niña, Carolee's beloved feline companion, signed the back cover with a mud pigment made by mixing beet juice with dirt gathered from the grounds of Carolee's eighteenth century farmhouse in New Paltz, NY."--From colophon insert.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition of 90.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Carolee Schneemann's original signature letterpress printed from a photo polymer plate.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has copy 84.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Schneemann, Carolee,</subfield>
+    <subfield code="d">1939-2019.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists</subfield>
+    <subfield code="z">United States.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">Rosendale.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Feminism and art.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">Rosendale.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2020.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Facsimiles (Printing)</subfield>
+    <subfield code="2">rbpri</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ehrenberg, Felipe,</subfield>
+    <subfield code="e">book designer,</subfield>
+    <subfield code="e">publisher.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">McCall, Anthony,</subfield>
+    <subfield code="e">photographer.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Renganeschi, Natalie,</subfield>
+    <subfield code="e">photographer.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Zona, Erin,</subfield>
+    <subfield code="e">book designer.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Petrone, Chris</subfield>
+    <subfield code="c">(Papermaker),</subfield>
+    <subfield code="e">binder.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Borch, Kelsey,</subfield>
+    <subfield code="e">printer.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Parbs, Courtney,</subfield>
+    <subfield code="e">printer.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bustillo, Savannah,</subfield>
+    <subfield code="e">printer.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Women's Studio Workshop,</subfield>
+    <subfield code="e">printer,</subfield>
+    <subfield code="e">publisher.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Beau Geste Press,</subfield>
+    <subfield code="e">printer,</subfield>
+    <subfield code="e">publisher.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Oddities Prints (Firm),</subfield>
+    <subfield code="e">printer.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Artists' Books Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="a">Purchase</subfield>
+    <subfield code="d">20220102</subfield>
+    <subfield code="i">Filed under FY22 RBSCD</subfield>
+    <subfield code="n">354088</subfield>
+    <subfield code="s">Women's Studio Workshop</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">ACQ22-002</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">2XTJXX72</subfield><subfield code="b">schneemann / parts of a body house book</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

@@ -94,7 +94,7 @@ $(FUZZY)/venv/bin/python:
 
 # Harvest full MARC records from UNC's Z39.50 server for the items in a CSV.
 # Resumable harvest state lives under marc/harvest/<csv-stem>/ (gitignored);
-# only the committed marc/<stem>-marc.xml is the build product. Requires the
+# only the committed marc/<stem>-marc/ directory is the build product. Requires the
 # YAZ toolkit (yaz-client, yaz-marcdump), built on demand under tools/yaz-client/.
 # Both the harvester script and the YAZ toolkit are order-only prerequisites
 # (| ...) so editing marc_harvest.py or rebuilding the toolkit does not by
@@ -102,20 +102,23 @@ $(FUZZY)/venv/bin/python:
 # reruns when the source CSV changes.
 YAZ := ../tools/yaz-client
 
-# The MARC harvest emits a per-record zip archive (#81) -- one <key>.xml per
-# record -- not one big <collection> file; the construct queries read it via
-# nested Archive -> XML triplifiers.
+# The MARC harvest emits a per-record directory (#81) -- one <key>.xml per
+# record -- not one big <collection> file. It is committed as plain files so
+# collaborators can read and diff individual records; the construct queries read
+# it via nested Folder -> XML triplifiers. The target is the directory itself:
+# the harvester builds it beside the old one and swaps it in, so its mtime moves
+# on every successful write.
 #
 # Both canonical harvests read a deduped list at the sources/ root (canonicalKey
 # column), not a per-library zotero/ export, so they get explicit rules that
-# override the marc/%-marc.zip pattern below.
+# override the marc/%-marc pattern below.
 #
 # The canonical artists'-book harvest (issue #84). The ~1,340 already-harvested
 # held books are NOT re-harvested: they are merged from the frozen, re-keyed
 # marc/artists-books-held-marc.xml (a one-time artifact of marc/rekey_held.py, so
 # an order-only prerequisite) via --premerged, and only the ~6,619 non-held books
 # hit the Z39.50/SRU servers here.
-marc/artists-books-marc.zip: artists-books.csv \
+marc/artists-books-marc: artists-books.csv \
 		| marc/artists-books-held-marc.xml marc/marc_harvest.py \
 		  $(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch
 	python3 marc/marc_harvest.py --csv $< --out $@ \
@@ -123,15 +126,15 @@ marc/artists-books-marc.zip: artists-books.csv \
 
 # The canonical reference-work harvest. Reads the deduped reference-works.csv (not
 # the pre-dedup "Reference resources" collection), so each record is stamped with
-# the canonical key -- keeping the archive to exactly the canonical works, with no
+# the canonical key -- keeping the directory to exactly the canonical works, with no
 # losing-key duplicates. row_key() prefers canonicalKey, and the hand-supplied
 # marc/reference-works-manual.xml (derived from the CSV stem) is
 # merged for the items no reachable catalogue serves.
-marc/reference-works-marc.zip: reference-works.csv | marc/marc_harvest.py \
+marc/reference-works-marc: reference-works.csv | marc/marc_harvest.py \
 		$(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch
 	python3 marc/marc_harvest.py --csv $< --out $@
 
-marc/%-marc.zip: zotero/%.csv | marc/marc_harvest.py \
+marc/%-marc: zotero/%.csv | marc/marc_harvest.py \
 		$(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch
 	python3 marc/marc_harvest.py --csv $< --out $@
 
@@ -141,12 +144,12 @@ marc/%-marc.zip: zotero/%.csv | marc/marc_harvest.py \
 # to Jstor_Artists__book_records.csv, and so to the cover images.
 #
 # Like the harvest, this hits an external server: the script is an order-only
-# prerequisite, and the committed MARC archive is read but deliberately NOT a
+# prerequisite, and the committed MARC directory is read but deliberately NOT a
 # prerequisite, so a rebuild here never triggers a re-harvest. The run is
 # resumable (already-resolved asset IDs are read back from the CSV and skipped),
 # so it can be chunked with --limit.
 artstor-ssid.csv: | marc/resolve_artstor.py
-	python3 marc/resolve_artstor.py --archive marc/artists-books-marc.zip --out $@
+	python3 marc/resolve_artstor.py --archive marc/artists-books-marc --out $@
 
 # SSID -> IIIF image identifiers (issue #9), the second half of the cover-image
 # lookup. artstor-ssid.csv is read for its SSIDs but is deliberately NOT a
@@ -188,7 +191,7 @@ $(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch:
 #   1b. construction/occurrences.csv -- the same mining un-aggregated: one row
 #      per (cluster, label, authority) occurrence. This is the machine-side
 #      extract build-scheme.rq joins against; it exists as its own file so the
-#      archive is read exactly once (see mine-occurrences.rq for why). Rebuild
+#      MARC is read exactly once (see mine-occurrences.rq for why). Rebuild
 #      alongside candidates.csv after a re-harvest.
 #   2. construction/decisions.csv -- the hand-maintained curation: which of
 #      those headings are construction/production methods, their preferred
@@ -201,7 +204,7 @@ $(YAZ)/bin/yaz-client $(YAZ)/bin/zoomfetch:
 #
 # The mining queries read root-relative paths (sources/...), so their recipes
 # run the tool from the repo root. Like the crosswalk targets above, the
-# committed MARC archive is read by the mining recipes but deliberately NOT a
+# committed MARC directory is read by the mining recipes but deliberately NOT a
 # prerequisite, so a rebuild here never triggers a re-harvest. build-scheme.rq
 # reads only the two committed CSVs, so it does not touch the MARC at all.
 SA := ../tools/sparql-anything/sparql-anything.jar
@@ -219,7 +222,7 @@ construction-methods.ttl: construction/build-scheme.rq construction/decisions.cs
 # subject-terms.ttl -- the subject-headings SKOS scheme (650/651), built exactly
 # like construction-methods.ttl but from the subjects/ pipeline (issue #105). The
 # two schemes partition the heading space; see subjects/README.md. Same
-# discipline: the committed MARC zip is read by the mining recipes but is
+# discipline: the committed MARC directory is read by the mining recipes but is
 # deliberately NOT a prerequisite (so a rebuild never triggers a re-harvest);
 # build-scheme.rq reads only the two committed CSVs.
 subjects/candidates.csv: subjects/mine-candidates.rq | $(SA)

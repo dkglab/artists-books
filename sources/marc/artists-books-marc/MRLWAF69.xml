@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01046nam a2200313Ia 4500</leader>
+  <controlfield tag="001">a2134368</controlfield>
+  <controlfield tag="003">SIRSI</controlfield>
+  <controlfield tag="005">20151215002840.0</controlfield>
+  <controlfield tag="008">001121s1992    xxca          000 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">LIAS2440299</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)28454133</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="050" ind1="1" ind2="4">
+    <subfield code="a">N7433.43784</subfield>
+    <subfield code="b">.J36 1992</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Hassan, Jamelie,</subfield>
+    <subfield code="d">1948-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Jamelie Jamila project :</subfield>
+    <subfield code="b">a collaborative bookwork /</subfield>
+    <subfield code="c">by J. Hassan &amp; J. Ismail.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">North Vancouver, Canada :</subfield>
+    <subfield code="b">Presentation House Gallery,</subfield>
+    <subfield code="c">1992.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 portfolio :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">23 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Artists' book.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Eight items in portfolio.</subfield>
+  </datafield>
+  <datafield tag="596" ind1=" " ind2=" ">
+    <subfield code="a">33</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Hassan, Jamelie,</subfield>
+    <subfield code="d">1948-</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ismail, Jam.</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2=" ">
+    <subfield code="a">N7433.43784.J36 1992</subfield>
+    <subfield code="w">LC</subfield>
+    <subfield code="i">000046850713</subfield>
+    <subfield code="m">UP-PAT</subfield>
+    <subfield code="d">11/21/2000</subfield>
+    <subfield code="k">PATTEE-W3</subfield>
+    <subfield code="l">PATTEE-W3</subfield>
+    <subfield code="r">Y</subfield>
+    <subfield code="s">Y</subfield>
+    <subfield code="t">BOOK</subfield>
+  </datafield>
+  <datafield tag="926" ind1=" " ind2=" ">
+    <subfield code="a">UP-ANNEX</subfield>
+    <subfield code="b">CATO-2</subfield>
+    <subfield code="c">N7433.43784.J36 1992</subfield>
+    <subfield code="d">BOOKSPEC</subfield>
+    <subfield code="f">1</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">MRLWAF69</subfield><subfield code="b">hassan / jamelie jamila project</subfield><subfield code="c">title-author</subfield><subfield code="d">psu</subfield></datafield></record>
+</collection>

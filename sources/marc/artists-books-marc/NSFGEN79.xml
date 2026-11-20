@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01670cam a2200385Mi 4500</leader>
+  <controlfield tag="001">991002037149708431</controlfield>
+  <controlfield tag="005">20250612184738.0</controlfield>
+  <controlfield tag="008">040730s2004    gw a         u000 u ger d</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">GFR-DNB-04,A38,0296</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">04,A38,0296</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3765910554</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783765910555</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)76636885</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">GWDNB</subfield>
+    <subfield code="e">rakwb</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">GWDNB</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">DEBSZ</subfield>
+    <subfield code="d">CLART</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">300</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">940</subfield>
+    <subfield code="2">sdnb</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">NE2698 .S4637L 02899</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Buchheim, Lothar Günther.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n80037864</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Paris - Paris /</subfield>
+    <subfield code="c">Lothar-Günther Buchheim</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Feldafing :</subfield>
+    <subfield code="b">Buchheim,</subfield>
+    <subfield code="c">2004</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">236 pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">19 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="541" ind1="1" ind2=" ">
+    <subfield code="c">Gift;</subfield>
+    <subfield code="a">Sally Stein, in memory of her husband;</subfield>
+    <subfield code="d">2015;</subfield>
+    <subfield code="e">Sekula Library identifier: Bottom Front Column B</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Paris (France)</subfield>
+    <subfield code="x">Everyday life</subfield>
+    <subfield code="y">1940-1944</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Sekula, Allan,</subfield>
+    <subfield code="e">former owner.</subfield>
+    <subfield code="5">CLART</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82257403</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Stein, Sally,</subfield>
+    <subfield code="e">former owner.</subfield>
+    <subfield code="5">CLART</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86855006</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Sterling and Francine Clark Art Institute.</subfield>
+    <subfield code="b">Library.</subfield>
+    <subfield code="5">CLART</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86824535</subfield>
+  </datafield>
+  <datafield tag="799" ind1="0" ind2="1">
+    <subfield code="a">Allan Sekula Library</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">Processed by Backstage 2020-04</subfield>
+  </datafield>
+  <datafield tag="907" ind1=" " ind2=" ">
+    <subfield code="a">.b12182187</subfield>
+    <subfield code="b">01-04-24</subfield>
+    <subfield code="c">02-02-16</subfield>
+  </datafield>
+  <datafield tag="990" ind1=" " ind2=" ">
+    <subfield code="a">Rare books</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">rbib</subfield>
+    <subfield code="b">02-02-16</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">-</subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">ger</subfield>
+    <subfield code="g">gw</subfield>
+    <subfield code="h">0</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991002037149708431</subfield>
+    <subfield code="8">2215902360008431</subfield>
+    <subfield code="a">01CLARKART_INST</subfield>
+    <subfield code="b">MAIN</subfield>
+    <subfield code="c">Rare Compact Storage</subfield>
+    <subfield code="d">NE2698 .S4637L 02899</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">RARECX</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Clark</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NSFGEN79</subfield><subfield code="b">rabascall / paris paris</subfield><subfield code="c">title-author</subfield><subfield code="d">clark</subfield></datafield></record>
+</collection>

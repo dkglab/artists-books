@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00529    a2200157   4500</leader>
+  <controlfield tag="001">ocm16308510</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780904544022</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0904544028</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780904544039</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0904544036</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Murrell, Graham</subfield>
+    <subfield code="0">nb90951767</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Grayson, Roy, 1936-</subfield>
+    <subfield code="0">nr96039908</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Painting book, Roy Grayson</subfield>
+    <subfield code="c">photographs, Graham Murrell</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Beckenham (54 Barnmead Rd, Beckenham, Kent) :</subfield>
+    <subfield code="b">Roy Grayson,</subfield>
+    <subfield code="c">1972.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">13 unnumbered leaves</subfield>
+    <subfield code="b">of illustrations</subfield>
+    <subfield code="c">18 cm</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">ISBN 0-904544-03-6 Signed ed. : £2.00.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">DY4RDM3C</subfield><subfield code="b">grayson / painting book</subfield><subfield code="c">title-author</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

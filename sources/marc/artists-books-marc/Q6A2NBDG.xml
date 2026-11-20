@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02234nam a22004211i 4500</leader>
+  <controlfield tag="001">EBC1531872sub</controlfield>
+  <controlfield tag="003">MiAaPQ</controlfield>
+  <controlfield tag="006">m     o  d |      </controlfield>
+  <controlfield tag="007">cr cnu|||||||a</controlfield>
+  <controlfield tag="008">060901s2004    vtua    o     000 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">ebr10794315</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780989310437</subfield>
+    <subfield code="q">e-book</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">9780989310420</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)862612251</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">MiAaPQ</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="e">pn</subfield>
+    <subfield code="c">MiAaPQ</subfield>
+    <subfield code="d">MiAaPQ</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">QL674</subfield>
+    <subfield code="b">.E16 2004</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Eames, Holiday.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The bird book /</subfield>
+    <subfield code="c">poems by Holiday Eames ; relief etchings by Brian D. Cohen.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Westminster Station, Vermont :</subfield>
+    <subfield code="b">Bridge Press,</subfield>
+    <subfield code="c">2004.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 online resource (32 pages) :</subfield>
+    <subfield code="b">color illustrations.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">computer</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">online resource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"The prints were hand-colored by the artist with the assistance of Sara Kazemi and Amie Walter. The cover boards are bird's eye maple, crafted by cabinet maker Richard Holmquist of White River Junction, Vermont, with title carved by Julie Chen of Flying Fish Press of Berkeley, California. Linda Lembke of Green River Bindery in Guildford, Vermont completed the hand binding"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="506" ind1="1" ind2=" ">
+    <subfield code="a">Access limited to UNC Chapel Hill-authenticated users.</subfield>
+    <subfield code="f">Unlimited simultaneous users.</subfield>
+  </datafield>
+  <datafield tag="588" ind1="0" ind2=" ">
+    <subfield code="a">Print version record.</subfield>
+  </datafield>
+  <datafield tag="590" ind1="0" ind2=" ">
+    <subfield code="a">Content provider: ProQuest Ebook Central.</subfield>
+  </datafield>
+  <datafield tag="590" ind1="1" ind2=" ">
+    <subfield code="a">Vendor-supplied catalog record.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Alphabet books.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Birds</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Cohen, Brian D.</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2=" ">
+    <subfield code="t">ProQuest Ebook Central (online collection). NCLIVE subscription ebooks.</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Print version:</subfield>
+    <subfield code="a">Eames, Holiday.</subfield>
+    <subfield code="t">Bird book.</subfield>
+    <subfield code="d">Westminster Station, Vermont : Bridge Press, 2004</subfield>
+    <subfield code="h">64 pages : color illustrations ; 41 cm.</subfield>
+    <subfield code="z">9780989310420</subfield>
+    <subfield code="w">(DLC) 2009358391.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://login.libproxy.lib.unc.edu/login?url=http://ebookcentral.proquest.com/lib/unc/detail.action?docID=1531872</subfield>
+    <subfield code="y">Full text available via the UNC-Chapel Hill Libraries</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">NOTAUTHO</subfield>
+  </datafield>
+  <datafield tag="944" ind1=" " ind2=" ">
+    <subfield code="a">Batch load history: 22500 PQ EBC subs sp2 pt1 records loaded 20171101, jcm.</subfield>
+  </datafield>
+  <datafield tag="944" ind1=" " ind2=" ">
+    <subfield code="a">Batch load history: 2320 ebrary plc (3) records loaded 20150121, kms.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">Q6A2NBDG</subfield><subfield code="b">cohen / the bird book</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

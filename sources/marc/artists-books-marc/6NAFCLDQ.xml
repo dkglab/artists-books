@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01513cam a2200241Ii 4500</leader>
+  <controlfield tag="001">ocm05083732</controlfield>
+  <controlfield tag="005">20250801120537.0</controlfield>
+  <controlfield tag="008">871027s1978    caua          000 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">25437791</subfield>
+    <subfield code="a">231780488</subfield>
+    <subfield code="a">973624809</subfield>
+    <subfield code="a">979579787</subfield>
+    <subfield code="a">980010442</subfield>
+    <subfield code="a">987457751</subfield>
+    <subfield code="a">993609960</subfield>
+    <subfield code="a">993732918</subfield>
+    <subfield code="a">1008364003</subfield>
+    <subfield code="a">1087481959</subfield>
+    <subfield code="a">1099745247</subfield>
+    <subfield code="a">1110381088</subfield>
+    <subfield code="a">1118991728</subfield>
+    <subfield code="a">1126619274</subfield>
+    <subfield code="a">1175970154</subfield>
+    <subfield code="a">1198192025</subfield>
+    <subfield code="a">1223587289</subfield>
+    <subfield code="a">1223721890</subfield>
+    <subfield code="a">1293462010</subfield>
+    <subfield code="a">1303455294</subfield>
+    <subfield code="a">1313764502</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">ZYU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">ZYU</subfield>
+    <subfield code="d">m/c</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Burden, Chris,</subfield>
+    <subfield code="d">1946-2015.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n84104509</subfield>
+    <subfield code="1">http://viaf.org/viaf/57413304</subfield>
+    <subfield code="1">http://isni.org/isni/0000000081685785.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Chris Burden : 74-77.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Los Angeles :</subfield>
+    <subfield code="b">Burden,</subfield>
+    <subfield code="c">1978.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">93 unnumbered pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">27 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Burden, Chris,</subfield>
+    <subfield code="d">1946-2015.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n84104509</subfield>
+    <subfield code="1">http://viaf.org/viaf/57413304</subfield>
+    <subfield code="1">http://isni.org/isni/0000000081685785.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Burden, Chris,</subfield>
+    <subfield code="d">1946-2015.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/130993.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">cau</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">6NAFCLDQ</subfield><subfield code="b">burden / chris burden</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

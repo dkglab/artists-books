@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00244    a2200085   4500</leader>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">North, Kenda</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Fanny</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Rochester, NY</subfield>
+    <subfield code="b">Visual Studies Workshop</subfield>
+    <subfield code="c">1975</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="b">offset</subfield>
+    <subfield code="c">8.5x8 in.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">saddle-sewn - early 19th century photographic postcards</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ZS5575VT</subfield><subfield code="b">north / fanny</subfield><subfield code="c">title-author</subfield><subfield code="d">ehive</subfield></datafield></record>
+</collection>

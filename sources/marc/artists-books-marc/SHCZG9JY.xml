@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01786cam a2200409 c 4500</leader>
+  <controlfield tag="001">654552495</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20191214222830.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">110321s2011    no ||||| c    00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9788291430652</subfield>
+    <subfield code="9">978-82-91430-65-2</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)654552495</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)9654552493</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV654552495</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)846483747</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-NO</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">KUNST</subfield>
+    <subfield code="q">DE-14</subfield>
+    <subfield code="2">fid</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Peanuts by Dan Colen</subfield>
+    <subfield code="b">[Astrup Fearnley Museum of Art, 20.1. - 24.4.2011]</subfield>
+    <subfield code="c">[ed.: Gunnar B. Kvaran ...]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Oslo</subfield>
+    <subfield code="b">Astruo Fearnley Museum of Modern Art</subfield>
+    <subfield code="c">2011</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[195], 40 S.</subfield>
+    <subfield code="b">zahlr. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Catalogue / Astrup Fearnley Museum of Modern Art</subfield>
+    <subfield code="v">72</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="y">2011</subfield>
+    <subfield code="z">Oslo</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)136007740</subfield>
+    <subfield code="0">(DE-627)573862982</subfield>
+    <subfield code="0">(DE-576)285993658</subfield>
+    <subfield code="a">Colen, Dan</subfield>
+    <subfield code="d">1979-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Kvaran, Gunnar B.</subfield>
+    <subfield code="d">1955-</subfield>
+    <subfield code="0">(DE-588)1026387175</subfield>
+    <subfield code="0">(DE-627)726671355</subfield>
+    <subfield code="0">(DE-576)164948864</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Colen, Dan</subfield>
+    <subfield code="d">1979-</subfield>
+    <subfield code="0">(DE-588)136007740</subfield>
+    <subfield code="0">(DE-627)573862982</subfield>
+    <subfield code="0">(DE-576)285993658</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Astrup Fearnley Museet for Moderne Kunst</subfield>
+    <subfield code="0">(DE-588)5302988-4</subfield>
+    <subfield code="0">(DE-627)251439283</subfield>
+    <subfield code="0">(DE-576)197321275</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Astrup Fearnley Museet for Moderne Kunst</subfield>
+    <subfield code="t">Catalogue</subfield>
+    <subfield code="v">72</subfield>
+    <subfield code="9">72</subfield>
+    <subfield code="w">(DE-627)605213852</subfield>
+    <subfield code="w">(DE-576)9605213850</subfield>
+    <subfield code="w">(DE-600)2505471-5</subfield>
+    <subfield code="7">am</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1272598837</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">8 2011 5686</subfield>
+    <subfield code="g">::8:2011:5686:</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+    <subfield code="j">Bildende Künstler</subfield>
+    <subfield code="0">(DE-627)181571080</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">SHCZG9JY</subfield><subfield code="b">9788291430652</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

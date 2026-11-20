@@ -1,0 +1,402 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+
+  <leader>06756cam a2201081Ii 4500</leader>
+  <controlfield tag="001">a22070867</controlfield>
+  <controlfield tag="003">SIRSI</controlfield>
+  <controlfield tag="005">20180102122502.0</controlfield>
+  <controlfield tag="008">880926m19651982fr a          000 1 fre d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2869411146</subfield>
+    <subfield code="q">(v. 2)</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9782869411142</subfield>
+    <subfield code="q">(v. 2)</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)18529065</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">HHG</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">HHG</subfield>
+    <subfield code="d">DRB</subfield>
+    <subfield code="d">ORU</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">NMWMA</subfield>
+    <subfield code="d">UPM</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">fre</subfield>
+    <subfield code="a">eng</subfield>
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-fr---</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.L38</subfield>
+    <subfield code="b">I43 1965</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">NC293.L38</subfield>
+    <subfield code="b">A77 1965</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">700.92</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lavater, Warja,</subfield>
+    <subfield code="d">1913-2007</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50028181</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Imageries /</subfield>
+    <subfield code="c">Warja Lavater.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Paris :</subfield>
+    <subfield code="b">Adrien Maeght Editeur,</subfield>
+    <subfield code="c">1965-1982.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">6 volumes :</subfield>
+    <subfield code="b">chiefly color illustrations ;</subfield>
+    <subfield code="c">16 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title, authorship statement, imprint, and dates of publication from publisher's slipcase.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"...une imagerie d'apres le conte de Charles Perrault."--Colophon (volumes 1-2, 6)</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Each volume made of accordion-folded sheets (approximately 40 pages) printed one side only and attached continuously with boards at each end; volumes 1-3, 5-6 have cloth-covered boards with title printed on paper label mounted on front cover; volume 4 has paper-covered boards lithographed with handwritten title on front cover and colophon on back cover; volumes housed individually in clear plastic slipcases within publisher's larger color illustrated slipcase.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Les lithographies [sur papier Velin] ... ont été tirées sur les presses des Ateliers Arte, Paris." See special title pages and colophon for volume 4.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">[v. 1]. Le Petit Poucet = Tom Thumb = Däumling  (©1979) -- [v. 2]. Blanche Neige = Snow White = Schneewittchen (©1974) -- [v. 3]. Le Petit Chaperon Rouge = Little Red Riding Hood = Rotkäppchen (©1965) -- [v. 4]. La fable du Hasard = The fable of Hazard = Die Fabel vom Zufall (©1968) -- [v. 5]. La Belle au Bois dormant = Sleeping Beauty = Dornröschen (©1982) -- [v. 6]. Cendrillon = Cinderella = Aschenputtel (©1976).</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Boxed set of conceptual artist's books by Swiss graphic designer and illustrator Warja Lavater collecting her wordless lithographic adaptations of six of Charles Perrault's classic fairy tales, each reimagined visually using ideogramatic color shapes and symbols in place of written language and figural representation.</subfield>
+  </datafield>
+  <datafield tag="541" ind1=" " ind2=" ">
+    <subfield code="3">Rare Books copy:</subfield>
+    <subfield code="c">Purchased from</subfield>
+    <subfield code="a">Tschanz Rare Books;</subfield>
+    <subfield code="d">2017.</subfield>
+    <subfield code="5">PSt</subfield>
+  </datafield>
+  <datafield tag="541" ind1=" " ind2=" ">
+    <subfield code="3">Rare Books copy:</subfield>
+    <subfield code="c">Purchased with funds from the</subfield>
+    <subfield code="a">Mary Ann O'Brian Malkin Program Endowment for Rare Books and Manuscripts;</subfield>
+    <subfield code="d">2017.</subfield>
+    <subfield code="5">PSt.</subfield>
+  </datafield>
+  <datafield tag="541" ind1=" " ind2=" ">
+    <subfield code="c">Purchased with funds from the </subfield>
+    <subfield code="a">Mary Ann O'Brian Malkin Program Endowment for Rare Books and Manuscripts;</subfield>
+    <subfield code="d">2017</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">Key to ideogramatic illustrations in French, English, and German in all volumes except volume 4 (French text only); volume 3 also has key in Japanese.</subfield>
+  </datafield>
+  <datafield tag="588" ind1=" " ind2=" ">
+    <subfield code="a">Genre terms marked as local are from ARLIS/NA Artists' Books Thesaurus, accessed 5/3/2017. http://allisonjai.com/abt/vocab/index.php</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="3">Rare Books Fine Printing copy:</subfield>
+    <subfield code="a">6 volumes; complete, as issued, in clear plastic slipcases and publisher's box.</subfield>
+  </datafield>
+  <datafield tag="596" ind1=" " ind2=" ">
+    <subfield code="a">27</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Perrault, Charles,</subfield>
+    <subfield code="d">1628-1703.</subfield>
+    <subfield code="t">Contes des fées</subfield>
+    <subfield code="v">Adaptations.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Perrault, Charles,</subfield>
+    <subfield code="d">1628-1703.</subfield>
+    <subfield code="t">Contes des fées</subfield>
+    <subfield code="v">Illustrations.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Perrault, Charles,</subfield>
+    <subfield code="d">1628-1703</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00031370</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">1900-1999</subfield>
+    <subfield code="2">fast</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Picture-writing.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85102008</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Fairy tales</subfield>
+    <subfield code="v">Illustrations.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85046927</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Fairy tales in art.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh97000884</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Conceptual art</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85029624</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Lithography</subfield>
+    <subfield code="y">20th century.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85077600</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00817660</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Fairy tales.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00919916</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Fairy tales in art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00919934</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Lithography.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01000265</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Illustrated works.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01423873</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01423861</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Illustrated books.</subfield>
+    <subfield code="2">local</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Accordion fold format (Binding)</subfield>
+    <subfield code="2">rbbin</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Accordion bindings.</subfield>
+    <subfield code="2">local</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Fold-out books.</subfield>
+    <subfield code="2">local</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Wordless books.</subfield>
+    <subfield code="2">local</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Lithographs.</subfield>
+    <subfield code="2">local</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Boxes.</subfield>
+    <subfield code="2">local</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Slipcases.</subfield>
+    <subfield code="2">local</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Maeght, Adrien,</subfield>
+    <subfield code="d">1930-</subfield>
+    <subfield code="e">publisher.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n2013045501</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Perrault, Charles,</subfield>
+    <subfield code="d">1628-1703.</subfield>
+    <subfield code="t">Contes des fées.</subfield>
+    <subfield code="k">Selections.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82125447</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="i">Graphic adaptation of (work):</subfield>
+    <subfield code="a">Perrault, Charles,</subfield>
+    <subfield code="d">1628-1703.</subfield>
+    <subfield code="t">Petit poucet.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n88018148</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="i">Graphic adaptation of (work):</subfield>
+    <subfield code="a">Perrault, Charles,</subfield>
+    <subfield code="d">1628-1703.</subfield>
+    <subfield code="t">Belle au bois dormant.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n2002071108</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="i">Graphic adaptation of (work):</subfield>
+    <subfield code="a">Perrault, Charles,</subfield>
+    <subfield code="d">1628-1703.</subfield>
+    <subfield code="t">Cendrillon.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2007142027</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="i">Graphic adaptation of (work):</subfield>
+    <subfield code="a">Perrault, Charles,</subfield>
+    <subfield code="d">1628-1703.</subfield>
+    <subfield code="t">Blanche neige.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="i">Graphic adaptation of (work):</subfield>
+    <subfield code="a">Perrault, Charles,</subfield>
+    <subfield code="d">1628-1703.</subfield>
+    <subfield code="t">Petit chaperon rouge.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="i">Graphic adaptation of (work):</subfield>
+    <subfield code="a">Perrault, Charles,</subfield>
+    <subfield code="d">1628-1703.</subfield>
+    <subfield code="t">Fable du hasard.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Tom Thumb.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Snow White.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Little Red Riding Hood.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Fable of Hazard.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Sleeping Beauty.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Cinderella.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Däumling.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Schneewittchen.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Rotkäppchen.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Fabel vom Zufall.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Dornröschen.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Aschenputtel.</subfield>
+  </datafield>
+  <datafield tag="793" ind1="0" ind2=" ">
+    <subfield code="a">Fine Printing Collection.</subfield>
+  </datafield>
+  <datafield tag="993" ind1=" " ind2=" ">
+    <subfield code="a">770000000066 </subfield>
+    <subfield code="n">Mary Ann O'Brian Malkin Program Endowment for Rare Books and Manuscripts</subfield>
+  </datafield>
+  <datafield tag="926" ind1=" " ind2=" ">
+    <subfield code="a">UP-SPECCOL</subfield>
+    <subfield code="b">FINEPRINTG</subfield>
+    <subfield code="c">N7433.4.L38I43 v.1</subfield>
+    <subfield code="d">BOOK</subfield>
+    <subfield code="f">1</subfield>
+  </datafield>
+  <datafield tag="926" ind1=" " ind2=" ">
+    <subfield code="a">UP-SPECCOL</subfield>
+    <subfield code="b">FINEPRINTG</subfield>
+    <subfield code="c">N7433.4.L38I43 v.2</subfield>
+    <subfield code="d">BOOK</subfield>
+    <subfield code="f">1</subfield>
+  </datafield>
+  <datafield tag="926" ind1=" " ind2=" ">
+    <subfield code="a">UP-SPECCOL</subfield>
+    <subfield code="b">FINEPRINTG</subfield>
+    <subfield code="c">N7433.4.L38I43 v.3</subfield>
+    <subfield code="d">BOOK</subfield>
+    <subfield code="f">1</subfield>
+  </datafield>
+  <datafield tag="926" ind1=" " ind2=" ">
+    <subfield code="a">UP-SPECCOL</subfield>
+    <subfield code="b">FINEPRINTG</subfield>
+    <subfield code="c">N7433.4.L38I43 v.4</subfield>
+    <subfield code="d">BOOK</subfield>
+    <subfield code="f">1</subfield>
+  </datafield>
+  <datafield tag="926" ind1=" " ind2=" ">
+    <subfield code="a">UP-SPECCOL</subfield>
+    <subfield code="b">FINEPRINTG</subfield>
+    <subfield code="c">N7433.4.L38I43 v.5</subfield>
+    <subfield code="d">BOOK</subfield>
+    <subfield code="f">1</subfield>
+  </datafield>
+  <datafield tag="926" ind1=" " ind2=" ">
+    <subfield code="a">UP-SPECCOL</subfield>
+    <subfield code="b">FINEPRINTG</subfield>
+    <subfield code="c">N7433.4.L38I43 v.6</subfield>
+    <subfield code="d">BOOK</subfield>
+    <subfield code="f">1</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">QEM42WV8</subfield><subfield code="b">lavater / imageries</subfield><subfield code="c">title-author</subfield><subfield code="d">psu</subfield></datafield></record>
+</collection>

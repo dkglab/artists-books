@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01497cam a22003857a 4500</leader>
+  <controlfield tag="001">6944580</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20180604134555.0</controlfield>
+  <controlfield tag="008">011211s1992    fr ||||||c||||000 0|fre|c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2905075481</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">2905075481</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">N</subfield>
+    <subfield code="e">a</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">Ibz Nannucci, Maurizio</subfield>
+    <subfield code="2">kssb/6</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Nannucci, Maurizio</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Maurizio Nannucci :</subfield>
+    <subfield code="b">provisoire &amp; definitif 1964/1992 : [exposition] Villa Arson, Nice, 28 juin-4 octobre 1992</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Nice :</subfield>
+    <subfield code="b">Villa Arson,</subfield>
+    <subfield code="c">1992</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">126 s.</subfield>
+    <subfield code="b">ill. (vissa i färg)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="610" ind1="1" ind2="4">
+    <subfield code="5">N</subfield>
+    <subfield code="a">Nice</subfield>
+    <subfield code="b">Villa Arson</subfield>
+    <subfield code="b">Utst.</subfield>
+    <subfield code="d">1992</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Kataloger</subfield>
+    <subfield code="0">https://id.kb.se/term/saogf/Kataloger</subfield>
+    <subfield code="2">saogf</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="b">N</subfield>
+    <subfield code="h">91/</subfield>
+    <subfield code="j">575</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"n5zt766045rngdx","modified":"2018-06-04T13:45:55.229+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">{"@id":"rw25b6fx41h8wvj","modified":"2018-06-05T10:56:10.677+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">g</subfield>
+    <subfield code="a">Referensverk</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Verkförteckningar</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Skolkataloger</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Bibliotekskataloger</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Diskografier</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Utställningskataloger</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Handskriftskataloger</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Produktkataloger</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ACRULEP4</subfield><subfield code="b">nannucci / maurizio nannucci</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

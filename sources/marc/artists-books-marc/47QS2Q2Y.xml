@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00503    a2200133   4500</leader>
+  <controlfield tag="001">ocm31381546</controlfield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Drescher, Henrik</subfield>
+    <subfield code="0">n83001216</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Kuehn, Katherine</subfield>
+    <subfield code="0">n87922946</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Lingen, Rez'</subfield>
+    <subfield code="0">n86113648</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Eight lures</subfield>
+    <subfield code="c">drawn onto copper plates by Henrik Drescher ; printed into relief by Ruth Lingen and Katherine Kuehn</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">R. Lingen and K. Kuehn,</subfield>
+    <subfield code="c">1992.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">8 pages in folded cover</subfield>
+    <subfield code="b">color illustrations</subfield>
+    <subfield code="c">26 cm</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition of 40.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">47QS2Q2Y</subfield><subfield code="b">drescher / eight lures</subfield><subfield code="c">title-author</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

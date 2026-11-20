@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00714nam a2200229K  4500</leader>
+  <controlfield tag="001">990059605430203941</controlfield>
+  <controlfield tag="005">20020606163548.3</controlfield>
+  <controlfield tag="008">950907s1946    flu          f000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)77610551</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">HMS</subfield>
+    <subfield code="c">HMS</subfield>
+  </datafield>
+  <datafield tag="110" ind1="2" ind2=" ">
+    <subfield code="a">Army Air Force Convalescent Hospital, St. Petersburg, Fla.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">(Why you are here.)</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Fort George Wright.</subfield>
+    <subfield code="b">The Hospital.</subfield>
+    <subfield code="c">(1946.)</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">25 pp.</subfield>
+    <subfield code="b">Illus.</subfield>
+    <subfield code="c">21 cm.</subfield>
+  </datafield>
+  <datafield tag="690" ind1=" " ind2="9">
+    <subfield code="a">Convalescence.</subfield>
+    <subfield code="5">med</subfield>
+  </datafield>
+  <datafield tag="690" ind1=" " ind2="9">
+    <subfield code="a">Hospitals</subfield>
+    <subfield code="x">Military.</subfield>
+    <subfield code="5">med</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">005960543</subfield>
+  </datafield>
+  <datafield tag="901" ind1="9" ind2=" ">
+    <subfield code="a">BDF6346</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">MHBDF63469HU</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">ORK2312MDCOUMBox00009</subfield>
+    <subfield code="b">19950908</subfield>
+    <subfield code="c">19950909</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2025-08-03</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">NO-OVERLAY</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">KJUK2Z7F</subfield><subfield code="b">chen / you are here</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

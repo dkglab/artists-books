@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01347cam a2200385 a 4500</leader>
+  <controlfield tag="001">9930129660001551</controlfield>
+  <controlfield tag="005">20170410125855.0</controlfield>
+  <controlfield tag="008">940126s1983    caua          000 0 eng d</controlfield>
+  <controlfield tag="009">329443</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">94-B1668</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">329443</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CMalG)329443-gettydb-Voyager</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)12042153</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">RPB</subfield>
+    <subfield code="c">RPB</subfield>
+    <subfield code="d">RPD</subfield>
+    <subfield code="d">CMalG</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.A427</subfield>
+    <subfield code="b">B13 1983</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Allan, Mary Katherine.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Badogoodog /</subfield>
+    <subfield code="c">[written paper made illustrated printed &amp; bound by Mary Katherine Allan].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Claremont, [Calif.] :</subfield>
+    <subfield code="b">Dandelion Press,</subfield>
+    <subfield code="c">1983.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[12] p. :</subfield>
+    <subfield code="b">col. ill. ;</subfield>
+    <subfield code="c">20 cm.</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">Library has copy no. 98.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover decorated with curled strands of wire.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition limited to 100 copies.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="1">
+    <subfield code="a">Bad dog good dog.</subfield>
+  </datafield>
+  <datafield tag="905" ind1=" " ind2="1">
+    <subfield code="a">1</subfield>
+    <subfield code="b">01/26/94 AGR</subfield>
+    <subfield code="c">MAI</subfield>
+    <subfield code="e">DZ</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2="1">
+    <subfield code="a">ARNDL</subfield>
+  </datafield>
+  <datafield tag="909" ind1=" " ind2="1">
+    <subfield code="a">MR</subfield>
+  </datafield>
+  <datafield tag="921" ind1=" " ind2=" ">
+    <subfield code="a">b13330834</subfield>
+    <subfield code="b">04-30-97</subfield>
+    <subfield code="c">04-28-95</subfield>
+    <subfield code="d">sc</subfield>
+    <subfield code="e">07-12-95</subfield>
+    <subfield code="f">a</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">c</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">OCLC D160707.R807883 20160726</subfield>
+  </datafield>
+  <datafield tag="960" ind1=" " ind2="1">
+    <subfield code="b">0</subfield>
+  </datafield>
+  <datafield tag="981" ind1=" " ind2="1">
+    <subfield code="b">1</subfield>
+    <subfield code="c">01/26/94 REC</subfield>
+    <subfield code="d">MAIN</subfield>
+    <subfield code="e">MAIN</subfield>
+  </datafield>
+  <datafield tag="995" ind1=" " ind2=" ">
+    <subfield code="a">94-B01668</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="s">9114</subfield>
+    <subfield code="n">CMalG</subfield>
+    <subfield code="l">CJPA</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">9930129660001551</subfield>
+    <subfield code="8">22143809720001551</subfield>
+    <subfield code="a">01GRI_INST</subfield>
+    <subfield code="b">SC</subfield>
+    <subfield code="c">SPECIAL COLLECTIONS - CONTACT REFERENCE</subfield>
+    <subfield code="d">N7433.4.A427 B13 1983</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">2AB</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">GRI Special Collections</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">8K8K6MXX</subfield><subfield code="b">allan / badogoodog</subfield><subfield code="c">title-author</subfield><subfield code="d">getty</subfield></datafield></record>
+</collection>

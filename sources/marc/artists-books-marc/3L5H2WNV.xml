@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02536cam a2200445 c 4500</leader>
+  <controlfield tag="001">1969826878</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260625144654.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">260429s2026    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781738901395</subfield>
+    <subfield code="9">978-1-73890-139-5</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1969826878</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1969826878</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1587349792</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">KUNST</subfield>
+    <subfield code="q">DE-14</subfield>
+    <subfield code="2">fid</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">AP 94100</subfield>
+    <subfield code="q">DE-14/sred</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/8146:</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Gossage, John</subfield>
+    <subfield code="d">1946-</subfield>
+    <subfield code="e">FotografIn</subfield>
+    <subfield code="e">InterviewteR</subfield>
+    <subfield code="0">(DE-588)119462036</subfield>
+    <subfield code="0">(DE-627)080276490</subfield>
+    <subfield code="0">(DE-576)212629158</subfield>
+    <subfield code="4">pht</subfield>
+    <subfield code="4">ive</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">LAMF - three days in Berlin 1957</subfield>
+    <subfield code="c">John Cossage ; Jordan Weitzman</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[New York]</subfield>
+    <subfield code="b">Magic Hour Press</subfield>
+    <subfield code="c">[2026]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">80 ungezählte Seiten</subfield>
+    <subfield code="e">1 Faltblatt</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">American photographer John Gossage's (born 1946) LAMF, first conceived in 1987 as a hand-assembled work exclusively for his friends, is a consummate example of the photobook as art. For the project, Gossage employed a custom telephoto lens and 6000 ASA film to shoot the area around the Berlin Wall in near-total blackness, capturing the dark atmosphere of a divided city</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bildband</subfield>
+    <subfield code="0">(DE-588)4145395-5</subfield>
+    <subfield code="0">(DE-627)104450835</subfield>
+    <subfield code="0">(DE-576)209741139</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)119462036</subfield>
+    <subfield code="0">(DE-627)080276490</subfield>
+    <subfield code="0">(DE-576)212629158</subfield>
+    <subfield code="a">Gossage, John</subfield>
+    <subfield code="d">1946-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">g</subfield>
+    <subfield code="0">(DE-588)4005728-8</subfield>
+    <subfield code="0">(DE-627)10482638X</subfield>
+    <subfield code="0">(DE-576)208862560</subfield>
+    <subfield code="a">Berlin</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4045895-7</subfield>
+    <subfield code="0">(DE-627)104434880</subfield>
+    <subfield code="0">(DE-576)209067160</subfield>
+    <subfield code="a">Fotografie</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="3">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4121634-9</subfield>
+    <subfield code="0">(DE-627)105768154</subfield>
+    <subfield code="0">(DE-576)209544880</subfield>
+    <subfield code="a">Schwarzweißfotografie</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="4">
+    <subfield code="A">z</subfield>
+    <subfield code="2">gnd</subfield>
+    <subfield code="a">Geschichte 1957</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Weitzman, Jordan</subfield>
+    <subfield code="e">InterviewerIn</subfield>
+    <subfield code="0">(DE-588)1382213301</subfield>
+    <subfield code="0">(DE-627)1942018436</subfield>
+    <subfield code="4">ivr</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4960080868</subfield>
+    <subfield code="b">DE-960-3</subfield>
+    <subfield code="9">960/3</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">FOT GOSS,J 2</subfield>
+    <subfield code="h">KSF/FHH</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">498058148X</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">AP 94100</subfield>
+    <subfield code="b">Biografien, Memoiren, Tagebücher, Briefe, Bildbände einzelner Fotografen</subfield>
+    <subfield code="k">Allgemeines</subfield>
+    <subfield code="k">Medien- und Kommunikationswissenschaften, Medienkulturwissenschaft, Kommunikationsdesign</subfield>
+    <subfield code="k">Fotografie</subfield>
+    <subfield code="k">Biografie, Geschichte</subfield>
+    <subfield code="k">Biografien, Memoiren, Tagebücher, Briefe, Bildbände einzelner Fotografen</subfield>
+    <subfield code="0">(DE-627)127063609X</subfield>
+    <subfield code="0">(DE-625)rvk/8146:</subfield>
+    <subfield code="0">(DE-576)20063609X</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">3L5H2WNV</subfield><subfield code="b">gossage / lamf</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>
