@@ -56,10 +56,12 @@ graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 # JSTOR IIIF imagery (#9), joining canonical key -> SSID -> IIIF identifier.
 # The concept URIs it emits resolve against sources/construction-methods.ttl,
 # sources/subject-terms.ttl and sources/image-view-types.ttl, which Fuseki loads
-# separately.
+# separately. Creator identity comes from sources/creators/agents.csv (#170),
+# the corpus-wide authority join table both construct queries read.
 graph/artists-books.ttl: \
 sources/artists-books.csv \
 $(wildcard sources/marc/artists-books-marc/*.xml) \
+sources/creators/agents.csv \
 sources/construction/occurrences.csv \
 sources/construction/decisions.csv \
 sources/subjects/occurrences.csv \
@@ -69,7 +71,8 @@ sources/ssid-media.csv
 
 graph/reference-works.ttl: \
 sources/reference-works.csv \
-$(wildcard sources/marc/reference-works-marc/*.xml)
+$(wildcard sources/marc/reference-works-marc/*.xml) \
+sources/creators/agents.csv
 
 # sources/citations.ttl is a committed frozen graph (issue #82, task 3) — no
 # recipe; Fuseki loads it alongside the two constructed graphs, so the site

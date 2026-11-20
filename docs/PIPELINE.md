@@ -85,9 +85,20 @@ flowchart TD
     jstor[("JSTOR Forum<br/>(stor.artstor.org redirects)")] -->|"harvest_media.py"| smedia
     assid -->|"SSIDs to look up"| smedia["ssid-media.csv<br/>(SSID → IIIF path + dimensions)"]
 
+    %% ---- creator authority (who a book is by, #170) ----
+    marc -->|"creators/mine.py (+ reference MARC, Zotero)"| crocc["creators/occurrences.csv<br/>(one row per creator field)"]
+    lcid[("id.loc.gov")] -->|"creators/reconcile.py"| crlc["creators/lc-viaf.csv<br/>(frozen LC → VIAF/ISNI/label)"]
+    crocc --> crbuild{{"creators/build.py<br/>(corpus-wide clustering)"}}
+    crlc --> crbuild
+    crdec["creators/decisions.csv<br/>(hand-curated: merge / separate / label)"] --> crbuild
+    crbuild --> cragents["creators/agents.csv<br/>(field → agent URI + label)"]
+    crbuild -.->|"ambiguous names"| crrev["creators/review.csv<br/>(generated — for review)"]
+    crrev -.->|"curator reviews & edits"| crdec
+
     %% ---- CONSTRUCT ----
     abcsv --> abrq{{"artists-books.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
     marc --> abrq
+    cragents -->|"bf:agent join (+ Zotero fallback)"| abrq
     cocc -->|"ab:constructedUsing join"| abrq
     cdec --> abrq
     socc -->|"ab:hasSubject join"| abrq
@@ -100,9 +111,9 @@ flowchart TD
     classDef output fill:#e6f4ea,stroke:#34a853,stroke-width:2px;
     classDef curation fill:#fef7e0,stroke:#f9ab00,stroke-width:2px;
     classDef review fill:#f1f3f4,stroke:#9aa0a6,stroke-width:1px,stroke-dasharray:4 3;
-    class zotero,catalogs,jstor input;
-    class abddec,cdec,sdec curation;
-    class abdrev review;
+    class zotero,catalogs,jstor,lcid input;
+    class abddec,cdec,sdec,crdec curation;
+    class abdrev,crrev review;
     class abttl output;
 ```
 
@@ -123,6 +134,16 @@ concepts its headings map to. See
 [`sources/construction/README.md`](../sources/construction/README.md) and
 [`sources/subjects/README.md`](../sources/subjects/README.md) for the
 mine → curate → build pipeline.
+
+The **creator authority** (issue #170) decides who each creator field names
+once, across the whole corpus, instead of per field from whatever `$0`/`$1`
+that catalogue happened to supply. `creators/mine.py` lists every 1xx/7xx field
+of both MARC directories, `reconcile.py` freezes an id.loc.gov lookup per LC id,
+and `build.py` clusters them (shared ids, same dated heading, unambiguous name,
+hand `decisions.csv`) into `creators/agents.csv`, which both construct queries
+join to get one agent URI and one label per person — plus a Zotero-creator
+fallback for books with no MARC. See
+[`sources/creators/README.md`](../sources/creators/README.md).
 
 The **image** track (issue #9) is a third enrichment, but a harvest rather than a
 curation: `resolve_artstor.py` mines each MARC record for its Artstor link to get
@@ -149,7 +170,8 @@ flowchart TD
     catalogs -->|"marc_harvest.py (YAZ)"| refmarc["reference-works-marc/ *"]
 
     refcsv --> refrq{{"reference-works.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
-    refmarc -->|"primary creator only *"| refrq
+    refmarc -->|"creators *"| refrq
+    agents["creators/agents.csv<br/>(see ①)"] -->|"bf:agent join"| refrq
     refrq --> refttl["graph/reference-works.ttl"]
 
     classDef input fill:#e8f0fe,stroke:#4285f4,stroke-width:2px;
@@ -159,7 +181,8 @@ flowchart TD
 ```
 
 `*` `reference-works-marc/` is read only for the creators (every 1xx/7xx
-field, with roles and VIAF/ISNI identity, as for the books — #40) and the OCLC
+field with its roles, as for the books — #40 — their identity looked up in the
+shared `creators/agents.csv`, #170) and the OCLC
 number / WorldCat link (`001`, #51), joined by `999 $a`; the rest of the
 reference graph comes from the CSV.
 

@@ -18,6 +18,7 @@ CONSTRUCT {
     ab:itemKey ?canonical_key ;
     ab:heldBySloane ?held_flag ;
     bf:contribution ?contribution ;
+    bf:contribution ?zoteroContribution ;
     bf:provisionActivity ?bookPublication ;
     bf:language ?marc_language ;
     bf:language ?language041 ;
@@ -70,7 +71,21 @@ CONSTRUCT {
     .
 
   ?creator a bf:Agent ;
-    rdfs:label ?creator_name ;
+    rdfs:label ?creator_label ;
+    .
+
+  # Zotero-creator fallback (#170): books with no MARC creator field.
+  ?zoteroContribution a ?zoteroContributionType ;
+    bf:agent ?zoteroCreator ;
+    bf:role ?zoteroRole ;
+    .
+
+  ?zoteroCreator a bf:Agent ;
+    rdfs:label ?zotero_creator_label ;
+    .
+
+  ?zoteroRole a bf:Role ;
+    rdfs:label ?zotero_role_term ;
     .
 
   ?bookSummary
@@ -175,9 +190,8 @@ WHERE {
   #
   # Kept OPTIONAL so books without a MARC record still emit.
   OPTIONAL {
-    # One row per creator field, with a single chosen name / VIAF / ISNI / LC id.
-    # Multiple $1 subfields (a creator often has both VIAF and ISNI) are folded
-    # together here so each creator field yields exactly one ?creator downstream.
+    # One row per creator field, carrying just its $a name: who the field names
+    # is decided corpus-wide, not here (#170) -- see the agents.csv join below.
     #
     # ?illustrative_content_x is a *grouping key*, not a SAMPLE: unlike extent /
     # dimensions / edition — of which a book has exactly one — a record may
@@ -199,9 +213,6 @@ WHERE {
              (SAMPLE(?summary_x) AS ?summary)
              (SAMPLE(?related_title_x) AS ?related_title)
              (SAMPLE(?name_x)  AS ?creator_name)
-             (SAMPLE(?viaf_x)  AS ?viaf)
-             (SAMPLE(?isni_x)  AS ?isni)
-             (SAMPLE(?lc_id_x) AS ?lc_id)
       WHERE {
         SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc/> {
           # Per-record MARC directory (#81): one MARCXML document per record. The
@@ -478,28 +489,6 @@ WHERE {
             BIND(LCASE(REPLACE(?role_raw, "[\\s.,;:/]+$", "")) AS ?role_term)
           }
 
-          # $1 — real-world-object URI. Prefer VIAF, else ISNI. Strip the leaked
-          # trailing "." (see docs/MARC-RECORDS.md: 58% of $1 are corrupted this way).
-          OPTIONAL {
-            ?df fx:anySlot ?sfv .
-            ?sfv xyz:code "1" ; rdf:_1 ?rwo_v .
-            FILTER(CONTAINS(STR(?rwo_v), "viaf.org"))
-            BIND(REPLACE(?rwo_v, "\\.$", "") AS ?viaf_x)
-          }
-          OPTIONAL {
-            ?df fx:anySlot ?sfi .
-            ?sfi xyz:code "1" ; rdf:_1 ?rwo_i .
-            FILTER(CONTAINS(STR(?rwo_i), "isni.org"))
-            BIND(REPLACE(?rwo_i, "\\.$", "") AS ?isni_x)
-          }
-
-          # $0 — LC name-authority URI. Keep just the local id, used to mint a
-          # stable URI when the creator has no real-world-object URI.
-          OPTIONAL {
-            ?df fx:anySlot ?sf0 .
-            ?sf0 xyz:code "0" ; rdf:_1 ?lc_0 .
-            BIND(REPLACE(REPLACE(?lc_0, "\\.$", ""), "^.*/", "") AS ?lc_id_x)
-          }
           }  # end creator branch
           UNION
           {
@@ -651,13 +640,38 @@ WHERE {
     )
     BIND(IF(BOUND(?oclc_number), IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)), ?sentinel) AS ?worldcat_url)
 
-    # Use the real-world-object URI (VIAF, else ISNI) as the creator's identity;
-    # only mint an ab:creator/ URI when no such URI exists, keyed off the LC
-    # authority id when present, otherwise a slug of the name.
-    BIND(COALESCE(?viaf, ?isni) AS ?rwo)
-    BIND(REPLACE(REPLACE(LCASE(?creator_name), "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?name_slug)
-    BIND(COALESCE(?lc_id, ?name_slug) AS ?creator_key)
-    BIND(IF(BOUND(?rwo), IRI(?rwo), fx:entity(ab:, "creator/", ?creator_key)) AS ?creator)
+    # Creator identity (#170). Who a field names is resolved across the whole
+    # corpus, not from the field's own $0/$1 -- how well a heading is controlled
+    # depends on which catalogue the record came from, so the same person used
+    # to arrive as a VIAF, an LC-id and a name-slug agent. sources/creators/
+    # build.py clusters every 1xx/7xx field of both MARC directories (shared
+    # ids, identical dated headings, unambiguous names, a frozen id.loc.gov
+    # reconciliation and hand decisions) and writes agents.csv: one row per
+    # (record, tag, $a name) with the agent's URI (VIAF, else ISNI, else
+    # ab:creator/<lcId>, else ab:creator/<slug>), key and single preferred
+    # label. reference-works.rq reads the same file, so a creator shared with a
+    # reference work is one node.
+    #
+    # The join is on shared variables -- ?canonical_key ?ctag ?creator_name --
+    # inside a sub-SELECT, so the CSV is triplified once and hash-joined rather
+    # than re-read per creator field. ?creator_name is the very string
+    # mine.py computes (the $a with trailing punctuation stripped). A record
+    # with two same-tag fields sharing an $a but differing in $b/$d (e.g.
+    # "Scripps College" and "Scripps College. Press") joins both agents.
+    OPTIONAL {
+      SELECT ?canonical_key ?ctag ?creator_name ?creator ?creator_key ?creator_label WHERE {
+        SERVICE <x-sparql-anything:location=sources/creators/agents.csv,csv.headers=true> {
+          ?agentRow xyz:source       "book" ;
+                    xyz:canonicalKey ?canonical_key ;
+                    xyz:tag          ?ctag ;
+                    xyz:name         ?creator_name ;
+                    xyz:agentKey     ?creator_key ;
+                    xyz:agentUri     ?agent_uri ;
+                    xyz:label        ?creator_label .
+        }
+        BIND(IRI(?agent_uri) AS ?creator)
+      }
+    }
 
     # Map the relator term to its LC relator URI. The lookup binds its own key
     # variable (?relator_term) and joins via FILTER rather than sharing
@@ -739,6 +753,38 @@ WHERE {
   # record at all, as most non-held works don't until the harvest completes
   # (#99). Without this ~640 books would lose the language they had.
   BIND(IF(BOUND(?language_code), ?sentinel, ?zotero_language) AS ?zoteroLanguage)
+
+  # Zotero-creator fallback (#170). A book with no MARC creator field -- most
+  # often no MARC record at all -- is credited from its Zotero creators, which
+  # sources/creators/build.py has already joined to the corpus-wide agents by
+  # normalized name (unambiguous matches only; tag "zotero" in agents.csv). The
+  # agent URI and label are the very ones the MARC path emits, so e.g. a
+  # Drucker book with no MARC lands on the same agent as the catalogued ones.
+  # Principal Zotero roles (artist/author/creator) become a
+  # bflc:PrimaryContribution, the equivalent of a 1xx, so cards credit them.
+  OPTIONAL {
+    SELECT ?canonical_key ?zoteroContribution ?zoteroContributionType ?zoteroCreator
+           ?zotero_creator_label ?zoteroRole ?zotero_role_term
+    WHERE {
+      SERVICE <x-sparql-anything:location=sources/creators/agents.csv,csv.headers=true> {
+        ?zRow xyz:source       "book" ;
+              xyz:tag          "zotero" ;
+              xyz:canonicalKey ?canonical_key ;
+              xyz:agentKey     ?z_key ;
+              xyz:agentUri     ?z_uri ;
+              xyz:label        ?zotero_creator_label .
+        OPTIONAL { ?zRow xyz:primary  ?z_primary }
+        OPTIONAL { ?zRow xyz:roleUri  ?z_role_uri }
+        OPTIONAL { ?zRow xyz:roleTerm ?z_role_term }
+      }
+      BIND(IF(COALESCE(?z_role_term, "") != "", ?z_role_term, ?sentinel) AS ?zotero_role_term)
+      BIND(IRI(?z_uri) AS ?zoteroCreator)
+      # Empty cells arrive as "" (no csv.null-string here), so test the value.
+      BIND(IF(COALESCE(?z_primary, "") = "y", bflc:PrimaryContribution, bf:Contribution) AS ?zoteroContributionType)
+      BIND(IF(COALESCE(?z_role_uri, "") != "", IRI(?z_role_uri), ?sentinel) AS ?zoteroRole)
+      BIND(fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?z_key) AS ?zoteroContribution)
+    }
+  }
 
   # Construction & production methods (#86). Attach ab:constructedUsing by
   # joining each book's genre/technique/material heading occurrences
