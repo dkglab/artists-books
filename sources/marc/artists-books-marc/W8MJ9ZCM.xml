@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01068cam a2200337 c 4500</leader>
+  <controlfield tag="001">365208426</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20061017193705.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">030617s2003    gw |||||      00| ||eng c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">03,N14,1612</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">966546687</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3899550072</subfield>
+    <subfield code="q">Gb.* EUR 42.00</subfield>
+    <subfield code="9">3-89955-007-2</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)365208426</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV365208426</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">46</subfield>
+    <subfield code="2">sdnb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.00</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Boredom</subfield>
+    <subfield code="b">[Patrick Miller ... ]</subfield>
+    <subfield code="c">[Hrsg. Patrick McNeil ...]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Berlin</subfield>
+    <subfield code="b">Die Gestalten Verl.</subfield>
+    <subfield code="c">2003</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[84] Bl</subfield>
+    <subfield code="b">zahlr. Ill., graph. Darst</subfield>
+    <subfield code="c">230 mm x 195 mm</subfield>
+    <subfield code="e">1 CD</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">McNeil, Patrick</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Miller, Patrick</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">61397526X</subfield>
+    <subfield code="b">DE-Ha125</subfield>
+    <subfield code="9">Ha 125</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">IF 5 Bor</subfield>
+    <subfield code="g">A 19205</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.00</subfield>
+    <subfield code="j">Kunstwissenschaften: Allgemeines</subfield>
+    <subfield code="0">(DE-627)106406493</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">W8MJ9ZCM</subfield><subfield code="b">3899550072</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

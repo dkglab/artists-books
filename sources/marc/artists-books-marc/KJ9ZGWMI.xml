@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00913nam a22002532c 4500</leader>
+  <controlfield tag="001">1900358719</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20240828180112.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">240828s1974    xx |||||      00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1900358719</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1900358719</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Dieter Roth: Bok 3b und Bok 3d</subfield>
+    <subfield code="b">Rekonstruktion der im Verlag Forlag Ed, Reykjavík 1961 erschienenen Bücher</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Stuttgart</subfield>
+    <subfield code="a">London</subfield>
+    <subfield code="a">Reykjavík</subfield>
+    <subfield code="b">Edition Hansjörg Mayer</subfield>
+    <subfield code="c">1974</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[514]</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">Gesammelte Werke / Dieter Roth</subfield>
+    <subfield code="v">7</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Roth, Dieter</subfield>
+    <subfield code="d">1930-1998</subfield>
+    <subfield code="e">KünstlerIn</subfield>
+    <subfield code="0">(DE-588)118603086</subfield>
+    <subfield code="0">(DE-627)079394639</subfield>
+    <subfield code="0">(DE-576)209088877</subfield>
+    <subfield code="4">art</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4572317836</subfield>
+    <subfield code="b">DE-N39</subfield>
+    <subfield code="9">N 39</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Formalerfassung / 74</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">KJ9ZGWMI</subfield><subfield code="b">roth / bok 3b und bok 3d</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

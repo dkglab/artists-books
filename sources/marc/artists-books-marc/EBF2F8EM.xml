@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01076cam a2200301 c 4500</leader>
+  <controlfield tag="001">757433707</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20190228080200.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">130820s1979    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)757433707</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV757433707</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)935100740</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Olson, Richard</subfield>
+    <subfield code="d">1938-</subfield>
+    <subfield code="0">(DE-588)1038725402</subfield>
+    <subfield code="0">(DE-627)766373037</subfield>
+    <subfield code="0">(DE-576)392762048</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Perfect bind</subfield>
+    <subfield code="c">[Richard Olson]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[S.l.]</subfield>
+    <subfield code="b">[Olson]</subfield>
+    <subfield code="c">[ca. 1979]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[ca. 30] Bl., an allen 4 Seiten gelumbeckt</subfield>
+    <subfield code="c">15,3 x 14 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Erschienen lt. Arcade in Beloit, Wis</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Lt. Arcade: A book perfect-bound on all 4 sides</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Künstlerbuch</subfield>
+    <subfield code="0">(DE-588)4229053-3</subfield>
+    <subfield code="0">(DE-627)10495146X</subfield>
+    <subfield code="0">(DE-576)210335815</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1429021667</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 8 2013 4689</subfield>
+    <subfield code="g">NB::8:2013:4689:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">EBF2F8EM</subfield><subfield code="b">olson / perfect bind</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

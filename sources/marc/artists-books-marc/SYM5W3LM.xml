@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01186nam a22002772c 4500</leader>
+  <controlfield tag="001">1899855238</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20240827183407.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">240827s1963    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1899855238</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1899855238</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">und</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Brock, Bazon</subfield>
+    <subfield code="d">1936-</subfield>
+    <subfield code="0">(DE-588)11851556X</subfield>
+    <subfield code="0">(DE-627)079318282</subfield>
+    <subfield code="0">(DE-576)160433347</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Bloom Zeitung, 8. April 1963</subfield>
+    <subfield code="b">[... in der Galerie Dorothea Loehr, Frankfurt/M. ..., die Sie gern berät und bekannt macht mit den 3 Blooms Bazon Brock, Bernhard Jäger, Thomas Bayerle]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Frankfurt a.M.</subfield>
+    <subfield code="c">1963</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[3] Bl.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Jäger, Bernhard</subfield>
+    <subfield code="d">1935-</subfield>
+    <subfield code="0">(DE-588)118556487</subfield>
+    <subfield code="0">(DE-627)079353827</subfield>
+    <subfield code="0">(DE-576)208973184</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bayrle, Thomas</subfield>
+    <subfield code="d">1937-</subfield>
+    <subfield code="0">(DE-588)118507788</subfield>
+    <subfield code="0">(DE-627)079311822</subfield>
+    <subfield code="0">(DE-576)165333707</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Galerie Dorothea Loehr</subfield>
+    <subfield code="0">(DE-588)10011595-0</subfield>
+    <subfield code="0">(DE-627)321911482</subfield>
+    <subfield code="0">(DE-576)198243146</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4571650094</subfield>
+    <subfield code="b">DE-N39</subfield>
+    <subfield code="9">N 39</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">RAR [6 Flu 1] / 63</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">SYM5W3LM</subfield><subfield code="b">brock / bloom zeitung</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02171cam a2200433Ii 4500</leader>
+  <controlfield tag="001">on1035766187</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115015.0</controlfield>
+  <controlfield tag="008">180516s2017    ncua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1035766187</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NOC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">NOC</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-nc</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us-nc</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.C6445</subfield>
+    <subfield code="b">P79 2017</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Cook, Casey</subfield>
+    <subfield code="c">(Artist),</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Psychotic erotic /</subfield>
+    <subfield code="c">Casey Cook.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[North Carolina?] :</subfield>
+    <subfield code="b">Miniature Garden,</subfield>
+    <subfield code="c">2017.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">34 unnumbered pages :</subfield>
+    <subfield code="b">chiefly color illustrations ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition of 50.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"... Psychotic Erotic includes verse, drawing, collage and photos of the artist's paintings all exploring the book's namesake.  It includes a vertical centerfold"--</subfield>
+    <subfield code="c">The Concern Newsstand website (viewed 16 May 2018), www.theconcernnewsstand.com.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Sex in art.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85120626.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Erotic art.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85044668.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">LGBTQ+ erotic art.</subfield>
+    <subfield code="2">homoit</subfield>
+    <subfield code="0">https://homosaurus.org/v4/homoit0002579.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Erotic art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/914768.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Sex in art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1114456.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="z">North Carolina.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Erotica.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300028882.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Miniature Garden,</subfield>
+    <subfield code="e">publisher.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">05-16-18</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">ncu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">8XT6HJSL</subfield><subfield code="b">b9188412</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

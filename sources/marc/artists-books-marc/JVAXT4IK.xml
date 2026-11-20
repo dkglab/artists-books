@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01962cam a2200373 i 4500</leader>
+  <controlfield tag="001">4264097</controlfield>
+  <controlfield tag="005">20250607163755.1</controlfield>
+  <controlfield tag="008">840224s1963    enkaf    b    000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">4264097</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">premver</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">he18 2017-11-08</subfield>
+    <subfield code="i">he18 2017-12-01 NEW INPUT</subfield>
+    <subfield code="t">he18 2017-11-08</subfield>
+    <subfield code="a">he08 2017-12-20 end-stage processing completed, item placed in dated book return queue</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   84123803 </subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N6797.P25</subfield>
+    <subfield code="b">A4 1963</subfield>
+  </datafield>
+  <datafield tag="051" ind1=" " ind2=" ">
+    <subfield code="a">MLCM 84/1180 (N)</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Paolozzi, Eduardo,</subfield>
+    <subfield code="d">1924-2005,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The metallization of a dream /</subfield>
+    <subfield code="c">Eduardo Paolozzi ; with a commentary by Lawrence Alloway.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Lion and Unicorn Press,</subfield>
+    <subfield code="c">1963.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">63 pages, 4 unnumbered leaves of plates :</subfield>
+    <subfield code="b">illustrations (some color) ; 27 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"... compiled, with the assistance of the sculptor, by John Munday, who also designed the book. The text has been set in 11/13 pt Modern No. 1 ... by Percy Lund, Humphries &amp; Co. Ltd at Bradford; the line and half-tone blocks have been made by Fine Art Engravers Ltd ... printed and bound by the Lion and Unicorn Press ... "--Title page verso.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Issued in an edition of 200.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has copy number 196.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references.</subfield>
+  </datafield>
+  <datafield tag="510" ind1="4" ind2=" ">
+    <subfield code="a">Lion and Unicorn Press. A short history and a list of publications, 1953-1978,</subfield>
+    <subfield code="c">series 5</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Paolozzi, Eduardo,</subfield>
+    <subfield code="d">1924-2005.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Alloway, Lawrence,</subfield>
+    <subfield code="d">1926-1990,</subfield>
+    <subfield code="e">writer of added commentary.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Munday, John,</subfield>
+    <subfield code="e">compiler,</subfield>
+    <subfield code="e">book designer.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Lion and Unicorn Press,</subfield>
+    <subfield code="e">printer,</subfield>
+    <subfield code="e">binder,</subfield>
+    <subfield code="e">publisher.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Press Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-GenColl</subfield>
+    <subfield code="h">MLCM 84/1180 (N)</subfield>
+    <subfield code="t">Copy 1</subfield>
+    <subfield code="w">BOOKS</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">JVAXT4IK</subfield><subfield code="b">paolozzi / the metallization of a dream</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02234cam a2200433 i 4500</leader>
+  <controlfield tag="001">ocn934435782</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115008.0</controlfield>
+  <controlfield tag="008">151207s2015    sp af         000 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">942709750</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9788494282072</subfield>
+    <subfield code="q">(paperback)</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">8494282077</subfield>
+    <subfield code="q">(paperback)</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)934435782</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">C3L</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">C3L</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">CDX</subfield>
+    <subfield code="d">NhCcYBP</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">TR647</subfield>
+    <subfield code="b">.M67 2015</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/TR1-TR1050</subfield>
+  </datafield>
+  <datafield tag="082" ind1="1" ind2="4">
+    <subfield code="a">779.092</subfield>
+    <subfield code="2">23</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Morris, Sarah,</subfield>
+    <subfield code="d">1967-</subfield>
+    <subfield code="e">photographer.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr2001000060</subfield>
+    <subfield code="1">http://viaf.org/viaf/49152242</subfield>
+    <subfield code="1">http://isni.org/isni/0000000078628712.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Crease folds /</subfield>
+    <subfield code="c">Sarah Morris.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Madrid :</subfield>
+    <subfield code="b">Ivorypress,</subfield>
+    <subfield code="c">[2015]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume, 134 unnumbered numbered plates :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">15 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">LiberArs series.</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">21st century</subfield>
+    <subfield code="2">fast.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photography, Artistic</subfield>
+    <subfield code="y">21st century.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Photography, Artistic.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1061964.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">2000-2099</subfield>
+    <subfield code="2">fast.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">LiberArs series.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2012084916</subfield>
+    <subfield code="1">http://viaf.org/viaf/250772047.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/public/SS33469_33469_42527918</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">TR647</subfield>
+    <subfield code="b">.M67 2015</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="i">00050084004</subfield>
+    <subfield code="j">VENDOR: YBP*</subfield>
+    <subfield code="l">aada</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">0</subfield>
+    <subfield code="u">-</subfield>
+    <subfield code="z">050 4</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">06-27-16</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">sp </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">LBDKEQ9M</subfield><subfield code="b">b8529149</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

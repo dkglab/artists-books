@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00920cam a2200277 cc4500</leader>
+  <controlfield tag="001">519057465</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20190526012843.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">061020s2001    xxu|||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)519057465</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV519057465</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)836431086</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Xu, Bing</subfield>
+    <subfield code="d">1955-</subfield>
+    <subfield code="0">(DE-588)119329387</subfield>
+    <subfield code="0">(DE-627)08013825X</subfield>
+    <subfield code="0">(DE-576)211314374</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Introduction to square word calligraphy; [1994 - 1996]</subfield>
+    <subfield code="n">[1]</subfield>
+    <subfield code="c">Xu Bing</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">Simple ed. of 350</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Brooklyn, NY</subfield>
+    <subfield code="c">2001</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">24 S</subfield>
+    <subfield code="b">Ill</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="w">(DE-627)518702332</subfield>
+    <subfield code="w">(DE-576)9518702330</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="q">1.2001</subfield>
+    <subfield code="7">nnam</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">798198524</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 4 2006 200-1</subfield>
+    <subfield code="g">NB::4:2006:200:1</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">MV</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">X4JAME3F</subfield><subfield code="b">xu / an introduction to square word calligraphy</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

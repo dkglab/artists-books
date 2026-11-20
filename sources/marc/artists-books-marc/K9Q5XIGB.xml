@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02968nam a2200481Ii 4500</leader>
+  <controlfield tag="001">ocn875708473</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127114959.0</controlfield>
+  <controlfield tag="008">140404s2013    cu a          000 p spa d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)875708473</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NOC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">PQ7392.C847</subfield>
+    <subfield code="b">B34 2013</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/PQ6001-PQ8929</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Cuesta, Mabel,</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n2007005301</subfield>
+    <subfield code="1">http://viaf.org/viaf/160250122</subfield>
+    <subfield code="1">http://isni.org/isni/0000000118829472.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Bajo el cielo de Dublín /</subfield>
+    <subfield code="c">Mabel Cuesta ; diseño y dibujos, Rolando Estévez.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Matanzas, Cuba :</subfield>
+    <subfield code="b">Ediciones Vigía,</subfield>
+    <subfield code="c">2013.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">21 pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Colección del San Juan.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">The cover is enclosed by a bird drawn in black and white on stiff paper, cut out and folded so that its wings enfold both the front and back covers.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes a handmade paper passport (20 pages ; 15 cm) with "República del Mundo" on cover.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition of 200 copies.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Condition of Sloane Art Library copy: no library markings, in protective enclosure.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Cuba</subfield>
+    <subfield code="z">Matanzas</subfield>
+    <subfield code="y">21st century.</subfield>
+    <subfield code="2">rbmscv.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Collage (technique)</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300138699.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Poetry.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423828.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Poetry.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026481.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Estévez Jordán, Rolando,</subfield>
+    <subfield code="d">1953-2023,</subfield>
+    <subfield code="e">illustrator,</subfield>
+    <subfield code="e">book designer.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no95015740</subfield>
+    <subfield code="1">http://viaf.org/viaf/97801628</subfield>
+    <subfield code="1">http://isni.org/isni/0000000079095452.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Ediciones Vigía.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n99007950</subfield>
+    <subfield code="1">http://viaf.org/viaf/135053837</subfield>
+    <subfield code="1">http://isni.org/isni/0000000092149363.</subfield>
+  </datafield>
+  <datafield tag="791" ind1="2" ind2=" ">
+    <subfield code="a">Howard Holsenbeck Library Fund.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Colección del San Juan.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n99008964</subfield>
+    <subfield code="1">http://viaf.org/viaf/181568957.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/public/SS33469_33469_42525621</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.4.C799</subfield>
+    <subfield code="b">B34 2013</subfield>
+    <subfield code="z">050 4</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00047726022</subfield>
+    <subfield code="l">aada</subfield>
+    <subfield code="n">jc</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="u">-</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">04-04-14</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">spa</subfield>
+    <subfield code="g">cu </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">K9Q5XIGB</subfield><subfield code="b">b7672478</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

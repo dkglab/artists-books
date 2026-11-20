@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01049cam a2200265Ia 4500</leader>
+  <controlfield tag="001">ocn747822827</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20170418035557.0</controlfield>
+  <controlfield tag="008">110825s2010    gaua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)747822827</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">GSE</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">GSE</subfield>
+    <subfield code="d">OCLCQ</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4 .W51</subfield>
+    <subfield code="b">R86 2010</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Whitter, Jeanne-Ann.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The Rumor.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Atlanta, GA :</subfield>
+    <subfield code="b">Jeanne-Ann Whitter,</subfield>
+    <subfield code="c">©2010.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged) :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">26 x 11 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This book was created by Jeanne-Ann Whitter in March 2010 while attending the Savannah Colege of Art and Design in Atlanta. It is representative of how far the truth can be stretched." From colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Artist's book by SCAD Fashion student Jeanne-Ann Whitter. Awarded first prize in the 3rd Annual Student Artist's Book Competition.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Whitter, Jeanne-Ann.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">YBETSTPJ</subfield><subfield code="b">whitter / the rumor</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

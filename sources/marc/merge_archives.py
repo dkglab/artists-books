@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Additively merge per-record MARC archives (#81) into one archive.
+"""Additively merge per-record MARC stores (#81) into one.
+
+A store is a directory of <key>.xml files (the committed form) or a zip of them
+(the form scratch harvests under harvest/ take); any mix can be merged.
 
 Why this exists: marc_harvest.py's combine() rebuilds an archive wholly from the
 local harvest state under harvest/<csv-stem>/, which is gitignored. So pointing a
@@ -14,43 +17,40 @@ collisions are reported, since for a residual harvest (a run targeting only the
 books still missing MARC) the expected overlap is zero and anything else is worth
 a look before committing.
 
-Output goes through marc_harvest.write_record_zip, so entry serialization and the
-reproducible-bytes discipline (sorted entries, fixed 1980 mtimes) are identical to
-what the harvester writes -- a merge that changes nothing produces no git churn.
+Output goes through marc_harvest.write_records, so record serialization is
+identical to what the harvester writes -- a merge that changes nothing produces
+no git churn.
 
 Run (from sources/):
-    python3 marc/merge_archives.py --base marc/artists-books-marc.zip \
-        --add marc/harvest/scad-residual.zip --out marc/artists-books-marc.zip
+    python3 marc/merge_archives.py --base marc/artists-books-marc \
+        --add marc/harvest/scad-residual.zip --out marc/artists-books-marc
 """
 import argparse
-import os
 import sys
 import xml.etree.ElementTree as ET
-import zipfile
 
-from marc_harvest import MARC_NS, write_record_zip
+from marc_harvest import MARC_NS, iter_record_files, record_key, write_records
 
 
 def read_archive(path):
-    """{entry name: record Element} for one per-record archive."""
+    """{entry name: record Element} for one per-record store (directory or zip)."""
     out = {}
-    with zipfile.ZipFile(path) as zf:
-        for name in zf.namelist():
-            root = ET.fromstring(zf.read(name))
-            rec = (root if root.tag == f"{{{MARC_NS}}}record"
-                   else root.find(f"{{{MARC_NS}}}record"))
-            if rec is not None:
-                out[name] = rec
+    for name, data in iter_record_files(path):
+        root = ET.fromstring(data)
+        rec = (root if root.tag == f"{{{MARC_NS}}}record"
+               else root.find(f"{{{MARC_NS}}}record"))
+        if rec is not None:
+            out[name] = rec
     return out
 
 
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--base", required=True, help="archive to merge into")
+    ap.add_argument("--base", required=True, help="store (directory or .zip) to merge into")
     ap.add_argument("--add", required=True, action="append",
-                    help="archive whose records to add (repeatable; later wins)")
-    ap.add_argument("--out", required=True, help="output archive (may equal --base)")
+                    help="store whose records to add (repeatable; later wins)")
+    ap.add_argument("--out", required=True, help="output store: a directory, or a .zip (may equal --base)")
     args = ap.parse_args()
 
     merged = read_archive(args.base)
@@ -66,15 +66,14 @@ def main():
         if len(clash) > 20:
             print(f"    ... and {len(clash) - 20} more")
 
-    # Write via a temp path first so --out == --base cannot truncate the base
-    # archive if the write fails partway.
-    tmp = args.out + ".tmp"
-    n, no_key = write_record_zip(list(merged.values()), tmp)
+    # Every record is already in memory, so --out == --base is safe: a zip is
+    # written whole, and a directory is built beside the target and swapped in.
+    # Refuse before writing anything if a record lacks its join key.
+    no_key = sum(1 for rec in merged.values() if record_key(rec) is None)
     if no_key:
         print(f"FATAL: {no_key} records have no 999 $a join key", file=sys.stderr)
-        os.unlink(tmp)
         sys.exit(3)
-    os.replace(tmp, args.out)
+    n, _ = write_records(list(merged.values()), args.out)
     print(f"wrote {args.out}: {n} records")
 
 

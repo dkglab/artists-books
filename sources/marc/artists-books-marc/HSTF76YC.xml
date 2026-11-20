@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01256cam a22003132c 4500</leader>
+  <controlfield tag="001">86435701X</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20251008185715.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">160801s1974    be |||||      00| ||fre c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)86435701X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV86435701X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)892431912</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-BE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Heidsieck, Bernard</subfield>
+    <subfield code="d">1928-2014</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)119427877</subfield>
+    <subfield code="0">(DE-627)080241875</subfield>
+    <subfield code="0">(DE-576)212458299</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Encoconnage</subfield>
+    <subfield code="c">Bernard Heidsieck; Françoise Janicot</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Antwerpen</subfield>
+    <subfield code="b">Guy Schraenen Ed</subfield>
+    <subfield code="c">[1974]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">6 ungezählte Blätter</subfield>
+    <subfield code="e">1 Schallplatte (33 UpM, 30 cm)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bildband</subfield>
+    <subfield code="0">(DE-588)4145395-5</subfield>
+    <subfield code="0">(DE-627)104450835</subfield>
+    <subfield code="0">(DE-576)209741139</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Janicot, Françoise</subfield>
+    <subfield code="d">1929-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)119437368</subfield>
+    <subfield code="0">(DE-627)080251188</subfield>
+    <subfield code="0">(DE-576)176680748</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">162877827X</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 25253 mtl</subfield>
+    <subfield code="g">NB::25253::mtl:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4223253476</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LP-NB 25253 mtl</subfield>
+    <subfield code="g">LP-NB::25253::mtl:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">HSTF76YC</subfield><subfield code="b">heidsieck / encoconnage</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

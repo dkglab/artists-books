@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00888nam a22002652c 4500</leader>
+  <controlfield tag="001">1911527630</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20241209152959.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">241209s1973    xx |||||      00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1911527630</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1911527630</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Bok 2a und bok 2b</subfield>
+    <subfield code="b">Versionen der im Forlag Ed. Reykjavik 1960/61 ersch. Bücher</subfield>
+    <subfield code="c">Hansjörg Mayer ; Dieter Roth [Hrsg.]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Stuttgart</subfield>
+    <subfield code="a">London</subfield>
+    <subfield code="a">Reykjavik</subfield>
+    <subfield code="b">Ed. Mayer</subfield>
+    <subfield code="c">1973</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">o. Pag.</subfield>
+    <subfield code="b">überw. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">Roth, Dieter : Gesammelte Werke</subfield>
+    <subfield code="v">3</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Mayer, Hansjörg</subfield>
+    <subfield code="e">HerausgeberIn</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Roth, Dieter</subfield>
+    <subfield code="e">HerausgeberIn</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">S584JKBZ</subfield><subfield code="b">roth / bok 2a und bok 2b</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

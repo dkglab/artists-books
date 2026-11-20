@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01387cam a22003852c 4500</leader>
+  <controlfield tag="001">388119187</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260621205936.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">040602s2004    gw |||||      00| ||eng c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">04,N25,1468</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">06,A23,0028</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">971269092</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3882439076</subfield>
+    <subfield code="q">Gewebe in Schuber : EUR 80.00, sfr 134.00 (Steidl)</subfield>
+    <subfield code="9">3-88243-907-6</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783882439076</subfield>
+    <subfield code="9">978-3-88243-907-6</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)388119187</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV388119187</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)723378552</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE-NI</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">004</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Byrne, David</subfield>
+    <subfield code="d">1952-</subfield>
+    <subfield code="0">(DE-588)119140071</subfield>
+    <subfield code="0">(DE-627)079935362</subfield>
+    <subfield code="0">(DE-576)184632110</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Envisioning emotional epistemological information</subfield>
+    <subfield code="c">David Byrne</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">[2. Aufl.]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Göttingen</subfield>
+    <subfield code="b">Steidl</subfield>
+    <subfield code="c">[2004]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[New York]</subfield>
+    <subfield code="b">Pace/McGill Gallery</subfield>
+    <subfield code="c">[2004]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">96 S</subfield>
+    <subfield code="b">überw. Ill</subfield>
+    <subfield code="c">28 x 36 cm, 1890 gr.</subfield>
+    <subfield code="e">Beil. 1 DVD-ROM</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20240324</subfield>
+    <subfield code="f">DE-4165</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung/Langzeitarchivierung gewährleistet</subfield>
+    <subfield code="f">PENI</subfield>
+    <subfield code="h">DE-35</subfield>
+    <subfield code="x">XA-DE-NI</subfield>
+    <subfield code="2">pdager</subfield>
+    <subfield code="5">DE-Luen4</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1790374960</subfield>
+    <subfield code="b">DE-Luen4</subfield>
+    <subfield code="9">Luen 4</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">18-3208</subfield>
+    <subfield code="h">CAM</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">KAMNBGXK</subfield><subfield code="b">3882439076</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02324cam a2200517 i 4500</leader>
+  <controlfield tag="001">17768402</controlfield>
+  <controlfield tag="005">20250607054014.6</controlfield>
+  <controlfield tag="008">130607s2000    orua          000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">17768402</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">he04 2013-06-07</subfield>
+    <subfield code="i">he04 2013-06-13</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2013656105</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1893125114</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781893125117</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-or</subfield>
+    <subfield code="a">n-us-ny</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.J27</subfield>
+    <subfield code="b">A47 2000</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Jacobs, Diane</subfield>
+    <subfield code="q">(Diane E.),</subfield>
+    <subfield code="d">1966-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Alphabet tricks /</subfield>
+    <subfield code="c">by Diane Jacobs.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="1" ind2=" ">
+    <subfield code="i">Title from colophon:</subfield>
+    <subfield code="a">Alphabet trix</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Portland, Oregon?] :</subfield>
+    <subfield code="b">Scantron Press,</subfield>
+    <subfield code="c">[2000]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">31 unnumbered pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">99 mm, in a slipcase measuring 11 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Accordion structure with 15 pockets, made of Kozo paper, with silk-screened images. Cards with text are inserted into the pockets. Printed in red and black. The cover has a plastic window which protrudes 5 mm from the front board of the binding.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"... Alphabet trix was made possible by an artist residency grant from the Women's Studio Workshop in Rosendale, New York. ..."--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition of 120.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC copy is number 62, and is signed and dated by the artist.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="530" ind1=" " ind2=" ">
+    <subfield code="a">Description and digital images of this object available on the Women's Studio Workshop Archive website: $u http://www.wsworkshop.org/archive_item.php?ID=154</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Oregon</subfield>
+    <subfield code="z">Portland.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">Rosendale.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Alphabet books.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">English language</subfield>
+    <subfield code="x">Alphabet.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Sexism in art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Sexism in language.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Alphabet in art.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Oregon</subfield>
+    <subfield code="z">Portland.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">Rosendale.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2000.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Women's Studio Workshop.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Scantron Press.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Press Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.J27 A47 2000 Copy 1 #ACQ 12-45 no. 11 he04 2013-06-13</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">J984R4VM</subfield><subfield code="b">jacobs / alphabet tricks</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>04456cam a2200469 i 4500</leader>
+  <controlfield tag="001">on1023515585</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20251027110602.0</controlfield>
+  <controlfield tag="008">180517s2017    xxua          000 0 eng d</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2021659743</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1023515585</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CLU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">NUI</subfield>
+    <subfield code="d">NBU</subfield>
+    <subfield code="d">CLU</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">CLART</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.P29</subfield>
+    <subfield code="b">D44 2017</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="4">
+    <subfield code="a">N7433.4.P275</subfield>
+    <subfield code="b">D44 2017</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Pandey, Radha,</subfield>
+    <subfield code="e">artist,</subfield>
+    <subfield code="e">book designer,</subfield>
+    <subfield code="e">printer.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2014129641</subfield>
+    <subfield code="1">http://id.oclc.org/worldcat/entity/E39PCjyx4VDpjfwjRvDFjGvDmb</subfield>
+    <subfield code="1">http://viaf.org/viaf/300520631</subfield>
+    <subfield code="1">http://isni.org/isni/0000000514205952.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Deep time.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Place of publication not identified] :</subfield>
+    <subfield code="b">Radha Pandey,</subfield>
+    <subfield code="c">2017.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 case (18 sheets) :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">16 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">sheet</subfield>
+    <subfield code="b">nb</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1048.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Date from colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Colophon: "Deep time has been [letterpress] printed on kozo dyed with cloves and indigo. The imagery engraved in wood has been adapted from contour maps of the Himalayan range, and the cut shapes are the boundaries of the highest physical features of our planet, namely the Tibetan plateau (China, Tibet, India); the Kanza'gyal mountain range (east Asia); and the Andean mountain range (western South America). The creation of Deep time was made possible by a grant from the College Book Arts Association. Written, designed, and printed by Radha Pandey in 2017."</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">The book consists of 18 unbound stacked leaves. The shapes cut into each leaf are staggered ever so slightly, so that when the leaves are stacked, one can see through the cavernous space created by these forms resembling a physical elevation or contour map. Depending on which way the book is read, these cut shapes appear to sediment on one side and erode on the other, with readers physically participating in these natural processes as they progress through the book. The loose pages sit in a deep box to accommodate this movement"--Artist's website https://www.radhapandey.com.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Unbound leaves laid in tan cloth clamshell case lined with blue cloth; title printed in black on blue and tan paper strip affixed vertically to lid of case.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Artist's book exploring the nature of erosion and sedimentation and the ways in which these processes shape our world.</subfield>
+    <subfield code="b">As the artist explains on the final sheet: "Water and soil--two of the oldest beings on our planet. The earth was shaped and is being shaped even today entirely by these slow-moving forces....The confluence of energies created by these two ancient beings is what enabled our birth and continues to ensure not only our survival, but the survival of all life on our home. The earth continues to change and evolve. As we enter the anthropocene we affect change that would have taken the earth billions of years, in a fraction of the time. The processes of erosion and sedimentation are no longer a testament to time but a sign of human presence and intervention."</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Sedimentation and deposition</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Erosion</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Hosho.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300183813.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Letterpress printing.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300178926.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Sedimentation and deposition.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1110984.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Erosion.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/914754.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/10/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.4.P275</subfield>
+    <subfield code="b">D44 2017</subfield>
+    <subfield code="z">05004</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00057979506</subfield>
+    <subfield code="l">aart</subfield>
+    <subfield code="n">dls</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="t">78</subfield>
+    <subfield code="u">-</subfield>
+    <subfield code="j">Cataloged FY 2025-26 FIRST UnivLib</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">10-20-25</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">@</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">xxu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">1</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">7UHC8UPQ</subfield><subfield code="b">b12207934</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

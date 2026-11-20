@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02137nam a2200433Ia 4500</leader>
+  <controlfield tag="001">ocn227809123</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127114918.0</controlfield>
+  <controlfield tag="008">080512s2005    ag a          000 p spa d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)227809123</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NOC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">s-ag---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/s-ag</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCA</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.A48</subfield>
+    <subfield code="b">D5 2005</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Aduriz, Diego de,</subfield>
+    <subfield code="d">1977-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2022143359</subfield>
+    <subfield code="1">http://viaf.org/viaf/215167021271752870265.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Diablo me obligó /</subfield>
+    <subfield code="c">[Diego de Aduriz?]</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1a ed.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Buenos Aires, Argentina?] :</subfield>
+    <subfield code="b">Copodeazucar,</subfield>
+    <subfield code="c">2005.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">36 unnumbered pages :</subfield>
+    <subfield code="b">illustrations (some color) ;</subfield>
+    <subfield code="c">11 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Photocopy and covers hand-colored with red ink.</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">21st century</subfield>
+    <subfield code="2">fast.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Devil in art.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh96011510.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Zines</subfield>
+    <subfield code="z">Argentina</subfield>
+    <subfield code="y">21st century</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Zines.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1896158.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Devil in art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/891989.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Argentina.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1205614.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Fanzines</subfield>
+    <subfield code="z">Argentina.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423861.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Poetry.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026481.</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">2000-2099</subfield>
+    <subfield code="2">fast.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the zine’s cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/#/asset/SS33469_33469_42525061</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">05-12-08</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">spa</subfield>
+    <subfield code="g">ag </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">KXZAUJZ5</subfield><subfield code="b">aduriz / diablo me obligó</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

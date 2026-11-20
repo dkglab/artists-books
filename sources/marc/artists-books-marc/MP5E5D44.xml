@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01458cam a2200349 cc4500</leader>
+  <controlfield tag="001">1177315394</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20170913084052.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">031007s1985    xx |||||      00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1177315394</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)107315394</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ107315394</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)314403400</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Gesammelte Werke</subfield>
+    <subfield code="n">39</subfield>
+    <subfield code="p">Kleinere Werke (... Teil) = Smaller works (part ...) : Veröffentlichtes und bisher Unveröffentlichtes aus den Jahren ..</subfield>
+    <subfield code="c">Dieter Roth. [Hrsg. von Hj. Mayer ...]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Hellnar</subfield>
+    <subfield code="a">Köln</subfield>
+    <subfield code="b">Mayer</subfield>
+    <subfield code="c">1985</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">Getr. Zählung</subfield>
+    <subfield code="b">nur Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Werkverzeichnis</subfield>
+    <subfield code="0">(DE-588)4189680-4</subfield>
+    <subfield code="0">(DE-627)104464909</subfield>
+    <subfield code="0">(DE-576)210061456</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)118603086</subfield>
+    <subfield code="0">(DE-627)079394639</subfield>
+    <subfield code="0">(DE-576)209088877</subfield>
+    <subfield code="a">Roth, Dieter</subfield>
+    <subfield code="d">1930-1998</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Roth, Dieter</subfield>
+    <subfield code="d">1930-1998</subfield>
+    <subfield code="0">(DE-588)118603086</subfield>
+    <subfield code="0">(DE-627)079394639</subfield>
+    <subfield code="0">(DE-576)209088877</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="w">(DE-627)1071877178</subfield>
+    <subfield code="w">(DE-576)001877178</subfield>
+    <subfield code="g">39</subfield>
+    <subfield code="q">39</subfield>
+    <subfield code="7">nnam</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2432124634</subfield>
+    <subfield code="b">DE-25</subfield>
+    <subfield code="9">25</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">TM 2003/2789-39</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2895996911</subfield>
+    <subfield code="b">DE-24</subfield>
+    <subfield code="9">24</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">AB 744-39</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2931986321</subfield>
+    <subfield code="b">DE-Mar1</subfield>
+    <subfield code="9">Mar 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">M (Werke:1969)</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2979885061</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">0137 01 0110</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">MV</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">MP5E5D44</subfield><subfield code="b">roth / gesammelte werke 39 39</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00808cam a22002412c 4500</leader>
+  <controlfield tag="001">468084789</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20180318091316.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">000101s1979    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)468084789</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV468084789</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)835330097</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Aballéa, Martine</subfield>
+    <subfield code="d">1950-</subfield>
+    <subfield code="0">(DE-588)122526724</subfield>
+    <subfield code="0">(DE-627)081996535</subfield>
+    <subfield code="0">(DE-576)172043816</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Element rage</subfield>
+    <subfield code="c">Martine Aballéa</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Joinville-Le-Pont</subfield>
+    <subfield code="b">Presses de la Société B.G.B.</subfield>
+    <subfield code="c">1979</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[4] Bl</subfield>
+    <subfield code="b">Ill</subfield>
+    <subfield code="c">23,5 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">678823367</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 22035 - kl</subfield>
+    <subfield code="g">NB::22035:-:kl</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">FGJ3KAJ9</subfield><subfield code="b">aballéa / element rage</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

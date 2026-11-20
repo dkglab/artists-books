@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01112cam a2200313 c 4500</leader>
+  <controlfield tag="001">625199480</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250217013633.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">100504s1999    xx ||||| c    00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1556709633</subfield>
+    <subfield code="9">1-55670-963-3</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)625199480</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV625199480</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Stairs</subfield>
+    <subfield code="c">Rein Jansma</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">o.O.</subfield>
+    <subfield code="b">Joost Elfers Books</subfield>
+    <subfield code="c">1999</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[9] Bl</subfield>
+    <subfield code="b">in Kassette</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4269067-5</subfield>
+    <subfield code="0">(DE-627)104463171</subfield>
+    <subfield code="0">(DE-576)210662204</subfield>
+    <subfield code="a">Buchobjekt</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Jansma, Rein</subfield>
+    <subfield code="d">1959-</subfield>
+    <subfield code="0">(DE-588)1051410770</subfield>
+    <subfield code="0">(DE-627)786150157</subfield>
+    <subfield code="0">(DE-576)406430543</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+    <subfield code="j">Bildende Künstler</subfield>
+    <subfield code="0">(DE-627)181571080</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">C6CZZH4J</subfield><subfield code="b">1556709633</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

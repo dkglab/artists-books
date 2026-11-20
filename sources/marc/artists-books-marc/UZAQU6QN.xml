@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00832cam a2200265 c 4500</leader>
+  <controlfield tag="001">594010993</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20140618202828.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">090319s1993    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)594010993</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV594010993</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)42454802</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Rosenthal, Barbara</subfield>
+    <subfield code="0">(DE-588)174264968</subfield>
+    <subfield code="0">(DE-627)699152909</subfield>
+    <subfield code="0">(DE-576)135094429</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Children's shoes</subfield>
+    <subfield code="c">Barbara Rosenthal</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">NYC [New York, N.Y.]</subfield>
+    <subfield code="b">B. Rosenthal</subfield>
+    <subfield code="c">1993</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[30] Bl</subfield>
+    <subfield code="b">nur Ill</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">925833843</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 8 2009 1820</subfield>
+    <subfield code="g">NB::8:2009:1820:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">UZAQU6QN</subfield><subfield code="b">rosenthal / children s shoes</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00527    a2200145   4500</leader>
+  <controlfield tag="001">ocm32731017</controlfield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Heft, Caren</subfield>
+    <subfield code="0">no94003392</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Chimera Farm Press</subfield>
+    <subfield code="0">no95034607</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Canicular Press</subfield>
+    <subfield code="0">n92080281</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">River of passing</subfield>
+    <subfield code="c">[Caren Heft]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Racine, Wis. :</subfield>
+    <subfield code="b">Chimera Farm Press,</subfield>
+    <subfield code="c">1985.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="c">©1984</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged)</subfield>
+    <subfield code="b">maps</subfield>
+    <subfield code="c">18 cm</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"River of passing was ... printed ... at the Canicular Press in March 1985"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"The edition consists of 25 copies ..."--Colophon.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">S4LK2R8J</subfield><subfield code="b">heft / river of passing</subfield><subfield code="c">title-author</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

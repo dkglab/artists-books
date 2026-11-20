@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02578cam a2200493 a 4500</leader>
+  <controlfield tag="001">16662992</controlfield>
+  <controlfield tag="005">20250607042048.9</controlfield>
+  <controlfield tag="008">110223s2011    nyua     bc   001 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">16662992</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">1</subfield>
+    <subfield code="e">ecip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">2 shelf copies</subfield>
+    <subfield code="x">KW, 2015-10-23</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">2 shelf copies</subfield>
+    <subfield code="x">policy default</subfield>
+    <subfield code="e">claim1  2012-01-24</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">rc14 2011-02-23;</subfield>
+    <subfield code="c">rc14 2011-02-23 to Subj.</subfield>
+    <subfield code="d">rc15 2011-02-24 to Dewey</subfield>
+    <subfield code="w">rd03 2011-02-25</subfield>
+    <subfield code="a">xn04 2012-02-23 1 copy rec'd., to CIP ver.</subfield>
+    <subfield code="f">re13 2012-04-12 Z-CipVer Copy 1 Barcode 00288743186 to BCCD</subfield>
+    <subfield code="t">xn02 2012-09-07 copy 2 added</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-644, LCAPM-893</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2011008242</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">015809399</subfield>
+    <subfield code="2">Uk</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781568989921</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781568986098</subfield>
+    <subfield code="q">alk. paper</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1568986092</subfield>
+    <subfield code="q">alk. paper</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)704243823</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">YDXCP</subfield>
+    <subfield code="d">ORX</subfield>
+    <subfield code="d">SINLB</subfield>
+    <subfield code="d">UKMGB</subfield>
+    <subfield code="d">C#P</subfield>
+    <subfield code="d">UPP</subfield>
+    <subfield code="d">IOJ</subfield>
+    <subfield code="d">FHC</subfield>
+    <subfield code="d">BDX</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+    <subfield code="a">n-us-dc</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.35.U6</subfield>
+    <subfield code="b">W37 2011</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">709.04/082074753</subfield>
+    <subfield code="2">22</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">704.042074753</subfield>
+    <subfield code="2">22</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Wasserman, Krystyna.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The book as art :</subfield>
+    <subfield code="b">artists' books from the National Museum of Women in the Arts /</subfield>
+    <subfield code="c">Krystyna Wasserman ; with essays by Johanna Drucker and Audrey Niffenegger.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">Artists' books from the National Museum of Women in the Arts</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">2nd ed.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Princeton Architectural Press,</subfield>
+    <subfield code="c">c2011.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">208 p. :</subfield>
+    <subfield code="b">col. ill. ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Originally published: 2007.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references and index.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2="0">
+    <subfield code="g">Foreword /</subfield>
+    <subfield code="r">Susan Fisher Sterling --</subfield>
+    <subfield code="g">Acknowledgments /</subfield>
+    <subfield code="r">Krystyna Wasserman --</subfield>
+    <subfield code="t">What does it mean to make a book? /</subfield>
+    <subfield code="r">Audrey Niffenegger --</subfield>
+    <subfield code="t">Intimate authority /</subfield>
+    <subfield code="r">Johanna Drucker --</subfield>
+    <subfield code="t">Brightest heaven of invention /</subfield>
+    <subfield code="r">Krystyna Wasserman --</subfield>
+    <subfield code="t">Storytellers --</subfield>
+    <subfield code="t">Nature --</subfield>
+    <subfield code="t">Food and the body --</subfield>
+    <subfield code="t">Autobiographers --</subfield>
+    <subfield code="t">Dreamers and magicians --</subfield>
+    <subfield code="t">Historians --</subfield>
+    <subfield code="t">Mothers, daughters, and wives --</subfield>
+    <subfield code="t">Travelers --</subfield>
+    <subfield code="t">Inspired by the muses.</subfield>
+  </datafield>
+  <datafield tag="610" ind1="2" ind2="0">
+    <subfield code="a">National Museum of Women in the Arts (U.S.)</subfield>
+    <subfield code="v">Catalogs.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Catalogs.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Women artists</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Catalogs.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Washington (D.C.)</subfield>
+    <subfield code="v">Catalogs.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Catalogs.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2014026057</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Drucker, Johanna,</subfield>
+    <subfield code="d">1952-</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Niffenegger, Audrey.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">2GKQLXU9</subfield><subfield code="b">9781568989921</subfield><subfield code="c">isbn</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

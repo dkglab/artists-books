@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01905cam a22004212c 4500</leader>
+  <controlfield tag="001">468661476</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20190226173359.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">000101s1995    xxk||||| c    00| ||ger c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0947564667</subfield>
+    <subfield code="9">0-947564-66-7</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)468661476</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV468661476</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)845337597</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Gerhard Richter</subfield>
+    <subfield code="b">Stammheim : 31.5.-4.8.</subfield>
+    <subfield code="c">[Forew.: Anne Seymour. German transl. by Susanne Schmidt. Typography by Peter B. Willberg]</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="3">
+    <subfield code="a">Painting in the Nineties</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Anthony d'Offay Gallery</subfield>
+    <subfield code="c">1995</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[28] Bl.</subfield>
+    <subfield code="b">[23] Taf. (farb.)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Der Zyklus "Stammheim" wurde zuerst im Rahmen der Ausst. "Gerhard Richter. Painting in the Nineties" in London, Anthony d'Offay Gallery, vom 31.5. - 4.8.1995 gezeigt</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">Text engl. und dt.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)118600419</subfield>
+    <subfield code="0">(DE-627)079392431</subfield>
+    <subfield code="0">(DE-576)16272070X</subfield>
+    <subfield code="a">Richter, Gerhard</subfield>
+    <subfield code="d">1932-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Seymour, Anne</subfield>
+    <subfield code="d">1941-</subfield>
+    <subfield code="0">(DE-588)141313676</subfield>
+    <subfield code="0">(DE-627)626877482</subfield>
+    <subfield code="0">(DE-576)163050341</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schmidt, Susanne</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Richter, Gerhard</subfield>
+    <subfield code="d">1932-</subfield>
+    <subfield code="0">(DE-588)118600419</subfield>
+    <subfield code="0">(DE-627)079392431</subfield>
+    <subfield code="0">(DE-576)16272070X</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Willberg, Peter B.</subfield>
+    <subfield code="0">(DE-588)1057535699</subfield>
+    <subfield code="0">(DE-627)79602927X</subfield>
+    <subfield code="0">(DE-576)413325180</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Anthony d'Offay Gallery</subfield>
+    <subfield code="0">(DE-588)3006947-6</subfield>
+    <subfield code="0">(DE-627)102049653</subfield>
+    <subfield code="0">(DE-576)193809923</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">678344299</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 27930 - kl</subfield>
+    <subfield code="g">NB::27930:-:kl</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+    <subfield code="j">Bildende Künstler</subfield>
+    <subfield code="0">(DE-627)181571080</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">RFPBS3QW</subfield><subfield code="b">9780947564667</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

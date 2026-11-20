@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01531cam a2200433 a 4500</leader>
+  <controlfield tag="001">1957839</controlfield>
+  <controlfield tag="005">20250607074732.7</controlfield>
+  <controlfield tag="008">871008s1985    enka          000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">1957839</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">4</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-644, LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   87181249 </subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0901380512</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780901380517</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">(DLC)   87181249</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-uk-en</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">NE628.4</subfield>
+    <subfield code="b">.C64 1985</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">769.942</subfield>
+    <subfield code="2">19</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Coleman, John.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Work from common knowledge /</subfield>
+    <subfield code="c">John Coleman, Glyn Banks, Hannah Vowles.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Guildford [Surrey] :</subfield>
+    <subfield code="b">Circle Press,</subfield>
+    <subfield code="c">1985.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[27] leaves :</subfield>
+    <subfield code="b">ill. (some col.) ;</subfield>
+    <subfield code="c">23 x 30 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"A limited edition of one hundred books printed using a mixture of silk-screen, wood-cut, line-block and letterpress"--Leaf [1].</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">LC has copy no. 40, signed by the authors.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Prints, English</subfield>
+    <subfield code="y">20th century.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Banks, Glyn.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Vowles, Hannah.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Circle Press.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Press Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="922" ind1=" " ind2=" ">
+    <subfield code="a">ap</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">LAC knj 2019-09-23 update (1 card)</subfield>
+  </datafield>
+  <datafield tag="984" ind1=" " ind2=" ">
+    <subfield code="a">rsl</subfield>
+    <subfield code="d">2019-09-23</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="a">rblacfederal</subfield>
+    <subfield code="d">20190923</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="a">rarebk/press</subfield>
+    <subfield code="e">rbc</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-RareBook</subfield>
+    <subfield code="h">NE628.4</subfield>
+    <subfield code="i">.C64 1985</subfield>
+    <subfield code="t">Copy 1</subfield>
+    <subfield code="m">Press Coll</subfield>
+    <subfield code="w">BOOKS</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">4PS6WNMA</subfield><subfield code="b">9780901380517</subfield><subfield code="c">isbn</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

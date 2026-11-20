@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00850cam a22002532c 4500</leader>
+  <controlfield tag="001">075465574</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20180317151115.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">020501s1980    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)075465574</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV075465574</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)82704125</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Schmidt-Heins, Barbara</subfield>
+    <subfield code="d">1949-</subfield>
+    <subfield code="0">(DE-588)118609025</subfield>
+    <subfield code="0">(DE-627)079399444</subfield>
+    <subfield code="0">(DE-576)209100621</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="5">
+    <subfield code="a">Eine Gedenk-Minute für die Zeit</subfield>
+    <subfield code="c">Barbara Schmidt-Heins</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Uetersen</subfield>
+    <subfield code="b">Röbcke</subfield>
+    <subfield code="c">1980</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[128] S</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">15 x 21 cm, Paperback, 128 S. mit Zeitangaben. Aufl.: 200 Ex</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">788151266</subfield>
+    <subfield code="b">DE-715</subfield>
+    <subfield code="9">715</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">R kun PK 9022</subfield>
+    <subfield code="h">248</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">USTQHMBD</subfield><subfield code="b">schmidt heins / eine gedenk minute für die zeit</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

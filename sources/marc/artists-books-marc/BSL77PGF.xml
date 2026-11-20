@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00871cam a22002772c 4500</leader>
+  <controlfield tag="001">719230772</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20160809164700.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">120711s1986    xx |||||      00| ||fre c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)719230772</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV719230772</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-604)116850310</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Broodthaers, Marcel</subfield>
+    <subfield code="d">1924-1976</subfield>
+    <subfield code="0">(DE-588)118515705</subfield>
+    <subfield code="0">(DE-627)217056350</subfield>
+    <subfield code="0">(DE-576)166004464</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Mademoise</subfield>
+    <subfield code="c">Marcel Broodthaers</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Paris</subfield>
+    <subfield code="b">Gillespie Laage Salomon</subfield>
+    <subfield code="c">1986</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[18] Bl.</subfield>
+    <subfield code="b">Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Faksimile eines Manuskripts mit Zeichnungen</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Aufl. 300 Ex</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">‡aArtists' books‡zBelgium‡vSpecimens</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">BSL77PGF</subfield><subfield code="b">broodthaers / mademoise</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01174cam a2200361uu 4500</leader>
+  <controlfield tag="001">9929226450001551</controlfield>
+  <controlfield tag="005">20170410123441.0</controlfield>
+  <controlfield tag="008">940803s1980    cau|||||||||||||| ||eng||</controlfield>
+  <controlfield tag="009">328101</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">94-B15430</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">328101</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CMalG)328101-gettydb-Voyager</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)33496486</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CMalG</subfield>
+    <subfield code="c">CMalG</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.B415</subfield>
+    <subfield code="b">S58 1980</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Beery, Gene B.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Sunrise sunset /</subfield>
+    <subfield code="c">Gene B. Beery.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Sutter Creek, Ca. :</subfield>
+    <subfield code="b">Gene B. Beery,</subfield>
+    <subfield code="c">c1980.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 v. (unpaged) :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">United States.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="905" ind1=" " ind2="1">
+    <subfield code="a">1</subfield>
+    <subfield code="b">08/03/94 BLM</subfield>
+    <subfield code="c">MAI</subfield>
+    <subfield code="e">DC</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2="1">
+    <subfield code="a">BRW</subfield>
+  </datafield>
+  <datafield tag="909" ind1=" " ind2="1">
+    <subfield code="a">AMH</subfield>
+  </datafield>
+  <datafield tag="911" ind1=" " ind2="1">
+    <subfield code="a">Jean Brown Collection</subfield>
+  </datafield>
+  <datafield tag="921" ind1=" " ind2=" ">
+    <subfield code="a">b13317222</subfield>
+    <subfield code="b">04-30-97</subfield>
+    <subfield code="c">04-28-95</subfield>
+    <subfield code="d">sc</subfield>
+    <subfield code="e">09-15-95</subfield>
+    <subfield code="f">a</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">c</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">OCLC D160706.R807882 20160726</subfield>
+  </datafield>
+  <datafield tag="960" ind1=" " ind2="1">
+    <subfield code="b">0</subfield>
+  </datafield>
+  <datafield tag="981" ind1=" " ind2="1">
+    <subfield code="b">1</subfield>
+    <subfield code="c">08/03/94 REC</subfield>
+    <subfield code="d">MAIN</subfield>
+    <subfield code="e">MAIN</subfield>
+  </datafield>
+  <datafield tag="995" ind1=" " ind2=" ">
+    <subfield code="a">94-B15430</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="s">9668</subfield>
+    <subfield code="n">CMalG</subfield>
+    <subfield code="l">CJPA</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">9929226450001551</subfield>
+    <subfield code="8">22140592280001551</subfield>
+    <subfield code="a">01GRI_INST</subfield>
+    <subfield code="b">SC</subfield>
+    <subfield code="c">SPECIAL COLLECTIONS - CONTACT REFERENCE</subfield>
+    <subfield code="d">N7433.4.B415 S58 1980</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">2AB</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">GRI Special Collections</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">MIS9QPFF</subfield><subfield code="b">beery / sunrise sunset</subfield><subfield code="c">title-author</subfield><subfield code="d">getty</subfield></datafield></record>
+</collection>

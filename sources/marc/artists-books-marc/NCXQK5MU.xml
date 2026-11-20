@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01782nam a2200385Ii 4500</leader>
+  <controlfield tag="001">991013573214807141</controlfield>
+  <controlfield tag="005">20220404144921.0</controlfield>
+  <controlfield tag="008">220228s2010    xxua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1300240211</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)on1300240211</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">MMX</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">MMX</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">MMXA</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.S5245</subfield>
+    <subfield code="b">R43 2010</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Shaffer, Travis,</subfield>
+    <subfield code="e">aritst.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Real estate opportunities :</subfield>
+    <subfield code="b">a 2010 international investment guide /</subfield>
+    <subfield code="c">Travis Shaffer.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[United States?] :</subfield>
+    <subfield code="b">[Travis Shaffer],</subfield>
+    <subfield code="c">[2010]</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">Housed</subfield>
+    <subfield code="c">20220404</subfield>
+    <subfield code="i">Placed in academy folder</subfield>
+    <subfield code="2">local</subfield>
+    <subfield code="5">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This book lists the 20 nations with the Highest Debt per capita nations (according to wikipedia) with artist generated maps and data. It is a play on the title of Artist Ed Ruscha's Real Estate Opportunities book from the 70's"-- Blurb website (viewed on February 28, 2022)</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Maps in art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Debt, Public</subfield>
+    <subfield code="v">Maps.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Ruscha, Edward</subfield>
+    <subfield code="x">Influence.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2010.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">North America.</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">United States.</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="x">PRES2022ame</subfield>
+  </datafield>
+  <datafield tag="852" ind1="0" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">N7433.4.S5245</subfield>
+    <subfield code="i">R43 2010</subfield>
+    <subfield code="x">OR20220228df</subfield>
+    <subfield code="x">2022FY</subfield>
+    <subfield code="x">2022CY</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="x">PRES2022ame</subfield>
+  </datafield>
+  <datafield tag="952" ind1="0" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">N7433.4.S5245</subfield>
+    <subfield code="i">R43 2010</subfield>
+    <subfield code="x">OR20220228df</subfield>
+    <subfield code="x">2022FY</subfield>
+    <subfield code="x">2022CY</subfield>
+  </datafield>
+  <datafield tag="983" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">Housed</subfield>
+    <subfield code="c">20220404</subfield>
+    <subfield code="i">Placed in academy folder</subfield>
+    <subfield code="2">local</subfield>
+    <subfield code="5">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">MMX</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991013573214807141</subfield>
+    <subfield code="8">22110811870007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMA</subfield>
+    <subfield code="c">MoMA Manhattan Artists' Books</subfield>
+    <subfield code="d">N7433.4.S5245 R43 2010</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mma</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Museum of Modern Art Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NCXQK5MU</subfield><subfield code="b">shaffer / real estate opportunities</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

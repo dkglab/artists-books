@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00957cam a22002532c 4500</leader>
+  <controlfield tag="001">468120955</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20180318091341.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">000101s1984    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)468120955</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV468120955</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)835336229</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Barkus, Mariona Marcia</subfield>
+    <subfield code="d">1948-</subfield>
+    <subfield code="0">(DE-588)1057439401</subfield>
+    <subfield code="0">(DE-627)79516601X</subfield>
+    <subfield code="0">(DE-576)413421414</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Generations</subfield>
+    <subfield code="b">a fictional family history</subfield>
+    <subfield code="c">by Mariona Barkus</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Los Angeles, Calif.</subfield>
+    <subfield code="b">Litkus Press</subfield>
+    <subfield code="c">1984</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[6] Bl</subfield>
+    <subfield code="b">Ill</subfield>
+    <subfield code="c">9,8 X 9,5 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Produced as a part of an artist in residence program at the Womens's Graphic Center, Los Angeles, Calif. 1984</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">678740186</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 22363 - kl</subfield>
+    <subfield code="g">NB::22363:-:kl</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">CTJSVUF6</subfield><subfield code="b">barkus / generations</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

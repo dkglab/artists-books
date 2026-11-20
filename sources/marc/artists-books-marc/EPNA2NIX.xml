@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01483cam a2200361 c 4500</leader>
+  <controlfield tag="001">1616474041</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20180725153301.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">050307s2003    xx |||||      00| ||und c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9508890495</subfield>
+    <subfield code="9">950-889-049-5</subfield>
+  </datafield>
+  <datafield tag="024" ind1="3" ind2=" ">
+    <subfield code="a">9789508890498</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1616474041</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)116369108</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ116369108</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)52776969</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">AN 34300</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/5983:</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Tango</subfield>
+    <subfield code="c">[Santiago Melazzini]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Buenos Aires</subfield>
+    <subfield code="b">La Marca Ed.</subfield>
+    <subfield code="c">2003</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[64] Bl.</subfield>
+    <subfield code="b">nur Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)130440396</subfield>
+    <subfield code="0">(DE-627)707489199</subfield>
+    <subfield code="0">(DE-576)217086861</subfield>
+    <subfield code="a">Melazzini, Santiago</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4441141-8</subfield>
+    <subfield code="0">(DE-627)22407685X</subfield>
+    <subfield code="0">(DE-576)21237012X</subfield>
+    <subfield code="a">Daumenkino</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4184440-3</subfield>
+    <subfield code="0">(DE-627)104387653</subfield>
+    <subfield code="0">(DE-576)210025670</subfield>
+    <subfield code="a">Tanz</subfield>
+    <subfield code="g">Motiv</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Melazzini, Santiago</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3200504315</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">AN 34300</subfield>
+    <subfield code="b">Buchausstattung, Buchschmuck, Künstlerische Typographie</subfield>
+    <subfield code="k">Allgemeines</subfield>
+    <subfield code="k">Buch- und Bibliothekswesen, Informationswissenschaft</subfield>
+    <subfield code="k">Buchwesen</subfield>
+    <subfield code="k">Buchgestaltung, Buchillustration</subfield>
+    <subfield code="k">Buchausstattung, Buchschmuck, Künstlerische Typographie</subfield>
+    <subfield code="0">(DE-627)1270642766</subfield>
+    <subfield code="0">(DE-625)rvk/5983:</subfield>
+    <subfield code="0">(DE-576)200642766</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">EPNA2NIX</subfield><subfield code="b">9508890495</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

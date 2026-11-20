@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01630nam a2200349Ia 4500</leader>
+  <controlfield tag="001">ocm25862371</controlfield>
+  <controlfield tag="005">20250801105039.0</controlfield>
+  <controlfield tag="008">920910t19921990nyua     bf   001 0 eng d</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   90090223</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">979912752</subfield>
+    <subfield code="a">1008174016</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">092715904X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)25862371</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">WTU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">WTU</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Smith, Keith A.,</subfield>
+    <subfield code="d">1938-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82260518</subfield>
+    <subfield code="1">http://viaf.org/viaf/95328493</subfield>
+    <subfield code="1">http://isni.org/isni/0000000108594614.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Non-adhesive binding /</subfield>
+    <subfield code="c">Keith A. Smith.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">2nd ed.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Fairport, N.Y. :</subfield>
+    <subfield code="b">Sigma Foundation,</subfield>
+    <subfield code="c">1992.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="2">
+    <subfield code="a">Rochester, N.Y. :</subfield>
+    <subfield code="b">Distributed by K.A. Smith.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©1990.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">318 pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">24 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Book number 128."</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references (page 286) and indexes.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Bookbinding</subfield>
+    <subfield code="v">Handbooks, manuals, etc.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2007102086.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Bookbinding.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/836265.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Handbooks and manuals.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423877.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">Y7QDBVR2</subfield><subfield code="b">smith / non adhesive binding</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

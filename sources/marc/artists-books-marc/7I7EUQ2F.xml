@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01019cam a2200313 cc4500</leader>
+  <controlfield tag="001">520584732</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20190526012108.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">061123s1973    xxk|||||      00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0859980073</subfield>
+    <subfield code="9">0-85998-007-3</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)520584732</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV520584732</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)836668841</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">spa</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Ehrenberg, Felipe</subfield>
+    <subfield code="d">1943-2017</subfield>
+    <subfield code="0">(DE-588)12807745X</subfield>
+    <subfield code="0">(DE-627)38438725X</subfield>
+    <subfield code="0">(DE-576)187604037</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Generación</subfield>
+    <subfield code="n">1</subfield>
+    <subfield code="c">F. Ehrenberg</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Cullompton</subfield>
+    <subfield code="b">Beau Geste Press</subfield>
+    <subfield code="c">1973</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">XIX, [64] Bl</subfield>
+    <subfield code="b">überw. Ill</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">11 x 15 cm, gebunden</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">Text engl. und span.</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="w">(DE-627)520584317</subfield>
+    <subfield code="w">(DE-576)9520584315</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="q">1.1973</subfield>
+    <subfield code="7">nnam</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">801754194</subfield>
+    <subfield code="b">DE-715</subfield>
+    <subfield code="9">715</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">R kun 894 ehr PK 9548-1</subfield>
+    <subfield code="h">248</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">MV</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">7I7EUQ2F</subfield><subfield code="b">0859980073</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

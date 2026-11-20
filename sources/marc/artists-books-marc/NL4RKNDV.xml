@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03076nam a2200589Ia 4500</leader>
+  <controlfield tag="001">ocn212410182</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127073806.0</controlfield>
+  <controlfield tag="008">080227s2008    nyua   j      000 0 eng  </controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2008008933</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">1201874842</subfield>
+    <subfield code="a">1407473465</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781596434257</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1596434252</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)212410182</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">BTCTA</subfield>
+    <subfield code="d">BAKER</subfield>
+    <subfield code="d">IK2</subfield>
+    <subfield code="d">EHH</subfield>
+    <subfield code="d">YDXCP</subfield>
+    <subfield code="d">FUG</subfield>
+    <subfield code="d">OTP</subfield>
+    <subfield code="d">MAC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCL</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PE1155</subfield>
+    <subfield code="b">.B3874 2008</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/PE1-PE3729</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">428.1</subfield>
+    <subfield code="2">22</subfield>
+  </datafield>
+  <datafield tag="082" ind1="1" ind2="4">
+    <subfield code="a">E</subfield>
+    <subfield code="2">22</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Bataille, Marion.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n2008013827</subfield>
+    <subfield code="1">http://viaf.org/viaf/78247263</subfield>
+    <subfield code="1">http://isni.org/isni/0000000071042866.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">ABC--3D /</subfield>
+    <subfield code="c">Marion Bataille.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">ABC3D.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Roaring Brook Press,</subfield>
+    <subfield code="c">2008.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">40 unnumbered pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">19 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="385" ind1=" " ind2=" ">
+    <subfield code="a">Children</subfield>
+    <subfield code="2">lcdgt.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">A pop-up book of the alphabet.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"A Neal Porter book."</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Alphabet</subfield>
+    <subfield code="v">Juvenile literature.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2009114729.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">English language</subfield>
+    <subfield code="x">Alphabet</subfield>
+    <subfield code="v">Juvenile literature.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008103036.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Alphabet books</subfield>
+    <subfield code="v">Juvenile literature.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2007101018.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Toy and movable books</subfield>
+    <subfield code="v">Specimens.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008112783.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Toy and movable books</subfield>
+    <subfield code="x">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1153424.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">English language</subfield>
+    <subfield code="x">Alphabet.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/910941.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Alphabet.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/805945.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Alphabet books</subfield>
+    <subfield code="y">2008.</subfield>
+    <subfield code="2">rbmscv.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Books with pop-up illustrations</subfield>
+    <subfield code="y">2008.</subfield>
+    <subfield code="2">local.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Books with movable illustrations</subfield>
+    <subfield code="y">2008.</subfield>
+    <subfield code="2">local.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Toy and movable books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026197.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">English language.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/910920.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Juvenile works.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1411637.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Toy and movable books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1726766.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Albin Michel Jeunesse (Firm),</subfield>
+    <subfield code="e">copyright holder.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no00048690</subfield>
+    <subfield code="1">http://viaf.org/viaf/146852634.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Roaring Brook Press,</subfield>
+    <subfield code="e">publisher.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2011095347</subfield>
+    <subfield code="1">http://viaf.org/viaf/171398133.</subfield>
+  </datafield>
+  <datafield tag="790" ind1=" " ind2=" ">
+    <subfield code="a">Sterling Hennis Pop-up.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">ll</subfield>
+    <subfield code="b">08-25-09</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">2</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NL4RKNDV</subfield><subfield code="b">9781596434257</subfield><subfield code="c">isbn</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

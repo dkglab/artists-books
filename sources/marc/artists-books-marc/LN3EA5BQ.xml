@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01238cam a2200373 i 4500</leader>
+  <controlfield tag="001">1362084</controlfield>
+  <controlfield tag="005">20250606210724.2</controlfield>
+  <controlfield tag="008">800312s1977    fr a          000 0 fre  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">1362084</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">3</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-644, LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   80456574 </subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">F77-12579</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2858890153 :</subfield>
+    <subfield code="c">135F</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9782858890156</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">(DLC)   80456574</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-fr---</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N6853.P625</subfield>
+    <subfield code="b">A4 1977</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">709/.44</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Poirier, Anne.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Domus Aurea :</subfield>
+    <subfield code="b">fascination des ruines /</subfield>
+    <subfield code="c">Anne et Patrick Poirier.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Paris (10, rue de Lisbonne, 75008) :</subfield>
+    <subfield code="b">Presses de la Connaissance,</subfield>
+    <subfield code="c">1977.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">144 p. :</subfield>
+    <subfield code="b">ill. (some col.) ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">Collection Les Mots et le visible ; 1</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Poirier, Anne.</subfield>
+    <subfield code="t">Domus Aurea.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Poirier, Patrick.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Environment (Art)</subfield>
+    <subfield code="z">France.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Ruins in art.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Poirier, Patrick,</subfield>
+    <subfield code="e">joint author.</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-GenColl</subfield>
+    <subfield code="h">N6853.P625</subfield>
+    <subfield code="i">A4 1977</subfield>
+    <subfield code="t">Copy 1</subfield>
+    <subfield code="w">BOOKS</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">LN3EA5BQ</subfield><subfield code="b">9782858890156</subfield><subfield code="c">isbn</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

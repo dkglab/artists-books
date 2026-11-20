@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02207cam a2200469 a 4500</leader>
+  <controlfield tag="001">16464400</controlfield>
+  <controlfield tag="005">20250607040648.2</controlfield>
+  <controlfield tag="008">100917s2005    caua          000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">16464400</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">1</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">hh08 2010-09-17 (telework) already received in RBSCD</subfield>
+    <subfield code="i">he06 2011-03-11</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-644</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2010479964</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-ca</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.P74</subfield>
+    <subfield code="b">D33 2005</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Press, Sara,</subfield>
+    <subfield code="d">1974-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="2">
+    <subfield code="a">A deeply game dog :</subfield>
+    <subfield code="b">the sweet science of breeding champions /</subfield>
+    <subfield code="c">text by Gnasser and California Jack ; illustrated and printed by Sara Press.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Pasadena, CA :</subfield>
+    <subfield code="b">Deeply Game Publications],</subfield>
+    <subfield code="c">2005.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[44] p. :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">17 x 22 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Text for Part 1 was posted by Gnasser to a now lost A.P.B.T. discussion group on 23 April 2004. Printed without his permission ... Text for the pull-out part 4, 'Jolly Jumper's aftercare guide', was reproduced without permission from California Jack's free tipsbook, which was published on the internet"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Images and diagrams rendered by Sara Press in 2004, based on pedigrees and historical found photographs ... printed by Vandercook letterpress onto Rives BFK paper using polymer plates.  Fonts are Aldus Roman SC and Aldus Roman"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Removable "Aftercare guide," [24] p., is on p. [39].</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition of 20.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has copy no. 3.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Dogs in art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Pit bull terriers.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Dogfighting.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Fighting dogs.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">California</subfield>
+    <subfield code="z">Pasedena.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">California</subfield>
+    <subfield code="z">Pasedena.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2005.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="700" ind1="0" ind2=" ">
+    <subfield code="a">Gnasser.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="0" ind2=" ">
+    <subfield code="a">California Jack.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Deeply Game Publications.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Press Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="d">20100917</subfield>
+    <subfield code="n">283813</subfield>
+    <subfield code="s">Press, Sara.</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">#ACQ 10-73 no. 2</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">63MAEVRZ</subfield><subfield code="b">press / a deeply game dog</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

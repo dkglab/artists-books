@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01274cam a2200325 c 4500</leader>
+  <controlfield tag="001">133082296X</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220108180548.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">070119s1977    xx ||||| c    00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)133082296X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)260822965</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ260822965</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)315445410</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="4">
+    <subfield code="a">The North Woods - Richard Long</subfield>
+    <subfield code="b">[Whitechapel Art Gallery, 25 January - 27 February 1977]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="c">1977</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[14] S.</subfield>
+    <subfield code="b">nur Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">2</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Long, Richard</subfield>
+    <subfield code="d">1945-</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)118780395</subfield>
+    <subfield code="0">(DE-627)079558496</subfield>
+    <subfield code="0">(DE-576)164475931</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Whitechapel Art Gallery</subfield>
+    <subfield code="0">(DE-588)1003465-1</subfield>
+    <subfield code="0">(DE-627)103015965</subfield>
+    <subfield code="0">(DE-576)191151599</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2770780689</subfield>
+    <subfield code="b">DE-Stg120</subfield>
+    <subfield code="9">Stg 120</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">FW Long, R. 1977</subfield>
+    <subfield code="h">Fotobibliothek</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2525141814</subfield>
+    <subfield code="b">DE-Ka89</subfield>
+    <subfield code="9">Ka 89</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Long Richard 1977</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">VF5MHSKM</subfield><subfield code="b">long / the north woods</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02227cam a22002532c 4500</leader>
+  <controlfield tag="001">075476509</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20180317151118.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">020501s1983    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)075476509</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV075476509</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)11863749</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Levy, Judy A.</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Shadow traffic</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Sugar Run, PA</subfield>
+    <subfield code="b">Ex Pr.</subfield>
+    <subfield code="c">1983</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">26 x 20 cm, quer, Ringheftung, bedr. transparente Folien u. Kunstdruckkarton. Aufl.: 300 Ex</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Der Autor zum Buch: Shadow Traffic is based on the dreams received from a number of people (and including my own). The dreams are picked for their truth to our concerns about living. The paper pages are offset from Haloid-Xerox originals ; the ace tate images are photosilkscreened from kodalith originals. The book is the container of many ideas that I have been interested in! The interaction of two or more images (by means of the acetate pages), the interaction of more than one 'word-unit' (piece of writing), the in tegration of words and images (in a way that is more unified than traditional linear type-set-by-machine-across-from-a-picture!), as well as more narrowly visual concerns (interplay of texture and softness, texture against texture etc.). I am an artist who turned to the book-form for a number of reasons. One of the main reasons is the greater complexity of form and content which can come with sequential images. Another, related reason, is t he opportunity to 'marry' words and images, to play them against each other for more complex communication. Another attraction of (the artist's) book for me, (since I mostly think in terms of editions, rather than one-o f-a-kind objects), is the possibility of making artwork available to everyone, not just the wealthy! I also value the private and personal interaction that people can have with books, acting in their own rhythm to t urn the pages, make the association, unfold the event. &lt;dt.&gt;</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">788167952</subfield>
+    <subfield code="b">DE-715</subfield>
+    <subfield code="9">715</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">R kun PK 9087</subfield>
+    <subfield code="h">248</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">4NIMKEFZ</subfield><subfield code="b">levy / shadow traffic</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

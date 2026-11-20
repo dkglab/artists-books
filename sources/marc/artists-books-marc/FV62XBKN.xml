@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01257cam a22003612c 4500</leader>
+  <controlfield tag="001">057007624</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220421131846.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">970323s1984    gw |||||      00| ||und c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">85,B23,0752</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">850886384</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="q"> : DM 7.00 (geh.)</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)057007624</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)9057007622</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV057007624</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">59</subfield>
+    <subfield code="2">sdnb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Heidsieck, Bernard</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="243" ind1="1" ind2="0">
+    <subfield code="a">Sammlung</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Poésie sonore et caves romaines suivi de poème partition D 4 P</subfield>
+    <subfield code="c">Bernard Heidsieck</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1. Aufl.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Köln</subfield>
+    <subfield code="b">Edition Hundertmark</subfield>
+    <subfield code="c">1984</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[16] S.</subfield>
+    <subfield code="c">21 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Heft der Edition Hundertmark</subfield>
+    <subfield code="v">14</subfield>
+  </datafield>
+  <datafield tag="505" ind1="8" ind2=" ">
+    <subfield code="a">Suivi de "Poème-partition D 4 P" / Bernard Heidsieck. Edition Hundertmark</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Edition Hundertmark</subfield>
+    <subfield code="g">Köln</subfield>
+    <subfield code="t">Heft der Edition Hundertmark</subfield>
+    <subfield code="v">14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="w">(DE-627)528211714</subfield>
+    <subfield code="w">(DE-576)9528211712</subfield>
+    <subfield code="w">(DE-600)2294518-0</subfield>
+    <subfield code="7">am</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1638439311</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 7814 f kl-14</subfield>
+    <subfield code="g">NB::7814:f:kl:14</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">FV62XBKN</subfield><subfield code="b">heidsieck / poésie sonore et caves romaines</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02714cam a2200421 i 4500</leader>
+  <controlfield tag="001">22874258</controlfield>
+  <controlfield tag="003">DLC</controlfield>
+  <controlfield tag="005">20260520150838.8</controlfield>
+  <controlfield tag="007">t|</controlfield>
+  <controlfield tag="008">221121s2023    paua     b    000 p eng  </controlfield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">1</subfield>
+    <subfield code="e">ecip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">xk39 2022-11-21</subfield>
+    <subfield code="c">xk39 2022-11-21 to review</subfield>
+    <subfield code="r">xk33 2022-11-29 (telework)</subfield>
+    <subfield code="d">xk33 2022-12-08 (telework) to CIP</subfield>
+    <subfield code="a">xn16 2026-03-03 1 copy rec'd., to CIP ver.</subfield>
+    <subfield code="f">xm01 2026-05-20 to PresSrvs</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2022055500</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781936994182</subfield>
+    <subfield code="q">paperback</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">DLC</subfield>
+    <subfield code="d">DLC-MRC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PS3563.A31875</subfield>
+    <subfield code="b">P7 2023</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">811/.54</subfield>
+    <subfield code="2">23/eng/20221208</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Mac Low, Jackson</subfield>
+    <subfield code="e">author</subfield>
+    <subfield code="4">aut</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/aut</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79075613</subfield>
+    <subfield code="1">http://id.loc.gov/rwo/agents/n79075613</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The pronouns :</subfield>
+    <subfield code="b">a collection of forty dances for the dancers, 3 February-22 March, 1964 /</subfield>
+    <subfield code="c">by Jackson Mac Low.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Philadelphia :</subfield>
+    <subfield code="b">Slought Foundation,</subfield>
+    <subfield code="c">[2023]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">135 pages</subfield>
+    <subfield code="b">illustrations</subfield>
+    <subfield code="c">22 cm</subfield>
+  </datafield>
+  <datafield tag="334" ind1=" " ind2=" ">
+    <subfield code="a">single unit</subfield>
+    <subfield code="b">mono</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/issuance/mono</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/contentTypes/txt</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/mediaTypes/n</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/carriers/nc</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustrations</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/millus/ill</subfield>
+  </datafield>
+  <datafield tag="353" ind1=" " ind2=" ">
+    <subfield code="a">bibliography</subfield>
+    <subfield code="b">bibliography</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/msupplcont/bibliography</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">First published in 1979 by Station Hill Press, Barrytown, NY.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"The Pronouns is an iconic collection of dance-instruction poems from 1964 by performance artist, composer, anarchist-pacifist, and poet Jackson Mac Low, who was famous for employing techniques of "systematic chance" in his writing. Each poem uses one of forty pronouns and a random combination of a limited vocabulary to create a script that one or more dancers interpret, thereby bringing the poem to life differently each time it is read or performed"-- Provided by publisher.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Dance</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85035659</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Poetry</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026481</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="1">http://id.loc.gov/resources/instances/22874258</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="4">http://id.loc.gov/ontologies/bibframe/instanceOf</subfield>
+    <subfield code="1">http://id.loc.gov/resources/works/22874258</subfield>
+  </datafield>
+  <datafield tag="884" ind1=" " ind2=" ">
+    <subfield code="a">DLC bibframe2marc v3.2-dev</subfield>
+    <subfield code="g">20260520</subfield>
+    <subfield code="q">DLC</subfield>
+    <subfield code="u">https://github.com/lcnetdev/bibframe2marc/tree/v3.2-dev</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="e">BIBFRAME</subfield>
+    <subfield code="d">2026-05-20T10:47:59</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">BCIJ8482</subfield><subfield code="b">low / the pronouns</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

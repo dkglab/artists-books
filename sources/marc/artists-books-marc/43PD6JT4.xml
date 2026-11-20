@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01270cam a2200373Ia 4500</leader>
+  <controlfield tag="001">990003223160302486</controlfield>
+  <controlfield tag="005">20160418194904.0</controlfield>
+  <controlfield tag="008">040913s2004    enk           000 p eng d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0330433326</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780330433327</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(Aleph)000322316EMU01</subfield>
+  </datafield>
+  <datafield tag="035" ind1="9" ind2=" ">
+    <subfield code="a">u2428730</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">ocm56496713</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(Sirsi) o56496713</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">MIA</subfield>
+    <subfield code="c">MIA</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">PR6060.A477</subfield>
+    <subfield code="b">T74 2004</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Jamie, Kathleen,</subfield>
+    <subfield code="d">1962-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The tree house /</subfield>
+    <subfield code="c">Kathleen Jamie.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Picador,</subfield>
+    <subfield code="c">2004.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">49 pages ;</subfield>
+    <subfield code="c">20 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Picador poetry</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Poetry Book Society choice"--Cover.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Picador poetry.</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">PromptCat</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">emu mk</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">9DT</subfield>
+    <subfield code="2">20041021</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">Z0</subfield>
+    <subfield code="b">EMU</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">990003223160302486</subfield>
+    <subfield code="8">22161198610002486</subfield>
+    <subfield code="a">01GALI_EMORY</subfield>
+    <subfield code="b">OXFD</subfield>
+    <subfield code="c">Book Stacks</subfield>
+    <subfield code="d">823.914 J321T</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">STACK</subfield>
+    <subfield code="k">1</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Oxford College Library</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">990003223160302486</subfield>
+    <subfield code="8">22161198630002486</subfield>
+    <subfield code="a">01GALI_EMORY</subfield>
+    <subfield code="b">UNIV</subfield>
+    <subfield code="c">Book Stacks</subfield>
+    <subfield code="d">PR6060 .A477 T74 2004</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">STACK</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">2</subfield>
+    <subfield code="q">Robert W. Woodruff Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">43PD6JT4</subfield><subfield code="b">liddell / the tree house</subfield><subfield code="c">title-author</subfield><subfield code="d">emory</subfield></datafield></record>
+</collection>

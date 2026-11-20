@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03471nam a2200565Ii 4500</leader>
+  <controlfield tag="001">ocn860910996</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127114956.0</controlfield>
+  <controlfield tag="008">131017s2013    ncu           000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)860910996</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NOC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">a-iq---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/a-iq</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.R616</subfield>
+    <subfield code="b">A75 2013</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Robinson, Lisa Beth,</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2009156754</subfield>
+    <subfield code="1">http://viaf.org/viaf/101471642.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="6">880-01</subfield>
+    <subfield code="a">Amidah.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Greenville, N.C.?] :</subfield>
+    <subfield code="b">Somnambulist Tango Press,</subfield>
+    <subfield code="c">[2013]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged) ;</subfield>
+    <subfield code="c">17 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from cover.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">One sheet folded accordion style to form 8 unnumbered pages; in paper cover.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Material: letter press, French paper.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"On March 5th, 2007 a car bomb was exploded on al-Mutanabbi Street, the ancient street of booksellers, poets and writers, located at the literary and cultural heart of Baghdad, Iraq. The attack killed 30 people and injured scores more."--Page [1].</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This book comes out of the historical idea that to destroy a people, the conquerors first destroy their books, and from imagining the experience of that horrible day. It is also a tribute to the resilience of words and our sisters and brothers who write, speak, and carry these words through the fire. This book is made in the spirit of peace."--Email from artist, dated Oct. 8, 2013.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Condition: no library markings, in protective enclosure.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Robinson, Lisa Beth.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2009156754</subfield>
+    <subfield code="1">http://viaf.org/viaf/101471642.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Robinson, Lisa Beth.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1791312.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Bombings</subfield>
+    <subfield code="z">Iraq</subfield>
+    <subfield code="z">Baghdad.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Violence</subfield>
+    <subfield code="z">Iraq</subfield>
+    <subfield code="z">Baghdad.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Vehicle bombs</subfield>
+    <subfield code="z">Iraq</subfield>
+    <subfield code="z">Baghdad.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Vehicle bombs.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1164956.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Violence.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1167224.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Bombings.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/835818.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Iraq</subfield>
+    <subfield code="z">Baghdad.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1207444.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">North Carolina.</subfield>
+    <subfield code="2">rbmscv.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Accordion fold format.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv00024.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Handmade papers.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv01435.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Somnambulist Tango Press.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2015122906</subfield>
+    <subfield code="1">http://viaf.org/viaf/55144782975282286450.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist's book's cover and interior</subfield>
+    <subfield code="u">https://library.artstor.org/public/SS33469_33469_42530157</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="880" ind1="1" ind2="0">
+    <subfield code="6">245-01/r</subfield>
+    <subfield code="a">עמידה.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.4.R616</subfield>
+    <subfield code="b">A75 2013</subfield>
+    <subfield code="z">090</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00046014392</subfield>
+    <subfield code="l">aart</subfield>
+    <subfield code="n">jc</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="u">-</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="t">78</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">10-17-13</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">ncu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">367HVISM</subfield><subfield code="b">b7597348</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02887cam a2200325Ki 4500</leader>
+  <controlfield tag="001">ocn914499621</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20150731035400.0</controlfield>
+  <controlfield tag="008">150727s2015    enke          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)914499621</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CPS</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">CPS</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.B7928</subfield>
+    <subfield code="b">F44 2015</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Bryant, Sarah</subfield>
+    <subfield code="q">(Sarah Herrick),</subfield>
+    <subfield code="d">1979-</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Figure study.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Brighton, UK] :</subfield>
+    <subfield code="b">Big Jump Press,</subfield>
+    <subfield code="c">2015.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">20 unnumbered pages, 113 leaves :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Figure Study is a collaborative project with David Allen, Visiting Assistant Professor in the Biology Department at Middlebury College. This book enables a quick and compelling comparison of population data for every region on earth. Using estimates prepared by the US Census Bureau, which are available through their International Data Base, we created population pyramids for every region and paired them up to create abstracted human forms. A thick-waisted form indicates two populations with a large older population that lives to quite advanced age. Narrow-waisted figures represent the combination of two populations with very few elderly people. Asymmetrical bulges to the left or right indicate a higher male or female population for particular age segments."--http://mcbaprize.org/bryant/</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"All 114 of these figures have been printed from linoleum onto drafting film and are housed together alongside a grid. The figures are each numbered and can be interpreted using a booklet containing an alphabetical and numerical index, as well as a short essay by David Allen about our process and the source of the data. The design of the enclosure encourages the viewer to layer the forms to create different combinations of shape and color. This process and the resulting imagery is initially reminiscent of elaborate dresses, paper dolls, and dissection plates, but the source of the data gives a different picture, laying bare the vast and critical differences between the basic equations of life in different parts of the world."--http://mcbaprize.org/bryant/</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This book was designed, letterpress-printed, and bound by hand over two years ending in 2015. The text was set in Adobe Garamond Pro and printed from polymer plates onto Arches Velin and Zerkall paper. The enclosure was designed and bound by Sarah Bryant in Ginga book cloth ... Of 35 copies, this is number 11"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">In slipcase as issued.</subfield>
+  </datafield>
+  <datafield tag="586" ind1=" " ind2=" ">
+    <subfield code="a">MCBA Prize Finalist, 2015.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Age distribution (Demography)</subfield>
+    <subfield code="x">In art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Great Britain.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Big Jump Press,</subfield>
+    <subfield code="e">publisher.</subfield>
+  </datafield>
+  <datafield tag="730" ind1="0" ind2=" ">
+    <subfield code="a">Fine printing and graphic arts collection.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">SAGL48SV</subfield><subfield code="b">bryant / figure study</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

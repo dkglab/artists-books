@@ -1,0 +1,550 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>05585cam a2201069 c 4500</leader>
+  <controlfield tag="001">186540426</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250630104439.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">950727s1995    au |||||      00| ||ger c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">95,N31,0436</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">95,A46,1352</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">944845282</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3211827269</subfield>
+    <subfield code="q"> : DM 49.00, S 350.00 (Pp.)</subfield>
+    <subfield code="9">3-211-82726-9</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)186540426</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)046679421</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV186540426</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)845034750</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-604)8103097759</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-AT</subfield>
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">46</subfield>
+    <subfield code="2">sdnb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,10</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">UH 7400</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/145775:</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">UB 2420</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/145310:</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LH 70080</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/94792:</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.06</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">06.22</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Schmatz, Ferdinand</subfield>
+    <subfield code="d">1953-</subfield>
+    <subfield code="0">(DE-588)11932587X</subfield>
+    <subfield code="0">(DE-627)080134831</subfield>
+    <subfield code="0">(DE-576)164498206</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Farbenlehre</subfield>
+    <subfield code="c">Ferdinand Schmatz; Heimo Zobernig</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Wien [u.a.]</subfield>
+    <subfield code="b">Springer</subfield>
+    <subfield code="c">1995</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">197 S.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">Künstlerbücher</subfield>
+  </datafield>
+  <datafield tag="505" ind1="8" ind2=" ">
+    <subfield code="a">Literaturverz. S. 183 - 195</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung/Langzeitarchivierung gewährleistet</subfield>
+    <subfield code="f">SSG</subfield>
+    <subfield code="x">XA-DE-BW</subfield>
+    <subfield code="2">pdager</subfield>
+    <subfield code="5">DE-16</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Künstlerbuch</subfield>
+    <subfield code="0">(DE-588)4229053-3</subfield>
+    <subfield code="0">(DE-627)10495146X</subfield>
+    <subfield code="0">(DE-576)210335815</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Quelle</subfield>
+    <subfield code="0">(DE-588)4135952-5</subfield>
+    <subfield code="0">(DE-627)105661236</subfield>
+    <subfield code="0">(DE-576)209665084</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4113517-9</subfield>
+    <subfield code="0">(DE-627)105828890</subfield>
+    <subfield code="0">(DE-576)209477121</subfield>
+    <subfield code="a">Farbenlehre</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="A">z</subfield>
+    <subfield code="2">gnd</subfield>
+    <subfield code="a">Geschichte</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">DE-101</subfield>
+  </datafield>
+  <datafield tag="689" ind1="1" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4113517-9</subfield>
+    <subfield code="0">(DE-627)105828890</subfield>
+    <subfield code="0">(DE-576)209477121</subfield>
+    <subfield code="a">Farbenlehre</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="1" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Zobernig, Heimo</subfield>
+    <subfield code="d">1958-</subfield>
+    <subfield code="0">(DE-588)119091712</subfield>
+    <subfield code="0">(DE-627)079884636</subfield>
+    <subfield code="0">(DE-576)168519526</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">SSG-OPC-bbi</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">027380351</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">1 B 45879</subfield>
+    <subfield code="h">2</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">728471620</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">1 B 94244</subfield>
+    <subfield code="h">2</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">176795456</subfield>
+    <subfield code="b">DE-84</subfield>
+    <subfield code="9">84</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">BK C 706</subfield>
+    <subfield code="g">3478-7056</subfield>
+    <subfield code="h">LS1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">175406456</subfield>
+    <subfield code="b">DE-18</subfield>
+    <subfield code="9">18</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">B 1998/1626</subfield>
+    <subfield code="h">SUB-SM</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">170098834</subfield>
+    <subfield code="b">DE-830</subfield>
+    <subfield code="9">830</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">3423-3568</subfield>
+    <subfield code="h">34</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">220003580</subfield>
+    <subfield code="b">DE-27</subfield>
+    <subfield code="9">27</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">96 B 104</subfield>
+    <subfield code="h">Mag</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">155887394</subfield>
+    <subfield code="b">DE-Ilm1</subfield>
+    <subfield code="9">Ilm 1</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">GWN LH 70080 S347</subfield>
+    <subfield code="h">35</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">271053844</subfield>
+    <subfield code="b">DE-Ilm1</subfield>
+    <subfield code="9">Ilm 1</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">PHY 97 A 2618+2</subfield>
+    <subfield code="h">91</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">159138922</subfield>
+    <subfield code="b">DE-7</subfield>
+    <subfield code="9">7</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">95 B 1667</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">195927494</subfield>
+    <subfield code="b">DE-28</subfield>
+    <subfield code="9">28</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">UH 7400 S347</subfield>
+    <subfield code="g">96 B 243</subfield>
+    <subfield code="h">28/BB1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">226412067</subfield>
+    <subfield code="b">DE-Wim2</subfield>
+    <subfield code="9">Wim 2</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">Id 1100/12</subfield>
+    <subfield code="g">4°-134 785</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">226412075</subfield>
+    <subfield code="b">DE-Wim2</subfield>
+    <subfield code="9">Wim 2</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">4°-134 785 /2</subfield>
+    <subfield code="g">4°-134 785 /2</subfield>
+    <subfield code="h">Mag</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">22891535X</subfield>
+    <subfield code="b">DE-3</subfield>
+    <subfield code="9">3</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">97 B 162</subfield>
+    <subfield code="h">M1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">171282310</subfield>
+    <subfield code="b">DE-9</subfield>
+    <subfield code="9">9</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">680/LH 70080 S347</subfield>
+    <subfield code="h">UB 680</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">185934323</subfield>
+    <subfield code="b">DE-89</subfield>
+    <subfield code="9">89</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Fol 96-1263</subfield>
+    <subfield code="h">FBE Mag</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">155999222</subfield>
+    <subfield code="b">DE-Ma9</subfield>
+    <subfield code="9">Ma 9</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">1995 b 292:1</subfield>
+    <subfield code="h">FH</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">786910070</subfield>
+    <subfield code="b">DE-45</subfield>
+    <subfield code="9">45</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">4-95-0403</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">176350039</subfield>
+    <subfield code="b">DE-Wis1</subfield>
+    <subfield code="9">Wis 1</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">1995 B 588</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">678134979</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 28610 m mtl</subfield>
+    <subfield code="g">NB::28610:m:mtl</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">313078343</subfield>
+    <subfield code="b">DE-551</subfield>
+    <subfield code="9">551</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">GI 1223-21</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316914641</subfield>
+    <subfield code="b">DE-25</subfield>
+    <subfield code="9">25</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">TX 95/2025</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316914692</subfield>
+    <subfield code="b">DE-352</subfield>
+    <subfield code="9">352</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316914730</subfield>
+    <subfield code="b">DE-180</subfield>
+    <subfield code="9">180</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g"> 95 L 0766</subfield>
+    <subfield code="h">MAG06</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316914773</subfield>
+    <subfield code="b">DE-16</subfield>
+    <subfield code="9">16</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">96 D 505</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316914846</subfield>
+    <subfield code="b">DE-90</subfield>
+    <subfield code="9">90</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">95 E 848</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316914900</subfield>
+    <subfield code="b">DE-31</subfield>
+    <subfield code="9">31</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">97 B 24</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316914943</subfield>
+    <subfield code="b">DE-Lg1</subfield>
+    <subfield code="9">Lg 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Kun 1d Schma</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316915001</subfield>
+    <subfield code="b">DE-Mar1</subfield>
+    <subfield code="9">Mar 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">S1:Quart</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316915028</subfield>
+    <subfield code="b">DE-Zwi2</subfield>
+    <subfield code="9">Zwi 2</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">102 807</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316915095</subfield>
+    <subfield code="b">DE-520</subfield>
+    <subfield code="9">520</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">LH 61346-96 5054 01</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3876059941</subfield>
+    <subfield code="b">DE-D13</subfield>
+    <subfield code="9">D 13</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316915133</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">7 Zobernig, H. 3 1995</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316915168</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Kde 3018</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3316915249</subfield>
+    <subfield code="b">DE-1973</subfield>
+    <subfield code="9">1973</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Magazin Kü Zobernig, H. 1995</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">331691529X</subfield>
+    <subfield code="b">DE-L330</subfield>
+    <subfield code="9">L 330</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">08 Zober H 1995:1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4571544073</subfield>
+    <subfield code="b">DE-N39</subfield>
+    <subfield code="9">N 39</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">50 Zob / 95</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">Blocktest</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="s">DE-16</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">UH 7400</subfield>
+    <subfield code="b">Farbenlehre, Farbmetrik, incl. Messinstrumente</subfield>
+    <subfield code="k">Physik</subfield>
+    <subfield code="k">Klassische Felder, Elektrizitätslehre, Optik, Quantenoptik, Laser,  Relativitätstheorie</subfield>
+    <subfield code="k">Quantenoptik, Laser- und Masertheorie,  Quantenelektronik, Teilchenoptik, Relativitätstheorie</subfield>
+    <subfield code="k">Instrumentelle Optik und Physik optischer Instrumente</subfield>
+    <subfield code="k">Farbenlehre, Farbmetrik, incl. Messinstrumente</subfield>
+    <subfield code="0">(DE-627)1271521792</subfield>
+    <subfield code="0">(DE-625)rvk/145775:</subfield>
+    <subfield code="0">(DE-576)201521792</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">UB 2420</subfield>
+    <subfield code="b">Klassische Felder, Elektrodynamik, Optik, Laser, Quantenoptik, Relativitätstheorie</subfield>
+    <subfield code="k">Physik</subfield>
+    <subfield code="k">Allgemeine Nachschlagewerke, Bibliografien, Geschichte und Philosophie der Physik</subfield>
+    <subfield code="k">Geschichte der Physik</subfield>
+    <subfield code="k">Geschichte einzelner Teilgebiete und Probleme</subfield>
+    <subfield code="k">Klassische Felder, Elektrodynamik, Optik, Laser, Quantenoptik, Relativitätstheorie</subfield>
+    <subfield code="0">(DE-627)1270881256</subfield>
+    <subfield code="0">(DE-625)rvk/145310:</subfield>
+    <subfield code="0">(DE-576)200881256</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LH 70080</subfield>
+    <subfield code="b">Farbenlehre</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeines. Allgemeine Kunstgeschichte</subfield>
+    <subfield code="k">Kunstgeschichte einzelner Gattungen der Kunst</subfield>
+    <subfield code="k">Malerei</subfield>
+    <subfield code="k">Farbenlehre</subfield>
+    <subfield code="0">(DE-627)1270704990</subfield>
+    <subfield code="0">(DE-625)rvk/94792:</subfield>
+    <subfield code="0">(DE-576)200704990</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.06</subfield>
+    <subfield code="j">Kunstphilosophie</subfield>
+    <subfield code="j">Kunsttheorie</subfield>
+    <subfield code="0">(DE-627)10641433X</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">06.22</subfield>
+    <subfield code="j">Buchgestaltung</subfield>
+    <subfield code="0">(DE-627)106403591</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">XMD55A9R</subfield><subfield code="b">9783211827260</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

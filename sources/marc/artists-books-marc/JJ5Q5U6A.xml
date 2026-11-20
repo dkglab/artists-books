@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01595cam a2200361   4500</leader>
+  <controlfield tag="001">3212396</controlfield>
+  <controlfield tag="005">20250607145614.7</controlfield>
+  <controlfield tag="008">700311s1970    nyuabh        000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">3212396</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">u</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-644</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   78089976 </subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">087110041X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">(DLC)   78089976</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="041" ind1="1" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="h">fre</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-gr---</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PQ2679.P6</subfield>
+    <subfield code="b">A28</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">848/.9/1408</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Spoerri, Daniel,</subfield>
+    <subfield code="d">1930-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The mythological travels of a modern Sir John Mandeville;</subfield>
+    <subfield code="b">being an account of the magic, meatballs, and other monkey business peculiar to the sojourn of Daniel Spoerri upon the Isle of Symi, together with divers speculations thereon.</subfield>
+    <subfield code="c">Translated out of the French and introduced by Emmett Williams.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">New York,</subfield>
+    <subfield code="b">Something Else Press,</subfield>
+    <subfield code="c">1970.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">xxviii, 278 p.</subfield>
+    <subfield code="b">illus., facsims., map (on lining papers)</subfield>
+    <subfield code="c">22 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Magic à la noix and A dissertation on Keftedes were first published ... as issues 3 and 4 of Le petit colosse de Symi."</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Rev. ed. published as: Mythology &amp; meatballs. 1982.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">A letter.--Magic à la noix.--A gastronomic itinerary.--A dissertation on keftedes.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Meatballs.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Symē (Greece : Municipality)</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">Cd. 2 &amp; note added EA14 8/2/82.</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-GenColl</subfield>
+    <subfield code="h">PQ2679.P6</subfield>
+    <subfield code="i">A28</subfield>
+    <subfield code="t">Copy 1</subfield>
+    <subfield code="w">BOOKS</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">JJ5Q5U6A</subfield><subfield code="b">spoerri / the mythological travels of a modern sir john mandeville</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

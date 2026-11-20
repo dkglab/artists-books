@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02184cam a2200433 a 4500</leader>
+  <controlfield tag="001">13925641</controlfield>
+  <controlfield tag="005">20250606215006.6</controlfield>
+  <controlfield tag="008">050411s1999    enka          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">13925641</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">3</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">M.Dimunation, RareBook, 2002</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">nb00 2005-04-11 z-processor to RareBook (2002)</subfield>
+    <subfield code="i">he04 2009-02-09</subfield>
+    <subfield code="e">he10 2009-02-13</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-644</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2009368016</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">GBA0-35749</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)43918838</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">OUN</subfield>
+    <subfield code="c">OUN</subfield>
+    <subfield code="d">UKM</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="041" ind1="1" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">wel</subfield>
+    <subfield code="h">wel</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PB2363.M2</subfield>
+    <subfield code="b">J684 1999</subfield>
+  </datafield>
+  <datafield tag="130" ind1="0" ind2=" ">
+    <subfield code="a">Mabinogion.</subfield>
+    <subfield code="k">Selections.</subfield>
+    <subfield code="l">English.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="2">
+    <subfield code="a">Y morgrugyn cloff.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Lame ant</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Morgrugyn cloff, the lame ant</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Croyden, Surrey :</subfield>
+    <subfield code="b">The Red Hen Press,</subfield>
+    <subfield code="c">1999]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[52] p. :</subfield>
+    <subfield code="b">ill. (mezzotint, aquatint, and relief etching) ;</subfield>
+    <subfield code="c">40 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Seven tales from The Mabinogion introduced &amp; abridged by Shirley Jones, but still preserving their full flavour, with her translation ... of passages selected to convey the humour, irony &amp; lyricism that permeate these stories. Seven of her images in mezzotint, aquatint &amp; relief etching are interleaved with Unryusi tissue printed with the Welsh passages they illustrate. ...": colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">" ...The English text was set ... at Gwasg Gregynog, &amp; printed throughout by Shirley Jones ... in an edition of 40."  Cf. colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">In green cloth backed in green leather stamped in gold; decorated pastepaper endpapers, as issued in a green cloth box measuring 41 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC copy is no. 33, signed by Shirley Jones and dated [19]99.  Publisher's advertisement laid in.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Jones, Shirley,</subfield>
+    <subfield code="d">1934 November 14-</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Red Hen Press.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Gwasg Gregynog (1974-   )</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Press Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="a">purchase</subfield>
+    <subfield code="s">Red Hen Press</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a"># ACQ 05-26 no. 3. he04 2009-02-09</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ELZX59SU</subfield><subfield code="b">jones / y morgrugyn cloff</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

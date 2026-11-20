@@ -37,14 +37,16 @@ serve: web/site/index.html | tools/snowman/snowman
 
 graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 	@mkdir -p graph
-	# -Dlog4j2.statusLoggerLevel=OFF: the SPARQL-Anything archive triplifier (the
-	# per-record MARC zip read, #81) trips Log4j's StatusLogger onto stdout, which
+	# -Dlog4j2.statusLoggerLevel=OFF: SPARQL-Anything's Log4j StatusLogger can
+	# print onto stdout (first seen with the per-record MARC read, #81), which
 	# would corrupt the Turtle. Silence it so only the RDF reaches $@.
 	java -Dlog4j2.statusLoggerLevel=OFF -jar tools/sparql-anything/sparql-anything.jar -q $< > $@
 
 # The construct query reads these source files (its x-sparql-anything SERVICEs);
-# rebuild the graph when any of them changes. The MARC is a per-record zip archive
-# (#81), read via nested Archive -> XML triplifiers.
+# rebuild the graph when any of them changes. The MARC is a per-record directory
+# (#81), one <key>.xml per record, read via nested Folder -> XML triplifiers; it
+# is listed file by file (not as the directory), so editing a single record's
+# contents -- which leaves the directory's own mtime alone -- still rebuilds.
 #
 # artists-books.ttl also reads the construction occurrences + decisions CSVs to
 # attach ab:constructedUsing (#86), and the subjects occurrences + decisions CSVs
@@ -57,7 +59,7 @@ graph/%.ttl: queries/%.rq | tools/sparql-anything/sparql-anything.jar
 # separately.
 graph/artists-books.ttl: \
 sources/artists-books.csv \
-sources/marc/artists-books-marc.zip \
+$(wildcard sources/marc/artists-books-marc/*.xml) \
 sources/construction/occurrences.csv \
 sources/construction/decisions.csv \
 sources/subjects/occurrences.csv \
@@ -67,7 +69,7 @@ sources/ssid-media.csv
 
 graph/reference-works.ttl: \
 sources/reference-works.csv \
-sources/marc/reference-works-marc.zip
+$(wildcard sources/marc/reference-works-marc/*.xml)
 
 # sources/citations.ttl is a committed frozen graph (issue #82, task 3) — no
 # recipe; Fuseki loads it alongside the two constructed graphs, so the site

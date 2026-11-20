@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01287cam a22003617a 4500</leader>
+  <controlfield tag="001">597432</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20180604105118.0</controlfield>
+  <controlfield tag="008">011211s1985    xxk|||||||||||000 0|eng|c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">9906132884</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">(Mo)b1643997</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">AK</subfield>
+    <subfield code="e">a</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">Ibz Phillips, Tom</subfield>
+    <subfield code="2">kssb/8</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">Lz Phillips, Tom</subfield>
+    <subfield code="2">kssb/8</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Phillips, Tom</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Tom Phillips :</subfield>
+    <subfield code="b">works, texts to 1974</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Hansjörg Mayer,</subfield>
+    <subfield code="c">1985</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">284 s.</subfield>
+    <subfield code="b">ill. (huvudsakligen i färg)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">engelska</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="4">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">Phillips, Tom</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Ej skönlitteratur</subfield>
+    <subfield code="0">https://id.kb.se/term/ktg/NonFictionLiterature</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">Bok</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">090810||0000|||||001||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="b">Mo</subfield>
+    <subfield code="z">engelska</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="b">N</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"2kczsh6d2sp0zlk","modified":"2018-06-04T10:51:18.576+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">{"@id":"djqrgxfk0wn8c2f","modified":"2009-08-10T14:23:46+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">{"@id":"x27l9md32p0t2s0","modified":"2018-06-05T13:48:36.508+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">G96LTDG9</subfield><subfield code="b">phillips / tom phillips</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

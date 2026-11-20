@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01573cam a2200409 i 4500</leader>
+  <controlfield tag="001">14960706</controlfield>
+  <controlfield tag="005">20250607021620.0</controlfield>
+  <controlfield tag="008">070810s1975    enka          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">14960706</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">Acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">M.Dimunation, RareBook 2007-08-09</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">nb00 2007-08-10 z-processor to RareBook</subfield>
+    <subfield code="i">he19 2022-05-05</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2021659702</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CStRLIN)CTYAFHA8229-B</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CtY-BA</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">CtY-BA</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-uk-en</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.C36</subfield>
+    <subfield code="b">F49 1975</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Campbell, Ken,</subfield>
+    <subfield code="d">1939-</subfield>
+    <subfield code="e">author,</subfield>
+    <subfield code="e">book artist,</subfield>
+    <subfield code="e">printer.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="2">
+    <subfield code="a">A few ways through the window /</subfield>
+    <subfield code="c">Ken Campbell.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[London] :</subfield>
+    <subfield code="b">Printed and made by Ken Campbell and Dennis Mariner,</subfield>
+    <subfield code="c">spring 1975.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">55 unnumbered pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">24 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Written and designed by Ken Campbell"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">An edition of 50.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">On double leaves.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has copy 2. Inscribed by the book artist: for your birthday spring 75, with love Ken C.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">England</subfield>
+    <subfield code="z">London.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">England</subfield>
+    <subfield code="z">London.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">1975.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Mariner, Dennis,</subfield>
+    <subfield code="e">printer.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Campbell, Ken,</subfield>
+    <subfield code="d">1939-</subfield>
+    <subfield code="e">inscriber.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="a">gift</subfield>
+    <subfield code="d">2007-08-09</subfield>
+    <subfield code="s">Campbell, Dr. Ruth</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">#ACQ 17-110</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">PISZM9PX</subfield><subfield code="b">campbell / a few ways through the window</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

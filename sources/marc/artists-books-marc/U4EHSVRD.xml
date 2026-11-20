@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02275cam a2200493 i 4500</leader>
+  <controlfield tag="001">17428390</controlfield>
+  <controlfield tag="005">20250607051521.1</controlfield>
+  <controlfield tag="008">120813t20062006nyua          000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">17428390</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">origres</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">2 shelf copies</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">hh08 2012-08-13 z-processor On order for RBSCD</subfield>
+    <subfield code="a">1 copy received 12/10/2012</subfield>
+    <subfield code="i">he11 2013-09-13</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2013660306</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1893125513</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781893125513</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">DLC</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">ara</subfield>
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.Z53</subfield>
+    <subfield code="b">T74 2006</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Zghal, Emna.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The tree of my mind /</subfield>
+    <subfield code="c">by Emna Zghal.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Rosendale, NY :</subfield>
+    <subfield code="b">Women's Studio Workshop,</subfield>
+    <subfield code="c">[2006]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©2006</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">14 unnumbered pages :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">23 x 31 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Quotations, excerpts, and poems from numerous authors including Octavio Paz, Adam Hochschild, Robert Hass, Wangari Mathai, Wallace Stevens, Orhan Pamuk, Emily Dickinson, Lidija Bajuk, Salman Rushdie, George Brassens and the Qur'an. Original artwork by Zghal.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Printed in a limited edition of 42 copies.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">On double leaves, bound accordion-style between decorated cloth-covered boards.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC copy has copy no. 1, signed by artist.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="530" ind1=" " ind2=" ">
+    <subfield code="a">Description and digital images of this object available on the Women's Studio Workshop Archive website:</subfield>
+    <subfield code="u">http://wsworkshop.org/archive_item.php?ID=322</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">Text in English. Author's name and Qur'an quotation also in Arabic. Another poem in French.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">Rosendale.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Trees in art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Trees in literature.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">Rosendale.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2006.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Women's Studio Workshop.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Press Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://wsworkshop.org/artist_books/pdf/r1_tree_opt.pdf</subfield>
+    <subfield code="z">PDF of this artists' book</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="d">20120813</subfield>
+    <subfield code="n">303100</subfield>
+    <subfield code="s">Women's Studio Workshop</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">#ACQ 12-45 no. ?</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">U4EHSVRD</subfield><subfield code="b">zghal / tree of my mind</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

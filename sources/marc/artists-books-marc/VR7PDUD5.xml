@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01369cam a2200397 a 4500</leader>
+  <controlfield tag="001">565945</controlfield>
+  <controlfield tag="005">20250607223509.3</controlfield>
+  <controlfield tag="008">890202s1989    nyua          000 1 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">565945</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">3</subfield>
+    <subfield code="e">ocip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">by30 to ba00 10-05-89; fa00 10-27-89; fd11 10-29-91; fq29  12-05-91</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-644, LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   89045278 </subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0394580370</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780394580371</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">(DLC)   89045278</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PS3561.I483</subfield>
+    <subfield code="b">M9 1989</subfield>
+  </datafield>
+  <datafield tag="051" ind1=" " ind2=" ">
+    <subfield code="a">PS3561.I483</subfield>
+    <subfield code="b">M9 1989</subfield>
+    <subfield code="c">Another copy.</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">813/.54</subfield>
+    <subfield code="2">20</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">King, Stephen,</subfield>
+    <subfield code="d">1947-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">My pretty pony /</subfield>
+    <subfield code="c">[Stephen King, Barbara Kruger].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Knopf,</subfield>
+    <subfield code="c">1989.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">ca. 100 p. :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">35 X 24 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Kruger, Barbara,</subfield>
+    <subfield code="d">1945-</subfield>
+  </datafield>
+  <datafield tag="922" ind1=" " ind2=" ">
+    <subfield code="a">adco</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">LAC ael 2020-02-25 no edits (1 card)</subfield>
+  </datafield>
+  <datafield tag="984" ind1=" " ind2=" ">
+    <subfield code="a">rsl</subfield>
+    <subfield code="d">2020-02-25</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="a">rarebk/rbc</subfield>
+    <subfield code="e">rbc</subfield>
+    <subfield code="f">qr05 12-07-93</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="a">rblacfederal</subfield>
+    <subfield code="d">202400225</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-GenColl</subfield>
+    <subfield code="h">PS3561.I483</subfield>
+    <subfield code="i">M9 1989</subfield>
+    <subfield code="t">Copy 1</subfield>
+    <subfield code="m">fol.</subfield>
+    <subfield code="w">BOOKS</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-RareBook</subfield>
+    <subfield code="h">PS3561.I483</subfield>
+    <subfield code="i">M9 1989</subfield>
+    <subfield code="t">Copy 2</subfield>
+    <subfield code="m">fol.</subfield>
+    <subfield code="w">BOOKS</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">VR7PDUD5</subfield><subfield code="b">9780394580371</subfield><subfield code="c">isbn</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

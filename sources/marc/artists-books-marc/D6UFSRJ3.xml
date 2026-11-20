@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02014cam a2200445 i 4500</leader>
+  <controlfield tag="001">16759241</controlfield>
+  <controlfield tag="005">20250607042718.2</controlfield>
+  <controlfield tag="008">110502s2010    paua          000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">16759241</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">origres</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">hh01 2011-05-02 z-processor  ON ORDER</subfield>
+    <subfield code="i">he18 2018-03-14</subfield>
+    <subfield code="a">he08 2018-03-23 end-stage processing completed, item placed in dated book return queue</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-893</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2015659397</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">a-cc-yu</subfield>
+    <subfield code="a">n-us-pa</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.F8</subfield>
+    <subfield code="b">A95 2010</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Fu, Colette,</subfield>
+    <subfield code="e">book artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">[Axi fire festival pop-up book]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Philadelphia, Pennsylvania] :</subfield>
+    <subfield code="b">[Colette Fu],</subfield>
+    <subfield code="c">[2010]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged) :</subfield>
+    <subfield code="b">1 color illustration ;</subfield>
+    <subfield code="c">43 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">We are tiger dragon people</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title, artist, date of publication, and series from artist's statement.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">A pop-up illustration with color photographs of celebrants at the Axi fire festival. Photographs mounted on heavy paper; book bound in Black Iris cloth over boards.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Issued in an edition of 10.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has copy number 7, per artist's statement.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Festivals</subfield>
+    <subfield code="z">China</subfield>
+    <subfield code="z">Yunnan Sheng</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Fire</subfield>
+    <subfield code="x">Mythology</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Pop-up books</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Pennsylvania</subfield>
+    <subfield code="z">Philadelphia.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Yunnan Sheng (China)</subfield>
+    <subfield code="x">Social life and customs</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Pennsylvania</subfield>
+    <subfield code="z">Philadelphia.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2010.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Illustrated works.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2014026111</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Artists' Books Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="d">20110502</subfield>
+    <subfield code="n">290699</subfield>
+    <subfield code="s">Booklyn</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">#ACQ 11-26 no. 1</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">D6UFSRJ3</subfield><subfield code="b">fu / axi fire festival pop up book</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01479cam a22004212c 4500</leader>
+  <controlfield tag="001">1946366749</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260513235226.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">251217s2007    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1946366749</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KEP122179943</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(LIBSTA)86682</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627-1)122179943</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Vitone, Luca</subfield>
+    <subfield code="d">1964-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)123588812</subfield>
+    <subfield code="0">(DE-627)082645787</subfield>
+    <subfield code="0">(DE-576)214917339</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Percorsi Privati</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Place of publication not identified]</subfield>
+    <subfield code="b">onestar press</subfield>
+    <subfield code="c">2007</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="506" ind1=" " ind2=" ">
+    <subfield code="f">Unrestricted online access</subfield>
+    <subfield code="2">star</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">""--</subfield>
+  </datafield>
+  <datafield tag="540" ind1=" " ind2=" ">
+    <subfield code="a">Standard Copyright</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Cartography</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Artists</subfield>
+    <subfield code="0">(OCoLC)fst00817559</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Cartography</subfield>
+    <subfield code="0">(OCoLC)fst00848025</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="0">(OCoLC)fst01750153</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Library Stack (Organization)</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://www.librarystack.org/percorsi-privati</subfield>
+    <subfield code="m">X:LIBSTA</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">lizenzpflichtig</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20260501</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-344-LRS</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">4845549689</subfield>
+    <subfield code="b">DE-18-26</subfield>
+    <subfield code="9">18/26</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="k">https://www.librarystack.org/percorsi-privati</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">94M6KYT5</subfield><subfield code="b">vitone / percorsi privati</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

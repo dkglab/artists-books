@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00814nam a2200265 i 4500</leader>
+  <controlfield tag="001">991003855639707141</controlfield>
+  <controlfield tag="005">20200618044813.0</controlfield>
+  <controlfield tag="008">961120b        ilua          000 0 eng^^</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b5461625-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)78328489</subfield>
+    <subfield code="9">ExL</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Villers, Bernard,</subfield>
+    <subfield code="d">1939-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2007007306</subfield>
+    <subfield code="1">http://viaf.org/viaf/71668145</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Cahiers japonnais.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="c">1993.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">unspecified</subfield>
+    <subfield code="b">nz</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">Uncataloged Artist book.</subfield>
+    <subfield code="5">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">200722</subfield>
+    <subfield code="d">081119</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b5461625</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">132632 (NNMoMA)</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">LTI 11/14/2008</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">0</subfield>
+    <subfield code="c">081119</subfield>
+    <subfield code="d">m</subfield>
+    <subfield code="e">a</subfield>
+    <subfield code="f">-</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mm</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">G4GP8E73</subfield><subfield code="b">villers / cahiers japonnais</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

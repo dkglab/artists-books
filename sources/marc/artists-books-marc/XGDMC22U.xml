@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01143cam a22003132c 4500</leader>
+  <controlfield tag="001">1385371455</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220525161235.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">100114s2004    gw |||||      00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1385371455</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)315371455</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ315371455</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)698963301</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Stolterfoht, Ulf</subfield>
+    <subfield code="d">1963-</subfield>
+    <subfield code="0">(DE-588)120651335</subfield>
+    <subfield code="0">(DE-627)080807135</subfield>
+    <subfield code="0">(DE-576)180611216</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Para-Schwarte</subfield>
+    <subfield code="b">schaut auf diese Haut</subfield>
+    <subfield code="c">Micha Brendel; Ulf Stolterfoht</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Berlin</subfield>
+    <subfield code="b">Warnke</subfield>
+    <subfield code="c">2004</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[22] Bl.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Gestaltet unter Verwendung von Tierdarm. - Hinterer Buchdeckel mit angebundener Lederschürze</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Brendel, Micha</subfield>
+    <subfield code="d">1959-</subfield>
+    <subfield code="e">Künstler</subfield>
+    <subfield code="0">(DE-588)119029987</subfield>
+    <subfield code="0">(DE-627)079818110</subfield>
+    <subfield code="0">(DE-576)21077987X</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2620058198</subfield>
+    <subfield code="b">DE-Mar1</subfield>
+    <subfield code="9">Mar 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Objektschrank</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">XGDMC22U</subfield><subfield code="b">brendel / para schwarte</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

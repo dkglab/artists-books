@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01116cam a2200313 c 4500</leader>
+  <controlfield tag="001">517269058</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260621203827.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">060912s1973    gw |||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)517269058</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV517269058</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)255720267</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Ehrenberg, Felipe</subfield>
+    <subfield code="d">1943-2017</subfield>
+    <subfield code="0">(DE-588)12807745X</subfield>
+    <subfield code="0">(DE-627)38438725X</subfield>
+    <subfield code="0">(DE-576)187604037</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The jungle book</subfield>
+    <subfield code="c">Felipe Ehrenberg</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Friedrichsfehn</subfield>
+    <subfield code="b">IAC Central Office</subfield>
+    <subfield code="c">[1973]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[8] Bl</subfield>
+    <subfield code="b">Ill., Kt</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">IAC Edition</subfield>
+    <subfield code="v">17</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">7,5 x 10,5 cm, Elefanten und Text, s/w-Offsetdruck auf rotem Papier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20240324</subfield>
+    <subfield code="f">DE-4165</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung/Langzeitarchivierung gewährleistet</subfield>
+    <subfield code="f">PENI</subfield>
+    <subfield code="h">DE-35</subfield>
+    <subfield code="x">XA-DE-NI</subfield>
+    <subfield code="2">pdager</subfield>
+    <subfield code="5">DE-715</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">777336588</subfield>
+    <subfield code="b">DE-715</subfield>
+    <subfield code="9">715</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">R kun 894 ehr PK 9501</subfield>
+    <subfield code="h">248</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">AX78BBV9</subfield><subfield code="b">ehrenberg / the jungle book</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

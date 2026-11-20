@@ -66,7 +66,7 @@ flowchart TD
     abdrev -.->|"curator reviews & edits"| abddec
     dedup -.->|"also emits (→ ② / ③)"| refcsv["reference-works.csv"]
 
-    catalogs -->|"marc_harvest.py (YAZ)"| marc["artists-books-marc.zip<br/>(per-record MARC archive)"]
+    catalogs -->|"marc_harvest.py (YAZ)"| marc["artists-books-marc/<br/>(per-record MARC files)"]
 
     %% ---- construction-methods SKOS (how a book is made) ----
     marc -->|"construction/mine-occurrences.rq"| cocc["construction/occurrences.csv<br/>(one row per book heading)"]
@@ -113,7 +113,7 @@ space — construction mines genre/form (`655`), material (`340`) and non-plain
 topical (`650`) headings (*how* a book is made), subjects mines plain topical
 `650` and geographic `651` (*what* it is about). In each, `mine-occurrences.rq`
 extracts every relevant heading to an `occurrences.csv` (one row per book
-heading — a single pass over the archive, so every downstream step is a cheap
+heading — a single pass over the MARC, so every downstream step is a cheap
 CSV-to-CSV join), and the hand-curated `decisions.csv` is the call for each
 heading cluster (include? / concept id / category). `build-scheme.rq` joins the
 two into the SKOS scheme (`sources/construction-methods.ttl` /
@@ -146,7 +146,7 @@ flowchart TD
     catalogs[("Library catalogs")]
 
     dedup --> refcsv["reference-works.csv<br/>(canonical list)"]
-    catalogs -->|"marc_harvest.py (YAZ)"| refmarc["reference-works-marc.zip *"]
+    catalogs -->|"marc_harvest.py (YAZ)"| refmarc["reference-works-marc/ *"]
 
     refcsv --> refrq{{"reference-works.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
     refmarc -->|"primary creator only *"| refrq
@@ -158,7 +158,7 @@ flowchart TD
     class refttl output;
 ```
 
-`*` `reference-works-marc.zip` is read only for the creators (every 1xx/7xx
+`*` `reference-works-marc/` is read only for the creators (every 1xx/7xx
 field, with roles and VIAF/ISNI identity, as for the books — #40) and the OCLC
 number / WorldCat link (`001`, #51), joined by `999 $a`; the rest of the
 reference graph comes from the CSV.

@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01238nam a22003612c 4500</leader>
+  <controlfield tag="001">1777311217</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20211112085958.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">211112s1990    gw |||||      00| ||mul c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1777311217</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1777311217</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">mul</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Vries, Herman de</subfield>
+    <subfield code="d">1931-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)118920405</subfield>
+    <subfield code="0">(DE-627)079697410</subfield>
+    <subfield code="0">(DE-576)210396318</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Rosa damascena</subfield>
+    <subfield code="c">Herman de Vries</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">[2nd ed.]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Eschenau]</subfield>
+    <subfield code="b">Eschenau Summer Press</subfield>
+    <subfield code="c">1990</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">[Eschenau Summer Press publications]</subfield>
+    <subfield code="v">25</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Artist's book, consisting of fragrant dried flower heads in a white card portfolio</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Unnumbered limited edition of 150 copies</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">First ed. 1984</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">To be: Texte, Textarbeiten, Textbilder. Ostfilden: Cantz, 1995</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Limited editions</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Dried flowers (plants)</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Eschenau Summer Press</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4001734389</subfield>
+    <subfield code="b">DE-D13</subfield>
+    <subfield code="9">D 13</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">EF2C3DUR</subfield><subfield code="b">vries / rosa damascena</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

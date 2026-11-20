@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01075cam a2200265Ii 4500</leader>
+  <controlfield tag="001">ocn890935164</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20161012034046.0</controlfield>
+  <controlfield tag="008">140919s2003    xxu           000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)890935164</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">OIP</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">OIP</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4 .C656</subfield>
+    <subfield code="b">.M36 2004</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Colmer, Roy,</subfield>
+    <subfield code="e">author.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Marilyn Monroe, 1926-1962 /</subfield>
+    <subfield code="c">Roy Colmer.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[United States] :</subfield>
+    <subfield code="b">[publisher not identified],</subfield>
+    <subfield code="c">[2003]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">48 unnumbered leaves ;</subfield>
+    <subfield code="c">9 x 13 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Although it looks like a photo album, this little memorial tribute to Marilyn Monroe is actually an address book. It lists, in chronological order and one entry per page, every known place she lived from birth to death." Printed Matter Inc.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Colmer, Roy.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Monroe, Marilyn,</subfield>
+    <subfield code="d">1926-1962</subfield>
+    <subfield code="x">Homes and haunts.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Motion picture actors and actresses</subfield>
+    <subfield code="x">Homes and haunts.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">FYS7QI64</subfield><subfield code="b">manual</subfield><subfield code="c">manual</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00989caa a22002772c 4500</leader>
+  <controlfield tag="001">1772372862</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20211012140049.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">211005s2020    xx |||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1772372862</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1772372862</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Gelles, Judy</subfield>
+    <subfield code="e">KünstlerIn</subfield>
+    <subfield code="0">(DE-588)1099706769</subfield>
+    <subfield code="0">(DE-627)858737906</subfield>
+    <subfield code="0">(DE-576)469337192</subfield>
+    <subfield code="4">art</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Florida Family Portrait</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="c">2020</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2="8">
+    <subfield code="i">Enthalten in</subfield>
+    <subfield code="t">The Posen Library of Jewish culture and civilization ; Volume 10: 1973-2005</subfield>
+    <subfield code="d">New Haven : Yale Univ. Press, 2020</subfield>
+    <subfield code="g">(2020), Seite 580-580</subfield>
+    <subfield code="h">lxvi, 1160 S.</subfield>
+    <subfield code="w">(DE-627)749892072</subfield>
+    <subfield code="z">9780300135534</subfield>
+    <subfield code="7">nnam</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="g">year:2020</subfield>
+    <subfield code="g">pages:580-580</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3984348614</subfield>
+    <subfield code="b">DE-Tue135</subfield>
+    <subfield code="9">Tü 135</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">mteo</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">AR</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">PU2K29Q2</subfield><subfield code="b">gelles / florida family portrait</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

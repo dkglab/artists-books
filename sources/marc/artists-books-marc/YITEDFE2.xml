@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>05270ctm a2200685Ii 4500</leader>
+  <controlfield tag="001">ocn987641204</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115015.0</controlfield>
+  <controlfield tag="008">170519m20162017gw a          000 0deng d</controlfield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">1101369469</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">1012119211</subfield>
+    <subfield code="a">1019492566</subfield>
+    <subfield code="a">1054887531</subfield>
+    <subfield code="a">1078538268</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783958291614</subfield>
+    <subfield code="q">(paperbackin box)</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3958291619</subfield>
+    <subfield code="q">(paperbackin box)</subfield>
+  </datafield>
+  <datafield tag="024" ind1="3" ind2=" ">
+    <subfield code="a">9783958291614</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)987641204</subfield>
+    <subfield code="z">(OCoLC)1012119211</subfield>
+    <subfield code="z">(OCoLC)1054887531</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">OHX</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">OHX</subfield>
+    <subfield code="d">NGA</subfield>
+    <subfield code="d">YDX</subfield>
+    <subfield code="d">NGA</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">HDC</subfield>
+    <subfield code="d">JPG</subfield>
+    <subfield code="d">NLGGC</subfield>
+    <subfield code="d">TFW</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">NYP</subfield>
+    <subfield code="d">HFL</subfield>
+    <subfield code="d">NYPIC</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">CAAGO</subfield>
+    <subfield code="d">MMX</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">a-ii---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/a-ii</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="100" ind1="0" ind2=" ">
+    <subfield code="a">Dayanita Singh,</subfield>
+    <subfield code="e">photographer,</subfield>
+    <subfield code="e">interviewee.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n85338425</subfield>
+    <subfield code="1">http://viaf.org/viaf/91911210</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121435423.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Museum Bhavan /</subfield>
+    <subfield code="c">Dayanita Singh.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">First edition.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Göttingen :</subfield>
+    <subfield code="b">Steidl,</subfield>
+    <subfield code="c">2016-2017.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 box (10 volumes) :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">16 x 10 x 11 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Chiefly illustrated.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from box.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Publication release date April 2017.--Publisher's Web site.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Volumes 3 and 8 have edition statement: First edition 2016.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Ten volumes in a handmade, clothbound clamshell box. Each volume accordion folded.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">[1] Godrej museum -- [2] Museum of men -- [3] Museum of photography -- [4] Museum of furniture -- [5] Little ladies museum -- [6] Museum of machines -- [7] Museum of vitrines -- [8] Printing press museum -- [9] Ongoing museum -- [10] Conversation chambers / Dayanita Singh, Gerhard Steidl, Aveek Sen ; texts edited by Aveek Sen.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"In Museum Bhavan Dayanita Singh creates a new space between publishing and the museum, an experience where books have the same if not greater artistic value than prints hanging on a gallery wall. Consisting of nine individual 'museums' in book form, Museum Bhavan is a miniature version of Singh's traveling exhibition of the same name whose prints are placed in folding expanding wooden structures (her 'photo-architecture'), which she likes to interchange at will. The images in Museum Bhavan--old and new, intriguingly literal and suggestive--have been intuitively grouped into lyrical chapters in a visual story such as 'Little Ladies Museum' and 'Ongoing Museum,' as well as more specific series like 'Museum of Machines.' Following her Sent a Letter (2008), the starting point for this project, the books are housed in a handmade box and fold out into accordion-like strips which Singh encourages viewers to install and curate as they wish in their own homes. The exhibition thus becomes a book, and the book becomes an exhibition."--</subfield>
+    <subfield code="c">Ivorypress website (viewed on November 14, 2018)</subfield>
+  </datafield>
+  <datafield tag="515" ind1=" " ind2=" ">
+    <subfield code="a">Volumes having "First edition 2016" statement varies from set to set.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="0" ind2="0">
+    <subfield code="a">Dayanita Singh.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n85338425</subfield>
+    <subfield code="1">http://viaf.org/viaf/91911210</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121435423.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="0" ind2="0">
+    <subfield code="a">Dayanita Singh</subfield>
+    <subfield code="v">Interviews.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="0" ind2="7">
+    <subfield code="a">Dayanita Singh.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/198546.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Women photographers</subfield>
+    <subfield code="z">India.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Portrait photography</subfield>
+    <subfield code="z">India.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photography, Artistic.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85101269.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Photography, Artistic.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1061964.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Portrait photography.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1072259.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Women photographers.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1178288.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">India.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1210276.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Interviews.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423832.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Photobooks.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1919950.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Photobooks.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026144.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Folded books.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300200572.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Sen, Aveek,</subfield>
+    <subfield code="e">interviewer,</subfield>
+    <subfield code="e">editor.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n2012215318</subfield>
+    <subfield code="1">http://viaf.org/viaf/6495149198341474940003</subfield>
+    <subfield code="1">http://isni.org/isni/0000000455965379.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Steidl, Gerhard,</subfield>
+    <subfield code="e">interviewer.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n78074165</subfield>
+    <subfield code="1">http://viaf.org/viaf/62102793</subfield>
+    <subfield code="1">http://isni.org/isni/0000000025406526.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">TR655</subfield>
+    <subfield code="b">.D39 2017</subfield>
+    <subfield code="z">050 4</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00053727788</subfield>
+    <subfield code="l">aara</subfield>
+    <subfield code="n">dls</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="u">-</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">01-07-19</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">gw </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">YITEDFE2</subfield><subfield code="b">b9154611</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

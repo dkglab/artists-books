@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00926cam a22003012c 4500</leader>
+  <controlfield tag="001">161329659</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20120814173337.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">940904s1984    gw |||||      00| ||und c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">86,A45,0114</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">861031105</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3922760147</subfield>
+    <subfield code="q"> (: DM 15.00)</subfield>
+    <subfield code="9">3-922760-14-7</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)161329659</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV161329659</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">08</subfield>
+    <subfield code="2">sdnb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Nannucci, Maurizio</subfield>
+    <subfield code="d">1939-</subfield>
+    <subfield code="0">(DE-588)118737953</subfield>
+    <subfield code="0">(DE-627)079518605</subfield>
+    <subfield code="0">(DE-576)20937831X</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Vorläufig &amp;  endgültig</subfield>
+    <subfield code="c">[Maurizio Nannucci]</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1. dt.-sprachige Ausg</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Aachen</subfield>
+    <subfield code="b">Ottenhausen</subfield>
+    <subfield code="c">1984</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[9 Bl.]</subfield>
+    <subfield code="c">21 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">250 Ex. auf rotem Japico-Papier</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">GE3YE3TT</subfield><subfield code="b">9783922760146</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

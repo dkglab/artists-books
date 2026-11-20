@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00942cam a2200289u  4500</leader>
+  <controlfield tag="001">10201925</controlfield>
+  <controlfield tag="005">20250606155626.4</controlfield>
+  <controlfield tag="007">cr_|||||||||||</controlfield>
+  <controlfield tag="008">830203s1868    oru           000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">10201925</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">premunv</subfield>
+    <subfield code="d">u</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-893</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   43020572 </subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">(DLC)   43020572</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">CarP</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-ma</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PS2534.P7</subfield>
+    <subfield code="b">P6</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Peabody, Allen.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Poems,</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Salem,</subfield>
+    <subfield code="b">Steam printing house of E. H. Fletcher &amp; co.,</subfield>
+    <subfield code="c">1868.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">35 p.</subfield>
+    <subfield code="c">22 cm.</subfield>
+  </datafield>
+  <datafield tag="530" ind1=" " ind2=" ">
+    <subfield code="a">Also available in digital form.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Wenham (Mass.)</subfield>
+    <subfield code="x">History</subfield>
+    <subfield code="v">Poetry.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Poetry.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2014026481</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="1">
+    <subfield code="u">http://hdl.loc.gov/loc.gdc/scd0001.00161654231</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="a">massdig</subfield>
+    <subfield code="e">sloan</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-GenColl</subfield>
+    <subfield code="h">PS2534.P7</subfield>
+    <subfield code="i">P6</subfield>
+    <subfield code="t">Copy 1</subfield>
+    <subfield code="w">PREM</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">4QFTGLMG</subfield><subfield code="b">allen / poems</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

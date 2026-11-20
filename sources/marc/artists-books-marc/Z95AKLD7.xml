@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02721cam a2200517 a 4500</leader>
+  <controlfield tag="001">16929758</controlfield>
+  <controlfield tag="005">20250607043915.2</controlfield>
+  <controlfield tag="008">110820s2011    riua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">16929758</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">2 shelf copies</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">xe08 2011-08-20 z-processor to USPL</subfield>
+    <subfield code="i">rc08 2011-08-30 to BCCD</subfield>
+    <subfield code="w">rd13 2011-10-28</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-644, LCAPM-893</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2011283590</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780615476124</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0615476120</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)719973578</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">RBN</subfield>
+    <subfield code="c">RBN</subfield>
+    <subfield code="d">RBN</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-ri</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.L676</subfield>
+    <subfield code="b">T48 2011</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">700.92</subfield>
+    <subfield code="2">23</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Things, all books may be recalled after 7 days :</subfield>
+    <subfield code="b">date due, Apr. 9 2011 /</subfield>
+    <subfield code="c">[created on April 9th 2011 by Colin Frazer ... et al. ; editor, Andrew Losowsky ; designer, Benjamin Shaykin].</subfield>
+  </datafield>
+  <datafield tag="246" ind1="1" ind2="8">
+    <subfield code="a">Things, Apr. 9 2011</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">Things</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">All books may be recalled after 7 days</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Providence, RI :</subfield>
+    <subfield code="b">John Carter Brown Library,</subfield>
+    <subfield code="c">2011</subfield>
+    <subfield code="e">([San Francisco]  :</subfield>
+    <subfield code="b">Printed by Blurb)</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[82] p. :</subfield>
+    <subfield code="b">chiefly col. ill. ;</subfield>
+    <subfield code="c">26 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Statement of responsibility from colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This book was created as part of the Charles H. Watts II History of the Book Program at the John Carter Brown Library, within a masterclass run by Andrew Losowsky, Watts Program Provocateur-in-Residence."--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"On April 9th, 2011, Colin Frazer ... [et al.] gathered together ... in the John D Rockefeller Library at Brown University in Providence, RI ... . We then created a series of ideas for pieces that would identify this book as a printed time capsule ... to be placed inside the library archive at Brown University, and in the repository of the Library of Congress. The book would be a record of the day we spent together, of ourselves, of thie place."--Introd.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes photographs taken inside the John D. Rockefeller, Jr. Library, Brown University.</subfield>
+  </datafield>
+  <datafield tag="610" ind1="2" ind2="0">
+    <subfield code="a">Brown University.</subfield>
+    <subfield code="b">Library</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Rhode Island</subfield>
+    <subfield code="z">Providence.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Visual poetry.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Time capsules</subfield>
+    <subfield code="z">Rhode Island</subfield>
+    <subfield code="z">Providence.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Illustrated works.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2014026111</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Frazer, Colin.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Losowsky, Andrew,</subfield>
+    <subfield code="d">1978-</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Shaykin, Benjamin.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Charles H. Watts II History of the Book Program.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">John Carter Brown Library.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Blurb (Firm)</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">Z95AKLD7</subfield><subfield code="b">9780615476124</subfield><subfield code="c">isbn</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

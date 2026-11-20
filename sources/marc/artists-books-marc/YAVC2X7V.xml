@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02793nam a2200517 i 4500</leader>
+  <controlfield tag="001">on1127909474</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115020.0</controlfield>
+  <controlfield tag="008">191118s1984    waua     6    000 1 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1127909474</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NOC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.H396</subfield>
+    <subfield code="b">R65 1984</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Hayes, Ruth,</subfield>
+    <subfield code="d">1955-</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no97036243</subfield>
+    <subfield code="1">http://viaf.org/viaf/26669658</subfield>
+    <subfield code="1">http://isni.org/isni/0000000045928540.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Ron's world /</subfield>
+    <subfield code="c">produced by Ruth Hayes.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">2nd printing.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Seattle, Wa. :</subfield>
+    <subfield code="b">Ruth Hayes,</subfield>
+    <subfield code="c">[1984]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="3">
+    <subfield code="a">[Seattle, Wash.] :</subfield>
+    <subfield code="b">Day Moon Press.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">43 unnumbered leaves :</subfield>
+    <subfield code="b">all color illustrations ;</subfield>
+    <subfield code="c">89 mm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">An animated flip book.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Reagan, Ronald</subfield>
+    <subfield code="v">Caricatures and cartoons.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Hayes, Ruth,</subfield>
+    <subfield code="d">1955-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no97036243</subfield>
+    <subfield code="1">http://viaf.org/viaf/26669658</subfield>
+    <subfield code="1">http://isni.org/isni/0000000045928540.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Hayes, Ruth,</subfield>
+    <subfield code="d">1955-</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/393190.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Reagan, Ronald.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/36392.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Flip books.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300201033.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Miniature books.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv00867.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Caricatures and cartoons.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423691.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Fiction.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026339.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Humor.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026110.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Pictures.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027251.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Day Moon Press,</subfield>
+    <subfield code="e">printer.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no95034172</subfield>
+    <subfield code="1">http://viaf.org/viaf/121136931.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.4.H396</subfield>
+    <subfield code="b">R65 1984</subfield>
+    <subfield code="z">050 4</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00054473979</subfield>
+    <subfield code="l">aart</subfield>
+    <subfield code="n">dls</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="t">78</subfield>
+    <subfield code="u">-</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">11-18-19</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">wau</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">YAVC2X7V</subfield><subfield code="b">b9730191</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

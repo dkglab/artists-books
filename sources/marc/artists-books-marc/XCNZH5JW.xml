@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01731cam a2200445 i 4500</leader>
+  <controlfield tag="001">19739912</controlfield>
+  <controlfield tag="005">20250607075957.3</controlfield>
+  <controlfield tag="008">170621s2002    nyua          000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">19739912</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">hh15 2017-06-21 on order for RBSCD</subfield>
+    <subfield code="a">he06 2022-02-05</subfield>
+    <subfield code="i">he06 2022-02-10</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2022656142</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-ny</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PS3566.L53</subfield>
+    <subfield code="b">O94 2002</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Plimpton, Sarah,</subfield>
+    <subfield code="d">1936-</subfield>
+    <subfield code="e">author,</subfield>
+    <subfield code="e">illustrator,</subfield>
+    <subfield code="e">printer.</subfield>
+  </datafield>
+  <datafield tag="240" ind1="1" ind2="0">
+    <subfield code="a">Poems.</subfield>
+    <subfield code="k">Selections</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The over and over /</subfield>
+    <subfield code="c">Sarah Plimpton.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York City :</subfield>
+    <subfield code="b">Manhattan Graphics Center, Grenfell Press,</subfield>
+    <subfield code="c">2002.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 portfolio (5 folded sheets) :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">31 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Five unbound bifolia in a portfolio, in a cloth-covered clamshell box.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">An edition of 20.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has number 12.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">The over and over -- Shut hands -- As if -- Blue holes -- Strings on a shade -- Colors.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">New York.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">New York.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2002.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Cohen, Claudia,</subfield>
+    <subfield code="d">1953-</subfield>
+    <subfield code="e">binder.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Pettengill, Peter,</subfield>
+    <subfield code="e">printer.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Plimpton, Sarah,</subfield>
+    <subfield code="d">1936-</subfield>
+    <subfield code="e">signer.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Grenfell Press.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Manhattan Graphics Center.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Artists' Books Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="a">20170621</subfield>
+    <subfield code="n">335700</subfield>
+    <subfield code="s">Sarah Plimpton</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">#ACQ 17-054</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">XCNZH5JW</subfield><subfield code="b">plimpton / the over and over</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

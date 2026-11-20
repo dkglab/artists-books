@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01349caa a22003252c 4500</leader>
+  <controlfield tag="001">1659696852</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20190206104042.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">990924s1999    xx |||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1659696852</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)080016537</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ080016537</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="4">
+    <subfield code="a">The Accidental Superhero</subfield>
+    <subfield code="b">Luca Buvoli's protagonist, Not-a-Superhero, follows tattered narratives of melodrama and fragmentation</subfield>
+    <subfield code="c">Barry Schwabsky</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="c">1999</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">No. 20, S. 24 - 27</subfield>
+    <subfield code="b">Ill. (farb.)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)121800792</subfield>
+    <subfield code="0">(DE-627)081543190</subfield>
+    <subfield code="0">(DE-576)181611139</subfield>
+    <subfield code="a">Buvoli, Luca</subfield>
+    <subfield code="d">1963-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schwabsky, Barry</subfield>
+    <subfield code="0">(DE-588)137431368</subfield>
+    <subfield code="0">(DE-627)592628426</subfield>
+    <subfield code="0">(DE-576)174779860</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Buvoli, Luca</subfield>
+    <subfield code="d">1963-</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)121800792</subfield>
+    <subfield code="0">(DE-627)081543190</subfield>
+    <subfield code="0">(DE-576)181611139</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2="8">
+    <subfield code="i">In</subfield>
+    <subfield code="t">World art</subfield>
+    <subfield code="d">Newark, NJ [u.a.] : G+B Arts International, 1993</subfield>
+    <subfield code="g">(1999), 20, Seite 24 - 27</subfield>
+    <subfield code="w">(DE-627)235053031</subfield>
+    <subfield code="w">(DE-600)1397220-0</subfield>
+    <subfield code="w">(DE-576)061692212</subfield>
+    <subfield code="x">1321-0505</subfield>
+    <subfield code="7">nnas</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="g">year:1999</subfield>
+    <subfield code="g">number:20</subfield>
+    <subfield code="g">pages:24 - 27</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">341081065X</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">AR</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">3UHFUWHH</subfield><subfield code="b">buvoli / not a superhero</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

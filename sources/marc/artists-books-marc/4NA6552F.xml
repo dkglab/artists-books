@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02164cam a2200481 i 4500</leader>
+  <controlfield tag="001">19205004</controlfield>
+  <controlfield tag="005">20250607072023.1</controlfield>
+  <controlfield tag="008">160803t20142014wiua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">19205004</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">hh05 2016-08-03 z-processor on order for RBSCD</subfield>
+    <subfield code="a">he06 2022-03-11</subfield>
+    <subfield code="i">he06 2022-03-15</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-893</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2022656233</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">GZN</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">GZN</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">GZN</subfield>
+    <subfield code="d">IUP</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">DLC</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-wi</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.W278</subfield>
+    <subfield code="b">I52 2014</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Wagner-Lawler, Melissa,</subfield>
+    <subfield code="e">book artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">In the event of moon disaster.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Milwaukee, Wis.] :</subfield>
+    <subfield code="b">[Melissa Wagner-Lawler],</subfield>
+    <subfield code="c">[2014]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©2014</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 folded sheet (32 unnumbered pages) :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">15 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Accordion-style format with selections from the speech on one side of the folded sheet, and illustration of the night sky on the reverse.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">An edition of 20.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has number 16, standard edition.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Excerpts from a speech written by William Safire in 1969 for the President of the United States to read if the Apollo 11 mission was not successful and the astronauts were lost.</subfield>
+  </datafield>
+  <datafield tag="610" ind1="2" ind2="0">
+    <subfield code="a">Project Apollo (U.S.)</subfield>
+  </datafield>
+  <datafield tag="610" ind1="2" ind2="0">
+    <subfield code="a">Project Apollo (U.S.)</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Space flight to the moon</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Wisconsin</subfield>
+    <subfield code="z">Milwaukee.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Wisconsin</subfield>
+    <subfield code="z">Milwaukee.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2014.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Accordion fold format (Binding)</subfield>
+    <subfield code="2">rbbin</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Illustrated works.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2014026111</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Safire, William,</subfield>
+    <subfield code="d">1929-2009.</subfield>
+    <subfield code="t">In the event of moon disaster.</subfield>
+    <subfield code="k">Selections.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Artists' Books Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="d">201600241</subfield>
+    <subfield code="n">330615</subfield>
+    <subfield code="s">Vamp &amp; Tramp</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">#ACQ 16-051</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">4NA6552F</subfield><subfield code="b">wagner lawler / in the event of moon disaster</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

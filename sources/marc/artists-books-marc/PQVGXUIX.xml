@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01447cam a2200337 c 4500</leader>
+  <controlfield tag="001">840122098</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20151216105617.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">151119s2015    pe |||||      00| ||spa c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9786123050627</subfield>
+    <subfield code="9">978-612-305-062-7</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)840122098</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV840122098</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)929955124</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">spa</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-PE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Adán, Martín</subfield>
+    <subfield code="d">1908-1985</subfield>
+    <subfield code="0">(DE-588)118974920</subfield>
+    <subfield code="0">(DE-627)079755445</subfield>
+    <subfield code="0">(DE-576)210580704</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="3">
+    <subfield code="a">La casa de cartón</subfield>
+    <subfield code="c">Martín Adán. Prólogo de Marco Martos. Notas e índice onomástico: Elsa Villanueva de Puccinelli</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Lima</subfield>
+    <subfield code="b">Sociedad de Beneficencia de Lima Metropolitana</subfield>
+    <subfield code="b">PEISA</subfield>
+    <subfield code="c">2015</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">86 Seiten</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Primera edición: 1928"</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Martos Carrera, Marco</subfield>
+    <subfield code="d">1942-</subfield>
+    <subfield code="0">(DE-588)1056299215</subfield>
+    <subfield code="0">(DE-627)79457534X</subfield>
+    <subfield code="0">(DE-576)412593459</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Villanueva de Puccinelli, Elsa</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://www.gbv.de/dms/spk/iai/cov/840122098.jpg</subfield>
+    <subfield code="m">V:DE-601</subfield>
+    <subfield code="m">B:DE-204</subfield>
+    <subfield code="v">2015-12-09</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Cover</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://www.gbv.de/dms/spk/iai/toc/840122098.pdf</subfield>
+    <subfield code="m">V:DE-601</subfield>
+    <subfield code="m">B:DE-204</subfield>
+    <subfield code="q">pdf/application</subfield>
+    <subfield code="v">2015-12-15</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="y">Inhaltsverzeichnis</subfield>
+    <subfield code="3">Inhaltsverzeichnis</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1581521030</subfield>
+    <subfield code="b">DE-204</subfield>
+    <subfield code="9">204</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">A 15 / 25059</subfield>
+    <subfield code="h">MA</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">PQVGXUIX</subfield><subfield code="b">adán / la casa de cartón</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

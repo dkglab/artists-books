@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01654cam a2200373 i 4500</leader>
+  <controlfield tag="001">17768415</controlfield>
+  <controlfield tag="005">20250607054014.6</controlfield>
+  <controlfield tag="008">130607s2009    nyua          000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">17768415</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">he04 2013-06-07</subfield>
+    <subfield code="i">he04 2013-06-13</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2013656113</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.35.U6</subfield>
+    <subfield code="b">A78 2009</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Art, life, food :</subfield>
+    <subfield code="b">potluck recipes from Women's Studio Workshop.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Rosendale, NY :</subfield>
+    <subfield code="b">Women's Studio Workshop,</subfield>
+    <subfield code="c">[2009]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">8 unnumbered pages, 75 numbered pages, 1 unnumbered page :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">22 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Published in celebration of the Women's Studio Workshop's 35th anniversary in 2009.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Spiral bound.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">Rolls -- Dips -- Green -- Red -- Orange -- White -- Brown -- Random -- Sweets -- Potables -- Studio -- Life.</subfield>
+  </datafield>
+  <datafield tag="530" ind1=" " ind2=" ">
+    <subfield code="a">Description and digital images of this object available on the Women's Studio Workshop Archive website: $u http://www.wsworkshop.org/archive_item.php?ID=3150</subfield>
+  </datafield>
+  <datafield tag="610" ind1="2" ind2="0">
+    <subfield code="a">Women's Studio Workshop.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">Rosendale.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Cooking</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">Rosendale.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">Rosendale.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2009.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Kucera, Ellen,</subfield>
+    <subfield code="e">compiler.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Women's Studio Workshop.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Press Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">N7433.35.U6 A78 2009 Copy 1 #ACQ 12-45 no. 14 he04 2013-06-13</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">9LYI3LE5</subfield><subfield code="b">kucera / art life food</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01227cam a2200337Ii 4500</leader>
+  <controlfield tag="001">990035992550302486</controlfield>
+  <controlfield tag="005">20160112003718.0</controlfield>
+  <controlfield tag="008">071220s2007    ie            000 p eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(Aleph)003599255EMU01</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)184950398</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">OSU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">OSU</subfield>
+    <subfield code="d">EUX</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">AJ#</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">AJ#A</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">PS3561.O818</subfield>
+    <subfield code="b">F86 2007</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Kostelanetz, Richard.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Fulcrapoems /</subfield>
+    <subfield code="c">Richard Kostelanetz.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Dugort, Achill Island, County Mayo, Ireland :</subfield>
+    <subfield code="b">Redfoxpress,</subfield>
+    <subfield code="c">2007.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">34 unnumbered pages ;</subfield>
+    <subfield code="c">15 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">C'est mon dada ;</subfield>
+    <subfield code="v">nr. 7</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Concrete poetry.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Poetry, Modern</subfield>
+    <subfield code="y">21st century.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2007.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Redfoxpress.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">C'est mon dada ;</subfield>
+    <subfield code="v">nr. 7.</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">EMU</subfield>
+    <subfield code="b">emumarbl rg</subfield>
+    <subfield code="2">20150803</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">AJ#</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">990035992550302486</subfield>
+    <subfield code="8">22264083910002486</subfield>
+    <subfield code="a">01GALI_EMORY</subfield>
+    <subfield code="b">MARBL</subfield>
+    <subfield code="c">Locked Stacks</subfield>
+    <subfield code="d">2015 793</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">STACK</subfield>
+    <subfield code="k">4</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Stuart A. Rose Manuscript, Archives, and Rare Book Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">E39M8APP</subfield><subfield code="b">kostelanetz / fulcrapoems</subfield><subfield code="c">title-author</subfield><subfield code="d">emory</subfield></datafield></record>
+</collection>

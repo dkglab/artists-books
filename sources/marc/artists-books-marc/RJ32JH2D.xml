@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00318na9 a22001335u 4500</leader>
+  <controlfield tag="001">990089070790203941</controlfield>
+  <controlfield tag="005">20260709155342.0</controlfield>
+  <controlfield tag="008">020510|||||||||gw |||||||||||||||||ger||</controlfield>
+  <datafield tag="110" ind1="2" ind2=" ">
+    <subfield code="a">Buchgalerie Mergemeier.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">[Artists' books]</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">008907079</subfield>
+  </datafield>
+  <datafield tag="901" ind1="1" ind2=" ">
+    <subfield code="a">BRI5303</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">MHBRI53031HU</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">NO-OVERLAY</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">RJ32JH2D</subfield><subfield code="b">art / artists books</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

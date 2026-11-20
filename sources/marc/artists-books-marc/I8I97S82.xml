@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01631cam a2200361 c 4500</leader>
+  <controlfield tag="001">752184253</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250919124256.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">130715s1979    ne |||||      00| ||dut c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)752184253</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)9752184251</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV752184253</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)935072804</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">dut</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-NL</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Carl Andre</subfield>
+    <subfield code="b">three works on land</subfield>
+    <subfield code="c">Design: Ivy Sky Rutzky. Artists Representing Environmental Arts</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[New York]</subfield>
+    <subfield code="b">Artists Representing Environmental Arts</subfield>
+    <subfield code="c">1979</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[10] Bl.</subfield>
+    <subfield code="b">nur Ill.</subfield>
+    <subfield code="e">Postkarten-Leporello</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">1412886902</subfield>
+    <subfield code="s">Ku GV A 17</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="a">Vries, Gerd de</subfield>
+    <subfield code="0">(DE-588)108048241</subfield>
+    <subfield code="0">(DE-627)477580750</subfield>
+    <subfield code="0">(DE-576)163446547</subfield>
+    <subfield code="f">Exemplar: Donator</subfield>
+    <subfield code="f">Stempel</subfield>
+    <subfield code="k">1993</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">1412886902</subfield>
+    <subfield code="s">Ku GV A 17</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="a">Staatliche Kunstsammlungen Weimar</subfield>
+    <subfield code="0">(DE-588)2022373-0</subfield>
+    <subfield code="0">(DE-627)102096422</subfield>
+    <subfield code="0">(DE-576)191753025</subfield>
+    <subfield code="f">Nummer</subfield>
+    <subfield code="f">Stempel</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="a">Sammlung Gerd de Vries</subfield>
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">1412886902</subfield>
+    <subfield code="s">Ku GV A 17</subfield>
+    <subfield code="o">Sammlung</subfield>
+    <subfield code="0">(DE-588)1250787343</subfield>
+    <subfield code="0">(DE-627)1788018842</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20250503</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Rutzky, Ivy Sky</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Andre, Carl</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Artists Representing Environmental Arts</subfield>
+    <subfield code="0">(DE-588)16171960-0</subfield>
+    <subfield code="0">(DE-627)714882410</subfield>
+    <subfield code="0">(DE-576)349491372</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1412886902</subfield>
+    <subfield code="b">DE-32</subfield>
+    <subfield code="9">32</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Ku GV A 17</subfield>
+    <subfield code="h">MAG</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4562791705</subfield>
+    <subfield code="b">DE-Stg120</subfield>
+    <subfield code="9">Stg 120</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Regal 20</subfield>
+    <subfield code="h">Kunstarchive</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">I8I97S82</subfield><subfield code="b">andre / three works on land</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

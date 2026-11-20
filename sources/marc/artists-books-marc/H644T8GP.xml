@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03627nam a2200637Ia 4500</leader>
+  <controlfield tag="001">ocm61904295</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127114925.0</controlfield>
+  <controlfield tag="008">051011s2005    nyua          000 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">1014199857</subfield>
+    <subfield code="a">1038121324</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)61904295</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">OAC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">OAC</subfield>
+    <subfield code="d">IXA</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">a-gs---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/a-gs</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCA</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Meador, Clifton.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr95020834</subfield>
+    <subfield code="1">http://viaf.org/viaf/71281215</subfield>
+    <subfield code="1">http://isni.org/isni/0000000049993710.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Tourist / refugee.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Tourist refugee.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">College Art Association,</subfield>
+    <subfield code="c">2005.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">32 unnumbered pages :</subfield>
+    <subfield code="b">chiefly illustrations ;</subfield>
+    <subfield code="c">23 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Published by the College Art Association as an insert to Art Journal, Summer 2005 issue.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Based on photographs taken at a former tourist hotel in Tʻbilisi, in the Republic of Georgia.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Condition: no library markings, in protective enclosure.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Meador, Clifton.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr95020834</subfield>
+    <subfield code="1">http://viaf.org/viaf/71281215</subfield>
+    <subfield code="1">http://isni.org/isni/0000000049993710.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Meador, Clifton.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/357013.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Refugees in art.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh97000740.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Hotels</subfield>
+    <subfield code="z">Georgia (Republic)</subfield>
+    <subfield code="z">Tʻbilisi</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Genocide</subfield>
+    <subfield code="z">Georgia (Republic)</subfield>
+    <subfield code="z">Abkhazia.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Abkhazians</subfield>
+    <subfield code="z">Georgia (Republic)</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Ethnic relations.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/916005.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Abkhazians.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/794440.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Genocide.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/940208.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Hotels.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/961767.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Refugees in art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1092851.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Tʻbilisi (Georgia)</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Abkhazia (Georgia)</subfield>
+    <subfield code="x">Ethnic relations.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Georgia (Republic)</subfield>
+    <subfield code="x">Ethnic relations.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008115138.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Georgia (Republic)</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1221658.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Georgia (Republic)</subfield>
+    <subfield code="z">Abkhazia.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1262882.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Georgia (Republic)</subfield>
+    <subfield code="z">Tʻbilisi.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1206337.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Photography, Artistic.</subfield>
+    <subfield code="2">lcgft.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Illustrated works.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423873.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Caucasus.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1244425.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">College Art Association (U.S.)</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86142222</subfield>
+    <subfield code="1">http://viaf.org/viaf/134955184</subfield>
+    <subfield code="1">http://isni.org/isni/0000000119564920.</subfield>
+  </datafield>
+  <datafield tag="730" ind1="0" ind2="2">
+    <subfield code="a">Art journal (New York, N.Y.)</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/asset/SS33469_33469_42526578</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">03-06-08</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">H644T8GP</subfield><subfield code="b">b5456085</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

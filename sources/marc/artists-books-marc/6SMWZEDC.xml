@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01210cam a2200325Ia 4500</leader>
+  <controlfield tag="001">ocm65222932</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20101021103509.0</controlfield>
+  <controlfield tag="008">060328s2001    ilua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)65222932</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">GZN</subfield>
+    <subfield code="c">GZN</subfield>
+    <subfield code="d">GZN</subfield>
+    <subfield code="d">VRC</subfield>
+    <subfield code="d">WAU</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-il</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.H366</subfield>
+    <subfield code="b">F55 2001</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Hanmer, Karen.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">[Flip farm].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Glenview, IL :</subfield>
+    <subfield code="b">K. Hanmer],</subfield>
+    <subfield code="c">c2001.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged) : </subfield>
+    <subfield code="b"> illustrations ; </subfield>
+    <subfield code="c"> 50 x 96 mm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from artist's Website.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Limited ed. of 100 copies.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">A miniature flip book of pigment inkjet prints of black and white photographs which simulate the experience of driving past a field of corn.  This image reused in other books by this artist.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Corn in art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Corn</subfield>
+    <subfield code="x">Ripening</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">United States.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Miniature books.</subfield>
+    <subfield code="2">rbms.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Flip books.</subfield>
+    <subfield code="2">lcgft.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="2">lcgft.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Perfect binding (process.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://www.karenhanmer.com/gallery/piece.php?gallery=toysgames&amp;p=flipfarm</subfield>
+    <subfield code="z">Artist's website</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">6SMWZEDC</subfield><subfield code="b">hanmer / flip farm</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01684cam a2200493 c 4500</leader>
+  <controlfield tag="001">317464744</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20230226191952.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">000721s1999    xxk|||||      00| ||eng c</controlfield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">bA048113</subfield>
+    <subfield code="2">UK</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1870699378</subfield>
+    <subfield code="9">1-870699-37-8</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)317464744</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)471070564</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV317464744</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)247968750</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">17.97</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">18.05</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Kay, Emma</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Worldview</subfield>
+    <subfield code="c">Emma Kay</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Book Works</subfield>
+    <subfield code="c">c1999</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">212 S.</subfield>
+    <subfield code="c">21cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">New writing series</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes index</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">World history</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Literature, Experimental</subfield>
+    <subfield code="x">Great Britain</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)143332023</subfield>
+    <subfield code="0">(DE-627)704456451</subfield>
+    <subfield code="0">(DE-576)336494238</subfield>
+    <subfield code="a">Kay, Emma</subfield>
+    <subfield code="d">1961-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4079158-0</subfield>
+    <subfield code="0">(DE-627)106075454</subfield>
+    <subfield code="0">(DE-576)209211148</subfield>
+    <subfield code="a">Weltgeschichte</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4144445-0</subfield>
+    <subfield code="0">(DE-627)105598321</subfield>
+    <subfield code="0">(DE-576)209734078</subfield>
+    <subfield code="a">Belletristische Darstellung</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-627)1620332833</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">472796348</subfield>
+    <subfield code="b">DE-23</subfield>
+    <subfield code="9">23</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">51.1218</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1203139535</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">KIOSK 3025</subfield>
+    <subfield code="g">KIOSK:3025::::</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3232231535</subfield>
+    <subfield code="b">DE-1973</subfield>
+    <subfield code="9">1973</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Magazin Kü Kay, E. 1999</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">mdedup</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">17.97</subfield>
+    <subfield code="j">Texte eines einzelnen Autors</subfield>
+    <subfield code="0">(DE-627)181571714</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">18.05</subfield>
+    <subfield code="j">Englische Literatur</subfield>
+    <subfield code="0">(DE-627)10640539X</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">IV93SB3W</subfield><subfield code="b">9781870699372</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

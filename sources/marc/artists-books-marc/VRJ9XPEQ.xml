@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02654nam a2200313Ia 4500</leader>
+  <controlfield tag="001">ocn773302116</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20120806032613.0</controlfield>
+  <controlfield tag="008">120119s2010    nyua     c    000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)773302116</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">AQ#</subfield>
+    <subfield code="c">AQ#</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.A92</subfield>
+    <subfield code="b">T9 2010</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Auerbach, Tauba,</subfield>
+    <subfield code="d">1981-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">[2,3] /</subfield>
+    <subfield code="c">Tauba Auerbach.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Printed Matter, Inc.</subfield>
+    <subfield code="c">c2010.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[6] v. :</subfield>
+    <subfield code="b">all col. ill. ;</subfield>
+    <subfield code="c">53 x 42 cm. +</subfield>
+    <subfield code="e">colophon card.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from case spine.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">This book shares same ISBNs (9780894390524 / 089439052X) as "It Has Only Just Begun" published by Printed Matter, Inc.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"For this special project, Auerbach has created an oversized pop-up book featuring six die-cut paper sculptures that unfold into wonderfully elaborate forms. While much of Auerbach's work has previously dealt with compositions staged in the flux state between 2D and 3D, [2,3] represents an expansion for the artist towards a more sculptural medium. Engineered by the artist, each "page" opens into a beautifully constructed object, intricately conceived so that the large-scale paper works--some up to 18" tall--collapse totally flat when closed. In [2,3], the six sculptures take their cue from a range of geometric forms--the pyramid, sphere, ziggurat, octagonal bipyramid (gem), arc, and möbius-strip. The use of a bright, contrasting palette is familiar from Auerbach's previous work across a range of materials, including acrylics, etchings and C-type prints. By matching intense color to form, [2,3] causes the eye to get lost in the twists and intersections of paper and the viewer finds it difficult to envision how the pages work without animating the book in hand. Bringing together an array of interests, Auerbach has created a groundbreaking project that advances the field of pop-up technology and works as an astonishing stand-alone hybrid book/art-object. Published by Printed Matter, each folio of [2,3] measures 20" x 30" when open. The six volumes will be housed in a specially designed slipcase, and published in an edition of 1,000"--Publisher's website.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">Pyramid -- Sphere -- Cubearc -- Möbius -- Gem -- Ziggurat.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Auerbach, Tauba,</subfield>
+    <subfield code="d">1981-</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Pop-up books</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="y">21st century.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Toy and movable books</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="y">21st century.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Geometrical constructions in art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Printed Matter, Inc.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://scad.lunaimaging.com/luna/servlet/s/z58obl</subfield>
+    <subfield code="z">View in SCAD Libraries Digital Collections (Luna)</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">VRJ9XPEQ</subfield><subfield code="b">auerbach / 2 3</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

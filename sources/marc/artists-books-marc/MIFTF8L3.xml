@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03188nam a2200529Ka 4500</leader>
+  <controlfield tag="001">ocn823874768</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127114953.0</controlfield>
+  <controlfield tag="008">130110t20122012sp ah         000 0 eng d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9788461585960</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">8461585968</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)823874768</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CUY</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">CUY</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">f-za---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/f-za</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">De Middel, Cristina,</subfield>
+    <subfield code="d">1975-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2013069987</subfield>
+    <subfield code="1">http://viaf.org/viaf/87421790</subfield>
+    <subfield code="1">http://isni.org/isni/0000000077783120.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The Afronauts /</subfield>
+    <subfield code="c">Cristina De Middel.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Spain?] :</subfield>
+    <subfield code="b">[Cristina De Middel],</subfield>
+    <subfield code="c">[2012]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©2012.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">44 unnumbered leaves (some folded) :</subfield>
+    <subfield code="b">chiefly illustrations (some color), facsimiles ;</subfield>
+    <subfield code="c">24 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">facsimile</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1002.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Artist's book by Cristina De Middel inspired by the short-lived Zambia space program started by eccentric school teacher Edward Makuka Nkoloso in 1964.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from p. [2] of cover.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Published on the occasion of the exhibition 'The Afronauts' organized by Sala Kursala (Universidad de Cádiz) and curated by Jesús Micó ... All images and illustrations by Cristina De Middel. Art director: Ramon Pez with Laia Abril. Editor: Laia Abril."--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Reinforced paper covers with visible interior sewing and text block. Fastened with a rubber band.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Astronautics</subfield>
+    <subfield code="z">Zambia</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Astronautics.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/819505.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Zambia.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1209422.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Photobooks.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026144.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Spain</subfield>
+    <subfield code="y">2012.</subfield>
+    <subfield code="2">rbmscv.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Photographic sequence.</subfield>
+    <subfield code="2">abo.org.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Photobooks.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1919950.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Illustrated works.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423873.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Abril, Laia.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2015016787</subfield>
+    <subfield code="1">http://viaf.org/viaf/25145193365170461417</subfield>
+    <subfield code="1">http://isni.org/isni/0000000459788437.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Pez, Ramon.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2015017714</subfield>
+    <subfield code="1">http://viaf.org/viaf/313506648.</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">Spain.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/#/asset/SS33469_33469_42527499</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">05-29-13</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">sp </subfield>
+    <subfield code="h">4</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">MIFTF8L3</subfield><subfield code="b">8461585968</subfield><subfield code="c">isbn</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

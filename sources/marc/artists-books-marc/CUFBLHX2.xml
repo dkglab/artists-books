@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02764cam a2200505Ii 4500</leader>
+  <controlfield tag="001">ocn656876168</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127114946.0</controlfield>
+  <controlfield tag="006">juunn           n </controlfield>
+  <controlfield tag="008">100819s2009    ag a          000 0 spa d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9789871460229</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9871460228</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)656876168</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">UCW</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">UCW</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.V47</subfield>
+    <subfield code="b">N23 2009</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Veroni, Ral,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr2001052809</subfield>
+    <subfield code="1">http://viaf.org/viaf/19610634</subfield>
+    <subfield code="1">http://isni.org/isni/0000000418237639.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Nada para el destino = Nothing for destiny /</subfield>
+    <subfield code="c">Ral Veroni + Gabo + Flopa.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">Nothing for destiny.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1a ed.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Buenos Aires :</subfield>
+    <subfield code="b">Proyecto Docena,</subfield>
+    <subfield code="c">2009.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">12 unnumbered pages :</subfield>
+    <subfield code="b">chiefly color illustrations ;</subfield>
+    <subfield code="c">15 cm +</subfield>
+    <subfield code="e">1 audio disc (4 3/4 in)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">performed music</subfield>
+    <subfield code="b">prm</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1011.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">audio</subfield>
+    <subfield code="b">s</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1001.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">audio disc</subfield>
+    <subfield code="b">sd</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1004.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">12na ;</subfield>
+    <subfield code="v">033.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Contains 12 images created by Ral Veroni and 12 songs specially composed to accompany each one by Argentine musicians Gabo Ferro and Flopa Lestani.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Veroni, Ral.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr2001052809</subfield>
+    <subfield code="1">http://viaf.org/viaf/19610634</subfield>
+    <subfield code="1">http://isni.org/isni/0000000418237639.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Veroni, Ral.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/472530.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Argentina.</subfield>
+    <subfield code="2">rbmscv.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Lestani, Flopa,</subfield>
+    <subfield code="e">composer.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ferro, Gabo,</subfield>
+    <subfield code="d">1965-</subfield>
+    <subfield code="e">composer.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2=" ">
+    <subfield code="a">Proyecto docena.</subfield>
+  </datafield>
+  <datafield tag="791" ind1="2" ind2=" ">
+    <subfield code="a">Howard Holsenbeck Library Fund.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">12na ;</subfield>
+    <subfield code="v">33.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2019166297</subfield>
+    <subfield code="1">http://viaf.org/viaf/11157468000822322389.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/#/asset/SS33469_33469_42527902</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">04-01-16</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">spa</subfield>
+    <subfield code="g">ag </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">CUFBLHX2</subfield><subfield code="b">b6975170</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

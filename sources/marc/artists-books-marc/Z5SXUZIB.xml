@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00992cam a2200289 cc4500</leader>
+  <controlfield tag="001">550481257</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200531233043.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">071128s1995    fr |||||      00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2910423085</subfield>
+    <subfield code="9">2-910423-08-5</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)550481257</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV550481257</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)836724974</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-FR</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Downsbrough, Peter</subfield>
+    <subfield code="d">1940-2024</subfield>
+    <subfield code="0">(DE-588)119152193</subfield>
+    <subfield code="0">(DE-627)079947719</subfield>
+    <subfield code="0">(DE-576)211416436</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Words</subfield>
+    <subfield code="n">Vol. 2</subfield>
+    <subfield code="p">Words : [Z - A]</subfield>
+    <subfield code="c">Peter Downsbrough</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Valence</subfield>
+    <subfield code="b">École Regionale des Beaux Arts de Valence</subfield>
+    <subfield code="c">1995</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[39] Bl</subfield>
+    <subfield code="b">Ill</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="w">(DE-627)550479953</subfield>
+    <subfield code="w">(DE-576)9550479951</subfield>
+    <subfield code="g">Vol. 2</subfield>
+    <subfield code="q">2.1995</subfield>
+    <subfield code="7">nnam</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">850531764</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 8 2007 7464-2</subfield>
+    <subfield code="g">NB::8:2007:7464:2</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">MV</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">Z5SXUZIB</subfield><subfield code="b">9782910423087</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

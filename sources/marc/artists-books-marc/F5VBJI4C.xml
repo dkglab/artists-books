@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01305cam a2200349 a 4500</leader>
+  <controlfield tag="001">990121083510203941</controlfield>
+  <controlfield tag="005">20220420144925.0</controlfield>
+  <controlfield tag="008">091029s1970    xxu           000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)513995332</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">HFL</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">HFL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">HFL</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">ita</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.D525</subfield>
+    <subfield code="b">A78 1970</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Diacono, Mario</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">[Artist's book].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Place of publication not identified] :</subfield>
+    <subfield code="b">[publisher not identified],</subfield>
+    <subfield code="c">[1970?]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">6 cards in a translucent envelope ;</subfield>
+    <subfield code="c">10 x 15 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">card</subfield>
+    <subfield code="b">no</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">Jct</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">In English and Italian.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title created by cataloger.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Artist's name and publication date supplied by vendor (Ars Libri).</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Each card has a printed statement in red and black block letters.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">United States</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Words in art</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00817660</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">United States</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01204155</subfield>
+  </datafield>
+  <datafield tag="800" ind1="1" ind2=" ">
+    <subfield code="a">Diacono, Mario.</subfield>
+    <subfield code="t">JCT</subfield>
+    <subfield code="v">[5]</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">012108351</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-04-21</subfield>
+    <subfield code="c">WorldCat record encoding level change - WorldCat record variable field(s) change: 050, 650</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">F5VBJI4C</subfield><subfield code="b">lawler / artist s book</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03930nam a2200661Ia 4500</leader>
+  <controlfield tag="001">ocm58422789</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20250801141258.0</controlfield>
+  <controlfield tag="008">050225t20052005nyuaf    b    000 m eng  </controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2005045098</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">1063932200</subfield>
+    <subfield code="a">1084282978</subfield>
+    <subfield code="a">1351211242</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1931082812</subfield>
+    <subfield code="q">alkaline paper</subfield>
+  </datafield>
+  <datafield tag="024" ind1="3" ind2="0">
+    <subfield code="a">9781931082815 (hardcover : alk. paper)</subfield>
+    <subfield code="d">53500</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)58422789</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">BAKER</subfield>
+    <subfield code="d">C#P</subfield>
+    <subfield code="d">UWC</subfield>
+    <subfield code="d">YBM</subfield>
+    <subfield code="d">BUR</subfield>
+    <subfield code="d">VP@</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-al</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us-al</subfield>
+    <subfield code="a">n-us-tn</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us-tn</subfield>
+    <subfield code="a">n-us---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCU</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PS3501.G35</subfield>
+    <subfield code="b">A6 2005</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/PS1-PS3626</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">818/.5209</subfield>
+    <subfield code="2">22</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Agee, James,</subfield>
+    <subfield code="d">1909-1955.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79039544</subfield>
+    <subfield code="1">http://viaf.org/viaf/46756190</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121308918.</subfield>
+  </datafield>
+  <datafield tag="240" ind1="1" ind2="0">
+    <subfield code="a">Let us now praise famous men.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Let us now praise famous men ;</subfield>
+    <subfield code="b">A death in the family, &amp; shorter fiction /</subfield>
+    <subfield code="c">James Agee.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Let us now praise famous men ; A death in the family, &amp; shorter fiction.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Library of America,</subfield>
+    <subfield code="c">[2005]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©2005.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">818 pages, 61 unnumbered page of plates :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">21 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">The library of America ;</subfield>
+    <subfield code="v">159.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references (pages 811-818).</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">Let us now praise famous men -- The morning watch -- A death in the family -- Stories: Death in the desert -- They that sow in sorrow shall reap -- A mother's tale.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Agee, James,</subfield>
+    <subfield code="d">1909-1955</subfield>
+    <subfield code="x">Travel</subfield>
+    <subfield code="z">Alabama.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Agee, James,</subfield>
+    <subfield code="d">1909-1955.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/33540.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Traffic accident victims</subfield>
+    <subfield code="v">Fiction.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008112703.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Fathers and sons</subfield>
+    <subfield code="v">Fiction.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008103511.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Farm tenancy</subfield>
+    <subfield code="z">Alabama.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Boys</subfield>
+    <subfield code="v">Fiction.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2007101907.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Rural conditions.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1101474.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Manners and customs.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1007815.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Boys.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/837358.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Farm tenancy.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/921264.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Fathers and sons.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/921899.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Traffic accident victims.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1153995.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Travel.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1155558.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">United States</subfield>
+    <subfield code="x">Social life and customs</subfield>
+    <subfield code="v">Fiction.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2007100003.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Knoxville (Tenn.)</subfield>
+    <subfield code="v">Fiction.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Alabama</subfield>
+    <subfield code="x">Rural conditions.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Alabama.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204694.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">United States.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204155.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Fiction.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423787.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Tennessee</subfield>
+    <subfield code="z">Knoxville.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1206442.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2="2">
+    <subfield code="a">Agee, James,</subfield>
+    <subfield code="d">1909-1955.</subfield>
+    <subfield code="t">Death in the family.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no98006526</subfield>
+    <subfield code="1">http://viaf.org/viaf/176416864.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Library of America ;</subfield>
+    <subfield code="v">159.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n42015308</subfield>
+    <subfield code="1">http://viaf.org/viaf/175777746.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">(2)dd</subfield>
+    <subfield code="a">ua</subfield>
+    <subfield code="b">03-08-06</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">3</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">XI3WQW8K</subfield><subfield code="b">9781931082815</subfield><subfield code="c">isbn</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

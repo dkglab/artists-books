@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00407    a2200109   4500</leader>
+  <controlfield tag="001">ocm20611911</controlfield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Morrison, Lois</subfield>
+    <subfield code="0">no98098580</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Chen, Julie</subfield>
+    <subfield code="0">no94029031</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Memories of fruit</subfield>
+    <subfield code="c">Lois Morrison</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Berkeley, Calif.] :</subfield>
+    <subfield code="b">Flying Fish Press,</subfield>
+    <subfield code="c">1988.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[15] leaves (some folded)</subfield>
+    <subfield code="b">illustrations</subfield>
+    <subfield code="c">25 cm</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This book was designed, printed and bound by Julie Chen." (recto of leaf [15]).</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">AEDGIFHG</subfield><subfield code="b">20611911</subfield><subfield code="c">oclc</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

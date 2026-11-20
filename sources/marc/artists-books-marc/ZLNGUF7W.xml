@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01532ckc a22003733a 4500</leader>
+  <controlfield tag="001">16207653</controlfield>
+  <controlfield tag="005">20250607034801.0</controlfield>
+  <controlfield tag="007">k|||||</controlfield>
+  <controlfield tag="008">100312||||||||||||nnn| |||||u||||kn|||  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">16207653</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">p</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">u</subfield>
+    <subfield code="e">unde</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-printpho</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-860</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2010631953</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DLC)iuc2010001313</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="e">gihc</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">Unprocessed in PR 13 CN 1969:030</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Maciunas, George,</subfield>
+    <subfield code="d">1931-1978,</subfield>
+    <subfield code="e">editor.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Fluxus 1</subfield>
+    <subfield code="h">[graphic].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[New York] :</subfield>
+    <subfield code="b">[G. Maciunas],</subfield>
+    <subfield code="c">1964.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume :</subfield>
+    <subfield code="b">mised media prints;</subfield>
+    <subfield code="c">20 x 21 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Creator not recorded.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">This catalog record contains preliminary data.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from item.</subfield>
+  </datafield>
+  <datafield tag="506" ind1=" " ind2=" ">
+    <subfield code="a">Served by appointment (Unprocessed), To make a request, see "Access to Unprocessed Materials,"</subfield>
+    <subfield code="u">http://www.loc.gov/rr/print/info/022_unpr.html</subfield>
+  </datafield>
+  <datafield tag="540" ind1=" " ind2=" ">
+    <subfield code="a">Rights status not evaluated. For general information see "Copyright and Other Restrictions...,"</subfield>
+    <subfield code="u">http://www.loc.gov/rr/print/195_copr.html</subfield>
+  </datafield>
+  <datafield tag="541" ind1=" " ind2=" ">
+    <subfield code="c">Transfer;</subfield>
+    <subfield code="a">U.S. Copyright Office;</subfield>
+    <subfield code="e">(PR 13 CN 1969:030)</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="a">Library of Congress</subfield>
+    <subfield code="b">Prints and Photographs Division</subfield>
+    <subfield code="e">Washington, D.C. 20540 USA</subfield>
+    <subfield code="n">dcu</subfield>
+    <subfield code="u">http://hdl.loc.gov/loc.pnp/pp.print</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">export NME</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="a">pp/iuc</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="e">pp/minload</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-P&amp;P</subfield>
+    <subfield code="m">(V size)</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ZLNGUF7W</subfield><subfield code="b">maciunas / fluxus 1</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

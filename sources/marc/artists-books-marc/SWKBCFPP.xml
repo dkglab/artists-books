@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01284cam a2200337 a 4500</leader>
+  <controlfield tag="001">13578061</controlfield>
+  <controlfield tag="005">20250606210107.2</controlfield>
+  <controlfield tag="008">040430s2002    vtua     f    000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">13578061</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">2 shelf copies</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">ps02 2004-04-30 z-processor to HLCD</subfield>
+    <subfield code="c">lh44 2004-05-17 (lh03 rev.)</subfield>
+    <subfield code="d">lh38 2004-06-29</subfield>
+    <subfield code="e">lh36 2004-07-01 to Dewey</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-644, LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2004296127</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0962064041</subfield>
+    <subfield code="q">pbk.</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780962064043</subfield>
+    <subfield code="q">(pbk.)</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)50723764</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">NLC</subfield>
+    <subfield code="d">IBZ</subfield>
+    <subfield code="d">NGU</subfield>
+    <subfield code="d">IUL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">WAU</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">Z116.A3</subfield>
+    <subfield code="b">V36 2002</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">686.3</subfield>
+    <subfield code="2">21</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Van Vliet, Claire.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Woven and interlocking book structures :</subfield>
+    <subfield code="b">from the Janus, Steiner, and Gefn presses /</subfield>
+    <subfield code="c">Claire Van Vliet and Elizabeth Steiner.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Newark, Vt. :</subfield>
+    <subfield code="b">Janus Gefn Unlimited,</subfield>
+    <subfield code="c">2002.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">141 p. :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">26 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Book design</subfield>
+    <subfield code="v">Handbooks, manuals, etc.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Toy and movable books</subfield>
+    <subfield code="x">Design.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Steiner, Elizabeth,</subfield>
+    <subfield code="d">1934-</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">SWKBCFPP</subfield><subfield code="b">vliet / woven and interlocking book structures from the janus steiner and gefn presses</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

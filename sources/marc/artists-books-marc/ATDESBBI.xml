@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00515    a2200157   4500</leader>
+  <controlfield tag="001">ocm08390172</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780931460098</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0931460093</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Williams, Gerald</subfield>
+    <subfield code="0">n82027463</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schechter, Ben-Zion</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Lange, Gerald</subfield>
+    <subfield code="0">n88094203</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bieler Press</subfield>
+    <subfield code="0">n85050200</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Common ground</subfield>
+    <subfield code="c">poetry by Gerald Williams ; drawings by Ben-Zion Shechter</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[St. Paul, Minn.] :</subfield>
+    <subfield code="b">Bieler Press,</subfield>
+    <subfield code="c">1980.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">31 unnumbered page</subfield>
+    <subfield code="b">illustrations</subfield>
+    <subfield code="c">25 cm</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Limited ed. of 150 copies.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ATDESBBI</subfield><subfield code="b">lange / common ground</subfield><subfield code="c">title-author</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

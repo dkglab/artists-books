@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02586cam a2200457Ii 4500</leader>
+  <controlfield tag="001">on1019608712</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115013.0</controlfield>
+  <controlfield tag="008">171107s2017    xr a          000 0 eng d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9788075150646</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">8075150643</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1019608712</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">EVIEW</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">EVIEW</subfield>
+    <subfield code="d">JPG</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">JPG</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">cze</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-xr---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/e-xr</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Kintera, Krištof,</subfield>
+    <subfield code="d">1973-</subfield>
+    <subfield code="e">artist,</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2014164693</subfield>
+    <subfield code="1">http://viaf.org/viaf/55334664</subfield>
+    <subfield code="1">http://isni.org/isni/0000000078777910.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Nic si o tom nemyslet /</subfield>
+    <subfield code="c">Krištof Kintera ; editace, Juraj Horváth ; překlad, Šimon Pellar = Think nothing about it / Krištof Kintera ; edited by Juraj Horváth ; translation, Šimon Pellar.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="1">
+    <subfield code="a">Think nothing about it.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">Vydání první =</subfield>
+    <subfield code="b">First edition.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Praha :</subfield>
+    <subfield code="b">Baobab,</subfield>
+    <subfield code="c">2017.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged) :</subfield>
+    <subfield code="b">illustrations (chiefly color) ;</subfield>
+    <subfield code="c">19 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from colophon.</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">English and Czech.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Kintera, Krištof,</subfield>
+    <subfield code="d">1973-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2014164693</subfield>
+    <subfield code="1">http://viaf.org/viaf/55334664</subfield>
+    <subfield code="1">http://isni.org/isni/0000000078777910.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Kintera, Krištof,</subfield>
+    <subfield code="d">1973-</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1967635.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Horváth, Juraj,</subfield>
+    <subfield code="e">editor.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2021066675</subfield>
+    <subfield code="1">http://viaf.org/viaf/74128677</subfield>
+    <subfield code="1">http://isni.org/isni/0000000109162477.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Baobab Books (Firm),</subfield>
+    <subfield code="e">publisher.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2010063095</subfield>
+    <subfield code="1">http://viaf.org/viaf/141132329.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N6834.5.K558</subfield>
+    <subfield code="b">N53 2017</subfield>
+    <subfield code="z">050 4</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00054145263</subfield>
+    <subfield code="l">aart</subfield>
+    <subfield code="n">dls</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="t">78</subfield>
+    <subfield code="u">-</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">04-17-19</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">xr </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">9PXADZ3T</subfield><subfield code="b">b8983786</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

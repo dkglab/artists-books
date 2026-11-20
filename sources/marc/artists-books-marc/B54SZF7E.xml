@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00870cam a22002652c 4500</leader>
+  <controlfield tag="001">1484355652</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20241119002143.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">140915s1996    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1484355652</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)414355652</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ414355652</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Kermaire, Christine</subfield>
+    <subfield code="d">1953-</subfield>
+    <subfield code="0">(DE-588)123778751</subfield>
+    <subfield code="0">(DE-627)082762341</subfield>
+    <subfield code="0">(DE-576)215004280</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Artefact</subfield>
+    <subfield code="c">Christine Kermaire</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">023/300</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Nieuwpoort</subfield>
+    <subfield code="c">1996</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">13 Bl.</subfield>
+    <subfield code="b">überwiegend Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2815162911</subfield>
+    <subfield code="b">DE-1975</subfield>
+    <subfield code="9">1975</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">98/232</subfield>
+    <subfield code="h">Rara</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">B54SZF7E</subfield><subfield code="b">kermaire / artefact</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

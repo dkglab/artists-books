@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01461cam a2200373 a 4500</leader>
+  <controlfield tag="001">13912458</controlfield>
+  <controlfield tag="005">20250606214828.4</controlfield>
+  <controlfield tag="008">050323s2004    quca          000 p fre  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">13912458</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">origres</subfield>
+    <subfield code="d">3</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">jh52 2005-06-09 z-processor</subfield>
+    <subfield code="c">jh52 2005-06-09</subfield>
+    <subfield code="d">jh34 2005-08-30 to SL</subfield>
+    <subfield code="e">jh34 2005-08-30 to BCCD</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">nb28 2005-03-28 Copy 1 to ASCD</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-644, LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2005360806</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2980864404</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9782980864407</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-cn-qu</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.B47</subfield>
+    <subfield code="b">E86 2004</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Bérubé, Anne,</subfield>
+    <subfield code="d">1961-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Et ce n'est que vie /</subfield>
+    <subfield code="c">[concept et illustrations d'Anne Bérubé].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Verdun, Québec] :</subfield>
+    <subfield code="b">A. Bérubé,</subfield>
+    <subfield code="c">c2004.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[10] p. :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">11 x 23 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Poèmes de Hélène Dorion, extraits de Pierres invisibles, Saint-Benoît-du-Sault, Éditions Tarabustes, 1998 ; Montréal, Éditions du Noroît, 1999 ... Exemplaire n⁰ 15"--P. 4 of cover.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Bérubé, Anne,</subfield>
+    <subfield code="d">1961-</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Québec.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Dorion, Hélène,</subfield>
+    <subfield code="d">1958-</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="d">20050314</subfield>
+    <subfield code="n">I20011357</subfield>
+    <subfield code="s">Coutts</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="e">VENDOR LOAD</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">3VU96XEB</subfield><subfield code="b">2980864404</subfield><subfield code="c">isbn</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

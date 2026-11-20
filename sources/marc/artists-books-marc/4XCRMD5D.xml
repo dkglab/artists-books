@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02758cam a2200553 c 4500</leader>
+  <controlfield tag="001">1603815813</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20230513210842.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">990608s1992    be |||||      00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9072191641</subfield>
+    <subfield code="9">90-72191-64-1</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1603815813</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)077900634</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ077900634</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)836566543</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)222484037</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1076125510</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-BE</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LH 65830</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/94562:13114</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Letters from Wittgenstein, abridged in Ghent</subfield>
+    <subfield code="c">Joseph Kosuth</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Gent</subfield>
+    <subfield code="b">Imschoot</subfield>
+    <subfield code="c">1992</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">XV, 150 S.</subfield>
+    <subfield code="b">zahlr. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)118634313</subfield>
+    <subfield code="0">(DE-627)135609127</subfield>
+    <subfield code="0">(DE-576)209165634</subfield>
+    <subfield code="a">Wittgenstein, Ludwig</subfield>
+    <subfield code="d">1889-1951</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4049716-1</subfield>
+    <subfield code="0">(DE-627)104675152</subfield>
+    <subfield code="0">(DE-576)209083182</subfield>
+    <subfield code="a">Rezeption</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)118565737</subfield>
+    <subfield code="0">(DE-627)079362141</subfield>
+    <subfield code="0">(DE-576)208997725</subfield>
+    <subfield code="a">Kosuth, Joseph</subfield>
+    <subfield code="d">1945-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="3">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4032354-7</subfield>
+    <subfield code="0">(DE-627)104616954</subfield>
+    <subfield code="0">(DE-576)208996478</subfield>
+    <subfield code="a">Concept-art</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Kosuth, Joseph</subfield>
+    <subfield code="d">1945-</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)118565737</subfield>
+    <subfield code="0">(DE-627)079362141</subfield>
+    <subfield code="0">(DE-576)208997725</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Wittgenstein, Ludwig</subfield>
+    <subfield code="d">1889-1951</subfield>
+    <subfield code="0">(DE-588)118634313</subfield>
+    <subfield code="0">(DE-627)135609127</subfield>
+    <subfield code="0">(DE-576)209165634</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">https://swbplus.bsz-bw.de/bsz077900634inh.htm</subfield>
+    <subfield code="m">B:DE-576;DE-14</subfield>
+    <subfield code="q">application/pdf</subfield>
+    <subfield code="v">20090810161301</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Inhaltsverzeichnis</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-576)269070877</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-627)533018676</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">823838730</subfield>
+    <subfield code="b">DE-18-26</subfield>
+    <subfield code="9">18/26</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">J. Kosut : 8</subfield>
+    <subfield code="h">18/26</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1659792827</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 25841 kl</subfield>
+    <subfield code="g">NB::25841::kl:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3097391274</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3097391460</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">7 Kosuth, J. 3 1992</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">309739155X</subfield>
+    <subfield code="b">DE-L242</subfield>
+    <subfield code="9">L 242</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3097391606</subfield>
+    <subfield code="b">DE-Ka89</subfield>
+    <subfield code="9">Ka 89</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">LS Kosuth Joseph 1992</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3097391649</subfield>
+    <subfield code="b">DE-1975</subfield>
+    <subfield code="9">1975</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">92/282</subfield>
+    <subfield code="h">Künstler der Sammlung</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">mdedup</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LH 65830</subfield>
+    <subfield code="b">neueste Stile Aktionskunst, Fluxus, Happening, Performance, Body art</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeines. Allgemeine Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeine Kunstgeschichte: Darstellungen</subfield>
+    <subfield code="k">Darstellungen einzelner Epochen</subfield>
+    <subfield code="k">Mittlere und neuere Kunstgeschichte</subfield>
+    <subfield code="k">Neuzeit</subfield>
+    <subfield code="k">19. und 20. Jahrhundert</subfield>
+    <subfield code="k">20. Jahrhundert</subfield>
+    <subfield code="k">neueste Stile Aktionskunst, Fluxus, Happening, Performance, Body art</subfield>
+    <subfield code="0">(DE-627)127063612X</subfield>
+    <subfield code="0">(DE-625)rvk/94562:13114</subfield>
+    <subfield code="0">(DE-576)20063612X</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">4XCRMD5D</subfield><subfield code="b">9789072191649</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

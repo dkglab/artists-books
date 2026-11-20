@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03766cam a22008417a 4500</leader>
+  <controlfield tag="001">11393729</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20181030230000.0</controlfield>
+  <controlfield tag="008">090421s2007    gw a||||||||||000 0|eng|c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3791338145</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783791338149</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="5">Bo</subfield>
+    <subfield code="a">(Bo)412473</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">(Mo)b1681507</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">Mo</subfield>
+    <subfield code="d">Um</subfield>
+    <subfield code="e">a</subfield>
+  </datafield>
+  <datafield tag="041" ind1="1" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">ger</subfield>
+    <subfield code="h">ger</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">700.92</subfield>
+    <subfield code="2">23/swe</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">Ibz Warhol, Andy</subfield>
+    <subfield code="2">kssb/8</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">Lz Warhol, Andy</subfield>
+    <subfield code="2">kssb/8</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">Ie-qa.55</subfield>
+    <subfield code="2">kssb/8</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">Ib-qa.55</subfield>
+    <subfield code="2">kssb/8</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Kuhl, Isabel</subfield>
+  </datafield>
+  <datafield tag="240" ind1="1" ind2="0">
+    <subfield code="a">Andy Warhol</subfield>
+    <subfield code="l">Engelska</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Andy Warhol /</subfield>
+    <subfield code="c">Isabel Kuhl ; [translated from the German by Stephen Telfer].</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Munich :</subfield>
+    <subfield code="b">Prestel,</subfield>
+    <subfield code="c">cop. 2007</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">128 p.</subfield>
+    <subfield code="b">chiefly col. ill.</subfield>
+    <subfield code="c">24 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">engelska</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="4">
+    <subfield code="a">Warhol, Andy,</subfield>
+    <subfield code="d">1928-1987</subfield>
+    <subfield code="0">https://libris.kb.se/53hkld2p0b9lqcv#it</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Amerikansk konst</subfield>
+    <subfield code="y">1900-talet</subfield>
+    <subfield code="y">1945-</subfield>
+    <subfield code="2">sao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Konstnärer</subfield>
+    <subfield code="z">Förenta staterna</subfield>
+    <subfield code="y">1900-talet</subfield>
+    <subfield code="y">1945-</subfield>
+    <subfield code="v">biografi</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Målare (bildkonstnärer)</subfield>
+    <subfield code="z">Förenta staterna</subfield>
+    <subfield code="y">1900-talet</subfield>
+    <subfield code="y">1945-</subfield>
+    <subfield code="v">biografi</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Biografier</subfield>
+    <subfield code="0">https://id.kb.se/term/saogf/Biografier</subfield>
+    <subfield code="2">saogf</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Warhol, Andy,</subfield>
+    <subfield code="d">1928-1987</subfield>
+    <subfield code="0">https://libris.kb.se/53hkld2p0b9lqcv#it</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Bo</subfield>
+    <subfield code="a">u  a</subfield>
+    <subfield code="b">140401||0000|||||001||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Gbg</subfield>
+    <subfield code="a">u  a</subfield>
+    <subfield code="b">220222||0000|||||000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Mah</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">0905134|00008|||1001|||||0901128</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">090421||0000|||||001||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Or1</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">220929||0000|||||000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Q</subfield>
+    <subfield code="a">uo a</subfield>
+    <subfield code="b">220208||0000|||||000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Svl</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">220907||0000|||||000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Bo</subfield>
+    <subfield code="b">Bo</subfield>
+    <subfield code="t">1</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Gbg</subfield>
+    <subfield code="b">Gbg</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Mah</subfield>
+    <subfield code="b">Mah</subfield>
+    <subfield code="h">709</subfield>
+    <subfield code="l">kuh</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="b">Mo</subfield>
+    <subfield code="h">Ibz Warhol, Andy</subfield>
+    <subfield code="z">engelska</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Or1</subfield>
+    <subfield code="b">Or1</subfield>
+    <subfield code="h">Ibz Warhol, Andy</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Q</subfield>
+    <subfield code="b">Q</subfield>
+    <subfield code="c">mag</subfield>
+    <subfield code="h">2021-06750</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Svl</subfield>
+    <subfield code="b">Svl</subfield>
+    <subfield code="h">Ibz Warhol, Andy</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"m5zznxmz57vz6hm","modified":"2018-10-30T23:00:00+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Bo</subfield>
+    <subfield code="a">{"@id":"8dl7p13f1kv8t21","modified":"2014-04-01T13:42:03+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Gbg</subfield>
+    <subfield code="a">{"@id":"dtkk7zm9bq6q0wft","modified":"2022-02-22T17:10:04.475+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Mah</subfield>
+    <subfield code="a">{"@id":"jnvw0s3p0df05dq","modified":"2018-01-08T12:44:04+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Mo</subfield>
+    <subfield code="a">{"@id":"59hjc3tb15hc137","modified":"2009-04-21T14:12:25+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Or1</subfield>
+    <subfield code="a">{"@id":"4l57wv3g2cw8qx7z","modified":"2022-09-29T13:04:35.355+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Q</subfield>
+    <subfield code="a">{"@id":"8pcrw0sd67sdg9xp","modified":"2022-02-08T14:09:34.397+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Svl</subfield>
+    <subfield code="a">{"@id":"ct9wmj9m96174t7f","modified":"2022-09-07T17:48:09.316+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="900" ind1="1" ind2="s">
+    <subfield code="6">600,700</subfield>
+    <subfield code="a">Warhola, Andrew,</subfield>
+    <subfield code="d">1928-1987</subfield>
+    <subfield code="u">Warhol, Andy,</subfield>
+    <subfield code="d">1928-1987</subfield>
+  </datafield>
+  <datafield tag="900" ind1="1" ind2="s">
+    <subfield code="6">600,700</subfield>
+    <subfield code="a">Warhola, Andrew,</subfield>
+    <subfield code="d">1928-1987</subfield>
+    <subfield code="u">Warhol, Andy,</subfield>
+    <subfield code="d">1928-1987</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="s">
+    <subfield code="6">655</subfield>
+    <subfield code="a">Biografi</subfield>
+    <subfield code="u">Biografier</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="s">
+    <subfield code="6">655</subfield>
+    <subfield code="a">Levnadsteckningar</subfield>
+    <subfield code="u">Biografier</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="s">
+    <subfield code="6">655</subfield>
+    <subfield code="a">Personhistoria</subfield>
+    <subfield code="u">Biografier</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">g</subfield>
+    <subfield code="a">Informativa verk</subfield>
+    <subfield code="u">Biografier</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">g</subfield>
+    <subfield code="a">Facklitteratur</subfield>
+    <subfield code="u">Biografier</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Likpredikningar</subfield>
+    <subfield code="u">Biografier</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Biobibliografier</subfield>
+    <subfield code="u">Biografier</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Biografier över flera individer</subfield>
+    <subfield code="u">Biografier</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Biografier över en individ</subfield>
+    <subfield code="u">Biografier</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Självbiografier</subfield>
+    <subfield code="u">Biografier</subfield>
+  </datafield>
+  <datafield tag="976" ind1=" " ind2="0">
+    <subfield code="a">Ibz</subfield>
+    <subfield code="b">Särskilda konstnärer</subfield>
+  </datafield>
+  <datafield tag="976" ind1=" " ind2="0">
+    <subfield code="a">Lz</subfield>
+    <subfield code="b">Biografi: särskilda personer</subfield>
+  </datafield>
+  <datafield tag="976" ind1=" " ind2="0">
+    <subfield code="a">Ie-qa.55</subfield>
+    <subfield code="b">Målarkonst: Förenta staterna: 1945-</subfield>
+  </datafield>
+  <datafield tag="976" ind1=" " ind2="0">
+    <subfield code="a">Ib-qa.55</subfield>
+    <subfield code="b">Konsthistoria: Förenta staterna: 1945-</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">I3B8TBMK</subfield><subfield code="b">warhol / andy warhol</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

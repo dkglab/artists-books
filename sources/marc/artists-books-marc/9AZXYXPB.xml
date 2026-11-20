@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00907com a2200313 ca4500</leader>
+  <controlfield tag="001">1334807469</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20180726143358.0</controlfield>
+  <controlfield tag="007">ou</controlfield>
+  <controlfield tag="008">070516n20uuuuuuxx ||| |      |   b|eng c</controlfield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">bA245921</subfield>
+    <subfield code="2">UK</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">19022010.</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1870699238</subfield>
+    <subfield code="9">1-870699-23-8</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1902201051</subfield>
+    <subfield code="9">1-902201-05-1</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1334807469</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)264807464</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)DNB19022010.</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Feature film</subfield>
+    <subfield code="b">a book</subfield>
+    <subfield code="c">by Douglas Gordon</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Artangel Afterlives</subfield>
+    <subfield code="c">20XX-</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Sonstige</subfield>
+    <subfield code="b">xxx</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">nicht spezifiziert</subfield>
+    <subfield code="b">z</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">nicht spezifiziert</subfield>
+    <subfield code="b">zu</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Gordon, Douglas</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2533997978</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2746388588</subfield>
+    <subfield code="b">DE-D13</subfield>
+    <subfield code="9">D 13</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">MC</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">9AZXYXPB</subfield><subfield code="b">9781870699235</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

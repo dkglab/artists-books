@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02770cam a2200445Ii 4500</leader>
+  <controlfield tag="001">ocn863446560</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20250801231152.0</controlfield>
+  <controlfield tag="008">131120s2013    nyua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)863446560</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">ORU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">ORU</subfield>
+    <subfield code="d">ORU</subfield>
+    <subfield code="d">CUY</subfield>
+    <subfield code="d">IXA</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">f-ml---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/f-ml</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">TR681.P56</subfield>
+    <subfield code="b">D47 2013</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/TR1-TR1050</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Deschamps, F.,</subfield>
+    <subfield code="e">photographer.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86014799</subfield>
+    <subfield code="1">http://viaf.org/viaf/23613797.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Mali photo /</subfield>
+    <subfield code="c">François Deschamps.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New Paltz, NY :</subfield>
+    <subfield code="b">Papyrus Productions,</subfield>
+    <subfield code="c">[2013]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged) :</subfield>
+    <subfield code="b">all color illustrations ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"The studio photographs of François Deschamps are by the credited photographers. All prints are from the collection of François Deschamps ... Painting of photographer Bafin Traoré ... by Jo Kone painter of Mopti"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Perfect bound. Glossy covers. Digital printing. Open edition. Photographs of François Deschamps taken by Malian photographers. Each photograph of Deschamps is accompanied with a photograph by Deschamps of the Malian photographer and his studio. Humane exchange and human relationships are a two-way street, or lane, or cart path. This give-and-give interaction is on display in this set of photographs.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Deschamps, F.</subfield>
+    <subfield code="v">Portraits.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Deschamps, F.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/198983.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photographers</subfield>
+    <subfield code="z">Mali</subfield>
+    <subfield code="v">Portraits.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Portrait photography</subfield>
+    <subfield code="z">Mali.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photography, Artistic.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85101269.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Photography, Artistic.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1061964.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Portrait photography.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1072259.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Photographers.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1061605.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Mali.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204327.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Photobooks</subfield>
+    <subfield code="y">21st century.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Portraits.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423831.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">TR681.P56</subfield>
+    <subfield code="b">D47 2013</subfield>
+    <subfield code="z">050 4</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00047726905</subfield>
+    <subfield code="l">aara</subfield>
+    <subfield code="n">jc</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="u">-</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="t">78</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">08-14-14</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">3Y8U8ZF9</subfield><subfield code="b">b7885769</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

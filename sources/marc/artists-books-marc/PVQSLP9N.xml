@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01319cam a2200301 c 4500</leader>
+  <controlfield tag="001">833789945</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20190228080222.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">150824s1986    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)833789945</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV833789945</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)935903214</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Constantinides, Kathy</subfield>
+    <subfield code="d">1936-</subfield>
+    <subfield code="0">(DE-588)1075866006</subfield>
+    <subfield code="0">(DE-627)834002523</subfield>
+    <subfield code="0">(DE-576)444716718</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Letters</subfield>
+    <subfield code="b">liberty circumscribed</subfield>
+    <subfield code="c">Kathy Constantinides</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Ann Arbor, Mich.</subfield>
+    <subfield code="b">Kathy Constantinides</subfield>
+    <subfield code="c">c 1986</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[61] Blatt</subfield>
+    <subfield code="b">zahlr. Ill</subfield>
+    <subfield code="e">1 Blatt</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Letters written from 1979-1985 regarding the representation of women in text and images of advertising, institutional and organizational materials, and publications. All responses which the writer received to the letters are also included."--[leaf 4]</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cited in: Umbrella, vol. 9, no. 2, Oct. 1986, p. 36</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Künstlerbuch</subfield>
+    <subfield code="0">(DE-588)4229053-3</subfield>
+    <subfield code="0">(DE-627)10495146X</subfield>
+    <subfield code="0">(DE-576)210335815</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1563706164</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 8 2015 5537</subfield>
+    <subfield code="g">NB::8:2015:5537:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">PVQSLP9N</subfield><subfield code="b">constantinides / letters</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

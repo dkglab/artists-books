@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00796cam a2200253u  4500</leader>
+  <controlfield tag="001">9651726</controlfield>
+  <controlfield tag="005">20250608044729.4</controlfield>
+  <controlfield tag="007">cr_|||||||||||</controlfield>
+  <controlfield tag="008">810130s1909    pau           000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">9651726</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">premunv</subfield>
+    <subfield code="d">u</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   18000913 </subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">(DLC)   18000913</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">CarP</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">E457.8</subfield>
+    <subfield code="b">.L222</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lambert, William H.</subfield>
+    <subfield code="q">(William Harrison),</subfield>
+    <subfield code="d">1842-1912.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Abraham Lincoln;</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Philadelphia?</subfield>
+    <subfield code="c">1909]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">p. cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Lincoln, Abraham, President, U. S.--Addresses, sermons, etc.</subfield>
+  </datafield>
+  <datafield tag="530" ind1=" " ind2=" ">
+    <subfield code="a">Also available in digital form.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="1">
+    <subfield code="u">http://hdl.loc.gov/loc.gdc/scd0001.00006139243</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="a">massdig</subfield>
+    <subfield code="e">sloan</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-GenColl</subfield>
+    <subfield code="h">E457.8</subfield>
+    <subfield code="i">.L222</subfield>
+    <subfield code="t">Copy 1</subfield>
+    <subfield code="w">PREM</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ECEJT8KB</subfield><subfield code="b">harrison / abraham lincoln</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

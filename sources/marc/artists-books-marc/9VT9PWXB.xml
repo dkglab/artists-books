@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02598cam a2200433 a 4500</leader>
+  <controlfield tag="001">991013892895707141</controlfield>
+  <controlfield tag="005">20260630141417.0</controlfield>
+  <controlfield tag="008">070328s2006    mnua          000 p eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)123411679</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)ocn123411679</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">MNU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">MNU</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">MNF</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">MNU</subfield>
+    <subfield code="d">HCO</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">MMX</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">MMXA</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">PS3563.O618</subfield>
+    <subfield code="b">W38 2006</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Moore, James,</subfield>
+    <subfield code="d">1943-</subfield>
+    <subfield code="1">https://id.oclc.org/worldcat/entity/E39PBJw8WTQpYGxKTXwBXjhfv3</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n87922912</subfield>
+    <subfield code="1">http://viaf.org/viaf/34574357</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">What it's like here /</subfield>
+    <subfield code="c">by Jim Moore.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Minneapolis, Minn. :</subfield>
+    <subfield code="b">Accordian Productions,</subfield>
+    <subfield code="c">©2006.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged) :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">22 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Collaboration ;</subfield>
+    <subfield code="v">3</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Designed by Regula Russelle and CB Sherlock. Printed in the studios of Minnesota Center for Book Arts. This standard edition consists of 30 numbered copies.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Issued in a slipcase.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2="0">
+    <subfield code="t">Near the city --</subfield>
+    <subfield code="t">What it's like here --</subfield>
+    <subfield code="g">The</subfield>
+    <subfield code="t">Necessary strength --</subfield>
+    <subfield code="t">In the cafe --</subfield>
+    <subfield code="g">The</subfield>
+    <subfield code="t">Dog and I, we like how the snow falls.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85008302</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">artists' books (books)</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">(CStmoGRI)aat300123016</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">bookworks.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">(CStmoGRI)aat300178842</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00817660</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Russelle, Regula</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no99074784</subfield>
+    <subfield code="1">http://viaf.org/viaf/51328998</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Sherlock, C. B.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2009142219</subfield>
+    <subfield code="1">http://viaf.org/viaf/100767081</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Accordion Productions (Minneapolis, Minn.)</subfield>
+    <subfield code="1">https://id.oclc.org/worldcat/entity/E39QH7JmqdXxBkxMKtkGwrVTgg</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2018020118</subfield>
+    <subfield code="1">http://viaf.org/viaf/35151963591800310166</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Minnesota Center for Book Arts</subfield>
+    <subfield code="1">https://id.oclc.org/worldcat/entity/E39QQPVp7YrFpbkxHxX7VMDJPF</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n87838279</subfield>
+    <subfield code="1">http://viaf.org/viaf/130129063</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Collaboration (Minneapolis, Minn.) ;</subfield>
+    <subfield code="v">3.</subfield>
+  </datafield>
+  <datafield tag="852" ind1="0" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">PS3563.O618</subfield>
+    <subfield code="b">W38 2006</subfield>
+    <subfield code="x">CO20260630bo</subfield>
+  </datafield>
+  <datafield tag="936" ind1=" " ind2=" ">
+    <subfield code="a">BATCHLOAD</subfield>
+  </datafield>
+  <datafield tag="952" ind1="0" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">PS3563.O618</subfield>
+    <subfield code="b">W38 2006</subfield>
+    <subfield code="x">CO20260630bo</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">MMX</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991013892895707141</subfield>
+    <subfield code="8">22161912090007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMA</subfield>
+    <subfield code="c">MoMA Manhattan Artists' Books</subfield>
+    <subfield code="d">PS3563.O618 W38 2006</subfield>
+    <subfield code="e">unavailable</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mma</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Museum of Modern Art Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">9VT9PWXB</subfield><subfield code="b">moore / what it s like here</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

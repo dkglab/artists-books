@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01545cam a22003855a 4500</leader>
+  <controlfield tag="001">19860041</controlfield>
+  <controlfield tag="005">20250607080951.8</controlfield>
+  <controlfield tag="008">170802s1992    enka          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">19860041</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">ibc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">hh06 2017-08-02 z-processor on order for Rare Book</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)31159064</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">YDM</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">YDM</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">UKTTE</subfield>
+    <subfield code="d">UAB</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="097" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.C95</subfield>
+    <subfield code="b">C66 1992</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Cutts, Simon,</subfield>
+    <subfield code="d">1944-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Companions &amp; menus :</subfield>
+    <subfield code="b">Via Perseto 9, Mercatale, Val di Pesa : 1990-1991 /</subfield>
+    <subfield code="c">Simon Cutts &amp; Erica Van Horn.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Companions and menus</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Docking, Nofrolk, England :</subfield>
+    <subfield code="b">Coracle,</subfield>
+    <subfield code="c">1992.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">64 unnumbered pages :</subfield>
+    <subfield code="b">illustrations (some color) ;</subfield>
+    <subfield code="c">18 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"S. Casciano Val di Pesa : Beni di Terzona e Perseto : Chianti / Proprietà A. Goretti"--Label mounted on cover.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"An edition of 250 copies."--Colophon.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Cutts, Simon,</subfield>
+    <subfield code="d">1944-</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Van Horn, Erica.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Cutts, Simon,</subfield>
+    <subfield code="d">1944-</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00194021</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Van Horn, Erica.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00260489</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01750153</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Van Horn, Erica.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Coracle Press.</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="a">Purchase</subfield>
+    <subfield code="d">20170802</subfield>
+    <subfield code="n">336205</subfield>
+    <subfield code="s">James S. Jaffe Rare Books</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">TLUFIFMA</subfield><subfield code="b">cutts / companions menus</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

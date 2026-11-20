@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01268nam a22003132  4500</leader>
+  <controlfield tag="001">991000762099708431</controlfield>
+  <controlfield tag="005">20260225171702.0</controlfield>
+  <controlfield tag="008">940804s1976    nyu           000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)7503480</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1110218665</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">MWiCA</subfield>
+    <subfield code="c">MWiCA</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">NF237 .B879.8m</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Brown, Robert Delford.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr98014517</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The Mister Jesus Christ contest ;</subfield>
+    <subfield code="b">a statement of intention /</subfield>
+    <subfield code="c">by Robert Delford Brown</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[New York],</subfield>
+    <subfield code="c">[1976?]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">2 ¡. ;</subfield>
+    <subfield code="c">28 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">unspecified</subfield>
+    <subfield code="b">nz</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Issued in envelope containing two printed sheets</subfield>
+  </datafield>
+  <datafield tag="585" ind1=" " ind2=" ">
+    <subfield code="a">Exhibited:"Paginations," organized by the Sterling and Francine Clark Art Institute, May, 1984</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">Processed by Backstage 2020-04</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">(CStRLIN)MACA(MWiCA)Recon94</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">(CStRLIN)MACA94-B14045</subfield>
+  </datafield>
+  <datafield tag="907" ind1=" " ind2=" ">
+    <subfield code="a">.b10769687</subfield>
+    <subfield code="b">01-04-24</subfield>
+    <subfield code="c">12-01-94</subfield>
+  </datafield>
+  <datafield tag="990" ind1=" " ind2=" ">
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">abbib</subfield>
+    <subfield code="b">12-01-94</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">-</subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">4</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991000762099708431</subfield>
+    <subfield code="8">2214986590008431</subfield>
+    <subfield code="a">01CLARKART_INST</subfield>
+    <subfield code="b">MAIN</subfield>
+    <subfield code="c">Artists Books</subfield>
+    <subfield code="d">NF237 .B879.8m</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">ABX</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Clark</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">GXZ27VCP</subfield><subfield code="b">brown / the mister jesus christ contest</subfield><subfield code="c">title-author</subfield><subfield code="d">clark</subfield></datafield></record>
+</collection>

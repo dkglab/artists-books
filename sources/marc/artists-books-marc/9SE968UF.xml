@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01744cam a2200457 c 4500</leader>
+  <controlfield tag="001">1610054989</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20251225193928.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">071214s2002    xx |||||      00| ||ger c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">04,A45,1093</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">972332871</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1891024558</subfield>
+    <subfield code="9">1-891024-55-8</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1610054989</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)275355586</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)DNB972332871</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)53201460</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+    <subfield code="a">eng</subfield>
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">750</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">770</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">759.3</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">750</subfield>
+    <subfield code="a">770</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LI 72300</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/96935:</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">a</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Gerhard Richter - Sils</subfield>
+    <subfield code="c">[Ed. by Hans-Ulrich Obrist with a text by Peter André Bloch]</subfield>
+  </datafield>
+  <datafield tag="263" ind1=" " ind2=" ">
+    <subfield code="a">Gewebe : $ 24.95</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York</subfield>
+    <subfield code="b">DAP</subfield>
+    <subfield code="c">2002</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">86 S.</subfield>
+    <subfield code="b">zahlr. Ill.</subfield>
+    <subfield code="c">16 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Text dt., engl. und franz</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Richter, Gerhard</subfield>
+    <subfield code="d">1932-</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)118600419</subfield>
+    <subfield code="0">(DE-627)079392431</subfield>
+    <subfield code="0">(DE-576)16272070X</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bloch, Peter André</subfield>
+    <subfield code="d">1936-</subfield>
+    <subfield code="e">Mitarb.</subfield>
+    <subfield code="0">(DE-588)124478654</subfield>
+    <subfield code="0">(DE-627)363374973</subfield>
+    <subfield code="0">(DE-576)215751329</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Obrist, Hans Ulrich</subfield>
+    <subfield code="d">1968-</subfield>
+    <subfield code="e">Hrsg.</subfield>
+    <subfield code="0">(DE-588)120656779</subfield>
+    <subfield code="0">(DE-627)080810780</subfield>
+    <subfield code="0">(DE-576)171158733</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3149025931</subfield>
+    <subfield code="b">DE-Ka89</subfield>
+    <subfield code="9">Ka 89</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Richter Gerhard 2002/4</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">sf</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LI 72300</subfield>
+    <subfield code="b">Richter, Gerhard</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Künstler-Monografien</subfield>
+    <subfield code="k">Alphabetische Künstlerliste</subfield>
+    <subfield code="k">Künstler R</subfield>
+    <subfield code="k">Richter, Gerhard</subfield>
+    <subfield code="0">(DE-627)1270642375</subfield>
+    <subfield code="0">(DE-625)rvk/96935:</subfield>
+    <subfield code="0">(DE-576)200642375</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">9SE968UF</subfield><subfield code="b">9781891024559</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

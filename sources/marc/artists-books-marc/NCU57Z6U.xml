@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00927cam a2200265 c 4500</leader>
+  <controlfield tag="001">1498863779</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260608181215.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">150410s1981    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1498863779</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)428863779</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ428863779</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1594265678</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Silhouette</subfield>
+    <subfield code="b">Frankfurter Kunstverein 15.9. - 12.10.1981</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Friedrichsdorf</subfield>
+    <subfield code="b">Wilk</subfield>
+    <subfield code="c">1981</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[6] Bl.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Downsbrough, Peter</subfield>
+    <subfield code="d">1940-2024</subfield>
+    <subfield code="0">(DE-588)119152193</subfield>
+    <subfield code="0">(DE-627)079947719</subfield>
+    <subfield code="0">(DE-576)211416436</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Frankfurter Kunstverein</subfield>
+    <subfield code="g">Frankfurt am Main</subfield>
+    <subfield code="0">(DE-588)2010810-2</subfield>
+    <subfield code="0">(DE-627)101706073</subfield>
+    <subfield code="0">(DE-576)191655759</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2837693448</subfield>
+    <subfield code="b">DE-F186</subfield>
+    <subfield code="9">F 186</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Kst 569</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NCU57Z6U</subfield><subfield code="b">downsbrough / silhouette</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

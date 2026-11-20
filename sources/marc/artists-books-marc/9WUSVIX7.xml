@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01028nam a2200301Ia 4500</leader>
+  <controlfield tag="001">990020803340302486</controlfield>
+  <controlfield tag="005">20160111223446.0</controlfield>
+  <controlfield tag="008">860806s19010000enk           000 1 eng^^</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(Aleph)002080334EMU01</subfield>
+  </datafield>
+  <datafield tag="035" ind1="9" ind2=" ">
+    <subfield code="a">u348537</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">ocm13727704</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DOBI)30939445</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">EMU</subfield>
+    <subfield code="c">EMU</subfield>
+    <subfield code="d">EMU</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">EMUU</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">PR4518.C47</subfield>
+    <subfield code="b">B57</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Croker, B. M.</subfield>
+    <subfield code="q">(Bithia Mary),</subfield>
+    <subfield code="d">-1920.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="2">
+    <subfield code="a">A bird of passage /</subfield>
+    <subfield code="c">by B.M. Croker.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">New edition.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Chatto &amp; Windus,</subfield>
+    <subfield code="c">1901.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">iv, 366 pages ;</subfield>
+    <subfield code="c">20 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">9DT</subfield>
+    <subfield code="2">19940531</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2=" ">
+    <subfield code="a">000020355544</subfield>
+    <subfield code="b">EMU</subfield>
+    <subfield code="c">wg</subfield>
+    <subfield code="d">PR4518.C47 B57</subfield>
+    <subfield code="t">b</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">990020803340302486</subfield>
+    <subfield code="8">22230401600002486</subfield>
+    <subfield code="a">01GALI_EMORY</subfield>
+    <subfield code="b">MARBL</subfield>
+    <subfield code="c">Locked Stacks</subfield>
+    <subfield code="d">PR4518 .C47 B57</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">STACK</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Stuart A. Rose Manuscript, Archives, and Rare Book Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">9WUSVIX7</subfield><subfield code="b">fichter / bird of passage</subfield><subfield code="c">title-author</subfield><subfield code="d">emory</subfield></datafield></record>
+</collection>

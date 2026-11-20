@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01857cam a22003257a 4500</leader>
+  <controlfield tag="001">13039613</controlfield>
+  <controlfield tag="005">20250606195526.2</controlfield>
+  <controlfield tag="008">021213s2001    gw a          000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">13039613</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">origres</subfield>
+    <subfield code="d">4</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">of04 2003-2-4 to ASCD</subfield>
+    <subfield code="h">jp42 2003-02-10 to shelf</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-644, LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2003397809</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3935567022</subfield>
+    <subfield code="q">pbk.</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783935567022</subfield>
+    <subfield code="q">(pbk.)</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">MLCL 2003/00002 (N)</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Korine, Harmony.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Pass the bitch chicken /</subfield>
+    <subfield code="c">Harmony Korine [and] Christopher Wool ; [design: Hans Werner Holzwarth].</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1st ed.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Berlin :</subfield>
+    <subfield code="b">Holzwarth Publications,</subfield>
+    <subfield code="c">2001.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 v. (unpaged) :</subfield>
+    <subfield code="b">all ill. ;</subfield>
+    <subfield code="c">32 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"The result of a collaboration between filmmaker Harmony Korine and painter Christopher Wool, this series of experimental images tests the limits of the pictorial and the abstract, pushing the boundaries of visual and textual narrative to extremes. Korine's photographs form the basis of an intense process of layering, drawing, overprinting, and photocopying. Passed back and forth between the artists, these images are eventually reduced to ghostly shadows beneath a barrage of scumbled dot screens, random patterning, and symbolic blurs and drips. Gradually, the fragmented, distorted images serially mutate, attacked by a combination of mechanical and human processes. Yet despite the violence exerted upon it, a vestige of narrative always survives"-- Amazon.com.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Wool, Christopher.</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="d">20021209</subfield>
+    <subfield code="n">0212372</subfield>
+    <subfield code="s">GyWOH</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">Y53MH8B4</subfield><subfield code="b">3935567022</subfield><subfield code="c">isbn</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

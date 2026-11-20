@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01039cam a2200313 c 4500</leader>
+  <controlfield tag="001">1617723630</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20251225200854.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">010601s1989    xx |||||      00| ||fre c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2950204783</subfield>
+    <subfield code="9">2-9502047-8-3</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1617723630</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)091624355</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ091624355</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)37625327</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">891.8</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Kolář, Jiří</subfield>
+    <subfield code="d">1914-2002</subfield>
+    <subfield code="0">(DE-588)118564749</subfield>
+    <subfield code="0">(DE-627)079361218</subfield>
+    <subfield code="0">(DE-576)16178416X</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Oeuvres posthumes de Monsieur A.</subfield>
+    <subfield code="c">Jiří Kolář. Trad. du tchèque par Erika Abrams</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Alfortville</subfield>
+    <subfield code="b">Ed. Revue K</subfield>
+    <subfield code="c">1989</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[26] S.</subfield>
+    <subfield code="b">Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">Collection défectueuse</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3210411999</subfield>
+    <subfield code="b">DE-352</subfield>
+    <subfield code="9">352</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">slw 959:k815:c/t89</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">MRZFFMME</subfield><subfield code="b">9782950204783</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

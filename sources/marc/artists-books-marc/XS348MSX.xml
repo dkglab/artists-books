@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01741cjm a2200409Ma 4500</leader>
+  <controlfield tag="001">990031093770302486</controlfield>
+  <controlfield tag="005">20160112000038.0</controlfield>
+  <controlfield tag="006">m        h</controlfield>
+  <controlfield tag="007">sz z|nnnnnzned</controlfield>
+  <controlfield tag="007">cr |na---||a|a</controlfield>
+  <controlfield tag="008">110912s2004    xx uun  o         n zxx d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(Aleph)003109377EMU01</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)785988879</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">ALSTP</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">ALSTP</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">EMUU</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Shadow &amp; light.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Place of publication not identified] :</subfield>
+    <subfield code="b">Drimala Records,</subfield>
+    <subfield code="c">2004.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 online resource (55 min.)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">performed music</subfield>
+    <subfield code="b">prm</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">computer</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">online resource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Previously released as a compact disc.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from resource description page (viewed Oct. 4, 2011).</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">Track titles: One Moment and the Next -- Cries, Whispers &amp; Cries -- City On the Edge of Forever -- Twilight at Noon -- In the End There Is Peace -- Well of Souls -- Question of Time -- Shadow and Light.</subfield>
+  </datafield>
+  <datafield tag="511" ind1="0" ind2=" ">
+    <subfield code="a">Performed by Joe Giardullo Quartet.</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">Available to current Emory University students, faculty and staff.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Jazz.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Streaming audio.</subfield>
+    <subfield code="2">lcgft</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Joe Giardullo Quartet.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Jazz music library (Alexander Street Press)</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="b">UNIV</subfield>
+    <subfield code="c">ONLNE</subfield>
+    <subfield code="h">ELECTRONIC ACCESS</subfield>
+    <subfield code="9">8</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="z">Online resource from Alexander Street Press</subfield>
+    <subfield code="u">http://proxy.library.emory.edu/login?url=http://www.aspresolver.com/aspresolver.asp?JAZZ;998623</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">EMU</subfield>
+    <subfield code="b">mk</subfield>
+    <subfield code="2">20120605</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">EMU</subfield>
+  </datafield>
+  <datafield tag="AVE" ind1=" " ind2=" ">
+    <subfield code="8">53283538250002486</subfield>
+    <subfield code="e">Available</subfield>
+    <subfield code="l">UNIV</subfield>
+    <subfield code="n">Online resource from Alexander Street Press</subfield>
+    <subfield code="a">01GALI_EMORY</subfield>
+    <subfield code="0">990031093770302486</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">XS348MSX</subfield><subfield code="b">anderson / shadow light</subfield><subfield code="c">title-author</subfield><subfield code="d">emory</subfield></datafield></record>
+</collection>

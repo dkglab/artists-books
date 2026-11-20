@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00637nam a22002177u 4500</leader>
+  <controlfield tag="001">990016825900203941</controlfield>
+  <controlfield tag="005">20020606090541.3</controlfield>
+  <controlfield tag="008">890511|1990    pl           |||||||pol|d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)28826394</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lewandowski, Jan.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Paszport /</subfield>
+    <subfield code="c">Jan Lewandowski.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">Wyd. 1.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Warszawa :</subfield>
+    <subfield code="b">Instytut Wydawniczy Pax,</subfield>
+    <subfield code="c">1990.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">220 p. ;</subfield>
+    <subfield code="c">20 cm.</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">001682590</subfield>
+  </datafield>
+  <datafield tag="901" ind1="3" ind2=" ">
+    <subfield code="a">AHX2570</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">MHAHX25703HU</subfield>
+  </datafield>
+  <datafield tag="905" ind1=" " ind2=" ">
+    <subfield code="a">PG^0000</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2023-03-02</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2024-08-08</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 758</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">NO-OVERLAY</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">B89WBMWH</subfield><subfield code="b">wehr / paszport</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

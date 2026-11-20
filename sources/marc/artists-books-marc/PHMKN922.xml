@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00665    a2200121   4500</leader>
+  <controlfield tag="001">ocn764482824</controlfield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Stensen, Zachary, book artist</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Stensen, Zachary</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Dryfire Press</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Elementary astronomy :</subfield>
+    <subfield code="b">being a guide to the scenery of the heavens featuring the major &amp; minor planets of the solar system (including Pluto)</subfield>
+    <subfield code="c">by Zachary Stensen</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Iowa City] :</subfield>
+    <subfield code="b">Dryfire Press,</subfield>
+    <subfield code="c">2011.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged)</subfield>
+    <subfield code="b">chiefly color illustrations</subfield>
+    <subfield code="c">24 cm</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Designed, printed and bound by Zach Stensen at the University of Iowa in an edition of 22. All images are hand-pulled stone lithographs; the text is printed from metal type."--Colophon.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">PHMKN922</subfield><subfield code="b">stensen / elementary astronomy</subfield><subfield code="c">title-author</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

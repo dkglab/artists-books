@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01014cam a2200301 c 4500</leader>
+  <controlfield tag="001">1453005722</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220531140244.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">130604s1981    xx |||||      00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1453005722</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)383005728</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ383005728</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Gerhard Richter - Eis</subfield>
+    <subfield code="b">(1973-1981)</subfield>
+    <subfield code="c">Galleria Pieroni</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Roma</subfield>
+    <subfield code="c">1981</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[80] Bl.</subfield>
+    <subfield code="b">nur Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Wendebuch</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Richter, Gerhard</subfield>
+    <subfield code="d">1932-</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)118600419</subfield>
+    <subfield code="0">(DE-627)079392431</subfield>
+    <subfield code="0">(DE-576)16272070X</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Galleria Pieroni</subfield>
+    <subfield code="g">Rom</subfield>
+    <subfield code="0">(DE-588)3002479-1</subfield>
+    <subfield code="0">(DE-627)709283792</subfield>
+    <subfield code="0">(DE-576)19358669X</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4631984945</subfield>
+    <subfield code="b">DE-D13</subfield>
+    <subfield code="9">D 13</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2748167554</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2874470171</subfield>
+    <subfield code="b">DE-1975</subfield>
+    <subfield code="9">1975</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">92/44</subfield>
+    <subfield code="h">Rara</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">J6PX4DA7</subfield><subfield code="b">richter / eis 1973 1981</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01553cam a2200373 c 4500</leader>
+  <controlfield tag="001">1117007995</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20211130114103.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">950803s1991    xx |||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1117007995</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)047007990</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ047007990</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)312436014</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LO 94030</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/105700:</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Freeman, Brad</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Simwar</subfield>
+    <subfield code="c">Brad Freeman</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Philadelphia</subfield>
+    <subfield code="b">Borowsky Center for Publication Arts, The Univ. of the Arts</subfield>
+    <subfield code="c">1991</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[28] S.</subfield>
+    <subfield code="b">überwiegend Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">Varicose productions</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bildband</subfield>
+    <subfield code="0">(DE-588)4145395-5</subfield>
+    <subfield code="0">(DE-627)104450835</subfield>
+    <subfield code="0">(DE-576)209741139</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)119268701</subfield>
+    <subfield code="0">(DE-627)695912011</subfield>
+    <subfield code="0">(DE-576)211847291</subfield>
+    <subfield code="a">Freeman, Brad</subfield>
+    <subfield code="d">1951-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4188229-5</subfield>
+    <subfield code="0">(DE-627)105266183</subfield>
+    <subfield code="0">(DE-576)210051450</subfield>
+    <subfield code="a">Videokunst</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4136410-7</subfield>
+    <subfield code="0">(DE-627)105657654</subfield>
+    <subfield code="0">(DE-576)209668946</subfield>
+    <subfield code="a">Krieg</subfield>
+    <subfield code="g">Motiv</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2262343926</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LO 94030</subfield>
+    <subfield code="b">allgemein</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Kunst nach Ländern bzw. Kontinenten</subfield>
+    <subfield code="k">Amerika</subfield>
+    <subfield code="k">Kunstgeschichte der USA</subfield>
+    <subfield code="k">Kunstgeschichte nach Epochen</subfield>
+    <subfield code="k">20. Jahrhundert</subfield>
+    <subfield code="k">allgemein</subfield>
+    <subfield code="0">(DE-627)1270636022</subfield>
+    <subfield code="0">(DE-625)rvk/105700:</subfield>
+    <subfield code="0">(DE-576)200636022</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">TXAPKZVM</subfield><subfield code="b">freeman / simwar</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

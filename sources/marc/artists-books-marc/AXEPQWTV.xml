@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01323nam a2200397 a 4500</leader>
+  <controlfield tag="001">3044902</controlfield>
+  <controlfield tag="005">20250607143959.5</controlfield>
+  <controlfield tag="008">950224s1994    gw a          000 0 ger d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">3044902</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">3</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">ub12 09-05-95 to Cat.; jb00 09-07-95; referred to Tech 2 for TR jb01 09-17-96; jg00 09-23-96; jg09 10-02-96; jg07 10-02-96</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-644, LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   95199757 </subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3893225625</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783893225620</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">(DLC)   95199757</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)32046118</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="z">BLC 199502</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NN</subfield>
+    <subfield code="c">NN</subfield>
+    <subfield code="d">CU-S</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">ger</subfield>
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">TR662</subfield>
+    <subfield code="b">.N36 1994</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">779/.34/092</subfield>
+    <subfield code="2">21</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Nannucci, Maurizio,</subfield>
+    <subfield code="d">1939-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Hortus botanicus /</subfield>
+    <subfield code="c">Maurizio Nannucci.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Ostfildern bei Stuttgart :</subfield>
+    <subfield code="b">Cantz,</subfield>
+    <subfield code="c">c1994]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 v. (unpaged) :</subfield>
+    <subfield code="b">chiefly col. ill. ;</subfield>
+    <subfield code="c">20 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="440" ind1=" " ind2="0">
+    <subfield code="a">Reihe Cantz</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">In German and English.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photography of gardens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Botanical gardens</subfield>
+    <subfield code="x">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="922" ind1=" " ind2=" ">
+    <subfield code="a">ap</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-GenColl</subfield>
+    <subfield code="h">TR662</subfield>
+    <subfield code="i">.N36 1994</subfield>
+    <subfield code="t">Copy 1</subfield>
+    <subfield code="w">BOOKS</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">AXEPQWTV</subfield><subfield code="b">9783893225620</subfield><subfield code="c">isbn</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

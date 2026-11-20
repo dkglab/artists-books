@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>04232cam a2200649 i 4500</leader>
+  <controlfield tag="001">15661946</controlfield>
+  <controlfield tag="005">20250607030903.7</controlfield>
+  <controlfield tag="007">sd fungnnmmned</controlfield>
+  <controlfield tag="008">090316t20032002mnua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">15661946</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">hh03 2009-03-16 telework</subfield>
+    <subfield code="i">he19 2021-08-03 z-processor</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-893</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2009379262</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0974219118</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780974219110</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)53236155</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">HDC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">HDC</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">ZAD</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">WAU</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-mn</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.R66</subfield>
+    <subfield code="b">W44 2003</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Rose, Thomas,</subfield>
+    <subfield code="d">1942-</subfield>
+    <subfield code="e">book artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Where do we start?.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="3">
+    <subfield code="a">Minneapolis :</subfield>
+    <subfield code="b">Indulgence Press,</subfield>
+    <subfield code="c">2003.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©2002</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">30 unnumbered pages :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">16 cm +</subfield>
+    <subfield code="e">2 audio discs (digital ; 4 3/4 in.)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="3">volume</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">spoken word</subfield>
+    <subfield code="b">spw</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="3">sound disc</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="3">volume</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">audio</subfield>
+    <subfield code="b">s</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="3">sound disc</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="3">volume</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">audio disc</subfield>
+    <subfield code="b">sd</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="3">sound disc</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Artist's book with two accompanying sound discs.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Limited edition of 75 copies with 15 hors commerce copies and 10 artist proofs, signed and numbered by the artists.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"[A] collaborative work and refers to how we all enter the system of education as an institution and as a process. The book is constructed from stories solicited by Thomas Rose and Bryant Griffith as part of a larger project titled 'School stories'. The images, editing, constructed text and layouts are by Thomas Rose, as is the audio editing and sound design. The CD graphics are by Mary Rose, with final mastering and production of the CDs by PowerHouse Studios of Minneapolis. Wendy Fernstrum was the copy editor. Wilber Schilling was responsible for the design of the book's overall format. The edition was letterpress printed and bound at Indulgence Press in Minneapolis in the spring of 2003. The photographic images were printed on an Epson 2000 photo stylus inkjet printer onto Hahnemühle Photo Rag Duo, mould-made paper. The text and line art were printed from photopolymer plates on a Vandercook SP-20 cylinder press. The text is excerpted from stories by: Ken Aper, William Clark, Larry Connolly, Marc Cutright, Arthur C. Danto, David Goldes, Bryant Griffith, John Killacky, George Laboucane, Jim Melchert, Tim Miller, Clarence Morgan, Kellen Pen, Archi Rand, Robert Reford, Thomas Rose, Thomas Leslie Rose, Richard Sigmund, Paul Vangelisti, Bob Williamson"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Issued in a bookboard chemise and slipcase, both covered in red and black cloth. The chemise has black paper pockets attached to the inside of each board, holding audio discs A and B. Laid in the chemise is a folding book structure attached to front, back, and middle boards. Pages are printed with color illustrations, photographs, and text. The colophon is attached to the back side of the middle board.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has copy 55/75.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Education</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Autobiographical memory</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Minnesota</subfield>
+    <subfield code="z">Minneapolis.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00817660</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Autobiographical memory in art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00822590</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Education in art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00902864</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">United States.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01204155</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Group work in art.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Visual literature.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01423861</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Minnesota</subfield>
+    <subfield code="z">Minneapolis</subfield>
+    <subfield code="y">2003.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Illustrated works.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2014026111</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Griffith, Bryant.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Fernstrum, Wendy A.,</subfield>
+    <subfield code="e">editor.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schilling, Wilber H.,</subfield>
+    <subfield code="e">book designer.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Indulgence Press,</subfield>
+    <subfield code="e">publisher.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Press Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="d">20090316</subfield>
+    <subfield code="n">*</subfield>
+    <subfield code="s">Indulgence Press</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">#ACQ 09-07</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">4QTNST29</subfield><subfield code="b">schilling / where do we start</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

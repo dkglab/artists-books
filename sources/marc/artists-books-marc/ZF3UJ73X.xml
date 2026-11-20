@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03712cam a2200565 a 4500</leader>
+  <controlfield tag="001">ocm01946834</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115038.0</controlfield>
+  <controlfield tag="008">750502s1973    enk           000 p eng  </controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   75311387</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">GB7411231</subfield>
+    <subfield code="2">bnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">000616985</subfield>
+    <subfield code="2">Uk</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">877308375</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0859980014</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780859980012</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0859980006</subfield>
+    <subfield code="q">(v.)</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780859980005</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)01946834</subfield>
+    <subfield code="z">(OCoLC)877308375</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">AU@</subfield>
+    <subfield code="d">UKTTE</subfield>
+    <subfield code="d">UKMGB</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">NLE</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">CAAGO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">PUL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">TXHLS</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PR9200.9.C3</subfield>
+    <subfield code="b">A9 1973</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/PR1-PR9680</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">818</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Carrión, Ulises,</subfield>
+    <subfield code="d">1941-1989.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n90656802</subfield>
+    <subfield code="1">http://id.oclc.org/worldcat/entity/E39PBJdmhbqY3xc9mpWqT7yyBP</subfield>
+    <subfield code="1">http://viaf.org/viaf/49385858</subfield>
+    <subfield code="1">http://isni.org/isni/0000000087994247.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Arguments /</subfield>
+    <subfield code="c">Ulises Carrion.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Cullompton :</subfield>
+    <subfield code="b">Beau Geste Press ;</subfield>
+    <subfield code="a">Amsterdam :</subfield>
+    <subfield code="b">In-Out Centre,</subfield>
+    <subfield code="c">1973.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">87 pages ;</subfield>
+    <subfield code="c">23 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="520" ind1="0" ind2=" ">
+    <subfield code="a">"'Arguments' ... is a slim, perfect-bound volume consisting of 25 sections, or "arguments," each exploring social relationships through the visual arrangement of names across the pages. While the visual and temporal arrangement of names gives little narrative information in comparison to a literary, descriptive text, the reader can interpret a complex range of social relationships from Carrión's minimal composition ... 'Arguments' and other bookworks also shift the emphasis from the author's subjectivity to the interpretive function of the reader."--Sarah E. Hamerman, "Beyond Bookworks: Ulises Carrión's Cultural Strategies", A thesis submitted in partial fulfillment of the requirements for the degree of Master of Science (History of Art and Design), School of Liberal Arts and Sciences, Pratt Institute, May 2017, p.7.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This edition consists of 400 copies, the first 200 being printed on Strathmore Grandee paper and the remaining 200 on Huntsman white cartridge.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Names, Personal</subfield>
+    <subfield code="v">Art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Names, Personal.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1032478.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Conceptual art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/872980.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423702.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300123016.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Concrete poetry.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300055932.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="0">
+    <subfield code="a">Conceptual art.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Concrete poetry.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026270.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Concrete poetry.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1726570.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Concrete poems.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv01163.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv00146.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Poetry.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026481.</subfield>
+  </datafield>
+  <datafield tag="791" ind1="2" ind2=" ">
+    <subfield code="a">Howard Holsenbeck Library Fund.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Basefile July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">08-12-24</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">enk</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ZF3UJ73X</subfield><subfield code="b">b11963466</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01326cam a2200349 c 4500</leader>
+  <controlfield tag="001">1382783523</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20210721163907.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">091106s1996    be |||||      00| ||fre c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1382783523</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)312783523</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ312783523</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)601476395</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-BE</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">En filigrane</subfield>
+    <subfield code="c">[Bernard Villers. Texte: Leonardo Sciescia]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Bruxelles</subfield>
+    <subfield code="b">Éd. du Remorqueur</subfield>
+    <subfield code="c">1996</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[25] Bl.</subfield>
+    <subfield code="b">überw. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Sérigraphie sur papier air-mail. - Aufl.: 120 Ex</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Pressendruck</subfield>
+    <subfield code="0">(DE-588)4159043-0</subfield>
+    <subfield code="0">(DE-627)105488402</subfield>
+    <subfield code="0">(DE-576)209847085</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4054827-2</subfield>
+    <subfield code="0">(DE-627)10616094X</subfield>
+    <subfield code="0">(DE-576)209110732</subfield>
+    <subfield code="a">Siebdruck</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Villers, Bernard</subfield>
+    <subfield code="d">1939-</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)119451883</subfield>
+    <subfield code="0">(DE-627)080266126</subfield>
+    <subfield code="0">(DE-576)165680180</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Sciascia, Leonardo</subfield>
+    <subfield code="d">1921-1989</subfield>
+    <subfield code="0">(DE-588)11879583X</subfield>
+    <subfield code="0">(DE-627)283065931</subfield>
+    <subfield code="0">(DE-576)163017514</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">261399844X</subfield>
+    <subfield code="b">DE-24</subfield>
+    <subfield code="9">24</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">59a/90037</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">LJTHLNWF</subfield><subfield code="b">villers / en filigrane</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01803cam a2200397 cc4500</leader>
+  <controlfield tag="001">1113334231</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260420175844.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">950130s1992    xx |||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1113334231</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)043334237</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ043334237</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)312197826</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)312197826</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LH 65827</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/94562:13111</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Kawara, On</subfield>
+    <subfield code="d">1933-2014</subfield>
+    <subfield code="0">(DE-588)119209195</subfield>
+    <subfield code="0">(DE-627)080007759</subfield>
+    <subfield code="0">(DE-576)167921525</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">I went, I met, I read, Journal 1969</subfield>
+    <subfield code="n">met</subfield>
+    <subfield code="p">I met : Jan 1, 1969 - June 30, 1969</subfield>
+    <subfield code="c">por On Kawara</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Köln</subfield>
+    <subfield code="b">König</subfield>
+    <subfield code="c">1992</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[ca. 200] Bl.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">3</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="w">(DE-627)111333360X</subfield>
+    <subfield code="w">(DE-576)043333605</subfield>
+    <subfield code="g">(met)</subfield>
+    <subfield code="q">met</subfield>
+    <subfield code="7">nnam</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2247887694</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2247887708</subfield>
+    <subfield code="b">DE-16</subfield>
+    <subfield code="9">16</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">96 B 241 : [3]</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2247887678</subfield>
+    <subfield code="b">DE-540</subfield>
+    <subfield code="9">540</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2572376458</subfield>
+    <subfield code="b">DE-981</subfield>
+    <subfield code="9">981</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">PRAE KAW 001/2</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2556818948</subfield>
+    <subfield code="b">DE-Ka89</subfield>
+    <subfield code="9">Ka 89</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">Ls</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2869232985</subfield>
+    <subfield code="b">DE-1975</subfield>
+    <subfield code="9">1975</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">93/297.2</subfield>
+    <subfield code="h">Künstler der Sammlung</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LH 65827</subfield>
+    <subfield code="b">Kunst nach 1945 (verschiedene Richtungen)</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeines. Allgemeine Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeine Kunstgeschichte: Darstellungen</subfield>
+    <subfield code="k">Darstellungen einzelner Epochen</subfield>
+    <subfield code="k">Mittlere und neuere Kunstgeschichte</subfield>
+    <subfield code="k">Neuzeit</subfield>
+    <subfield code="k">19. und 20. Jahrhundert</subfield>
+    <subfield code="k">20. Jahrhundert</subfield>
+    <subfield code="k">Kunst nach 1945 (verschiedene Richtungen)</subfield>
+    <subfield code="0">(DE-627)1270636480</subfield>
+    <subfield code="0">(DE-625)rvk/94562:13111</subfield>
+    <subfield code="0">(DE-576)200636480</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">MV</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">WF64D225</subfield><subfield code="b">kawara / i went i met i read journal 1969</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

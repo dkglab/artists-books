@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01209cam a2200313 c 4500</leader>
+  <controlfield tag="001">180828630</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20130203045427.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">950201s1993    gw |||||      00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)180828630</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV180828630</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)257949440</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="4">
+    <subfield code="a">Die Wunderkammer</subfield>
+    <subfield code="b">November 1993 ; [der Katalog erschein anläßlich der Ausstellung "The Great Munich Bug Hunt" von Mark Dion im K-raum Daxer, München, vom 6. November bis 18. Dezember 1993</subfield>
+    <subfield code="c">Ausstellungssekretariat: Dagmar Dengg ...</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">München</subfield>
+    <subfield code="c">[1993]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[56] S</subfield>
+    <subfield code="b">überwiegend Ill</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Dion, Mark</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Dengg, Dagmar</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Kunstraum Daxer</subfield>
+    <subfield code="g">München</subfield>
+    <subfield code="0">(DE-588)1223885-5</subfield>
+    <subfield code="0">(DE-627)121137198</subfield>
+    <subfield code="0">(DE-576)194302962</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">141583010</subfield>
+    <subfield code="b">DE-Luen4</subfield>
+    <subfield code="9">Luen 4</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Ku 339.Dio 1</subfield>
+    <subfield code="h">CAM</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">149261616</subfield>
+    <subfield code="b">DE-Luen4</subfield>
+    <subfield code="9">Luen 4</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">95-12505</subfield>
+    <subfield code="h">CAM</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">823973530</subfield>
+    <subfield code="b">DE-18-26</subfield>
+    <subfield code="9">18/26</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">J. Dion : 3</subfield>
+    <subfield code="h">18/26</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">GEJP4FWL</subfield><subfield code="b">dion / mark dion the great munich bug hunt</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

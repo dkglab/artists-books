@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00989cam a2200277 a 4500</leader>
+  <controlfield tag="001">ocm28025143</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20070208083139.0</controlfield>
+  <controlfield tag="008">930204s1970    vtua     c    000 0 eng  </controlfield>
+  <datafield tag="016" ind1=" " ind2=" ">
+    <subfield code="a">930088530</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">NLC</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-vt</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.V554</subfield>
+    <subfield code="b">A4x 1970</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Vliet, Claire van.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Claire Van Vliet, prints :</subfield>
+    <subfield code="b">Robert Hull Fleming Museum, the University of Vermont, Burlington, Vermont : July 5th through August 2nd, 1970.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Burlington, Vt. :</subfield>
+    <subfield code="b">The Museum,</subfield>
+    <subfield code="c">1970]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">12 unnumbered pages : </subfield>
+    <subfield code="b"> illustrations ; </subfield>
+    <subfield code="c"> 24 cm.</subfield>
+  </datafield>
+  <datafield tag="490" ind1=" " ind2=" ">
+    <subfield code="a">ACA SPC copy - Exhibition Catalog Collection.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Exhibition of prints and books by Claire Van Vliet.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Catalogue essay by David W. Scott.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Van Vliet, Claire</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2=" ">
+    <subfield code="a">Exhibition catalogs.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Scott, David W.,</subfield>
+    <subfield code="d">1916-</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Robert Hull Fleming Museum.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">JWDAIMGG</subfield><subfield code="b">vliet / claire van vliet prints</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01993cam a2200433 c 4500</leader>
+  <controlfield tag="001">1605538442</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20210723104253.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">030624s2002    xx ||||| c    00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2910154165</subfield>
+    <subfield code="9">2-910154-16-5</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1605538442</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)105628891</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ105628891</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)57217660</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LI 99999</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/97471:</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">En Place</subfield>
+    <subfield code="b">[... accompagne l'exposition En Place de Peter Downsbrough organisée à l'Aquarium, galerie de l'Ecole des Beaux-arts de Valenciennes, France, du 20 septembre au 2 novembre 2002] = On Place</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="1">
+    <subfield code="a">On Place</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="3">
+    <subfield code="a">On Place</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Valenciennes</subfield>
+    <subfield code="b">Les éditions de l'Aquarium agnostique</subfield>
+    <subfield code="c">2002</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[80] S.</subfield>
+    <subfield code="b">überwiegend Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="y">2002</subfield>
+    <subfield code="z">Valenciennes</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)119152193</subfield>
+    <subfield code="0">(DE-627)079947719</subfield>
+    <subfield code="0">(DE-576)211416436</subfield>
+    <subfield code="a">Downsbrough, Peter</subfield>
+    <subfield code="d">1940-2024</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Downsbrough, Peter</subfield>
+    <subfield code="d">1940-2024</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)119152193</subfield>
+    <subfield code="0">(DE-627)079947719</subfield>
+    <subfield code="0">(DE-576)211416436</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Aquarium</subfield>
+    <subfield code="g">Valenciennes</subfield>
+    <subfield code="0">(DE-588)10004959-X</subfield>
+    <subfield code="0">(DE-627)319015718</subfield>
+    <subfield code="0">(DE-576)198123418</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="711" ind1="2" ind2=" ">
+    <subfield code="a">Exposition En Place</subfield>
+    <subfield code="d">2002</subfield>
+    <subfield code="c">Valenciennes</subfield>
+    <subfield code="0">(DE-588)5551656-7</subfield>
+    <subfield code="0">(DE-627)711879532</subfield>
+    <subfield code="0">(DE-576)199523363</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3112842421</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3112842480</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">B Dow55 0002</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LI 99999</subfield>
+    <subfield code="b">Sonstige</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Künstler-Monografien</subfield>
+    <subfield code="k">Sonstige</subfield>
+    <subfield code="0">(DE-627)1270635948</subfield>
+    <subfield code="0">(DE-625)rvk/97471:</subfield>
+    <subfield code="0">(DE-576)200635948</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">237V68GJ</subfield><subfield code="b">downsbrough / en place</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

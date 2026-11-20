@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02244cam a2200577 c 4500</leader>
+  <controlfield tag="001">464036534</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260614204352.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">000101s1996    xxk|||||      00| ||eng c</controlfield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">011071345</subfield>
+    <subfield code="2">UK</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0906630053</subfield>
+    <subfield code="9">0-906630-05-3</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)464036534</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)317745832</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV464036534</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)694921949</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">701</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">21.99</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.10</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Metzger, Gustav</subfield>
+    <subfield code="d">1926-2017</subfield>
+    <subfield code="0">(DE-588)120023989</subfield>
+    <subfield code="0">(DE-627)080392628</subfield>
+    <subfield code="0">(DE-576)213410834</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">"Damaged nature, autodestructive art"</subfield>
+    <subfield code="c">Gustav Metzger. [Essays: Andrew Wilson; Clive Phillpot]</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="3">
+    <subfield code="a">Gustav Metzger</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Coracle</subfield>
+    <subfield code="c">1996</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">110 S.</subfield>
+    <subfield code="b">Ill.</subfield>
+    <subfield code="c">8°</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="4">
+    <subfield code="a">Metzger, Gustav</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Nature (Aesthetics)</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Nuclear disarmament</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)120023989</subfield>
+    <subfield code="0">(DE-627)080392628</subfield>
+    <subfield code="0">(DE-576)213410834</subfield>
+    <subfield code="a">Metzger, Gustav</subfield>
+    <subfield code="d">1926-2017</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4175029-9</subfield>
+    <subfield code="0">(DE-627)105367575</subfield>
+    <subfield code="0">(DE-576)20996085X</subfield>
+    <subfield code="a">Politische Kunst</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Wilson, Andrew</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Phillpot, Clive</subfield>
+    <subfield code="d">1938-</subfield>
+    <subfield code="0">(DE-588)17425749X</subfield>
+    <subfield code="0">(DE-627)699145651</subfield>
+    <subfield code="0">(DE-576)13508704X</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">678185131</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">8 1997 129</subfield>
+    <subfield code="g">::8:1997:129</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">691945691</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB Sohm 1 226</subfield>
+    <subfield code="g">NB:Sohm:1:226</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1170922333</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">KIOSK 2225</subfield>
+    <subfield code="g">:KIOSK:2225::</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1240005245</subfield>
+    <subfield code="b">DE-B11s</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">Metzg 1996/1</subfield>
+    <subfield code="h">HBF</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">307325255X</subfield>
+    <subfield code="b">DE-25-13</subfield>
+    <subfield code="9">25/13</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Frei 13: M-METZ-1-803</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3073252630</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">7 Metzger, G. 3 1996</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">Blocktest</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+    <subfield code="j">Bildende Künstler</subfield>
+    <subfield code="0">(DE-627)181571080</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">21.99</subfield>
+    <subfield code="j">Sonstige Kunstformen</subfield>
+    <subfield code="0">(DE-627)106405659</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.10</subfield>
+    <subfield code="j">Kunst und Gesellschaft</subfield>
+    <subfield code="0">(DE-627)106406256</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">EFIC6NMZ</subfield><subfield code="b">9780906630051</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

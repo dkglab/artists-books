@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01218cam a22003253  4500</leader>
+  <controlfield tag="001">273883</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20180604103352.0</controlfield>
+  <controlfield tag="008">011211s1977    |  ||||||c||||000 0|und|c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">9902615902</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">AK</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">und</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Le Gac, Jean</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">Der Maler :</subfield>
+    <subfield code="b">Kunstverein in Hamburg 12.3. - 17.4. 1977 ...</subfield>
+    <subfield code="c">Jean Le Gac.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Brüssel,</subfield>
+    <subfield code="c">1977</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Kataloger</subfield>
+    <subfield code="0">https://id.kb.se/term/saogf/Kataloger</subfield>
+    <subfield code="2">saogf</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="b">N</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"3ld0fkqf4mh7sv2","modified":"2018-06-04T10:33:52.041+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">{"@id":"glr2k6cm1msrcwt","modified":"2018-06-05T13:14:44.14+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">g</subfield>
+    <subfield code="a">Referensverk</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Verkförteckningar</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Skolkataloger</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Bibliotekskataloger</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Diskografier</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Utställningskataloger</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Handskriftskataloger</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2="k">
+    <subfield code="6">655</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Produktkataloger</subfield>
+    <subfield code="u">Kataloger</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">BHZD89KQ</subfield><subfield code="b">gac / der maler</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

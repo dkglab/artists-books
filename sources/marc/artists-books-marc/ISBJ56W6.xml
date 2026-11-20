@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02731nam a2200457Ia 4500</leader>
+  <controlfield tag="001">ocm00098363</controlfield>
+  <controlfield tag="005">20260127114845.0</controlfield>
+  <controlfield tag="008">921016s1970    enka          000 0 eng  </controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   79102060</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">B70-07752</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">729761034</subfield>
+    <subfield code="a">994533337</subfield>
+    <subfield code="a">1008262473</subfield>
+    <subfield code="a">1054227006</subfield>
+    <subfield code="a">1112845324</subfield>
+    <subfield code="a">1167051444</subfield>
+    <subfield code="a">1199832817</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0206617666</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)00098363</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">m.c.</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PS3566.A32</subfield>
+    <subfield code="b">A7</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/PS1-PS3626</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">818/.5/4</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Padgett, Ron,</subfield>
+    <subfield code="d">1942-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79139420</subfield>
+    <subfield code="1">http://viaf.org/viaf/17265862</subfield>
+    <subfield code="1">http://isni.org/isni/0000000110218191.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The adventures of Mr. and Mrs. Jim and Ron /</subfield>
+    <subfield code="c">Jim Dine and Ron Padgett.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Cape Goliard Press,</subfield>
+    <subfield code="c">1970.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">117 unnumbered pages :</subfield>
+    <subfield code="b">chiefly illustrations ;</subfield>
+    <subfield code="c">29 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Images available at https://library.artstor.org/asset/SS33469_33469_42525750, https://library.artstor.org/asset/SS33469_33469_2095356, https://library.artstor.org/asset/SS33469_33469_2095542.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Condition of Art Library copy: library bound.</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">RBC N7433.4.D58 A35 1970 c. 1: Autographed by Padgett and Dine on front free endpaper.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artistic collaboration.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh93003368.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Neo-Dada.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300022187.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artistic collaboration.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/817556.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="z">United States.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Dine, Jim,</subfield>
+    <subfield code="d">1935-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n80040132</subfield>
+    <subfield code="1">http://viaf.org/viaf/61562057</subfield>
+    <subfield code="1">http://isni.org/isni/0000000110654057.</subfield>
+  </datafield>
+  <datafield tag="791" ind1="2" ind2=" ">
+    <subfield code="a">William A. Whitaker Foundation Library Fund.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/#/asset/SS33469_33469_42525750</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="a">wc</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">enk</subfield>
+    <subfield code="h">4</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ISBJ56W6</subfield><subfield code="b">b1024982</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

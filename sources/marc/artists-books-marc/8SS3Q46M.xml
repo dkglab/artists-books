@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01424nam a2200325 c 4500</leader>
+  <controlfield tag="001">1817698257</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220928113323.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">220928s1983    be |||||      00| ||fre c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1817698257</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1817698257</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+    <subfield code="a">eng</subfield>
+    <subfield code="a">dut</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-BE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Downsbrough, Peter</subfield>
+    <subfield code="d">1940-2024</subfield>
+    <subfield code="e">KünstlerIn</subfield>
+    <subfield code="0">(DE-588)119152193</subfield>
+    <subfield code="0">(DE-627)079947719</subfield>
+    <subfield code="0">(DE-576)211416436</subfield>
+    <subfield code="4">art</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Rollen, architectonica</subfield>
+    <subfield code="b"> = Rôles, architectoniques</subfield>
+    <subfield code="c">Peter Downsbrough</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="1">
+    <subfield code="a">Rôles, architectoniques</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="3">
+    <subfield code="a">Rôles, architectoniques</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Brussel</subfield>
+    <subfield code="b">Internationaal Centrum Voor Structuuranalyse en Constructivisme (ICSAC)</subfield>
+    <subfield code="c">[1983]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">88 Seiten</subfield>
+    <subfield code="b">Ilustrationen</subfield>
+    <subfield code="c">21 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Text französisch, englisch und flämisch</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"The contents of this book were presented as a paper (in English) at ICSAC in Brussels, June 1982"</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Künstlerbuch</subfield>
+    <subfield code="0">(DE-588)4229053-3</subfield>
+    <subfield code="0">(DE-627)10495146X</subfield>
+    <subfield code="0">(DE-576)210335815</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Internationaal Centrum voor Structuuranalyse en Constructivisme</subfield>
+    <subfield code="g">Brüssel</subfield>
+    <subfield code="e">Herausgebendes Organ</subfield>
+    <subfield code="0">(DE-588)235959-5</subfield>
+    <subfield code="0">(DE-627)10331315X</subfield>
+    <subfield code="0">(DE-576)192405462</subfield>
+    <subfield code="4">isb</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4192900254</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17#</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">8SS3Q46M</subfield><subfield code="b">downsbrough / rollen architectonica</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

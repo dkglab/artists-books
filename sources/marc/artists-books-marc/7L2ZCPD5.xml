@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01591cam a2200409 a 4500</leader>
+  <controlfield tag="001">99153867597503941</controlfield>
+  <controlfield tag="005">20240127213016.0</controlfield>
+  <controlfield tag="008">840417s1964    enk           000 f eng^^</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">65003551</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">GB6420176</subfield>
+    <subfield code="2">bnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">003084067</subfield>
+    <subfield code="2">Uk</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">007675908</subfield>
+    <subfield code="2">Uk</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)10634525</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">VTU</subfield>
+    <subfield code="d">VTU</subfield>
+    <subfield code="d">UKM</subfield>
+    <subfield code="d">UKMGB</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">HHG</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCL</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">PS3568.E97</subfield>
+    <subfield code="b">B4</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">823</subfield>
+    <subfield code="b">R338b</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Reynolds, Stanley</subfield>
+    <subfield code="e">author.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Better dead than red /</subfield>
+    <subfield code="c">Stanley Reynolds.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Elek Books,</subfield>
+    <subfield code="c">©1964.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">241 pages ;</subfield>
+    <subfield code="c">21 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="m">8vo.</subfield>
+    <subfield code="2">rdabf</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Page proofs (Printing)</subfield>
+    <subfield code="2">rbpri</subfield>
+    <subfield code="5">hou</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Association copies (Provenance)</subfield>
+    <subfield code="2">rbprov</subfield>
+    <subfield code="5">hou</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Communism</subfield>
+    <subfield code="v">Fiction.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Communism</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00870421</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Satirical literature</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01922539</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Humorous fiction</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01726649</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Fiction</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01423787</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Satirical literature</subfield>
+    <subfield code="2">lcgft</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Vidal, Gore,</subfield>
+    <subfield code="d">1925-2012</subfield>
+    <subfield code="e">former owner.</subfield>
+    <subfield code="5">hou</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">England</subfield>
+    <subfield code="d">London.</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="i">has work:</subfield>
+    <subfield code="a">Better dead than red (Text)</subfield>
+    <subfield code="1">https://id.oclc.org/worldcat/entity/E39PCFRpmdYC3jKPGRkc6qKhf3</subfield>
+    <subfield code="4">https://id.oclc.org/worldcat/ontology/hasWork</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-02-25</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2024-01-27</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 758</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">7L2ZCPD5</subfield><subfield code="b">thomas / better dead than red</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01322cam a22003497a 4500</leader>
+  <controlfield tag="001">4862448</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20140522212022.0</controlfield>
+  <controlfield tag="008">011211s1976    xxu|||||||||||000 ||eng|c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0374232059</subfield>
+    <subfield code="q">inb.</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0374514089</subfield>
+    <subfield code="q">hft.</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">0374232059</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">L*</subfield>
+    <subfield code="e">a</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">779.092</subfield>
+    <subfield code="2">23/swe</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">Inz</subfield>
+    <subfield code="2">kssb/8 (machine generated)</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Siskind, Aaron,</subfield>
+    <subfield code="d">1903-1991</subfield>
+    <subfield code="4">pht</subfield>
+    <subfield code="0">https://libris.kb.se/rp36bll907j4zf9#it</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Places :</subfield>
+    <subfield code="b">Aaron Siskind photographs /</subfield>
+    <subfield code="c">introduction by Thomas B. Hess.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Light Gallery,</subfield>
+    <subfield code="c">cop. 1976</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">112 s.</subfield>
+    <subfield code="b">huvudsakligen ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Hess, Thomas B.</subfield>
+    <subfield code="4">ctb</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2=" ">
+    <subfield code="a">Aaron Siskind photographs</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Hc</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">100603||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Lux</subfield>
+    <subfield code="a">xo a</subfield>
+    <subfield code="b">1405224|00008|||1001|||||0901128</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Hc</subfield>
+    <subfield code="b">Hc</subfield>
+    <subfield code="c">RH</subfield>
+    <subfield code="h">Pnz Sis</subfield>
+    <subfield code="i">Utlånas ej</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Lux</subfield>
+    <subfield code="b">Lux</subfield>
+    <subfield code="x">eh</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"8rkb8n9l0hthbjp","modified":"2014-05-22T21:20:22+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Hc</subfield>
+    <subfield code="a">{"@id":"7ckpxqsd3f496ct","modified":"2010-06-03T09:43:52+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Lux</subfield>
+    <subfield code="a">{"@id":"v06vffb12zjgj9d","modified":"2014-05-22T21:21:30+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">SUTXA9C6</subfield><subfield code="b">siskind / aaron siskind</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

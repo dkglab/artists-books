@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01417ckm a22003253a 4500</leader>
+  <controlfield tag="001">13138137</controlfield>
+  <controlfield tag="005">20250606200453.3</controlfield>
+  <controlfield tag="007">kj||||</controlfield>
+  <controlfield tag="008">030326s1963    xxunnn       ||   kneng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">13138137</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">u</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-printpho</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-859</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2003664471</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">FP - XX - F8192,</subfield>
+    <subfield code="b">no. 1</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Francis, Sam,</subfield>
+    <subfield code="d">1923-1994,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">[Untitled]</subfield>
+    <subfield code="h">[graphic].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="c">[1963]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 print :</subfield>
+    <subfield code="b">col. lithograph ;</subfield>
+    <subfield code="c">56.7 x 76.2 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">sheet</subfield>
+    <subfield code="b">nb</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">[Printed by Irwin Hollander] 3/20. Signed in pencil. Blind stamps: Tamarind Lithography Workshop and printer.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title and other information from Beall.</subfield>
+  </datafield>
+  <datafield tag="510" ind1="4" ind2=" ">
+    <subfield code="a">American prints in the Library of Congress : a catalog of the collection / compiled by Karen F. Beall... Baltimore : John Hopkins Press, 1970,</subfield>
+    <subfield code="c">p. 155.</subfield>
+  </datafield>
+  <datafield tag="540" ind1=" " ind2=" ">
+    <subfield code="a">Rights status not evaluated. For general information see "Copyright and Other Restrictions..." (http://lcweb.loc.gov/rr/print/195_copr.html)</subfield>
+  </datafield>
+  <datafield tag="541" ind1=" " ind2=" ">
+    <subfield code="c">Purchase;</subfield>
+    <subfield code="a">Pennell fund.</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="a">Library of Congress</subfield>
+    <subfield code="b">Prints and Photographs Division</subfield>
+    <subfield code="e">Washington, D.C. 20540 USA</subfield>
+    <subfield code="n">dcu</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="a">pp/finepr</subfield>
+    <subfield code="e">reconfp</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-P&amp;P</subfield>
+    <subfield code="m">(Framed)</subfield>
+    <subfield code="v">obj.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">GN5QMMSI</subfield><subfield code="b">francis / untitled</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

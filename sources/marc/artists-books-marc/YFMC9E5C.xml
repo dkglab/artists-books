@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01534cam a2200337 c 4500</leader>
+  <controlfield tag="001">196541530</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220501132317.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">960425s1991    xxu||||| c    00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0880390247</subfield>
+    <subfield code="9">0-88039-024-7</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)196541530</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV196541530</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)258226804</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Christian Boltanski</subfield>
+    <subfield code="b">Archive of the Carnegie International 1896 - 1991 : [in conjunction with the exhibition, The 1991 Carnegie International, October 19, 1991 - February 16, 1992]</subfield>
+    <subfield code="c">[Karen Kelly, publication coordinator]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Pittsburgh, Pa. [u.a.]</subfield>
+    <subfield code="b">Carnegie Museum of Art [u.a.]</subfield>
+    <subfield code="c">[1991]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[40] Bl</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Boltanski, Christian</subfield>
+    <subfield code="d">1944-2021</subfield>
+    <subfield code="0">(DE-588)118661221</subfield>
+    <subfield code="0">(DE-627)079445675</subfield>
+    <subfield code="0">(DE-576)164728104</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Kelly, Karen J.</subfield>
+    <subfield code="d">1964-</subfield>
+    <subfield code="0">(DE-588)143564528</subfield>
+    <subfield code="0">(DE-627)647330512</subfield>
+    <subfield code="0">(DE-576)337733031</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Carnegie Museum of Art</subfield>
+    <subfield code="0">(DE-588)1034015-4</subfield>
+    <subfield code="0">(DE-627)103811664</subfield>
+    <subfield code="0">(DE-576)191346365</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">182410064</subfield>
+    <subfield code="b">DE-Luen4</subfield>
+    <subfield code="9">Luen 4</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">96-11596</subfield>
+    <subfield code="h">CAM</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4174765448</subfield>
+    <subfield code="b">DE-18-26</subfield>
+    <subfield code="9">18/26</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">J. Bolta : 31</subfield>
+    <subfield code="h">18/26</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">755225864</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 8 2006 1250</subfield>
+    <subfield code="g">NB::8:2006:1250:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">YFMC9E5C</subfield><subfield code="b">9780880390248</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

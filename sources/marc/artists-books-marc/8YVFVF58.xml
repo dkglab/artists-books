@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01292cam a22003012c 4500</leader>
+  <controlfield tag="001">011720832</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20240506011543.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">710101s1980    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)011720832</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV011720832</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)9386503</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Shah, Idries</subfield>
+    <subfield code="d">1924-1996</subfield>
+    <subfield code="0">(DE-588)104314974</subfield>
+    <subfield code="0">(DE-627)03514646X</subfield>
+    <subfield code="0">(DE-576)163051615</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Tale of the sands</subfield>
+    <subfield code="c">[One of the didactic stories told by the Sufi masters. This 19. century version is attributed to Awad Afifi, a Tunesian, and was transl. from the Arabic by] Idries Shah. [3 color etchings, num. and sign., by] Mengershausen</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Del Mar, Calif.</subfield>
+    <subfield code="c">1980</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">7 gez. Bl. in Leporello-Faltung</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Text erschien zuerst in: Idries Shah: Tales of the Dervishes. 1967</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20240324</subfield>
+    <subfield code="f">DE-4165</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Mengershausen, Cornelia von</subfield>
+    <subfield code="d">1945-</subfield>
+    <subfield code="0">(DE-588)143805452</subfield>
+    <subfield code="0">(DE-627)704607697</subfield>
+    <subfield code="0">(DE-576)339003405</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">012030376</subfield>
+    <subfield code="b">DE-23</subfield>
+    <subfield code="9">23</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">Malerbücher 31.2° 40</subfield>
+    <subfield code="g">31.2° 40</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">8YVFVF58</subfield><subfield code="b">mengershausen / tale of the sands</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

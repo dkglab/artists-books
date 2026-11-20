@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01167cam a22003012c 4500</leader>
+  <controlfield tag="001">460610686</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20180318074119.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">000101s1976    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)460610686</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV460610686</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)835297478</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Kolář, Jiří</subfield>
+    <subfield code="d">1914-2002</subfield>
+    <subfield code="0">(DE-588)118564749</subfield>
+    <subfield code="0">(DE-627)079361218</subfield>
+    <subfield code="0">(DE-576)16178416X</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Gersaints Aushängeschild</subfield>
+    <subfield code="b">1966</subfield>
+    <subfield code="c">Jiří Kolář</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">Reprint</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Firenze</subfield>
+    <subfield code="b">Centro Di</subfield>
+    <subfield code="c">1976</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[15] Bl</subfield>
+    <subfield code="c">8[grad]</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">TAU-MA / red.: Mario Diacono; Claudio Parmiggiani</subfield>
+    <subfield code="v">2.1976,[5]</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Diacono, Mario</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Parmiggiani, Claudio</subfield>
+    <subfield code="d">1943-</subfield>
+    <subfield code="0">(DE-588)118591789</subfield>
+    <subfield code="0">(DE-627)079385079</subfield>
+    <subfield code="0">(DE-576)165666498</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">TAU - MA</subfield>
+    <subfield code="v">2.1976,[5]</subfield>
+    <subfield code="9">1976,0002,05</subfield>
+    <subfield code="w">(DE-627)168657899</subfield>
+    <subfield code="w">(DE-576)016143558</subfield>
+    <subfield code="w">(DE-600)800302-6</subfield>
+    <subfield code="7">am</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">678274037</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 30065 - mtl 2.1976,5</subfield>
+    <subfield code="g">NB::30065:-:mtl:2.1976,5</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">CMEQXEIE</subfield><subfield code="b">kolář / gersaints aushängeschild</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

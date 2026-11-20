@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01775cam a2200361 c 4500</leader>
+  <controlfield tag="001">1687631581</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20240831231558.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">200117s1974    fr |||||      00| ||fre c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1687631581</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1687631581</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1176465664</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-FR</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Boltanski, Christian</subfield>
+    <subfield code="d">1944-2021</subfield>
+    <subfield code="e">BuchkünstlerIn</subfield>
+    <subfield code="0">(DE-588)118661221</subfield>
+    <subfield code="0">(DE-627)079445675</subfield>
+    <subfield code="0">(DE-576)164728104</subfield>
+    <subfield code="4">bka</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Quelques interpretations</subfield>
+    <subfield code="c">par Christian Boltanski</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1. Auflage</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Paris</subfield>
+    <subfield code="b">CNAC</subfield>
+    <subfield code="c">1974</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[8] Blätter</subfield>
+    <subfield code="b">8 Fotografien</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Impressum: "Quelques Interpretations Par Christian Boltanski" a été achevé d'imprimer sur les presses de la Sopedi le 15 octobre 1974 pour le Centre national d'art contemporain. Il en a ét´tiré 200 exemplaires signés et numérotés par l'artiste</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Christian Boltanski gives theatrical performances of several roles: a sick man, a little boy in tears, a charming girl ..." - Calle, Bob: Christian Boltanski Artist’s books, 2008, Seite 39</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bildband</subfield>
+    <subfield code="0">(DE-588)4145395-5</subfield>
+    <subfield code="0">(DE-627)104450835</subfield>
+    <subfield code="0">(DE-576)209741139</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Künstlerbuch</subfield>
+    <subfield code="0">(DE-588)4229053-3</subfield>
+    <subfield code="0">(DE-627)10495146X</subfield>
+    <subfield code="0">(DE-576)210335815</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4005042880</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB Marzona 1 2953</subfield>
+    <subfield code="g">NB:Marzona:1:2953::</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4931582761</subfield>
+    <subfield code="b">DE-Bo1</subfield>
+    <subfield code="9">Bo 1</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">X 50/3175</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3576155147</subfield>
+    <subfield code="b">DE-Ka89</subfield>
+    <subfield code="9">Ka 89</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">Archiv Boltanski 1974/3</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">FGUDYHV5</subfield><subfield code="b">boltanski / quelques interpretations</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,634 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>05363cas a2200997 a 4500</leader>
+  <controlfield tag="001">991003693759707141</controlfield>
+  <controlfield tag="005">20200618044711.0</controlfield>
+  <controlfield tag="008">920221c19859999mbcqr p       0   a0eng d</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">cn 86030901</subfield>
+  </datafield>
+  <datafield tag="022" ind1="0" ind2=" ">
+    <subfield code="a">0831-2559</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b5430720-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)14954880</subfield>
+    <subfield code="9">ExL</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">NYMX92-S46</subfield>
+  </datafield>
+  <datafield tag="037" ind1=" " ind2=" ">
+    <subfield code="b">Arts Manitoba, 301-160 Princess St., Winnipeg, Man. R3B 1K9</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CaOONLP</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">CaOONL</subfield>
+    <subfield code="d">NST</subfield>
+    <subfield code="d">CaOONL</subfield>
+    <subfield code="d">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">nlc</subfield>
+    <subfield code="a">isds/c</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-cn-mb</subfield>
+    <subfield code="a">n-cnp--</subfield>
+    <subfield code="a">n-cn-bc</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">700/.97127</subfield>
+    <subfield code="2">19</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="i">02/21/92 C</subfield>
+  </datafield>
+  <datafield tag="130" ind1="0" ind2=" ">
+    <subfield code="a">Border crossings (Winnipeg, Man.)</subfield>
+  </datafield>
+  <datafield tag="210" ind1="0" ind2=" ">
+    <subfield code="a">Border crossings</subfield>
+  </datafield>
+  <datafield tag="222" ind1=" " ind2="0">
+    <subfield code="a">Border crossings</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Border crossings.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Winnipeg :</subfield>
+    <subfield code="b">Arts Manitoba Publications,</subfield>
+    <subfield code="c">1985]-</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">v. :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="310" ind1=" " ind2=" ">
+    <subfield code="a">Triquarterly,</subfield>
+    <subfield code="b">2020-</subfield>
+  </datafield>
+  <datafield tag="321" ind1=" " ind2=" ">
+    <subfield code="a">Quarterly,</subfield>
+    <subfield code="b">1985-2020</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="362" ind1="0" ind2=" ">
+    <subfield code="a">[Vol. 4, no. 4] (fall 1985)-</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from cover.</subfield>
+  </datafield>
+  <datafield tag="530" ind1=" " ind2=" ">
+    <subfield code="a">Issued also on microfiche from: Toronto : Micromedia.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Arts</subfield>
+    <subfield code="z">Manitoba</subfield>
+    <subfield code="v">Periodicals.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Arts</subfield>
+    <subfield code="z">Canada, Western</subfield>
+    <subfield code="v">Periodicals.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Arts Manitoba.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no99084163</subfield>
+    <subfield code="1">http://viaf.org/viaf/148073457</subfield>
+  </datafield>
+  <datafield tag="776" ind1="1" ind2=" ">
+    <subfield code="t">Border crossings (Winnipeg, Man.)</subfield>
+  </datafield>
+  <datafield tag="780" ind1="1" ind2="0">
+    <subfield code="t">Arts Manitoba</subfield>
+    <subfield code="x">0702-7427</subfield>
+    <subfield code="w">(OCoLC)3409452</subfield>
+    <subfield code="w">(CaOONL)770323081</subfield>
+    <subfield code="w">(DLC)cn 77032308</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="u">http://bordercrossingsmag.com/</subfield>
+    <subfield code="z">BorderCrossings - a magazine of the arts - featuring interviews with internationally renowned artists - Helmut Newton - Yoko Ono - Duane Michals - Robert Frank - Jim Dine and many others.</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">210419</subfield>
+    <subfield code="d">081119</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">130111</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081206</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081206</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081206</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081206</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081206</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081206</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081206</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">090223</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081206</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">090601</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">100714</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">110111</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">130111</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">161109</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">171109</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">161109</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">191010</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b5430720</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">123130 (NNMoMA)</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">1989-2001 [scattered issues]</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300346772</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">1</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">1</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i22473579</subfield>
+    <subfield code="z">130111</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.17(1998)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300099556</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">1</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i15303202</subfield>
+    <subfield code="z">081206</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.18(1999)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300176494</subfield>
+    <subfield code="i">300175685</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">2</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">1</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i15303184</subfield>
+    <subfield code="z">081206</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.19(2000)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300176501</subfield>
+    <subfield code="i">300175686</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">2</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">1</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i15303196</subfield>
+    <subfield code="z">081206</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.21(2002)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300156747</subfield>
+    <subfield code="i">300154519</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">2</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">1</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i15303226</subfield>
+    <subfield code="z">081206</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.22(2003)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300168663</subfield>
+    <subfield code="i">300167737</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">1</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i15303238</subfield>
+    <subfield code="z">081206</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.23(2004)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300172286</subfield>
+    <subfield code="i">300171948</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">5</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">2</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i15303214</subfield>
+    <subfield code="z">081206</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.24(2005)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300290824</subfield>
+    <subfield code="i">300189238</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">1</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i1530324x</subfield>
+    <subfield code="z">081206</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="c">v.25(2006)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300299339</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">b</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i18640710</subfield>
+    <subfield code="z">090223</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.26(2007)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300299412</subfield>
+    <subfield code="i">300298101</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">0</subfield>
+    <subfield code="u">2</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i15303251</subfield>
+    <subfield code="z">081206</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="c">v.27(2008)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300302923</subfield>
+    <subfield code="i">300302735</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">b</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i18713464</subfield>
+    <subfield code="z">090601</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="c">v.28(2009)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300305578</subfield>
+    <subfield code="i">300311946</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">b</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i19012354</subfield>
+    <subfield code="z">100714</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="c">v.29(2010)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300306793</subfield>
+    <subfield code="i">300305665</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">b</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i19153508</subfield>
+    <subfield code="z">110111</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.30-v.31(2011-2012)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300346767</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i22473518</subfield>
+    <subfield code="z">130111</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.32-v.33(2013-2014)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300360239</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i23875781</subfield>
+    <subfield code="z">161109</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.34-v.35(2015-2016)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300315544</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i24072321</subfield>
+    <subfield code="z">171109</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">(recent issues)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300366462</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i23875793</subfield>
+    <subfield code="z">161109</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="c">v.36-v.37(2017-2018)</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300502826</subfield>
+    <subfield code="j">8224</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i24423233</subfield>
+    <subfield code="z">191010</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">LTI 11/14/2008</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="l">1</subfield>
+    <subfield code="v">scattered  issues from v. 8, no. 4 (Nov. 1989) to date.</subfield>
+    <subfield code="n">#9</subfield>
+    <subfield code="n">#30</subfield>
+    <subfield code="i">02/21/92 C</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">8</subfield>
+    <subfield code="c">081119</subfield>
+    <subfield code="d">s</subfield>
+    <subfield code="e">u</subfield>
+    <subfield code="f">-</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mq</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">02/21/92</subfield>
+    <subfield code="t">c</subfield>
+    <subfield code="s">9110</subfield>
+    <subfield code="n">NNMoMA</subfield>
+    <subfield code="w">DCLCCN8630901S</subfield>
+    <subfield code="d">02/21/92</subfield>
+    <subfield code="c">JT</subfield>
+    <subfield code="b">CV</subfield>
+    <subfield code="l">NYMX</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991003693759707141</subfield>
+    <subfield code="8">2298467230007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMAQNS</subfield>
+    <subfield code="c">MoMA Offsite Periodicals</subfield>
+    <subfield code="d">PER</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mqp</subfield>
+    <subfield code="k">8</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">MoMA QNS Library Offsite Storage</subfield>
+    <subfield code="t">v.8:no.4(1989:fall),</subfield>
+    <subfield code="t">v.10:no.1(1991:winter),</subfield>
+    <subfield code="t">v.13:no.2(1994:spring),</subfield>
+    <subfield code="t">v.13:no.4(1994:fall),</subfield>
+    <subfield code="t">v.14:no.1(1995:winter),</subfield>
+    <subfield code="t">v.16:no.2(1997:spring)-v.19:no.4(2000:fall.),</subfield>
+    <subfield code="t">v.20:no.3(2001:summer)-v.41:no.3(2023),</subfield>
+    <subfield code="t">v.42:no.2=no.163(2024)-v.44:no.1=no.168(2025)</subfield>
+  </datafield>
+  <datafield tag="AVE" ind1=" " ind2=" ">
+    <subfield code="8">53107418130007141</subfield>
+    <subfield code="e">Available</subfield>
+    <subfield code="n">BorderCrossings - a magazine of the arts - featuring interviews with internationally renowned artists - Helmut Newton - Yoko Ono - Duane Michals - Robert Frank - Jim Dine and many others.</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="0">991003693759707141</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">2F4EYFP4</subfield><subfield code="b">foster / border crossings</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

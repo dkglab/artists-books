@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01100cam a22003015i 4500</leader>
+  <controlfield tag="001">991007410549707141</controlfield>
+  <controlfield tag="005">20200618051357.0</controlfield>
+  <controlfield tag="008">020123         xx                0 eng^^</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b6210156-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">261652</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Shapiro, Norman.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86804508</subfield>
+    <subfield code="1">http://viaf.org/viaf/111145911060327060580</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">SPARE PARTS.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">LONG BEACH, NY:</subfield>
+    <subfield code="b">EUPHEMISMS PUBLISHING CO.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">unspecified</subfield>
+    <subfield code="b">nz</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">200722</subfield>
+    <subfield code="d">081122</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081207</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b6210156</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">261652 (NNMoMA)</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">12 0176</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300179390</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mma</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">2</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i16069249</subfield>
+    <subfield code="z">081207</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">LTI 11/14/2008</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">1</subfield>
+    <subfield code="c">081119</subfield>
+    <subfield code="d">m</subfield>
+    <subfield code="e">1</subfield>
+    <subfield code="f">-</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mm</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991007410549707141</subfield>
+    <subfield code="8">2280830340007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMA</subfield>
+    <subfield code="c">MoMA Manhattan Artists' Books</subfield>
+    <subfield code="d">12 0176</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mma</subfield>
+    <subfield code="k">1</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Museum of Modern Art Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">EX2AEHWF</subfield><subfield code="b">pinkney / spare parts</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

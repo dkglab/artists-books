@@ -25,7 +25,7 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 # (book + journalArticle + webpage), so ab:ReferenceWork is a subclass of
 # schema:CreativeWork (docs/vocab.ttl). Most fields come from
 # sources/reference-works.csv (the canonical RW list from the Phase-0 dedup);
-# the harvested MARC (sources/marc/reference-works-marc.zip) supplies the
+# the harvested MARC (sources/marc/reference-works-marc/) supplies the
 # creators — every 1xx/7xx field, with relator roles and identity URIs, exactly
 # as artists-books.rq reads them (#40, #46) — and the OCLC number / WorldCat
 # link (001, #51). Extent/dimensions are not read from the reference MARC.
@@ -108,11 +108,11 @@ WHERE {
   }
 
   # Creators and the OCLC number from the harvested reference MARC. The MARC is
-  # a per-record archive (#81): sources/marc/reference-works-marc.zip holds one
+  # a per-record directory (#81): sources/marc/reference-works-marc/ holds one
   # <itemKey>.xml document per record, read with SPARQL-Anything's nested
-  # Archive -> XML triplifiers. The outer archive read lists the entries
+  # Folder -> XML triplifiers. The outer folder read lists the files
   # (fx:archive.matches) and the inner SERVICE triplifies just that one record
-  # (fx:location ?file + fx:from-archive), joining to the CSV row on the record's
+  # (fx:location ?file), joining to the CSV row on the record's
   # own 999 $a — the key is read from the record data, not the filename.
   # Per-record traversal uses fx:anySlot (docs/QUERY-PERFORMANCE.md).
   #
@@ -135,14 +135,13 @@ WHERE {
              (SAMPLE(?isni_x)  AS ?isni)
              (SAMPLE(?lc_id_x) AS ?lc_id)
       WHERE {
-        SERVICE <x-sparql-anything:location=sources/marc/reference-works-marc.zip> {
+        SERVICE <x-sparql-anything:location=sources/marc/reference-works-marc/> {
           fx:properties fx:archive.matches ".*\\.xml" .
-          ?archive fx:anySlot ?file .
+          ?folder fx:anySlot ?file .
 
           SERVICE <x-sparql-anything:> {
             fx:properties
               fx:location ?file ;
-              fx:from-archive "sources/marc/reference-works-marc.zip" ;
               fx:media-type "application/xml" .
 
             ?record a marc:record .
@@ -216,7 +215,7 @@ WHERE {
               }
             }
           }  # end inner per-record SERVICE
-        }  # end archive-listing SERVICE
+        }  # end folder-listing SERVICE
       }
       GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
     }

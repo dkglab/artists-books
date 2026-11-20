@@ -9,7 +9,7 @@ provenance:
   README documents the database itself — the three-library structure, contents,
   tags, collections, fields, and the note export.
 - [`marc/`](marc/README.md) — the Z39.50 MARC-harvest track: `marc_harvest.py`,
-  the harvested `*-marc.zip` archives, the hand-supplied
+  the harvested `*-marc/` record directories, the hand-supplied
   `reference-works-manual.xml`, and `reference-works-unresolved.csv`.
   Resumable harvest state lives under `marc/harvest/` (gitignored). Also
   `resolve_artstor.py`, which mines the harvested 856 links for the JSTOR
@@ -193,7 +193,7 @@ https://library.artstor.org/public/SS33469_33469_42526770
 ```
 
 The number after `community.` is exactly the Forum SSID. `marc/resolve_artstor.py`
-walks the MARC archive, fetches each asset ID's redirect (headers only — the
+walks the MARC records, fetches each asset ID's redirect (headers only — the
 captcha is on the rendered JSTOR page, which is never requested), and writes one
 row per 856 link: `canonicalKey, assetId, ssid, status`.
 

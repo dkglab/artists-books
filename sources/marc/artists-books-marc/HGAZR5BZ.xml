@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01103nam a2200277 a 4500</leader>
+  <controlfield tag="001">991000898009708431</controlfield>
+  <controlfield tag="005">20260225162818.0</controlfield>
+  <controlfield tag="008">961125t19751975xx a          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)222386563</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="c">NNMoMA</subfield>
+    <subfield code="d">MWiCA</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">NF237 .H898.8g</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Hugunin, James.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2012131907</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Greatest hits :</subfield>
+    <subfield code="b">[phenomenological artworks /</subfield>
+    <subfield code="c">by James Richard Hugunin.]</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Place of publication not identified] :</subfield>
+    <subfield code="b">[publisher not identified],</subfield>
+    <subfield code="c">[1975], ©1975</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">75 unnumbered pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">28 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">Processed by Backstage 2020-04</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">(CStRLIN)MACA96-B2397</subfield>
+  </datafield>
+  <datafield tag="907" ind1=" " ind2=" ">
+    <subfield code="a">.b10913099</subfield>
+    <subfield code="b">01-04-24</subfield>
+    <subfield code="c">11-25-96</subfield>
+  </datafield>
+  <datafield tag="990" ind1=" " ind2=" ">
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">abbib</subfield>
+    <subfield code="b">11-25-96</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">-</subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">xx</subfield>
+    <subfield code="h">0</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991000898009708431</subfield>
+    <subfield code="8">2217179670008431</subfield>
+    <subfield code="a">01CLARKART_INST</subfield>
+    <subfield code="b">MAIN</subfield>
+    <subfield code="c">Artists Books</subfield>
+    <subfield code="d">NF237 .H898.8g</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">ABX</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Clark</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">HGAZR5BZ</subfield><subfield code="b">hugunin / greatest hits</subfield><subfield code="c">title-author</subfield><subfield code="d">clark</subfield></datafield></record>
+</collection>

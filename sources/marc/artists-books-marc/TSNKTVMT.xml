@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02377cam a2200457 a 4500</leader>
+  <controlfield tag="001">ocm15054181</controlfield>
+  <controlfield tag="005">20250801124045.0</controlfield>
+  <controlfield tag="008">890517t19871987nyua     bs   001 0 eng  </controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   86032851</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">15053596</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">081601454X</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DNLM/DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">NOH</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="4">
+    <subfield code="a">RA645.C3</subfield>
+    <subfield code="b">S65 1987</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/RA1-RA1270</subfield>
+  </datafield>
+  <datafield tag="060" ind1=" " ind2="4">
+    <subfield code="a">QZ 200 S6635</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">614.5/999/073021</subfield>
+    <subfield code="2">19</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Smith, Wrynn.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n83175195</subfield>
+    <subfield code="1">http://viaf.org/viaf/94622189</subfield>
+    <subfield code="1">http://isni.org/isni/0000000067400456.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Cancer /</subfield>
+    <subfield code="c">Wrynn Smith.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York, N.Y. :</subfield>
+    <subfield code="b">Facts on File Publications,</subfield>
+    <subfield code="c">[1987]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©1987.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">x, 149 pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">25 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Profile of health and disease in America.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes index.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Bibliography: pages 129-143.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Cancer</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Statistics.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2009118257.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Cancer.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/845317.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">United States</subfield>
+    <subfield code="v">Statistics, Medical.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85140553.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">United States.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204155.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Medical statistics.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423729.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Statistics.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423727.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="2">
+    <subfield code="a">Neoplasms</subfield>
+    <subfield code="x">mortality.</subfield>
+    <subfield code="0">http://id.nlm.nih.gov/mesh/D009369Q000401.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="2">
+    <subfield code="a">Neoplasms</subfield>
+    <subfield code="x">epidemiology.</subfield>
+    <subfield code="0">http://id.nlm.nih.gov/mesh/D009369Q000453.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="2">
+    <subfield code="a">United States.</subfield>
+    <subfield code="0">http://id.nlm.nih.gov/mesh/D014481.</subfield>
+  </datafield>
+  <datafield tag="800" ind1="1" ind2=" ">
+    <subfield code="a">Smith, Wrynn.</subfield>
+    <subfield code="t">Profile of health and disease in America.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n84736133</subfield>
+    <subfield code="1">http://viaf.org/viaf/175816987.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">noh</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">TSNKTVMT</subfield><subfield code="b">smith / cancer</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

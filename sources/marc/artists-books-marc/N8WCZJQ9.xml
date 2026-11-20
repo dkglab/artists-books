@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01673cam a2200433 c 4500</leader>
+  <controlfield tag="001">38754495X</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260614203621.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">040512s2004    xx |||||      00| ||ger c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">04,N22,1044</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">971014620</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3851600363</subfield>
+    <subfield code="9">3-85160-036-3</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)38754495X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV38754495X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)845691667</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">700</subfield>
+    <subfield code="q">OCLC</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">700</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Monk, Jonathan</subfield>
+    <subfield code="d">1969-</subfield>
+    <subfield code="0">(DE-588)122417658</subfield>
+    <subfield code="0">(DE-627)081930836</subfield>
+    <subfield code="0">(DE-576)182802671</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="2">
+    <subfield code="a">&amp; Milk</subfield>
+    <subfield code="b">Today is just a copy of yesterday</subfield>
+    <subfield code="c">Jonathan Monk; Hrsg. Grazer Kunstverein</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1. Aufl.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Wien</subfield>
+    <subfield code="b">Schlebrügge Editor</subfield>
+    <subfield code="c">2004</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">56 S.</subfield>
+    <subfield code="b">zahlr. Ill.</subfield>
+    <subfield code="c">152 mm x 235 mm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">Text engl. u. dt.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bildband</subfield>
+    <subfield code="0">(DE-588)4145395-5</subfield>
+    <subfield code="0">(DE-627)104450835</subfield>
+    <subfield code="0">(DE-576)209741139</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)122417658</subfield>
+    <subfield code="0">(DE-627)081930836</subfield>
+    <subfield code="0">(DE-576)182802671</subfield>
+    <subfield code="a">Monk, Jonathan</subfield>
+    <subfield code="d">1969-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4045895-7</subfield>
+    <subfield code="0">(DE-627)104434880</subfield>
+    <subfield code="0">(DE-576)209067160</subfield>
+    <subfield code="a">Fotografie</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4421969-6</subfield>
+    <subfield code="0">(DE-627)21500390X</subfield>
+    <subfield code="0">(DE-576)212230891</subfield>
+    <subfield code="a">Milch</subfield>
+    <subfield code="g">Motiv</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">DE-101</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Grazer Kunstverein</subfield>
+    <subfield code="0">(DE-588)515020-6</subfield>
+    <subfield code="0">(DE-627)101535546</subfield>
+    <subfield code="0">(DE-576)192897527</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1220518344</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">KIOSK 3238</subfield>
+    <subfield code="g">KIOSK:3238::::</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+    <subfield code="j">Bildende Künstler</subfield>
+    <subfield code="0">(DE-627)181571080</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">N8WCZJQ9</subfield><subfield code="b">9783851600360</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

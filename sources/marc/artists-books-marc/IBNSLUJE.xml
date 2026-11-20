@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03503cam a2200577Ma 4500</leader>
+  <controlfield tag="001">ocn812697738</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127114949.0</controlfield>
+  <controlfield tag="008">120815s2011    cu a          000 1 spa d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)812697738</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">PAU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">PAU</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">nwht---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/nwht</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">PQ3949.2.T76</subfield>
+    <subfield code="b">B531 2011</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/PQ1-PQ3999</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.E76</subfield>
+    <subfield code="b">B53 2011</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Estévez Jordán, Rolando,</subfield>
+    <subfield code="d">1953-2023.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no95015740</subfield>
+    <subfield code="1">http://viaf.org/viaf/97801628</subfield>
+    <subfield code="1">http://isni.org/isni/0000000079095452.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Bicentenaire, Trouillot /</subfield>
+    <subfield code="c">disegño, dibujos y caligrafría [sic], Rolando Estévez Jordán.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="1" ind2="3">
+    <subfield code="a">Bicentenaire :</subfield>
+    <subfield code="b">fragment.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="1" ind2="3">
+    <subfield code="a">Bicentenario :</subfield>
+    <subfield code="b">fragmento.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Cuba :</subfield>
+    <subfield code="b">Ediciones Vigía,</subfield>
+    <subfield code="c">2011.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">2 unnumbered folded leaves in folded sheet :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">20 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">sheet</subfield>
+    <subfield code="b">nb</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1048.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Colección Trébol.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Translation: Laura Ruiz.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">200 copies.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Art Library has copy no.137.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Condition: no library markings, in protective enclosure.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover of cardboard with mounted cut-outs, and with string. Inside, one large sheet of paper, folded in 12; containing 2 folded sheets of white paper with text. The large sheet has cut-outs mounted on one side, and a large drawing on the other.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Trouillot's work was first published in 2004, the bicentenary of Haitian independence.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Haiti</subfield>
+    <subfield code="v">In art.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Haiti.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1205135.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Cuba</subfield>
+    <subfield code="z">Matanzas.</subfield>
+    <subfield code="2">rbmscv.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Corrugated board bindings.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv00485.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Fiction.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026339.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Trouillot, Lyonel.</subfield>
+    <subfield code="t">Bicentenaire fragment.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2016153823</subfield>
+    <subfield code="1">http://viaf.org/viaf/1932148209304300460006.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ruiz Montes, Laura,</subfield>
+    <subfield code="d">1966-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no94039181</subfield>
+    <subfield code="1">http://viaf.org/viaf/24179275</subfield>
+    <subfield code="1">http://isni.org/isni/0000000059354218.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Ediciones Vigía.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n99007950</subfield>
+    <subfield code="1">http://viaf.org/viaf/135053837</subfield>
+    <subfield code="1">http://isni.org/isni/0000000092149363.</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">Cuba</subfield>
+    <subfield code="d">Matanzas.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Colección Trébol.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n99009066</subfield>
+    <subfield code="1">http://viaf.org/viaf/528158915914150000005.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/#/asset/SS33469_33469_42527985</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.4.E76</subfield>
+    <subfield code="b">B53 2011</subfield>
+    <subfield code="z">090</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00044761551</subfield>
+    <subfield code="l">aat</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="t">78</subfield>
+    <subfield code="n">jc</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="u">-</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">12-20-12</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">spa</subfield>
+    <subfield code="g">cu </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">IBNSLUJE</subfield><subfield code="b">b7208879</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

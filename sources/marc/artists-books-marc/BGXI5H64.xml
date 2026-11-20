@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01885cam a2200397 c 4500</leader>
+  <controlfield tag="001">550539344</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220928124634.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">071129s1988    fr |||||      00| ||fre c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2905075279</subfield>
+    <subfield code="9">2-905075-27-9</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)550539344</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)9550539342</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV550539344</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)845187937</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-FR</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Peter Downsbrough</subfield>
+    <subfield code="b">take note</subfield>
+    <subfield code="c">[Villa Arson, Centre National d'Art Contemporain; Ministère de la Culture et de la Communication; Centre National des Arts Plastiques]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Nice</subfield>
+    <subfield code="b">Villa Arson</subfield>
+    <subfield code="c">1988</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[18] Bl.</subfield>
+    <subfield code="b">Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Ce livre est publié à l'occasion de la manifestation "Sous le Soleil" dans le cadre de laquelle Peter Downsbrough a réalisé un ensemble de travaux dans les salles du 1. cycle de l'École</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)119152193</subfield>
+    <subfield code="0">(DE-627)079947719</subfield>
+    <subfield code="0">(DE-576)211416436</subfield>
+    <subfield code="a">Downsbrough, Peter</subfield>
+    <subfield code="d">1940-2024</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Downsbrough, Peter</subfield>
+    <subfield code="d">1940-2024</subfield>
+    <subfield code="0">(DE-588)119152193</subfield>
+    <subfield code="0">(DE-627)079947719</subfield>
+    <subfield code="0">(DE-576)211416436</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Galerie de la Villa, Villa Arson</subfield>
+    <subfield code="g">Nizza</subfield>
+    <subfield code="0">(DE-588)5017402-2</subfield>
+    <subfield code="0">(DE-627)102953031</subfield>
+    <subfield code="0">(DE-576)193608707</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Centre national des arts plastiques</subfield>
+    <subfield code="0">(DE-588)5045543-6</subfield>
+    <subfield code="0">(DE-627)103955690</subfield>
+    <subfield code="0">(DE-576)193437317</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Frankreich</subfield>
+    <subfield code="b">Ministère de la culture et de la communication</subfield>
+    <subfield code="0">(DE-588)1053000-9</subfield>
+    <subfield code="0">(DE-627)100256635</subfield>
+    <subfield code="0">(DE-576)191455970</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">850690315</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 8 2007 7461</subfield>
+    <subfield code="g">NB::8:2007:7461:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4192950006</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17#</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+    <subfield code="j">Bildende Künstler</subfield>
+    <subfield code="0">(DE-627)181571080</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">BGXI5H64</subfield><subfield code="b">9782905075277</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

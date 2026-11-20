@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00594cam a2200205Ma 4500</leader>
+  <controlfield tag="001">ocm78786532</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20070208031730.0</controlfield>
+  <controlfield tag="008">870522s1984    ne a          000 0 dut d</controlfield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="c">MMX</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-ne---</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4 .V67</subfield>
+    <subfield code="b">N3 1984</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Voss, Jan,</subfield>
+    <subfield code="d">1945-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Nadruk = Emphasis /</subfield>
+    <subfield code="c">Jan Voss.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[The Hague] :</subfield>
+    <subfield code="b">Haags Gemeentemuseum,</subfield>
+    <subfield code="c">1984.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[104] pages : </subfield>
+    <subfield code="b"> chiefly illustrations (some color) ; </subfield>
+    <subfield code="c"> 30 cm.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Voss, Jan,</subfield>
+    <subfield code="d">1945-</subfield>
+    <subfield code="x">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">HK46XWRN</subfield><subfield code="b">voss / nadruk emphasis</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

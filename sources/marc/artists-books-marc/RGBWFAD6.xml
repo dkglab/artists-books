@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01181cja a2200313 c 4500</leader>
+  <controlfield tag="001">389724971</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20190222181415.0</controlfield>
+  <controlfield tag="007">sd uuuuuuuuuuu</controlfield>
+  <controlfield tag="008">040628s1991    xx ||nn| ||||||   n und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)389724971</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV389724971</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Duchamp, Marcel</subfield>
+    <subfield code="d">1887-1968</subfield>
+    <subfield code="0">(DE-588)11852772X</subfield>
+    <subfield code="0">(DE-627)284612073</subfield>
+    <subfield code="0">(DE-576)160791243</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Sculpture musicale</subfield>
+    <subfield code="c">mesostic by John Cage</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="c">1991</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">(4:06 Min.)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">nicht spezifiziert</subfield>
+    <subfield code="b">zzz</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">audio</subfield>
+    <subfield code="b">s</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Audiodisk</subfield>
+    <subfield code="b">sd</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Cage, John</subfield>
+    <subfield code="d">1912-1992</subfield>
+    <subfield code="0">(DE-588)118518291</subfield>
+    <subfield code="0">(DE-627)188640398</subfield>
+    <subfield code="0">(DE-576)160507650</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">SEM Ensemble</subfield>
+    <subfield code="0">(DE-588)5090174-6</subfield>
+    <subfield code="0">(DE-627)128328347</subfield>
+    <subfield code="0">(DE-576)19452342X</subfield>
+    <subfield code="4">prf</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2="8">
+    <subfield code="i">Enthalten in</subfield>
+    <subfield code="a">Duchamp, Marcel, 1887 - 1968</subfield>
+    <subfield code="t">Werke / Ausw.</subfield>
+    <subfield code="d">Berlin : Ed. Block, 1991</subfield>
+    <subfield code="g">(1991), 2</subfield>
+    <subfield code="h">1 CD</subfield>
+    <subfield code="w">(DE-627)076178803</subfield>
+    <subfield code="7">nnjm</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="g">year:1991</subfield>
+    <subfield code="g">number:2</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">161802809X</subfield>
+    <subfield code="b">DE-46</subfield>
+    <subfield code="9">46</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1680973185</subfield>
+    <subfield code="b">DE-715</subfield>
+    <subfield code="9">715</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">654236054</subfield>
+    <subfield code="b">DE-996</subfield>
+    <subfield code="9">996</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="c">muto</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">AR</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">RGBWFAD6</subfield><subfield code="b">cage / sculpture musicale</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

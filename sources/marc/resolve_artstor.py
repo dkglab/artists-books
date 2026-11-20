@@ -29,7 +29,8 @@ import time
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
-import zipfile
+
+from marc_harvest import iter_record_files
 
 ASSET_RE = re.compile(r"(SS\d+_\d+_\d+)")
 SSID_RE = re.compile(r"community\.(\d+)")
@@ -49,32 +50,29 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 def read_pairs(archive):
-    """(canonicalKey, assetId) for every Artstor 856 $u in the MARC archive."""
+    """(canonicalKey, assetId) for every Artstor 856 $u in the MARC record store."""
     pairs = []
-    with zipfile.ZipFile(archive) as z:
-        for name in sorted(z.namelist()):
-            if not name.endswith(".xml"):
+    for name, data in iter_record_files(archive):
+        root = ET.fromstring(data)
+        key, ids = None, []
+        for df in root.iter():
+            if df.tag.split("}")[-1] != "datafield":
                 continue
-            root = ET.fromstring(z.read(name))
-            key, ids = None, []
-            for df in root.iter():
-                if df.tag.split("}")[-1] != "datafield":
-                    continue
-                if df.get("tag") == "999":
-                    for sf in df:
-                        if sf.get("code") == "a":
-                            key = sf.text
-                elif df.get("tag") == "856":
-                    for sf in df:
-                        if sf.get("code") != "u" or not sf.text:
-                            continue
-                        if "artstor" not in sf.text:
-                            continue
-                        m = ASSET_RE.search(sf.text)
-                        if m:
-                            ids.append(m.group(1))
-            for asset in dict.fromkeys(ids):  # dedupe, keep record order
-                pairs.append((key, asset))
+            if df.get("tag") == "999":
+                for sf in df:
+                    if sf.get("code") == "a":
+                        key = sf.text
+            elif df.get("tag") == "856":
+                for sf in df:
+                    if sf.get("code") != "u" or not sf.text:
+                        continue
+                    if "artstor" not in sf.text:
+                        continue
+                    m = ASSET_RE.search(sf.text)
+                    if m:
+                        ids.append(m.group(1))
+        for asset in dict.fromkeys(ids):  # dedupe, keep record order
+            pairs.append((key, asset))
     return pairs
 
 
@@ -132,7 +130,7 @@ def write(path, pairs, resolved):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--archive", default="marc/artists-books-marc.zip")
+    p.add_argument("--archive", default="marc/artists-books-marc")
     p.add_argument("--out", default="artstor-ssid.csv")
     p.add_argument("--limit", type=int, default=0, help="max lookups this run (0 = all)")
     p.add_argument("--delay", type=float, default=1.0, help="seconds between requests")

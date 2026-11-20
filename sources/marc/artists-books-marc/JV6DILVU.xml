@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01112nam a22002891  4500</leader>
+  <controlfield tag="001">a365586</controlfield>
+  <controlfield tag="003">SIRSI</controlfield>
+  <controlfield tag="005">20151213113225.0</controlfield>
+  <controlfield tag="008">840425s1959    xx            000 0 fre d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="029" ind1="0" ind2="0">
+    <subfield code="a">cp</subfield>
+    <subfield code="b">900000019951</subfield>
+    <subfield code="c">878 SE5 BR.</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">LIAS331409</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)220940884</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">PSt</subfield>
+    <subfield code="c">PSt</subfield>
+    <subfield code="d">WaOLN</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Seneca, Lucius Annaeus,</subfield>
+    <subfield code="d">approximately 4 B.C.-65 A.D.</subfield>
+  </datafield>
+  <datafield tag="240" ind1="1" ind2="0">
+    <subfield code="a">De brevitate vitae</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">De brevitate vitae /</subfield>
+    <subfield code="c">Éd., introd. et commentaire de Pierre Grimal.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Paris :</subfield>
+    <subfield code="b">Presses universitaires de France,</subfield>
+    <subfield code="c">1959.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">79 pages ;</subfield>
+    <subfield code="c">20 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">"Érasme." Collection de textes latins commentés ;</subfield>
+    <subfield code="v">1</subfield>
+  </datafield>
+  <datafield tag="583" ind1=" " ind2="1">
+    <subfield code="a">committed to retain</subfield>
+    <subfield code="c">20170930</subfield>
+    <subfield code="d">20421231</subfield>
+    <subfield code="f">HathiTrust Shared Print Program</subfield>
+    <subfield code="u">https://www.hathitrust.org/shared_print_program</subfield>
+    <subfield code="5">PSt</subfield>
+  </datafield>
+  <datafield tag="596" ind1=" " ind2=" ">
+    <subfield code="a">33</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2=" ">
+    <subfield code="a">878Se5br</subfield>
+    <subfield code="w">DEWEY</subfield>
+    <subfield code="i">000006508746</subfield>
+    <subfield code="m">UP-ANNEX</subfield>
+    <subfield code="d">06/18/1993</subfield>
+    <subfield code="k">CATO-PARK</subfield>
+    <subfield code="l">CATO-PARK</subfield>
+    <subfield code="r">Y</subfield>
+    <subfield code="s">Y</subfield>
+    <subfield code="t">BOOK</subfield>
+  </datafield>
+  <datafield tag="926" ind1=" " ind2=" ">
+    <subfield code="a">UP-ANNEX</subfield>
+    <subfield code="b">CATO-PARK</subfield>
+    <subfield code="c">878Se5br</subfield>
+    <subfield code="d">BOOK</subfield>
+    <subfield code="f">1</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">JV6DILVU</subfield><subfield code="b">seneca / de brevitate vitae</subfield><subfield code="c">title-author</subfield><subfield code="d">psu</subfield></datafield></record>
+</collection>

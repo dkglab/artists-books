@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01796nam a2200433 a 4500</leader>
+  <controlfield tag="001">991002965159707141</controlfield>
+  <controlfield tag="005">20230215114417.0</controlfield>
+  <controlfield tag="008">901204s1984    onca          000 0 eng d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0920956149</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b5284272-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)11434126</subfield>
+    <subfield code="9">ExL</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">NYMX90-B23431</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">CU-SB</subfield>
+    <subfield code="c">CU-SB</subfield>
+    <subfield code="d">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">G8458 A12m</subfield>
+    <subfield code="i">12/04/90 C</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Gurney, Janice,</subfield>
+    <subfield code="d">1949-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no96045059</subfield>
+    <subfield code="1">http://viaf.org/viaf/32805563</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Moveable wounds :</subfield>
+    <subfield code="b">an essay in composition /</subfield>
+    <subfield code="c">Janice Gurney.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Toronto, Canada :</subfield>
+    <subfield code="b">Art Metropole,</subfield>
+    <subfield code="c">c1984.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[20] p. :</subfield>
+    <subfield code="b">chiefly ill. ;</subfield>
+    <subfield code="c">21 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This is the first in a series of artists' bookworks edited by Tim Guest."</subfield>
+  </datafield>
+  <datafield tag="510" ind1="4" ind2=" ">
+    <subfield code="a">Umbrella,</subfield>
+    <subfield code="c">vol. 7, nos. 2-5, autumn 1984, p. 44.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">1984.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Art Metropole.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n78014870</subfield>
+    <subfield code="1">http://viaf.org/viaf/140697239</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">Canada</subfield>
+    <subfield code="b">Ontario</subfield>
+    <subfield code="d">Toronto.</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">200722</subfield>
+    <subfield code="d">081119</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081205</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b5284272</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">62314 (NNMoMA)</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">G8458 A12m</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mma</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">2</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i14615824</subfield>
+    <subfield code="z">081205</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">LTI 11/14/2008</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="l">AB</subfield>
+    <subfield code="u">AB per CP</subfield>
+    <subfield code="i">12/04/90 C</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">1</subfield>
+    <subfield code="c">081119</subfield>
+    <subfield code="d">m</subfield>
+    <subfield code="e">1</subfield>
+    <subfield code="f">-</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mm</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">12/04/90</subfield>
+    <subfield code="t">c</subfield>
+    <subfield code="s">9114</subfield>
+    <subfield code="n">NNMoMA</subfield>
+    <subfield code="w">CASX87B17572</subfield>
+    <subfield code="d">12/04/90</subfield>
+    <subfield code="c">DAS</subfield>
+    <subfield code="b">DAS</subfield>
+    <subfield code="l">NYMX</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991002965159707141</subfield>
+    <subfield code="8">2299982470007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMA</subfield>
+    <subfield code="c">MoMA Manhattan Artists' Books</subfield>
+    <subfield code="d">G8458 A12m</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mma</subfield>
+    <subfield code="k">1</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Museum of Modern Art Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">L8S2ARHQ</subfield><subfield code="b">0920956149</subfield><subfield code="c">isbn</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

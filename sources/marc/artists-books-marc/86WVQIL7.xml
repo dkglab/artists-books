@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01756cam a22004332c 4500</leader>
+  <controlfield tag="001">160432211X</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20241120005334.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">960206s1992    xx |||||      00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9072191676</subfield>
+    <subfield code="9">90-72191-67-6</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)160432211X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)05021697X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ05021697X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)30051091</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-604)8112334814</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Birnbaum, Dara</subfield>
+    <subfield code="d">1946-2025</subfield>
+    <subfield code="0">(DE-588)119326574</subfield>
+    <subfield code="0">(DE-627)080135544</subfield>
+    <subfield code="0">(DE-576)212019252</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Every TV needs a revolution</subfield>
+    <subfield code="c">Dara Birnbaum</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Gent</subfield>
+    <subfield code="b">Imschoot</subfield>
+    <subfield code="c">1992</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[110] S.</subfield>
+    <subfield code="b">nur Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">2</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bildband</subfield>
+    <subfield code="0">(DE-588)4145395-5</subfield>
+    <subfield code="0">(DE-627)104450835</subfield>
+    <subfield code="0">(DE-576)209741139</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)119326574</subfield>
+    <subfield code="0">(DE-627)080135544</subfield>
+    <subfield code="0">(DE-576)212019252</subfield>
+    <subfield code="a">Birnbaum, Dara</subfield>
+    <subfield code="d">1946-2025</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4113357-2</subfield>
+    <subfield code="0">(DE-627)104279680</subfield>
+    <subfield code="0">(DE-576)20947582X</subfield>
+    <subfield code="a">Druckgrafik</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-576)471036692</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3101825547</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">7 Birnbaum, D. 3 1992</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3101825601</subfield>
+    <subfield code="b">DE-L242</subfield>
+    <subfield code="9">L 242</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3101825660</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">B Bir50 0001</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">310182575X</subfield>
+    <subfield code="b">DE-Ka89</subfield>
+    <subfield code="9">Ka 89</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Birnbaum Dara 1992</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3101825814</subfield>
+    <subfield code="b">DE-1973</subfield>
+    <subfield code="9">1973</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Magazin Kü Birnbaum, D. 1992</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4571560583</subfield>
+    <subfield code="b">DE-N39</subfield>
+    <subfield code="9">N 39</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">50 Bir / 92</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">86WVQIL7</subfield><subfield code="b">birnbaum / every tv needs a revolution</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

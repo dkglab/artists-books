@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01435cam a2200373 a 4500</leader>
+  <controlfield tag="001">9922876110001551</controlfield>
+  <controlfield tag="005">20170410084856.0</controlfield>
+  <controlfield tag="008">940121s1975    sp a          000 0 eng d</controlfield>
+  <controlfield tag="009">537245</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">1558-682</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">537245</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CMalG)537245-gettydb-Voyager</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)8334930</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="c">NNMoMA</subfield>
+    <subfield code="d">CMalG</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">engfregerspa</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-sp---</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N6537.K27</subfield>
+    <subfield code="b">C66 1975</subfield>
+  </datafield>
+  <datafield tag="099" ind1=" " ind2=" ">
+    <subfield code="a">980063 (bx.26,f.7)</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Kaprow, Allan.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Comfort zones :</subfield>
+    <subfield code="b">June 1975 /</subfield>
+    <subfield code="c">Allan Kaprow.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Madrid :</subfield>
+    <subfield code="b">Galería Vandres,</subfield>
+    <subfield code="c">c1975.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[28] p. :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">33 cm.</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">This catalog is part of the Allan Kaprow Papers (accn. no. 980063).</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">In English, French, German, and Spanish.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This catalogue has been published on the activity of Allan Kaprow, the 10th and 11th June 1975, realized for the Galeria Vandres, Madrid"--P. [3] of cover.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Happenings (Art)</subfield>
+    <subfield code="z">Spain.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Galería Vandrés.</subfield>
+  </datafield>
+  <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">Allan Kaprow</subfield>
+  </datafield>
+  <datafield tag="921" ind1=" " ind2=" ">
+    <subfield code="a">b15586820</subfield>
+    <subfield code="b">06-26-00</subfield>
+    <subfield code="c">06-13-00</subfield>
+    <subfield code="d">sc</subfield>
+    <subfield code="e">06-21-00</subfield>
+    <subfield code="f">a</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">c</subfield>
+  </datafield>
+  <datafield tag="936" ind1=" " ind2=" ">
+    <subfield code="c">!mp</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">OCLC D160707.R807887 20160728</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">9922876110001551</subfield>
+    <subfield code="8">22117696660001551</subfield>
+    <subfield code="a">01GRI_INST</subfield>
+    <subfield code="b">SC</subfield>
+    <subfield code="c">SPECIAL COLLECTIONS - CONTACT REFERENCE</subfield>
+    <subfield code="d">980063 (bx.26,f.7)</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="v">from:1558-682 until:1558-682</subfield>
+    <subfield code="j">4MS</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">GRI Special Collections</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">WNECF9ZQ</subfield><subfield code="b">kaprow / comfort zones</subfield><subfield code="c">title-author</subfield><subfield code="d">getty</subfield></datafield></record>
+</collection>

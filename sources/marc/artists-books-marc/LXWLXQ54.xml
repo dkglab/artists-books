@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01761cam a2200349 c 4500</leader>
+  <controlfield tag="001">1689018801</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20240831231610.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">200131s1978    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1689018801</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1689018801</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1178664538</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lacy, Suzanne</subfield>
+    <subfield code="d">1945-</subfield>
+    <subfield code="e">BuchkünstlerIn</subfield>
+    <subfield code="0">(DE-588)132319349</subfield>
+    <subfield code="0">(DE-627)521421632</subfield>
+    <subfield code="0">(DE-576)260935336</subfield>
+    <subfield code="4">bka</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Travels with Mona</subfield>
+    <subfield code="b">performance and postcard</subfield>
+    <subfield code="c">by Suzanne Lacy ; text by Arlene Raven</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[USA]</subfield>
+    <subfield code="b">Suzanne Lacy</subfield>
+    <subfield code="c">[1978]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Leporello (12 ungezählte Seiten)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Blatt</subfield>
+    <subfield code="b">nb</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Vorne: Edition of 2000</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Covertitel</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Documenting Lacy's travels through Europe, the United States, and Latin America, Travels with Mona depicts the artist visiting great historical monuments while in the process of completing a paint-by-number painting of the Mona Lisa. The images are presented as a fold-out set of postcards." -- Dadabase MoMA (https://arcade.nyarc.org:443/record=b626008~S8), Stand: 31.01.2020</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Leporello in Form eines Umschlags mit Lasche, Rückseite daher mit Einschnitt für die Lasche</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Künstlerbuch</subfield>
+    <subfield code="0">(DE-588)4229053-3</subfield>
+    <subfield code="0">(DE-627)10495146X</subfield>
+    <subfield code="0">(DE-576)210335815</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Raven, Arlene</subfield>
+    <subfield code="d">1944-</subfield>
+    <subfield code="e">VerfasserIn von ergänzendem Text</subfield>
+    <subfield code="0">(DE-588)124297986</subfield>
+    <subfield code="0">(DE-627)085769207</subfield>
+    <subfield code="0">(DE-576)215602196</subfield>
+    <subfield code="4">wst</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3584046785</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 8 2020 736</subfield>
+    <subfield code="g">NB::8:2020:736:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">LXWLXQ54</subfield><subfield code="b">lacy / travels with mona</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

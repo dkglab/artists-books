@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02665cam a2200601 c 4500</leader>
+  <controlfield tag="001">1789696992</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220426165421.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">220216s1993    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0963435000</subfield>
+    <subfield code="9">0-9634350-0-0</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780963435002</subfield>
+    <subfield code="9">978-0-9634350-0-2</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1789696992</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1789696992</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">N6512.5.I56</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Wimmin x 1 = past, present, future + future perfect</subfield>
+    <subfield code="b">4 installations = Wimmin x 1 + 2 = birthrite, liferite, deathrite + rebirthrite : 4 installations</subfield>
+    <subfield code="c">by Maria Epes ; introduction by Arlene Raven ; edited by Dale Cotton</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="1">
+    <subfield code="a">Wimmin x 1 + 2 = birthrite, liferite, deathrite + rebirthrite</subfield>
+    <subfield code="b">4 installations</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="3">
+    <subfield code="a">Wimmin times one equals past, present, future plus future perfect</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="3">
+    <subfield code="a">Wimmin times one plus two equals birthrite, liferite, deathrite plus rebirthrite</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="3">
+    <subfield code="a">Women times one equals past, present, future plus future perfect</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="3">
+    <subfield code="a">Women times one plus two equals birthrite, liferite, deathrite plus rebirthrite</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York City</subfield>
+    <subfield code="b">Poythress Press</subfield>
+    <subfield code="c">[1993]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">70, 78 ungezählte Seiten</subfield>
+    <subfield code="c">21 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Wendebuch</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Photographs of several exhibitions held in New York City, and one in Milboro, Virginia, 1988-1992</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Epes, Maria Poythress</subfield>
+    <subfield code="v">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Installations (Art)</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Women in art</subfield>
+    <subfield code="v">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Feminism in art</subfield>
+    <subfield code="v">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Art, Modern</subfield>
+    <subfield code="y">20th century</subfield>
+    <subfield code="v">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Art, Modern</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Feminism in art</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Installations (Art)</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Women in art</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Exhibition catalogs</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="4">
+    <subfield code="a">United States</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bildband</subfield>
+    <subfield code="0">(DE-588)4145395-5</subfield>
+    <subfield code="0">(DE-627)104450835</subfield>
+    <subfield code="0">(DE-576)209741139</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)1253485887</subfield>
+    <subfield code="0">(DE-627)1795623977</subfield>
+    <subfield code="a">Epes, Maria</subfield>
+    <subfield code="d">1950-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Epes, Maria</subfield>
+    <subfield code="d">1950-</subfield>
+    <subfield code="e">KünstlerIn</subfield>
+    <subfield code="0">(DE-588)1253485887</subfield>
+    <subfield code="0">(DE-627)1795623977</subfield>
+    <subfield code="4">art</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Raven, Arlene</subfield>
+    <subfield code="d">1944-</subfield>
+    <subfield code="e">VerfasserIn einer Einleitung</subfield>
+    <subfield code="0">(DE-588)124297986</subfield>
+    <subfield code="0">(DE-627)085769207</subfield>
+    <subfield code="0">(DE-576)215602196</subfield>
+    <subfield code="4">win</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Cotton, Dale</subfield>
+    <subfield code="e">HerausgeberIn</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4060356840</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">8 2022 1300</subfield>
+    <subfield code="g">::8:2022:1300:</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+    <subfield code="j">Bildende Künstler</subfield>
+    <subfield code="0">(DE-627)181571080</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">XEALSNUR</subfield><subfield code="b">0963435000</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

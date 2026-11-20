@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01445cam a2200325 c 4500</leader>
+  <controlfield tag="001">792740769</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250929131443.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">140815s1975    fr |||||      00| ||ita c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)792740769</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV792740769</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)935563527</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ita</subfield>
+    <subfield code="a">fre</subfield>
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-FR</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Paolini, Giulio</subfield>
+    <subfield code="d">1940-</subfield>
+    <subfield code="0">(DE-588)118591592</subfield>
+    <subfield code="0">(DE-627)079384919</subfield>
+    <subfield code="0">(DE-576)209061286</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Ennesima</subfield>
+    <subfield code="b">appunti per la descrizione di sei disegni datati 1975, notes pour la description de six dessins datés 1975, notes for a description of six drawings dated 1975</subfield>
+    <subfield code="c">Giulio Paolini</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1000 Ex.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Paris</subfield>
+    <subfield code="b">Lambert</subfield>
+    <subfield code="c">1975</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[8] Bl.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">149866105X</subfield>
+    <subfield code="s">Ku GV B 419</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="a">Vries, Gerd de</subfield>
+    <subfield code="0">(DE-588)108048241</subfield>
+    <subfield code="0">(DE-627)477580750</subfield>
+    <subfield code="0">(DE-576)163446547</subfield>
+    <subfield code="f">Exemplar: Donator</subfield>
+    <subfield code="f">Stempel</subfield>
+    <subfield code="k">1993</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">149866105X</subfield>
+    <subfield code="s">Ku GV B 419</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="a">Staatliche Kunstsammlungen Weimar</subfield>
+    <subfield code="0">(DE-588)2022373-0</subfield>
+    <subfield code="0">(DE-627)102096422</subfield>
+    <subfield code="0">(DE-576)191753025</subfield>
+    <subfield code="f">Nummer</subfield>
+    <subfield code="f">Stempel</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">149866105X</subfield>
+    <subfield code="s">Ku GV B 419</subfield>
+    <subfield code="o">Sammlung</subfield>
+    <subfield code="a">Sammlung Gerd de Vries</subfield>
+    <subfield code="0">(DE-588)1250787343</subfield>
+    <subfield code="0">(DE-627)1788018842</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Falttaf</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">149866105X</subfield>
+    <subfield code="b">DE-32</subfield>
+    <subfield code="9">32</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">Ku GV B 419</subfield>
+    <subfield code="h">MAG</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">9TYDHVLJ</subfield><subfield code="b">paolini / ennesima</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

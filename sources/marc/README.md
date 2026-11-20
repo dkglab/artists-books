@@ -1,16 +1,21 @@
 # MARC harvest track
 
 `marc/` holds the Z39.50 MARC-harvest track: `marc_harvest.py`, the harvested
-`*-marc.zip` archives, the hand-supplied `reference-works-manual.xml`, and
-`reference-works-unresolved.csv`. Resumable harvest state lives under
-`marc/harvest/` (gitignored; only the committed `*-marc.zip` is a build product).
+`*-marc/` record directories, the hand-supplied `reference-works-manual.xml`,
+and `reference-works-unresolved.csv`. Resumable harvest state lives under
+`marc/harvest/` (gitignored; only the committed `*-marc/` is a build product).
 
-The harvest product is a **per-record zip archive** (#81), not one big
-`<collection>` file: one `<key>.xml` MARCXML document per record, packed with
-reproducible bytes (entries sorted, fixed 1980 mtimes) so a re-harvest that
-changes one record touches one entry. The construct queries read it with
-SPARQL-Anything's nested Archive→XML triplifiers (`marc_to_archive.py` converts a
-legacy monolithic `*-marc.xml` to this format without a re-harvest).
+The harvest product is a **per-record directory** (#81), not one big
+`<collection>` file: one pretty-printed `<key>.xml` MARCXML document per record,
+named by the record's canonical key. It is committed as plain files so that
+anyone can open a book's record on GitHub — `artists-books-marc/<key>.xml`,
+where `<key>` is the last path segment of the book's URI — and a re-harvest that
+changes one record shows up as a diff of that one file. The construct queries read
+it with SPARQL-Anything's nested Folder→XML triplifiers. (Until it was unpacked,
+the same files were committed inside `*-marc.zip` archives, which GitHub can't
+show; the scripts still accept a `.zip` wherever they take a record store, which
+is the form the scratch runs under `harvest/` produce. `marc_to_archive.py`
+converts a legacy monolithic `*-marc.xml` to either form without a re-harvest.)
 
 Each record is stamped with a synthetic `999 $a <key>` join key: for the
 artists' books this is the **canonical** key (the deduped lib 1∪2∪3 identity,
@@ -59,7 +64,7 @@ server's raw bytes and the UTF-8 / UNC leader-09 handling stays downstream
 The books harvest is keyed to the **canonical** artists'-book list at the
 `sources/` root (`sources/artists-books.csv`, `canonicalKey` column), not the
 per-library `zotero/` export, so it has its own explicit Makefile target (not the
-`marc/%-marc.zip` pattern rule). The ~1,286 books UNC already holds were
+`marc/%-marc` pattern rule). The ~1,286 books UNC already holds were
 harvested under the old lib-1 keys; rather than re-harvest them, `rekey_held.py`
 rewrites their `999 $a` from the lib-1 itemKey to the canonical key (via the CSV
 `sourceKeys` map) into the frozen `artists-books-held-marc.xml` (kept as a single
@@ -69,11 +74,11 @@ during harvest, its records merged on `--combine`) and harvests only the ~6,619
 **non-held** works. Because the non-held tail mostly lacks a UNC bib number and
 ISBN, it falls to verified title / title-author matching — a large, slow,
 resumable external run with a real miss rate; until it completes the committed
-`artists-books-marc.zip` is the held baseline only.
+`artists-books-marc/` is the held baseline only.
 
 ```sh
 # from sources/:
-make -C sources -B marc/artists-books-marc.zip   # -B: force the (slow) harvest
+make -C sources -B marc/artists-books-marc   # -B: force the (slow) harvest
 # regenerate the frozen held re-key (one-time, from the pre-#84 lib-1 MARC):
 python3 marc/rekey_held.py --in-marc <pre-#84 lib-1 marc.xml> \
     --csv artists-books.csv --out marc/artists-books-held-marc.xml
@@ -146,14 +151,14 @@ Note that the same file carries a `User-agent: ClaudeBot / Disallow: /` rule.
 ```sh
 # from sources/: residual -> uwmad run -> additive merge
 python3 marc/residual_csv.py --csv artists-books.csv \
-    --archive marc/artists-books-marc.zip --out marc/harvest/residual-all.csv
+    --archive marc/artists-books-marc --out marc/harvest/residual-all.csv
 python3 marc/marc_harvest.py --csv marc/harvest/residual-all.csv \
     --out marc/harvest/uwmad-residual.zip --servers uwmad
-python3 marc/merge_archives.py --base marc/artists-books-marc.zip \
-    --add marc/harvest/uwmad-residual.zip --out marc/artists-books-marc.zip
+python3 marc/merge_archives.py --base marc/artists-books-marc \
+    --add marc/harvest/uwmad-residual.zip --out marc/artists-books-marc
 ```
 
-That pass took the committed archive from **5,623 to 5,716** records (71.0% →
+That pass took the committed records from **5,623 to 5,716** records (71.0% →
 72.2% of the 7,920 canonical works): **93 of the 2,289 residual books with a
 usable search key** — 50 by OCLC, 41 by verified title-author, 2 by ISBN. At
 ~1.7 s per book the full residual run is about an hour.
@@ -187,7 +192,7 @@ It differs from every other server in the chain in three ways worth knowing:
   `ehive_to_marcxml()` maps its fields onto the tags the construct query reads
   (100/700, 300, 520) plus the 245 that `verify_title` judges. `combine()` stamps
   `999 $d ehive`, so a synthesized record stays distinguishable from real
-  cataloguing in the committed archive.
+  cataloguing in the committed records.
 
 Two properties of eHive's data shape the result:
 
@@ -222,12 +227,12 @@ optionally filtered to a cluster:
 ```sh
 # from sources/:
 python3 marc/residual_csv.py --csv artists-books.csv \
-    --archive marc/artists-books-marc.zip --publisher 'visual studies' \
+    --archive marc/artists-books-marc --publisher 'visual studies' \
     --out marc/harvest/vsw-residual.csv
 python3 marc/marc_harvest.py --csv marc/harvest/vsw-residual.csv \
     --out marc/harvest/vsw-ehive.zip --servers ehive
-python3 marc/merge_archives.py --base marc/artists-books-marc.zip \
-    --add marc/harvest/vsw-ehive.zip --out marc/artists-books-marc.zip
+python3 marc/merge_archives.py --base marc/artists-books-marc \
+    --add marc/harvest/vsw-ehive.zip --out marc/artists-books-marc
 ```
 
 Probe the API directly (discovering paging, or reading a record's fields) with:
@@ -240,22 +245,22 @@ python3 marc/ehive_client.py --path /api/v2/accounts/3931/objectrecords \
 Paging is `offset`/`limit`; `page`/`pageSize` are silently ignored, as is
 `catalogueType` (the book slice is filtered client-side on `LIBRARY`).
 
-### Adding a server's reach to the committed archive
+### Adding a server's reach to the committed records
 
-`combine()` rebuilds an archive wholly from the harvest state under
+`combine()` rebuilds a record store wholly from the harvest state under
 `harvest/<csv-stem>/`, which is **gitignored** — so running a newly added server
-against the residual and pointing `--out` at the committed archive would *replace*
-it with only that run's hits, dropping everything harvested before. Adding a
-server's reach is therefore an **additive merge of archives**, via
+against the residual and pointing `--out` at the committed directory would
+*replace* it with only that run's hits, dropping everything harvested before.
+Adding a server's reach is therefore an **additive merge**, via
 `merge_archives.py`: run the new server against a residual CSV (the books still
-missing a record) into its own archive under `harvest/`, then merge that into the
-committed one. Every record carries its join key in `999 $a` and every entry is
-`<key>.xml`, so the merge is a union keyed by entry name; for a residual run the
+missing a record) into its own `.zip` under `harvest/`, then merge that into the
+committed directory. Every record carries its join key in `999 $a` and every file
+is `<key>.xml`, so the merge is a union keyed by filename; for a residual run the
 expected collision count is zero, and the tool reports any it finds.
 
 That is how the SCAD pass landed: 2,920 non-held books still missing MARC →
 **463 verified records** (15.9%), plus **12** hand-adjudicated recoveries merged
-from `harvest/scad-residual-manual.xml`, taking the committed archive from 4,985
+from `harvest/scad-residual-manual.xml`, taking the committed records from 4,985
 to **5,460** records. The 12 are title-verify false negatives — the right book
 under a cataloguer's variant title (`Iconomics : Money` catalogued as `245 $a
 Money` with `246 Iconomics`; `Bob : book number 100` as `Bobby : book nr. 100`) —
@@ -266,23 +271,23 @@ window: on common-word artist's-book titles the show depth, not just the
 threshold, is a real ceiling on recall.
 
 ```sh
-# from sources/, after harvesting a residual into its own archive:
-python3 marc/merge_archives.py --base marc/artists-books-marc.zip \
-    --add marc/harvest/scad-residual.zip --out marc/artists-books-marc.zip
+# from sources/, after harvesting a residual into its own .zip:
+python3 marc/merge_archives.py --base marc/artists-books-marc \
+    --add marc/harvest/scad-residual.zip --out marc/artists-books-marc
 ```
 
 ## Reference-work MARC harvest
 
 `marc_harvest.py` also harvests the reference works — the deduped canonical
 `reference-works.csv` (at the `sources/` root, `canonicalKey` column) →
-**`reference-works-marc.zip`** — via its own explicit Makefile target, like the
-books track (not the `marc/%-marc.zip` pattern rule, which is keyed to the
+**`reference-works-marc/`** — via its own explicit Makefile target, like the
+books track (not the `marc/%-marc` pattern rule, which is keyed to the
 per-library `zotero/` exports). Each record is stamped with a synthetic
 `999 $a <canonicalKey>` so it joins its `reference-works.rq` row directly on
 `?canonical_key`, and harvest state (resumable) lives under `harvest/<csv-stem>/`
-(gitignored; only the `<stem>-marc.zip` product is committed). Harvesting the
+(gitignored; only the `<stem>-marc/` product is committed). Harvesting the
 deduped canonical list (rather than the pre-dedup 157-row "Reference resources"
-collection) keeps the archive to exactly the 155 canonical works — an earlier
+collection) keeps the directory to exactly the 155 canonical works — an earlier
 pre-dedup harvest also fetched a couple of losing-key records that then failed to
 join any canonical row.
 
@@ -310,14 +315,14 @@ webpages with no catalogue record) is listed in `reference-works-unresolved.csv`
 
 ```sh
 # from sources/:
-make -C sources marc/reference-works-marc.zip
+make -C sources marc/reference-works-marc
 # or directly (also run from sources/):
-python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc.zip
+python3 marc/marc_harvest.py --csv reference-works.csv --out marc/reference-works-marc
 ```
 
 > **Minimally wired into the graph.** `reference-works.rq` builds the
 > `ab:ReferenceWork` nodes from the canonical `reference-works.csv`, and now also
-> reads a **basic slice** of `reference-works-marc.zip` — just the primary
+> reads a **basic slice** of `reference-works-marc/` — just the primary
 > creator (`100 $a`), joined by `999 $a` — emitted as a `bflc:PrimaryContribution`.
 > The rest of the MARC's richer data (OCLC/WorldCat, secondary creators,
 > relator roles, identity URIs, extent/dimensions) isn't in the graph yet.

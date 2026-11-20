@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00561    a2200145   4500</leader>
+  <controlfield tag="001">ocn828417706</controlfield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Zschiegner, Hermann, artist</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Zschiegner, Hermann</subfield>
+    <subfield code="0">no2013044969</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Blurb (Firm)</subfield>
+    <subfield code="0">no2011070559</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Thirtyfour parking lots on Google Earth</subfield>
+    <subfield code="c">Hermann Zschiegner</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[New York, N.Y.?] :</subfield>
+    <subfield code="b">Hermann Zschiegner,</subfield>
+    <subfield code="c">2006.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="3">
+    <subfield code="a">[San Francisco, California] :</subfield>
+    <subfield code="b">Blurb</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©2006</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged)</subfield>
+    <subfield code="b">color illustrations</subfield>
+    <subfield code="c">26 cm</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"All screenshots taken from Google Earth in September 2006"--Title page verso</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">6PISDUI8</subfield><subfield code="b">828417706</subfield><subfield code="c">oclc</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00783nam a22002412c 4500</leader>
+  <controlfield tag="001">1899830413</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20240827182806.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">240827s1979    xx |||||      00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1899830413</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1899830413</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Ernst Caramelle : Forty Found Fakes ; 1976 - 1978</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York</subfield>
+    <subfield code="b">Thomas Way &amp; Company</subfield>
+    <subfield code="c">1979</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[44] S.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Caramelle, Ernst</subfield>
+    <subfield code="d">1952-</subfield>
+    <subfield code="e">KünstlerIn</subfield>
+    <subfield code="0">(DE-588)118838636</subfield>
+    <subfield code="0">(DE-627)079613462</subfield>
+    <subfield code="0">(DE-576)210135727</subfield>
+    <subfield code="4">art</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4571615604</subfield>
+    <subfield code="b">DE-N39</subfield>
+    <subfield code="9">N 39</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">LA [50 Car] / 79</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">E9ECM4AF</subfield><subfield code="b">caramelle / ernst caramelle forty found fakes 1976 1978</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

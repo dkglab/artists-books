@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01524cam a2200433 a 4500</leader>
+  <controlfield tag="001">11764571</controlfield>
+  <controlfield tag="005">20250606175928.2</controlfield>
+  <controlfield tag="008">990722s1998    gw a          000 0 ger d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">11764571</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">3</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">of04 to cat. 07-22-99; jk00 08-05-99; to Tech 09-30-99; jg00 10-07-99</subfield>
+    <subfield code="c">jg14 2001-08-09</subfield>
+    <subfield code="d">jg09 2001-08-13</subfield>
+    <subfield code="e">jg07 2001-08-14 to Dewey</subfield>
+    <subfield code="a">aa07 2001-08-16</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-644, LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   99229280 </subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3883753386</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783883753386</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DLC)   99229280</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)41323028</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">RVE</subfield>
+    <subfield code="c">RVE</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">ger</subfield>
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">TR658+</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">TR658</subfield>
+    <subfield code="b">.R53 1998</subfield>
+  </datafield>
+  <datafield tag="072" ind1=" " ind2="7">
+    <subfield code="a">N</subfield>
+    <subfield code="2">lcco</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">779/.092</subfield>
+    <subfield code="2">21</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Richter, Gerhard,</subfield>
+    <subfield code="d">1932-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">128 Fotos von einem Bild :</subfield>
+    <subfield code="b">WVZ 432-5 : Halifax 1978 = 128 details from a picture /</subfield>
+    <subfield code="c">Gerhard Richter.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Hundert acht und zwanzig Fotos von einem Bild</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Hundertachtundzwanzig Fotos von einem Bild</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="1">
+    <subfield code="a">128 details from a picture</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Köln :</subfield>
+    <subfield code="b">Verlag der Buchhandlung Walther König,</subfield>
+    <subfield code="c">1998.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 v. (unpaged) :</subfield>
+    <subfield code="b">chiefly ill. ;</subfield>
+    <subfield code="c">17 x 25 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Richter, Gerhard,</subfield>
+    <subfield code="d">1932-</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photography of painting.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photography, Close-up.</subfield>
+  </datafield>
+  <datafield tag="922" ind1=" " ind2=" ">
+    <subfield code="a">ap</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="e">GAP</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ESLZ2BKS</subfield><subfield code="b">richter / 128 fotos von einem bild</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

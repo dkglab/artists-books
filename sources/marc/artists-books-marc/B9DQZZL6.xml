@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02053cam a2200505 c 4500</leader>
+  <controlfield tag="001">1623453232</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260611205021.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">980608s1990    xx |||||      00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1870699041</subfield>
+    <subfield code="9">1-870699-04-1</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1623453232</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)066251168</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ066251168</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)31100201</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)835457420</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)31100201</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">700.92</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Guidelines to the system</subfield>
+    <subfield code="c">Verdi Yahooda; Craigie Horsfield</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Book Works</subfield>
+    <subfield code="c">1990</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[22] Bl.</subfield>
+    <subfield code="b">zahlr. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">2</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4114333-4</subfield>
+    <subfield code="0">(DE-627)105822957</subfield>
+    <subfield code="0">(DE-576)209483733</subfield>
+    <subfield code="a">Kunst</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4058801-4</subfield>
+    <subfield code="0">(DE-627)106145894</subfield>
+    <subfield code="0">(DE-576)20912797X</subfield>
+    <subfield code="a">System</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4059787-8</subfield>
+    <subfield code="0">(DE-627)106142275</subfield>
+    <subfield code="0">(DE-576)209132256</subfield>
+    <subfield code="a">Theorie</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="3">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4047068-4</subfield>
+    <subfield code="0">(DE-627)106195859</subfield>
+    <subfield code="0">(DE-576)209072113</subfield>
+    <subfield code="a">Praxis</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="689" ind1="1" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4026482-8</subfield>
+    <subfield code="0">(DE-627)106288199</subfield>
+    <subfield code="0">(DE-576)208966544</subfield>
+    <subfield code="a">Identität</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="1" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4058801-4</subfield>
+    <subfield code="0">(DE-627)106145894</subfield>
+    <subfield code="0">(DE-576)20912797X</subfield>
+    <subfield code="a">System</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="1" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Yahooda, Verdi</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Horsfield, Craigie</subfield>
+    <subfield code="d">1949-</subfield>
+    <subfield code="0">(DE-588)119324903</subfield>
+    <subfield code="0">(DE-627)080133908</subfield>
+    <subfield code="0">(DE-576)211369721</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Book Works</subfield>
+    <subfield code="g">London</subfield>
+    <subfield code="0">(DE-588)5248405-1</subfield>
+    <subfield code="0">(DE-627)233225293</subfield>
+    <subfield code="0">(DE-576)196562821</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-627)46771102X</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">678251908</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 29860 - kl</subfield>
+    <subfield code="g">NB::29860:-:kl</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3251007653</subfield>
+    <subfield code="b">DE-180</subfield>
+    <subfield code="9">180</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g"> 98 A 5045</subfield>
+    <subfield code="h">MAG04</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3731899493</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">B Yah60 0001</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">mdedup</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">B9DQZZL6</subfield><subfield code="b">9781870699044</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

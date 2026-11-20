@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03421nam a2200481Ia 4500</leader>
+  <controlfield tag="001">ocm36582089</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20250801212327.0</controlfield>
+  <controlfield tag="008">970312t19971997cauabf        000 0aeng  </controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   97011044</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">59560176</subfield>
+    <subfield code="a">824197541</subfield>
+    <subfield code="a">897495100</subfield>
+    <subfield code="a">973508325</subfield>
+    <subfield code="a">976865378</subfield>
+    <subfield code="a">979152771</subfield>
+    <subfield code="a">993191647</subfield>
+    <subfield code="a">993889225</subfield>
+    <subfield code="a">1062174152</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0811815862</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780811815864</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)36582089</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">BAKER</subfield>
+    <subfield code="d">XY4</subfield>
+    <subfield code="d">BTCTA</subfield>
+    <subfield code="d">YDXCP</subfield>
+    <subfield code="d">UKV3G</subfield>
+    <subfield code="d">NYP</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-uk-en</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/e-uk-en</subfield>
+    <subfield code="a">n-us---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">TR140.E38</subfield>
+    <subfield code="b">A3 1997</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/TR1-TR1050</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="0">
+    <subfield code="a">070.4/9/092</subfield>
+    <subfield code="a">B</subfield>
+    <subfield code="2">21</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Eldon, Dan,</subfield>
+    <subfield code="d">1970-1993.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n95912033</subfield>
+    <subfield code="1">http://viaf.org/viaf/25453480</subfield>
+    <subfield code="1">http://isni.org/isni/000000008365996X.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The journey is the destination :</subfield>
+    <subfield code="b">the journals of Dan Eldon /</subfield>
+    <subfield code="c">edited by Kathy Eldon.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">Journals of Dan Eldon.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">San Francisco :</subfield>
+    <subfield code="b">Chronicle Books,</subfield>
+    <subfield code="c">[1997]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©1997.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">12 pages, 212 unnumbered pages of plates :</subfield>
+    <subfield code="b">illustrations (some color), color map ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">map</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1008.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">One map inserted in sleeve.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Dan Eldon lived more in twenty-two years than most people do in eighty. He traveled through four continents, led expeditions across Africa, wrote a book, worked as a graphic designer in New York, made a film, and became a respected photojournalist, all before his sudden, violent death in Somalia. This is no ordinary diary. It is an astonishing collage of photographs, drawings, words, maps, clippings, paints, scraps, shards, and trash that reveals his strange and vivid life. The wild trips and weird places, the lovers and late nights, the danger and fun are captured in pages that seem to shiver with passion, opinion, and dark humor. Eldon's journal holds up a pure mirror to both the sickness of the modern world and the fragile happiness of the human condition, and ultimately, reveals the accidental beauty that only a young artist can truly capture.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Eldon, Dan,</subfield>
+    <subfield code="d">1970-1993</subfield>
+    <subfield code="v">Diaries.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Eldon, Dan,</subfield>
+    <subfield code="d">1970-1993.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/370903.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photojournalists</subfield>
+    <subfield code="z">England</subfield>
+    <subfield code="v">Diaries.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photojournalists</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Diaries.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Photojournalists.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1430965.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">United States.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204155.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">England.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1219920.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Diaries.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423794.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Eldon, Kathy.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n81152304</subfield>
+    <subfield code="1">http://viaf.org/viaf/236702507</subfield>
+    <subfield code="1">http://isni.org/isni/0000000082332412.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">02-07-11</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">cau</subfield>
+    <subfield code="h">4</subfield>
+    <subfield code="i">1</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">4LK4QA8S</subfield><subfield code="b">0811815862</subfield><subfield code="c">isbn</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

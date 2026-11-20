@@ -12,8 +12,8 @@
 # URI they reconciled it to.
 #
 # Both inputs are small local CSVs, so this join is cheap. occurrences.csv is the
-# MARC extract materialized once by mine-occurrences.rq -- reading the MARC archive
-# directly here would make ARQ re-read the whole archive once per decision row
+# MARC extract materialized once by mine-occurrences.rq -- reading the MARC
+# directly here would make ARQ re-read all of it once per decision row
 # (see mine-occurrences.rq). Matching-key normalization was applied when
 # occurrences.csv was mined and MUST stay identical across the three subjects
 # queries and the eventual construct query that consumes the scheme: lower-case,

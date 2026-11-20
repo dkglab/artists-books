@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01131cam a22003135i 4500</leader>
+  <controlfield tag="001">991007417779707141</controlfield>
+  <controlfield tag="005">20200618051400.0</controlfield>
+  <controlfield tag="008">020225 2000    ag                0 spa^^</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b6211628-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">262274</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Ferrari, León,</subfield>
+    <subfield code="d">1920-2013.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86832881</subfield>
+    <subfield code="1">http://viaf.org/viaf/3969068</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="3">
+    <subfield code="a">LA ETERNIDAD ES EL INSTANTE.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">BUENOS AIRES</subfield>
+    <subfield code="b">LA MARCA,</subfield>
+    <subfield code="c">2000.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">unspecified</subfield>
+    <subfield code="b">nz</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">211015</subfield>
+    <subfield code="d">081122</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081207</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b6211628</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">262274 (NNMoMA)</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">10 0312</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300142725</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mqb</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">m</subfield>
+    <subfield code="t">0</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i16073836</subfield>
+    <subfield code="z">081207</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">LTI 08/06/2012</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="x">LACM</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">3</subfield>
+    <subfield code="c">081119</subfield>
+    <subfield code="d">m</subfield>
+    <subfield code="e">a</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">3</subfield>
+    <subfield code="l">mq</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991007417779707141</subfield>
+    <subfield code="8">22100173030007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMAQNS</subfield>
+    <subfield code="c">MoMA Offsite Stacks</subfield>
+    <subfield code="d">10 0312</subfield>
+    <subfield code="e">unavailable</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mqb</subfield>
+    <subfield code="k">8</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">MoMA QNS Library Offsite Storage</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">RJPN65JQ</subfield><subfield code="b">botta / la eternidad es el instante</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

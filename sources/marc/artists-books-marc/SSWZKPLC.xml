@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01400nam a2200373Ia 4500</leader>
+  <controlfield tag="001">990076867760203941</controlfield>
+  <controlfield tag="005">20020606104010.5</controlfield>
+  <controlfield tag="008">831011s1981    fr            000 0 fre d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)10002526</subfield>
+    <subfield code="z">(OCoLC)501051237</subfield>
+    <subfield code="z">(OCoLC)1008264472</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">KKU</subfield>
+    <subfield code="c">KKU</subfield>
+    <subfield code="d">HHG</subfield>
+  </datafield>
+  <datafield tag="041" ind1="1" ind2=" ">
+    <subfield code="a">fre</subfield>
+    <subfield code="h">ger</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N6888.P4</subfield>
+    <subfield code="b">I2514 1981</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N6888.P4</subfield>
+    <subfield code="b">I2514 1981</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Penck, A. R.,</subfield>
+    <subfield code="d">1939-2017</subfield>
+  </datafield>
+  <datafield tag="240" ind1="1" ind2="0">
+    <subfield code="a">Ich bin ein Buch kaufe mich jetzt.</subfield>
+    <subfield code="l">French</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Je suis un livre achète-moi maintenant /</subfield>
+    <subfield code="c">A.R. Penck.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Paris :</subfield>
+    <subfield code="b">Galerie Gillespie-Laage-Salomon,</subfield>
+    <subfield code="c">c1981.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">420 leaves ;</subfield>
+    <subfield code="c">18 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Translation of: Ich bin ein Buch kaufe mich jetzt.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Penck, A. R.,</subfield>
+    <subfield code="d">1939-2017</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">artists' books (books)</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">France</subfield>
+    <subfield code="d">Paris.</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">007686776</subfield>
+  </datafield>
+  <datafield tag="901" ind1="8" ind2=" ">
+    <subfield code="a">BLD6569</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">MHBLD65698HU</subfield>
+  </datafield>
+  <datafield tag="905" ind1=" " ind2=" ">
+    <subfield code="a">N^^6888</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-01-20</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 655</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-02-01</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-07-14</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 655</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2023-09-22</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 655</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2024-01-27</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 758</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2025-07-09</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 019</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">NO-OVERLAY</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">SSWZKPLC</subfield><subfield code="b">penck / je suis un livre achète moi maintenant</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

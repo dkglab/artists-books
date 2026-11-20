@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>05570cam a2200853Ia 4500</leader>
+  <controlfield tag="001">ocn769652817</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127114946.0</controlfield>
+  <controlfield tag="008">111228s2011    mx a   j      000 0 spa d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">899740835</subfield>
+    <subfield code="a">1101101398</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9786077656555</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">6077656550</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)769652817</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">LPU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">LPU</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">BDX</subfield>
+    <subfield code="d">GZM</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-mx---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-mx</subfield>
+    <subfield code="a">n-us---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us</subfield>
+    <subfield code="a">n-us-ca</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us-ca</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">PQ7298.423.A85</subfield>
+    <subfield code="b">M54 2011</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/PQ6001-PQ8929</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Mateo, José Manuel.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2012011778</subfield>
+    <subfield code="1">http://viaf.org/viaf/177301752</subfield>
+    <subfield code="1">http://isni.org/isni/000000036802997X.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Migrar /</subfield>
+    <subfield code="c">[escrito por] José Manuel Mateo y [ilustrado por] Javier Martínez Pedro.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1. ed.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">México, D.F. :</subfield>
+    <subfield code="b">Ediciones Tecolote,</subfield>
+    <subfield code="c">2011.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 sheet :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">159 x 32 cm, accordion folded to 16 x 32 cm ([10] pages)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="385" ind1=" " ind2=" ">
+    <subfield code="a">Children</subfield>
+    <subfield code="2">lcdgt.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Accordion book.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Printed on amate paper.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"En la historia que guarda este papel amate un hermano y una hermana van con su mamá, alcanzan a cruzar  la frontera pero no sabemos cuál será su destino"--P. [10].</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">A young Mexican boy tells the story of how he was once happy living in his small village with his family, working on a farm. Due to a failing economy, first his father and then his mother, his sister, and he are forced to immigrate to Southern California. They stow away on a train, hide from the border patrol, and eventually make their way to the Los Angeles area where they attempt to reunite with the father.  The little boy is sad that he has had to leave his beloved dog behind.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Immigrants</subfield>
+    <subfield code="z">Mexican-American Border Region</subfield>
+    <subfield code="v">Juvenile fiction.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Noncitizens</subfield>
+    <subfield code="z">Mexican-American Border Region</subfield>
+    <subfield code="v">Juvenile fiction.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Illegal immigration</subfield>
+    <subfield code="z">Mexican-American Border Region</subfield>
+    <subfield code="v">Juvenile fiction.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Border crossing</subfield>
+    <subfield code="z">Mexican-American Border Region</subfield>
+    <subfield code="v">Juvenile fiction.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Immigrants</subfield>
+    <subfield code="z">Mexican-American Border Region</subfield>
+    <subfield code="v">Fiction.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Noncitizens</subfield>
+    <subfield code="z">Mexican-American Border Region</subfield>
+    <subfield code="v">Fiction.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Illegal immigration</subfield>
+    <subfield code="z">Mexican-American Border Region</subfield>
+    <subfield code="v">Fiction.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Border crossing</subfield>
+    <subfield code="z">Mexican-American Border Region</subfield>
+    <subfield code="v">Fiction.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Emigration and immigration.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/908690.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Social aspects.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1354981.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Border crossing.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1715649.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Illegal immigration.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/2033296.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Noncitizens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/805278.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Immigrants.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/967712.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Mexico</subfield>
+    <subfield code="x">Emigration and immigration</subfield>
+    <subfield code="x">Social aspects</subfield>
+    <subfield code="v">Juvenile fiction.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">United States</subfield>
+    <subfield code="x">Emigration and immigration</subfield>
+    <subfield code="x">Social aspects</subfield>
+    <subfield code="v">Juvenile fiction.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">California</subfield>
+    <subfield code="x">Emigration and immigration</subfield>
+    <subfield code="x">Social aspects</subfield>
+    <subfield code="v">Juvenile fiction.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Mexican-American Border Region</subfield>
+    <subfield code="x">Social conditions</subfield>
+    <subfield code="v">Juvenile fiction.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Mexico</subfield>
+    <subfield code="x">Emigration and immigration</subfield>
+    <subfield code="x">Social aspects</subfield>
+    <subfield code="v">Fiction.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">United States</subfield>
+    <subfield code="x">Emigration and immigration</subfield>
+    <subfield code="x">Social aspects</subfield>
+    <subfield code="v">Fiction.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">California</subfield>
+    <subfield code="x">Emigration and immigration</subfield>
+    <subfield code="x">Social aspects</subfield>
+    <subfield code="v">Fiction.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Mexican-American Border Region</subfield>
+    <subfield code="x">Social conditions</subfield>
+    <subfield code="v">Fiction.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">California.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204928.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">United States.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204155.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Mexico.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1211700.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Fiction.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423787.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Emigration and immigration</subfield>
+    <subfield code="x">Social aspects.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/908722.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Social conditions.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1919811.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">North America</subfield>
+    <subfield code="z">Mexican-American Border Region.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1239966.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Juvenile works.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1411637.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Martínez Pedro, Javier.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2012050911</subfield>
+    <subfield code="1">http://viaf.org/viaf/225431651.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/public/SS33469_33469_42528364</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="938" ind1=" " ind2=" ">
+    <subfield code="a">Brodart</subfield>
+    <subfield code="b">BROD</subfield>
+    <subfield code="n">100144403</subfield>
+    <subfield code="c">$50.50</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">PQ7298.423.A85</subfield>
+    <subfield code="b">M54 2011</subfield>
+    <subfield code="z">050 4</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00044132367</subfield>
+    <subfield code="l">aada</subfield>
+    <subfield code="n">sal</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="u">-</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">05-18-12</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">spa</subfield>
+    <subfield code="g">mx </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">S9DHVFUU</subfield><subfield code="b">b7004407</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03162nam a2200469Ia 4500</leader>
+  <controlfield tag="001">ocm40058838</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115011.0</controlfield>
+  <controlfield tag="008">981007s1998    paua          000 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">1008484706</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)40058838</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">OUN</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">OUN</subfield>
+    <subfield code="d">DRB</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">KTP</subfield>
+    <subfield code="d">GZM</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.B37</subfield>
+    <subfield code="b">V5 1998</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">702.81</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Barton, Carol June,</subfield>
+    <subfield code="d">1954-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n85811053</subfield>
+    <subfield code="1">http://viaf.org/viaf/21149046</subfield>
+    <subfield code="1">http://isni.org/isni/000000008100277X.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Vision shifts /</subfield>
+    <subfield code="c">Carol Barton.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Philadelphia, Pa. :</subfield>
+    <subfield code="b">Borowsky Center for Publication Arts, University of the Arts,</subfield>
+    <subfield code="c">[1998]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">12 unnumbered pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">23 x 13 cm +</subfield>
+    <subfield code="e">6 unnumbered illustrated cards.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Photo duotones were produced in Photoshop IV on a Macintosh computer. Type was set in Quark Express. Typefaces are ITC Blair and Gill Sans. Printing was done on a Heidelberg KORS offset press. The paper is Mohawk Superfine 100 lb. text"--Artist's statement.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">A pop-up artist's book. Photographically illustrated cover sheets with letterpress and cut-out widows. An ironic change in the backing photographs, set-up by the narrative letterpress, is revealed as each page is opened further.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">The five photographs used in the text and one additional photo are reproduced on cards inserted in a pocket inside the back cover. Each card bears historic/descriptive letterpress on the verso.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition limited to 500 copies, signed by the author/artist.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/817660.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">United States.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204155.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Pop-up books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026150.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="z">Pennsylvania</subfield>
+    <subfield code="z">Philadelphia</subfield>
+    <subfield code="y">21st century.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423861.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Pop-up books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1919955.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Borowsky Center for Publication Arts,</subfield>
+    <subfield code="e">publisher.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n88159171</subfield>
+    <subfield code="1">http://viaf.org/viaf/152552511</subfield>
+    <subfield code="1">http://isni.org/isni/0000000102284148.</subfield>
+  </datafield>
+  <datafield tag="790" ind1="0" ind2=" ">
+    <subfield code="a">Owen, Carol.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/#/asset/SS33469_33469_42530491</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">05-17-17</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">pau</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">YE293VPP</subfield><subfield code="b">b8863542</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>
