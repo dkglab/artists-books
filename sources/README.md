@@ -197,9 +197,16 @@ walks the MARC records, fetches each asset ID's redirect (headers only — the
 captcha is on the rendered JSTOR page, which is never requested), and writes one
 row per 856 link: `canonicalKey, assetId, ssid, status`.
 
-Current: **1,165 of 1,166 links resolved**, covering **1,145 books** and 1,127
-distinct SSIDs; 1,156 of those SSIDs are present in the Forum export (the other
-9 are presumably assets added to Forum after that export was taken). The single
+Some links skip the asset ID and carry the **SSID itself** as a bare number
+(`library.artstor.org/#/asset/24509442`, `…/public/24509442`). Those need no
+lookup and are written with `assetId` = `ssid`. The parser once matched only the
+`SS…` shape and dropped them silently, leaving 67 books imageless even though
+JSTOR has their pictures (e.g. *Eternal friendship*, `FCVVSAWF`).
+
+Current: **1,233 of 1,234 links resolved**, covering **1,212 books** and 1,195
+distinct SSIDs (68 of them direct). Of the 1,127 SSIDs that came through
+redirects, 1,118 are in the Forum export; the other 9 are presumably assets
+added to Forum after that export was taken. The single
 failure is a cataloguing typo — `URPYB2MG`'s third 856 has a nine-digit asset ID
 (`SS33469_33469_425301913`) that resolves to *artstor-page-not-found*; the same
 record's other three links resolve, so no book loses coverage.
@@ -268,7 +275,14 @@ ssid,uuid,datePath,iiifPath,width,height,filename,fileCount,imageViewType,status
 13604309,4098b9d0-…,2016/04/04/20,/iiif/2016/04/04/20/4098b9d0-…_deflate.tif,2400,1800,Far_horizons1.tif,2,(Cover & interior images),ok
 ```
 
-**All 1,127 SSIDs resolve; 1,118 have a IIIF path.** The remaining 9 are
+> [!NOTE]
+> **68 SSIDs are not harvested yet.** These are the bare-number links described
+> above, added to `artstor-ssid.csv` on 2026-11-20. By then `forum.jstor.org`
+> answered *every* `representation-view` request from this host with **403**,
+> including SSIDs that had already resolved. Re-run `make -C sources -B ssid-media.csv`
+> once that clears. The script resumes and skips the 1,118 rows that are already done.
+
+**Of the 1,127 SSIDs harvested before that, all resolve and 1,118 have a IIIF path.** The remaining 9 are
 `restricted`: the redirect chain gives their UUID and date partition, but every
 candidate identifier returns **403** from the IIIF tier (not 404 — the asset is
 access-restricted, not mis-guessed; a known-good path returns 200 in the same
