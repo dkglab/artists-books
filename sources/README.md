@@ -176,6 +176,14 @@ the frozen graph lives here under `sources/`.
 make -C sources -B citations.ttl          # -> citations.ttl, citations-review.csv
 ```
 
+## Creator authority (`creators/`, issue #170)
+
+Who each MARC creator field names is resolved once, across both MARC
+directories, into `creators/agents.csv`, which both construct queries join on.
+The inputs are mined from the MARC (`creators/occurrences.csv`), reconciled once
+against id.loc.gov (`creators/lc-viaf.csv`, frozen) and curated by hand
+(`creators/decisions.csv`). See [`creators/README.md`](creators/README.md).
+
 ## Artstor → JSTOR SSID crosswalk (`artstor-ssid.csv`, issue #9)
 
 Cover images live in JSTOR Forum, whose "Export Records" spreadsheet
