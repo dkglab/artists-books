@@ -76,16 +76,30 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
 
 /* --- Jump bars (A–Z, categories) --------------------------------------- */
 
+/* The bar sticks to the top of the viewport once scrolled to, so after a jump
+   the other sections, and the "Top" link at its end, stay one click away.
+   Section headings reserve its height with scroll-margin-top (.letter), or a
+   jump would land them underneath it. */
 .jump-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
   gap: .25rem .6rem;
   font-size: 1.75rem;
-  padding: 0 var(--gutter) 1rem;
+  padding: .5rem var(--gutter);
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
 }
 .jump-bar a { text-decoration: none; }
 .jump-bar a:hover { text-decoration: underline; }
 .jump-bar.small { font-size: 1.125rem; gap: .5rem 1.5rem; }
+.jump-bar .to-top { margin-left: auto; font-size: 1rem; white-space: nowrap; }
+@media (max-width: 800px) {
+  .jump-bar { font-size: 1.25rem; gap: .15rem .5rem; }
+}
 
 /* --- Book grid (index and concept pages) ------------------------------- */
 
@@ -204,7 +218,9 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
 .term-table .n { white-space: nowrap; }
 
 .page-intro .fields { margin-top: 1.5rem; }
-.letter { font-size: 1.75rem; margin: 0 0 1rem; scroll-margin-top: 1rem; }
+.letter { font-size: 1.75rem; margin: 0 0 1rem; scroll-margin-top: 5rem; }
+/* On a phone the A–Z bar wraps onto two or three lines. */
+@media (max-width: 800px) { .letter { scroll-margin-top: 8rem; } }
 
 /* --- Browse: filter sidebar + grid (index page, #138) ------------------ */
 
