@@ -10,13 +10,21 @@
 // across facets it is AND. Each facet's counts are narrowed by the *other*
 // facets' selections, so a count says how many works ticking that concept
 // would show.
+//
+// The images facet (#160) is a boolean one, on by default: with no `images`
+// parameter only the works with an image are shown, and `?images=off` shows
+// them all. Its book set comes from the grid (the cards with an <img>), so it
+// needs no index and is applied before the others have loaded — the grid
+// narrows to the illustrated works as soon as this script runs.
 
 import { HierarchicalFacet } from "./hierarchical-facet.js";
 import { FlatFacet } from "./flat-facet.js";
+import { BooleanFacet } from "./boolean-facet.js";
 
 customElements.define("construction-facet", class extends HierarchicalFacet {});
 customElements.define("subject-facet", class extends FlatFacet {});
 customElements.define("place-facet", class extends FlatFacet {});
+customElements.define("image-facet", class extends BooleanFacet {});
 
 const sidebar = document.querySelector(".filters");
 const countLine = document.querySelector(".page-intro .count");
@@ -29,7 +37,8 @@ const cards = new Map(
   [...document.querySelectorAll(".book-grid li[data-key]")].map((li) => [li.dataset.key, li]));
 
 // One entry per facet element: its URL parameter, its concept -> item keys
-// index, and the current selection.
+// index, the current selection, and (boolean facets) whether it is on by
+// default.
 const facets = [];
 
 // Facets may share an index (Subject and Place both read subject-facet.json),
@@ -64,11 +73,28 @@ async function load(element) {
   return { element, param: element.dataset.param, books, selected: new Set() };
 }
 
+// A boolean facet: one key, whose books are the cards matching `data-cards`.
+function boolean(element) {
+  const items = new Set([...cards].filter(([, li]) => li.matches(element.dataset.cards)).map(([key]) => key));
+  element.total = items.size;
+  return {
+    element,
+    param: element.dataset.param,
+    books: new Map([[element.key, items]]),
+    selected: new Set(),
+    defaultOn: element.dataset.default === "on",
+  };
+}
+
 // Read each facet's selection from the URL, dropping keys its index doesn't know.
 function readURL() {
   const params = new URLSearchParams(location.search);
   for (const facet of facets) {
     const value = params.get(facet.param) ?? "";
+    if (facet.defaultOn) {
+      facet.selected = new Set(value === "off" ? [] : [facet.element.key]);
+      continue;
+    }
     facet.selected = new Set(value.split(",").filter((key) => facet.books.has(key)));
   }
 }
@@ -78,6 +104,11 @@ function readURL() {
 function writeURL() {
   const params = new URLSearchParams(location.search);
   for (const facet of facets) {
+    if (facet.defaultOn) {
+      if (facet.selected.size) params.delete(facet.param);
+      else params.set(facet.param, "off");
+      continue;
+    }
     if (facet.selected.size) params.set(facet.param, [...facet.selected].sort().join(","));
     else params.delete(facet.param);
   }
@@ -116,7 +147,7 @@ function apply() {
   }
   parent.insertBefore(grid, next);
 
-  countLine.textContent = unions.length ? `${shown} of ${total} works` : `${total} works`;
+  countLine.textContent = unions.length ? `${shown} of ${total} books` : `${total} books`;
   noResults.hidden = shown > 0;
   for (const facet of facets) {
     facet.element.selected = facet.selected;
@@ -139,9 +170,6 @@ function narrowedCounts(facet, byFacet) {
 }
 
 async function init() {
-  const elements = [...sidebar.querySelectorAll("[data-src][data-param]")];
-  facets.push(...await Promise.all(elements.map(load)));
-
   sidebar.addEventListener("facet-toggle", (e) => {
     const facet = facets.find((f) => f.element.contains(e.target));
     const { key } = e.detail;
@@ -161,10 +189,19 @@ async function init() {
     apply();
   });
 
+  // The boolean facets first: they need no index, and the images one is on by
+  // default, so applying it now keeps the full grid from lingering while the
+  // indexes load. The sidebar shows from here, so it can always be turned off.
+  facets.push(...[...sidebar.querySelectorAll("[data-cards][data-param]")].map(boolean));
   readURL();
   apply();
   sidebar.hidden = false;
+
+  const elements = [...sidebar.querySelectorAll("[data-src][data-param]")];
+  facets.push(...await Promise.all(elements.map(load)));
+  readURL();
+  apply();
 }
 
-// On failure, the sidebar stays hidden and the full grid stays visible.
+// If an index fails to load, its facets stay empty; the boolean ones still work.
 init().catch((error) => console.error("Filters unavailable:", error));
