@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>04019cam a2200709 c 4500</leader>
+  <controlfield tag="001">387338713</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20251006120703.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">040521s2003    be ||||| c    00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9074816347</subfield>
+    <subfield code="9">90-74816-34-7</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)387338713</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)110410629</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV387338713</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)249484284</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)314462482</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-BE</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">N6537.D68</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LI 99999</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/97471:</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">21.42</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">21.99</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Peter Downsbrough - position</subfield>
+    <subfield code="b">[... on the occasion of the exhibition "Peter Downsbrough. Position" 25 June - 7 September 2003, Palais des Beaux-Arts de Bruxelles, 25 October 2003 - 1 February 2004, Espace de l'Art Concrete, Mouans-Sartoux, 23 March 2004 - 9 May 2004, Muzeum Sztuki, Lódź]</subfield>
+    <subfield code="c">[coord. Marie-Thérése Champesme ...]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Bruxelles</subfield>
+    <subfield code="b">Palais des Beaux-Arts</subfield>
+    <subfield code="c">2003</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">174 S.</subfield>
+    <subfield code="b">zahlr. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">2</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="4">
+    <subfield code="a">Downsbrough, Peter</subfield>
+    <subfield code="x">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="y">2003</subfield>
+    <subfield code="z">Brüssel</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="x">Société des Expositions du Palais des Beaux-Arts</subfield>
+    <subfield code="y">25.06.-07.09.2003</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="x">Espace de l'Art Concret</subfield>
+    <subfield code="y">25.10.2003-01.02.2004</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="x">Muzeum Sztuki</subfield>
+    <subfield code="y">23.03.-09.05.-2004</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)119152193</subfield>
+    <subfield code="0">(DE-627)079947719</subfield>
+    <subfield code="0">(DE-576)211416436</subfield>
+    <subfield code="a">Downsbrough, Peter</subfield>
+    <subfield code="d">1940-2024</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4045895-7</subfield>
+    <subfield code="0">(DE-627)104434880</subfield>
+    <subfield code="0">(DE-576)209067160</subfield>
+    <subfield code="a">Fotografie</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4131808-0</subfield>
+    <subfield code="0">(DE-627)105692395</subfield>
+    <subfield code="0">(DE-576)209630353</subfield>
+    <subfield code="a">Installation</subfield>
+    <subfield code="g">Kunst</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="3">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4046277-8</subfield>
+    <subfield code="0">(DE-627)106198602</subfield>
+    <subfield code="0">(DE-576)209068817</subfield>
+    <subfield code="a">Plastik</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Champesme, Marie-Thérèse</subfield>
+    <subfield code="0">(DE-588)188357963</subfield>
+    <subfield code="0">(DE-627)699288282</subfield>
+    <subfield code="0">(DE-576)135230888</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Downsbrough, Peter</subfield>
+    <subfield code="d">1940-2024</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)119152193</subfield>
+    <subfield code="0">(DE-627)079947719</subfield>
+    <subfield code="0">(DE-576)211416436</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Palais des Beaux-Arts</subfield>
+    <subfield code="g">Brüssel</subfield>
+    <subfield code="0">(DE-588)42324-5</subfield>
+    <subfield code="0">(DE-627)100967604</subfield>
+    <subfield code="0">(DE-576)190382120</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Espace de l'Art Concret</subfield>
+    <subfield code="0">(DE-588)5343198-4</subfield>
+    <subfield code="0">(DE-627)30288193X</subfield>
+    <subfield code="0">(DE-576)197860281</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Muzeum Sztuki</subfield>
+    <subfield code="g">Lodz</subfield>
+    <subfield code="0">(DE-588)1029353-X</subfield>
+    <subfield code="0">(DE-627)103704191</subfield>
+    <subfield code="0">(DE-576)191315370</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="711" ind1="2" ind2=" ">
+    <subfield code="a">Exhibition Peter Downsbrough. Position</subfield>
+    <subfield code="d">2003-2004</subfield>
+    <subfield code="c">Bruxelles u.a.</subfield>
+    <subfield code="0">(DE-588)5558840-2</subfield>
+    <subfield code="0">(DE-627)392366592</subfield>
+    <subfield code="0">(DE-576)199786577</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">735724431</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">8 2005 4864</subfield>
+    <subfield code="g">::8:2005:4864:</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3151462502</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">315146257X</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">B Dow55 0004</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3643291388</subfield>
+    <subfield code="b">DE-Stg120</subfield>
+    <subfield code="9">Stg 120</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">FW Downsbrough, P. 2003</subfield>
+    <subfield code="h">Fotobibliothek</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3151462685</subfield>
+    <subfield code="b">DE-L328</subfield>
+    <subfield code="9">L 328</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">7 DOWPE PALAI 2003</subfield>
+    <subfield code="h">Freihandbereich</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">Blocktest</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LI 99999</subfield>
+    <subfield code="b">Sonstige</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Künstler-Monografien</subfield>
+    <subfield code="k">Sonstige</subfield>
+    <subfield code="0">(DE-627)1270635948</subfield>
+    <subfield code="0">(DE-625)rvk/97471:</subfield>
+    <subfield code="0">(DE-576)200635948</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+    <subfield code="j">Bildende Künstler</subfield>
+    <subfield code="0">(DE-627)181571080</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">21.42</subfield>
+    <subfield code="j">Geschichte der Photographie</subfield>
+    <subfield code="0">(DE-627)106405713</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">21.99</subfield>
+    <subfield code="j">Sonstige Kunstformen</subfield>
+    <subfield code="0">(DE-627)106405659</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">T4LBNAUA</subfield><subfield code="b">9789074816342</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

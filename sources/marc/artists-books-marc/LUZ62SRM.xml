@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01925cam a2200469 i 4500</leader>
+  <controlfield tag="001">9933945706001551</controlfield>
+  <controlfield tag="005">20210528093227.0</controlfield>
+  <controlfield tag="008">931123s1975    sz a          000 0 fre d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2880260175</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9782880260170</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1008206108</subfield>
+    <subfield code="z">(OCoLC)5065088</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">2021-B12</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">AVA</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">AVA</subfield>
+    <subfield code="d">AVA</subfield>
+    <subfield code="d">WSU</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">FNE</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">JPG</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">JPGA</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.M583</subfield>
+    <subfield code="b">F329 1975</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Messager, Annette,</subfield>
+    <subfield code="d">1943-</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="3">
+    <subfield code="a">La femme et ... /</subfield>
+    <subfield code="c">Annette Messager, truqueuse.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Genéve :</subfield>
+    <subfield code="b">Annette Messager :</subfield>
+    <subfield code="b">Ecart Publications,</subfield>
+    <subfield code="c">[1975]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">24 unnumbered pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">14 x 21 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Ce volume a été tiré à 500 exemplaires numérotés en février 1975 dans les ateliers d'ECART, 6, rue Plantamour, Genéve."--Colophon.</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">Library has copy no. 396.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Artist's book consisting of photographs of a naked woman who has been drawn upon.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Body art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Female nude in art.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Art and photography.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Female nude in art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01896133</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Body art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00835316</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="z">Switzerland</subfield>
+    <subfield code="y">20th century.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01750153</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Ecart (Gallery : Geneva, Switzerland),</subfield>
+    <subfield code="e">publisher.</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">Switzerland</subfield>
+    <subfield code="d">Geneva.</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">PR2020-47</subfield>
+  </datafield>
+  <datafield tag="921" ind1=" " ind2=" ">
+    <subfield code="d">cc</subfield>
+    <subfield code="e">20210412</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">c</subfield>
+  </datafield>
+  <datafield tag="936" ind1=" " ind2=" ">
+    <subfield code="c">!blm</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">JPG</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">9933945706001551</subfield>
+    <subfield code="8">22205628400001551</subfield>
+    <subfield code="a">01GRI_INST</subfield>
+    <subfield code="b">SC</subfield>
+    <subfield code="c">SPECIAL COLLECTIONS - CONTACT REFERENCE</subfield>
+    <subfield code="d">N7433.4.M583 F329 1975</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">2AB</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">GRI Special Collections</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">LUZ62SRM</subfield><subfield code="b">9782880260170</subfield><subfield code="c">isbn</subfield><subfield code="d">getty</subfield></datafield></record>
+</collection>

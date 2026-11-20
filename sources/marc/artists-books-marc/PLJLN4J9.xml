@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02247cam a2200433 i 4500</leader>
+  <controlfield tag="001">18137910</controlfield>
+  <controlfield tag="005">20250607060707.8</controlfield>
+  <controlfield tag="008">140222s2014    cu            000 p spa  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">18137910</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">origres</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">bf26 2014-08-28</subfield>
+    <subfield code="i">he07 2014-09-05</subfield>
+    <subfield code="u">bf30 2024-09-26 updated</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2014410103</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(UyMoLRL)lr54534</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">nwcu---</subfield>
+  </datafield>
+  <datafield tag="050" ind1="1" ind2="0">
+    <subfield code="a">PQ7392</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">VIGIA box 27, no. 2</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Montalvo, Rey,</subfield>
+    <subfield code="d">1989- .</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="3">
+    <subfield code="a">El Casimiro /</subfield>
+    <subfield code="c">Rey Montalvo ; diseño y dibujos Elizabeth Valero.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Matanzas, Cuba] :</subfield>
+    <subfield code="b">Ediciones Vigía,</subfield>
+    <subfield code="c">2014.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 banner (1 leaf) inside a paper cover :</subfield>
+    <subfield code="b">illustrations (some color, some moveable) ;</subfield>
+    <subfield code="c">20 x 47 cm, folded to  20 x 20 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="440" ind1=" " ind2="0">
+    <subfield code="a">Colección Andante</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Typescript poem reproduced on torn white paper mounted on a decorated brown-paper banner, which is glued at the top edge onto the inside of a paper cover. The cover is wrapped in crushed, hand-painted paper (light blue and tan) onto which are mounted printed and hand-colored paper cutouts. A cutout "tower window" in the front cover reveals the banner's illustration of a bell with a moveable clapper, a white-paper cutout of a line drawing of a blindfolded woman hanging upside down; the "clapper" is inserted through the back of the banner.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">The banner unfolded measures 47 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Part of a collection of handmade books, most with cords for hanging (literatura de cordel), published by Ediciones Vigía under the auspices of the Cuban Ministry of Culture.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC copy is number 016 of an unspecified but no doubt limited edition.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Banners</subfield>
+    <subfield code="z">Cuba</subfield>
+    <subfield code="z">Matanzas</subfield>
+    <subfield code="y">2010-2020.</subfield>
+    <subfield code="2">gmgpc</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Cuba</subfield>
+    <subfield code="z">Matanzas.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Poetry.</subfield>
+    <subfield code="2">lcgft</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Ediciones Vigía.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Press Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="d">20140409</subfield>
+    <subfield code="n">10232</subfield>
+    <subfield code="s">UyMoLRL</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="e">VENDOR LOAD</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">PLJLN4J9</subfield><subfield code="b">montalvo / el casimiro</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

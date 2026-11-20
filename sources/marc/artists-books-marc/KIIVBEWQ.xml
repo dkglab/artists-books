@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02148crm a2200397 a 4500</leader>
+  <controlfield tag="001">13176376</controlfield>
+  <controlfield tag="005">20250606200901.3</controlfield>
+  <controlfield tag="006">ac          000 0d</controlfield>
+  <controlfield tag="008">030425s2003    nyunnn            aneng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">13176376</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">origres</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">nh13 2003-04-25</subfield>
+    <subfield code="i">vj01 2004-05-28</subfield>
+    <subfield code="e">vj05 2004-06-01</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-893</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2004573752</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.C86</subfield>
+    <subfield code="b">G567 2003</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Cummins, Maureen.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Ghost diary /</subfield>
+    <subfield code="c">produced by Maureen Cummins ; with typographic assistance from Kathy McMillan and metalwork by Gary Dodge.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[High Falls, N.Y. :</subfield>
+    <subfield code="b">M. Cummins,</subfield>
+    <subfield code="c">2003]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 art original :</subfield>
+    <subfield code="b">glass, black and orange ;</subfield>
+    <subfield code="c">in box 20 x 15 x 11 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Glass panels hinged in accordion format; housed in a collapsible black box with a tie string.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"... [B]ased on a handwritten letter discovered by the artist in the archive of Weir Farm in Wilton, Connecticut, during a residency in the spring of 2001. The letter was written in 1807 by a former Revolutionary War officer, Lieutenant Colonel Jonathon Rhea, to his children on the anniversary of his wife's death. The [5] images that accompany the text are original vintage glass negatives that date from the late nineteenth and early twentieth centuries"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"... [P]roduced in an edition of twenty-five"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has no. 10, signed by the artist.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="510" ind1="4" ind2=" ">
+    <subfield code="a">OCLC</subfield>
+    <subfield code="c">ocm53809117</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Rhea, Jonathan</subfield>
+    <subfield code="v">Correspondence.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">United States</subfield>
+    <subfield code="x">History</subfield>
+    <subfield code="y">Revolution, 1775-1783</subfield>
+    <subfield code="v">Personal narratives.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Glass negatives.</subfield>
+    <subfield code="2">gmgpc</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Personal correspondence.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2014026141</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Personal narratives.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2014026142</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Rhea, Jonathan.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">McMillan, Kathy.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Dodge, Gary.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Artists' Books Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">KIIVBEWQ</subfield><subfield code="b">cummins / ghost diary</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

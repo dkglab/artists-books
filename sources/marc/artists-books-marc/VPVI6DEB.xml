@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02842cam a2200601 c 4500</leader>
+  <controlfield tag="001">1612266185</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20240509194531.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">930301s1992    gw |||||      00| ||ger c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">92,N35,0630</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">93,A12,0870</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">921131240</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3925911286</subfield>
+    <subfield code="9">3-925911-28-6</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1612266185</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)032102828</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ032102828</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)721875203</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)55082665</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-604)8066122627</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">46</subfield>
+    <subfield code="a">03</subfield>
+    <subfield code="2">sdnb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LH 65830</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/94562:13114</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LH 13000</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/92339:</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Schmatz, Ferdinand</subfield>
+    <subfield code="d">1953-</subfield>
+    <subfield code="0">(DE-588)11932587X</subfield>
+    <subfield code="0">(DE-627)080134831</subfield>
+    <subfield code="0">(DE-576)164498206</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Lexikon der Kunst 1992</subfield>
+    <subfield code="c">Ferdinand Schmatz; Heimo Zobernig</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1. Aufl.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Stuttgart</subfield>
+    <subfield code="b">Ed. Schwarz</subfield>
+    <subfield code="c">1992</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[142] S.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">3</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung/Langzeitarchivierung gewährleistet</subfield>
+    <subfield code="f">PEBW</subfield>
+    <subfield code="x">XA-DE-BW</subfield>
+    <subfield code="2">pdager</subfield>
+    <subfield code="5">DE-24</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20240324</subfield>
+    <subfield code="f">DE-4165</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bildband</subfield>
+    <subfield code="0">(DE-588)4145395-5</subfield>
+    <subfield code="0">(DE-627)104450835</subfield>
+    <subfield code="0">(DE-576)209741139</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Zobernig, Heimo</subfield>
+    <subfield code="d">1958-</subfield>
+    <subfield code="0">(DE-588)119091712</subfield>
+    <subfield code="0">(DE-627)079884636</subfield>
+    <subfield code="0">(DE-576)168519526</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-576)471046094</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-627)119253518</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">142743453</subfield>
+    <subfield code="b">DE-Luen4</subfield>
+    <subfield code="9">Luen 4</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">95-10624</subfield>
+    <subfield code="h">CAM</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4877097244</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">8 2026 369</subfield>
+    <subfield code="g">::8:2026:369:</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3165995443</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">93 8 04296</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3165995508</subfield>
+    <subfield code="b">DE-24</subfield>
+    <subfield code="9">24</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">44/5868</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3165995575</subfield>
+    <subfield code="b">DE-31</subfield>
+    <subfield code="9">31</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">93 A 50879</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3165995613</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">0046-34 -3525</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3165995672</subfield>
+    <subfield code="b">DE-1973</subfield>
+    <subfield code="9">1973</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Magazin Kü Zobernig, H. 1992</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">mdedup</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LH 65830</subfield>
+    <subfield code="b">neueste Stile Aktionskunst, Fluxus, Happening, Performance, Body art</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeines. Allgemeine Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeine Kunstgeschichte: Darstellungen</subfield>
+    <subfield code="k">Darstellungen einzelner Epochen</subfield>
+    <subfield code="k">Mittlere und neuere Kunstgeschichte</subfield>
+    <subfield code="k">Neuzeit</subfield>
+    <subfield code="k">19. und 20. Jahrhundert</subfield>
+    <subfield code="k">20. Jahrhundert</subfield>
+    <subfield code="k">neueste Stile Aktionskunst, Fluxus, Happening, Performance, Body art</subfield>
+    <subfield code="0">(DE-627)127063612X</subfield>
+    <subfield code="0">(DE-625)rvk/94562:13114</subfield>
+    <subfield code="0">(DE-576)20063612X</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LH 13000</subfield>
+    <subfield code="b">Kunstadressbücher</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeines. Allgemeine Kunstgeschichte</subfield>
+    <subfield code="k">Lexika, Bibliografien, Bibliothekskataloge</subfield>
+    <subfield code="k">Kunstadressbücher</subfield>
+    <subfield code="0">(DE-627)1270651307</subfield>
+    <subfield code="0">(DE-625)rvk/92339:</subfield>
+    <subfield code="0">(DE-576)200651307</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">VPVI6DEB</subfield><subfield code="b">9783925911286</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

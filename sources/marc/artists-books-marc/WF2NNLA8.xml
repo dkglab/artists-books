@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01953cam a2200397 c 4500</leader>
+  <controlfield tag="001">468313672</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250929131515.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">000101s1975    is ||||| c    00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)468313672</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV468313672</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)835361749</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">heb</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XB-IL</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Sol Lewitt</subfield>
+    <subfield code="b">red, blue and yellow lines from sides, corners and the center of the page to points on a grid ; Israel Museum, Jerusalem September 1975</subfield>
+    <subfield code="c">Sol LeWitt</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Jerusalem</subfield>
+    <subfield code="b">Israel Museum</subfield>
+    <subfield code="c">1975</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[8] Bl.</subfield>
+    <subfield code="b">Ill.</subfield>
+    <subfield code="c">18,1 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">1445948516</subfield>
+    <subfield code="s">Ku GV A 434</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="a">Vries, Gerd de</subfield>
+    <subfield code="0">(DE-588)108048241</subfield>
+    <subfield code="0">(DE-627)477580750</subfield>
+    <subfield code="0">(DE-576)163446547</subfield>
+    <subfield code="f">Exemplar: Donator</subfield>
+    <subfield code="f">Stempel</subfield>
+    <subfield code="k">1993</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">1445948516</subfield>
+    <subfield code="s">Ku GV A 434</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="a">Staatliche Kunstsammlungen Weimar</subfield>
+    <subfield code="0">(DE-588)2022373-0</subfield>
+    <subfield code="0">(DE-627)102096422</subfield>
+    <subfield code="0">(DE-576)191753025</subfield>
+    <subfield code="f">Nummer</subfield>
+    <subfield code="f">Stempel</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="a">Sammlung Gerd de Vries</subfield>
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">1445948516</subfield>
+    <subfield code="s">Ku GV A 434</subfield>
+    <subfield code="o">Sammlung</subfield>
+    <subfield code="0">(DE-588)1250787343</subfield>
+    <subfield code="0">(DE-627)1788018842</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)118855549</subfield>
+    <subfield code="0">(DE-627)079631231</subfield>
+    <subfield code="0">(DE-576)165565926</subfield>
+    <subfield code="a">LeWitt, Sol</subfield>
+    <subfield code="d">1928-2007</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">LeWitt, Sol</subfield>
+    <subfield code="d">1928-2007</subfield>
+    <subfield code="0">(DE-588)118855549</subfield>
+    <subfield code="0">(DE-627)079631231</subfield>
+    <subfield code="0">(DE-576)165565926</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Muzeon Yiśraʾel</subfield>
+    <subfield code="0">(DE-588)1014663-5</subfield>
+    <subfield code="0">(DE-627)103269797</subfield>
+    <subfield code="0">(DE-576)191212059</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1445948516</subfield>
+    <subfield code="b">DE-32</subfield>
+    <subfield code="9">32</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Ku GV A 434</subfield>
+    <subfield code="h">MAG</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">678186006</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 26109 gd kl</subfield>
+    <subfield code="g">NB::26109:gd:kl</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">81575700X</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB Marzona 1 1122</subfield>
+    <subfield code="g">NB::Marzona:1:1122:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">WF2NNLA8</subfield><subfield code="b">lewitt / red blue and yellow lines from sides corners and the center of the page to points on a grid</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

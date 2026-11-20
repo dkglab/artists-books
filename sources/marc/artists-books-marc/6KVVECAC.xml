@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00928cam a22002892c 4500</leader>
+  <controlfield tag="001">011460962</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220414150522.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">710101s1980    fr |||||      00| ||fre c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)011460962</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV011460962</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)256046042</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-FR</subfield>
+    <subfield code="c">XA-CH</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lavater, Warja</subfield>
+    <subfield code="d">1913-2007</subfield>
+    <subfield code="0">(DE-588)118706896</subfield>
+    <subfield code="0">(DE-627)079488536</subfield>
+    <subfield code="0">(DE-576)209318244</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Jeu</subfield>
+    <subfield code="b">livre en "papier modulé"</subfield>
+    <subfield code="c">Warja Lavater</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Paris [u.a.]</subfield>
+    <subfield code="b">W. Lavater</subfield>
+    <subfield code="c">1980</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">5 Faltbl. in Kassette</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="510" ind1="3" ind2=" ">
+    <subfield code="a">Arnold, W. Malerbuch 1811</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">011737441</subfield>
+    <subfield code="b">DE-23</subfield>
+    <subfield code="9">23</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">Malerbücher 34.FM 14</subfield>
+    <subfield code="g">34.FM 14</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="e">Arnold, W. Malerbuch 1811</subfield>
+    <subfield code="f">b</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">6KVVECAC</subfield><subfield code="b">lavater / jeu</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

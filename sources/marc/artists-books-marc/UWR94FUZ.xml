@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01685cam a2200469 c 4500</leader>
+  <controlfield tag="001">1612209122</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20240509194502.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">000807s1999    xx |||||      00| ||eng c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">00,A35,1122</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">959420150</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3980632652</subfield>
+    <subfield code="9">3-9806326-5-2</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1612209122</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)086450131</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)DNB959420150</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)845389831</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)76164868</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">46</subfield>
+    <subfield code="2">sdnb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Fernández, Nicolás</subfield>
+    <subfield code="d">1968-</subfield>
+    <subfield code="0">(DE-588)122654978</subfield>
+    <subfield code="0">(DE-627)082071748</subfield>
+    <subfield code="0">(DE-576)181100134</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">You left</subfield>
+    <subfield code="c">Nicolás Fernández</subfield>
+  </datafield>
+  <datafield tag="263" ind1=" " ind2=" ">
+    <subfield code="a">geh. in Mappe : DM 40.00</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Genève</subfield>
+    <subfield code="b">Centre d'Art Contemporain</subfield>
+    <subfield code="c">1999</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Stuttgart</subfield>
+    <subfield code="b">Revolver - Archiv für aktuelle Kunst</subfield>
+    <subfield code="c">1999</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[44] S.</subfield>
+    <subfield code="b">zahlr. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung/Langzeitarchivierung gewährleistet</subfield>
+    <subfield code="f">PEBW</subfield>
+    <subfield code="h">DE-24</subfield>
+    <subfield code="x">XA-DE-BW</subfield>
+    <subfield code="2">pdager</subfield>
+    <subfield code="5">DE-31</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung/Langzeitarchivierung gewährleistet</subfield>
+    <subfield code="f">PEBW</subfield>
+    <subfield code="x">XA-DE-BW</subfield>
+    <subfield code="2">pdager</subfield>
+    <subfield code="5">DE-24</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4269067-5</subfield>
+    <subfield code="0">(DE-627)104463171</subfield>
+    <subfield code="0">(DE-576)210662204</subfield>
+    <subfield code="a">Buchobjekt</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-576)105707694</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-627)1605622281</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3113651360</subfield>
+    <subfield code="b">DE-24</subfield>
+    <subfield code="9">24</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">53C/80525</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3165699178</subfield>
+    <subfield code="b">DE-31</subfield>
+    <subfield code="9">31</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">103 A 51135</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3165699259</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Fdm Fer50 0002</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3113651425</subfield>
+    <subfield code="b">DE-Ka89</subfield>
+    <subfield code="9">Ka 89</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="i">mdedup</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">UWR94FUZ</subfield><subfield code="b">3980632652</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

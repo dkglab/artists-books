@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01031cam a22002897  4500</leader>
+  <controlfield tag="001">2456690</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20180604120359.0</controlfield>
+  <controlfield tag="008">011211s1995    be |||||||||||000 0|fre|c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">9925876621</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">N</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">Ibz Kermaire, Christine</subfield>
+    <subfield code="2">kssb/6</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Kermaire, Christine</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Imagerie :</subfield>
+    <subfield code="b">Christine Kermaire</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Charleroi :</subfield>
+    <subfield code="b">Copy Center Sud,</subfield>
+    <subfield code="c">1995</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">28 s. (huvudsakligen färgpl.-s.)</subfield>
+    <subfield code="e">1 bl.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Publ. är en "Artist book"</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Numr. ex.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="5">N</subfield>
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Ej skönlitteratur</subfield>
+    <subfield code="0">https://id.kb.se/term/ktg/NonFictionLiterature</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="b">N</subfield>
+    <subfield code="h">Ibz Ker- maire, C.</subfield>
+    <subfield code="j">4:o</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"btm9bm9n2m8czwx","modified":"2018-06-04T12:03:59.443+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">{"@id":"w16pj7c24llw3dh","modified":"2018-06-05T15:54:53.328+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">6VZZFQF3</subfield><subfield code="b">kermaire / imagerie</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

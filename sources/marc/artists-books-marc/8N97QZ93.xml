@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01605cam a22004697a 4500</leader>
+  <controlfield tag="001">13912427</controlfield>
+  <controlfield tag="005">20250606214828.5</controlfield>
+  <controlfield tag="008">050323s2005    nscabc        000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">13912427</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">3</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">2 shelf copies</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">nb28 2005-04-21 Copy 1 to ASCD</subfield>
+    <subfield code="a">jx03 2005-06-21 z-processor</subfield>
+    <subfield code="a">jx00 2005-06-23</subfield>
+    <subfield code="i">jx09 2005-07-20</subfield>
+    <subfield code="e">jx09 to BCCD 2005-07-20</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-644, LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2005391185</subfield>
+  </datafield>
+  <datafield tag="016" ind1=" " ind2=" ">
+    <subfield code="a">20049071955</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0968664733</subfield>
+    <subfield code="q">pbk.</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780968664735</subfield>
+    <subfield code="q">(pbk.)</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)57208861</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">NLC</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-cn---</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N7433.4.M337</subfield>
+    <subfield code="b">S2 2005</subfield>
+  </datafield>
+  <datafield tag="055" ind1="0" ind2="2">
+    <subfield code="a">N7433.85*</subfield>
+  </datafield>
+  <datafield tag="055" ind1=" " ind2="0">
+    <subfield code="a">N7433.85 M32</subfield>
+    <subfield code="b">A78 2005</subfield>
+  </datafield>
+  <datafield tag="055" ind1="0" ind2="0">
+    <subfield code="a">N7433 .85 M32</subfield>
+    <subfield code="b">A78 2005</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">776/.092</subfield>
+    <subfield code="2">22</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">McLaren, Andrew,</subfield>
+    <subfield code="d">1960-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">S/A :</subfield>
+    <subfield code="b">the Spaghettisburg address /</subfield>
+    <subfield code="c">Andrew A. McLaren.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">Spaghettisburg address</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Halifax, N.S. :</subfield>
+    <subfield code="b">A.A. McLaren,</subfield>
+    <subfield code="c">2005.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">179 p. :</subfield>
+    <subfield code="b">ill. (some col.), maps, ports. ;</subfield>
+    <subfield code="c">14 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="6">
+    <subfield code="a">McLaren, Andrew,</subfield>
+    <subfield code="d">1960-</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">McLaren, Andrew,</subfield>
+    <subfield code="d">1960-</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Canada.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Computer art</subfield>
+    <subfield code="z">Canada.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="6">
+    <subfield code="a">Livres d'artistes</subfield>
+    <subfield code="z">Canada.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="6">
+    <subfield code="a">Art par ordinateur</subfield>
+    <subfield code="z">Canada.</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="d">20050407</subfield>
+    <subfield code="n">I20011495</subfield>
+    <subfield code="s">Coutts</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="e">VENDOR LOAD</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">8N97QZ93</subfield><subfield code="b">0968664733</subfield><subfield code="c">isbn</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

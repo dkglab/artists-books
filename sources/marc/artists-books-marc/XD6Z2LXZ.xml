@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00819cam a22002293  4500</leader>
+  <controlfield tag="001">235794</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20180604103157.0</controlfield>
+  <controlfield tag="008">011211s1977    |  |||||||||||000 0|und|c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">9902220223</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">AK</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">und</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Horn, Rebecca</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Rebecca Horn :</subfield>
+    <subfield code="b">Zeichnungen, drawings, Objekte, objects, Video, video, Filme, films</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Köln,</subfield>
+    <subfield code="c">1977</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Ej skönlitteratur</subfield>
+    <subfield code="0">https://id.kb.se/term/ktg/NonFictionLiterature</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="b">N</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"gzrbqhrs3g4cbt7","modified":"2018-06-04T10:31:57.792+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">{"@id":"8dkv73kf2d0cw89","modified":"2018-06-05T13:10:59.657+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">XD6Z2LXZ</subfield><subfield code="b">horn / rebecca horn</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

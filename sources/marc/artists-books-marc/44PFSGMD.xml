@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00626nam a2200217Ia 4500</leader>
+  <controlfield tag="001">ocn128188639</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20070516110509.0</controlfield>
+  <controlfield tag="008">070516s1962    au            000 0 ger d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)128188639</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">GSE</subfield>
+    <subfield code="c">GSE</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N 7433.4 .H464</subfield>
+    <subfield code="b">Z4 1962</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Hendrich, Hermann.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Zehn /</subfield>
+    <subfield code="c">von Hermann Hendrich.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Wien = Vienna] :</subfield>
+    <subfield code="b">editon werkstatt breitenbrunn ,</subfield>
+    <subfield code="c">1962.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">93 pages ;</subfield>
+    <subfield code="c">30 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Plastic spiral binding with clear protective covers.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Hendrich, Hermann.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Aritsts' books.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">44PFSGMD</subfield><subfield code="b">hendrich / zehn</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

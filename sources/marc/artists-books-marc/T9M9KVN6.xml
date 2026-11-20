@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02197cam a2200337Ii 4500</leader>
+  <controlfield tag="001">ocn962069619</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20190917021327.0</controlfield>
+  <controlfield tag="008">161104s2015    ncu           000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)962069619</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">IYU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">IYU</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">IYU</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.H368</subfield>
+    <subfield code="b">V45 2015</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Hardy, Karen</subfield>
+    <subfield code="q">(Karen Elaine),</subfield>
+    <subfield code="e">book artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Vellicate /</subfield>
+    <subfield code="c">Karen Hardy.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Asheville, North Carolina] :</subfield>
+    <subfield code="b">[Karen Hardy],</subfield>
+    <subfield code="c">2015.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unnumbered) ;</subfield>
+    <subfield code="c">14 x 28 cm, in case 16 x 30 x 4 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from case.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Publication information from 23 Sandy Gallery website.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition of 6.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Materials: human hair, acrylic. Paper: abaca and flax, handmade by the artist.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"In Vellicate, I used the advantages of Hedi Kyle's flag book structure for content that relies on neither text nor image, but is instead a tactile and visual encounter with a particular material. As the accordion spine expands and contracts, the flags change direction and soft tips of hair brush over the viewer's wrists. My goal was to capture a physical sensation and its accompanying emotion: a touch so light as to be at the very edge of perception. The book's title encapsulates the way it feels and the way it moves; 'vellicate' means to touch lightly to excite the surface nerves and cause uneasiness or laughter, to tickle, to titillate, or to twitch. By animating the hair and inviting manipulation, Hedi's playful structure communicates this concept quite literally. The book and clamshell box were made with human hair, acrylic, and handmade paper. I used overbeaten abaca and flax fiber for its translucency and skin-like quality, to offer visual hints and heighten the focus on touch"--Artist's statement, 23 Sandy Gallery website (accessed November 3, 2016).</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Hardy, Karen</subfield>
+    <subfield code="q">(Karen Elaine).</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Hair. </subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">rbgenr.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Flag books.</subfield>
+    <subfield code="2">lcgft.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Handmade papers (Paper)</subfield>
+    <subfield code="2">rbpap.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">T9M9KVN6</subfield><subfield code="b">hardy / vellicate</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01303cam a2200397 a 4500</leader>
+  <controlfield tag="001">9921739720001551</controlfield>
+  <controlfield tag="005">20231211142002.0</controlfield>
+  <controlfield tag="008">941011s1972    enk           000 0 eng d</controlfield>
+  <controlfield tag="009">342723</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">94-B18990</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">342723</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CMalG)342723-gettydb-Voyager</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)17351839</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="c">NNMoMA</subfield>
+    <subfield code="d">CMalG</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">Z232.B371</subfield>
+    <subfield code="b">A1 1972a</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Mayor, David.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Auto (redundancy) book /</subfield>
+    <subfield code="c">by David F. Mayor.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Cullompton, England] :</subfield>
+    <subfield code="b">Beau Geste Press,</subfield>
+    <subfield code="c">1972.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[28] p. ;</subfield>
+    <subfield code="c">11 x 15 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title: Auto book.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Beau Geste Press.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2=" ">
+    <subfield code="a">Auto book.</subfield>
+  </datafield>
+  <datafield tag="905" ind1=" " ind2="1">
+    <subfield code="a">1</subfield>
+    <subfield code="b">10/11/94 BLM</subfield>
+    <subfield code="c">MAI</subfield>
+    <subfield code="e">DC</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2="1">
+    <subfield code="a">BRW</subfield>
+  </datafield>
+  <datafield tag="909" ind1=" " ind2="1">
+    <subfield code="a">AMH</subfield>
+  </datafield>
+  <datafield tag="911" ind1=" " ind2="1">
+    <subfield code="a">Jean Brown Collection</subfield>
+  </datafield>
+  <datafield tag="921" ind1=" " ind2=" ">
+    <subfield code="a">b13468856</subfield>
+    <subfield code="b">03-07-97</subfield>
+    <subfield code="c">07-10-95</subfield>
+    <subfield code="d">sc</subfield>
+    <subfield code="e">07-04-95</subfield>
+    <subfield code="f">a</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">c</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">OCLC D160707.R807886 20160727</subfield>
+  </datafield>
+  <datafield tag="960" ind1=" " ind2="1">
+    <subfield code="b">0</subfield>
+  </datafield>
+  <datafield tag="981" ind1=" " ind2="1">
+    <subfield code="b">1</subfield>
+    <subfield code="c">10/11/94 REC</subfield>
+    <subfield code="d">MAIN</subfield>
+    <subfield code="e">MAIN</subfield>
+  </datafield>
+  <datafield tag="995" ind1=" " ind2=" ">
+    <subfield code="a">94-B18990</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="a">Little press collection (Getty Research Institute)</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="s">9114</subfield>
+    <subfield code="n">CMalG</subfield>
+    <subfield code="l">CJPA</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">9921739720001551</subfield>
+    <subfield code="8">22113381240001551</subfield>
+    <subfield code="a">01GRI_INST</subfield>
+    <subfield code="b">SC</subfield>
+    <subfield code="c">SPECIAL COLLECTIONS - CONTACT REFERENCE</subfield>
+    <subfield code="d">Z232.B371 A1 1972a</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">2LP</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">GRI Special Collections</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">52YX5T94</subfield><subfield code="b">mayor / auto redundancy book</subfield><subfield code="c">title-author</subfield><subfield code="d">getty</subfield></datafield></record>
+</collection>

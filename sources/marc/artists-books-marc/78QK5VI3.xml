@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01571cam a2200361 a 4500</leader>
+  <controlfield tag="001">990006257100302486</controlfield>
+  <controlfield tag="005">20181019154353.0</controlfield>
+  <controlfield tag="008">960503s1994    vaua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(Aleph)000625710EMU01</subfield>
+  </datafield>
+  <datafield tag="035" ind1="9" ind2=" ">
+    <subfield code="a">u2778124</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">ocm34674175</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(Sirsi) o34674175</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">VRC</subfield>
+    <subfield code="c">VRC</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">EMU</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">EMUU</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Levine, Philip,</subfield>
+    <subfield code="d">1928-2015.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="3">
+    <subfield code="a">An ordinary morning :</subfield>
+    <subfield code="b">poem /</subfield>
+    <subfield code="c">by Philip Levine ; design and print by David Freed.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Richmond, Va. :</subfield>
+    <subfield code="b">Laurel Press,</subfield>
+    <subfield code="c">[1994?]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 portfolio (1 unnumbered sheet) :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">62 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title and imprint from portfolio.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Printed relief and intaglio on Lana Gravure ; edition 40 with 4 artist proofs".</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">Manuscript, Archives, and Rare Book Library copy is no. 22, signed by Levine and Freed; forms part of the Raymond Danowski Poetry Library.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Freed, David,</subfield>
+    <subfield code="d">1936-</subfield>
+    <subfield code="e">illustrator.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Danowski, Raymond,</subfield>
+    <subfield code="e">collector.</subfield>
+    <subfield code="5">GEU</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Raymond Danowski Poetry Library (Emory University. General Libraries)</subfield>
+    <subfield code="5">GEU</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">EMU emumarbl dmf</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">9DT</subfield>
+    <subfield code="2">20061109</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">EMU</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">990006257100302486</subfield>
+    <subfield code="8">22453771850002486</subfield>
+    <subfield code="a">01GALI_EMORY</subfield>
+    <subfield code="b">MARBL</subfield>
+    <subfield code="c">Locked Stacks</subfield>
+    <subfield code="d">PS3562 .E72 O73 1994 FOLIO DANOWSKI</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">SPOZ</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Stuart A. Rose Manuscript, Archives, and Rare Book Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">78QK5VI3</subfield><subfield code="b">levine / an ordinary morning</subfield><subfield code="c">title-author</subfield><subfield code="d">emory</subfield></datafield></record>
+</collection>

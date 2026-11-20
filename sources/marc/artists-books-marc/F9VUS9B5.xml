@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00768nrm a2200229Ia 4500</leader>
+  <controlfield tag="001">ocn135151960</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20070524122903.0</controlfield>
+  <controlfield tag="008">070524s1973    au nnn            cnger d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)135151960</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">GSE</subfield>
+    <subfield code="c">GSE</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N 7433.4 .C557</subfield>
+    <subfield code="b">S7 1973</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Christanell, Linda.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Spielobjekt = Play object.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Play object.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Wien : </subfield>
+    <subfield code="b"> [publisher not identified], </subfield>
+    <subfield code="c"> 1973.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 object in box :</subfield>
+    <subfield code="c">24 cm.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">One cardboard box containing an explanatory note in German, and one pillow-like object that also resembles a life saving device. Labeled tag attached to object.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Christanell, Linda</subfield>
+    <subfield code="x">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">F9VUS9B5</subfield><subfield code="b">christanell / spielobjekt play object</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

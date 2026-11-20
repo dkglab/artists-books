@@ -1,0 +1,525 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>10326cam a2201093Ii 4500</leader>
+  <controlfield tag="001">on1182522960</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115023.0</controlfield>
+  <controlfield tag="008">200805s2020    utuac         010 0deng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1182522960</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">BBH</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">BBH</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">UUM</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us</subfield>
+    <subfield code="a">n-us-al</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us-al</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.A1</subfield>
+    <subfield code="b">F47 2020</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Festschrift for Bill :</subfield>
+    <subfield code="b">in celebration of book arts.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Salt Lake City, Utah] :</subfield>
+    <subfield code="b">Book Arts Program, Special Collections, J. Willard Marriott Library, the University of Utah,</subfield>
+    <subfield code="c">[2020]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 portfolio :</subfield>
+    <subfield code="b">illustrations, portrait ;</subfield>
+    <subfield code="c">26 cm +</subfield>
+    <subfield code="e">1 sheet (1 unnumbered page) ; 28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">sheet</subfield>
+    <subfield code="b">nb</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1048.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">portrait</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1012.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Bill Stewart, March 1, 1945-November 11, 2019, published in his honor on the 6-month anniversary of his death, with much gratitude to Vicky."</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition limted to 75 copies.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Errata slip laid in.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes display card.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Portfolio of 36 fine press broadsides, most numbered and signed, composed to honor the memory of William "Bill" Stewart, founder and purveyor of Vamp &amp; Tramp, Booksellers. One-page essay by Bill Stewart entitled "Why artists' books: a personal digression on artists' books" laid in.</subfield>
+  </datafield>
+  <datafield tag="563" ind1=" " ind2=" ">
+    <subfield code="a">Unbound sheets in a 4-flap enclosure.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Stewart, William R.,</subfield>
+    <subfield code="d">1945-2019.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2020123023</subfield>
+    <subfield code="1">http://viaf.org/viaf/20160362832463502887.</subfield>
+  </datafield>
+  <datafield tag="610" ind1="2" ind2="0">
+    <subfield code="a">Vamp &amp; Tramp, Booksellers.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2007042056</subfield>
+    <subfield code="1">http://viaf.org/viaf/134069147.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Booksellers and bookselling</subfield>
+    <subfield code="z">Alabama.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Broadsides</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Booksellers and bookselling.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/836492.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Broadsides.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/839252.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Alabama.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204694.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">United States.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204155.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Festschriften.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1941036.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Festschriften.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2016026082.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Broadsheet (format)</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300310088.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423861.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Stewart, William R.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/171662.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Stewart, William R.,</subfield>
+    <subfield code="d">1945-2019,</subfield>
+    <subfield code="e">honouree.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2020123023</subfield>
+    <subfield code="1">http://viaf.org/viaf/20160362832463502887.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Thrams, Andie,</subfield>
+    <subfield code="d">1952-</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2018001846</subfield>
+    <subfield code="1">http://viaf.org/viaf/21151594379605350839</subfield>
+    <subfield code="1">http://isni.org/isni/0000000498908753.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Hazelwood, Art,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n94056764</subfield>
+    <subfield code="1">http://viaf.org/viaf/65700366</subfield>
+    <subfield code="1">http://isni.org/isni/0000000031858879.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Tetenbaum, Barbara,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86026075</subfield>
+    <subfield code="1">http://viaf.org/viaf/96591987</subfield>
+    <subfield code="1">http://isni.org/isni/0000000069954858.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Norman, Bonnie Thompson,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no98100085</subfield>
+    <subfield code="1">http://viaf.org/viaf/29153328</subfield>
+    <subfield code="1">http://isni.org/isni/0000000046024850.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Gardner, Casey,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2015074449</subfield>
+    <subfield code="1">http://viaf.org/viaf/316003797.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Michaelis, Catherine Alice,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no95056170</subfield>
+    <subfield code="1">http://viaf.org/viaf/38963143</subfield>
+    <subfield code="1">http://isni.org/isni/0000000046344862.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Sligh, Clarissa T.,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no93004398</subfield>
+    <subfield code="1">http://viaf.org/viaf/6962364</subfield>
+    <subfield code="1">http://isni.org/isni/0000000052278347.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Lollis, Cynthia,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2007019796</subfield>
+    <subfield code="1">http://viaf.org/viaf/64891011</subfield>
+    <subfield code="1">http://isni.org/isni/0000000418108546.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Deeg, Daniela,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2007091431</subfield>
+    <subfield code="1">http://viaf.org/viaf/31780813</subfield>
+    <subfield code="1">http://isni.org/isni/0000000051157084.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Knudson, Ellen,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr2006005823</subfield>
+    <subfield code="1">http://viaf.org/viaf/41800667</subfield>
+    <subfield code="1">http://isni.org/isni/0000000053175278.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Martin, Emily,</subfield>
+    <subfield code="d">1953-</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2001064907</subfield>
+    <subfield code="1">http://viaf.org/viaf/31648633</subfield>
+    <subfield code="1">http://isni.org/isni/0000000046149274.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Tipps, Emily,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2011124188</subfield>
+    <subfield code="1">http://viaf.org/viaf/178530508</subfield>
+    <subfield code="1">http://isni.org/isni/0000000356110340.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Hagstrom, Fred,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2004092552</subfield>
+    <subfield code="1">http://viaf.org/viaf/76034063</subfield>
+    <subfield code="1">http://isni.org/isni/0000000044963627.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Hockensmith, Josh,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2005074994</subfield>
+    <subfield code="1">http://viaf.org/viaf/34192624</subfield>
+    <subfield code="1">http://isni.org/isni/0000000048829388.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Peterson, Jessica,</subfield>
+    <subfield code="d">1976-</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2008177524</subfield>
+    <subfield code="1">http://viaf.org/viaf/39206818.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Spring, Jessica,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2003043122</subfield>
+    <subfield code="1">http://viaf.org/viaf/16911008.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Lappie, Joseph,</subfield>
+    <subfield code="d">1978-</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2011023519</subfield>
+    <subfield code="1">http://viaf.org/viaf/168482991</subfield>
+    <subfield code="1">http://isni.org/isni/0000000115415709.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Chen, Julie,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no94029031</subfield>
+    <subfield code="1">http://viaf.org/viaf/173963793</subfield>
+    <subfield code="1">http://isni.org/isni/0000000423322168.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Baldner, Karen,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2004087688</subfield>
+    <subfield code="1">http://viaf.org/viaf/66187896</subfield>
+    <subfield code="1">http://isni.org/isni/0000000044613264.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Hanmer, Karen,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2006059926</subfield>
+    <subfield code="1">http://viaf.org/viaf/41593890</subfield>
+    <subfield code="1">http://isni.org/isni/0000000049087371.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Holland, Kyle</subfield>
+    <subfield code="c">(Artist),</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2013042567</subfield>
+    <subfield code="1">http://viaf.org/viaf/300245531.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Faulkenberry, Lauren,</subfield>
+    <subfield code="d">1978-</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n2002022878</subfield>
+    <subfield code="1">http://viaf.org/viaf/4289113</subfield>
+    <subfield code="1">http://isni.org/isni/0000000045215495.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Rappoport, Lisa,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no99075173</subfield>
+    <subfield code="1">http://viaf.org/viaf/48867799.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Harris, Lyall F.,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2014018274</subfield>
+    <subfield code="1">http://viaf.org/viaf/306386885.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Avadenka, Lynne,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr92040032</subfield>
+    <subfield code="1">http://viaf.org/viaf/1550166479510407840008.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Chadwick, Macy,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2008122161</subfield>
+    <subfield code="1">http://viaf.org/viaf/71210276</subfield>
+    <subfield code="1">http://isni.org/isni/0000000047444507.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Blocker, Mare,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n85050213</subfield>
+    <subfield code="1">http://viaf.org/viaf/43263288</subfield>
+    <subfield code="1">http://isni.org/isni/0000000024932604.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Powers-Torrey, Marnie,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr2005000567</subfield>
+    <subfield code="1">http://viaf.org/viaf/44253184.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Riker, Maryann J.,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2007135233</subfield>
+    <subfield code="1">http://viaf.org/viaf/24392548.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Wagner-Lawler, Melissa,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2015149582</subfield>
+    <subfield code="1">http://viaf.org/viaf/183144782716708385660.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schaer, Miriam,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86057146</subfield>
+    <subfield code="1">http://viaf.org/viaf/6411314</subfield>
+    <subfield code="1">http://isni.org/isni/000000003728540X.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Chamlee, Rebecca,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2010030033</subfield>
+    <subfield code="1">http://viaf.org/viaf/107455469</subfield>
+    <subfield code="1">http://isni.org/isni/0000000076989979.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Silverberg, Robbin Ami,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr2002043168</subfield>
+    <subfield code="1">http://viaf.org/viaf/931166656944022710007.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Milroy, Rollin,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nb2004004761</subfield>
+    <subfield code="1">http://viaf.org/viaf/106362257</subfield>
+    <subfield code="1">http://isni.org/isni/0000000075190647.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bryant, Sarah</subfield>
+    <subfield code="q">(Sarah Herrick),</subfield>
+    <subfield code="d">1979-</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2010114429</subfield>
+    <subfield code="1">http://viaf.org/viaf/145827330.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Towers, Sha,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2020123041</subfield>
+    <subfield code="1">http://viaf.org/viaf/5160422842268030483.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Sharp, Sharon A.,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n90623632</subfield>
+    <subfield code="1">http://viaf.org/viaf/31153173.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Rossow, Sonja Greentree,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2012062992</subfield>
+    <subfield code="1">http://viaf.org/viaf/251021415.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Miller, Steve,</subfield>
+    <subfield code="d">1950-</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no91023787</subfield>
+    <subfield code="1">http://viaf.org/viaf/19244683</subfield>
+    <subfield code="1">http://isni.org/isni/0000000050823700.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schupbach-Gordon, Terry,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no98106323</subfield>
+    <subfield code="1">http://viaf.org/viaf/16847319</subfield>
+    <subfield code="1">http://isni.org/isni/000000004558563X.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Gordon, Toby,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n88098424</subfield>
+    <subfield code="1">http://viaf.org/viaf/50773850</subfield>
+    <subfield code="1">http://isni.org/isni/0000000029134054.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Rueter, William,</subfield>
+    <subfield code="d">1940-</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n78005507</subfield>
+    <subfield code="1">http://viaf.org/viaf/67715397</subfield>
+    <subfield code="1">http://isni.org/isni/0000000073708537.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">J. Willard Marriott Library.</subfield>
+    <subfield code="b">Book Arts Program,</subfield>
+    <subfield code="e">publisher.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr99031757</subfield>
+    <subfield code="1">http://viaf.org/viaf/137664271.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Basefile July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.4.A1</subfield>
+    <subfield code="b">F47 2020</subfield>
+    <subfield code="z">090</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00055061368</subfield>
+    <subfield code="l">aart</subfield>
+    <subfield code="n">dls</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="t">78</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="u">-</subfield>
+    <subfield code="j">Cataloged FY 2020-21</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">03-04-21</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">utu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ZYS8GMX2</subfield><subfield code="b">b10516889</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

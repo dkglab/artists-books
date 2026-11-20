@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01473cam a2200409 c 4500</leader>
+  <controlfield tag="001">500406820</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260615213346.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">050928s2003    xxk||||| r    00| ||eng c</controlfield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">008978892</subfield>
+    <subfield code="2">UK</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">190447702X</subfield>
+    <subfield code="9">1-904477-02-X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)500406820</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV500406820</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)845979824</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(AT-OBV)AC04912030</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">929.4</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">17.57</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Finlay, Alec</subfield>
+    <subfield code="d">1966-</subfield>
+    <subfield code="0">(DE-588)12917694X</subfield>
+    <subfield code="0">(DE-627)390358851</subfield>
+    <subfield code="0">(DE-576)174556764</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Bynames</subfield>
+    <subfield code="b">an anthology of invented names for real people</subfield>
+    <subfield code="c">Elect Finely [i.e. Alec Finaly]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Edinburgh</subfield>
+    <subfield code="b">Morning Star/Baltic</subfield>
+    <subfield code="c">c2003</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[45] Bl.</subfield>
+    <subfield code="c">18 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Author's name on cover Epic Filly</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Names</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Verzeichnis</subfield>
+    <subfield code="0">(DE-588)4188171-0</subfield>
+    <subfield code="0">(DE-627)105266639</subfield>
+    <subfield code="0">(DE-576)210051078</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4144373-1</subfield>
+    <subfield code="0">(DE-627)105598801</subfield>
+    <subfield code="0">(DE-576)209733543</subfield>
+    <subfield code="a">Beiname</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4191412-0</subfield>
+    <subfield code="0">(DE-627)105242233</subfield>
+    <subfield code="0">(DE-576)210073292</subfield>
+    <subfield code="a">Berühmte Persönlichkeit</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">DE-101</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1206408863</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">KIOSK 3063</subfield>
+    <subfield code="g">KIOSK:3063::::</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">17.57</subfield>
+    <subfield code="j">Namenkunde</subfield>
+    <subfield code="0">(DE-627)106422146</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">R5BMSNW2</subfield><subfield code="b">9781904477020</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

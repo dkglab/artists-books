@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02219cam a2200481 c 4500</leader>
+  <controlfield tag="001">345794192</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250126044829.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">020418s1995    gw |||||      00| ||ger c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3896110039</subfield>
+    <subfield code="q">(Oktagon)</subfield>
+    <subfield code="9">3-89611-003-9</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3928071246</subfield>
+    <subfield code="q">(Portikus)</subfield>
+    <subfield code="9">3-928071-24-6</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)345794192</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)9345794190</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV345794192</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)248090181</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">47</subfield>
+    <subfield code="a">45</subfield>
+    <subfield code="2">sdnb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">21.40</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Montparnasse - Andreas Gursky</subfield>
+    <subfield code="b">[anlässlich der Ausstellung "Andreas Gursky", 15. Juli - 27. August 1995 im Portikus, Frankfurt am Main]</subfield>
+    <subfield code="c">[Hrsg. Portikus, Frankfurt am Main. Red. Ursula Trübenbach]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Stuttgart</subfield>
+    <subfield code="b">Oktagon</subfield>
+    <subfield code="c">1995</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Frankfurt am Main</subfield>
+    <subfield code="b">Portikus</subfield>
+    <subfield code="c">1995</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)118940805</subfield>
+    <subfield code="0">(DE-627)079718868</subfield>
+    <subfield code="0">(DE-576)21046531X</subfield>
+    <subfield code="a">Gursky, Andreas</subfield>
+    <subfield code="d">1955-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4045895-7</subfield>
+    <subfield code="0">(DE-627)104434880</subfield>
+    <subfield code="0">(DE-576)209067160</subfield>
+    <subfield code="a">Fotografie</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">g</subfield>
+    <subfield code="0">(DE-588)4396031-5</subfield>
+    <subfield code="0">(DE-627)191446718</subfield>
+    <subfield code="0">(DE-576)21199765X</subfield>
+    <subfield code="a">Rue du Commandant René Mouchotte</subfield>
+    <subfield code="g">Paris</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="3">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4023693-6</subfield>
+    <subfield code="0">(DE-627)106302191</subfield>
+    <subfield code="0">(DE-576)208950974</subfield>
+    <subfield code="a">Haus</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">DE-101</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Gursky, Andreas</subfield>
+    <subfield code="d">1955-</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)118940805</subfield>
+    <subfield code="0">(DE-627)079718868</subfield>
+    <subfield code="0">(DE-576)21046531X</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Trübenbach, Ursula</subfield>
+    <subfield code="e">Red.</subfield>
+    <subfield code="4">adp</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Portikus</subfield>
+    <subfield code="0">(DE-588)516149-6</subfield>
+    <subfield code="0">(DE-627)10157861X</subfield>
+    <subfield code="0">(DE-576)193022389</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="711" ind1="2" ind2=" ">
+    <subfield code="a">Ausstellung Andreas Gursky</subfield>
+    <subfield code="d">1995</subfield>
+    <subfield code="c">Frankfurt, Main</subfield>
+    <subfield code="0">(DE-588)2149787-4</subfield>
+    <subfield code="0">(DE-627)188892591</subfield>
+    <subfield code="0">(DE-576)195508297</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">552928488</subfield>
+    <subfield code="b">DE-Wis1</subfield>
+    <subfield code="9">Wis 1</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">1996 B 191</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3628324238</subfield>
+    <subfield code="b">DE-2279</subfield>
+    <subfield code="9">2279</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3668685509</subfield>
+    <subfield code="b">DE-L330</subfield>
+    <subfield code="9">L 330</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">SQ 08 Gursk A 1995:2/1-3</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4571547412</subfield>
+    <subfield code="b">DE-N39</subfield>
+    <subfield code="9">N 39</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">LA [50 Gur] / 95</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">21.40</subfield>
+    <subfield code="j">Photographie: Allgemeines</subfield>
+    <subfield code="0">(DE-627)10640573X</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">SB2DPVPG</subfield><subfield code="b">9783928071246</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

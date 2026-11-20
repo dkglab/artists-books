@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01939cam a2200337 c 4500</leader>
+  <controlfield tag="001">735034893</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250219233146.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">130129s2009    xxu|||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)735034893</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)OBVAC10690186</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(AT-OBV)AC10690186</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Boehme, Doro</subfield>
+    <subfield code="0">(DE-588)1030539278</subfield>
+    <subfield code="0">(DE-627)735456127</subfield>
+    <subfield code="0">(DE-576)378390279</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Various blank pages</subfield>
+    <subfield code="b">and ink</subfield>
+    <subfield code="c">Doro Boehme and Eric Baskauskas</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Chicago]</subfield>
+    <subfield code="b">D. Boehme &amp; E. Baskauskas, 2010, ©2009</subfield>
+    <subfield code="c">2009</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[34] Bl.</subfield>
+    <subfield code="b">überw. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">The book references the use of blank pages in Ed Ruscha's work, specifically "Nine Swimming Pools", "Colored People", "A Few Palm Trees", and "Various Small Fires (And Milk)", as well as the significance of the artist's works within the holdings of the Joan Flasch Artists' Book Collection. The book reproduces blank pages that might have been scanned from these titles, adds blank pages of its own, and depicts a photograph of the collection's stamp used for cataloging purposes.; Joint author: Eric Baskauskas.; Edition of 500 copies printed.</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)119255588</subfield>
+    <subfield code="0">(DE-627)080058574</subfield>
+    <subfield code="0">(DE-576)211808865</subfield>
+    <subfield code="a">Ruscha, Ed</subfield>
+    <subfield code="d">1937-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4049716-1</subfield>
+    <subfield code="0">(DE-627)104675152</subfield>
+    <subfield code="0">(DE-576)209083182</subfield>
+    <subfield code="a">Rezeption</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)1030539278</subfield>
+    <subfield code="0">(DE-627)735456127</subfield>
+    <subfield code="0">(DE-576)378390279</subfield>
+    <subfield code="a">Boehme, Doro</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="3">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)1138386294</subfield>
+    <subfield code="0">(DE-627)89593034X</subfield>
+    <subfield code="0">(DE-576)492534519</subfield>
+    <subfield code="a">Baskauskas, Eric</subfield>
+    <subfield code="d">1984-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">DE-101</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Baskauskas, Eric</subfield>
+    <subfield code="d">1984-</subfield>
+    <subfield code="0">(DE-588)1138386294</subfield>
+    <subfield code="0">(DE-627)89593034X</subfield>
+    <subfield code="0">(DE-576)492534519</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">EDRWNI4Q</subfield><subfield code="b">boehme / various blank pages</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

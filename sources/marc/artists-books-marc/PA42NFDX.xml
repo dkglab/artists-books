@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03495cam a2200685 c 4500</leader>
+  <controlfield tag="001">1109609760</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260424122346.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">940621s1974    xx ||||| c    00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1109609760</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)039609766</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ039609766</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1532657862</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)312018537</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,10</subfield>
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LI 75183</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/96983:</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Dieter Roth - Bücher</subfield>
+    <subfield code="b"> Ausstellung 10. Mai - 30. Juni 1974, Kestner-Gesellschaft Hannover</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Hannover</subfield>
+    <subfield code="b">Kestner Ges.</subfield>
+    <subfield code="c">1974</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="3">
+    <subfield code="a">Stuttgart</subfield>
+    <subfield code="b">Staib + Mayer</subfield>
+    <subfield code="c">1974</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[72] Bl.</subfield>
+    <subfield code="b">überw. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Katalog / Kestner-Gesellschaft</subfield>
+    <subfield code="v">1974,3</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Dieser Katalog erschien im Mai 1974 zur Ausstellung "Bücher" von Dieter Roth im Haus der Kestner Gesellschaft Hannover. Umschlag und Bildteil sind Originalgrafiken von Dieter Roth"</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung/Langzeitarchivierung gewährleistet</subfield>
+    <subfield code="f">SLG</subfield>
+    <subfield code="x">XA-DE-BW</subfield>
+    <subfield code="z">Sammlung Robert Häusser</subfield>
+    <subfield code="2">pdager</subfield>
+    <subfield code="5">DE-180</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung/Langzeitarchivierung gewährleistet</subfield>
+    <subfield code="f">SSG</subfield>
+    <subfield code="x">XA-DE-BW</subfield>
+    <subfield code="2">pdager</subfield>
+    <subfield code="5">DE-16</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="x">Kestner Gesellschaft</subfield>
+    <subfield code="y">10.05.1974-30.06.1974</subfield>
+    <subfield code="z">Hannover</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)118603086</subfield>
+    <subfield code="0">(DE-627)079394639</subfield>
+    <subfield code="0">(DE-576)209088877</subfield>
+    <subfield code="a">Roth, Dieter</subfield>
+    <subfield code="d">1930-1998</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Roth, Dieter</subfield>
+    <subfield code="d">1930-1998</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)118603086</subfield>
+    <subfield code="0">(DE-627)079394639</subfield>
+    <subfield code="0">(DE-576)209088877</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Kestner Gesellschaft</subfield>
+    <subfield code="0">(DE-588)2015509-8</subfield>
+    <subfield code="0">(DE-627)10186826X</subfield>
+    <subfield code="0">(DE-576)191695262</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Kestner Gesellschaft</subfield>
+    <subfield code="t">Katalog</subfield>
+    <subfield code="v">1974,3</subfield>
+    <subfield code="9">1974,3</subfield>
+    <subfield code="w">(DE-627)130109614</subfield>
+    <subfield code="w">(DE-576)002871815</subfield>
+    <subfield code="w">(DE-600)503628-8</subfield>
+    <subfield code="7">am</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2232679543</subfield>
+    <subfield code="b">DE-25</subfield>
+    <subfield code="9">25</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">TM 77/1746</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2232679535</subfield>
+    <subfield code="b">DE-Frei123</subfield>
+    <subfield code="9">Frei 123</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Frei 123: M/Roth,Di/10/501</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2232679527</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4128356042</subfield>
+    <subfield code="b">DE-180</subfield>
+    <subfield code="9">180</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">HR 0782</subfield>
+    <subfield code="h">T-MAG</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2636488049</subfield>
+    <subfield code="b">DE-16</subfield>
+    <subfield code="9">16</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">75 A 186</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2232679578</subfield>
+    <subfield code="b">DE-16-26</subfield>
+    <subfield code="9">16/26</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">M 6719/1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2232679632</subfield>
+    <subfield code="b">DE-93-46</subfield>
+    <subfield code="9">93/46</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">R Rot 286/20</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2232679640</subfield>
+    <subfield code="b">DE-Lg1</subfield>
+    <subfield code="9">Lg 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Kun 2ff Rot</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">293109630X</subfield>
+    <subfield code="b">DE-Mar1</subfield>
+    <subfield code="9">Mar 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">S14.5 (Roth,Die.)</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">262876380X</subfield>
+    <subfield code="b">DE-N1</subfield>
+    <subfield code="9">N 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">8 Kz ROT 026/2</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2232679500</subfield>
+    <subfield code="b">DE-Zwi2</subfield>
+    <subfield code="9">Zwi 2</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">75/8925</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2232679519</subfield>
+    <subfield code="b">DE-D13</subfield>
+    <subfield code="9">D 13</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">274683023X</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2232679594</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">B Roth10 0001</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2232679616</subfield>
+    <subfield code="b">DE-981</subfield>
+    <subfield code="9">981</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2504018428</subfield>
+    <subfield code="b">DE-Ka89</subfield>
+    <subfield code="9">Ka 89</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Roth Dieter 1974</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2232679551</subfield>
+    <subfield code="b">DE-He128</subfield>
+    <subfield code="9">He 128</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">MO ROT-d 2</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2605752593</subfield>
+    <subfield code="b">DE-Stg283</subfield>
+    <subfield code="9">Stg 283</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Roth, Dieter 1974</subfield>
+    <subfield code="h">Künstlermonographien</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2929491930</subfield>
+    <subfield code="b">DE-1973</subfield>
+    <subfield code="9">1973</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Magazin Kü Roth, D. 1974</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4163959785</subfield>
+    <subfield code="b">DE-2279</subfield>
+    <subfield code="9">2279</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="s">DE-16</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LI 75183</subfield>
+    <subfield code="b">Roth, Dieter</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Künstler-Monografien</subfield>
+    <subfield code="k">Alphabetische Künstlerliste</subfield>
+    <subfield code="k">Künstler R</subfield>
+    <subfield code="k">Roth, Dieter</subfield>
+    <subfield code="0">(DE-627)1270699660</subfield>
+    <subfield code="0">(DE-625)rvk/96983:</subfield>
+    <subfield code="0">(DE-576)200699660</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">PA42NFDX</subfield><subfield code="b">roth / katalog der bücher</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

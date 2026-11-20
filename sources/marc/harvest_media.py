@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Harvest SSID -> IIIF image identifier via the Forum redirect chain (issue #9).
 
+NOTE (#168): since 2026-11-20 `forum.jstor.org` returns 403 for every SSID, so
+this route appears to be gone; the rows it produced are frozen. New SSIDs come in
+by hand through `ssid-iiif-links.csv` and `import_media.py` instead.
+
 This is the *working* route to the IIIF identifiers. `harvest_iiif.py` asks
 `www.jstor.org/content-service/` directly and is refused: that endpoint is gated
 against automation, not merely throttled (see `scratch/README.md`). This script

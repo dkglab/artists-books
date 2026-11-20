@@ -9,16 +9,17 @@
 # stay in lockstep). The heading is the ordered subfields $a $x $y $z $v joined
 # with " -- ", rebuilt in document order via an ORDERed sub-SELECT feeding
 # GROUP_CONCAT (see the long note in mine-occurrences.rq for the ordering and the
-# one variable-predicate walk it requires). ?recs counts distinct archive entries
+# one variable-predicate walk it requires). ?recs counts distinct files
 # (one .xml per record), robust regardless of per-record blank-node identity.
 #
-# Reads the per-record MARC zip archive (#81) via the nested Archive->XML
-# triplifier pattern (the outer fx:archive.matches listing + inner per-record
-# fx:location ?file + fx:from-archive).
+# Reads the per-record MARC directory (#81) via the nested Folder->XML
+# triplifier pattern (the outer fxe:archive.matches listing + inner per-record
+# fxe:location ?file).
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX xyz: <http://sparql.xyz/facade-x/data/>
 PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
+PREFIX fxe: <http://sparql.xyz/facade-x/engine/>
 PREFIX marc:<http://www.loc.gov/MARC21/slim#>
 SELECT
   ?cluster
@@ -36,15 +37,14 @@ WHERE {
       {
         SELECT ?file ?tag ?df ?scheme ?dollar0 ?idx ?part
         WHERE {
-          SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.zip> {
-            fx:properties fx:archive.matches ".*\\.xml" .
-            ?archive fx:anySlot ?file .
+          SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc/> {
+            fxe:properties fxe:archive.matches ".*\\.xml" .
+            ?folder fx:anySlot ?file .
 
             SERVICE <x-sparql-anything:> {
-              fx:properties
-                fx:location ?file ;
-                fx:from-archive "sources/marc/artists-books-marc.zip" ;
-                fx:media-type "application/xml" .
+              fxe:properties
+                fxe:location ?file ;
+                fxe:media-type "application/xml" .
 
               ?record a marc:record .
               ?record fx:anySlot ?df .
@@ -56,13 +56,13 @@ WHERE {
               OPTIONAL {
                 SELECT ?df (MIN(?d0) AS ?dollar0) WHERE {
                   ?df fx:anySlot ?sf0 . ?sf0 xyz:code "0" ; rdf:_1 ?zeroRaw .
-                  BIND(STR(?zeroRaw) AS ?d0)
+                  BIND(REPLACE(STR(?zeroRaw), "^\\s+|\\s+$", "") AS ?d0)
                 } GROUP BY ?df
               }
               OPTIONAL {
                 SELECT ?df (MIN(?s2) AS ?schemeFrom2) WHERE {
                   ?df fx:anySlot ?sf2 . ?sf2 xyz:code "2" ; rdf:_1 ?sr .
-                  BIND(LCASE(REPLACE(STR(?sr), "\\.$", "")) AS ?s2)
+                  BIND(LCASE(REPLACE(REPLACE(STR(?sr), "^\\s+|\\s+$", ""), "\\.$", "")) AS ?s2)
                 } GROUP BY ?df
               }
               # vocabulary: $2 else 650 second-indicator map (see mine-occurrences.rq).
@@ -82,7 +82,7 @@ WHERE {
               BIND(xsd:integer(STRAFTER(STR(?p), "#_")) AS ?idx)
               ?sf xyz:code ?code ; rdf:_1 ?v .
               FILTER(?code IN ("a", "x", "y", "z", "v"))
-              BIND(REPLACE(REPLACE(STR(?v), "[\\s.]+$", ""), "\\s+$", "") AS ?part)
+              BIND(REPLACE(REPLACE(REPLACE(STR(?v), "^\\s+|\\s+$", ""), "[\\s.]+$", ""), "\\s+$", "") AS ?part)
             }
           }
         }

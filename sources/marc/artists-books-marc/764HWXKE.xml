@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01393nam a2200373ua 4500</leader>
+  <controlfield tag="001">991005765279707141</controlfield>
+  <controlfield tag="005">20230215115505.0</controlfield>
+  <controlfield tag="008">871222s1985    xx a          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b5843364-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)84609175</subfield>
+    <subfield code="9">ExL</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">NYMX87-B7831</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="c">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">T343 A12o</subfield>
+    <subfield code="i">12/22/87 C</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Tetenbaum, Barbara</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86026075</subfield>
+    <subfield code="1">http://viaf.org/viaf/13785788</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">[Old lady book] /</subfield>
+    <subfield code="c">B. Tetenbaum.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[S.l. :</subfield>
+    <subfield code="b">s.n.],</subfield>
+    <subfield code="c">1985.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[28] p. :</subfield>
+    <subfield code="b">chiefly ill. ;</subfield>
+    <subfield code="c">18 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">1985.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">200722</subfield>
+    <subfield code="d">081121</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081205</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b5843364</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">27782 (NNMoMA)</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">T343 A12o</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mma</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">2</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i14254256</subfield>
+    <subfield code="z">081205</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">LTI 11/14/2008</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="l">AB</subfield>
+    <subfield code="u">AB per CP</subfield>
+    <subfield code="i">12/22/87 C</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">1</subfield>
+    <subfield code="c">081119</subfield>
+    <subfield code="d">m</subfield>
+    <subfield code="e">1</subfield>
+    <subfield code="f">-</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mm</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">12/22/87</subfield>
+    <subfield code="t">c</subfield>
+    <subfield code="s">9114</subfield>
+    <subfield code="n">NNMoMA</subfield>
+    <subfield code="w">NYMX87B7831</subfield>
+    <subfield code="d">12/22/87</subfield>
+    <subfield code="c">DAS</subfield>
+    <subfield code="b">DAS</subfield>
+    <subfield code="l">NYMX</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991005765279707141</subfield>
+    <subfield code="8">2293647000007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMA</subfield>
+    <subfield code="c">MoMA Manhattan Artists' Books</subfield>
+    <subfield code="d">T343 A12o</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mma</subfield>
+    <subfield code="k">1</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Museum of Modern Art Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">764HWXKE</subfield><subfield code="b">tetenbaum / old lady book</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

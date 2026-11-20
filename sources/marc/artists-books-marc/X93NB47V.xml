@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01996cam a2200301Ia 4500</leader>
+  <controlfield tag="001">ocm11329368</controlfield>
+  <controlfield tag="005">20250801111148.0</controlfield>
+  <controlfield tag="008">880906s1984    xx a     b    001 0 eng d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9070149095</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">EEM</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">EEM</subfield>
+    <subfield code="d">m/c</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">LeWitt, Sol,</subfield>
+    <subfield code="d">1928-2007.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79092583</subfield>
+    <subfield code="1">http://viaf.org/viaf/84632546</subfield>
+    <subfield code="1">http://isni.org/isni/000000011450059X.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Sol LeWitt wall drawings 1968-1984 :</subfield>
+    <subfield code="b">[Stedelijk Museum, Amsterdam, Van Abbemuseum, Endhoven, Wadsworth Atheneum, Hartford, Ct. : 1984].</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Place of publication not identified] :</subfield>
+    <subfield code="b">[publisher not identified],</subfield>
+    <subfield code="c">1984.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">206 pages :</subfield>
+    <subfield code="b">illustrations (part color) ;</subfield>
+    <subfield code="c">24 x 29 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references and index.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">LeWitt, Sol,</subfield>
+    <subfield code="d">1928-2007.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79092583</subfield>
+    <subfield code="1">http://viaf.org/viaf/84632546</subfield>
+    <subfield code="1">http://isni.org/isni/000000011450059X.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">LeWitt, Sol,</subfield>
+    <subfield code="d">1928-2007.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1441305.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="1" ind2=" ">
+    <subfield code="a">Amsterdam (Netherlands).</subfield>
+    <subfield code="b">Stedelijk Museum.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79058405</subfield>
+    <subfield code="1">http://viaf.org/viaf/125979197</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121078104.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Stedelijk Van Abbemuseum.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79139080</subfield>
+    <subfield code="1">http://viaf.org/viaf/145035401</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121768447.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Wadsworth Atheneum.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82118545</subfield>
+    <subfield code="1">http://viaf.org/viaf/123797534.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2=" ">
+    <subfield code="a">Wall drawings.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">xx </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">X93NB47V</subfield><subfield code="b">b1993775</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

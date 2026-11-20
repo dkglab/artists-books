@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01467cam a2200349Ia 4500</leader>
+  <controlfield tag="001">9925455430001551</controlfield>
+  <controlfield tag="005">20160303202032.0</controlfield>
+  <controlfield tag="008">040413s1999    maua     bc   000 0 eng d</controlfield>
+  <controlfield tag="009">639470</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0873910516</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780873910514</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)ocm44181104</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">2639470</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CMalG)639470-gettydb-Voyager</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">ZCU</subfield>
+    <subfield code="c">ZCU</subfield>
+    <subfield code="d">RSD</subfield>
+    <subfield code="d">OCLCQ</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">JPGA</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">702.81</subfield>
+    <subfield code="2">21</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.G29</subfield>
+    <subfield code="b">A4 1999</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Plesch, Véronique,</subfield>
+    <subfield code="d">1957-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Illuminating words :</subfield>
+    <subfield code="b">the artist's books of Christopher Gausby /</subfield>
+    <subfield code="c">Véronique Plesch.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Northampton, Mass. :</subfield>
+    <subfield code="b">Smith College Museum of Art,</subfield>
+    <subfield code="c">1999.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[36] p. :</subfield>
+    <subfield code="b">col. ill. ;</subfield>
+    <subfield code="c">29 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This catalogue accompanies the exhibition ... Smith College Museum of Art, 28 October-22 December, 1999 ; Colby College Museum of Art, 5 March-2 April, 2000 ; the exhibition was curated by Martin Antonetti and Véronique Plesch."--Colophon.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Gausby, Christopher</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Antonetti, Martin.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Gausby, Christopher.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Smith College.</subfield>
+    <subfield code="b">Museum of Art.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Colby College.</subfield>
+    <subfield code="b">Museum of Art.</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">xRSQ</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">JPG</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">9925455430001551</subfield>
+    <subfield code="8">22127170920001551</subfield>
+    <subfield code="a">01GRI_INST</subfield>
+    <subfield code="b">GC</subfield>
+    <subfield code="c">OUT OF PRINT -- UNABLE TO FIND COPY FOR PURCHASE</subfield>
+    <subfield code="d">N7433.4.G29 A4 1999</subfield>
+    <subfield code="e">check_holdings</subfield>
+    <subfield code="j">ORDERSQ</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">GRI General Collections</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">8D897TC6</subfield><subfield code="b">0873910516</subfield><subfield code="c">isbn</subfield><subfield code="d">getty</subfield></datafield></record>
+</collection>

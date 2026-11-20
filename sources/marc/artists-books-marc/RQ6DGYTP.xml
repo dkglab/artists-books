@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01635cam a2200397 c 4500</leader>
+  <controlfield tag="001">056590970</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220421131038.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">970323s1976    gw |||||      00| ||eng c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">82,B06,0433</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">820288330</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)056590970</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV056590970</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)844041134</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">46</subfield>
+    <subfield code="2">sdnb</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Kaprow, Allan</subfield>
+    <subfield code="d">1927-2006</subfield>
+    <subfield code="0">(DE-588)119389894</subfield>
+    <subfield code="0">(DE-627)080202586</subfield>
+    <subfield code="0">(DE-576)212339923</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Sweet wall</subfield>
+    <subfield code="b">testimonials</subfield>
+    <subfield code="c">Allan Kaprow. [Photos: Dick Higgins]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Berlin</subfield>
+    <subfield code="b">Edition René Block in Zusammenarbeit mit dem Berliner Künstlerprogramm des DAAD</subfield>
+    <subfield code="c">1976</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[16] Bl</subfield>
+    <subfield code="b">überwiegend Ill</subfield>
+    <subfield code="c">23 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)119389894</subfield>
+    <subfield code="0">(DE-627)080202586</subfield>
+    <subfield code="0">(DE-576)212339923</subfield>
+    <subfield code="a">Kaprow, Allan</subfield>
+    <subfield code="d">1927-2006</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Higgins, Dick</subfield>
+    <subfield code="d">1938-1998</subfield>
+    <subfield code="0">(DE-588)121184854</subfield>
+    <subfield code="0">(DE-627)081140673</subfield>
+    <subfield code="0">(DE-576)213595397</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Deutscher Akademischer Austauschdienst</subfield>
+    <subfield code="b">Berliner Künstlerprogramm</subfield>
+    <subfield code="0">(DE-588)2042726-8</subfield>
+    <subfield code="0">(DE-627)102788596</subfield>
+    <subfield code="0">(DE-576)191923893</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">90318317X</subfield>
+    <subfield code="b">DE-Ha125</subfield>
+    <subfield code="9">Ha 125</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">Kaprow 1976</subfield>
+    <subfield code="g">A 26787</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4341172654</subfield>
+    <subfield code="b">DE-33</subfield>
+    <subfield code="9">33</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">8933</subfield>
+    <subfield code="g">Fh</subfield>
+    <subfield code="h">sms</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">811035700</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB Marzona 1 973</subfield>
+    <subfield code="g">NB::Marzona:1:973:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+    <subfield code="j">Bildende Künstler</subfield>
+    <subfield code="0">(DE-627)181571080</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">RQ6DGYTP</subfield><subfield code="b">kaprow / sweet wall testimonials</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

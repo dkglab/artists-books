@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03699cam a2200673 i 4500</leader>
+  <controlfield tag="001">99155256954303941</controlfield>
+  <controlfield tag="005">20250421213018.0</controlfield>
+  <controlfield tag="008">200217t20202020maua     b    001 0 eng d</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">2019955427</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780262044240</subfield>
+    <subfield code="q">(hardcover)</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0262044242</subfield>
+    <subfield code="q">(hardcover)</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1140703912</subfield>
+    <subfield code="z">(OCoLC)1228349970</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">YDX</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">YDX</subfield>
+    <subfield code="d">BDX</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">AS0</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">TXI</subfield>
+    <subfield code="d">FNE</subfield>
+    <subfield code="d">PWC</subfield>
+    <subfield code="d">CNWPU</subfield>
+    <subfield code="d">GYG</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">JYJ</subfield>
+    <subfield code="d">IBI</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">CUT</subfield>
+    <subfield code="d">MYA</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">IL4J6</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">MCO</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">S1C</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">TR183</subfield>
+    <subfield code="b">.C358 2020</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">770</subfield>
+    <subfield code="2">23</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Campany, David</subfield>
+    <subfield code="e">author.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">On photo-graphs /</subfield>
+    <subfield code="c">David Campany.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="0">
+    <subfield code="a">Cambridge, Massachusetts :</subfield>
+    <subfield code="b">The MIT Press,</subfield>
+    <subfield code="c">[2020]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©2020</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">264 pages :</subfield>
+    <subfield code="b">illustrations (some color) ;</subfield>
+    <subfield code="c">23 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="386" ind1=" " ind2=" ">
+    <subfield code="a">Men</subfield>
+    <subfield code="2">lcdgt</subfield>
+  </datafield>
+  <datafield tag="386" ind1=" " ind2=" ">
+    <subfield code="m">Nationality/regional group:</subfield>
+    <subfield code="n">nat</subfield>
+    <subfield code="a">New Yorkers (New York State)</subfield>
+    <subfield code="2">lcdgt</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references (pages 257-259) and index.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2="0">
+    <subfield code="g">Introduction --</subfield>
+    <subfield code="t">The photographs --</subfield>
+    <subfield code="t">List of works --</subfield>
+    <subfield code="t">Further Reading.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Campany presents an exploration of photography in 120 photographs. Proceeding not by chronology or genre or photographer, Campany's eclectic selection unfolds according to its own logic. We see work by Henri Cartier-Bresson, William Eggleston, Helen Levitt, Garry Winogrand, Louise Lawler, Andreas Gursky, and Rineke Dijkstra. There is fashion photography by William Klein, one of Vivian Maier's contact sheets, and a carefully staged scene by Gregory Crewdson, as well as images culled from magazines and advertisements. Each of the 120 photographs is accompanied by Campany's commentary, considering the history of that image and its creator, interpreting its content and meaning, and connecting and contextualizing it within visual culture. Image by image, we absorb and appreciate Campany's take on photography and its history. --From publisher description.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photography</subfield>
+    <subfield code="x">History</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photography</subfield>
+    <subfield code="x">Philosophy</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photobooks</subfield>
+    <subfield code="x">History.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="6">
+    <subfield code="a">Photographie</subfield>
+    <subfield code="x">Histoire.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="6">
+    <subfield code="a">Photographie</subfield>
+    <subfield code="x">Philosophie.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="6">
+    <subfield code="a">Livres photos</subfield>
+    <subfield code="x">Histoire.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Photobooks</subfield>
+    <subfield code="2">fast</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Photography</subfield>
+    <subfield code="2">fast</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Photography</subfield>
+    <subfield code="x">Philosophy</subfield>
+    <subfield code="2">fast</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Photography</subfield>
+    <subfield code="x">History.</subfield>
+    <subfield code="2">nli</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Photography</subfield>
+    <subfield code="x">Philosophy.</subfield>
+    <subfield code="2">nli</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">photobooks.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">illustrated books.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Photobooks</subfield>
+    <subfield code="2">fast</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Illustrated works</subfield>
+    <subfield code="2">fast</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">History</subfield>
+    <subfield code="2">fast</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Photobooks</subfield>
+    <subfield code="2">lcgft</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Illustrated works</subfield>
+    <subfield code="2">lcgft</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Livres de photographies.</subfield>
+    <subfield code="2">rvmgf</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ouvrages illustrés.</subfield>
+    <subfield code="2">rvmgf</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="i">has work:</subfield>
+    <subfield code="a">On photo-graphs (Text)</subfield>
+    <subfield code="1">https://id.oclc.org/worldcat/entity/E39PCGPjddhyG9RtdxR77Jmx8P</subfield>
+    <subfield code="4">https://id.oclc.org/worldcat/ontology/hasWork</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-01-04</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-03-05</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 650</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-03-22</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 655</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2023-08-04</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 020, 520</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2023-11-22</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 655</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2024-01-27</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 758</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2024-03-12</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2024-11-07</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 386</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2025-04-21</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 505</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ZR7HF4MW</subfield><subfield code="b">horvitz / photo graphs</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

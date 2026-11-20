@@ -1,5 +1,6 @@
 PREFIX xyz: <http://sparql.xyz/facade-x/data/>
 PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX fxe: <http://sparql.xyz/facade-x/engine/>
 PREFIX ab: <https://dkglab.github.io/ns/artists-books/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -25,9 +26,10 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 # (book + journalArticle + webpage), so ab:ReferenceWork is a subclass of
 # schema:CreativeWork (docs/vocab.ttl). Most fields come from
 # sources/reference-works.csv (the canonical RW list from the Phase-0 dedup);
-# the harvested MARC (sources/marc/reference-works-marc.zip) supplies the
-# creators — every 1xx/7xx field, with relator roles and identity URIs, exactly
-# as artists-books.rq reads them (#40, #46) — and the OCLC number / WorldCat
+# the harvested MARC (sources/marc/reference-works-marc/) supplies the
+# creators — every 1xx/7xx field, with relator roles, read exactly as
+# artists-books.rq reads them (#40, #46), their identity looked up in the shared
+# sources/creators/agents.csv (#170) — and the OCLC number / WorldCat
 # link (001, #51). Extent/dimensions are not read from the reference MARC.
 #
 # The canonical RW keys are lib-3 keys, and the reference MARC was harvested
@@ -54,7 +56,7 @@ CONSTRUCT {
     .
 
   ?creator a bf:Agent ;
-    rdfs:label ?creator_name ;
+    rdfs:label ?creator_label ;
     .
 
   ?refPublication a bf:Publication ;
@@ -76,9 +78,9 @@ CONSTRUCT {
 WHERE {
   SERVICE <x-sparql-anything:location=sources/reference-works.csv> {
     # Facade-X configuration for CSV data
-    fx:properties
-      fx:csv.headers "true" ;  # create xyz:header properties
-      fx:csv.null-string  "" ; # treat empty strings as null values
+    fxe:properties
+      fxe:csv.headers "true" ;  # create xyz:header properties
+      fxe:csv.null-string  "" ; # treat empty strings as null values
       .
 
     # For each row in reference-works.csv. Only canonicalKey and title are
@@ -108,11 +110,11 @@ WHERE {
   }
 
   # Creators and the OCLC number from the harvested reference MARC. The MARC is
-  # a per-record archive (#81): sources/marc/reference-works-marc.zip holds one
+  # a per-record directory (#81): sources/marc/reference-works-marc/ holds one
   # <itemKey>.xml document per record, read with SPARQL-Anything's nested
-  # Archive -> XML triplifiers. The outer archive read lists the entries
-  # (fx:archive.matches) and the inner SERVICE triplifies just that one record
-  # (fx:location ?file + fx:from-archive), joining to the CSV row on the record's
+  # Folder -> XML triplifiers. The outer folder read lists the files
+  # (fxe:archive.matches) and the inner SERVICE triplifies just that one record
+  # (fxe:location ?file), joining to the CSV row on the record's
   # own 999 $a — the key is read from the record data, not the filename.
   # Per-record traversal uses fx:anySlot (docs/QUERY-PERFORMANCE.md).
   #
@@ -124,26 +126,22 @@ WHERE {
   # creatorless.
   #
   # One group per (record, creator field, role): SAMPLE collapses the per-field
-  # subfield matches, so each creator field yields exactly one ?creator, while a
+  # subfield matches, so each creator field yields exactly one $a name, while a
   # field with several $e roles keeps every one of them.
   OPTIONAL {
     {
       SELECT ?canonical_key ?df ?ctag ?role_term ?contributionType
              (SAMPLE(?control_number_raw) AS ?control_number)
              (SAMPLE(?name_x)  AS ?creator_name)
-             (SAMPLE(?viaf_x)  AS ?viaf)
-             (SAMPLE(?isni_x)  AS ?isni)
-             (SAMPLE(?lc_id_x) AS ?lc_id)
       WHERE {
-        SERVICE <x-sparql-anything:location=sources/marc/reference-works-marc.zip> {
-          fx:properties fx:archive.matches ".*\\.xml" .
-          ?archive fx:anySlot ?file .
+        SERVICE <x-sparql-anything:location=sources/marc/reference-works-marc/> {
+          fxe:properties fxe:archive.matches ".*\\.xml" .
+          ?folder fx:anySlot ?file .
 
           SERVICE <x-sparql-anything:> {
-            fx:properties
-              fx:location ?file ;
-              fx:from-archive "sources/marc/reference-works-marc.zip" ;
-              fx:media-type "application/xml" .
+            fxe:properties
+              fxe:location ?file ;
+              fxe:media-type "application/xml" .
 
             ?record a marc:record .
 
@@ -184,39 +182,17 @@ WHERE {
               # $a — name. Strip trailing cataloguing punctuation.
               ?df fx:anySlot ?sfa .
               ?sfa xyz:code "a" ; rdf:_1 ?name_raw .
-              BIND(REPLACE(?name_raw, "[\\s.,;:/]+$", "") AS ?name_x)
+              BIND(REPLACE(?name_raw, "^\\s+|[\\s.,;:/]+$", "") AS ?name_x)
 
               # $e — relator term (role), lower-cased to match the lookup table.
               OPTIONAL {
                 ?df fx:anySlot ?sfe .
                 ?sfe xyz:code "e" ; rdf:_1 ?role_raw .
-                BIND(LCASE(REPLACE(?role_raw, "[\\s.,;:/]+$", "")) AS ?role_term)
-              }
-
-              # $1 — real-world-object URI. Prefer VIAF, else ISNI. Strip the
-              # leaked trailing "." (see docs/MARC-RECORDS.md).
-              OPTIONAL {
-                ?df fx:anySlot ?sfv .
-                ?sfv xyz:code "1" ; rdf:_1 ?rwo_v .
-                FILTER(CONTAINS(STR(?rwo_v), "viaf.org"))
-                BIND(REPLACE(?rwo_v, "\\.$", "") AS ?viaf_x)
-              }
-              OPTIONAL {
-                ?df fx:anySlot ?sfi .
-                ?sfi xyz:code "1" ; rdf:_1 ?rwo_i .
-                FILTER(CONTAINS(STR(?rwo_i), "isni.org"))
-                BIND(REPLACE(?rwo_i, "\\.$", "") AS ?isni_x)
-              }
-
-              # $0 — LC name-authority URI; keep just the local id.
-              OPTIONAL {
-                ?df fx:anySlot ?sf0 .
-                ?sf0 xyz:code "0" ; rdf:_1 ?lc_0 .
-                BIND(REPLACE(REPLACE(?lc_0, "\\.$", ""), "^.*/", "") AS ?lc_id_x)
+                BIND(LCASE(REPLACE(?role_raw, "^\\s+|[\\s.,;:/]+$", "")) AS ?role_term)
               }
             }
           }  # end inner per-record SERVICE
-        }  # end archive-listing SERVICE
+        }  # end folder-listing SERVICE
       }
       GROUP BY ?canonical_key ?df ?ctag ?role_term ?contributionType
     }
@@ -238,15 +214,26 @@ WHERE {
     BIND(IF(BOUND(?oclc_number), IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)), ?sentinel) AS ?worldcat_url)
     BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "reference/", ?canonical_key, "/oclc"), ?sentinel) AS ?refOCLCNum)
 
-    # Creator identity, minted exactly as in artists-books.rq so that a person
-    # who both made a book in the collection and wrote about artists' books is
-    # one node across the two graphs: the real-world-object URI (VIAF, else
-    # ISNI), else ab:creator/ keyed off the LC authority id, else a name slug.
-    # All unbound for a row with no creator field (?creator_name unbound).
-    BIND(COALESCE(?viaf, ?isni) AS ?rwo)
-    BIND(REPLACE(REPLACE(LCASE(?creator_name), "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?name_slug)
-    BIND(COALESCE(?lc_id, ?name_slug) AS ?creator_key)
-    BIND(IF(BOUND(?rwo), IRI(?rwo), fx:entity(ab:, "creator/", ?creator_key)) AS ?creator)
+    # Creator identity (#170), looked up in the same corpus-wide table
+    # artists-books.rq reads (sources/creators/agents.csv, rows with source
+    # "reference"), so a person who both made a book in the collection and
+    # wrote about artists' books is one node with one label across the two
+    # graphs. Joined on shared variables inside a sub-SELECT so the CSV is read
+    # once and hash-joined. All unbound for a row with no creator field.
+    OPTIONAL {
+      SELECT ?canonical_key ?ctag ?creator_name ?creator ?creator_key ?creator_label WHERE {
+        SERVICE <x-sparql-anything:location=sources/creators/agents.csv,csv.headers=true> {
+          ?agentRow xyz:source       "reference" ;
+                    xyz:canonicalKey ?canonical_key ;
+                    xyz:tag          ?ctag ;
+                    xyz:name         ?creator_name ;
+                    xyz:agentKey     ?creator_key ;
+                    xyz:agentUri     ?agent_uri ;
+                    xyz:label        ?creator_label .
+        }
+        BIND(IRI(?agent_uri) AS ?creator)
+      }
+    }
     BIND(IF(BOUND(?creator_key), fx:entity(ab:, "reference/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
 
     # Map the relator term to its LC relator URI, falling back to a minted

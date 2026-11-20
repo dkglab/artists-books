@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01070cam a22002892c 4500</leader>
+  <controlfield tag="001">467840113</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200906081056.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">000101s1975    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)467840113</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV467840113</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)835515790</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Chopin, Henri</subfield>
+    <subfield code="d">1922-2008</subfield>
+    <subfield code="0">(DE-588)119383632</subfield>
+    <subfield code="0">(DE-627)080195792</subfield>
+    <subfield code="0">(DE-576)211328995</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Chronique 1974</subfield>
+    <subfield code="c">H. Chopin</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Chelmsford</subfield>
+    <subfield code="c">1975</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">61 S</subfield>
+    <subfield code="b">Taf</subfield>
+    <subfield code="c">8[grad]</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-B11</subfield>
+    <subfield code="y">678752796</subfield>
+    <subfield code="s">NB 23261 kl</subfield>
+    <subfield code="o">Sammlung</subfield>
+    <subfield code="a">Reichardt, Jasia</subfield>
+    <subfield code="0">(DE-588)138516901</subfield>
+    <subfield code="0">(DE-627)603786332</subfield>
+    <subfield code="0">(DE-576)307893294</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Collection "Ou"</subfield>
+    <subfield code="v">Nr. 5</subfield>
+  </datafield>
+  <datafield tag="505" ind1="8" ind2=" ">
+    <subfield code="a">Vgl. Glasmeier, M.: Buchstäblich wörtlich. 1987, Nr. 157</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Collection "Ou"</subfield>
+    <subfield code="v">Nr. 5</subfield>
+    <subfield code="9">5</subfield>
+    <subfield code="w">(DE-627)467839824</subfield>
+    <subfield code="7">am</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">678752796</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 23261 kl</subfield>
+    <subfield code="g">NB::23261::kl</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NAS8654Z</subfield><subfield code="b">chopin / chronique 1974</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

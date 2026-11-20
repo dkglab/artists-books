@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01536cam a22003612c 4500</leader>
+  <controlfield tag="001">1326041185</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250706100814.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">060809s1984    xx |||||      00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1326041185</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)256041180</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ256041180</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)315271123</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)315271123</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+    <subfield code="a">eng</subfield>
+    <subfield code="a">fre</subfield>
+    <subfield code="a">chi</subfield>
+  </datafield>
+  <datafield tag="100" ind1="0" ind2=" ">
+    <subfield code="a">Sengcan</subfield>
+    <subfield code="0">(DE-627)1254579362</subfield>
+    <subfield code="0">(DE-576)184579368</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Hsin hsin ming</subfield>
+    <subfield code="c">Seng-ts'an. Engl. by George Brecht, Dt. von Albrecht Fabri, Français par Robert Filliou, Calligraphy: Takako Saito</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Bruxelles</subfield>
+    <subfield code="a">Hamburg</subfield>
+    <subfield code="b">Ed. Hossmann</subfield>
+    <subfield code="c">1984</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">73 S.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Text in dt., engl., franz. und chines</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20250503</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Brecht, George</subfield>
+    <subfield code="d">1926-2008</subfield>
+    <subfield code="e">Übers.</subfield>
+    <subfield code="0">(DE-588)119076802</subfield>
+    <subfield code="0">(DE-627)07986838X</subfield>
+    <subfield code="0">(DE-576)211070599</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Fabri, Albrecht</subfield>
+    <subfield code="d">1911-1998</subfield>
+    <subfield code="0">(DE-588)12211793X</subfield>
+    <subfield code="0">(DE-627)081746733</subfield>
+    <subfield code="0">(DE-576)169215776</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Filliou, Robert</subfield>
+    <subfield code="d">1926-1987</subfield>
+    <subfield code="0">(DE-588)119029650</subfield>
+    <subfield code="0">(DE-627)079817742</subfield>
+    <subfield code="0">(DE-576)166262013</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Saito, Takako</subfield>
+    <subfield code="d">1929-2025</subfield>
+    <subfield code="0">(DE-588)120732130</subfield>
+    <subfield code="0">(DE-627)080856373</subfield>
+    <subfield code="0">(DE-576)213351986</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2513861094</subfield>
+    <subfield code="b">DE-L242</subfield>
+    <subfield code="9">L 242</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4565657538</subfield>
+    <subfield code="b">DE-Stg120</subfield>
+    <subfield code="9">Stg 120</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Regal 20</subfield>
+    <subfield code="h">Kunstarchive</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">29EPSGMJ</subfield><subfield code="b">filliou / hsin hsin ming</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -2,7 +2,7 @@
 
 Notes on keeping `queries/artists-books.rq` (and any future
 SPARQL-Anything query) fast. The construct step reads the source CSVs and the
-per-record MARC zip archive `sources/marc/artists-books-marc.zip` (#81) through
+per-record MARC directory `sources/marc/artists-books-marc/` (#81) through
 SPARQL-Anything's Facade-X and emits the RDF graph; it is the one place in the
 pipeline where a careless pattern turns a 6-second build into a 5-minute one.
 
@@ -117,7 +117,7 @@ Wrap the test in its own group so it prunes where you wrote it:
 
 | query | time | BGP executions |
 |-------|-----:|---------------:|
-| Triplify the archive + `999 $a` join (parsing only) | 12 s | — |
+| Triplify the records + `999 $a` join (parsing only) | 12 s | — |
 | Construct, **group-scoped filter** (before the fix) | 60 s | 694,970 |
 | Construct, **nested-group filter** | **31 s** | 168,850 |
 
@@ -180,28 +180,34 @@ N-Triples. Only the number of rows reaching the `OPTIONAL`s changed.
   which is unbound when there is no creator), so CONSTRUCT drops the whole block
   instead of writing a dangling typed-but-empty node.
 
-## Reading the per-record MARC archive (#81)
+## Reading the per-record MARC directory (#81)
 
-The MARC is a per-record zip archive (`*-marc.zip`, one `<key>.xml` per record),
-read with a **nested** pattern: an outer `SERVICE` lists the entries
-(`fx:archive.matches` + `?archive fx:anySlot ?file`) and an inner
-`SERVICE <x-sparql-anything:>` triplifies one entry (`fx:location ?file` +
-`fx:from-archive` + `fx:media-type "application/xml"`). The join key is read from
-each record's `999 $a`, **not** the entry filename, so entries could be named
-anything; `fx:anySlot` still governs the per-record traversal.
+The MARC is a per-record directory (`*-marc/`, one `<key>.xml` per record),
+read with a **nested** pattern: an outer `SERVICE` pointed at the folder lists
+its files (`fxe:archive.matches` + `?folder fx:anySlot ?file` — the option keeps
+its archive-era name but filters folder listings too) and an inner
+`SERVICE <x-sparql-anything:>` triplifies one file (`fxe:location ?file` +
+`fxe:media-type "application/xml"`). The join key is read from each record's
+`999 $a`, **not** the filename, so files could be named anything; `fx:anySlot`
+still governs the per-record traversal.
 
-Each entry is triplified **once** and joined afterward, so this is at worst a wash
+The records used to be committed as a zip and read with the Archive triplifier
+(`fx:from-archive`); switching to the folder gave byte-identical graphs and was
+marginally faster (`artists-books.rq` 46 s → 40 s, `reference-works.rq` 3 s →
+2 s on 5,716 records).
+
+Each record is triplified **once** and joined afterward, so this is at worst a wash
 versus the old single-file read — and for `reference-works.rq` it was a large win
 (~35 s → ~2 s). Why: that query's MARC read is *not* wrapped in an aggregating
 sub-SELECT, so ARQ pushed the CSV-bound `?canonical_key` into the SERVICE and
 re-triplified the **whole** collection once per key; per-record entries removed
 the monolith re-parse. `artists-books.rq` already parsed once (its creator
-sub-SELECT is self-contained), so there the archive is roughly even.
+sub-SELECT is self-contained), so there the per-record read is roughly even.
 
 Two gotchas:
 
-- **Silence Log4j.** The archive triplifier trips Log4j's StatusLogger onto
-  stdout, corrupting the Turtle. The graph recipe passes
+- **Silence Log4j.** SPARQL-Anything's Log4j StatusLogger can print onto
+  stdout (first seen with the archive triplifier), corrupting the Turtle. The graph recipe passes
   `-Dlog4j2.statusLoggerLevel=OFF`.
 - **A nested inner SERVICE that matches nothing still leaves the outer row.** So
   a record with (say) no `100 $a` yields a row with `?canonical_key` bound but the

@@ -1,15 +1,11 @@
 SHELL := /usr/bin/env bash
 .SHELLFLAGS := -O extglob -o pipefail -c
-# archive.apache.org, not dlcdn.apache.org: the CDN keeps only the current
-# Jena release, so a pinned version 404s there as soon as the next one ships
-# (#139). The archive keeps every release; it is slower, but this is a
-# one-time fetch.
-JENA_HOST := https://archive.apache.org/dist/jena/binaries
-JENA_VERSION := 6.1.0
+# JENA_HOST and JENA_VERSION live in tools/jena/version.mk (#175).
+include ../jena/version.mk
 ENDPOINT := http://localhost:3030/artists-books/sparql
 
 # The extracted tree records no version of its own, and fuseki-server exists
-# whatever version installed it -- so a bump to JENA_VERSION above would
+# whatever version installed it -- so a bump to JENA_VERSION would
 # otherwise be ignored on any machine that already built once. Gate the
 # download on a version-stamped file instead: bumping the version orphans the
 # old stamp, and remaking it wipes the directory (which also stops a running

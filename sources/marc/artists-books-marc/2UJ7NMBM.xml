@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00981cam a22002773a 4500</leader>
+  <controlfield tag="001">52584</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20180604102221.0</controlfield>
+  <controlfield tag="008">011211|        xxu|||||||||||000 0|eng|c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">990049170X</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">AK</subfield>
+    <subfield code="e">a</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">William T. Wiley :</subfield>
+    <subfield code="b">Exhibition organized and catalogue compiled by Brenda Richardson</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Berkeley,</subfield>
+    <subfield code="c">1971</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">73 s</subfield>
+    <subfield code="b">Ill</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Pärmtitel: Wizdumb</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Ej skönlitteratur</subfield>
+    <subfield code="0">https://id.kb.se/term/ktg/NonFictionLiterature</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Wiley, William T.</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">University art museum, Berkeley</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="b">N</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"gzrbhq6s11928qc","modified":"2018-06-04T10:22:21.46+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">N</subfield>
+    <subfield code="a">{"@id":"37dp97781ndmmzd","modified":"2018-06-05T12:49:58.356+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">2UJ7NMBM</subfield><subfield code="b">wiley / william t wiley university art museum berkeley exhibition organized and catalogue compiled brenda richardson</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

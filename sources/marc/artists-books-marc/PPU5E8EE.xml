@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01107cam a2200301 c 4500</leader>
+  <controlfield tag="001">785273719</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220629164639.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">140509s2013    pr |||||      00| ||spa c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)785273719</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV785273719</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)931559728</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">spa</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-PR</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Rodríguez Olivero, Michelle Y.</subfield>
+    <subfield code="d">1989-</subfield>
+    <subfield code="0">(DE-588)1050907558</subfield>
+    <subfield code="0">(DE-627)785274855</subfield>
+    <subfield code="0">(DE-576)405309694</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Ataque de risa, ataque de llanto</subfield>
+    <subfield code="c">[poesía e ilustración:] Michelle R. O. [confección: José R. Santiago Román]</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">3. ed</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Dorado, Puerto Rico</subfield>
+    <subfield code="b">www.letraypixel.com</subfield>
+    <subfield code="c">2013</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">60 S., [3] Bl</subfield>
+    <subfield code="b">Ill</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Santiago Román, José R.</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">https://www.gbv.de/dms/spk/iai/cov/785273719.jpg</subfield>
+    <subfield code="m">V:DE-601</subfield>
+    <subfield code="m">B:DE-204</subfield>
+    <subfield code="q">image/jpeg</subfield>
+    <subfield code="v">2022-06-29</subfield>
+    <subfield code="3">Cover</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1472800494</subfield>
+    <subfield code="b">DE-204</subfield>
+    <subfield code="9">204</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">A 14 / 10648</subfield>
+    <subfield code="h">MAL</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">PPU5E8EE</subfield><subfield code="b">olivero / ataque de risa ataque de llanto</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

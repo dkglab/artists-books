@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01389cam a2200325 c 4500</leader>
+  <controlfield tag="001">771550677</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250929150613.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">131114s1974    be |||||      00| ||fre c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)771550677</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV771550677</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)935162146</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-BE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Poirier, Anne</subfield>
+    <subfield code="d">1942-</subfield>
+    <subfield code="0">(DE-588)118861085</subfield>
+    <subfield code="0">(DE-627)079637221</subfield>
+    <subfield code="0">(DE-576)210213361</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">A la memoire de Romulus</subfield>
+    <subfield code="b">nouvelle</subfield>
+    <subfield code="c">Anne et Patrick Poirier</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">64 Ex.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Liege</subfield>
+    <subfield code="b">Yellow Now</subfield>
+    <subfield code="c">1974</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">53 S.</subfield>
+    <subfield code="b">Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">144553617X</subfield>
+    <subfield code="s">Ku GV A 564</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="a">Vries, Gerd de</subfield>
+    <subfield code="0">(DE-588)108048241</subfield>
+    <subfield code="0">(DE-627)477580750</subfield>
+    <subfield code="0">(DE-576)163446547</subfield>
+    <subfield code="f">Exemplar: Donator</subfield>
+    <subfield code="f">Stempel</subfield>
+    <subfield code="k">1993</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">144553617X</subfield>
+    <subfield code="s">Ku GV A 564</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="a">Staatliche Kunstsammlungen Weimar</subfield>
+    <subfield code="0">(DE-588)2022373-0</subfield>
+    <subfield code="0">(DE-627)102096422</subfield>
+    <subfield code="0">(DE-576)191753025</subfield>
+    <subfield code="f">Nummer</subfield>
+    <subfield code="f">Stempel</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="a">Sammlung Gerd de Vries</subfield>
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">144553617X</subfield>
+    <subfield code="s">Ku GV A 564</subfield>
+    <subfield code="o">Sammlung</subfield>
+    <subfield code="0">(DE-588)1250787343</subfield>
+    <subfield code="0">(DE-627)1788018842</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Poirier, Patrick</subfield>
+    <subfield code="d">1942-</subfield>
+    <subfield code="0">(DE-588)118861093</subfield>
+    <subfield code="0">(DE-627)07963723X</subfield>
+    <subfield code="0">(DE-576)21021337X</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">144553617X</subfield>
+    <subfield code="b">DE-32</subfield>
+    <subfield code="9">32</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Ku GV A 564</subfield>
+    <subfield code="h">MAG</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">586XPMRN</subfield><subfield code="b">poirier / a la memoire de romulus nouvelle</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

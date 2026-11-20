@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01248nam a2200325Ii 4500</leader>
+  <controlfield tag="001">991013586818507141</controlfield>
+  <controlfield tag="005">20220525152520.0</controlfield>
+  <controlfield tag="008">220525s2011    caua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1319876436</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)on1319876436</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">MMX</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">MMX</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">MMXA</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.O94</subfield>
+    <subfield code="b">B53 2011</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Oyer, Tyler Matthew,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Blackout.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Los Angeles, Calif.] :</subfield>
+    <subfield code="b">TMO Studio,</subfield>
+    <subfield code="c">2011.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">125 pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">22 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Consists of small sized images and text.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Miniature art</subfield>
+    <subfield code="z">California</subfield>
+    <subfield code="z">Los Angeles</subfield>
+    <subfield code="x">History</subfield>
+    <subfield code="y">21st century.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2011.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">North America.</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">United States</subfield>
+    <subfield code="b">California</subfield>
+    <subfield code="d">Los Angeles.</subfield>
+  </datafield>
+  <datafield tag="852" ind1="1" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">O987 A12bL</subfield>
+    <subfield code="x">OR20220525df</subfield>
+    <subfield code="x">2022FY</subfield>
+    <subfield code="x">2022CY</subfield>
+  </datafield>
+  <datafield tag="952" ind1="1" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">O987 A12bL</subfield>
+    <subfield code="x">OR20220525df</subfield>
+    <subfield code="x">2022FY</subfield>
+    <subfield code="x">2022CY</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">MMX</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991013586818507141</subfield>
+    <subfield code="8">22112691230007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMA</subfield>
+    <subfield code="c">MoMA Manhattan Artists' Books</subfield>
+    <subfield code="d">O987 A12bL</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mma</subfield>
+    <subfield code="k">1</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Museum of Modern Art Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NTHJPU5I</subfield><subfield code="b">sarkis / blackout</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

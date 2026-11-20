@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01554cam a22003735a 4500</leader>
+  <controlfield tag="001">19858943</controlfield>
+  <controlfield tag="005">20250607080948.8</controlfield>
+  <controlfield tag="008">170802s1986    enkac         000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">19858943</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">ibc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">* shelf copies</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">hh06 2017-08-02 z-processor on order for Rare Book</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">GBA524186</subfield>
+    <subfield code="2">bnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">008973393</subfield>
+    <subfield code="2">Uk</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)50989972</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">BUF</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">BUF</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">UKM</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">JPG</subfield>
+    <subfield code="d">UKTTE</subfield>
+    <subfield code="d">UAB</subfield>
+    <subfield code="d">UKMGB</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">ZWZ</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">306.47</subfield>
+    <subfield code="2">22</subfield>
+  </datafield>
+  <datafield tag="097" ind1="0" ind2="0">
+    <subfield code="a">N72.S6</subfield>
+    <subfield code="b">W56 1986</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Willats, Stephen,</subfield>
+    <subfield code="d">1943-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Intervention and audience /</subfield>
+    <subfield code="c">Stephen Willats.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Coracle,</subfield>
+    <subfield code="c">1986.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">68 unnumbered pages :</subfield>
+    <subfield code="b">illustrations, portraits ;</subfield>
+    <subfield code="c">21 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">A social model of art practice -- Changes in the social climate -- The failure of stylism -- Lessons from marginal diversity -- An interventional art -- The audience as the rationale -- Strategies and new forms -- Art as social progress.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Willats, Stephen,</subfield>
+    <subfield code="d">1943-</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Willats, Stephen,</subfield>
+    <subfield code="d">1943-</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00182692</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Art and society.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Art and society.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00815432</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Livres d'artistes</subfield>
+    <subfield code="y">20e siècle.</subfield>
+    <subfield code="2">ram</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Coracle Press.</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="a">Purchase</subfield>
+    <subfield code="d">20170802</subfield>
+    <subfield code="n">336205</subfield>
+    <subfield code="s">James S. Jaffe Rare Books</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NSBFINI8</subfield><subfield code="b">willats / intervention and audience</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

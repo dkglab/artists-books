@@ -44,9 +44,9 @@ a single concept. That reconciliation is exactly the point.
 `mine-candidates.rq`, `mine-occurrences.rq` and `build-scheme.rq` are the SPARQL
 queries that do the mining and the building.
 
-`occurrences.csv` exists so the MARC archive is read **exactly once**. Joining
+`occurrences.csv` exists so the MARC is read **exactly once**. Joining
 the tiny `decisions.csv` directly to the large MARC makes ARQ re-read the whole
-archive once per decision row (a ~60x blow-up, confirmed with `--explain`);
+MARC once per decision row (a ~60x blow-up, confirmed with `--explain`);
 extracting the occurrences to a flat CSV first turns every downstream step —
 `build-scheme.rq` and the `ab:constructedUsing` join in
 `queries/artists-books.rq` — into a cheap CSV-to-CSV join.
@@ -102,6 +102,14 @@ ignored by the build (`build-scheme.rq` reads columns by name and only touches
   fixed list, so a typo costs you the whole row (labels and URIs included).
 - **prefLabel** — the preferred display label for the concept.
 - **note** — free text; used to flag borderline calls for review.
+
+A row may also claim a cluster from the **subjects** track
+(`../subjects/occurrences.csv`, same cluster keys): both `build-scheme.rq` and
+the `ab:constructedUsing` join read the two occurrence files as a `UNION`. Use
+this for a plain 650 heading that names what a work *is* rather than what it is
+about (e.g. LCSH *Songs*, *Aleatory music* → the `music` genre, #148), and mark
+the same cluster `include=n` with note `→ construction` in
+`../subjects/decisions.csv`.
 
 Rows left `include=n` need no other columns. You don't need to touch the label
 variants or URIs — those are gathered automatically from the MARC in step ③.

@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03907cam a2200517Ma 4500</leader>
+  <controlfield tag="001">ocn982722655</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115037.0</controlfield>
+  <controlfield tag="008">050112s1997    ck            000 0 spa d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)982722655</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">STF</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">STF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">s-ck---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/s-ck</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">Z239.74.A68</subfield>
+    <subfield code="b">O87 1997</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/Z116-Z659</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.O785</subfield>
+    <subfield code="b">D42 1997</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">864</subfield>
+    <subfield code="q">OCoLC</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Ospina, William,</subfield>
+    <subfield code="d">1954-</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n90676458</subfield>
+    <subfield code="1">http://id.oclc.org/worldcat/entity/E39PBJrCb89b3Bf6Dqhbmy8t8C</subfield>
+    <subfield code="1">http://viaf.org/viaf/267160650</subfield>
+    <subfield code="1">http://isni.org/isni/0000000122798656.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">De lo racional y lo razonable /</subfield>
+    <subfield code="c">de William Ospina ; linóleos de Fabián Rendón.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Santafé de Bogotá, Colombia :</subfield>
+    <subfield code="b">Ediciones Arte Dos Gráfico,</subfield>
+    <subfield code="c">1997.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged) :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">22 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"De lo racional y lo razonable de William Ospina es una coedición de Asociación Red Multicolor MasterCard y Ediciones Arte Dos Gráfico. Consta de doscientos ejemplares numerados en arábigo y doscientos en romano. El papel es Torreón blanco de 180 gramos. La tipografía es Goudy de 12 puntos. Los linóleos y las viñetas fueron realizados directamente por el maestro Fabián Rendón. Se terminó de imprimir el 26 de novembre de 1997 bajo la dirección de Luis Angel Parra en los talleres de tipografía y alto relieve de Arte Dos Gráfico en Bogotá, Columbia."--Colophon.</subfield>
+  </datafield>
+  <datafield tag="563" ind1=" " ind2=" ">
+    <subfield code="a">Grey cloth covered boards with illustration set in on front cover and title blind stamped on spine.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Limited edition of 200 numbered with Arabic numerals and 200 in Roman numerals.</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">UNC-CH has CXLII/CC signed by author and illustrator.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Colombia</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Colombia.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="1">http://id.oclc.org/worldcat/entity/E39PBJw4Fqg34rWwgmFXfvKKh3</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1205916.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423861.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv00146.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Paper evidence (Paper)</subfield>
+    <subfield code="x">Torreón.</subfield>
+    <subfield code="2">rbpap.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Typefaces (Type evidence)</subfield>
+    <subfield code="x">Goudy.</subfield>
+    <subfield code="2">rbtyp.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Limitation statements.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv01531.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Rendón, Fabián,</subfield>
+    <subfield code="d">1953-</subfield>
+    <subfield code="e">illustrator.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2010094848</subfield>
+    <subfield code="1">http://id.oclc.org/worldcat/entity/E39PCjDRtYcDWvhkc3Kp8CWGXm</subfield>
+    <subfield code="1">http://viaf.org/viaf/122313252</subfield>
+    <subfield code="1">http://isni.org/isni/0000000080719568.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Parra, Luis Ángel,</subfield>
+    <subfield code="e">printer.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2012014025</subfield>
+    <subfield code="1">http://viaf.org/viaf/232224202.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Arte Dos Gráfico (Firm : Bogotá, Colombia),</subfield>
+    <subfield code="e">publisher.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n92104377</subfield>
+    <subfield code="1">http://viaf.org/viaf/148687036</subfield>
+    <subfield code="1">http://isni.org/isni/0000000122269180.</subfield>
+  </datafield>
+  <datafield tag="791" ind1="2" ind2=" ">
+    <subfield code="a">Howard Holsenbeck Library Fund.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Basefile July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.4.O785</subfield>
+    <subfield code="b">D42 1997</subfield>
+    <subfield code="z">050 4</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00057695803</subfield>
+    <subfield code="l">aart</subfield>
+    <subfield code="n">sal</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="t">78</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="u">-</subfield>
+    <subfield code="j">Cataloged FY 2024-25 FIRST UnivLib</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">08-14-24</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">spa</subfield>
+    <subfield code="g">ck </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">1</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">ZT48PPZ2</subfield><subfield code="b">b11933253</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

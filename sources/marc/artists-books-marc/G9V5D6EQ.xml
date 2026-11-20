@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01618cam a2200373 a 4500</leader>
+  <controlfield tag="001">ocm00000687</controlfield>
+  <controlfield tag="003">WaSeSS</controlfield>
+  <controlfield tag="005">20251110123702.0</controlfield>
+  <controlfield tag="006">m     o  d        </controlfield>
+  <controlfield tag="007">cr |n |||||||a</controlfield>
+  <controlfield tag="008">900314s1990    cauc    o     000 1 eng d</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a"> 90034816</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">0876858000</subfield>
+    <subfield code="q">pbk.:</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">DLC</subfield>
+    <subfield code="d">WaSeSS</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PS3507.O73277</subfield>
+    <subfield code="b">A67 1990</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Dorn, Edward.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Abhorrences /</subfield>
+    <subfield code="c">Edward Dorn.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Santa Rosa :</subfield>
+    <subfield code="b">Black Sparrow Press,</subfield>
+    <subfield code="c">1990.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 online resource (174 pages) :</subfield>
+    <subfield code="b">port.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">computer</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">online resource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="506" ind1="1" ind2=" ">
+    <subfield code="a">Access limited to UNC Chapel Hill-authenticated users.</subfield>
+    <subfield code="f">Unlimited simultaneous users.</subfield>
+  </datafield>
+  <datafield tag="590" ind1="0" ind2=" ">
+    <subfield code="a">Content provider: ProQuest.</subfield>
+  </datafield>
+  <datafield tag="590" ind1="1" ind2=" ">
+    <subfield code="a">Vendor-supplied catalog record.</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2=" ">
+    <subfield code="t">ProQuest One Literature (online collection). American poetry, 2nd edition.</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2=" ">
+    <subfield code="t">ProQuest One Literature (online collection). Twentieth-century American poetry.</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2=" ">
+    <subfield code="t">ProQuest One Literature U.S. Customers Only (online collection)</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://VB3LK7EB4T.search.serialssolutions.com/?V=1.0&amp;L=VB3LK7EB4T&amp;S=JCs&amp;C=TC0001180687&amp;T=marc</subfield>
+    <subfield code="x">Twentieth-Century American Poetry</subfield>
+    <subfield code="x">ProQuest One Literature - U.S. Customers Only</subfield>
+    <subfield code="x">Twentieth-Century American Poetry, Second Edition</subfield>
+    <subfield code="y">Full text available via the UNC-Chapel Hill Libraries</subfield>
+  </datafield>
+  <datafield tag="944" ind1=" " ind2=" ">
+    <subfield code="a">Batch load history: 1509 sersol change backdated pt.66 20251210, ka</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2=" ">
+    <subfield code="a">*b3=x</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="g">1</subfield>
+    <subfield code="l">ebnb</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="t">11</subfield>
+    <subfield code="r">n</subfield>
+    <subfield code="u">-</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">NOTAUTHO</subfield>
+  </datafield>
+  <datafield tag="990" ind1="8" ind2="9">
+    <subfield code="a">BK:ebook</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">G9V5D6EQ</subfield><subfield code="b">dorn / abhorrences</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

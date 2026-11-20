@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01835cam a2200349 i 4500</leader>
+  <controlfield tag="001">on1190589900</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="008">200824s2019    nyua          000 0 eng d</controlfield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">019954314</subfield>
+    <subfield code="2">Uk</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781943039210</subfield>
+    <subfield code="q">(hardback)</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1943039216</subfield>
+    <subfield code="q">(hardback)</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">VXW</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">VXW</subfield>
+    <subfield code="d">VXW</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">GZM</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">UKMGB</subfield>
+    <subfield code="d">OCLCQ</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.T346</subfield>
+    <subfield code="b">U4 2019</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Tafoya, Rhiannon Skye,</subfield>
+    <subfield code="e">book artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Ul'nigid' /</subfield>
+    <subfield code="c">Rhiannon Skye Tafoya.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Rosendale, New York :</subfield>
+    <subfield code="b">Women's Studio Workshop,</subfield>
+    <subfield code="c">2019.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 volume (unpaged) :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">28 x 29 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Limited edition of 44 copies.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Ul'nigid' was published by the Women's Studio Workshop (WSW) in Rosendale, NY. ... The image and title were printed with polymer plates on Colophon and handmade paper. The text was letterpress printed in 12 Bembo italic and 24 point Cherokee Syllabary"--Colophon.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"Ul'nigid' was made to honor the artist's Grandmother, Martha Reed-Bark. This moveable book structure is able to take on multiple renderings, and utilizes letterpress printing with Cherokee syllabary metal type and weaving processes similar to those of a traditional Cherokee white oak basket"--Publisher's description.</subfield>
+    <subfield code="u">https://wsworkshop.org/collection/ulnigidi.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Reed-Bark, Martha.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">New York (State)</subfield>
+    <subfield code="z">Rosendale</subfield>
+    <subfield code="y">2019.</subfield>
+    <subfield code="2">rbgenr.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Typefaces (Type evidence)</subfield>
+    <subfield code="x">Cherokee Syllabary.</subfield>
+    <subfield code="2">rbtyp.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Petrone, Chris,</subfield>
+    <subfield code="e">binder.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Women's Studio Workshop.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">F23C6QZJ</subfield><subfield code="b">b11141232</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

@@ -33,3 +33,8 @@ views:
   - output: "creator/{{creatorKey}}/index.html"
     query: "creators.rq"
     template: "creators_detail.html"
+  - output: "subject-facet.json"
+    query: "subject-facet.rq"
+    template: "subject-facet.json"
+    unsafe: true
+

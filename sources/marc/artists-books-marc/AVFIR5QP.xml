@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01025cam a2200217Ia 4500</leader>
+  <controlfield tag="001">ocm33450699</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20070319015858.0</controlfield>
+  <controlfield tag="008">951109s1994    paua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)33450699</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">OAC</subfield>
+    <subfield code="c">OAC</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.T73</subfield>
+    <subfield code="b">A4 1994</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Trautwein, Paul.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Wonders of the world :</subfield>
+    <subfield code="b">the Taj Mahal, the terra cotta soldiers of Xian China, the pyramids of Egypt, the Great Wall of China, the Eiffel Tower, Graceland -- Memphis, Tennessee, The Lion, King of the Beasts, The Loch Ness Monster, The Mountain Gorillas of Central Africa, Miss Helvetica /</subfield>
+    <subfield code="c">[Paul Trautwein].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Place of publication not identified] : </subfield>
+    <subfield code="b"> [publisher not identified], </subfield>
+    <subfield code="c"> 1994 </subfield>
+    <subfield code="e"> (Philadelphia, Pa. : </subfield>
+    <subfield code="f"> Borowsky Center at the University of the Arts)</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[3] folded sheets : </subfield>
+    <subfield code="b"> color illustrations ; </subfield>
+    <subfield code="c"> 17 x 10 cm.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Description and travel.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Trautwein, Paul.</subfield>
+    <subfield code="x">Artists' books.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">AVFIR5QP</subfield><subfield code="b">trautwein / wonders of the world</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

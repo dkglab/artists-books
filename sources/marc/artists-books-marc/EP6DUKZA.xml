@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03518nam a2200589Ia 4500</leader>
+  <controlfield tag="001">ocm37277352</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127114852.0</controlfield>
+  <controlfield tag="008">960624t19951995enkab         001 0 eng  </controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   96162845</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">GB97-21365</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">35158385</subfield>
+    <subfield code="a">59625917</subfield>
+    <subfield code="a">973453559</subfield>
+    <subfield code="a">993717294</subfield>
+    <subfield code="a">1008115031</subfield>
+    <subfield code="a">1011808551</subfield>
+    <subfield code="a">1114818824</subfield>
+    <subfield code="a">1195763980</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0947757880</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780947757885</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)37277352</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">EZN</subfield>
+    <subfield code="d">UKM</subfield>
+    <subfield code="d">BTCTA</subfield>
+    <subfield code="d">YDXCP</subfield>
+    <subfield code="d">BAKER</subfield>
+    <subfield code="d">UKTTE</subfield>
+    <subfield code="d">UKV3G</subfield>
+    <subfield code="d">BDX</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="041" ind1="1" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="h">fre</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-fr---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/e-fr</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Spoerri, Daniel,</subfield>
+    <subfield code="d">1930-2024.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82000968</subfield>
+    <subfield code="1">http://viaf.org/viaf/95873909</subfield>
+    <subfield code="1">http://isni.org/isni/0000000120966863.</subfield>
+  </datafield>
+  <datafield tag="240" ind1="1" ind2="0">
+    <subfield code="a">Topographie anecdotée du hasard.</subfield>
+    <subfield code="l">English</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n97058464</subfield>
+    <subfield code="1">http://viaf.org/viaf/182363253.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="3">
+    <subfield code="a">An anecdoted topography of chance /</subfield>
+    <subfield code="c">Daniel Spoerri; done with the help of his very dear friend, Robert Filliou ; and translated from the French, and further anecdoted by their very dear friend, Emmet Williams ; enriched with still further anecdotations by their very dear friend Dieter Roth ; translated out of the German for the first time by Malcolm Green ; with 100 reflective illustrations by Topor.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Atlas Press,</subfield>
+    <subfield code="c">[1995]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©1995.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">241 pages :</subfield>
+    <subfield code="b">illustrations, maps ;</subfield>
+    <subfield code="c">23 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">map</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1008.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Atlas arkhive ;</subfield>
+    <subfield code="v">4.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Probably definitive re-anecdoted version".</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Map on one folded leaf inside back cover.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes index.</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">Translated from the French.</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">1900-1999</subfield>
+    <subfield code="2">fast.</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">20th century</subfield>
+    <subfield code="2">fast.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">French literature</subfield>
+    <subfield code="y">20th century</subfield>
+    <subfield code="v">Translations into English.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">French literature.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/934688.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Translations.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423791.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Derivative works.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026084.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">France.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1204289.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Filliou, Robert.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n84126096</subfield>
+    <subfield code="1">http://viaf.org/viaf/64005599</subfield>
+    <subfield code="1">http://isni.org/isni/0000000116581995.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Williams, Emmett.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50015746</subfield>
+    <subfield code="1">http://viaf.org/viaf/51836797</subfield>
+    <subfield code="1">http://isni.org/isni/0000000114725887.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Roth, Dieter,</subfield>
+    <subfield code="d">1930-1998.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50049746</subfield>
+    <subfield code="1">http://viaf.org/viaf/118476147.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Atlas arkhive ;</subfield>
+    <subfield code="v">4.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no94026292</subfield>
+    <subfield code="1">http://viaf.org/viaf/174787050.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">10-03-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">enk</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">EP6DUKZA</subfield><subfield code="b">9780947757885</subfield><subfield code="c">isbn</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

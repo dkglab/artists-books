@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03735cam a2200757 c 4500</leader>
+  <controlfield tag="001">468228063</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220830123023.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">000101s1974    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)468228063</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV468228063</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)835349557</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+    <subfield code="c">XA-IT</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">RQ</subfield>
+    <subfield code="2">fivr</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">SG06</subfield>
+    <subfield code="2">fivs</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Darboven, Hanne</subfield>
+    <subfield code="d">1941-2009</subfield>
+    <subfield code="0">(DE-588)118523775</subfield>
+    <subfield code="0">(DE-627)079325289</subfield>
+    <subfield code="0">(DE-576)16512704X</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Diary N.Y.C. February 15 until March 4 1974</subfield>
+    <subfield code="c">Hanne Darboven</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York, NY</subfield>
+    <subfield code="b">Castelli Graphics</subfield>
+    <subfield code="c">1974</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Torino</subfield>
+    <subfield code="b">Sperone</subfield>
+    <subfield code="c">1974</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[136] Bl</subfield>
+    <subfield code="c">23 x 31 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">678702985</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB 23650 k kl</subfield>
+    <subfield code="g">NB::23650:k:kl</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">801966132</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">NB Marzona 1  484</subfield>
+    <subfield code="g">NB::Marzona:1 :484:</subfield>
+    <subfield code="h">KB NB</subfield>
+  </datafield>
+  <datafield tag="936" ind1="f" ind2="i">
+    <subfield code="0">(DE-627)1756134707</subfield>
+    <subfield code="a">RQ</subfield>
+    <subfield code="b">Weltweit</subfield>
+    <subfield code="k">Weltweit</subfield>
+    <subfield code="2">fivr</subfield>
+  </datafield>
+  <datafield tag="936" ind1="f" ind2="i">
+    <subfield code="0">(DE-627)1756136068</subfield>
+    <subfield code="a">SG06</subfield>
+    <subfield code="b">Medien/Information</subfield>
+    <subfield code="k">Gesellschaft</subfield>
+    <subfield code="k">Medien/Information</subfield>
+    <subfield code="2">fivs</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="0">
+    <subfield code="0">(DE-627)1756180598</subfield>
+    <subfield code="0">(DE-615)6608724</subfield>
+    <subfield code="a">Global</subfield>
+    <subfield code="2">fivt</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="0">
+    <subfield code="0">(DE-627)1756168768</subfield>
+    <subfield code="0">(DE-615)6606662</subfield>
+    <subfield code="a">Massenmedien</subfield>
+    <subfield code="2">fivt</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="0">
+    <subfield code="0">(DE-627)1756169780</subfield>
+    <subfield code="0">(DE-615)6609400</subfield>
+    <subfield code="a">Presse</subfield>
+    <subfield code="2">fivt</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="0">
+    <subfield code="0">(DE-627)1756210314</subfield>
+    <subfield code="0">(DE-615)6607413</subfield>
+    <subfield code="a">Satire</subfield>
+    <subfield code="2">fivt</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="0">
+    <subfield code="0">(DE-627)1756204896</subfield>
+    <subfield code="0">(DE-615)6609514</subfield>
+    <subfield code="a">Karikatur</subfield>
+    <subfield code="2">fivt</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="0">
+    <subfield code="0">(DE-627)1756180733</subfield>
+    <subfield code="0">(DE-615)6606142</subfield>
+    <subfield code="a">Kritik</subfield>
+    <subfield code="2">fivt</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="0">
+    <subfield code="0">(DE-627)1756149682</subfield>
+    <subfield code="0">(DE-615)6603124</subfield>
+    <subfield code="a">Meinung/Einstellung</subfield>
+    <subfield code="2">fivt</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="0">
+    <subfield code="0">(DE-627)1756232601</subfield>
+    <subfield code="0">(DE-615)6601214</subfield>
+    <subfield code="a">Verhältnis Politik - Medien</subfield>
+    <subfield code="2">fivt</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="0">
+    <subfield code="0">(DE-627)1756190704</subfield>
+    <subfield code="0">(DE-615)6607505</subfield>
+    <subfield code="a">Geschichtlicher Überblick</subfield>
+    <subfield code="2">fivt</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)175614625X</subfield>
+    <subfield code="0">(DE-615)6603417</subfield>
+    <subfield code="a">Deutschland</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)106115952</subfield>
+    <subfield code="0">(DE-588)4066009-6</subfield>
+    <subfield code="a">Wien</subfield>
+    <subfield code="2">gnd</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)106272349</subfield>
+    <subfield code="0">(DE-588)4029916-8</subfield>
+    <subfield code="a">Katalonien</subfield>
+    <subfield code="2">gnd</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756242054</subfield>
+    <subfield code="0">(DE-615)6600642</subfield>
+    <subfield code="a">Griechenland</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756220514</subfield>
+    <subfield code="0">(DE-615)6602659</subfield>
+    <subfield code="a">Ungarn</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756165718</subfield>
+    <subfield code="0">(DE-615)6602024</subfield>
+    <subfield code="a">Italien</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756218293</subfield>
+    <subfield code="0">(DE-615)6600307</subfield>
+    <subfield code="a">Portugal</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756141800</subfield>
+    <subfield code="0">(DE-615)6603805</subfield>
+    <subfield code="a">Schweiz</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756168113</subfield>
+    <subfield code="0">(DE-615)6602668</subfield>
+    <subfield code="a">Tschechien</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756218676</subfield>
+    <subfield code="0">(DE-615)6600178</subfield>
+    <subfield code="a">Argentinien</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756218722</subfield>
+    <subfield code="0">(DE-615)6600171</subfield>
+    <subfield code="a">Brasilien</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)106192639</subfield>
+    <subfield code="0">(DE-588)4048030-6</subfield>
+    <subfield code="a">Québec</subfield>
+    <subfield code="g">Provinz</subfield>
+    <subfield code="2">gnd</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756241724</subfield>
+    <subfield code="0">(DE-615)6600257</subfield>
+    <subfield code="a">Vereinigte Staaten</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756165726</subfield>
+    <subfield code="0">(DE-615)6601838</subfield>
+    <subfield code="a">Kamerun</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)175616522X</subfield>
+    <subfield code="0">(DE-615)6601952</subfield>
+    <subfield code="a">Ägypten</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)175616259X</subfield>
+    <subfield code="0">(DE-615)6601749</subfield>
+    <subfield code="a">Iran</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756224072</subfield>
+    <subfield code="0">(DE-615)6601309</subfield>
+    <subfield code="a">Kenia</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756201536</subfield>
+    <subfield code="0">(DE-615)6601469</subfield>
+    <subfield code="a">Australien</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756162107</subfield>
+    <subfield code="0">(DE-615)6602201</subfield>
+    <subfield code="a">Volksrepublik China</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756175276</subfield>
+    <subfield code="0">(DE-615)6610222</subfield>
+    <subfield code="a">Zeitung</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756157537</subfield>
+    <subfield code="0">(DE-615)6604793</subfield>
+    <subfield code="a">Journalisten</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756241252</subfield>
+    <subfield code="0">(DE-615)6608105</subfield>
+    <subfield code="a">Inhaltsanalyse</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756230196</subfield>
+    <subfield code="0">(DE-615)6609371</subfield>
+    <subfield code="a">Kommunikationsinhalte</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)1756151784</subfield>
+    <subfield code="0">(DE-615)6605099</subfield>
+    <subfield code="a">Politische Meinung/Einstellung</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="0">(DE-627)175622059X</subfield>
+    <subfield code="0">(DE-615)6601547</subfield>
+    <subfield code="a">Wirkung von Massenmedien</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="938" ind1="1" ind2="1">
+    <subfield code="a">Rußland (Sowjetrepublik)</subfield>
+    <subfield code="2">fiva</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">488JMCCJ</subfield><subfield code="b">darboven / diary nyc</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

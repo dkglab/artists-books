@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01450cam a2200409Ia 4500</leader>
+  <controlfield tag="001">990014614050302486</controlfield>
+  <controlfield tag="005">20200618172351.0</controlfield>
+  <controlfield tag="008">910424s19900000fr       b    001 0 fre^^</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2130429564 :</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2130429564 :</subfield>
+    <subfield code="c">34.00F</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(Aleph)001461405EMU01</subfield>
+  </datafield>
+  <datafield tag="035" ind1="9" ind2=" ">
+    <subfield code="a">u723580</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)23084102</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DOBI)31623007</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">FIL</subfield>
+    <subfield code="b">fre</subfield>
+    <subfield code="c">FIL</subfield>
+    <subfield code="d">AZU</subfield>
+    <subfield code="d">EMU</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">EMUU</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">PQ2246.M3</subfield>
+    <subfield code="b">G46 1990</subfield>
+  </datafield>
+  <datafield tag="092" ind1=" " ind2=" ">
+    <subfield code="a">843.8</subfield>
+    <subfield code="f">FLA G</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Gengembre, Gérard.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Gustave Flaubert :</subfield>
+    <subfield code="b">Madame Bovary /</subfield>
+    <subfield code="c">par Gérard Gengembre.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1. édition.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©1990</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Paris :</subfield>
+    <subfield code="b">Presses universitaires de France,</subfield>
+    <subfield code="c">[1990]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">127 pages ;</subfield>
+    <subfield code="c">18 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Études littéraires,</subfield>
+    <subfield code="x">0764-1621 ;</subfield>
+    <subfield code="v">27</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references (pages [124-127] and index.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Flaubert, Gustave,</subfield>
+    <subfield code="d">1821-1880.</subfield>
+    <subfield code="t">Madame Bovary.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Etudes littéraires (Paris, France) ;</subfield>
+    <subfield code="v">27.</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="940" ind1=" " ind2=" ">
+    <subfield code="a">COVID19</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">9DT</subfield>
+    <subfield code="2">19940531</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2=" ">
+    <subfield code="a">000011605355</subfield>
+    <subfield code="b">EMU</subfield>
+    <subfield code="c">wg</subfield>
+    <subfield code="d">PQ2246.M3 G46 1990</subfield>
+    <subfield code="t">b</subfield>
+    <subfield code="z">wj/cg</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">990014614050302486</subfield>
+    <subfield code="8">22212826570002486</subfield>
+    <subfield code="a">01GALI_EMORY</subfield>
+    <subfield code="b">UNIV</subfield>
+    <subfield code="c">Book Stacks</subfield>
+    <subfield code="d">PQ2246 .M3 G46 1990</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">STACK</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Robert W. Woodruff Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">DJXQRA43</subfield><subfield code="b">laurdes / gustave flaubert madame bovary</subfield><subfield code="c">title-author</subfield><subfield code="d">emory</subfield></datafield></record>
+</collection>

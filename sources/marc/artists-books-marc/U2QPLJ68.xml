@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01107nam a22002891a 4500</leader>
+  <controlfield tag="001">a1971523</controlfield>
+  <controlfield tag="003">SIRSI</controlfield>
+  <controlfield tag="005">20151215065432.0</controlfield>
+  <controlfield tag="008">970924s1981    xx            000 0 und d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">LIAS2031146</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)8999304</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="c">PSt</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PR6056.I5</subfield>
+    <subfield code="b">T382</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Finlay, Ian Hamilton.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Taschenbuch der Panzer /</subfield>
+    <subfield code="c">Ian Hamilton Finlay, Ian Gardner.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Dunsyre, Eng. :</subfield>
+    <subfield code="b">Wild Hawthorn Press,</subfield>
+    <subfield code="c">1981.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">3 unnumbered leaves, 8 unnumbered leaves of plates, 1 unnumbered leaf, 4 unnumbered pages :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">26 x 31 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Produced in a limited ed. of 200 copies by the Stellar Press ..."</subfield>
+  </datafield>
+  <datafield tag="596" ind1=" " ind2=" ">
+    <subfield code="a">27</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Gardner, Ian,</subfield>
+    <subfield code="d">1944-</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">Signed by Ian Hamilton Finlay and Ian Gardner.</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2=" ">
+    <subfield code="a">PR6056.I5T382 1981 Q</subfield>
+    <subfield code="w">LC</subfield>
+    <subfield code="i">000026811116</subfield>
+    <subfield code="m">UP-SPECCOL</subfield>
+    <subfield code="d">10/03/1997</subfield>
+    <subfield code="k">RARE-BOOK</subfield>
+    <subfield code="l">RARE-BOOK</subfield>
+    <subfield code="r">N</subfield>
+    <subfield code="s">Y</subfield>
+    <subfield code="t">BOOK</subfield>
+  </datafield>
+  <datafield tag="926" ind1=" " ind2=" ">
+    <subfield code="a">UP-SPECCOL</subfield>
+    <subfield code="b">RARE-BOOK</subfield>
+    <subfield code="c">PR6056.I5T382 1981 Q</subfield>
+    <subfield code="d">BOOK</subfield>
+    <subfield code="f">1</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">U2QPLJ68</subfield><subfield code="b">finlay / taschenbuch der panzer</subfield><subfield code="c">title-author</subfield><subfield code="d">psu</subfield></datafield></record>
+</collection>

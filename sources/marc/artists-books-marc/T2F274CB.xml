@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01288nam a2200325 a 4500</leader>
+  <controlfield tag="001">991001146859708431</controlfield>
+  <controlfield tag="005">20250612183253.0</controlfield>
+  <controlfield tag="008">891115s1970    it a          000 0 ita d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)21007397</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">00394986</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="c">NAlU</subfield>
+    <subfield code="d">MWiCA</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-it---</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N6494 .C63 G45</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Geiger 3 [1969 :</subfield>
+    <subfield code="b">antologia /</subfield>
+    <subfield code="c">A cura di Maurizio, Spatola</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Torino :</subfield>
+    <subfield code="b">Geiger,</subfield>
+    <subfield code="c">1970]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">l volumes (unpaged) :</subfield>
+    <subfield code="b">illustrations (part color) ;</subfield>
+    <subfield code="c">26 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">unspecified</subfield>
+    <subfield code="b">nz</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"tiratura limitata a 300 esemplari numerati: esemplare numero 15"--Colophon</subfield>
+    <subfield code="5">CLART</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Label on cover: American distributor: New York, Wittenborn</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Conceptual art</subfield>
+    <subfield code="z">Italy</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Spatola, Maurizio.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nb2012015295</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2=" ">
+    <subfield code="a">Antologia sperimentale</subfield>
+  </datafield>
+  <datafield tag="799" ind1="0" ind2="1">
+    <subfield code="a">Micah Lexier collection</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">Processed by Backstage 2020-04</subfield>
+  </datafield>
+  <datafield tag="907" ind1=" " ind2=" ">
+    <subfield code="a">.b1118355x</subfield>
+    <subfield code="b">01-04-24</subfield>
+    <subfield code="c">03-18-03</subfield>
+  </datafield>
+  <datafield tag="990" ind1=" " ind2=" ">
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">abbib</subfield>
+    <subfield code="b">03-18-03</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">-</subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">ita</subfield>
+    <subfield code="g">it</subfield>
+    <subfield code="h">0</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991001146859708431</subfield>
+    <subfield code="8">2216132310008431</subfield>
+    <subfield code="a">01CLARKART_INST</subfield>
+    <subfield code="b">MAIN</subfield>
+    <subfield code="c">Artists Books</subfield>
+    <subfield code="d">N6494 .C63 G45</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">ABX</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Clark</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">T2F274CB</subfield><subfield code="b">geiger 3 1969</subfield><subfield code="c">title</subfield><subfield code="d">clark</subfield></datafield></record>
+</collection>

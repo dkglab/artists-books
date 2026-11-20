@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01529cam a2200337 c 4500</leader>
+  <controlfield tag="001">1117534731</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20180719165129.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">950831s1994    xx |||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1117534731</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)047534737</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ047534737</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)38033018</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LH 65830</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/94562:13114</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Heijden, Jozef van der</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Thunderstorm</subfield>
+    <subfield code="b">a manual on rhetorical delivery</subfield>
+    <subfield code="c">by Jozef van der Heijden</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Amsterdam]</subfield>
+    <subfield code="c">1994</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">61 S.</subfield>
+    <subfield code="b">überw. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)119276437</subfield>
+    <subfield code="0">(DE-627)695922351</subfield>
+    <subfield code="0">(DE-576)211877050</subfield>
+    <subfield code="a">Hejden, Jozef van der</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4173750-7</subfield>
+    <subfield code="0">(DE-627)105377503</subfield>
+    <subfield code="0">(DE-576)209952407</subfield>
+    <subfield code="a">Performance</subfield>
+    <subfield code="g">Künste</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2264333685</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LH 65830</subfield>
+    <subfield code="b">neueste Stile Aktionskunst, Fluxus, Happening, Performance, Body art</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeines. Allgemeine Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeine Kunstgeschichte: Darstellungen</subfield>
+    <subfield code="k">Darstellungen einzelner Epochen</subfield>
+    <subfield code="k">Mittlere und neuere Kunstgeschichte</subfield>
+    <subfield code="k">Neuzeit</subfield>
+    <subfield code="k">19. und 20. Jahrhundert</subfield>
+    <subfield code="k">20. Jahrhundert</subfield>
+    <subfield code="k">neueste Stile Aktionskunst, Fluxus, Happening, Performance, Body art</subfield>
+    <subfield code="0">(DE-627)127063612X</subfield>
+    <subfield code="0">(DE-625)rvk/94562:13114</subfield>
+    <subfield code="0">(DE-576)20063612X</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">PUGGJEXN</subfield><subfield code="b">heijden / thunderstorm</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,770 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>07009nam a22017053c 4500</leader>
+  <controlfield tag="001">q58nfhv0nw5gnf3l</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20220524132150.0</controlfield>
+  <controlfield tag="008">220524s1969    it a||||||||||000 0|eng|d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)ocn257951791</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">Hakm</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">GBVCP</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">Hakm</subfield>
+    <subfield code="e">c</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">709.2</subfield>
+    <subfield code="2">22 (machine generated)</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">Ibz Jones, Allen</subfield>
+    <subfield code="2">kssb/8</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Jones, Allen,</subfield>
+    <subfield code="d">1937-</subfield>
+    <subfield code="4">art</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Figures /</subfield>
+    <subfield code="c">Allen Jones ; (Hrsg.:) Galerie Mikro, Berlin.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Milan :</subfield>
+    <subfield code="b">Edizioni O,</subfield>
+    <subfield code="c">1969</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">87 Seiten</subfield>
+    <subfield code="b">Illustrationen m. Text</subfield>
+    <subfield code="c">31 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Published jointly by Galerie Mikro, Berlin, Edizioni O, Milano</subfield>
+  </datafield>
+  <datafield tag="599" ind1=" " ind2=" ">
+    <subfield code="a">Imported from: zcat.oclc.org:210/OLUCWorldCat (Do not remove)</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="4">
+    <subfield code="a">Jones, Allen,</subfield>
+    <subfield code="d">1937-</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Konst</subfield>
+    <subfield code="0">https://id.kb.se/term/sao/Konst</subfield>
+    <subfield code="2">sao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Konstnärer</subfield>
+    <subfield code="0">https://id.kb.se/term/sao/Konstn%C3%A4rer</subfield>
+    <subfield code="2">sao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Modern konst</subfield>
+    <subfield code="0">https://id.kb.se/term/sao/Modern%20konst</subfield>
+    <subfield code="2">sao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Art, Modern</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Art</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Ej skönlitteratur</subfield>
+    <subfield code="0">https://id.kb.se/term/ktg/NonFictionLiterature</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Galerie Mikro</subfield>
+    <subfield code="g">Berlin-West</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Hakm</subfield>
+    <subfield code="a">u  a</subfield>
+    <subfield code="b">220524||0000|||||000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Hakm</subfield>
+    <subfield code="b">Hakm</subfield>
+    <subfield code="h">Ibz Jones, Allen</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"q58nfhv0nw5gnf3l","modified":"2022-05-24T13:21:50.746+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Hakm</subfield>
+    <subfield code="a">{"@id":"q58nfj50nrfjkl6b","modified":"2022-05-24T13:22:25.827+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="s">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Konst</subfield>
+    <subfield code="x">historia</subfield>
+    <subfield code="y">1900-talet</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">g</subfield>
+    <subfield code="a">Konstriktningar</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Multimedia (konst)</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Datorkonst</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Konceptkonst</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Land art</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Skrivmaskinskonst</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Videokonst</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Popkonst</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Ljuskonst</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Psykedelisk konst</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Entartete Kunst</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Institutionskritik (konst)</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Op-konst</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Digital konst</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Minimalism</subfield>
+    <subfield code="u">Modern konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="s">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Artister</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Videokonstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Glaskonstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Tecknare</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Svenskamerikanska konstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Illustratörer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Textilkonstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Konstnärer i utlandet</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Underhållare</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Författare</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Graffitimålare</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Skådespelare</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Gravörer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Sceniska konstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Romska konstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Dansare</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Skulptörer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Samiska konstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Mimare</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kvinnliga konstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Afroamerikanska konstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Grafiker</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Musiker</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Fotokonstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Performancekonstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Konstnärer som författare</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Judiska konstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Målare (bildkonstnärer)</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Relationer till konstnärer</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Konstnärsresidens</subfield>
+    <subfield code="u">Konstnärer</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="s">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Konstliv</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="s">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Skön konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="s">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Sköna konsterna</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Mosaik</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Försvunna konstverk</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Keltisk konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Berättande konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Fotokonst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Barnkonst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Jainistisk konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Socialism och konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Titlar på konstverk</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Romsk konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kommersiell konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Homosexualitet och konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kommunism och konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Dekorativ konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Anamorfoser</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Konst i litteraturen</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kristen konst och symbolik</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Art brut</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Konst och revolutioner</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Fascism och konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Kinetisk konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Konst och fysik</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Konst av amerikanska urfolk</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Psykoanalys och konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Buddhistisk konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Konstriktningar</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Porträttkonst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Anatomisk teckning</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Samisk konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Influenser</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Grafisk konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Sjukdomskonst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Färglära (konst)</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Nationalism och konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Feminism och konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Konst och populärkultur</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Arts and crafts movement</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Faktur</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Ljuskonst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Folkkonst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Miniatyrföremål</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Akademisk konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Brukskonst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Islamisk konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Antikviteter</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Hinduisk konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Aztekisk konst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Målarkonst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Ljudkonst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Illustrationskonst</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Konst och tv</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Proportioner</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Fotografi</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Konstarterna</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Konstföreningar</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Motiv i konsten</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Konst och antropologi</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="a">Konst och krig</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2="k">
+    <subfield code="6">650</subfield>
+    <subfield code="w">h</subfield>
+    <subfield code="a">Konstvetenskap</subfield>
+    <subfield code="x">forskning</subfield>
+    <subfield code="u">Konst</subfield>
+  </datafield>
+  <datafield tag="976" ind1=" " ind2="0">
+    <subfield code="a">Ibz</subfield>
+    <subfield code="b">Särskilda konstnärer</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">KYJYGYRJ</subfield><subfield code="b">jones / figures</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

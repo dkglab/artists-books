@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03433cam a2200625Ii 4500</leader>
+  <controlfield tag="001">991010301519707141</controlfield>
+  <controlfield tag="005">20200618101628.0</controlfield>
+  <controlfield tag="008">151203s2013    nyua     a    000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b14010008-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)930933583</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">VRC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">VRC</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">COO</subfield>
+    <subfield code="d">MMX</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">MMXA</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.A93</subfield>
+    <subfield code="b">S33 2013</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Auerbach, Tauba,</subfield>
+    <subfield code="d">1981-</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2007058457</subfield>
+    <subfield code="1">http://viaf.org/viaf/40145970206932251602</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Saccade /</subfield>
+    <subfield code="c">Tauba Auerbach.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Diagonal Press,</subfield>
+    <subfield code="c">2013</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">3 volumes :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">28 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Laser printed with clear covers and thermal tape binding.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">There are three types of eye movement: smooth pursuit, vergence, and saccades. Smooth pursuit describes the parallel, fluid movement of the eyes as they follow a moving object. Vergence describes the movement of the eyes in opposite directions - in order to focus nearer or farther. Saccades are rapid movements of both eyes in the same direction, jumping from target to target in the visual field or moving incrementally such as when one reads or watches a passing train. Each book contains a pair of discrete but thematically related images joined by a video transition. Each frame of the transition is output to a page.</subfield>
+    <subfield code="c">Insert.</subfield>
+  </datafield>
+  <datafield tag="583" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">Housed</subfield>
+    <subfield code="c">20170322</subfield>
+    <subfield code="i">Placed in four-flap enclosure</subfield>
+    <subfield code="2">local</subfield>
+    <subfield code="5">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Auerbach, Tauba,</subfield>
+    <subfield code="d">1981-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2007058457</subfield>
+    <subfield code="1">http://viaf.org/viaf/40145970206932251602</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Auerbach, Tauba,</subfield>
+    <subfield code="d">1981-</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01675962.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Video art.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85143195</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photography, Artistic.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85101269</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00817660.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Photography, Artistic.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01061964.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Video art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01166389.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01423861.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2013.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">North America.</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">United States</subfield>
+    <subfield code="b">New York</subfield>
+    <subfield code="d">New York.</subfield>
+  </datafield>
+  <datafield tag="852" ind1="8" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">A86065 A12s</subfield>
+    <subfield code="x">MO20170227sah</subfield>
+    <subfield code="x">2017FY</subfield>
+    <subfield code="x">2017CY</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="x">CAC2017</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="x">PRES2017ame</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">210316</subfield>
+    <subfield code="d">170302</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">170302</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">170302</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">170302</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b14010008</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">A86065 A12s</subfield>
+    <subfield code="c">Vol. 1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300363529</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mma</subfield>
+    <subfield code="o">4</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">2</subfield>
+    <subfield code="u">1</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">1</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i23927446</subfield>
+    <subfield code="z">170302</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">A86065 A12s</subfield>
+    <subfield code="c">Vol. 2</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300363534</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mma</subfield>
+    <subfield code="o">4</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">2</subfield>
+    <subfield code="u">1</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">1</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i23927458</subfield>
+    <subfield code="z">170302</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">A86065 A12s</subfield>
+    <subfield code="c">Vol. 3</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300363539</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mma</subfield>
+    <subfield code="o">4</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">2</subfield>
+    <subfield code="u">1</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">1</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i2392746x</subfield>
+    <subfield code="z">170302</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">LTI 07/05/2017</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="952" ind1="8" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">A86065 A12s</subfield>
+    <subfield code="x">MO20170227sah</subfield>
+    <subfield code="x">2017FY</subfield>
+    <subfield code="x">2017CY</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="x">CAC2017</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="x">PRES2017ame</subfield>
+  </datafield>
+  <datafield tag="983" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">Housed</subfield>
+    <subfield code="c">20170322</subfield>
+    <subfield code="i">Placed in four-flap enclosure</subfield>
+    <subfield code="2">local</subfield>
+    <subfield code="5">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">3</subfield>
+    <subfield code="c">170302</subfield>
+    <subfield code="d">m</subfield>
+    <subfield code="e">1</subfield>
+    <subfield code="f">-</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mm</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991010301519707141</subfield>
+    <subfield code="8">2276076150007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMA</subfield>
+    <subfield code="c">MoMA Manhattan Artists' Books</subfield>
+    <subfield code="d">A86065 A12s</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">3</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mma</subfield>
+    <subfield code="k">1</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Museum of Modern Art Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">J494U7ER</subfield><subfield code="b">auerbach / saccade</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

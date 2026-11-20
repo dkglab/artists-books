@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03873cam a2200745 c 4500</leader>
+  <controlfield tag="001">1601787758</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20250703161551.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">950922s1995    xx ||||| c    00| ||ger c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3928762338</subfield>
+    <subfield code="9">3-928762-33-8</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1601787758</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)047927291</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ047927291</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1056114461</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1056114461</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-604)8103876782</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,10</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LH 46170</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/93609:</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="4">
+    <subfield code="a">Das Ende der Avantgarde</subfield>
+    <subfield code="b">Kunst als Dienstleistung; Sammlung Schürmann; Kunsthalle der Hypo-Kulturstiftung München, 13. Juni bis 13. August 1995</subfield>
+    <subfield code="c">Kataloggestaltung Pae White. Texte Katharina Hegewisch</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Düsseldorf</subfield>
+    <subfield code="b">Richter</subfield>
+    <subfield code="c">1995</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[120] Bl.</subfield>
+    <subfield code="b">zahlr. Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung/Langzeitarchivierung gewährleistet</subfield>
+    <subfield code="f">SSG</subfield>
+    <subfield code="x">XA-DE-BW</subfield>
+    <subfield code="2">pdager</subfield>
+    <subfield code="5">DE-16</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="x">Kunsthalle der Hypo-Kulturstiftung, München</subfield>
+    <subfield code="y">13.06.1995-13.08.1995</subfield>
+    <subfield code="z">München</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)119101807</subfield>
+    <subfield code="0">(DE-627)079894690</subfield>
+    <subfield code="0">(DE-576)211183717</subfield>
+    <subfield code="a">Schürmann, Wilhelm</subfield>
+    <subfield code="d">1946-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4128844-0</subfield>
+    <subfield code="0">(DE-627)105714259</subfield>
+    <subfield code="0">(DE-576)209605545</subfield>
+    <subfield code="a">Sammlung</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4114333-4</subfield>
+    <subfield code="0">(DE-627)105822957</subfield>
+    <subfield code="0">(DE-576)209483733</subfield>
+    <subfield code="a">Kunst</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="3">
+    <subfield code="A">z</subfield>
+    <subfield code="2">gnd</subfield>
+    <subfield code="a">Geschichte 1985-1995</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">White, Pae</subfield>
+    <subfield code="d">1963-</subfield>
+    <subfield code="0">(DE-588)124020720</subfield>
+    <subfield code="0">(DE-627)085586978</subfield>
+    <subfield code="0">(DE-576)174399324</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Hegewisch, Katharina</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Schürmann, Wilhelm</subfield>
+    <subfield code="d">1946-</subfield>
+    <subfield code="e">Sammler</subfield>
+    <subfield code="0">(DE-588)119101807</subfield>
+    <subfield code="0">(DE-627)079894690</subfield>
+    <subfield code="0">(DE-576)211183717</subfield>
+    <subfield code="4">col</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Hypo-Kulturstiftung</subfield>
+    <subfield code="b">Kunsthalle</subfield>
+    <subfield code="0">(DE-588)2081944-4</subfield>
+    <subfield code="0">(DE-627)100088953</subfield>
+    <subfield code="0">(DE-576)192497049</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">https://swbplus.bsz-bw.de/bsz047927291inh.htm</subfield>
+    <subfield code="m">B:DE-576;DE-16</subfield>
+    <subfield code="q">application/pdf</subfield>
+    <subfield code="v">20101005200904</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="3">Inhaltsverzeichnis</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079244184</subfield>
+    <subfield code="b">DE-21-22</subfield>
+    <subfield code="9">21/22</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">AC 447 a / 29</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079244249</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">307924429X</subfield>
+    <subfield code="b">DE-15</subfield>
+    <subfield code="9">15</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079244354</subfield>
+    <subfield code="b">DE-16</subfield>
+    <subfield code="9">16</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">97 A 5858</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079244443</subfield>
+    <subfield code="b">DE-16-26</subfield>
+    <subfield code="9">16/26</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">K III Sc 29/1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079244540</subfield>
+    <subfield code="b">DE-747</subfield>
+    <subfield code="9">747</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">LH 46170 H463</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079244621</subfield>
+    <subfield code="b">DE-N1</subfield>
+    <subfield code="9">N 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">8 Jl SHU 074/4</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079244680</subfield>
+    <subfield code="b">DE-Ka23</subfield>
+    <subfield code="9">Ka 23</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">A: Muenc, 1995/08</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079244761</subfield>
+    <subfield code="b">DE-540</subfield>
+    <subfield code="9">540</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079244893</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">15 Schürmann 1995</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079244923</subfield>
+    <subfield code="b">DE-L242</subfield>
+    <subfield code="9">L 242</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4819949586</subfield>
+    <subfield code="b">DE-Stg120</subfield>
+    <subfield code="9">Stg 120</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">X München 1995</subfield>
+    <subfield code="h">Hauptbibliothek</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079245024</subfield>
+    <subfield code="b">DE-Stg268</subfield>
+    <subfield code="9">Stg 268</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Nk 910 End</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079245148</subfield>
+    <subfield code="b">DE-Ka89</subfield>
+    <subfield code="9">Ka 89</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">KG45 1250</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079245245</subfield>
+    <subfield code="b">DE-1141</subfield>
+    <subfield code="9">1141</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">LH 46170 H463</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079245288</subfield>
+    <subfield code="b">DE-Sg2</subfield>
+    <subfield code="9">Sg 2</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">LH46170whi</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079245296</subfield>
+    <subfield code="b">DE-Sg2</subfield>
+    <subfield code="9">Sg 2</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">LH46170whi</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079245393</subfield>
+    <subfield code="b">DE-Sa27</subfield>
+    <subfield code="9">Sa 27</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">MusII Herzogenr,S"Schü" 1995/1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">307924544X</subfield>
+    <subfield code="b">DE-1975</subfield>
+    <subfield code="9">1975</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">09/699</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3628186277</subfield>
+    <subfield code="b">DE-2279</subfield>
+    <subfield code="9">2279</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3079245520</subfield>
+    <subfield code="b">DE-L330</subfield>
+    <subfield code="9">L 330</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">10.35.06 G.+W. Schürmann 1995:1</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="s">DE-16</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LH 46170</subfield>
+    <subfield code="b">München</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Allgemeines. Allgemeine Kunstgeschichte</subfield>
+    <subfield code="k">Ausstellungswesen, Ausstellungskataloge</subfield>
+    <subfield code="k">Ausstellungskataloge</subfield>
+    <subfield code="k">Orte M</subfield>
+    <subfield code="k">München</subfield>
+    <subfield code="0">(DE-627)1270651137</subfield>
+    <subfield code="0">(DE-625)rvk/93609:</subfield>
+    <subfield code="0">(DE-576)200651137</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">RN5ETGNQ</subfield><subfield code="b">9783928762335</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

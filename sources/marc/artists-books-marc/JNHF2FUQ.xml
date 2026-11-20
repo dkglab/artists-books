@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02487cam a2200541Ii 4500</leader>
+  <controlfield tag="001">991002650299707141</controlfield>
+  <controlfield tag="005">20200618110645.0</controlfield>
+  <controlfield tag="008">880712s1986    caua          000 0 eng d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">09174850205</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b15508407-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)18204129</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">AMH</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">AMH</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">UKTTE</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">AJ#</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">MMX</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us-ca</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">MMXA</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.L56</subfield>
+    <subfield code="b">G5</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lloyd, Ginny,</subfield>
+    <subfield code="d">1945-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86813239</subfield>
+    <subfield code="1">http://viaf.org/viaf/27668709</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Gina lotta post :</subfield>
+    <subfield code="b">[a book /</subfield>
+    <subfield code="c">by Ginny Lloyd].</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">San Francisco, California :</subfield>
+    <subfield code="b">Lloyd Productions,</subfield>
+    <subfield code="c">[1986]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">32 unnumbered pages :</subfield>
+    <subfield code="b">chiefly illustrations (some color) ;</subfield>
+    <subfield code="c">21 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Unnumbered edition of 500.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">copy signed by artist.</subfield>
+    <subfield code="5">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="583" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">Housed</subfield>
+    <subfield code="c">20200707</subfield>
+    <subfield code="i">Placed in academy folder</subfield>
+    <subfield code="2">local</subfield>
+    <subfield code="5">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">California</subfield>
+    <subfield code="v">Specimens.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85008302</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Seals and labels (Philately)</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85119321</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00817660.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Seals and labels (Philately)</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01110329.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">California.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01204928.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01423861.</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">North America.</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">United States</subfield>
+    <subfield code="b">California</subfield>
+    <subfield code="d">San Francisco.</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Online version:</subfield>
+    <subfield code="a">Lloyd, Ginny, 1945-</subfield>
+    <subfield code="t">Gina lotta post.</subfield>
+    <subfield code="d">San Francisco, Calif. : Lloyd Productions, ©1986</subfield>
+    <subfield code="w">(OCoLC)768057522</subfield>
+  </datafield>
+  <datafield tag="852" ind1="8" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">L597 A12g</subfield>
+    <subfield code="x">CO20200228kf</subfield>
+    <subfield code="x">2020FY</subfield>
+    <subfield code="x">2020CY</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="x">PRES2020ame</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">200707</subfield>
+    <subfield code="d">200228</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">200228</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b15508407</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">L597 A12g</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300504403</subfield>
+    <subfield code="j">8224</subfield>
+    <subfield code="l">mma</subfield>
+    <subfield code="o">p</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">2</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i25366907</subfield>
+    <subfield code="z">200228</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="952" ind1="8" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">L597 A12g</subfield>
+    <subfield code="x">CO20200228kf</subfield>
+    <subfield code="x">2020FY</subfield>
+    <subfield code="x">2020CY</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="x">PRES2020ame</subfield>
+  </datafield>
+  <datafield tag="983" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">Housed</subfield>
+    <subfield code="c">20200707</subfield>
+    <subfield code="i">Placed in academy folder</subfield>
+    <subfield code="2">local</subfield>
+    <subfield code="5">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">1</subfield>
+    <subfield code="c">200228</subfield>
+    <subfield code="d">m</subfield>
+    <subfield code="e">1</subfield>
+    <subfield code="f">-</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mm</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991002650299707141</subfield>
+    <subfield code="8">2270020890007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMA</subfield>
+    <subfield code="c">MoMA Manhattan Artists' Books</subfield>
+    <subfield code="d">L597 A12g</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mma</subfield>
+    <subfield code="k">1</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Museum of Modern Art Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">JNHF2FUQ</subfield><subfield code="b">lloyd / gina lotta post</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

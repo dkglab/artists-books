@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00374    a2200121   4500</leader>
+  <controlfield tag="001">ocm05673291</controlfield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Chopin, Henri, author</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Chopin, Henri</subfield>
+    <subfield code="0">n88609359</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schraenen, Guy</subfield>
+    <subfield code="0">n91074364</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Guy Schraenen éditeur</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Henri Chopin :</subfield>
+    <subfield code="b">29 novembre 74 : portrait des 9</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Antwerpen :</subfield>
+    <subfield code="b">G. Schraenen,</subfield>
+    <subfield code="c">[1975]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[7] leaves</subfield>
+    <subfield code="b">illustrations</subfield>
+    <subfield code="c">30 cm</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">QZTPSSM4</subfield><subfield code="b">5673291</subfield><subfield code="c">oclc</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

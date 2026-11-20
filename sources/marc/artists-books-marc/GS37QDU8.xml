@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00808ccm a2200265Mi 4500</leader>
+  <controlfield tag="001">990018453060203941</controlfield>
+  <controlfield tag="005">20170426152059.0</controlfield>
+  <controlfield tag="008">891208q19701977enkccz         n    zxx d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)21021094</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">HMU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">HMU</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="4">
+    <subfield code="a">M1470.B74</subfield>
+    <subfield code="b">W38</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Brecht, George</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Water yam /</subfield>
+    <subfield code="c">George Brecht.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[London] :</subfield>
+    <subfield code="b">[Experimental Music Catalog],</subfield>
+    <subfield code="c">[197-?]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">97 pieces in box ;</subfield>
+    <subfield code="c">21 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">notated music</subfield>
+    <subfield code="b">ntm</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Chance composition.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Aleatory music.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Aleatory music</subfield>
+    <subfield code="2">fast</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">001845306</subfield>
+  </datafield>
+  <datafield tag="901" ind1="0" ind2=" ">
+    <subfield code="a">AIU2720</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">MHAIU27200HU</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2025-09-29</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">NO-OVERLAY</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">GS37QDU8</subfield><subfield code="b">brecht / water yam</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

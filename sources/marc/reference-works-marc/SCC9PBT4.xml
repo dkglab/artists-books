@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02428nam a2200397Ia 4500</leader>
+  <controlfield tag="001">ocm09157494</controlfield>
+  <controlfield tag="005">20250801141959.0</controlfield>
+  <controlfield tag="008">870828r19821972nyu      b    001 0 eng d</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   81081721</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">154150684</subfield>
+    <subfield code="a">1008431124</subfield>
+    <subfield code="a">1011763815</subfield>
+    <subfield code="a">1013812733</subfield>
+    <subfield code="a">1119072117</subfield>
+    <subfield code="a">1166938018</subfield>
+    <subfield code="a">1176124537</subfield>
+    <subfield code="a">1421181255</subfield>
+    <subfield code="a">1519622838</subfield>
+    <subfield code="a">1531526389</subfield>
+    <subfield code="a">1531543931</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0878172777</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)09157494</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">GSU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">GSU</subfield>
+    <subfield code="d">m/c</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">NC961.B7</subfield>
+    <subfield code="b">M87 1982</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/NC1-NC1940</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="4">
+    <subfield code="a">The Artist &amp; the book, 1860-1960, in western Europe and the United States.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Hacker Art Books,</subfield>
+    <subfield code="c">1982.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">232 pages :</subfield>
+    <subfield code="b">illustrations (some color) ;</subfield>
+    <subfield code="c">29 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Catalog of an exhibition held at the Museum of Fine Arts, Boston, May 4-June 16, 1961.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"First published 1961 by the Presidents and Fellows of Harvard College and by the Museum of Fine Arts, Boston."</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Reprint. Originally published: 2nd ed. Boston : Museum of Fine Arts, Boston ; Cambridge, Mass. : Harvard College Library, Dept. of Printing and Graphic Arts, 1972.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes indexes.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Bibliography: pages 222-227.</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">RBC NC960 .B7 1982 c. 1: Dust jacket.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Illustrated books</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Illustrated books</subfield>
+    <subfield code="x">Exhibitions.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/967383.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Illustrated books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/967377.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Museum of Fine Arts, Boston.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79058410</subfield>
+    <subfield code="1">http://viaf.org/viaf/151846308</subfield>
+    <subfield code="1">http://isni.org/isni/0000000122918830.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Harvard College Library.</subfield>
+    <subfield code="b">Department of Printing and Graphic Arts.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n83013533</subfield>
+    <subfield code="1">http://viaf.org/viaf/25146030524735860022</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121770897.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2=" ">
+    <subfield code="a">Artist and the book, 1860-1960.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="a">(2)wc</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">4</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">SCC9PBT4</subfield><subfield code="b">0878172777</subfield><subfield code="c">isbn</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

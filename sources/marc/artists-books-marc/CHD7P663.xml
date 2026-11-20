@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01626cam a22004457a 4500</leader>
+  <controlfield tag="001">9104702</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20101122093445.0</controlfield>
+  <controlfield tag="008">030924s1999    xx |||||||||||000 ||eng|d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0262112507</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(KVIN)261455</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="5">KVIN</subfield>
+    <subfield code="a">(KVIN)261455</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">G</subfield>
+    <subfield code="e">a</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="9">KVIN</subfield>
+  </datafield>
+  <datafield tag="072" ind1=" " ind2="7">
+    <subfield code="5">KVIN</subfield>
+    <subfield code="a">konst</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Kruger, Barbara</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Thinking of you /</subfield>
+    <subfield code="c">Barbara Kruger ; organized by Ann Goldstein.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Cambridge, Mass.</subfield>
+    <subfield code="c">1999</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">268 s</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Catalog of the exhibition held at the Museum of Contemporary Art, Los Angeles, Calif., the Geffen Contemporary, Oct. 17, 1999-Feb. 13, 2000</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Kruger, Barbara</subfield>
+    <subfield code="2">kao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">1900-talet</subfield>
+    <subfield code="2">kao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Förenta staterna</subfield>
+    <subfield code="2">kao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Konstnärer</subfield>
+    <subfield code="2">kao</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="5">KVIN</subfield>
+    <subfield code="a">Kruger, Barbara</subfield>
+    <subfield code="2">kao//eng</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="5">KVIN</subfield>
+    <subfield code="a">20th century</subfield>
+    <subfield code="2">kao//eng</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="5">KVIN</subfield>
+    <subfield code="a">United States</subfield>
+    <subfield code="2">kao//eng</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="5">KVIN</subfield>
+    <subfield code="a">Artists</subfield>
+    <subfield code="2">kao//eng</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Goldstein, Ann</subfield>
+    <subfield code="4">edt</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">KVIN</subfield>
+    <subfield code="a">u  a</subfield>
+    <subfield code="b">030924||0000|||||001||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Lkmt</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">080410||0000|||||001||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">KVIN</subfield>
+    <subfield code="b">KVIN</subfield>
+    <subfield code="h">2000:4</subfield>
+    <subfield code="j">5741</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Lkmt</subfield>
+    <subfield code="b">Lkmt</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"q71zz8d22v8hpwx","modified":"2010-11-22T09:34:45+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">KVIN</subfield>
+    <subfield code="a">{"@id":"fkqgf8ql5c2njp6","modified":"2010-11-16T15:44:58+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Lkmt</subfield>
+    <subfield code="a">{"@id":"tz53k9w01h78qmr","modified":"2026-07-03T10:56:01.685+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">CHD7P663</subfield><subfield code="b">kruger / thinking of you</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01167cam a22003012c 4500</leader>
+  <controlfield tag="001">719950724</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20210217063321.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">120724s1967    xx |||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)719950724</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV719950724</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Filliou, Robert</subfield>
+    <subfield code="d">1926-1987</subfield>
+    <subfield code="0">(DE-588)119029650</subfield>
+    <subfield code="0">(DE-627)079817742</subfield>
+    <subfield code="0">(DE-576)166262013</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Monsters are inoffensive</subfield>
+    <subfield code="c">by Filliou-Spoerri, [Roland] Topo[r]; photos, Verra Spoerri</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[New York]</subfield>
+    <subfield code="b">Fluxus, Division of Implosions</subfield>
+    <subfield code="c">c1967</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">22 postcards</subfield>
+    <subfield code="b">b&amp;w</subfield>
+    <subfield code="c">11 x 16 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Issued in envelope</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Postcards</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Spoerri, Daniel</subfield>
+    <subfield code="d">1930-2024</subfield>
+    <subfield code="0">(DE-588)118752197</subfield>
+    <subfield code="0">(DE-627)07953256X</subfield>
+    <subfield code="0">(DE-576)163146993</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Topor, Roland</subfield>
+    <subfield code="d">1938-1997</subfield>
+    <subfield code="0">(DE-588)118623346</subfield>
+    <subfield code="0">(DE-627)079411975</subfield>
+    <subfield code="0">(DE-576)163332975</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Mercer, Vera</subfield>
+    <subfield code="d">1936-</subfield>
+    <subfield code="0">(DE-588)140613528</subfield>
+    <subfield code="0">(DE-627)620230975</subfield>
+    <subfield code="0">(DE-576)31911273X</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">PLD4INBQ</subfield><subfield code="b">filliou / monsters are inoffensive</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

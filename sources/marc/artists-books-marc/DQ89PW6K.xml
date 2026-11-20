@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01778cam a2200469 i 4500</leader>
+  <controlfield tag="001">on1159708389wcm</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20241227112656.0</controlfield>
+  <controlfield tag="006">m     o  d f      </controlfield>
+  <controlfield tag="007">cr |n||||||||a</controlfield>
+  <controlfield tag="008">200624s1971    dcu     ob   f000 0 eng  </controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a"> 2019668206</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">1164154016wcm</subfield>
+    <subfield code="a">1182540398wcm</subfield>
+    <subfield code="a">1182637233wcm</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1159708389</subfield>
+    <subfield code="z">(OCoLC)1164154016</subfield>
+    <subfield code="z">(OCoLC)1182540398</subfield>
+    <subfield code="z">(OCoLC)1182637233</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="e">pn</subfield>
+    <subfield code="c">GPO</subfield>
+    <subfield code="d">GPO</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">DLC</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCL</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">a-ko---</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">KPA2506</subfield>
+  </datafield>
+  <datafield tag="074" ind1=" " ind2=" ">
+    <subfield code="a">0818-J-06 (online)</subfield>
+  </datafield>
+  <datafield tag="086" ind1="0" ind2=" ">
+    <subfield code="a">LC 42.20:K 84/5</subfield>
+  </datafield>
+  <datafield tag="088" ind1=" " ind2=" ">
+    <subfield code="a">LRA-P-PUB-000057</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Cho, Sung Yoon,</subfield>
+    <subfield code="d">1928-2017,</subfield>
+    <subfield code="e">author.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The Republic of Korea /</subfield>
+    <subfield code="c">prepared by Sung Yoon Cho.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Washington, D.C. :</subfield>
+    <subfield code="b">Law Library, Library of Congress,</subfield>
+    <subfield code="c">1971.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 online resource (1 page)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">computer</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">online resource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"October 1971."</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Typescript.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references.</subfield>
+  </datafield>
+  <datafield tag="588" ind1="0" ind2=" ">
+    <subfield code="a">Online resource; title from PDF caption (Law Library of Congress, viewed June 24, 2020).</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Legislative bodies</subfield>
+    <subfield code="z">Korea (South)</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Legislative bodies</subfield>
+    <subfield code="x">Qualifications.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Legislative bodies</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00995690.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Legislative bodies</subfield>
+    <subfield code="x">Qualifications</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00995741.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Korea (South)</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01206791.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Library of Congress.</subfield>
+    <subfield code="b">Law Library,</subfield>
+    <subfield code="e">issuing body.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://purl.fdlp.gov/GPO/gpo139708</subfield>
+  </datafield>
+  <datafield tag="944" ind1=" " ind2=" ">
+    <subfield code="a">Batch load history: 10000 wcm DWS pt.15 records loaded 20250131, ka</subfield>
+  </datafield>
+  <datafield tag="919" ind1=" " ind2=" ">
+    <subfield code="a">dwsgpo</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">NOTAUTHO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">DQ89PW6K</subfield><subfield code="b">cho / republic of korea</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

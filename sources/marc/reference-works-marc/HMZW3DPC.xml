@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02162cas a2200505 c 4500</leader>
+  <controlfield tag="001">240131452</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260402160517.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">980215c19949999xxkz| p|      0   |0eng c</controlfield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">019059973</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">1411308-9</subfield>
+    <subfield code="2">DE-600</subfield>
+  </datafield>
+  <datafield tag="022" ind1=" " ind2=" ">
+    <subfield code="a">1355-0187</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)240131452</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)117859990</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)ZDB1411308-9</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)706991380</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">020</subfield>
+    <subfield code="a">700</subfield>
+    <subfield code="q">DE-600</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">KUNST</subfield>
+    <subfield code="q">DE-14</subfield>
+    <subfield code="2">fid</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">AN 38900</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/6060:</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">06.22</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Artist's book yearbook</subfield>
+  </datafield>
+  <datafield tag="264" ind1="3" ind2="1">
+    <subfield code="a">Bristol</subfield>
+    <subfield code="b">Impact Pr.</subfield>
+    <subfield code="c">1994-</subfield>
+  </datafield>
+  <datafield tag="264" ind1="2" ind2="1">
+    <subfield code="a">Stanmore, Middx.</subfield>
+    <subfield code="b">Magpie Press</subfield>
+    <subfield code="c">anfangs</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="362" ind1="0" ind2=" ">
+    <subfield code="a">Nachgewiesen 1994/95 -</subfield>
+  </datafield>
+  <datafield tag="363" ind1="0" ind2="1">
+    <subfield code="i">1994/95</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Zeitschrift</subfield>
+    <subfield code="0">(DE-588)4067488-5</subfield>
+    <subfield code="0">(DE-627)10454466X</subfield>
+    <subfield code="0">(DE-576)20917000X</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="889" ind1=" " ind2=" ">
+    <subfield code="w">(DE-627)1747478881</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">275660575</subfield>
+    <subfield code="b">DE-23</subfield>
+    <subfield code="9">23</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">F4° 1428</subfield>
+    <subfield code="q">1996/97</subfield>
+    <subfield code="v">1998/99</subfield>
+    <subfield code="z">1996/97(1996) - 1998/99(1999)</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">4974313746</subfield>
+    <subfield code="b">DE-23</subfield>
+    <subfield code="9">23</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">F4° 1428:2026/2027</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">625634306</subfield>
+    <subfield code="b">DE-834</subfield>
+    <subfield code="9">834</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">L 5.5 Art 3</subfield>
+    <subfield code="q">2003/05</subfield>
+    <subfield code="z">2003/2005(2003)</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">745505104</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Per 8/1553</subfield>
+    <subfield code="h">KB</subfield>
+    <subfield code="q">1994/95</subfield>
+    <subfield code="v">1998/99</subfield>
+    <subfield code="w">;</subfield>
+    <subfield code="q">2001/02</subfield>
+    <subfield code="w">;</subfield>
+    <subfield code="q">2003/05</subfield>
+    <subfield code="w">;</subfield>
+    <subfield code="q">2006/07</subfield>
+    <subfield code="x">-</subfield>
+    <subfield code="z">1994/95(1995) - 1998/99(1998); 2001/02(2001); 2003/05(2003); 2006/07 -</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2455518337</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">19 4 11001</subfield>
+    <subfield code="q">2003/05</subfield>
+    <subfield code="w">;</subfield>
+    <subfield code="q">2006/07</subfield>
+    <subfield code="x">-</subfield>
+    <subfield code="z">2003/05(2003); 2006/07(2005) -</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2558174126</subfield>
+    <subfield code="b">DE-16-156</subfield>
+    <subfield code="9">16/156</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">1017 SP</subfield>
+    <subfield code="h">197</subfield>
+    <subfield code="q">2006/07</subfield>
+    <subfield code="z">2006/07(2005)</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3849161234</subfield>
+    <subfield code="b">DE-Of2</subfield>
+    <subfield code="9">Of 2</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Buch 25 Art</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">AN 38900</subfield>
+    <subfield code="b">Künstlerbuch, Buchobjekt, Buchverfremdung</subfield>
+    <subfield code="k">Allgemeines</subfield>
+    <subfield code="k">Buch- und Bibliothekswesen, Informationswissenschaft</subfield>
+    <subfield code="k">Buchwesen</subfield>
+    <subfield code="k">Künstlerbuch, Buchobjekt, Buchverfremdung</subfield>
+    <subfield code="0">(DE-627)1270637487</subfield>
+    <subfield code="0">(DE-625)rvk/6060:</subfield>
+    <subfield code="0">(DE-576)200637487</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">06.22</subfield>
+    <subfield code="j">Buchgestaltung</subfield>
+    <subfield code="0">(DE-627)106403591</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">JT</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">HMZW3DPC</subfield><subfield code="b">artist s book yearbook</subfield><subfield code="c">title</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

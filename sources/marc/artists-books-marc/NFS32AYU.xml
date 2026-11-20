@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00278    a2200085   4500</leader>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lyons, Joan</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">A very small book on wheels</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Rochester, NY</subfield>
+    <subfield code="b">Visual Studies Workshop</subfield>
+    <subfield code="c">1973</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="b">letterpress on vellum</subfield>
+    <subfield code="c">5.75x9 in.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">saddle-sewn - found line cuts of tires, vellum pages</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NFS32AYU</subfield><subfield code="b">lyons / a very small book on wheels</subfield><subfield code="c">title-author</subfield><subfield code="d">ehive</subfield></datafield></record>
+</collection>

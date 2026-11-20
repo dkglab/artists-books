@@ -34,15 +34,15 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:prefLabel   "Video game"@en;
         ab:matchKey      "video-games" .
 
-<https://dkglab.github.io/ns/artists-books/construction/song>
+<https://dkglab.github.io/ns/artists-books/construction/music>
         rdf:type         skos:Concept;
-        rdfs:label       "Song"@en;
-        skos:altLabel    "Songs"@en , "Songs."@en , "Love songs."@en , "Songs and music."@en , "Songs and music"@en , "Song cycles."@en;
+        rdfs:label       "Music"@en;
+        skos:altLabel    "Popular music"@en , "Rock music"@en , "Music."@en , "Soundscapes (Music)"@en , "Hip-hop (Music)"@en , "Instrumental music."@en , "Popular music."@en , "Rap (Music)"@en , "Rock music."@en , "Aleatory music"@en , "Songs, Spanish -- Cuba"@en , "Music -- Manuscripts"@en , "Music -- Manuscripts -- Facsimiles"@en , "Songs (High voice) with piano"@en , "Songs, Spanish"@en , "Environmental protection -- Songs and music"@en , "Mills and mill-work -- Songs and music"@en , "Nature -- Songs and music"@en , "Nature -- Songs and music -- Texts"@en , "Song cycles"@en , "Songs (Medium voice) with synthesizer"@en , "Songs with piano"@en , "Songs"@en , "Songs."@en , "Love songs."@en , "Songs and music."@en , "Songs and music"@en , "Song cycles."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
-        skos:exactMatch  <http://id.worldcat.org/fast/1726744> , <http://id.worldcat.org/fast/1726743> , <http://id.loc.gov/authorities/genreForms/gf2014027103> , <http://id.loc.gov/authorities/genreForms/gf2014026912> , <http://id.worldcat.org/fast/1726662> , <http://id.worldcat.org/fast/1985328> , <http://id.loc.gov/authorities/genreForms/gf2014027101>;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027107> , <http://id.worldcat.org/fast/1423855> , <http://id.worldcat.org/fast/1921743> , <http://id.loc.gov/authorities/subjects/sh85022486> , <http://id.worldcat.org/fast/804693> , <http://id.loc.gov/authorities/subjects/sh2008107384> , <http://id.loc.gov/authorities/subjects/sh2010114197> , <http://id.loc.gov/authorities/subjects/sh85125033> , <http://id.loc.gov/authorities/subjects/sh85125149> , <http://id.worldcat.org/fast/1030385> , <http://id.worldcat.org/fast/1030388> , <http://id.worldcat.org/fast/1126153> , <http://id.worldcat.org/fast/1126526> , <http://id.worldcat.org/fast/1726744> , <http://id.worldcat.org/fast/1726743> , <http://id.loc.gov/authorities/genreForms/gf2014027103> , <http://id.loc.gov/authorities/genreForms/gf2014026912> , <http://id.worldcat.org/fast/1726662> , <http://id.worldcat.org/fast/1985328> , <http://id.loc.gov/authorities/genreForms/gf2014027101>;
         skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Song"@en;
-        ab:matchKey      "songs" , "love-songs" , "songs-and-music" , "song-cycles" .
+        skos:prefLabel   "Music"@en;
+        ab:matchKey      "music" , "soundscapes-music" , "hip-hop-music" , "instrumental-music" , "popular-music" , "rap-music" , "rock-music" , "aleatory-music" , "songs-spanish-cuba" , "music-manuscripts" , "music-manuscripts-facsimiles" , "songs-high-voice-with-piano" , "songs-spanish" , "environmental-protection-songs-and-music" , "mills-and-mill-work-songs-and-music" , "nature-songs-and-music" , "nature-songs-and-music-texts" , "songs-medium-voice-with-synthesizer" , "songs-with-piano" , "songs" , "love-songs" , "songs-and-music" , "song-cycles" .
 
 <https://dkglab.github.io/ns/artists-books/construction/short-stories>
         rdf:type         skos:Concept;
@@ -67,7 +67,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/poetry>
         rdf:type         skos:Concept;
         rdfs:label       "Poetry"@en;
-        skos:altLabel    "Poésie expérimentale."@en , "Poésie concrète."@en , "Dadaist poetry."@en , "American poetry"@en , "Prose poems"@en , "Gay poetry."@en , "Spoken word poetry."@en , "Love poetry."@en , "Love poetry"@en , "POETRY / American / General."@en , "visual poetry."@en , "poems."@en , "concrete poetry."@en , "Concrete poetry"@en , "Concrete poems"@en , "Visual poetry"@en , "Experimental poetry"@en , "Poésie."@en , "poetry."@en , "Poems."@en , "Political poetry."@en , "Haiku."@en , "Poems"@en , "Concrete poems."@en , "Poetry."@en , "Visual poetry."@en , "Concrete poetry."@en;
+        skos:altLabel    "Poésie expérimentale."@en , "Poésie concrète"@en , "Poésie concrète."@en , "Dadaist poetry."@en , "American poetry"@en , "Prose poems"@en , "Gay poetry."@en , "Spoken word poetry."@en , "Love poetry."@en , "Love poetry"@en , "POETRY / American / General"@en , "POETRY / American / General."@en , "visual poetry."@en , "poems."@en , "concrete poetry."@en , "Concrete poetry"@en , "Concrete poems"@en , "Visual poetry"@en , "Experimental poetry"@en , "Poésie."@en , "poetry."@en , "Poems."@en , "Political poetry."@en , "Haiku."@en , "Poems"@en , "Concrete poems."@en , "Poetry."@en , "Visual poetry."@en , "Concrete poetry."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
         skos:exactMatch  <https://id.loc.gov/authorities/genreForms/gf2014026481> , <http://id.worldcat.org/fast/1921737> , <http://id.worldcat.org/fast/1726661> , <http://id.nlm.nih.gov/mesh/D055821> , <http://id.loc.gov/authorities/genreForms/gf2018026002> , <http://id.loc.gov/authorities/genreForms/gf2014026552> , <http://id.loc.gov/authorities/genreForms/gf2014026419> , <http://vocab.getty.edu/aat/300251499> , <http://vocab.getty.edu/aat/300194347> , <http://vocab.getty.edu/aat/300055932> , <http://vocab.getty.edu/aat/300055931> , <http://id.worldcat.org/fast/1941332> , <http://id.worldcat.org/fast/1921680> , <http://id.loc.gov/vocabulary/rbmscv/cv00203> , <http://id.loc.gov/authorities/genreForms/gf2016026085> , <http://id.loc.gov/authorities/genreForms/gf2014026366> , <http://id.loc.gov/vocabulary/rbmscv/cv01163> , <http://id.worldcat.org/fast/1726570> , <http://id.loc.gov/authorities/genreForms/gf2014026481> , <http://id.worldcat.org/fast/1423828> , <http://id.loc.gov/authorities/genreForms/gf2014026588> , <http://id.worldcat.org/fast/1726771> , <http://id.loc.gov/authorities/genreForms/gf2014026270>;
         skos:inScheme    ab:construction-methods;
@@ -173,9 +173,9 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/found-text>
         rdf:type         skos:Concept;
         rdfs:label       "Found text"@en;
-        skos:altLabel    "Appropriated text."@en , "Derivative works."@en , "Found poetry."@en , "Adaptations."@en;
+        skos:altLabel    "Appropriated text."@en , "Appropriated text"@en , "Derivative works."@en , "Found poetry."@en , "Adaptations."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
-        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026084> , <http://id.loc.gov/authorities/genreForms/gf2014026346> , <http://id.worldcat.org/fast/1921663> , <http://id.worldcat.org/fast/1423910>;
+        skos:exactMatch  <http://id.worldcat.org/fast/1423910> , <http://id.loc.gov/authorities/genreForms/gf2014026084> , <http://id.loc.gov/authorities/genreForms/gf2014026346> , <http://id.worldcat.org/fast/1921663>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Found text"@en;
         ab:matchKey      "adaptations" , "appropriated-text" , "derivative-works" , "found-poetry" .
@@ -183,7 +183,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/fiction>
         rdf:type         skos:Concept;
         rdfs:label       "Fiction"@en;
-        skos:altLabel    "Fantasy fiction."@en , "Political fiction."@en , "Experimental fiction."@en , "Horror fiction"@en , "Domestic fiction."@en , "Mystery fiction."@en , "Science fiction."@en , "Humorous fiction"@en , "Western fiction."@en , "Utopian fiction."@en , "Road fiction."@en , "Fiction."@en , "Flash fiction."@en , "Biographical fiction."@en;
+        skos:altLabel    "Fantasy fiction."@en , "Political fiction."@en , "Experimental fiction."@en , "Horror fiction"@en , "Domestic fiction."@en , "Mystery fiction."@en , "Science fiction"@en , "Science fiction."@en , "Humorous fiction"@en , "Western fiction."@en , "Utopian fiction."@en , "Road fiction."@en , "Fiction."@en , "Flash fiction."@en , "Biographical fiction."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
         skos:exactMatch  <https://id.loc.gov/authorities/genreForms/gf2014026339> , <http://id.worldcat.org/fast/1726589> , <http://id.worldcat.org/fast/1726489> , <http://id.loc.gov/authorities/genreForms/gf2014026529> , <http://id.loc.gov/authorities/genreForms/gf2014026373> , <http://id.loc.gov/authorities/genreForms/gf2014026295> , <http://id.worldcat.org/fast/1922578> , <http://id.worldcat.org/fast/1922530> , <http://id.worldcat.org/fast/1726776> , <http://id.worldcat.org/fast/1726537> , <http://id.loc.gov/authorities/genreForms/gf2014026594> , <http://id.loc.gov/authorities/genreForms/gf2014026583> , <http://id.loc.gov/authorities/genreForms/gf2014026513> , <http://id.loc.gov/authorities/genreForms/gf2014026339> , <http://id.worldcat.org/fast/1423787> , <http://id.loc.gov/authorities/genreForms/gf2014026543> , <http://id.worldcat.org/fast/1922440> , <http://id.loc.gov/authorities/genreForms/gf2014026246>;
         skos:inScheme    ab:construction-methods;
@@ -515,137 +515,23 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:topConceptOf  ab:construction-methods;
         ab:categoryRank    5 .
 
-<https://dkglab.github.io/ns/artists-books/construction/sculptural-bookwork>
-        rdf:type         skos:Concept;
-        rdfs:label       "Sculptural bookwork"@en;
-        skos:altLabel    "Shaped books."@en , "Shaped books"@en , "Shaped books (Printing)"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv01881>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Sculptural bookwork"@en;
-        ab:matchKey      "shaped-books" , "shaped-books-printing" .
-
-<https://dkglab.github.io/ns/artists-books/construction/sound-recording>
+<https://dkglab.github.io/ns/artists-books/construction/volvelle>
         rdf:type        skos:Concept;
-        rdfs:label      "Sound recording"@en;
-        skos:altLabel   "sound recordings."@en , "Sound recordings"@en , "Sound recordings."@en;
+        rdfs:label      "Volvelle"@en;
+        skos:altLabel   "Volvelles."@en;
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Sound recording"@en;
-        ab:matchKey     "sound-recordings" .
+        skos:prefLabel  "Volvelle"@en;
+        ab:matchKey     "volvelles" .
 
-<https://dkglab.github.io/ns/artists-books/construction/spiral-binding>
-        rdf:type         skos:Concept;
-        rdfs:label       "Spiral binding"@en;
-        skos:altLabel    "Spiral bindings."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300263000>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Spiral binding"@en;
-        ab:matchKey      "spiral-bindings" .
-
-<https://dkglab.github.io/ns/artists-books/construction/split-page-book>
-        rdf:type         skos:Concept;
-        rdfs:label       "Split-page book"@en;
-        skos:altLabel    "Split-page books."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026179> , <http://id.worldcat.org/fast/1919971>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Split-page book"@en;
-        ab:matchKey      "split-page-books" .
-
-<https://dkglab.github.io/ns/artists-books/construction/stab-binding>
+<https://dkglab.github.io/ns/artists-books/construction/video-recording>
         rdf:type        skos:Concept;
-        rdfs:label      "Stab binding"@en;
-        skos:altLabel   "Stab binding."@en , "Stabbing (Binding)."@en , "Stabbing (Binding)"@en;
+        rdfs:label      "Video recording"@en;
+        skos:altLabel   "Video recordings for hard of hearing people."@en;
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Stab binding"@en;
-        ab:matchKey     "stab-binding" , "stabbing-binding" .
-
-<https://dkglab.github.io/ns/artists-books/construction/staple-binding>
-        rdf:type         skos:Concept;
-        rdfs:label       "Staple binding"@en;
-        skos:altLabel    "staple bindings."@en , "Staple binding."@en , "Staple bindings."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300375674>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Staple binding"@en;
-        ab:matchKey      "staple-binding" , "staple-bindings" .
-
-<https://dkglab.github.io/ns/artists-books/construction/stickers>
-        rdf:type         skos:Concept;
-        rdfs:label       "Stickers"@en;
-        skos:altLabel    "Stickers."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300207379>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Stickers"@en;
-        ab:matchKey      "stickers" .
-
-<https://dkglab.github.io/ns/artists-books/construction/tab-binding>
-        rdf:type        skos:Concept;
-        rdfs:label      "Tab binding"@en;
-        skos:altLabel   "Tab closure."@en;
-        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Tab binding"@en;
-        ab:matchKey     "tab-closure" .
-
-<https://dkglab.github.io/ns/artists-books/construction/textured-book>
-        rdf:type        skos:Concept;
-        rdfs:label      "Textured book"@en;
-        skos:altLabel   "Textured books."@en;
-        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Textured book"@en;
-        ab:matchKey     "textured-books" .
-
-<https://dkglab.github.io/ns/artists-books/construction/translucent-element>
-        rdf:type         skos:Concept;
-        rdfs:label       "Translucent element"@en;
-        skos:altLabel    "Translucency."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300056219>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Translucent element"@en;
-        ab:matchKey      "translucency" .
-
-<https://dkglab.github.io/ns/artists-books/construction/transparent-element>
-        rdf:type        skos:Concept;
-        rdfs:label      "Transparent element"@en;
-        skos:altLabel   "Transparencies"@en;
-        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Transparent element"@en;
-        ab:matchKey     "transparencies" .
-
-<https://dkglab.github.io/ns/artists-books/construction/triptych>
-        rdf:type        skos:Concept;
-        rdfs:label      "Triptych"@en;
-        skos:altLabel   "Triptychs."@en;
-        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Triptych"@en;
-        ab:matchKey     "triptychs" .
-
-<https://dkglab.github.io/ns/artists-books/construction/tunnel-book>
-        rdf:type        skos:Concept;
-        rdfs:label      "Tunnel book"@en;
-        skos:altLabel   "Tunnel books."@en;
-        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Tunnel book"@en;
-        ab:matchKey     "tunnel-books" .
-
-<https://dkglab.github.io/ns/artists-books/construction/unbound-sheets>
-        rdf:type        skos:Concept;
-        rdfs:label      "Unbound sheets"@en;
-        skos:altLabel   "Unbound sheets."@en;
-        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Unbound sheets"@en;
-        ab:matchKey     "unbound-sheets" .
+        skos:prefLabel  "Video recording"@en;
+        ab:matchKey     "video-recordings-for-hard-of-hearing-people" .
 
 <https://dkglab.github.io/ns/artists-books/construction/unopened-book>
         rdf:type         skos:Concept;
@@ -657,23 +543,137 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:prefLabel   "Unopened book"@en;
         ab:matchKey      "unopened-books" .
 
-<https://dkglab.github.io/ns/artists-books/construction/video-recording>
+<https://dkglab.github.io/ns/artists-books/construction/unbound-sheets>
         rdf:type        skos:Concept;
-        rdfs:label      "Video recording"@en;
-        skos:altLabel   "Video recordings for hard of hearing people."@en;
+        rdfs:label      "Unbound sheets"@en;
+        skos:altLabel   "Unbound sheets."@en;
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Video recording"@en;
-        ab:matchKey     "video-recordings-for-hard-of-hearing-people" .
+        skos:prefLabel  "Unbound sheets"@en;
+        ab:matchKey     "unbound-sheets" .
 
-<https://dkglab.github.io/ns/artists-books/construction/volvelle>
+<https://dkglab.github.io/ns/artists-books/construction/tunnel-book>
         rdf:type        skos:Concept;
-        rdfs:label      "Volvelle"@en;
-        skos:altLabel   "Volvelles."@en;
+        rdfs:label      "Tunnel book"@en;
+        skos:altLabel   "Tunnel books."@en;
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:inScheme   ab:construction-methods;
-        skos:prefLabel  "Volvelle"@en;
-        ab:matchKey     "volvelles" .
+        skos:prefLabel  "Tunnel book"@en;
+        ab:matchKey     "tunnel-books" .
+
+<https://dkglab.github.io/ns/artists-books/construction/triptych>
+        rdf:type        skos:Concept;
+        rdfs:label      "Triptych"@en;
+        skos:altLabel   "Triptychs."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Triptych"@en;
+        ab:matchKey     "triptychs" .
+
+<https://dkglab.github.io/ns/artists-books/construction/transparent-element>
+        rdf:type        skos:Concept;
+        rdfs:label      "Transparent element"@en;
+        skos:altLabel   "Transparencies"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Transparent element"@en;
+        ab:matchKey     "transparencies" .
+
+<https://dkglab.github.io/ns/artists-books/construction/translucent-element>
+        rdf:type         skos:Concept;
+        rdfs:label       "Translucent element"@en;
+        skos:altLabel    "Translucency."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300056219>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Translucent element"@en;
+        ab:matchKey      "translucency" .
+
+<https://dkglab.github.io/ns/artists-books/construction/textured-book>
+        rdf:type        skos:Concept;
+        rdfs:label      "Textured book"@en;
+        skos:altLabel   "Textured books."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Textured book"@en;
+        ab:matchKey     "textured-books" .
+
+<https://dkglab.github.io/ns/artists-books/construction/tab-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Tab binding"@en;
+        skos:altLabel   "Tab closure."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Tab binding"@en;
+        ab:matchKey     "tab-closure" .
+
+<https://dkglab.github.io/ns/artists-books/construction/stickers>
+        rdf:type         skos:Concept;
+        rdfs:label       "Stickers"@en;
+        skos:altLabel    "Stickers."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300207379>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Stickers"@en;
+        ab:matchKey      "stickers" .
+
+<https://dkglab.github.io/ns/artists-books/construction/staple-binding>
+        rdf:type         skos:Concept;
+        rdfs:label       "Staple binding"@en;
+        skos:altLabel    "Staple binding."@en , "staple bindings."@en , "Staple bindings."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300375674>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Staple binding"@en;
+        ab:matchKey      "staple-binding" , "staple-bindings" .
+
+<https://dkglab.github.io/ns/artists-books/construction/stab-binding>
+        rdf:type        skos:Concept;
+        rdfs:label      "Stab binding"@en;
+        skos:altLabel   "Stabbing (Binding)"@en , "Stabbing (Binding)."@en , "Stab binding."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Stab binding"@en;
+        ab:matchKey     "stabbing-binding" , "stab-binding" .
+
+<https://dkglab.github.io/ns/artists-books/construction/split-page-book>
+        rdf:type         skos:Concept;
+        rdfs:label       "Split-page book"@en;
+        skos:altLabel    "Split-page books."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:exactMatch  <http://id.worldcat.org/fast/1919971> , <http://id.loc.gov/authorities/genreForms/gf2014026179>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Split-page book"@en;
+        ab:matchKey      "split-page-books" .
+
+<https://dkglab.github.io/ns/artists-books/construction/spiral-binding>
+        rdf:type         skos:Concept;
+        rdfs:label       "Spiral binding"@en;
+        skos:altLabel    "Spiral bindings."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300263000>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Spiral binding"@en;
+        ab:matchKey      "spiral-bindings" .
+
+<https://dkglab.github.io/ns/artists-books/construction/sound-recording>
+        rdf:type        skos:Concept;
+        rdfs:label      "Sound recording"@en;
+        skos:altLabel   "Sound recordings"@en , "sound recordings."@en , "Sound recordings."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Sound recording"@en;
+        ab:matchKey     "sound-recordings" .
+
+<https://dkglab.github.io/ns/artists-books/construction/sculptural-bookwork>
+        rdf:type         skos:Concept;
+        rdfs:label       "Sculptural bookwork"@en;
+        skos:altLabel    "Shaped books (Printing)"@en , "Shaped books"@en , "Shaped books."@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv01881>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Sculptural bookwork"@en;
+        ab:matchKey      "shaped-books-printing" , "shaped-books" .
 
 <https://dkglab.github.io/ns/artists-books/construction/scroll>
         rdf:type         skos:Concept;
@@ -877,7 +877,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/game>
         rdf:type         skos:Concept;
         rdfs:label       "Game"@en;
-        skos:altLabel    "Genre: Games."@en , "games."@en , "Games."@en;
+        skos:altLabel    "Genre: Games"@en , "Genre: Games."@en , "games"@en , "games."@en , "Games."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:exactMatch  <http://id.worldcat.org/fast/1726787>;
         skos:inScheme    ab:construction-methods;
@@ -1253,7 +1253,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/screen-printing>
         rdf:type         skos:Concept;
         rdfs:label       "Screen printing"@en;
-        skos:altLabel    "Screen prints."@en , "Screen printing."@en , "screen prints."@en , "Screen prints"@en , "Screenprints"@en;
+        skos:altLabel    "Screen prints."@en , "Screen prints"@en , "Screen printing."@en , "screen prints."@en , "Screenprints"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300178688> , <http://vocab.getty.edu/aat/300053281> , <http://id.loc.gov/authorities/genreForms/gf2017027258> , <http://id.worldcat.org/fast/1986255>;
         skos:inScheme    ab:construction-methods;
@@ -1328,7 +1328,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/photography>
         rdf:type         skos:Concept;
         rdfs:label       "Photography"@en;
-        skos:altLabel    "Photoalbum"@en , "Photography, Artistic"@en , "Photographs, Original."@en , "Photographs, Original"@en , "Foto's."@en , "Glass negatives."@en , "Photomontages (visual works)."@en , "Photography."@en , "Photographic prints."@en , "Manipulated photographs"@en , "art photography."@en , "art photography"@en , "Anaglyphs."@en , "Fotografie"@en , "Architectural photography."@en , "Black-and-white photography."@en , "Manipulated photographs."@en , "Fotonovelas."@en , "Documentary photographs."@en , "Photographs"@en , "Photographical works."@en , "Fotografické publikace."@en , "Landscape photography."@en , "Photography, Artistic."@en , "Photographic sequence."@en , "Photographs."@en , "Documentary photography."@en , "Documentary photography"@en , "Art photography."@en;
+        skos:altLabel    "Photoalbum"@en , "Photography, Artistic"@en , "Photographs, Original."@en , "Photographs, Original"@en , "Foto's"@en , "Foto's."@en , "Glass negatives."@en , "Photomontages (visual works)."@en , "Photography."@en , "Photographic prints."@en , "Manipulated photographs"@en , "art photography."@en , "art photography"@en , "Anaglyphs."@en , "Fotografie"@en , "Architectural photography."@en , "Black-and-white photography."@en , "Manipulated photographs."@en , "Fotonovelas."@en , "Documentary photographs."@en , "Photographs"@en , "Photographical works."@en , "Fotografické publikace."@en , "Landscape photography."@en , "Art photography."@en , "Photography, Artistic."@en , "Photographic sequence."@en , "Photographic sequence"@en , "Photographs."@en , "Documentary photography."@en , "Documentary photography"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
         skos:exactMatch  <https://id.loc.gov/authorities/genreForms/gf2017027249> , <http://vocab.getty.edu/aat/300162056> , <http://vocab.getty.edu/aat/300127269> , <http://vocab.getty.edu/aat/300046300> , <http://id.worldcat.org/fast/1986270> , <http://id.worldcat.org/fast/1774325> , <http://id.loc.gov/authorities/genreForms/gf2017027230> , <http://vocab.getty.edu/aat/300178594> , <http://id.worldcat.org/fast/1423689>;
         skos:inScheme    ab:construction-methods;
@@ -1614,7 +1614,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/drawing>
         rdf:type         skos:Concept;
         rdfs:label       "Drawing"@en;
-        skos:altLabel    "Drawings: Old Testament."@en , "Drawings: Genre."@en , "Drawings: Figures other than portraits: Men: Full length."@en , "Drawings: Book illustrations, dramatizations, representations of legends, etc."@en , "Drawings: Animals."@en , "Drawings."@en , "Drawings"@en , "Drawings (visual works)"@en , "Line drawings"@en , "Zeichnung"@en , "Tekeningen."@en;
+        skos:altLabel    "Drawings: Old Testament"@en , "Drawings: Old Testament."@en , "Drawings: Genre"@en , "Drawings: Genre."@en , "Drawings: Figures other than portraits: Men: Full length"@en , "Drawings: Figures other than portraits: Men: Full length."@en , "Drawings: Book illustrations, dramatizations, representations of legends, etc"@en , "Drawings: Book illustrations, dramatizations, representations of legends, etc."@en , "Drawings: Animals"@en , "Drawings: Animals."@en , "Drawings."@en , "Drawings"@en , "Drawings (visual works)"@en , "Line drawings"@en , "Zeichnung"@en , "Tekeningen."@en , "Tekeningen"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300033973>;
         skos:inScheme    ab:construction-methods;
@@ -1993,7 +1993,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/handmade-paper>
         rdf:type         skos:Concept;
         rdfs:label       "Handmade paper"@en;
-        skos:altLabel    "Handmade papers (Paper)"@en , "Paper, handmade."@en , "Handmade papers."@en , "Handmade paper."@en , "Handmade papers"@en , "Handmade papers (fiber product)"@en , "Paper, Handmade."@en;
+        skos:altLabel    "Handmade papers (Paper)"@en , "Paper, Handmade"@en , "Paper, handmade."@en , "Handmade papers."@en , "Handmade paper."@en , "Handmade papers"@en , "Handmade papers (fiber product)"@en , "Paper, Handmade."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/material>;
         skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv01435> , <http://vocab.getty.edu/aat/300411543>;
         skos:inScheme    ab:construction-methods;

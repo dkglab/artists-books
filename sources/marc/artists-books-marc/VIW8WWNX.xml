@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02508cam a2200445 a 4500</leader>
+  <controlfield tag="001">12032253</controlfield>
+  <controlfield tag="005">20250606182215.8</controlfield>
+  <controlfield tag="008">000606s2000    wauabo        000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">12032253</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">2 shelf copies</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">to SMCD for RBSCD selection (handmade book) pb08 06-06-00</subfield>
+    <subfield code="i">he07 2009-11-20; 2009-11-23 to RBSCD truck in Deck B cage</subfield>
+    <subfield code="a">he04 2011-09-30 copy 2 rejected by RBSCD</subfield>
+    <subfield code="a">he04 2011-09-30 redistributed to US General Div.</subfield>
+    <subfield code="t">xh12 2011-10-06 copy 2 added to BCCD</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-644, LCAPM-150</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   00267909 </subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0940979438</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780940979437</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="e">dcrmb</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">nccr---</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">QH86</subfield>
+    <subfield code="b">.N59 2000</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Nix, Nelleke.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Zones of time, sand and rain :</subfield>
+    <subfield code="b">an artists' book /</subfield>
+    <subfield code="c">by Nelleke Nix, writings and original art, &amp; Phyllis Uitti-Maslin, photography.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Washington, D.C. :</subfield>
+    <subfield code="b">The Library Fellows of the National Museum of Women in the Arts,</subfield>
+    <subfield code="c">anno MM [2000]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 v. (various pagings) :</subfield>
+    <subfield code="b">ill. (chiefly col.), maps, photos. ;</subfield>
+    <subfield code="c">29 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Text and photographs [printed] at Nelleke Nix Studio Press, Seattle, WA; title page, blockprints and linocuts at Sidereal Press, Seattle, WA"--Facing t.p.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Signed and numbered edition of 125 copies.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Hand-written and letterpress text, drawings, color block prints, linocuts and prints of digital photographs evoke the Costa Rican rain forests. Papers vary in dimensions and include handmade paper with natural fibers and heavyweight archival paper and colored-paper shapes with torn edges. Illustrations include also paper collage and cutouts. Hand-sewn plywood covers have an original photograph mounted on front and wax-paper wrappers.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC Copy 1 is no. 124 signed by the artist.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Natural history</subfield>
+    <subfield code="z">Costa Rica.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Rain forests</subfield>
+    <subfield code="z">Costa Rica.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">National parks and reserves</subfield>
+    <subfield code="z">Costa Rica.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Endangered ecosystems</subfield>
+    <subfield code="z">Costa Rica.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Washington</subfield>
+    <subfield code="z">Seattle.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Washington (D.C.)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Uitti-Maslin, Phyllis.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Nelleke Nix Studio Press.</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">LC Copy 2 not seen at time of cataloging for RBSCD. he07 2009-11-23</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">VIW8WWNX</subfield><subfield code="b">0940979438</subfield><subfield code="c">isbn</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

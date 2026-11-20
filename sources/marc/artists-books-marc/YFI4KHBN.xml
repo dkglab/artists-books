@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02301nam a2200373Ia 4500</leader>
+  <controlfield tag="001">ocm14575664</controlfield>
+  <controlfield tag="005">20250801123427.0</controlfield>
+  <controlfield tag="008">890510s1986    nyuab    bc   001 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">14766279</subfield>
+    <subfield code="a">15342788</subfield>
+    <subfield code="a">16468162</subfield>
+    <subfield code="a">1159836279</subfield>
+    <subfield code="a">1249780362</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0500274371</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)14575664</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">WHE</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">XQM</subfield>
+    <subfield code="d">WHE</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">SMI</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">m/c</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Long, Richard,</subfield>
+    <subfield code="d">1945-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n84090805</subfield>
+    <subfield code="1">http://viaf.org/viaf/95766060</subfield>
+    <subfield code="1">http://isni.org/isni/0000000114525316.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Richard Long /</subfield>
+    <subfield code="c">[essay by] R.H. Fuchs.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Solomon R. Guggenheim Museum ;</subfield>
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Thames and Hudson,</subfield>
+    <subfield code="c">1986.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">237 pages :</subfield>
+    <subfield code="b">illustrations (some color), maps ;</subfield>
+    <subfield code="c">26 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">map</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1008.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This exhibition is supported by grants from the National Endowment for the Arts and the British Council"--title page.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Acknowledgments" signed by Diane Waldman, Curator of the exhibition.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes index.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">"Publications by the artist": page 237.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Long, Richard,</subfield>
+    <subfield code="d">1945-</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Long, Richard,</subfield>
+    <subfield code="d">1945-</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/126845.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Exhibition catalogs.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1424028.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Fuchs, Rudi,</subfield>
+    <subfield code="d">1942-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50027731</subfield>
+    <subfield code="1">http://viaf.org/viaf/49259357</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121319465.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Waldman, Diane.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n80005074</subfield>
+    <subfield code="1">http://viaf.org/viaf/120607929</subfield>
+    <subfield code="1">http://isni.org/isni/0000000109396804.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Solomon R. Guggenheim Museum.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79065486</subfield>
+    <subfield code="1">http://viaf.org/viaf/141479275</subfield>
+    <subfield code="1">http://isni.org/isni/0000000406261789.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">YFI4KHBN</subfield><subfield code="b">long / richard long</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

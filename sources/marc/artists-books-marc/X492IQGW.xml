@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02279nam a2200505Ic 4500</leader>
+  <controlfield tag="001">991010284419707141</controlfield>
+  <controlfield tag="005">20200618101617.0</controlfield>
+  <controlfield tag="008">170215s2013    sp     g      000 0 spa d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9788493760373</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">8493760374</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b14004355-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)972676879</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">MMX</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">MMX</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">MMXA</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.E68</subfield>
+    <subfield code="b">B533 2013</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Equisoain, Roberto,</subfield>
+    <subfield code="d">1973-</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2015006681</subfield>
+    <subfield code="1">http://viaf.org/viaf/313497333</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Blablabla.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Bilbao, Spain] :</subfield>
+    <subfield code="b">[Belleza infinita],</subfield>
+    <subfield code="c">[2013]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">62 pages ;</subfield>
+    <subfield code="c">17 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"The Book of Genesis translated from Castilian replacing each syllable with a blah. The layout, typography, design and binding mimic a typical edition of the Bible"--Fatbottom Libreria Gràfica website (viewed on February 15, 2017)</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Artist's name and place of publication from Belleza Infinita website (viewed on February 15, 2017)</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">At foot of title page: "1+1=1+1"</subfield>
+  </datafield>
+  <datafield tag="583" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">Housed</subfield>
+    <subfield code="c">20170216</subfield>
+    <subfield code="i">Placed in custom folder enclosure</subfield>
+    <subfield code="2">local</subfield>
+    <subfield code="5">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2013.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Translations.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2025026022</subfield>
+  </datafield>
+  <datafield tag="730" ind1="0" ind2=" ">
+    <subfield code="i">Translation of:</subfield>
+    <subfield code="a">Bible.</subfield>
+    <subfield code="p">Genesis.</subfield>
+    <subfield code="l">Spanish.</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">Europe.</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">Spain</subfield>
+    <subfield code="d">Bilbao.</subfield>
+  </datafield>
+  <datafield tag="852" ind1="8" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">E7037 A12bL</subfield>
+    <subfield code="x">OR20170215df</subfield>
+    <subfield code="x">2017FY</subfield>
+    <subfield code="x">2017CY</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="x">PRES2017ame</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">200806</subfield>
+    <subfield code="d">170215</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">170215</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b14004355</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">E7037 A12bL</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300325375</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mma</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">2</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i23920609</subfield>
+    <subfield code="z">170215</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">LTI 03/09/2017</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="952" ind1="8" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">E7037 A12bL</subfield>
+    <subfield code="x">OR20170215df</subfield>
+    <subfield code="x">2017FY</subfield>
+    <subfield code="x">2017CY</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="x">PRES2017ame</subfield>
+  </datafield>
+  <datafield tag="983" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">Housed</subfield>
+    <subfield code="c">20170216</subfield>
+    <subfield code="i">Placed in custom folder enclosure</subfield>
+    <subfield code="2">local</subfield>
+    <subfield code="5">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">1</subfield>
+    <subfield code="c">170215</subfield>
+    <subfield code="d">m</subfield>
+    <subfield code="e">1</subfield>
+    <subfield code="f">-</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mm</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991010284419707141</subfield>
+    <subfield code="8">2273672080007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMA</subfield>
+    <subfield code="c">MoMA Manhattan Artists' Books</subfield>
+    <subfield code="d">E7037 A12bL</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mma</subfield>
+    <subfield code="k">1</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Museum of Modern Art Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">X492IQGW</subfield><subfield code="b">lohr / blablabla</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

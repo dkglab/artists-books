@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02027cam a2200517 i 4500</leader>
+  <controlfield tag="001">99155239230003941</controlfield>
+  <controlfield tag="005">20240408213017.0</controlfield>
+  <controlfield tag="008">210406t20202020quc           000 j fre d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9782760948471</subfield>
+    <subfield code="q">(paperback)</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2760948471</subfield>
+    <subfield code="q">(paperback)</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1245232054</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">UAB</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">UAB</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">HUL</subfield>
+    <subfield code="d">CDX</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">UAU</subfield>
+  </datafield>
+  <datafield tag="041" ind1="1" ind2=" ">
+    <subfield code="a">fre</subfield>
+    <subfield code="a">ger</subfield>
+    <subfield code="h">fre</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">PQ3919.3.R669</subfield>
+    <subfield code="b">C44 2020</subfield>
+  </datafield>
+  <datafield tag="055" ind1=" " ind2="3">
+    <subfield code="a">PS9635.O6997</subfield>
+    <subfield code="b">C44 2020</subfield>
+  </datafield>
+  <datafield tag="055" ind1=" " ind2="3">
+    <subfield code="a">PS8635.O6997</subfield>
+    <subfield code="b">C44 2020</subfield>
+  </datafield>
+  <datafield tag="055" ind1=" " ind2="3">
+    <subfield code="a">PS8635.O874</subfield>
+    <subfield code="b">C44 2020</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Rosshandler, Leo</subfield>
+    <subfield code="e">author.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">Les chemins de la vie :</subfield>
+    <subfield code="b">fables /</subfield>
+    <subfield code="c">Léo Rosshandler.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">Éd. 01.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">Édition bilingue français - allemand.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Montréal (Québec) :</subfield>
+    <subfield code="b">Leméac,</subfield>
+    <subfield code="c">[2020]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©2020</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">128 pages ;</subfield>
+    <subfield code="c">18 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">In French and German.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Français - allemand."</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Short stories</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Fables</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">short stories.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">fables.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Short stories</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01726740</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Fables</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01726604</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Short stories</subfield>
+    <subfield code="2">lcgft</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Fables</subfield>
+    <subfield code="2">lcgft</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Nouvelles.</subfield>
+    <subfield code="2">rvmgf</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Fables.</subfield>
+    <subfield code="2">rvmgf</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2="2">
+    <subfield code="i">Container of (expression):</subfield>
+    <subfield code="a">Rosshandler, Leo.</subfield>
+    <subfield code="t">Chemins de la vie.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2="2">
+    <subfield code="i">Container of (expression):</subfield>
+    <subfield code="a">Rosshandler, Leo.</subfield>
+    <subfield code="t">Chemins de la vie.</subfield>
+    <subfield code="l">German.</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="i">has work:</subfield>
+    <subfield code="a">Les chemins de la vie (Text)</subfield>
+    <subfield code="1">https://id.oclc.org/worldcat/entity/E39PCGPMbgvCryy8qHmCxBkgPP</subfield>
+    <subfield code="4">https://id.oclc.org/worldcat/ontology/hasWork</subfield>
+  </datafield>
+  <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">415.37861..565461.655280.0000.00000</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-01-28</subfield>
+    <subfield code="c">WorldCat record encoding level change - WorldCat record variable field(s) change: 050</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-06-09</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 655</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2024-04-08</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 650</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">JW2TTDI3</subfield><subfield code="b">lothier / les chemins de la vie</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

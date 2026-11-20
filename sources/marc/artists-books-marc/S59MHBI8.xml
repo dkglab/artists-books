@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03740nam a2200457Ii 4500</leader>
+  <controlfield tag="001">ocn903224883</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115003.0</controlfield>
+  <controlfield tag="008">150211s2014    ilua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)903224883</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NOC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.M235</subfield>
+    <subfield code="b">S9 2014</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/N1-N9211</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">MacCallum, Marlene,</subfield>
+    <subfield code="e">photographer.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr2001035460</subfield>
+    <subfield code="1">http://viaf.org/viaf/5187184</subfield>
+    <subfield code="1">http://isni.org/isni/0000000073676141.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Switching places /</subfield>
+    <subfield code="c">[concept, design and images by] Marlene MacCallum ; [texts by] Lisa Moore [and] Jessica Grant ; [inclusion by] David Morish.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Chicago :</subfield>
+    <subfield code="b">Center for Book et Paper Art, Columbia College,</subfield>
+    <subfield code="c">[2014]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">32 unnumbered pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Directed and with photographs by Marlene MacCallum, includes two texts by Lisa Moore, another by Jessica Grant, and an inclusion folio by David Morrish. All of the participants are from Newfoundland. MacCallum's photographs of house/home interiors in various states of repair and finish provide the setting for the writing. The photos were made with a pinhole camera and exude a sometimes moody, other times whimsical nature depending on the text they are subtly aligned with. Moore reveals in a personal narrative the slow but ever changing quality of lives and relationships within an also shifting place. Grant's text, presented in cursive writing, glides between light-hearted irony and moving statements of finality. Morrish designed the layout."--JAB 36, page 2.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">One of 6 artists' books included in issue no. 35 (Spring 2014) of the Journal of Artists' Books.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">Cities and the art of narrative ; Haloes / Lisa Moore -- The great indoors / Jessica Grant -- Ephemeral inclusion / by David Morrish.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">MacCallum, Marlene.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr2001035460</subfield>
+    <subfield code="1">http://viaf.org/viaf/5187184</subfield>
+    <subfield code="1">http://isni.org/isni/0000000073676141.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">MacCallum, Marlene.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1566044.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Home.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85061657.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Home.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/959074.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="y">2014.</subfield>
+    <subfield code="2">rbmscv.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Grant, Jessica,</subfield>
+    <subfield code="d">1972-</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2005006505</subfield>
+    <subfield code="1">http://viaf.org/viaf/26788637</subfield>
+    <subfield code="1">http://isni.org/isni/0000000074213018.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Moore, Lisa,</subfield>
+    <subfield code="d">1964-</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n96033511</subfield>
+    <subfield code="1">http://viaf.org/viaf/5154167</subfield>
+    <subfield code="1">http://isni.org/isni/0000000076905851.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Morrish, David.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n2003001323</subfield>
+    <subfield code="1">http://viaf.org/viaf/42097749</subfield>
+    <subfield code="1">http://isni.org/isni/000000007369485X.</subfield>
+  </datafield>
+  <datafield tag="730" ind1="0" ind2=" ">
+    <subfield code="a">Journal of artists' books.</subfield>
+    <subfield code="n">No. 35 (Supplement)</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/asset/SS33469_33469_42526485</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.4.M235</subfield>
+    <subfield code="b">S9 2014</subfield>
+    <subfield code="z">050 4</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00048662874</subfield>
+    <subfield code="l">aart</subfield>
+    <subfield code="n">jc</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="u">-</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="t">78</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">02-11-15</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">ilu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">S59MHBI8</subfield><subfield code="b">b8168693</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

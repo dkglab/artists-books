@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00255    a2200085   4500</leader>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">LaLonde, Lisa</subfield>
+    <subfield code="e">Artist</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Castles in the sand, an allegory</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Rochester, NY</subfield>
+    <subfield code="b">Visual Studies Workshop</subfield>
+    <subfield code="c">1990</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="b">offset</subfield>
+    <subfield code="c">8 x 10"</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Saddle stitch sewn - thesis work</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">RTZFLWPY</subfield><subfield code="b">manual</subfield><subfield code="c">manual</subfield><subfield code="d">ehive</subfield></datafield></record>
+</collection>

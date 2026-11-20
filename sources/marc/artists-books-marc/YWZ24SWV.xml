@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01795cam a2200325Ii 4500</leader>
+  <controlfield tag="001">ocn965381817</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20170421013050.0</controlfield>
+  <controlfield tag="008">161206s2012    tnua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)965381817</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">VGM</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">VGM</subfield>
+    <subfield code="d">VGM</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">GSE</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">GSEM</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.S329</subfield>
+    <subfield code="b">S59 2012</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Sanford, Elizabeth,</subfield>
+    <subfield code="e">book artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Six sides of science /</subfield>
+    <subfield code="c">Elizabeth Sanford.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Nashville, TN] :</subfield>
+    <subfield code="b">Elizabeth Sanford,</subfield>
+    <subfield code="c">[2012]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">Origami flexicube :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">23 x 11 x 6 cm, in wrapper 24 x 13 x 6 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">object</subfield>
+    <subfield code="b">nr</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Eight  5.5 cm cubes are hinged together to create a movable book.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Watercolor and acrylic; text printed with archival ink on an Epson Pro 7800.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Limited edition of 5. Edition number 1/5, signed by the artist.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"This flexicube is a playful look at the intersection of science and language. Each side features a different chain of linked words, which may be broken into various pairs. Individual words may be coupled with the one before or after to form common expressions, such as "rocket science" of "science fiction". As the cubes are rotated, the images and words shift and change their orientation. The networks of red lines are loosely based on the veins and arteries in old medical illustrations." -- From a quote by the artist on 23 Sandy Gallery website (viewed December 6, 2016)</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Sanford, Elizabeth,</subfield>
+    <subfield code="e">book artist.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Toy and movable books</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">23 Sandy Gallery,</subfield>
+    <subfield code="e">curator.</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">GSE</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">YWZ24SWV</subfield><subfield code="b">sanford / six sides of science</subfield><subfield code="c">title-author</subfield><subfield code="d">scad</subfield></datafield></record>
+</collection>

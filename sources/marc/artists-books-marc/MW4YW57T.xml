@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00558    a2200133   4500</leader>
+  <controlfield tag="001">ocm50871897</controlfield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Trautwein, Paul, author, book artist, printer</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Trautwein, Paul</subfield>
+    <subfield code="0">no2011022441</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Borowsky Center for Publication Arts</subfield>
+    <subfield code="0">n88159171</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">China / Hong Kong</subfield>
+    <subfield code="c">[Paul Trautwein]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Philadelphia, PA?] :</subfield>
+    <subfield code="b">[Paul Trautwein],</subfield>
+    <subfield code="c">[1994]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="3">
+    <subfield code="a">Philadelphia, PA :</subfield>
+    <subfield code="b">Printed in The Borowsky Center at the University of the Arts,</subfield>
+    <subfield code="c">1994.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">16 unnumbered pages (2 folded)</subfield>
+    <subfield code="b">illustrations (some color)</subfield>
+    <subfield code="c">22 cm</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"#10"--Colophon</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">MW4YW57T</subfield><subfield code="b">trautwein / china hong kong</subfield><subfield code="c">title-author</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

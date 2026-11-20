@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02511cam a2200457 i 4500</leader>
+  <controlfield tag="001">124635</controlfield>
+  <controlfield tag="005">20250606185949.4</controlfield>
+  <controlfield tag="007">t|</controlfield>
+  <controlfield tag="008">970409s1996    vaua     c    000 0 eng  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">124635</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">pb06 to cat 04-09-97; jh32 04-25-97; jh21 04-30-97</subfield>
+    <subfield code="i">he19 2025-02-04</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-01-04:00: LCAPM-893</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   97137872 </subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DLC)124635</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">DLC</subfield>
+    <subfield code="d">DLC-MRC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-us---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-us</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N6537.O56</subfield>
+    <subfield code="b">A4 1996</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Ono, Yōko</subfield>
+    <subfield code="e">artist</subfield>
+    <subfield code="4">art</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/art</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50001903</subfield>
+    <subfield code="1">http://id.loc.gov/rwo/agents/n50001903</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Fly /</subfield>
+    <subfield code="c">Yōko Ono.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Richmond, Va.] :</subfield>
+    <subfield code="b">Anderson Gallery, Virginia Commonwealth University,</subfield>
+    <subfield code="c">1996.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 case</subfield>
+    <subfield code="b">illustrations</subfield>
+    <subfield code="c">19 cm</subfield>
+  </datafield>
+  <datafield tag="334" ind1=" " ind2=" ">
+    <subfield code="a">single unit</subfield>
+    <subfield code="b">mono</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/issuance/mono</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/contentTypes/txt</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/mediaTypes/n</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/carriers/nc</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustrations</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/millus/ill</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Issued on the occasion of the exhibition Yōko Ono, fly held at the Anderson Gallery, October 18-December 23, 1996.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from case.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Case includes 1 booklet (19 pages : illustrations ; 18 cm); Cleaning piece (2 stones with accompanying text); Wish piece (2 acorns with accompanying text); 1 bookmark, 8 cards.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Ono, Yōko</subfield>
+    <subfield code="v">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Conceptual art</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Exhibitions</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008101519</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Catalogs</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026057</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Exhibition catalogs.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2014026098</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Anderson Gallery</subfield>
+    <subfield code="e">host institution</subfield>
+    <subfield code="4">http://id.loc.gov/vocabulary/relators/his</subfield>
+    <subfield code="1">http://id.loc.gov/rwo/agents/n82144406</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="1">http://id.loc.gov/resources/instances/124635</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="4">http://id.loc.gov/ontologies/bibframe/instanceOf</subfield>
+    <subfield code="1">http://id.loc.gov/resources/works/124635</subfield>
+  </datafield>
+  <datafield tag="884" ind1=" " ind2=" ">
+    <subfield code="a">DLC bibframe2marc v2.9.0</subfield>
+    <subfield code="g">20250205122107.0</subfield>
+    <subfield code="q">DLC</subfield>
+    <subfield code="u">https://github.com/lcnetdev/bibframe2marc/releases/tag/v2.9.0</subfield>
+  </datafield>
+  <datafield tag="922" ind1=" " ind2=" ">
+    <subfield code="a">ad</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="e">BIBFRAME Prod</subfield>
+    <subfield code="d">2025-02-05T12:21:07</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">5BKDZFRU</subfield><subfield code="b">ono / fly</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

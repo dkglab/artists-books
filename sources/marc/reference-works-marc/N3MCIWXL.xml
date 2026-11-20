@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02080cam a2200409 c 4500</leader>
+  <controlfield tag="001">787941271</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220916213130.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">140613s1984    xxc||||| c    00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0920956165</subfield>
+    <subfield code="9">0-920956-16-5</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780920956168</subfield>
+    <subfield code="9">978-0-920956-16-8</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)787941271</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV787941271</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)935487276</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-CA</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">21.99</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Evidence of the Avant Garde since 1957</subfield>
+    <subfield code="b">selected works from the collection of Art Metropole including audio tapes, records, videotapes, film, multiples, kitsch, manuscripts, stamps, buttons, flyers, posters, correspondence, catalogues, porn, t-shirts, postcards, drawings, poems, mailers, books, photographs and ephemera ; an Art Metropole 10th anniversary event, November 17 to December 8, 1984, Toronto</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Toronto</subfield>
+    <subfield code="b">Art Metropole</subfield>
+    <subfield code="c">1984</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[94] S.</subfield>
+    <subfield code="b">Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="a">Staatliche Kunstsammlungen Weimar</subfield>
+    <subfield code="f">Stempel</subfield>
+    <subfield code="5">DE-32</subfield>
+    <subfield code="y">1477610294</subfield>
+    <subfield code="s">Ku B 8788</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="0">(DE-588)2022373-0</subfield>
+    <subfield code="0">(DE-627)102096422</subfield>
+    <subfield code="0">(DE-576)191753025</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="x">Art Metropole, Toronto</subfield>
+    <subfield code="y">1984</subfield>
+    <subfield code="z">Toronto</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">b</subfield>
+    <subfield code="0">(DE-588)5041806-3</subfield>
+    <subfield code="0">(DE-627)103851690</subfield>
+    <subfield code="0">(DE-576)193193027</subfield>
+    <subfield code="a">Art Metropole</subfield>
+    <subfield code="g">Toronto</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4114333-4</subfield>
+    <subfield code="0">(DE-627)105822957</subfield>
+    <subfield code="0">(DE-576)209483733</subfield>
+    <subfield code="a">Kunst</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4133965-4</subfield>
+    <subfield code="0">(DE-627)104805811</subfield>
+    <subfield code="0">(DE-576)209648287</subfield>
+    <subfield code="a">Avantgarde</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="3">
+    <subfield code="A">z</subfield>
+    <subfield code="2">gnd</subfield>
+    <subfield code="a">Geschichte 1957-1983</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Art Metropole</subfield>
+    <subfield code="g">Toronto</subfield>
+    <subfield code="0">(DE-588)5041806-3</subfield>
+    <subfield code="0">(DE-627)103851690</subfield>
+    <subfield code="0">(DE-576)193193027</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1477610294</subfield>
+    <subfield code="b">DE-32</subfield>
+    <subfield code="9">32</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">Ku B 8788</subfield>
+    <subfield code="h">MAG</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3882994223</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">8 2021 957</subfield>
+    <subfield code="g">::8:2021:957:</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">21.99</subfield>
+    <subfield code="j">Sonstige Kunstformen</subfield>
+    <subfield code="0">(DE-627)106405659</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">N3MCIWXL</subfield><subfield code="b">0920956165</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

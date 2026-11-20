@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01102naa a2200313I  4500</leader>
+  <controlfield tag="001">990051367670203941</controlfield>
+  <controlfield tag="005">20020606095253.2</controlfield>
+  <controlfield tag="008">751208s1903    dcu           000 0 eng^^</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">^^^06014690^</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1882493</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">FQG</subfield>
+    <subfield code="d">HMZ</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">pogg---</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2=" ">
+    <subfield code="a">Q11</subfield>
+    <subfield code="b">.W3</subfield>
+    <subfield code="a">QL657.H47</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Heller, Edmund,</subfield>
+    <subfield code="d">1875-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">... Reptiles.</subfield>
+    <subfield code="c">By Edmund Heller.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Washington, D. C.,</subfield>
+    <subfield code="b">The Academy,</subfield>
+    <subfield code="c">1903.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">cover-title, 39-98 p.</subfield>
+    <subfield code="c">26 cm.</subfield>
+  </datafield>
+  <datafield tag="490" ind1="0" ind2=" ">
+    <subfield code="a">Papers from the Hopkins Stanford Galapagos expedition, 1898-1899.xiv</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Reptiles</subfield>
+    <subfield code="z">Galapagos Islands.</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2=" ">
+    <subfield code="t">Proc. Wash. Acad. Sci.</subfield>
+    <subfield code="g">1903. 5. 39-98.</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Online version:</subfield>
+    <subfield code="a">Heller, Edmund, 1875-1939.</subfield>
+    <subfield code="t">... Reptiles.</subfield>
+    <subfield code="d">Washington, D.C., The Academy, 1903</subfield>
+    <subfield code="w">(OCoLC)794325110</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">005136767</subfield>
+  </datafield>
+  <datafield tag="901" ind1="1" ind2=" ">
+    <subfield code="a">AZN2047</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">MHAZN20471HU</subfield>
+  </datafield>
+  <datafield tag="905" ind1=" " ind2=" ">
+    <subfield code="a">QL^0657</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">ORC1414ASMCZMBox00098</subfield>
+    <subfield code="b">19950106</subfield>
+    <subfield code="c">19950107</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-08-12</subfield>
+    <subfield code="c">WorldCat record encoding level change</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">NO-OVERLAY</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">5AEC6HA4</subfield><subfield code="b">rosenberg / reptiles</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

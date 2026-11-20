@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02490cam a22005777a 4500</leader>
+  <controlfield tag="001">17444402</controlfield>
+  <controlfield tag="005">20250607051627.0</controlfield>
+  <controlfield tag="008">120828s2012    enka          000 1 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">17444402</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">2 shelf copies</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">rg04 2012-08-28 z-processor</subfield>
+    <subfield code="i">hh06 2013-07-26 (telework) to BCCD</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-644, LCAPM-893</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2012454531</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">GBB195059</subfield>
+    <subfield code="2">bnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">015865545</subfield>
+    <subfield code="2">Uk</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781907533242</subfield>
+    <subfield code="q">hbk.</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1907533249</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)751804878</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">UKMGB</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">UKMGB</subfield>
+    <subfield code="d">YDXCP</subfield>
+    <subfield code="d">BDX</subfield>
+    <subfield code="d">IAD</subfield>
+    <subfield code="d">JPG</subfield>
+    <subfield code="d">WAU</subfield>
+    <subfield code="d">VP@</subfield>
+    <subfield code="d">ZCU</subfield>
+    <subfield code="d">IAD</subfield>
+    <subfield code="d">LMR</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="041" ind1="1" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="h">ger</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-gx---</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">GR166</subfield>
+    <subfield code="b">.K5313 2012</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">398.2</subfield>
+    <subfield code="2">23</subfield>
+  </datafield>
+  <datafield tag="130" ind1="0" ind2=" ">
+    <subfield code="a">Kinder- und Hausmärchen.</subfield>
+    <subfield code="k">Selections.</subfield>
+    <subfield code="l">English.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Six fairy tales from the Brothers Grimm /</subfield>
+    <subfield code="c">with illustrations by David Hockney.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">New ed.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Royal Academy of Arts ;</subfield>
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Distributed in the United States and Canada by Harry N. Abrams,</subfield>
+    <subfield code="c">c2012.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">70 p. :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">22 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Originally published: London: Petersburg Press, 1970.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2="0">
+    <subfield code="t">The little sea hare --</subfield>
+    <subfield code="t">Fundevogel --</subfield>
+    <subfield code="t">Rapunzel --</subfield>
+    <subfield code="t">The boy who left home to learn fear --</subfield>
+    <subfield code="t">Old Rinkrank --</subfield>
+    <subfield code="t">Rumpelstilzchen.</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">"The text was translated from the German original by Heiner Bastian."--T.p. verso.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Hockney, David.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Grimm, Jacob,</subfield>
+    <subfield code="d">1785-1863</subfield>
+    <subfield code="v">Illustrations.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Grimm, Wilhelm,</subfield>
+    <subfield code="d">1786-1859</subfield>
+    <subfield code="v">Illustrations.</subfield>
+  </datafield>
+  <datafield tag="630" ind1="0" ind2="0">
+    <subfield code="a">Kinder- und Hausmärchen.</subfield>
+    <subfield code="k">Selections.</subfield>
+    <subfield code="l">English</subfield>
+    <subfield code="v">Illustrations.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Fairy tales</subfield>
+    <subfield code="z">Germany.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Fairy tales</subfield>
+    <subfield code="z">Germany</subfield>
+    <subfield code="v">Illustrations.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Pictures.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2017027251</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Grimm, Jacob,</subfield>
+    <subfield code="d">1785-1863.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Grimm, Wilhelm,</subfield>
+    <subfield code="d">1786-1859.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Hockney, David.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bastian, Heiner,</subfield>
+    <subfield code="d">1942-</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Royal Academy of Arts (Great Britain)</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Contributor biographical information</subfield>
+    <subfield code="u">http://www.loc.gov/catdir/enhancements/fy1216/2012454531-b.html</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Publisher description</subfield>
+    <subfield code="u">http://www.loc.gov/catdir/enhancements/fy1216/2012454531-d.html</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="a">ggre copy FY13</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">HLMDDIS6</subfield><subfield code="b">hockney / six fairy tales from the brothers grimm</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

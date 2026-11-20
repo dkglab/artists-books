@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01757cam a2200349 i 4500</leader>
+  <controlfield tag="001">991001587599708431</controlfield>
+  <controlfield tag="005">20250612213922.0</controlfield>
+  <controlfield tag="008">770708t19751975xx a          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)3102123</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">WLU</subfield>
+    <subfield code="c">WLU</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">SMI</subfield>
+    <subfield code="d">WaOLN</subfield>
+    <subfield code="d">MWiCA</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">NK5398 .C45 O44 1975</subfield>
+  </datafield>
+  <datafield tag="110" ind1="2" ind2=" ">
+    <subfield code="a">O.K. Harris Gallery (New York, N.Y.)</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n87811432</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Museum piece /</subfield>
+    <subfield code="c">by Don Celender</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Place of publication not identified] :</subfield>
+    <subfield code="b">[publisher not identified],</subfield>
+    <subfield code="c">[1975], ©1975</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">138 pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">28 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Letters and photographs received in response to the author's request to museums for a photograph of their loading docks or receiving areas, along with photographs of many of the museums</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"This publication was produced for an exhibition held at the O. K. Harris Gallery, ... New York, from December 6th to December 27th, 1975."</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">CAI copy inscribed: To Ms. E. Heartney, Don Celender 8/15/84</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Celender, Don,</subfield>
+    <subfield code="d">1931-2005</subfield>
+    <subfield code="v">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Art museums</subfield>
+    <subfield code="x">Exhibitions.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2002000807</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Museum architecture</subfield>
+    <subfield code="v">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Loading and unloading</subfield>
+    <subfield code="v">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">Processed by Backstage 2020-04</subfield>
+  </datafield>
+  <datafield tag="907" ind1=" " ind2=" ">
+    <subfield code="a">.b11699164</subfield>
+    <subfield code="b">01-04-24</subfield>
+    <subfield code="c">10-24-05</subfield>
+  </datafield>
+  <datafield tag="990" ind1=" " ind2=" ">
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">abbib</subfield>
+    <subfield code="b">11-28-05</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">-</subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">xx</subfield>
+    <subfield code="h">0</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991001587599708431</subfield>
+    <subfield code="8">2218331790008431</subfield>
+    <subfield code="a">01CLARKART_INST</subfield>
+    <subfield code="b">MAIN</subfield>
+    <subfield code="c">Artists Books</subfield>
+    <subfield code="d">NK5398 .C45 O44 1975</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">ABX</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Clark</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">5JSI8CZJ</subfield><subfield code="b">celender / museum piece</subfield><subfield code="c">title-author</subfield><subfield code="d">clark</subfield></datafield></record>
+</collection>

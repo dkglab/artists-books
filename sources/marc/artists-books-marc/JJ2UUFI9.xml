@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01016cam a2200289 c 4500</leader>
+  <controlfield tag="001">664983790</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200908183844.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">110728s2008    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)664983790</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV664983790</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)838344999</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Star Poems</subfield>
+    <subfield code="c">Karen Hanmer</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Glenview, Ill.</subfield>
+    <subfield code="b">Hanmer</subfield>
+    <subfield code="c">2008</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[1] Bl. in Leporellofaltung</subfield>
+    <subfield code="b">Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="361" ind1="1" ind2=" ">
+    <subfield code="5">DE-1</subfield>
+    <subfield code="y">1257986767</subfield>
+    <subfield code="s">50 MA 48934</subfield>
+    <subfield code="o">Vorbesitz</subfield>
+    <subfield code="a">Hanmer, Karen</subfield>
+    <subfield code="0">(DE-588)1216206562</subfield>
+    <subfield code="0">(DE-627)1727469763</subfield>
+    <subfield code="f">Autogramm</subfield>
+    <subfield code="z">Mit Signatur der Buchgestalterin</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Bestehend aus 18 Teilen mit einem Umschlag in einer Hülle</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Hanmer, Karen</subfield>
+    <subfield code="0">(DE-588)1216206562</subfield>
+    <subfield code="0">(DE-627)1727469763</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1257986767</subfield>
+    <subfield code="b">DE-1a</subfield>
+    <subfield code="9">1a</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">50 MA 48934</subfield>
+    <subfield code="h">1:HDRKD</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">JJ2UUFI9</subfield><subfield code="b">hanmer / star poems</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

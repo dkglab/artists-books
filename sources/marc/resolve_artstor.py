@@ -16,6 +16,12 @@ Two 856 URL shapes carry the same asset ID -- `/public/<id>` and
 `/#/asset/<id>`. The fragment form is rewritten to the `/public/` form before
 fetching, since a fragment is never sent to the server.
 
+Some links skip the asset ID and carry the Forum SSID itself as a bare number
+(`/#/asset/24509442`, `/public/24509442`). Those need no lookup: the number is
+recorded as both assetId and ssid with status `ok`. They were once dropped
+silently, leaving 67 books imageless. One $u may also hold several
+comma-separated URLs, so every match is taken, not just the first.
+
 Resumable: already-resolved asset IDs are read back from --out and skipped, so
 the run can be chunked with --limit. Hitting an external server, so it is
 deliberately polite (--delay between requests, backoff on 429/5xx).
@@ -29,10 +35,13 @@ import time
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
-import zipfile
+
+from marc_harvest import iter_record_files
 
 ASSET_RE = re.compile(r"(SS\d+_\d+_\d+)")
 SSID_RE = re.compile(r"community\.(\d+)")
+# A bare number in an Artstor URL's ID slot is already the Forum SSID.
+BARE_SSID_RE = re.compile(r"artstor\.org/(?:#/)?(?:asset|public)/(\d+)(?!\d|_)")
 PUBLIC_URL = "https://library.artstor.org/public/{}"
 USER_AGENT = (
     "artists-books-crosswalk/1.0 "
@@ -49,33 +58,37 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 def read_pairs(archive):
-    """(canonicalKey, assetId) for every Artstor 856 $u in the MARC archive."""
+    """(canonicalKey, assetId) for every Artstor 856 $u in the MARC record store.
+
+    An assetId is either an `SS…` asset ID (resolved over the network) or a bare
+    SSID (see `direct_ssid`)."""
     pairs = []
-    with zipfile.ZipFile(archive) as z:
-        for name in sorted(z.namelist()):
-            if not name.endswith(".xml"):
+    for name, data in iter_record_files(archive):
+        root = ET.fromstring(data)
+        key, ids = None, []
+        for df in root.iter():
+            if df.tag.split("}")[-1] != "datafield":
                 continue
-            root = ET.fromstring(z.read(name))
-            key, ids = None, []
-            for df in root.iter():
-                if df.tag.split("}")[-1] != "datafield":
-                    continue
-                if df.get("tag") == "999":
-                    for sf in df:
-                        if sf.get("code") == "a":
-                            key = sf.text
-                elif df.get("tag") == "856":
-                    for sf in df:
-                        if sf.get("code") != "u" or not sf.text:
-                            continue
-                        if "artstor" not in sf.text:
-                            continue
-                        m = ASSET_RE.search(sf.text)
-                        if m:
-                            ids.append(m.group(1))
-            for asset in dict.fromkeys(ids):  # dedupe, keep record order
-                pairs.append((key, asset))
+            if df.get("tag") == "999":
+                for sf in df:
+                    if sf.get("code") == "a":
+                        key = sf.text
+            elif df.get("tag") == "856":
+                for sf in df:
+                    if sf.get("code") != "u" or not sf.text:
+                        continue
+                    if "artstor" not in sf.text:
+                        continue
+                    ids.extend(ASSET_RE.findall(sf.text))
+                    ids.extend(BARE_SSID_RE.findall(sf.text))
+        for asset in dict.fromkeys(ids):  # dedupe, keep record order
+            pairs.append((key, asset))
     return pairs
+
+
+def direct_ssid(asset):
+    """A bare-number assetId is the SSID itself; an `SS…` one needs resolving."""
+    return asset.isdigit()
 
 
 def read_resolved(path):
@@ -132,7 +145,7 @@ def write(path, pairs, resolved):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--archive", default="marc/artists-books-marc.zip")
+    p.add_argument("--archive", default="marc/artists-books-marc")
     p.add_argument("--out", default="artstor-ssid.csv")
     p.add_argument("--limit", type=int, default=0, help="max lookups this run (0 = all)")
     p.add_argument("--delay", type=float, default=1.0, help="seconds between requests")
@@ -142,6 +155,9 @@ def main():
 
     pairs = read_pairs(args.archive)
     resolved = read_resolved(args.out)
+    for _, asset in pairs:
+        if direct_ssid(asset):
+            resolved[asset] = (asset, "ok")
     todo = [a for a in dict.fromkeys(a for _, a in pairs) if a not in resolved]
     if args.limit:
         todo = todo[: args.limit]

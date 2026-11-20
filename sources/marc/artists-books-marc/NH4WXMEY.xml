@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01551cam a22003613u 4500</leader>
+  <controlfield tag="001">ocm00009329</controlfield>
+  <controlfield tag="003">WaSeSS</controlfield>
+  <controlfield tag="005">20260107180358.0</controlfield>
+  <controlfield tag="006">m     o  d        </controlfield>
+  <controlfield tag="007">cr |n |||||||a</controlfield>
+  <controlfield tag="008">260107s1633    xx |||||o|||||||| ||    d</controlfield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">WaSeSS</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">WaSeSS</subfield>
+    <subfield code="d">WaSeSS</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">China /</subfield>
+    <subfield code="c">Arnold ... [et. al.].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[S.l.] :</subfield>
+    <subfield code="b">[s.n.],</subfield>
+    <subfield code="c">1633.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 online resource.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">computer</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">online resource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="506" ind1="1" ind2=" ">
+    <subfield code="a">Access limited to UNC Chapel Hill-authenticated users.</subfield>
+    <subfield code="f">Unlimited simultaneous users.</subfield>
+  </datafield>
+  <datafield tag="588" ind1="0" ind2=" ">
+    <subfield code="a">Title from content provider.</subfield>
+  </datafield>
+  <datafield tag="590" ind1="0" ind2=" ">
+    <subfield code="a">Content provider: Adam Matthew Digital.</subfield>
+  </datafield>
+  <datafield tag="590" ind1="1" ind2=" ">
+    <subfield code="a">Vendor-supplied catalog record.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Arnold.</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2=" ">
+    <subfield code="t">Chatham House Online (online collection). Archive 1: 1920-1979.</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2=" ">
+    <subfield code="t">China: culture and society (online collection)</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2=" ">
+    <subfield code="t">Global commodities (online collection)</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2=" ">
+    <subfield code="t">LLMC-Digital (online collection). Ebooks.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://VB3LK7EB4T.search.serialssolutions.com/?V=1.0&amp;L=VB3LK7EB4T&amp;S=JCs&amp;C=TC_001429329&amp;T=marc</subfield>
+    <subfield code="x">Chatham House Online Archive Module 1: 1920-1979</subfield>
+    <subfield code="x">LLMC-Digital</subfield>
+    <subfield code="x">Global Commodities: Trade, Exploration and Cultural Exchange</subfield>
+    <subfield code="x">China: Culture and Society</subfield>
+    <subfield code="y">Full text available via the UNC-Chapel Hill Libraries</subfield>
+  </datafield>
+  <datafield tag="944" ind1=" " ind2=" ">
+    <subfield code="a">Batch load history : 7000 sersol change records pt.1 loaded 20260121, ka</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2=" ">
+    <subfield code="a">*b3=x</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="g">1</subfield>
+    <subfield code="l">ebnb</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="t">11</subfield>
+    <subfield code="r">n</subfield>
+    <subfield code="u">-</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">NOTAUTHO</subfield>
+  </datafield>
+  <datafield tag="990" ind1="8" ind2="9">
+    <subfield code="a">BK:ebook</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NH4WXMEY</subfield><subfield code="b">arnold / china</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

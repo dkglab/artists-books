@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>04255nam a2200577Ia 4500</leader>
+  <controlfield tag="001">ocm18277446</controlfield>
+  <controlfield tag="005">20260223130350.0</controlfield>
+  <controlfield tag="008">880727s1987    gaua          000 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">1008360130</subfield>
+    <subfield code="a">1084965570</subfield>
+    <subfield code="a">1132898382</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)18277446</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">OAC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">OAC</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Chance, Karen</subfield>
+    <subfield code="c">(Artist)</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr00019664</subfield>
+    <subfield code="1">http://viaf.org/viaf/59145970262832251979</subfield>
+    <subfield code="1">http://isni.org/isni/0000000063232889.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Parallax /</subfield>
+    <subfield code="c">Karen Chance.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Atlanta, Ga.] :</subfield>
+    <subfield code="b">Nexus Press,</subfield>
+    <subfield code="c">1987.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 folded strip (70 unnumbered pages) :</subfield>
+    <subfield code="b">chiefly illustrations (all color) ;</subfield>
+    <subfield code="c">14 x 16 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="g">polychrome</subfield>
+    <subfield code="2">rdacc</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAColourContent/1003.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Printed on both sides of a strip folded accordion style.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Parallax was printed at Nexus Press in the Fall of 1987. Nexus Press, a programming division of Nexus Contemporary Art Center, is supported, in part, by funds from the National Endowment for the Arts, Georgia Council for the Arts, Bureau of Cultural Affairs--City of Atlanta, Fulton County Arts Council--Fulton County Commission."--Colophon.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">Karen Chance's 'Parallax' folds out like an accordion to literally present 'two sides to a story'. It depicts the thoughts and reveries of two men who encounter each other on the subway, one straight, one gay, and their opposing views on male homosexuality. Each side of the book is dedicated to the opinions and fears of one of the two men, but the last frame serves as the same ending to both stories: the realization that they will have to sit next to each other on their journey. -- 1/5/14 from ttp://www.vam.ac.uk.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Chance, Karen.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n2025026660.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Chance, Karen.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/450950.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Homophobia.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh88006552.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Gay men</subfield>
+    <subfield code="x">Relations with heterosexuals.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh00006549.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Lesbians</subfield>
+    <subfield code="x">Relations with heterosexuals.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh00009270.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Offset printing</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Homophobia.</subfield>
+    <subfield code="2">homoit</subfield>
+    <subfield code="0">https://homosaurus.org/v4/homoit0000646.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Gay men.</subfield>
+    <subfield code="2">homoit</subfield>
+    <subfield code="0">https://homosaurus.org/v4/homoit0000506.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Lesbians.</subfield>
+    <subfield code="2">homoit</subfield>
+    <subfield code="0">https://homosaurus.org/v4/homoit0000556.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Offset printing.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1044269.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Lesbians</subfield>
+    <subfield code="x">Relations with heterosexuals.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/996573.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Gay men</subfield>
+    <subfield code="x">Relations with heterosexuals.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/939145.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Homophobia.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/959727.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Accordion fold format.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv00024.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2017027220.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="z">United States.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1750153.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423861.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Gay men.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/939117.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Lesbians.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/996540.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Nexus Press.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n85807423</subfield>
+    <subfield code="1">http://viaf.org/viaf/151349138</subfield>
+    <subfield code="1">http://isni.org/isni/0000000101582418.</subfield>
+  </datafield>
+  <datafield tag="791" ind1="2" ind2=" ">
+    <subfield code="a">T. Henry and Penelope Clarke Library Fund in Honor of Margaret Bland Clarke.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/#/asset/SS33469_33469_42529948</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/02/23</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">gau</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">WDBVDSH6</subfield><subfield code="b">b4293231</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

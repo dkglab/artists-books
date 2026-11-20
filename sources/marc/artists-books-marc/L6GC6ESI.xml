@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00603nam a22001695i 4500</leader>
+  <controlfield tag="001">991006889459707141</controlfield>
+  <controlfield tag="008">970623 1995    ilua          000 0 eng^^</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b6098988-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Coldwell, Paul.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Freud's Coat</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">London:</subfield>
+    <subfield code="b">Paul Coldwell</subfield>
+    <subfield code="c">1996</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">120119</subfield>
+    <subfield code="d">081121</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b6098988</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">187182 (NNMoMA)</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">LTI 11/14/2008</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">1</subfield>
+    <subfield code="c">081119</subfield>
+    <subfield code="d">m</subfield>
+    <subfield code="e">a</subfield>
+    <subfield code="f">m</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mq</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991006889459707141</subfield>
+    <subfield code="8">2287904490007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMAQNS</subfield>
+    <subfield code="c">MoMA Offsite Artists' Books Oversize</subfield>
+    <subfield code="e">check_holdings</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mqao</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">MoMA QNS Library Offsite Storage</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">L6GC6ESI</subfield><subfield code="b">coldwell / freud s coat</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02253cam a2200433 c 4500</leader>
+  <controlfield tag="001">1609268865</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20210723114227.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">000313s1999    xx ||||| c    00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">093385658X</subfield>
+    <subfield code="9">0-933856-58-X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1609268865</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)083860800</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ083860800</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)313814689</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">9,11</subfield>
+    <subfield code="2">ssgn</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LI 53750</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/96494:</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Sol Lewitt, bands of color</subfield>
+    <subfield code="b">one-, two-, three-, and four-part; combinations of vertical, horizontal, and diagonal : left and right bands of color 1993 - 94 : Museum of Contemporary Art, Chicago : [... publ. ... exhibition Sol LeWitt: Bands of Color held at the Museum of Contemporary Art, Chicago, from March 27 to August 1, 1999]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Chicago</subfield>
+    <subfield code="b">Museum of Contemporary Art</subfield>
+    <subfield code="c">1999</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">64 Bl.</subfield>
+    <subfield code="b">überwiegend Ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Ausstellungskatalog</subfield>
+    <subfield code="y">1999</subfield>
+    <subfield code="z">Chicago, Ill.</subfield>
+    <subfield code="0">(DE-588)4135467-9</subfield>
+    <subfield code="0">(DE-627)10566491X</subfield>
+    <subfield code="0">(DE-576)209660988</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)118855549</subfield>
+    <subfield code="0">(DE-627)079631231</subfield>
+    <subfield code="0">(DE-576)165565926</subfield>
+    <subfield code="a">LeWitt, Sol</subfield>
+    <subfield code="d">1928-2007</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">LeWitt, Sol</subfield>
+    <subfield code="d">1928-2007</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)118855549</subfield>
+    <subfield code="0">(DE-627)079631231</subfield>
+    <subfield code="0">(DE-576)165565926</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Museum of Contemporary Art</subfield>
+    <subfield code="g">Chicago, Ill.</subfield>
+    <subfield code="0">(DE-588)514883-2</subfield>
+    <subfield code="0">(DE-627)101530544</subfield>
+    <subfield code="0">(DE-576)192896482</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="711" ind1="2" ind2=" ">
+    <subfield code="a">Exhibition Sol LeWitt: Bands of Color</subfield>
+    <subfield code="d">1999</subfield>
+    <subfield code="c">Chicago, Ill.</subfield>
+    <subfield code="0">(DE-588)3043675-8</subfield>
+    <subfield code="0">(DE-627)711297177</subfield>
+    <subfield code="0">(DE-576)198067631</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3143438002</subfield>
+    <subfield code="b">DE-14</subfield>
+    <subfield code="9">14</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3143438088</subfield>
+    <subfield code="b">DE-Ks17</subfield>
+    <subfield code="9">Ks 17</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">7 Lewitt, S. 3 1999</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3143438150</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">B Lew35 0005</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3143438231</subfield>
+    <subfield code="b">DE-1975</subfield>
+    <subfield code="9">1975</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">99/771</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">LI 53750</subfield>
+    <subfield code="b">LeWitt, Sol</subfield>
+    <subfield code="k">Kunstgeschichte</subfield>
+    <subfield code="k">Künstler-Monografien</subfield>
+    <subfield code="k">Alphabetische Künstlerliste</subfield>
+    <subfield code="k">Künstler L</subfield>
+    <subfield code="k">LeWitt, Sol</subfield>
+    <subfield code="0">(DE-627)1270645374</subfield>
+    <subfield code="0">(DE-625)rvk/96494:</subfield>
+    <subfield code="0">(DE-576)200645374</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">4ZFQRTLU</subfield><subfield code="b">9780933856585</subfield><subfield code="c">isbn</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

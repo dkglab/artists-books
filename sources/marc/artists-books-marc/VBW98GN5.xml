@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01108cam a2200301 c 4500</leader>
+  <controlfield tag="001">1475231474</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20241119000727.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">140508s2009    sz |||||      00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1475231474</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)405231474</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ405231474</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-CH</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Baldessari sings LeWitt</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Zürich</subfield>
+    <subfield code="b">Rollo Press</subfield>
+    <subfield code="c">2009</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[44] S.</subfield>
+    <subfield code="c">29,7cm x 21cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Tragel, Toom</subfield>
+    <subfield code="0">(DE-588)1074834631</subfield>
+    <subfield code="0">(DE-627)832572462</subfield>
+    <subfield code="0">(DE-576)442982992</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Baldessari, John</subfield>
+    <subfield code="d">1931-2020</subfield>
+    <subfield code="0">(DE-588)118506153</subfield>
+    <subfield code="0">(DE-627)079310435</subfield>
+    <subfield code="0">(DE-576)164988327</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">LeWitt, Sol</subfield>
+    <subfield code="d">1928-2007</subfield>
+    <subfield code="0">(DE-588)118855549</subfield>
+    <subfield code="0">(DE-627)079631231</subfield>
+    <subfield code="0">(DE-576)165565926</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">2795590913</subfield>
+    <subfield code="b">DE-L328</subfield>
+    <subfield code="9">L 328</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">5 BALDE TRATO 2009</subfield>
+    <subfield code="h">Freihandbereich</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">VBW98GN5</subfield><subfield code="b">tragel / baldessari sings lewitt</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

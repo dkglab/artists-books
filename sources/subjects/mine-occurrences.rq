@@ -11,8 +11,8 @@
 # It exists as its own committed CSV, rather than being read inline by those
 # queries, for a hard performance reason: joining the (tiny) curated decisions to
 # the (large) MARC with BOTH as x-sparql-anything SERVICEs makes ARQ re-read the
-# whole archive once per decision row (a ~60x blow-up; confirmed via ARQ
-# `--explain`). Reading the archive exactly once here, into a flat CSV, turns
+# whole MARC once per decision row (a ~60x blow-up; confirmed via ARQ
+# `--explain`). Reading the MARC exactly once here, into a flat CSV, turns
 # every downstream join into a CSV-to-CSV join. See ../construction/README.md and
 # docs/QUERY-PERFORMANCE.md.
 #
@@ -33,15 +33,15 @@
 # anchored on an already-bound, already-650/651-filtered ?df inside the
 # per-record inner graph (#81), so it stays a few seconds, not minutes.
 #
-# Reads the per-record MARC zip archive (#81) via the nested Archive->XML
-# triplifier pattern: the outer read lists the entries (fx:archive.matches); the
-# inner per-record SERVICE triplifies one record (fx:location ?file +
-# fx:from-archive), joining each heading to its book via the canonical key in
+# Reads the per-record MARC directory (#81) via the nested Folder->XML
+# triplifier pattern: the outer read lists the files (fxe:archive.matches); the
+# inner per-record SERVICE triplifies one record (fxe:location ?file), joining each heading to its book via the canonical key in
 # 999 $a (#84).
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX xyz: <http://sparql.xyz/facade-x/data/>
 PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
+PREFIX fxe: <http://sparql.xyz/facade-x/engine/>
 PREFIX marc:<http://www.loc.gov/MARC21/slim#>
 SELECT DISTINCT ?canonicalKey ?cluster ?rawLabel ?normLabel ?authority
 WHERE {
@@ -55,15 +55,14 @@ WHERE {
       {
         SELECT ?canonicalKey ?tag ?df ?scheme ?dollar0 ?idx ?part
         WHERE {
-          SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc.zip> {
-            fx:properties fx:archive.matches ".*\\.xml" .
-            ?archive fx:anySlot ?file .
+          SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc/> {
+            fxe:properties fxe:archive.matches ".*\\.xml" .
+            ?folder fx:anySlot ?file .
 
             SERVICE <x-sparql-anything:> {
-              fx:properties
-                fx:location ?file ;
-                fx:from-archive "sources/marc/artists-books-marc.zip" ;
-                fx:media-type "application/xml" .
+              fxe:properties
+                fxe:location ?file ;
+                fxe:media-type "application/xml" .
 
               ?record a marc:record .
 
@@ -85,13 +84,13 @@ WHERE {
               OPTIONAL {
                 SELECT ?df (MIN(?d0) AS ?dollar0) WHERE {
                   ?df fx:anySlot ?sf0 . ?sf0 xyz:code "0" ; rdf:_1 ?zeroRaw .
-                  BIND(STR(?zeroRaw) AS ?d0)
+                  BIND(REPLACE(STR(?zeroRaw), "^\\s+|\\s+$", "") AS ?d0)
                 } GROUP BY ?df
               }
               OPTIONAL {
                 SELECT ?df (MIN(?s2) AS ?schemeFrom2) WHERE {
                   ?df fx:anySlot ?sf2 . ?sf2 xyz:code "2" ; rdf:_1 ?sr .
-                  BIND(LCASE(REPLACE(STR(?sr), "\\.$", "")) AS ?s2)
+                  BIND(LCASE(REPLACE(REPLACE(STR(?sr), "^\\s+|\\s+$", ""), "\\.$", "")) AS ?s2)
                 } GROUP BY ?df
               }
               # vocabulary: $2 (lower-cased, trailing period stripped) if present,
@@ -115,7 +114,7 @@ WHERE {
               ?sf xyz:code ?code ; rdf:_1 ?v .
               FILTER(?code IN ("a", "x", "y", "z", "v"))
               # strip trailing whitespace/period from each part, like the #89 script.
-              BIND(REPLACE(REPLACE(STR(?v), "[\\s.]+$", ""), "\\s+$", "") AS ?part)
+              BIND(REPLACE(REPLACE(REPLACE(STR(?v), "^\\s+|\\s+$", ""), "[\\s.]+$", ""), "\\s+$", "") AS ?part)
             }
           }
         }
@@ -125,7 +124,7 @@ WHERE {
     GROUP BY ?canonicalKey ?tag ?df ?scheme ?dollar0
   }
   # drop the all-unbound phantom row a record with no 650/651 leaves (a quirk of
-  # the nested Archive->XML read): its empty GROUP_CONCAT yields ?rawLabel "".
+  # the nested Folder->XML read): its empty GROUP_CONCAT yields ?rawLabel "".
   FILTER(?rawLabel != "")
 
   BIND(REPLACE(REPLACE(REPLACE(LCASE(?rawLabel), "[\\s.]+$",""), "[^a-z0-9]+","-"), "(^-)|(-$)","") AS ?normLabel)

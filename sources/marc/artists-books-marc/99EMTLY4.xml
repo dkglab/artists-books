@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>10289cam a2201129Mi 4500</leader>
+  <controlfield tag="001">on1137133416</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20260127115021.0</controlfield>
+  <controlfield tag="008">191018s2019    mx af         000 0 spa d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1137133416</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">STF</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">STF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">n-mx---</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/geographicAreas/n-mx</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">F1256</subfield>
+    <subfield code="b">.G73 2019</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/F1201-F3799</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Gráfica y palabra zapatista.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="1" ind2=" ">
+    <subfield code="i">Title on cover:</subfield>
+    <subfield code="a">Gráfika y palabra zapatista.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">México :</subfield>
+    <subfield code="b">Libertad bajo palabra ; Movimiento Gráfico Mayahuel,</subfield>
+    <subfield code="c">2019.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">80 pages, 18 unnumbered leaves of plates, pages 37-44 :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">21 cm in box 34 x 53 x 10 cm +</subfield>
+    <subfield code="e">2 leaves (text ; 28 x 22 cm) + 15 relief prints (some color ; 38 x 29 cm) + 1 handkerchief (64 x 60 cm folded to approximately 35 x 10 cm) + 1 corked glass bottle (18 x 8 cm)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1014.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">three-dimensional form</subfield>
+    <subfield code="b">tdf</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1021.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">sheet</subfield>
+    <subfield code="b">nb</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1048.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">object</subfield>
+    <subfield code="b">nr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1059.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Proyecto autónomo para el acopio y dispersión de nuestras voces e historiaz."</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Edición y diagramación: Libertad bajo palabra. Ilustración de portada: Movimiento Gráfiko Mayahuel."--Title page verso.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Book is divided into 2 halves: the text half, consisting of 80 pages, has a grey paper cover printed black; the image half, consisting of 18 unnumbered leaves of plates and pages 37-44, begins at the back of the book and is bound upside down to the text with the front cover printed in negative. The two halves are separated by a sheet of black paper.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Image half begins with a leaf entitled "Una mirada de muchas miradas".</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Sobre lxs grabadorxs" on pages 37-44 of the image half.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">With 2 loose text leaves: Algunas palabras (from the text half); Una mirada de muchas miradas (from the image half).</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">With 15 loose prints, being the original prints of the images reproduced in the book; each print is numbered, titled, and signed by the artist. Lacks Zapata 100 años and Nuestra lucha es por la vida.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">With a red handkerchief with a yellow and black paisley pattern wrapped around an empty 1 liter glass bottle, corked, with a printed paper label reading "Aquí nomás espadín Mezcal Joven. Santa Ana del Rio, Oaxaca, 100% agave."</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">Text: Algunas palabras previas -- La historia de las preguntas / de Subcomandante insurgente Marcos -- El Plan de Ayala y los saberes de los campesinos revolucionarios / de Francisco Pineda: El maíz: la lucha por la tierra y la libertad ; El despliegue de fuerza insurgente ; Confiscación de los monopolios -- El programa político zapatista, 1911-1920 / de Laura Espejel, Alicia Olivera de Bonfil y Salvador Rueda S.: Prólogo ; 1° Etapa: Del estallido de la revolución a la caída de Victoriano Huerta: 1. Política "hacia afuera" ; 2. Política "acia adentro" ; 2° Etapa: El periodo convencionista (1914-1916) ; 3° Etapa: La consolidación del gobierno de Carranza y el final del movimiento zapatista (1916-1920) -- Apartado documental: Ley General sobre Libertades Municipales ; Ley sobre Derechos y Obligaciones de los Pueblos ; Ley General Administrativa para el estado de Morelos ; Plan de Ayala.</subfield>
+  </datafield>
+  <datafield tag="505" ind1="0" ind2=" ">
+    <subfield code="a">Images: Libertad / Agüita Gómez del Payán ; linografía -- La lucha inconclusa / Amarildo Olmedo ; xilografía -- Zapata 100 años / Ana Lilia Viveros Cázares ; grabado en pvc espumado -- La tierra es quien la trabaja / Ana Rojas ; linografía -- ¿Por qué la lucha sigue? / Brigada Cultural Subversiva ; linografía -- Somos el mañana / Eduardo Palma Santiago ; xilografía -- Tierra, corazón e historia / Eduardo Robledo Romero ; relieve en pvc espumado -- A cien años / Eric Pozos Vázquez ; linografía -- La luz de la flama / Gabino Morales ; xilografía -- La autonomía / Gera Cristobal ; linografía -- El Atila del Sur / Iván Míchel Franco ; xilografía -- [untitled] / Mario Martínez ; serigrafía -- Sólo la muerte nos hará libres / Nahual Grafico ; litografía y linografía -- Cien años / Orquidea 5 Vocales ; linografía y relieve en pvc espumado -- Zapatero, la lucha sigue! / Zamer Zamer ; linografía -- Tenemos la fierza de un volcán / Zum ; linograbado y stencil -- Nuestra lucha es por la vida / Movimiento Gráfiko Mayahuel ; linografía.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">This work aims to explore Zapatismo beyond the iconic image of Emiliano Zapata, taking a critical look at the world through land and its relationship with the environment and community.</subfield>
+  </datafield>
+  <datafield tag="563" ind1=" " ind2=" ">
+    <subfield code="a">Book bound in printed paper wrappers. Book, prints, handkerchief, and bottle all housed in a chipboard box. Box lid has a cloth border made of the same fabric as the handkerchief, and is painted with an image of a man in a hat with a horse and a mountain in the background. Box lid has a compartment underneath, possibly intended to hold the book.</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">UNC-CH copy lacks accompanying material to book.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Zapata, Emiliano,</subfield>
+    <subfield code="d">1879-1919.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79069840</subfield>
+    <subfield code="1">http://viaf.org/viaf/27114325</subfield>
+    <subfield code="1">http://isni.org/isni/0000000081056014.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Zapata, Emiliano,</subfield>
+    <subfield code="d">1879-1919</subfield>
+    <subfield code="v">Portraits.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="0" ind2="0">
+    <subfield code="a">Marcos,</subfield>
+    <subfield code="c">subcomandante.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n94070644</subfield>
+    <subfield code="1">http://viaf.org/viaf/23830820</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121242656.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="0" ind2="7">
+    <subfield code="a">Marcos,</subfield>
+    <subfield code="c">subcomandante.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/342692.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Zapata, Emiliano,</subfield>
+    <subfield code="d">1879-1919.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/38112.</subfield>
+  </datafield>
+  <datafield tag="647" ind1=" " ind2="7">
+    <subfield code="a">Revolution</subfield>
+    <subfield code="c">(Mexico :</subfield>
+    <subfield code="d">1910-1920)</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1354542.</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">1910-1920</subfield>
+    <subfield code="2">fast.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Mexico</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Mescal.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85083907.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Mescal.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1017283.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Chiapas (Mexico)</subfield>
+    <subfield code="x">History</subfield>
+    <subfield code="y">Peasant Uprising, 1994-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh94005637.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Mexico</subfield>
+    <subfield code="x">History</subfield>
+    <subfield code="y">Revolution, 1910-1920.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85084590.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Mexico.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1211700.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Relief prints.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300041391.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Linocuts (prints)</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300041393.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Woodcuts (prints)</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300041405.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Vinylcuts.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300264640.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Screen prints.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300178688.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Lithographs.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300041379.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Stencil prints.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300435283.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Handkerchiefs.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300216195.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Bottles.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300045627.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">History.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1411628.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Portraits.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423831.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Specimens.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423861.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">rbmscv</subfield>
+    <subfield code="0">http://id.loc.gov/vocabulary/rbmscv/cv00146.</subfield>
+  </datafield>
+  <datafield tag="647" ind1=" " ind2="7">
+    <subfield code="a">Peasant Uprising</subfield>
+    <subfield code="c">(Chiapas, Mexico :</subfield>
+    <subfield code="d">1994-)</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1353956.</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">Since 1910</subfield>
+    <subfield code="2">fast.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Mexico</subfield>
+    <subfield code="z">Chiapas.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1202769.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="0" ind2=" ">
+    <subfield code="a">Marcos,</subfield>
+    <subfield code="c">subcomandante,</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n94070644</subfield>
+    <subfield code="1">http://viaf.org/viaf/23830820</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121242656.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Pineda, Francisco,</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n95077839</subfield>
+    <subfield code="1">http://viaf.org/viaf/28781913</subfield>
+    <subfield code="1">http://isni.org/isni/0000000116128058.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Espejel López, Laura,</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82105090</subfield>
+    <subfield code="1">http://viaf.org/viaf/7611780</subfield>
+    <subfield code="1">http://isni.org/isni/0000000022204048.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Olivera de Bonfil, Alicia,</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82018046</subfield>
+    <subfield code="1">http://viaf.org/viaf/56891736</subfield>
+    <subfield code="1">http://isni.org/isni/0000000081363014.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Rueda Smithers, Salvador,</subfield>
+    <subfield code="e">author.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82105088</subfield>
+    <subfield code="1">http://viaf.org/viaf/46984515</subfield>
+    <subfield code="1">http://isni.org/isni/0000000107738903.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Gómez del Payán, Agüita,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Olmedo, Amarildo,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Viveros Cázares, Ana Lilia,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Rojas, Ana,</subfield>
+    <subfield code="d">1953-</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no00094615</subfield>
+    <subfield code="1">http://viaf.org/viaf/29084740</subfield>
+    <subfield code="1">http://isni.org/isni/0000000043339822.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Palma Santiago, Eduardo,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Robledo Romero, Eduardo,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Pozos Vázquez, Eric,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Morales, Gabino,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Cristobal, Gera,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Franco, Iván Míchel,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Martinez, Mario,</subfield>
+    <subfield code="e">artist.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n95105799</subfield>
+    <subfield code="1">http://viaf.org/viaf/1724232.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="0" ind2=" ">
+    <subfield code="a">Zamer Zamer,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="0" ind2=" ">
+    <subfield code="a">Zum,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Libertad bajo palabra,</subfield>
+    <subfield code="e">publisher.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Movimiento Gráfico Mayahuel,</subfield>
+    <subfield code="e">publisher,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Brigada Cultural Subversiva,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Nahual Grafico,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Orquidea Cinco Vocales,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">F1256</subfield>
+    <subfield code="b">.G73 2019</subfield>
+    <subfield code="z">050 4</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00054783518</subfield>
+    <subfield code="l">ddda</subfield>
+    <subfield code="y">UNC-CH copy lacks accompanying material to book.</subfield>
+    <subfield code="n">sal</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="f">DAVIS</subfield>
+    <subfield code="u">-</subfield>
+    <subfield code="j">Cataloged FY 2019-20</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">02-24-20</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">spa</subfield>
+    <subfield code="g">mx </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">99EMTLY4</subfield><subfield code="b">b9826037</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

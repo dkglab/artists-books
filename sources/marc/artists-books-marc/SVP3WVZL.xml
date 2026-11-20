@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02044cam a2200469 c 4500</leader>
+  <controlfield tag="001">641314078</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20260616222041.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">101208s2002    xxk|||||      00| ||eng c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1870699599</subfield>
+    <subfield code="9">1-870699-59-9</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781870699594</subfield>
+    <subfield code="9">978-1-870699-59-4</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)641314078</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV641314078</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)846217396</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">jpn</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">N7433.4.T8</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">702.81</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">20.31</subfield>
+    <subfield code="2">bkl</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Turnbull, Alison</subfield>
+    <subfield code="d">1956-</subfield>
+    <subfield code="0">(DE-588)123914345</subfield>
+    <subfield code="0">(DE-627)085521302</subfield>
+    <subfield code="0">(DE-576)215070259</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Spring snow</subfield>
+    <subfield code="b">a translation</subfield>
+    <subfield code="c">Alison Turnbull; [text by Tony White]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Book Works</subfield>
+    <subfield code="c">c2002</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">147 S.</subfield>
+    <subfield code="b">Ill.</subfield>
+    <subfield code="c">15 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Drawing on Mishima's evocative use of colour in the novel, Alison Turnbull condenses the narrative into a colour chart. Working from the English edition, she isolates and orders each of the more than six hundred colours as they appear in the text, what emerges is a visual essay on the nature of translation."--Book jacket</subfield>
+  </datafield>
+  <datafield tag="546" ind1=" " ind2=" ">
+    <subfield code="a">Text engl. u. japan.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Turnbull, Alison</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Mishima, Yukio</subfield>
+    <subfield code="d">1925-1970</subfield>
+    <subfield code="t">Haru no yuki</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)123914345</subfield>
+    <subfield code="0">(DE-627)085521302</subfield>
+    <subfield code="0">(DE-576)215070259</subfield>
+    <subfield code="a">Turnbull, Alison</subfield>
+    <subfield code="d">1956-</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)118582755</subfield>
+    <subfield code="0">(DE-627)079377130</subfield>
+    <subfield code="0">(DE-576)163791651</subfield>
+    <subfield code="a">Mishima, Yukio</subfield>
+    <subfield code="d">1925-1970</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4049716-1</subfield>
+    <subfield code="0">(DE-627)104675152</subfield>
+    <subfield code="0">(DE-576)209083182</subfield>
+    <subfield code="a">Rezeption</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">White, Tony</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Mishima, Yukio</subfield>
+    <subfield code="d">1925-1970</subfield>
+    <subfield code="0">(DE-588)118582755</subfield>
+    <subfield code="0">(DE-627)079377130</subfield>
+    <subfield code="0">(DE-576)163791651</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">1203077998</subfield>
+    <subfield code="b">DE-B11</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">KIOSK 3021</subfield>
+    <subfield code="g">KIOSK:3021::::</subfield>
+    <subfield code="h">KB</subfield>
+  </datafield>
+  <datafield tag="936" ind1="b" ind2="k">
+    <subfield code="a">20.31</subfield>
+    <subfield code="j">Bildende Künstler</subfield>
+    <subfield code="0">(DE-627)181571080</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">SVP3WVZL</subfield><subfield code="b">turnbull / spring snow a translation</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

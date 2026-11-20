@@ -14,6 +14,7 @@ sources/zotero/storage/**/.zotero-ft-unprocessed
 /.sprite
 tools/jena/*
 !tools/jena/Makefile
+!tools/jena/version.mk
 tools/sparql-anything/*
 !tools/sparql-anything/Makefile
 tools/fuseki/*
@@ -30,8 +31,12 @@ tools/fuzzy-match/venv/
 # same Snowman output when the build is (mistakenly) run from the repo root
 /.snowman/
 /site/
-# MARC harvest state (resumable; only sources/marc/*-marc.xml is committed)
+# MARC harvest state (resumable; only the sources/marc/*-marc/ record
+# directories are committed)
 /sources/marc/harvest/
+# leftovers if a record-directory swap (marc_harvest.write_records) is interrupted
+/sources/marc/*-marc.tmp/
+/sources/marc/*-marc.old/
 # scratch dir for unpacked MARC records and other throwaway working files
 /tmp/
 # Python bytecode cache

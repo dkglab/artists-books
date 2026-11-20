@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01966cam a22004817a 4500</leader>
+  <controlfield tag="001">18417222</controlfield>
+  <controlfield tag="005">20250607062617.0</controlfield>
+  <controlfield tag="008">141219s2014    gw a     bc   000 0dger d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">18417222</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">copycat</subfield>
+    <subfield code="d">3</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">fd21 2015-08-19 z-processor</subfield>
+    <subfield code="i">fd21 2015-08-20 to BCCD</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">fd10 2015-01-23</subfield>
+    <subfield code="a">fd00 2015-01-30 to GS/GER</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-644, LCAPM-893</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2015379264</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783863352868</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3863352866</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)884717544</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">QGK</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">QGK</subfield>
+    <subfield code="d">QGK</subfield>
+    <subfield code="d">OHX</subfield>
+    <subfield code="d">VVPCS</subfield>
+    <subfield code="d">JPG</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">UKTTE</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">lccopycat</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">N6888.W34</subfield>
+    <subfield code="b">A4 2014</subfield>
+  </datafield>
+  <datafield tag="072" ind1=" " ind2="7">
+    <subfield code="a">N</subfield>
+    <subfield code="2">lcco</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Walther, Franz Erhard.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Franz Erhard Walther :</subfield>
+    <subfield code="b">OBJEKTE, benutzen /</subfield>
+    <subfield code="c">herausgegeben von Peter Weibel.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">OBJEKTE, benutzen</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">2., aktualisierte und erw. Aufl.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Köln :</subfield>
+    <subfield code="b">Walther König,</subfield>
+    <subfield code="c">c2014.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">319 p. :</subfield>
+    <subfield code="b">ill. (some col.) ;</subfield>
+    <subfield code="c">24 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">1st ed.: 1968.</subfield>
+  </datafield>
+  <datafield tag="504" ind1=" " ind2=" ">
+    <subfield code="a">Includes bibliographical references.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">1968, im Gründungsjahr des Verlags Gebrüder König, erschien das Künstlerbuch 'Objekte benutzen', herausgegeben von Kasper König und im Buchdruck hergestellt. Hier liegt nun die überarbeitete Neuauflage vor.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Walther, Franz Erhard</subfield>
+    <subfield code="v">Catalogs.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Abstraction</subfield>
+    <subfield code="v">Catalogs.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Perception</subfield>
+    <subfield code="v">Catalogs.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Found objects (Art)</subfield>
+    <subfield code="v">Catalogs.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Catalogs.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">https://id.loc.gov/authorities/genreForms/gf2014026057</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Weibel, Peter.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://deposit.d-nb.de/cgi-bin/dokserv?id=4464761&amp;prov=M&amp;dok_var=1&amp;dok_ext=htm</subfield>
+    <subfield code="3">Inhaltstext</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="d">20141222</subfield>
+    <subfield code="n">0361225</subfield>
+    <subfield code="s">GyWOH</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="e">VENDOR LOAD</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">UXIED9ZZ</subfield><subfield code="b">walther / franz erhard walther objekte benutzen</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01926cam a2200421 i 4500</leader>
+  <controlfield tag="001">23700566</controlfield>
+  <controlfield tag="005">20250607130210.1</controlfield>
+  <controlfield tag="008">240520s1982    bcca          000 0 fre  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">23700566</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">origres</subfield>
+    <subfield code="d">2</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-genrareb</subfield>
+  </datafield>
+  <datafield tag="925" ind1="0" ind2=" ">
+    <subfield code="a">acquire</subfield>
+    <subfield code="b">1 shelf copy</subfield>
+    <subfield code="x">policy default</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="b">he19 2024-05-20 z-processor</subfield>
+    <subfield code="i">he19 2024-05-20</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2023657065</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">DLC</subfield>
+  </datafield>
+  <datafield tag="042" ind1=" " ind2=" ">
+    <subfield code="a">pcc</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PQ2603.U73</subfield>
+    <subfield code="b">B75 1982</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Butor, Michel,</subfield>
+    <subfield code="e">author.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Brindilles du bout du monde /</subfield>
+    <subfield code="c">texte de Michel Butor ; images de Jooao Frutos et André Villers.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Vancouver Island ;</subfield>
+    <subfield code="a">Mougins :</subfield>
+    <subfield code="b">[publisher not identified],</subfield>
+    <subfield code="c">1982.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">7 unnumbered leaves :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">30 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from first leaf.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Ouvrage réalisé en 60 exemplaires. Tous les exemplaires sont numérotés et signés par les auteurs"--Leaf 7.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Leaves tied together with length of straw at upper left corner.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Two dried twigs with leaves mounted on leaf 6.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">LC has "Ex. no. 42."</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="561" ind1=" " ind2=" ">
+    <subfield code="a">LC copy inscribed by Butor to Leon and Jacqueline Roudiez.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="v">Specimens.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">rbmscv</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Frutos, Jooao,</subfield>
+    <subfield code="e">illustrator.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Villers, André,</subfield>
+    <subfield code="d">1930-2016,</subfield>
+    <subfield code="e">illustrator.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Butor, Michel,</subfield>
+    <subfield code="e">inscriber.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Roudiez, Leon S.</subfield>
+    <subfield code="q">(Leon Samuel),</subfield>
+    <subfield code="d">1917-2004,</subfield>
+    <subfield code="e">former owner.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Roudiez, Jacqueline,</subfield>
+    <subfield code="d">1922-2004,</subfield>
+    <subfield code="e">former owner.</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Michel Butor Collection (Library of Congress)</subfield>
+    <subfield code="5">DLC</subfield>
+  </datafield>
+  <datafield tag="758" ind1=" " ind2=" ">
+    <subfield code="i">has work:</subfield>
+    <subfield code="a">Brindilles du bout du monde (Text)</subfield>
+    <subfield code="1">https://id.oclc.org/worldcat/entity/E39PCH63PYwDtK4jGFqW7cTKtX</subfield>
+    <subfield code="4">https://id.oclc.org/worldcat/ontology/hasWork</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">FC2LWD8G</subfield><subfield code="b">frutos / brindilles du bout du monde</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

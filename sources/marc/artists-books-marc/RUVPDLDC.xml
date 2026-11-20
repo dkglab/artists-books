@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02260cam a2200541 c 4500</leader>
+  <controlfield tag="001">1702687953</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20210724134359.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">200626s2001    fr |||||      00| ||fre c</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">2877202941</subfield>
+    <subfield code="9">2-87720-294-1</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9782877202947</subfield>
+    <subfield code="9">978-2-87720-294-7</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1702687953</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1702687953</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1192966076</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-FR</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">N6853.V34</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Vautier, Ben</subfield>
+    <subfield code="d">1935-2024</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="e">KünstlerIn</subfield>
+    <subfield code="0">(DE-588)119232502</subfield>
+    <subfield code="0">(DE-627)080032486</subfield>
+    <subfield code="0">(DE-576)211724130</subfield>
+    <subfield code="4">aut</subfield>
+    <subfield code="4">art</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Écrit pour la gloire à force de tourner en rond et d'être jaloux</subfield>
+    <subfield code="b">(entre 1960 et 1970)</subfield>
+    <subfield code="c">Ben</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Nice, France]</subfield>
+    <subfield code="b">Z'Editions</subfield>
+    <subfield code="c">2001</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">172 Seiten</subfield>
+    <subfield code="b">Illustrationen</subfield>
+    <subfield code="c">24 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Réedition du manuscrit ecrit pour la gloire retrouvé dans une caisse banane de la cave de Ben en le mois de juillet de l'an 2000"--Cover</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Ceci n'est pas un livre mais le catalogue de Ben"--Page 8</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Moi Ben je signe -- Esthetique -- Theatre -- Musique -- Cinema -- Poesie -- Textes et idees -- Quelques idees -- Affiches.</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Vautier, Ben</subfield>
+    <subfield code="d">1935-</subfield>
+    <subfield code="v">Catalogs</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Conceptual art</subfield>
+    <subfield code="z">France</subfield>
+    <subfield code="y">20th century</subfield>
+    <subfield code="v">Catalogs</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Literature, Experimental</subfield>
+    <subfield code="z">France</subfield>
+    <subfield code="y">20th century</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">France</subfield>
+    <subfield code="z">Nice</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Vautier, Ben</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Conceptual art</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Literature, Experimental</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">France</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">France ; Nice</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Catalogs</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">p</subfield>
+    <subfield code="0">(DE-588)119232502</subfield>
+    <subfield code="0">(DE-627)080032486</subfield>
+    <subfield code="0">(DE-576)211724130</subfield>
+    <subfield code="a">Vautier, Ben</subfield>
+    <subfield code="d">1935-2024</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4032354-7</subfield>
+    <subfield code="0">(DE-627)104616954</subfield>
+    <subfield code="0">(DE-576)208996478</subfield>
+    <subfield code="a">Concept-art</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4122965-4</subfield>
+    <subfield code="0">(DE-627)105758590</subfield>
+    <subfield code="0">(DE-576)209555742</subfield>
+    <subfield code="a">Buch</subfield>
+    <subfield code="g">Motiv</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3692170556</subfield>
+    <subfield code="b">DE-Ka88</subfield>
+    <subfield code="9">Ka 88</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">B Vau70 0007</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">RUVPDLDC</subfield><subfield code="b">vautier / ecrit pour la gloire a force de tourner en rond d être jaloux</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

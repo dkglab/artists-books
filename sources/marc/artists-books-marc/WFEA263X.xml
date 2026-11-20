@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01514cas a2200385Ia 4500</leader>
+  <controlfield tag="001">991011839629707141</controlfield>
+  <controlfield tag="005">20200618102939.0</controlfield>
+  <controlfield tag="008">060330u19uuuuuuoruuu p       0    0eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b14540721-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)65339550</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">OHY</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">OHY</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">MMX</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">MMXA</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Anodyne.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Portland :</subfield>
+    <subfield code="b">[publisher not identified]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">volumes :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">22 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Editor: Julie Atomic.</subfield>
+  </datafield>
+  <datafield tag="515" ind1=" " ind2=" ">
+    <subfield code="a">Some issues lack date.</subfield>
+  </datafield>
+  <datafield tag="541" ind1="1" ind2=" ">
+    <subfield code="3">MoMA: no.1-no.7, and no.9(1997:Feb.27):</subfield>
+    <subfield code="c">Purchase;</subfield>
+    <subfield code="a">John Held;</subfield>
+    <subfield code="d">2002.</subfield>
+    <subfield code="5">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="588" ind1="0" ind2=" ">
+    <subfield code="a">#6; title from cover.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Zines.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01919987.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Zines.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026210</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Atomic, Julie.</subfield>
+  </datafield>
+  <datafield tag="852" ind1="8" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">PER</subfield>
+    <subfield code="x">CO20190716kf</subfield>
+    <subfield code="x">2020FY</subfield>
+    <subfield code="x">2019CY</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">200928</subfield>
+    <subfield code="d">190716</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">190716</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b14540721</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">300509819</subfield>
+    <subfield code="j">8224</subfield>
+    <subfield code="l">mqp</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">-</subfield>
+    <subfield code="t">3</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i24372754</subfield>
+    <subfield code="z">190716</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="952" ind1="8" ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="h">PER</subfield>
+    <subfield code="x">CO20190716kf</subfield>
+    <subfield code="x">2020FY</subfield>
+    <subfield code="x">2019CY</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">1</subfield>
+    <subfield code="c">190716</subfield>
+    <subfield code="d">s</subfield>
+    <subfield code="e">u</subfield>
+    <subfield code="f">-</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mq</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991011839629707141</subfield>
+    <subfield code="8">2290525030007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMAQNS</subfield>
+    <subfield code="c">MoMA Offsite Periodicals</subfield>
+    <subfield code="d">PER</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mqp</subfield>
+    <subfield code="k">8</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">MoMA QNS Library Offsite Storage</subfield>
+    <subfield code="t">no.1-no.7</subfield>
+    <subfield code="t">no.9(1997:Feb.27)</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">WFEA263X</subfield><subfield code="b">komunyakaa / anodyne</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02478ckm a2200397 c 4500</leader>
+  <controlfield tag="001">1701083388</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20251011211413.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200618s2005    fr ||| |      o   ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1701083388</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1701083388</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)1192374192</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-FR</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">N7433.4.S</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Ström, Annika</subfield>
+    <subfield code="d">1964-</subfield>
+    <subfield code="e">KünstlerIn</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)121454967</subfield>
+    <subfield code="0">(DE-627)081319045</subfield>
+    <subfield code="0">(DE-576)21374385X</subfield>
+    <subfield code="4">art</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Texts</subfield>
+    <subfield code="c">by Annika Ström</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Paris</subfield>
+    <subfield code="b">onestar press</subfield>
+    <subfield code="c">[2005]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (150 ungezählte Seiten)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"140 x 225 mm; 150 pages; Cover: Paperback, color, glossy finish; Binding: glue bound; Interior: black and white; Edition limited to 250 numbered copies" -- Publisher's description</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"[...] For the onestar press publication Texts by Annika Ström the artist collected a series of photographs of her text pieces like: "This work refers to no one", "I love to live but not with me", "I am a better artist than I deserve" and "Everything in this show could be used against me". The photos seem like they could be stills from one of her videos and the phrases could be lyrics from one of her love songs. Far from being a straightforward reproduction of her work, the text pieces are presented in various "lived" settings, often within an intimate context of her private surroundings and in the company of friends presenting her work or doing whatever they were doing, when the picture was taken. [...] Lotte Muller" -- Publisher's website</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from PDF page 1</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Künstlerbuch</subfield>
+    <subfield code="0">(DE-588)4229053-3</subfield>
+    <subfield code="0">(DE-627)10495146X</subfield>
+    <subfield code="0">(DE-576)210335815</subfield>
+    <subfield code="2">gnd-content</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">onestar press</subfield>
+    <subfield code="e">Verlag</subfield>
+    <subfield code="4">pbl</subfield>
+  </datafield>
+  <datafield tag="776" ind1="0" ind2="8">
+    <subfield code="i">Erscheint auch als</subfield>
+    <subfield code="n">Druck-Ausgabe</subfield>
+    <subfield code="a">Ström, Annika, 1964 - </subfield>
+    <subfield code="t">Texts</subfield>
+    <subfield code="d">Paris : onestar press, 2005</subfield>
+    <subfield code="h">75 ungezählte Blätter</subfield>
+    <subfield code="w">(DE-627)513624902</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://libmma.s3-website-us-east-1.amazonaws.com/1153323487.pdf</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Full text PDF</subfield>
+    <subfield code="7">1</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3688413989</subfield>
+    <subfield code="b">DE-B11-DB</subfield>
+    <subfield code="9">B 11</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="h">DB</subfield>
+    <subfield code="k">http://libmma.s3-website-us-east-1.amazonaws.com/1153323487.pdf</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">4192231778</subfield>
+    <subfield code="b">DE-1973</subfield>
+    <subfield code="9">1973</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">Online-Ressource</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="c">bild</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">FCPV9QUF</subfield><subfield code="b">ström / texts</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>03986cam a2200541Ia 4500</leader>
+  <controlfield tag="001">ocn820839152</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20250801223459.0</controlfield>
+  <controlfield tag="008">121211s2012    cu a          000 p spa d</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9789592402034</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9592402035</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)820839152</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">LRU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">LRU</subfield>
+    <subfield code="d">LRU</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="049" ind1=" " ind2=" ">
+    <subfield code="a">NOCC</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">PQ7390.L59</subfield>
+    <subfield code="b">O45 2012</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/classification/PQ6001-PQ8929</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.E76</subfield>
+    <subfield code="b">O35 2012</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lorente, Luis,</subfield>
+    <subfield code="d">1948-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79020165</subfield>
+    <subfield code="1">http://viaf.org/viaf/76625928</subfield>
+    <subfield code="1">http://isni.org/isni/0000000059461160.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Odios falsos /</subfield>
+    <subfield code="c">Luis Lorente; diseño y dibujos de Rolando Estévez ; [edición, Laura Ruíz].</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Matanzas :</subfield>
+    <subfield code="b">Ediciones Vigía,</subfield>
+    <subfield code="c">2012.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">29 pages :</subfield>
+    <subfield code="b">illustrations (some color) ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Colección del San Juan.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Text printed primarily on coarse brown paper illustrated with mimeographed border designs. Collage mounted at top and laced with brown ribbon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover of book made of wrinkled brown paper, with title and author printed in black on white paper, cut out, hand-painted, and collaged on to front cover. Below, roll of cardboard paper is attached, and tied with fabric, resembling a scroll. Blue paper label on roll says "Sacerdotisa Lissette" in black lettering. Back cover has large hand-painted cut-out of female head with Vigía lamp sprouting from her crown, surrounded by leaves and designs, the publisher and series appearing in a circle around the lamp. Decorative fixed and loose endpapers how female face appearing among leaves.Collaging and hand-coloring appears on preliminary sheets. Most text printed on coarse brown paper with decorative borders.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"Consta de doscientos ejemplares ... En su confección fueron usados papeles de diferentes texturas y gramajes."--Colophon.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Art Library has copy no.138.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Condition of Art Library copy: no library markings, in protective enclosure.</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">RBC has copy no. 187.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Cuba</subfield>
+    <subfield code="z">Matanzas</subfield>
+    <subfield code="y">21st century.</subfield>
+    <subfield code="2">rbmscv.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Limitation statements</subfield>
+    <subfield code="z">Cuba</subfield>
+    <subfield code="z">Matanzas</subfield>
+    <subfield code="y">21st century.</subfield>
+    <subfield code="2">rbmscv.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Endpapers</subfield>
+    <subfield code="z">Cuba</subfield>
+    <subfield code="z">Matanzas</subfield>
+    <subfield code="y">21st century.</subfield>
+    <subfield code="2">rbmscv.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Collage (technique)</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300138699.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Cloth.</subfield>
+    <subfield code="2">aat</subfield>
+    <subfield code="0">http://vocab.getty.edu/aat/300162391.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Poetry.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1423828.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Poetry.</subfield>
+    <subfield code="2">lcgft</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2014026481.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Estévez Jordán, Rolando,</subfield>
+    <subfield code="d">1953-2023.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no95015740</subfield>
+    <subfield code="1">http://viaf.org/viaf/97801628</subfield>
+    <subfield code="1">http://isni.org/isni/0000000079095452.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ruiz Montes, Laura,</subfield>
+    <subfield code="d">1966-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no94039181</subfield>
+    <subfield code="1">http://viaf.org/viaf/24179275</subfield>
+    <subfield code="1">http://isni.org/isni/0000000059354218.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Ediciones Vigía.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n99007950</subfield>
+    <subfield code="1">http://viaf.org/viaf/135053837</subfield>
+    <subfield code="1">http://isni.org/isni/0000000092149363.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Colección del San Juan.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n99008964</subfield>
+    <subfield code="1">http://viaf.org/viaf/181568957.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist’s book's cover and interior.</subfield>
+    <subfield code="u">https://library.artstor.org/#/asset/SS33469_33469_42525936</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="949" ind1=" " ind2="1">
+    <subfield code="a">N7433.4.E76</subfield>
+    <subfield code="b">O35 2012</subfield>
+    <subfield code="z">090</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">00044761953</subfield>
+    <subfield code="l">aart</subfield>
+    <subfield code="n">jc</subfield>
+    <subfield code="h">3</subfield>
+    <subfield code="f">ART</subfield>
+    <subfield code="u">-</subfield>
+    <subfield code="s">o</subfield>
+    <subfield code="t">78</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">(2)aa</subfield>
+    <subfield code="a">wc</subfield>
+    <subfield code="b">01-07-13</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">spa</subfield>
+    <subfield code="g">cu </subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">NOC</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">J2Y8TU6U</subfield><subfield code="b">b7262494</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

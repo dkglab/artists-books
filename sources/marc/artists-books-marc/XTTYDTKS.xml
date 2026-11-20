@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01822nam a2200349ui 4500</leader>
+  <controlfield tag="001">99160355238903941</controlfield>
+  <controlfield tag="005">20260606110026.0</controlfield>
+  <controlfield tag="006">m||||go||d||||||||</controlfield>
+  <controlfield tag="007">cr|mn|---uuuuu</controlfield>
+  <controlfield tag="008">220207s2006||||xx ||||go|||||||||u|eng|d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CKB)40152774300041</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(NYHLS)85547</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(LBRSK)85547</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(EXLCZ)9940152774300041</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NYHLS</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">rda</subfield>
+    <subfield code="c">NYHLS</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Arab Portraits.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Place of publication not identified],</subfield>
+    <subfield code="b">onestar press,</subfield>
+    <subfield code="c">2006.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 online resource.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">computer</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">online resource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Archived and cataloged by Library Stack</subfield>
+  </datafield>
+  <datafield tag="506" ind1="0" ind2=" ">
+    <subfield code="f">Unrestricted online access</subfield>
+    <subfield code="2">star</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">"Portraits getting drawn in the same way a piece of information circulates by word-of-mouth, through this imperfect medium the French call "Téléphone Arabe": such is the proposal made by Kolkoz for their project. Progressively modifying the fundamental data given at the outset, the Arab Portraits are being developed in the artists' circle; for them, each encounter thus gives the chance to try this game. Each participant only has to respect one rule: to reproduce the given "version" of the portrait as faithfully as possible. This way, each participant becomes one link of a chain where the successive portraits become ever more distorted versions of the original."--</subfield>
+    <subfield code="c">provided by distributor.</subfield>
+  </datafield>
+  <datafield tag="540" ind1=" " ind2=" ">
+    <subfield code="a">Standard Copyright.</subfield>
+  </datafield>
+  <datafield tag="588" ind1="0" ind2="#">
+    <subfield code="a">Description from resource landing page (Library Stack, viewed on 09/29/2025).</subfield>
+  </datafield>
+  <datafield tag="650" ind1="1" ind2="0">
+    <subfield code="a">Artists.</subfield>
+  </datafield>
+  <datafield tag="650" ind1="1" ind2="7">
+    <subfield code="a">Artists.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00817559</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01750153</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Library Stack,</subfield>
+    <subfield code="e">distributor.</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">BOOK</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">XTTYDTKS</subfield><subfield code="b">kolkoz / arab portraits</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

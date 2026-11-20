@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01825cam a2200409 a 4500</leader>
+  <controlfield tag="001">991000955399707141</controlfield>
+  <controlfield tag="005">20200618061254.0</controlfield>
+  <controlfield tag="008">930610s1962    be a          000 0 fre d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(nynyarc)b7931001-01nya_inst</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)81081225</subfield>
+    <subfield code="9">ExL</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">NYMX93-B4360</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NNMoMA</subfield>
+    <subfield code="c">NNMoMA</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">PER Daily bûl No.8</subfield>
+    <subfield code="p">2</subfield>
+    <subfield code="i">07/22/93 R</subfield>
+    <subfield code="h">07/12/93 C</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Roth, Dieter,</subfield>
+    <subfield code="d">1930-1998</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50049746</subfield>
+    <subfield code="1">http://viaf.org/viaf/118476147</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Dagblegt bull /</subfield>
+    <subfield code="c">[Diter Rot ; rédaction, André Balthazar, Pol Bury].</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">La Louvière, Belgique :</subfield>
+    <subfield code="b">Daily bûl,</subfield>
+    <subfield code="c">[1962]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 kit :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">5 x 4 x 4 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">unspecified</subfield>
+    <subfield code="b">nz</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Daily bûl ;</subfield>
+    <subfield code="v">8</subfield>
+  </datafield>
+  <datafield tag="510" ind1="3" ind2=" ">
+    <subfield code="a">Moeglin-Delcroix, Anne.  Esthétique du livre d'artiste, 1960-1980</subfield>
+    <subfield code="c">1997.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bury, Pol,</subfield>
+    <subfield code="d">1922-2005.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50033781</subfield>
+    <subfield code="1">http://viaf.org/viaf/27061941</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Balthazar, André.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n78058185</subfield>
+    <subfield code="1">http://viaf.org/viaf/39373186</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Daily bûl ;</subfield>
+    <subfield code="v">8.</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">200723</subfield>
+    <subfield code="d">081129</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="d">081206</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">.b7931001</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">96520 (NNMoMA)</subfield>
+  </datafield>
+  <datafield tag="945" ind1=" " ind2=" ">
+    <subfield code="a">PER Daily bûl No.8</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">0</subfield>
+    <subfield code="l">mms</subfield>
+    <subfield code="o">-</subfield>
+    <subfield code="p">$0.00</subfield>
+    <subfield code="q">-</subfield>
+    <subfield code="r">-</subfield>
+    <subfield code="s">m</subfield>
+    <subfield code="t">0</subfield>
+    <subfield code="u">0</subfield>
+    <subfield code="v">0</subfield>
+    <subfield code="w">0</subfield>
+    <subfield code="x">0</subfield>
+    <subfield code="y">.i14962056</subfield>
+    <subfield code="z">081206</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">RDA ENRICHED</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">LTI 08/06/2012</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+  <datafield tag="950" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="l">SC</subfield>
+    <subfield code="h">07/12/93 C</subfield>
+  </datafield>
+  <datafield tag="996" ind1=" " ind2=" ">
+    <subfield code="b">1</subfield>
+    <subfield code="c">081119</subfield>
+    <subfield code="d">m</subfield>
+    <subfield code="e">a</subfield>
+    <subfield code="f">-</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="l">mms</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="3">MoMA:</subfield>
+    <subfield code="a">07/22/93</subfield>
+    <subfield code="t">c</subfield>
+    <subfield code="s">9114</subfield>
+    <subfield code="n">NNMoMA</subfield>
+    <subfield code="w">NYMX93B4360</subfield>
+    <subfield code="d">06/10/93</subfield>
+    <subfield code="c">JT</subfield>
+    <subfield code="b">DF</subfield>
+    <subfield code="l">NYMX</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991000955399707141</subfield>
+    <subfield code="8">2269833790007141</subfield>
+    <subfield code="a">01NYA_INST</subfield>
+    <subfield code="b">MoMA</subfield>
+    <subfield code="c">MoMA Manhattan Special Collections</subfield>
+    <subfield code="d">Roth, Dieter,</subfield>
+    <subfield code="e">unavailable</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">1</subfield>
+    <subfield code="i">moma</subfield>
+    <subfield code="j">mms</subfield>
+    <subfield code="k">8</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Museum of Modern Art Library</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">43L9M8DY</subfield><subfield code="b">roth / dagblegt bull</subfield><subfield code="c">title-author</subfield><subfield code="d">nyarc</subfield></datafield></record>
+</collection>

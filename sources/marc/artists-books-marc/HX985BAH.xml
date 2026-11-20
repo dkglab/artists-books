@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02170cam a2200385Ia 4500</leader>
+  <controlfield tag="001">991002165699708431</controlfield>
+  <controlfield tag="005">20250625144213.0</controlfield>
+  <controlfield tag="008">951213s1982    nyu           000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)33902278</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">AZU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">AZU</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">CLART</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.L38</subfield>
+    <subfield code="b">D63 1982</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">NE2698 .S4637L 14867</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lawler, Louise.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n93011076</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">[Documenta stationary] :</subfield>
+    <subfield code="b">excerpts from a letter to the participating artists by the director of Documenta 7, R.H. Fuchs /</subfield>
+    <subfield code="c">edited and published by Louise Lawler</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2="0">
+    <subfield code="a">Excerpts from a letter to the participating artists</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[New York] :</subfield>
+    <subfield code="b">Louise Lawler,</subfield>
+    <subfield code="c">[1982]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 folder ;</subfield>
+    <subfield code="c">28 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Consists of two sheets of stationary and an envelope, each with an excerpt printed in green, issued in clear plastic slip-in pocket</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title from foot of stationary</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">CAI Library has 2 copies in 1 enclosure</subfield>
+  </datafield>
+  <datafield tag="541" ind1="1" ind2=" ">
+    <subfield code="3">CAI copy 1, 2;</subfield>
+    <subfield code="c">Gift;</subfield>
+    <subfield code="a">Sally Stein, in memory of her husband;</subfield>
+    <subfield code="d">2015;</subfield>
+    <subfield code="e">Sekula Library Identifier: Allan Studio Book Room</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Lawler, Louise.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n93011076</subfield>
+  </datafield>
+  <datafield tag="611" ind1="2" ind2="0">
+    <subfield code="a">Documenta (Exhibition)</subfield>
+    <subfield code="n">(7th :</subfield>
+    <subfield code="d">1982 :</subfield>
+    <subfield code="c">Kassel, Germany)</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/no2015163043</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Fuchs, Rudi,</subfield>
+    <subfield code="d">1942-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50027731</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Sekula, Allan,</subfield>
+    <subfield code="e">former owner.</subfield>
+    <subfield code="5">CLART</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82257403</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Stein, Sally,</subfield>
+    <subfield code="e">former owner.</subfield>
+    <subfield code="5">CLART</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86855006</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Sterling and Francine Clark Art Institute.</subfield>
+    <subfield code="b">Library.</subfield>
+    <subfield code="5">CLART</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86824535</subfield>
+  </datafield>
+  <datafield tag="799" ind1="0" ind2=" ">
+    <subfield code="a">Allan Sekula Library</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">Processed by Backstage 2020-04</subfield>
+  </datafield>
+  <datafield tag="907" ind1=" " ind2=" ">
+    <subfield code="a">.b12317159</subfield>
+    <subfield code="b">01-04-24</subfield>
+    <subfield code="c">03-09-17</subfield>
+  </datafield>
+  <datafield tag="990" ind1=" " ind2=" ">
+    <subfield code="a">Rare books</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">rbib</subfield>
+    <subfield code="b">03-09-17</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">-</subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">0</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991002165699708431</subfield>
+    <subfield code="8">2217648290008431</subfield>
+    <subfield code="a">01CLARKART_INST</subfield>
+    <subfield code="b">MAIN</subfield>
+    <subfield code="c">Rare Compact Storage</subfield>
+    <subfield code="d">NE2698 .S4637L 14867</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">RARECX</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Clark</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">HX985BAH</subfield><subfield code="b">lawler / documenta stationary</subfield><subfield code="c">title-author</subfield><subfield code="d">clark</subfield></datafield></record>
+</collection>

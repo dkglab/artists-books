@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01990cam a2200421 i 4500</leader>
+  <controlfield tag="001">ocn664683793wcmasp</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20251010050128.0</controlfield>
+  <controlfield tag="006">m     o  d        </controlfield>
+  <controlfield tag="007">cr |n||||||a|a</controlfield>
+  <controlfield tag="008">080806s2007    waua    o6    000 f eng d</controlfield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">014601826</subfield>
+    <subfield code="2">Uk</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="z">9781560979159</subfield>
+    <subfield code="q">print</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)664683793</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">ALSTP</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">pn</subfield>
+    <subfield code="c">ALSTP</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">INT</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">YOU</subfield>
+    <subfield code="d">UKCRE</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCL</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCL</subfield>
+    <subfield code="d">OCLCQ</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">PN6727.S488</subfield>
+    <subfield code="b">B68 2007</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Shaw, Dash.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The bottomless belly button /</subfield>
+    <subfield code="c">by Dash Shaw, ed. by Gary Groth.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Seattle, Wash. :</subfield>
+    <subfield code="b">Fantagraphics,</subfield>
+    <subfield code="c">2007.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 online resource (1 electronic resource (724 pages))</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">computer</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">online resource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier.</subfield>
+  </datafield>
+  <datafield tag="506" ind1="1" ind2=" ">
+    <subfield code="a">Access limited to UNC Chapel Hill-authenticated users.</subfield>
+    <subfield code="f">Unlimited simultaneous users.</subfield>
+  </datafield>
+  <datafield tag="588" ind1="0" ind2=" ">
+    <subfield code="a">Print version record.</subfield>
+  </datafield>
+  <datafield tag="590" ind1="0" ind2=" ">
+    <subfield code="a">Content provider: Alexander Street Press.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Families</subfield>
+    <subfield code="v">Fiction</subfield>
+    <subfield code="v">Comic books, strips, etc.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Families.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01728849.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Comics (Graphic works)</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01921613.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Comics (Graphic works)</subfield>
+    <subfield code="2">lcgft.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Groth, Gary.</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2=" ">
+    <subfield code="t">Underground and independent comics, comix, and graphic novels (online collection)</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2=" ">
+    <subfield code="t">OCLC WorldShare Collection Manager managed collection. ASP.</subfield>
+  </datafield>
+  <datafield tag="776" ind1="1" ind2=" ">
+    <subfield code="a">Shaw, Dash.</subfield>
+    <subfield code="t">Bottomless belly button.</subfield>
+    <subfield code="d">Seattle, Wash. : Fantagraphics ; London : Turnaround [distributor], 2008</subfield>
+    <subfield code="z">9781560979159</subfield>
+    <subfield code="w">(OCoLC)181140112.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Underground and independent comics, comix, and graphic novels.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://login.libproxy.lib.unc.edu/login?url=https://www.aspresolver.com/aspresolver.asp?COMX;789474</subfield>
+    <subfield code="y">Full text available via the UNC-Chapel Hill Libraries</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">NOTAUTHO</subfield>
+  </datafield>
+  <datafield tag="944" ind1=" " ind2=" ">
+    <subfield code="a">Batch load history: 10000 ASP ebooks pt. 2 records loaded 20251015, ka</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">GQ2H7769</subfield><subfield code="b">1560979151</subfield><subfield code="c">isbn</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

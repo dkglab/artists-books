@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02752nam a2200421Ia 4500</leader>
+  <controlfield tag="001">ocm00789711</controlfield>
+  <controlfield tag="005">20260127114849.0</controlfield>
+  <controlfield tag="008">900426s1968    nyua          000 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">2415247</subfield>
+    <subfield code="a">18468851</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)00789711</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">NYP</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">NYP</subfield>
+    <subfield code="d">m.c.</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="a">mul</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Carl Andre, Robert Barry, Douglas Huebler, Joseph Kosuth, Sol Lewitt, Robert Morris, Lawrence Weiner.</subfield>
+  </datafield>
+  <datafield tag="246" ind1="3" ind2=" ">
+    <subfield code="a">Xerox book.</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">1st ed.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Siegelaub/Wendler,</subfield>
+    <subfield code="c">1968.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">approximately 250 leaves :</subfield>
+    <subfield code="b">all illustrations ;</subfield>
+    <subfield code="c">28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">English, French, German.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Minimal art.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85085702.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Minimal art.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1022831.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books (books)</subfield>
+    <subfield code="z">United States.</subfield>
+    <subfield code="2">aat.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Weiner, Lawrence.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50020967</subfield>
+    <subfield code="1">http://viaf.org/viaf/12320420</subfield>
+    <subfield code="1">http://isni.org/isni/0000000115600584.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Andre, Carl,</subfield>
+    <subfield code="d">1935-2024.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/nr90000138</subfield>
+    <subfield code="1">http://viaf.org/viaf/100954627</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121455571.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Barry, Robert,</subfield>
+    <subfield code="d">1936-</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n89608565</subfield>
+    <subfield code="1">http://viaf.org/viaf/5217168</subfield>
+    <subfield code="1">http://isni.org/isni/0000000078454660.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Huebler, Douglas.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50028602</subfield>
+    <subfield code="1">http://viaf.org/viaf/79092143</subfield>
+    <subfield code="1">http://isni.org/isni/0000000114491160.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Kosuth, Joseph.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82050748</subfield>
+    <subfield code="1">http://viaf.org/viaf/64018299</subfield>
+    <subfield code="1">http://isni.org/isni/0000000081429343.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">LeWitt, Sol,</subfield>
+    <subfield code="d">1928-2007.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79092583</subfield>
+    <subfield code="1">http://viaf.org/viaf/84632546</subfield>
+    <subfield code="1">http://isni.org/isni/000000011450059X.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Morris, Robert,</subfield>
+    <subfield code="d">1931-2018.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50005671</subfield>
+    <subfield code="1">http://viaf.org/viaf/84633254</subfield>
+    <subfield code="1">http://isni.org/isni/0000000121418252.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Siegelaub, Seth,</subfield>
+    <subfield code="d">1941-2013.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n80038682</subfield>
+    <subfield code="1">http://viaf.org/viaf/55049276</subfield>
+    <subfield code="1">http://isni.org/isni/0000000374112411.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="3">Photos of the artist's book's interior.</subfield>
+    <subfield code="u">https://library.artstor.org/#/asset/SS33469_33469_9982591</subfield>
+    <subfield code="x">chk artlib</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2026/01/27</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">J3RXS2WM</subfield><subfield code="b">b2266091</subfield><subfield code="c">bib</subfield></datafield></record>
+</collection>

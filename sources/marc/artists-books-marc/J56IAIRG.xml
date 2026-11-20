@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01699cam a2200409 c 4500</leader>
+  <controlfield tag="001">224891197</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20210716143103.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">970226s1962    sz |||||      00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)224891197</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)9224891195</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV224891197</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)258357863</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-CH</subfield>
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lavater, Warja</subfield>
+    <subfield code="d">1913-2007</subfield>
+    <subfield code="0">(DE-588)118706896</subfield>
+    <subfield code="0">(DE-627)079488536</subfield>
+    <subfield code="0">(DE-576)209318244</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Party</subfield>
+    <subfield code="b">die vier Temperamente: Sanguiniker, Choleriker, Phlegmatiker, Melancholiker oder Party bei ...</subfield>
+    <subfield code="c">auf Stein gezeichnet von Warja Honegger-Lavater</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Basel [u.a.]</subfield>
+    <subfield code="b">Basilius Presse</subfield>
+    <subfield code="c">c1962</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Bl. in Leporellofaltung</subfield>
+    <subfield code="b">überw. Ill</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Folded story</subfield>
+    <subfield code="v">4</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Gedruckt als Original-Lithographie</subfield>
+  </datafield>
+  <datafield tag="510" ind1="3" ind2=" ">
+    <subfield code="a">Arnold, W. Malerbuch 1409</subfield>
+  </datafield>
+  <datafield tag="583" ind1="1" ind2=" ">
+    <subfield code="a">Archivierung prüfen</subfield>
+    <subfield code="c">20200919</subfield>
+    <subfield code="f">DE-640</subfield>
+    <subfield code="z">1</subfield>
+    <subfield code="2">pdager</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="0">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4220901-8</subfield>
+    <subfield code="0">(DE-627)10501432X</subfield>
+    <subfield code="0">(DE-576)210268778</subfield>
+    <subfield code="a">Charakter</subfield>
+    <subfield code="g">Motiv</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="1">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)4036042-8</subfield>
+    <subfield code="0">(DE-627)104400838</subfield>
+    <subfield code="0">(DE-576)209016124</subfield>
+    <subfield code="a">Lithografie</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2="2">
+    <subfield code="D">s</subfield>
+    <subfield code="0">(DE-588)7548801-2</subfield>
+    <subfield code="0">(DE-627)520312775</subfield>
+    <subfield code="0">(DE-576)259035467</subfield>
+    <subfield code="a">Leporello</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="689" ind1="0" ind2=" ">
+    <subfield code="5">(DE-627)</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Folded story</subfield>
+    <subfield code="v">4</subfield>
+    <subfield code="9">4</subfield>
+    <subfield code="w">(DE-627)17050817X</subfield>
+    <subfield code="w">(DE-576)263549593</subfield>
+    <subfield code="w">(DE-600)1067870-0</subfield>
+    <subfield code="7">am</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">230088163</subfield>
+    <subfield code="b">DE-23</subfield>
+    <subfield code="9">23</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">Malerbücher 46.319:4</subfield>
+    <subfield code="g">46.319:4</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3619947430</subfield>
+    <subfield code="b">DE-24</subfield>
+    <subfield code="9">24</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">69/90044</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="e">Arnold, W. Malerbuch 1409</subfield>
+    <subfield code="f">b</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">J56IAIRG</subfield><subfield code="b">lavater / die party</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

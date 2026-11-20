@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02281nam a2200349Ia 4500</leader>
+  <controlfield tag="001">ocm10524095</controlfield>
+  <controlfield tag="005">20250801104846.0</controlfield>
+  <controlfield tag="008">890729t19821982nyua          000 0 eng d</controlfield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">213560992</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)10524095</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">GZE</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">GZE</subfield>
+    <subfield code="d">m/c</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">UtOrBLW</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Haring, Keith.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82252982</subfield>
+    <subfield code="1">http://viaf.org/viaf/27139591</subfield>
+    <subfield code="1">http://isni.org/isni/0000000110231177.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Keith Haring /</subfield>
+    <subfield code="c">text, Robert Pincus-Witten, Jeffrey Deitch, David Shapiro ; design, Dan Friedman.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York :</subfield>
+    <subfield code="b">Tony Shafrazi Gallery,</subfield>
+    <subfield code="c">[1982]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©1982.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">111 pages, 34 unnumbered pages :</subfield>
+    <subfield code="b">illustrations (some color) ;</subfield>
+    <subfield code="c">24 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAContentType/1020.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDAMediaType/1007.</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/RDACarrierType/1049.</subfield>
+  </datafield>
+  <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="p">illustration</subfield>
+    <subfield code="2">rdaill</subfield>
+    <subfield code="0">http://rdaregistry.info/termList/IllusContent/1014.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Haring, Keith.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n82252982</subfield>
+    <subfield code="1">http://viaf.org/viaf/27139591</subfield>
+    <subfield code="1">http://isni.org/isni/0000000110231177.</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="7">
+    <subfield code="a">Haring, Keith.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/106685.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Subways</subfield>
+    <subfield code="x">Decoration.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh85129576.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Subways</subfield>
+    <subfield code="x">Decoration.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1136988.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Subways.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">http://id.worldcat.org/fast/1136975.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Pincus-Witten, Robert.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50014506</subfield>
+    <subfield code="1">http://viaf.org/viaf/73862352</subfield>
+    <subfield code="1">http://isni.org/isni/0000000081533810.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Deitch, Jeffrey.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86801011</subfield>
+    <subfield code="1">http://viaf.org/viaf/74534445</subfield>
+    <subfield code="1">http://isni.org/isni/0000000116731746.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Shapiro, David,</subfield>
+    <subfield code="d">1947-2024.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n79091147</subfield>
+    <subfield code="1">http://viaf.org/viaf/56627981</subfield>
+    <subfield code="1">http://isni.org/isni/0000000108576897.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Tony Shafrazi Gallery.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n86801013</subfield>
+    <subfield code="1">http://viaf.org/viaf/130272664</subfield>
+    <subfield code="1">http://isni.org/isni/0000000122178916.</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">MARS 2025/08/05</subfield>
+  </datafield>
+  <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="9">Under Authority Control.  Baseline July 2025</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    <subfield code="b">10-01-04</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">a  </subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">eng</subfield>
+    <subfield code="g">nyu</subfield>
+    <subfield code="h">0</subfield>
+    <subfield code="i">0</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">Z59V6LPG</subfield><subfield code="b">haring / keith haring</subfield><subfield code="c">title-author</subfield><subfield code="d">unc</subfield></datafield></record>
+</collection>

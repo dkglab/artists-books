@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>02010cam a22003372c 4500</leader>
+  <controlfield tag="001">1747487341</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20241229024145.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">210205s2002    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1747487341</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1747487341</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="245" ind1="0" ind2="0">
+    <subfield code="a">Triumph eines Hosenverkäufers</subfield>
+    <subfield code="c">[Idee, Gestaltung, Druck u. Einband: Veronika Schäpers. Text: Heiko Michael Hartmann]</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">2., veränd. Aufl.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Tokyo</subfield>
+    <subfield code="b">Schäpers</subfield>
+    <subfield code="c">2002</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[20] Bl.</subfield>
+    <subfield code="b">zahlr. farb. Ill.</subfield>
+    <subfield code="c">Polykarbonateinband ; 22 x 22,5 cm ; in durchsichtigem Kunststoffkissen in Kunststoffhülle + 1 Paar Handschuhe u. 1 Strohhalm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Nr I/III, Gesamtaufl.: 15 arab. u. 3 röm. num. Ex.; auf d. Kunststoffkissen hs. sign. Schäpers u. Hartmann.. - Gedruckt mit e. hp DeskJet 1220C auf Polyäthylenterephthalat. Heftung auf Gummischnüre, gespannter Einband aus Polykarbonat, aufblasbares Kunststoffkissen mit Titelprägung.. - Geneva</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">Hartmann, Heiko Michael</subfield>
+    <subfield code="d">1957-</subfield>
+    <subfield code="e">Mitarb.</subfield>
+    <subfield code="0">(DE-588)120739496</subfield>
+    <subfield code="0">(DE-627)080860818</subfield>
+    <subfield code="0">(DE-576)213361515</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">2\p</subfield>
+    <subfield code="a">Schäpers, Veronika</subfield>
+    <subfield code="d">1969-</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="0">(DE-588)121711544</subfield>
+    <subfield code="0">(DE-627)481321535</subfield>
+    <subfield code="0">(DE-576)185791719</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">3\p</subfield>
+    <subfield code="a">Schäpers, Veronika</subfield>
+    <subfield code="d">1969-</subfield>
+    <subfield code="e">Typogr.</subfield>
+    <subfield code="0">(DE-588)121711544</subfield>
+    <subfield code="0">(DE-627)481321535</subfield>
+    <subfield code="0">(DE-576)185791719</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="8">4\p</subfield>
+    <subfield code="a">Schäpers, Veronika</subfield>
+    <subfield code="d">1969-</subfield>
+    <subfield code="e">Buchb.</subfield>
+    <subfield code="0">(DE-588)121711544</subfield>
+    <subfield code="0">(DE-627)481321535</subfield>
+    <subfield code="0">(DE-576)185791719</subfield>
+    <subfield code="4">oth</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">1\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">2\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">3\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="883" ind1=" " ind2=" ">
+    <subfield code="8">4\p</subfield>
+    <subfield code="a">cgwrk</subfield>
+    <subfield code="d">20241001</subfield>
+    <subfield code="q">DE-101</subfield>
+    <subfield code="u">https://d-nb.info/provenance/plan#cgwrk</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3849178978</subfield>
+    <subfield code="b">DE-Of2</subfield>
+    <subfield code="9">Of 2</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Kü Schäp</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">THUB7ZAE</subfield><subfield code="b">schäpers / triumph eines hosenverkäufers</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01136cam a2200361Ia 4500</leader>
+  <controlfield tag="001">9929576830001551</controlfield>
+  <controlfield tag="005">20170410124413.0</controlfield>
+  <controlfield tag="008">941114s1976    enk           000 0 eng d</controlfield>
+  <controlfield tag="009">344382</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">94-B20745</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">344382</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(CMalG)344382-gettydb-Voyager</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)222515692</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="d">CMalG</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N72.S3</subfield>
+    <subfield code="b">L384 1976</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Latham, John,</subfield>
+    <subfield code="d">1921-2006.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Time-base and determination in events /</subfield>
+    <subfield code="c">John Latham.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Tate Gallery,</subfield>
+    <subfield code="c">1976.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[21] p. ;</subfield>
+    <subfield code="c">21 cm.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Art and science.</subfield>
+  </datafield>
+  <datafield tag="710" ind1="2" ind2=" ">
+    <subfield code="a">Tate Gallery.</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="1">
+    <subfield code="a">Time base and determination in events.</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2="1">
+    <subfield code="a">BRW</subfield>
+  </datafield>
+  <datafield tag="909" ind1=" " ind2="1">
+    <subfield code="a">AMH</subfield>
+  </datafield>
+  <datafield tag="911" ind1=" " ind2="1">
+    <subfield code="a">Jean Brown Collection</subfield>
+  </datafield>
+  <datafield tag="921" ind1=" " ind2=" ">
+    <subfield code="a">b13485593</subfield>
+    <subfield code="b">04-29-99</subfield>
+    <subfield code="c">07-10-95</subfield>
+    <subfield code="d">cc</subfield>
+    <subfield code="e">-  -</subfield>
+    <subfield code="f">a</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">cfull</subfield>
+  </datafield>
+  <datafield tag="947" ind1=" " ind2=" ">
+    <subfield code="a">oclc mm 5/97</subfield>
+  </datafield>
+  <datafield tag="947" ind1=" " ind2=" ">
+    <subfield code="a">Marcadia 990429b</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="a">OCLC D160707.R807883 20160726</subfield>
+  </datafield>
+  <datafield tag="981" ind1=" " ind2="1">
+    <subfield code="b">1</subfield>
+    <subfield code="c">11/14/94 REC</subfield>
+    <subfield code="d">MAIN</subfield>
+    <subfield code="e">MAIN</subfield>
+  </datafield>
+  <datafield tag="995" ind1=" " ind2=" ">
+    <subfield code="a">94-B20745</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">9929576830001551</subfield>
+    <subfield code="8">22158485760001551</subfield>
+    <subfield code="a">01GRI_INST</subfield>
+    <subfield code="b">GC</subfield>
+    <subfield code="c">LIBRARY ANNEX</subfield>
+    <subfield code="d">94-B20745</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">ANXA</subfield>
+    <subfield code="k">8</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">GRI General Collections</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">A3NC4GPI</subfield><subfield code="b">latham / time base and determination in events</subfield><subfield code="c">title-author</subfield><subfield code="d">getty</subfield></datafield></record>
+</collection>

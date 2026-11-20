@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01241cam a2200349 c 4500</leader>
+  <controlfield tag="001">224893416</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200127164605.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">970226s1963    sz |||||      00| ||ger c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)224893416</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)9224893414</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV224893416</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)6154132</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-CH</subfield>
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lavater, Warja</subfield>
+    <subfield code="d">1913-2007</subfield>
+    <subfield code="0">(DE-588)118706896</subfield>
+    <subfield code="0">(DE-627)079488536</subfield>
+    <subfield code="0">(DE-576)209318244</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Nacht und Tag und Nacht ...</subfield>
+    <subfield code="c">auf Stein gezeichnet von Warja Honegger-Lavater</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Basel [u.a.]</subfield>
+    <subfield code="b">Basilius Presse</subfield>
+    <subfield code="c">c1963</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Bl. in Leporellofaltung</subfield>
+    <subfield code="b">überw. Ill</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Folded story</subfield>
+    <subfield code="v">9</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Gedruckt als Original-Lithographie</subfield>
+  </datafield>
+  <datafield tag="510" ind1="3" ind2=" ">
+    <subfield code="a">Arnold, W. Malerbuch 1408</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Folded story</subfield>
+    <subfield code="v">9</subfield>
+    <subfield code="9">9</subfield>
+    <subfield code="w">(DE-627)17050817X</subfield>
+    <subfield code="w">(DE-576)263549593</subfield>
+    <subfield code="w">(DE-600)1067870-0</subfield>
+    <subfield code="7">am</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">230097626</subfield>
+    <subfield code="b">DE-23</subfield>
+    <subfield code="9">23</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">Malerbücher 46.319:9</subfield>
+    <subfield code="g">46.319:9</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3890809715</subfield>
+    <subfield code="b">DE-N1</subfield>
+    <subfield code="9">N 1</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="e">Arnold, W. Malerbuch 1408</subfield>
+    <subfield code="f">b</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">FP2Z86BN</subfield><subfield code="b">lavater / nacht und tag und nacht</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

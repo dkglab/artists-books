@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01069nam a22002532c 4500</leader>
+  <controlfield tag="001">1747511714</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20210205104930.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">210205s2006    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1747511714</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1747511714</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Willbrand, Carola</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Mein Quellenwerk</subfield>
+    <subfield code="b">[2 Rollen Tischtuch mit Bleistiftzeichnungen, 1 Rolle Baumwollbatist mit Bleistiftzeichnungen]</subfield>
+    <subfield code="c">Carola Willbrand</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[Köln]</subfield>
+    <subfield code="c">2006</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[3] Rollen</subfield>
+    <subfield code="b">Ill</subfield>
+    <subfield code="c">198 x 53 cm, 195,3 x 52,5 cm, 204 x 59 cm ; zs. Stoffbeutel ; 63 x 27,2 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">auf den Rollen werden weibliche Vorbilder, die für die Künstlerin maßgeblich sind, gezeigt. Sie reichen von der babylonischen Göttin Astarte bis zu Künstlerinnen des 20. Jahrhunderts</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Willbrand, Carola</subfield>
+    <subfield code="e">Ill.</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3849218694</subfield>
+    <subfield code="b">DE-Of2</subfield>
+    <subfield code="9">Of 2</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Mp 5 F 2 Wil</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">BSXHGK45</subfield><subfield code="b">willbrand / das quellenwerk</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

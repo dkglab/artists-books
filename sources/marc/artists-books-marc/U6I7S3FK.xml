@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01351nam a2200349Ia 4500</leader>
+  <controlfield tag="001">990039340250203941</controlfield>
+  <controlfield tag="005">20120727171615.0</controlfield>
+  <controlfield tag="008">841025s1981    paua          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)11308833</subfield>
+    <subfield code="z">(OCoLC)19857207</subfield>
+    <subfield code="z">(OCoLC)26958081</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">OAC</subfield>
+    <subfield code="c">OAC</subfield>
+    <subfield code="d">m/c</subfield>
+    <subfield code="d">HHG</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">N7433.4.W6556</subfield>
+    <subfield code="b">S55 1981</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">N7433.4.W66</subfield>
+    <subfield code="b">A4 1981</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Woodman, Francesca,</subfield>
+    <subfield code="d">1958-1981</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Some disordered interior geometries /</subfield>
+    <subfield code="c">[by Francesca Woodman]</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[Philadelphia] :</subfield>
+    <subfield code="b">Synapse,</subfield>
+    <subfield code="c">c1981.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">12 [i.e. 24] p. :</subfield>
+    <subfield code="b">ill. ;</subfield>
+    <subfield code="c">23 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Cover title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"The drawing in the last chapter is by Jim Johnson."</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Woodman, Francesca,</subfield>
+    <subfield code="d">1958-1981</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">United States</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Artists' books</subfield>
+    <subfield code="z">Pennsylvania</subfield>
+    <subfield code="y">1981.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield tag="648" ind1=" " ind2="7">
+    <subfield code="a">1900-1999</subfield>
+    <subfield code="2">fast</subfield>
+  </datafield>
+  <datafield tag="752" ind1=" " ind2=" ">
+    <subfield code="a">United States</subfield>
+    <subfield code="b">Pennsylvania</subfield>
+    <subfield code="d">Philadelphia.</subfield>
+  </datafield>
+  <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">003934025</subfield>
+  </datafield>
+  <datafield tag="901" ind1="9" ind2=" ">
+    <subfield code="a">AUH2094</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">MHAUH20949HU</subfield>
+  </datafield>
+  <datafield tag="905" ind1=" " ind2=" ">
+    <subfield code="a">N^^7433</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-03-26</subfield>
+    <subfield code="c">WorldCat record encoding level change - WorldCat record variable field(s) change: 655</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2022-03-28</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 655</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2023-10-01</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 655</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">2024-02-10</subfield>
+    <subfield code="c">WorldCat record variable field(s) change: 758</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">NO-OVERLAY</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">U6I7S3FK</subfield><subfield code="b">woodman / some disordered interior geometries</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

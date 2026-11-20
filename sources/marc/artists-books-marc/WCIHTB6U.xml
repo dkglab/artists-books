@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00501    a2200133   4500</leader>
+  <controlfield tag="001">ocm41431122</controlfield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Johanknecht, Susan</subfield>
+    <subfield code="0">n84087626</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Newson, Jenifer</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Gefn Press</subfield>
+    <subfield code="0">n92098282</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Crevice/map</subfield>
+    <subfield code="c">Susan Johanknecht &amp; Jenifer Newson</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Gefn Press,</subfield>
+    <subfield code="c">1994.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 folded leaf</subfield>
+    <subfield code="b">color illustrations</subfield>
+    <subfield code="c">31 cm (folded)</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Edition limited to 80 copies, signed by the artists.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Consists of one sheet printed on both sides and folded like a travel map.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">WCIHTB6U</subfield><subfield code="b">41431122</subfield><subfield code="c">oclc</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00344    a2200085   4500</leader>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Hyde, Scott</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">2 prints : sky image, water image</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Rochester, NY</subfield>
+    <subfield code="b">Visual Studies Workshop</subfield>
+    <subfield code="c">1978</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="b">offset lithography</subfield>
+    <subfield code="c">20x16 in.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">- 2 prints from in-camera color separations
+sky Image, 50 copies
+water Image, 100 copies
+artist in residence project</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">D8W7W3IN</subfield><subfield code="b">hyde / 2 prints</subfield><subfield code="c">title-author</subfield><subfield code="d">ehive</subfield></datafield></record>
+</collection>

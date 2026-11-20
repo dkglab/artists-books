@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01113nam a2200289 i 4500</leader>
+  <controlfield tag="001">99155559759203941</controlfield>
+  <controlfield tag="005">20150108133641.0</controlfield>
+  <controlfield tag="006">m    |   d |</controlfield>
+  <controlfield tag="007">cr |n||||||||n</controlfield>
+  <controlfield tag="008">950501s1876    mauaf   o     000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)656605113</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(MiFhGG)NCCO3004039</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">MIGCL</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">UtOrBLW</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">f-ua---</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Appleton, Thomas Gold,</subfield>
+    <subfield code="d">1812-1884</subfield>
+    <subfield code="e">author.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="2">
+    <subfield code="a">A Nile journal /</subfield>
+    <subfield code="c">by T.G. Appleton ; illustrated by Eugene Benson.</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Boston :</subfield>
+    <subfield code="b">Roberts Brothers,</subfield>
+    <subfield code="c">1876.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 online resource (307 pages, 13 unnumbered leaves of plates) :</subfield>
+    <subfield code="b">illustrations.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">computer</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">online resource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Nineteenth Century Collections Online: Maps and Travel Literature</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Reproduction of the original from the Bryn Mawr College Library.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Nile River</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Egypt</subfield>
+    <subfield code="x">Description and travel</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Benson, Eugene,</subfield>
+    <subfield code="d">1839-1908</subfield>
+    <subfield code="e">illustrator.</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Nineteenth Century Collections Online: Maps and Travel Literature.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">VETKFC9M</subfield><subfield code="b">cusick / nile journal</subfield><subfield code="c">title-author</subfield><subfield code="d">harvard</subfield></datafield></record>
+</collection>

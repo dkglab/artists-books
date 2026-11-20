@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01580ckm a22003493a 4500</leader>
+  <controlfield tag="001">20548806</controlfield>
+  <controlfield tag="005">20250607090519.1</controlfield>
+  <controlfield tag="007">kd bo|</controlfield>
+  <controlfield tag="008">180619s1949    xxunnn |     ||   kn     </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">20548806</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">acq</subfield>
+    <subfield code="c">acqwork</subfield>
+    <subfield code="d">u</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">20</subfield>
+    <subfield code="g">y-printpho</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">to P&amp;P accessions hh05 2018-07-06 ON ORDER for P&amp;P (telework); qw50 2018-12</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2018664517</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">dcrmg</subfield>
+    <subfield code="c">DLC</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">Unprocessed in PR 13 CN 2017:130</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Lewis, Norman,</subfield>
+    <subfield code="d">1909-1979,</subfield>
+    <subfield code="e">artist.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">[Untitled]</subfield>
+    <subfield code="h">[graphic]</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="c">1949.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 drawing :</subfield>
+    <subfield code="b">black ink and wash on paper ;</subfield>
+    <subfield code="c">sheet 28 x 28 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">still image</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">sheet</subfield>
+    <subfield code="b">nb</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">This catalog record contains preliminary data.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Title devised by Library staff.</subfield>
+  </datafield>
+  <datafield tag="506" ind1=" " ind2=" ">
+    <subfield code="a">Served by appointment (Unprocessed). To make a request, see "Access to Unprocessed Materials,"</subfield>
+    <subfield code="u">http://www.loc.gov/rr/print/info/022_unpr.html</subfield>
+  </datafield>
+  <datafield tag="540" ind1=" " ind2=" ">
+    <subfield code="a">Rights status not evaluated. For general information see: "Copyright and Other Restrictions...,"</subfield>
+    <subfield code="u">http://www.loc.gov/rr/print/195_copr.html</subfield>
+  </datafield>
+  <datafield tag="541" ind1=" " ind2=" ">
+    <subfield code="c">Purchase;</subfield>
+    <subfield code="a">Michael Rosenfeld Gallery;</subfield>
+    <subfield code="d">2018;</subfield>
+    <subfield code="e">(DLC/PP-2018:130).</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="a">Library of Congress</subfield>
+    <subfield code="b">Prints and Photographs Division</subfield>
+    <subfield code="e">Washington, D.C. 20540 USA</subfield>
+    <subfield code="n">dcu</subfield>
+    <subfield code="u">http://hdl.loc.gov/loc.pnp/pp.print</subfield>
+  </datafield>
+  <datafield tag="923" ind1=" " ind2=" ">
+    <subfield code="a">Purchase</subfield>
+    <subfield code="d">201800180</subfield>
+    <subfield code="n">340787</subfield>
+    <subfield code="s">Michael Rosenfeld Gallery.</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">Vendor : Michael Rosenfeld Gallery.</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="a">pp/iuc</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-P&amp;P</subfield>
+    <subfield code="m">(A size part)</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">BEPWZ332</subfield><subfield code="b">lewis / untitled</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

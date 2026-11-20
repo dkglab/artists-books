@@ -1,27 +1,31 @@
-{{/* A two-up grid of book cards (thumbnail, title link, creator · date), used by
-     the concept detail pages. Expects the ?books token string from
-     subjects.rq / construction-methods.rq:
-       itemKey <TAB> title <TAB> creators <TAB> date <TAB> thumbUrl */}}
+{{/* The concept detail pages' book list, in the index's masonry card style
+     (.book-grid): fixed-width lanes, an uncropped image at the top of the card
+     when the book has one, no placeholder when it doesn't. Expects the ?books
+     token string from subjects.rq / construction-methods.rq:
+       itemKey <TAB> title <TAB> creators <TAB> date <TAB> imprint
+         <TAB> thumbUrl <TAB> thumbWidth <TAB> thumbHeight */}}
 {{ define "book-cards" }}
-<ul class="book-cards">
+<ul class="book-grid">
 {{- range (split . "\n") }}
 {{- $f := split . "\t" }}
+{{- $title := index $f 1 }}
 {{- $creators := index $f 2 }}
 {{- $date := index $f 3 }}
-<li class="book-card">
-  <a class="cover" href="/item/{{ index $f 0 }}">
-  {{- with index $f 4 }}
-    <img src="{{ . }}" alt="Image of {{ index $f 1 }}" loading="lazy">
-  {{- else }}
-    <span class="no-image">No image available</span>
-  {{- end }}
-  </a>
-  <div>
-    <a class="title" href="/item/{{ index $f 0 }}">{{ index $f 1 }}</a>
-    {{- if or $creators $date }}
-    <span class="meta">{{ $creators }}{{ if and $creators $date }} · {{ end }}{{ $date }}</span>
+<li>
+  <a href="/item/{{ index $f 0 }}">
+    {{- with index $f 5 }}
+    <img src="{{ . }}" width="{{ index $f 6 }}" height="{{ index $f 7 }}" alt="Image of {{ $title }}" loading="lazy">
     {{- end }}
-  </div>
+    <span class="book-grid-text">
+    <span class="book-grid-title">{{ $title }}</span>
+    {{- if or $creators $date }}
+    <span class="book-grid-meta">{{ $creators }}{{ if and $creators $date }} · {{ end }}{{ $date }}</span>
+    {{- end }}
+    {{- with index $f 4 }}
+    <span class="book-grid-imprint">{{ . }}</span>
+    {{- end }}
+    </span>
+  </a>
 </li>
 {{- end }}
 </ul>

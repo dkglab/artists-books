@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00858naa a22002532c 4500</leader>
+  <controlfield tag="001">1747617687</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20210205111548.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">210205s2013    xx |||||      00| ||und c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1747617687</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1747617687</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Ketelhodt, Ines von</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">Die zweite Enzyklopädie von Tlön</subfield>
+    <subfield code="b">ein Buchprojekt von Ines von Ketelhodt &amp; Peter Malutzki</subfield>
+    <subfield code="c">[Ines von Ketelhodt ; Peter Malutzki]</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">[S.l.]</subfield>
+    <subfield code="c">2013</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Malutzki, Peter</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2="8">
+    <subfield code="i">In</subfield>
+    <subfield code="a">Mut &amp; Liebe, 2013</subfield>
+    <subfield code="g">9(2013), Seite 27-28</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="g">volume:9</subfield>
+    <subfield code="g">year:2013</subfield>
+    <subfield code="g">pages:27-28</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3849363708</subfield>
+    <subfield code="b">DE-Of2</subfield>
+    <subfield code="9">Of 2</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">DoKM 10 Mut</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">AR</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">NZPQD5NC</subfield><subfield code="b">ketelhodt / zweite enzyklopädie von tlön</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>

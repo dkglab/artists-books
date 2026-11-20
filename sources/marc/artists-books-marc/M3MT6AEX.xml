@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>00391    a2200121   4500</leader>
+  <controlfield tag="001">ocm30847298</controlfield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">3923922205</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9783923922208</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Sommer, Frederick, 1905-1999</subfield>
+    <subfield code="0">n80010015</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">The box</subfield>
+    <subfield code="c">Frederick Sommer</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Munich :</subfield>
+    <subfield code="b">Nazraeli Press,</subfield>
+    <subfield code="c">©1994.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 box (64 leaves of plates)</subfield>
+    <subfield code="b">chiefly illustrations</subfield>
+    <subfield code="c">11 x 11 x 4 cm</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Plates housed in clear plastic box.</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">M3MT6AEX</subfield><subfield code="b">sommer / the box</subfield><subfield code="c">title-author</subfield><subfield code="d">uwmad</subfield></datafield></record>
+</collection>

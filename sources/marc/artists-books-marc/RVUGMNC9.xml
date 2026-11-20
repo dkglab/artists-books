@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01739cam a22003973a 4500</leader>
+  <controlfield tag="001">1668118</controlfield>
+  <controlfield tag="003">SE-LIBR</controlfield>
+  <controlfield tag="005">20180604113140.0</controlfield>
+  <controlfield tag="008">011211s1986    sw |||||||||||000 0|eng|c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">991740385X</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">Q*</subfield>
+    <subfield code="e">a</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">GoMu</subfield>
+    <subfield code="a">Ibz Nonas, Richard</subfield>
+    <subfield code="2">kssb/6</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="5">Q</subfield>
+    <subfield code="a">Ibz Nonas, Richard</subfield>
+    <subfield code="2">kssb/6</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Nonas, Richard,</subfield>
+    <subfield code="d">1939-</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Up from Dayton</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Åhus :</subfield>
+    <subfield code="b">Kalejdoskop,</subfield>
+    <subfield code="c">cop. 1986</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">[64] s.</subfield>
+    <subfield code="b">ill.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Omedierad resurs</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Volym</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">... published in connection with a sculpture show by Richard Nonas in September 1986 at Anders Tornberg Galley, Lund Sweden</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Ej skönlitteratur</subfield>
+    <subfield code="0">https://id.kb.se/term/ktg/NonFictionLiterature</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">F</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">040323||0000|||||001||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">GoMu</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Hakm</subfield>
+    <subfield code="a">u  a</subfield>
+    <subfield code="b">210701||0000|||||000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="841" ind1=" " ind2=" ">
+    <subfield code="5">Q</subfield>
+    <subfield code="a">x  a</subfield>
+    <subfield code="b">020110||0000||||4000||||||000000</subfield>
+    <subfield code="e">u</subfield>
+  </datafield>
+  <datafield tag="852" ind1="8" ind2=" ">
+    <subfield code="5">F</subfield>
+    <subfield code="b">F</subfield>
+    <subfield code="h">Ibz</subfield>
+    <subfield code="j">04/171</subfield>
+    <subfield code="x">Monogr.N</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">GoMu</subfield>
+    <subfield code="b">GoMu</subfield>
+    <subfield code="c">Konstmuseum</subfield>
+    <subfield code="h">Ibz</subfield>
+    <subfield code="j">492/92</subfield>
+    <subfield code="i">REFERENS</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Hakm</subfield>
+    <subfield code="b">Hakm</subfield>
+    <subfield code="h">Ibz Nonas, Richard</subfield>
+  </datafield>
+  <datafield tag="852" ind1=" " ind2=" ">
+    <subfield code="5">Q</subfield>
+    <subfield code="b">Q</subfield>
+    <subfield code="c">mag</subfield>
+    <subfield code="h">2016-02468</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="a">{"@id":"l3wjmpcx2fplgt2","modified":"2018-06-04T11:31:40.237+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">F</subfield>
+    <subfield code="a">{"@id":"15b3rpq64kkv59t","modified":"2004-03-23T16:25:31+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">GoMu</subfield>
+    <subfield code="a">{"@id":"v05lp7b13mdcdh5","modified":"2021-12-20T14:32:20.057+01:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Hakm</subfield>
+    <subfield code="a">{"@id":"v831p0stsl9b45f4","modified":"2021-07-01T11:52:12.062+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+  <datafield tag="887" ind1=" " ind2=" ">
+    <subfield code="5">Q</subfield>
+    <subfield code="a">{"@id":"w16mq8c20545hs1","modified":"2016-06-08T14:59:39+02:00"}</subfield>
+    <subfield code="2">librisxl</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">RVUGMNC9</subfield><subfield code="b">nonas / up from dayton</subfield><subfield code="c">title-author</subfield><subfield code="d">libris</subfield></datafield></record>
+</collection>

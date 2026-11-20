@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01167cam a22003011  4500</leader>
+  <controlfield tag="001">1782183</controlfield>
+  <controlfield tag="005">20250607054412.2</controlfield>
+  <controlfield tag="008">770117s1968    gw            000 0 ger  </controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">1782183</subfield>
+  </datafield>
+  <datafield tag="906" ind1=" " ind2=" ">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">u</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield tag="955" ind1=" " ind2=" ">
+    <subfield code="a">LCAP batch update 2025-06-02-04:00: LCAPM-644</subfield>
+  </datafield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">   77378729 </subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">(DLC)   77378729</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">IEN</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">PT2678.O79</subfield>
+    <subfield code="b">N6</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Roth, Dieter,</subfield>
+    <subfield code="d">1930-1998.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Noch mehr Scheisse,</subfield>
+    <subfield code="b">eine Nachlese. The book of thorn &amp; eth, being footnotes to "Sweethearts" and other things,</subfield>
+    <subfield code="c">by Emmett Williams.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Stuttgart,</subfield>
+    <subfield code="b">H. J. Mayer,</subfield>
+    <subfield code="c">[1968]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">99 p.</subfield>
+    <subfield code="c">23 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">"500 copies signed and numbered." No. 364.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">On cover: Dieter Rot.</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2="2">
+    <subfield code="a">Williams, Emmett.</subfield>
+    <subfield code="t">Book of thorn &amp; eth, being footnotes to "sweethearts" and other things. (1968)</subfield>
+  </datafield>
+  <datafield tag="740" ind1="0" ind2="2">
+    <subfield code="a">Book of thorn &amp; eth, being footnotes to sweethearts and other things.</subfield>
+  </datafield>
+  <datafield tag="985" ind1=" " ind2=" ">
+    <subfield code="a">NWU/NWU</subfield>
+    <subfield code="e">COMARC</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="b">c-GenColl</subfield>
+    <subfield code="h">PT2678.O79</subfield>
+    <subfield code="i">N6</subfield>
+    <subfield code="t">Copy 1</subfield>
+    <subfield code="w">BOOKS</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">SBHTIS7I</subfield><subfield code="b">roth / noch mehr scheisse eine nachlese the book of thorn eth being footnotes to sweethearts and other things</subfield><subfield code="c">title-author</subfield><subfield code="d">lc</subfield></datafield></record>
+</collection>

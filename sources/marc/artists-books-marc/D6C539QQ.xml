@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>04835cam a2200613 c 4500</leader>
+  <controlfield tag="001">1620025868</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20251225201737.0</controlfield>
+  <controlfield tag="007">tu</controlfield>
+  <controlfield tag="008">160607s2016    xxu|||||      00| ||eng c</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">  2015017899</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9781631490187</subfield>
+    <subfield code="9">978-1-63149-018-7</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">1631490184</subfield>
+    <subfield code="9">1-63149-018-4</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1620025868</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-576)470364939</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)BSZ470364939</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)902661362</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XD-US</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="0">
+    <subfield code="a">BP109</subfield>
+    <subfield code="a">N6537.B545</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2=" ">
+    <subfield code="a">297.1225</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">BE 8611</subfield>
+    <subfield code="2">rvk</subfield>
+    <subfield code="0">(DE-625)rvk/10777:</subfield>
+  </datafield>
+  <datafield tag="100" ind1="0" ind2=" ">
+    <subfield code="a">Muḥammad</subfield>
+    <subfield code="d">570-632</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)118583158</subfield>
+    <subfield code="0">(DE-627)079377483</subfield>
+    <subfield code="0">(DE-576)162321244</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="240" ind1="1" ind2="0">
+    <subfield code="a">Koran</subfield>
+    <subfield code="0">(DE-588)4032444-8</subfield>
+    <subfield code="0">(DE-627)10626186X</subfield>
+    <subfield code="0">(DE-576)208996842</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">American Qurʾan</subfield>
+    <subfield code="c">artwork by Sandow Birk ; with a preface by Reza Aslan and featuring essays from Zareena Grewal and Iftikhar Dadi</subfield>
+  </datafield>
+  <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="a">First edition</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">New York</subfield>
+    <subfield code="a">London</subfield>
+    <subfield code="b">Liveright Publishing Corporation</subfield>
+    <subfield code="c">2016</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="4">
+    <subfield code="c">©2016</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">xvii, 443 Seiten</subfield>
+    <subfield code="b">Illustrationen</subfield>
+    <subfield code="c">42 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">unbewegtes Bild</subfield>
+    <subfield code="b">sti</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Band</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Based on an 1861 English translation. - Additional essay by Catharine Clark. - Includes bibliographical references (pages 439-440)</subfield>
+  </datafield>
+  <datafield tag="505" ind1="8" ind2="0">
+    <subfield code="t">How to read over Sandow BIrk's shoulder: An American Muslim's notes on the American Qur'an</subfield>
+    <subfield code="r">by Zareena Grewall</subfield>
+  </datafield>
+  <datafield tag="505" ind1="8" ind2="0">
+    <subfield code="t">American Qur'an</subfield>
+  </datafield>
+  <datafield tag="505" ind1="8" ind2="0">
+    <subfield code="t">The aesthetics of the American Qur'an Project</subfield>
+    <subfield code="r">by Iftikhar Dadi</subfield>
+  </datafield>
+  <datafield tag="505" ind1="8" ind2="0">
+    <subfield code="t">The development of Sandow Birk's American Qur'an</subfield>
+    <subfield code="r">by Catharine Clark</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">At a time when the United States was involved in two wars against Islamic nations, American-born artist Sandow Birk wanted to understand the Qur'an as it is, and always has been intended: a universal message to humankind. But to do so, he first needed to comprehend what Islam's holiest book meant to an American living in the twenty-first century. Indeed, how has the Qur'an related to us, as Americans, in this life, in this time? In an attempt to answer his own question, Birk embarked on the most ambitious work of his career. Following in the traditions of ancient Arabic and Islamic artists, he began hand-transcribing the entire Qur'an as was done in centuries past -- abiding by the traditional prescriptions as to the colors of ink, the formatting of the pages, the size of margins and illuminations of page headings and medallions marking verses and passages. He then took each sura and set it against a backdrop from everyday American life, one that reflected his "skate-surf" ascetic. Even before the first images of what became known as the American Qur'an began appearing in public, in 2009, veteran art critics were concerned about its reception. While Birk wasn't illustrating the Qur'an itself, the pairing of Islam's holiest text with scenes from contemporary American life seemed adventuresome, given the climate of the times. The project, however, was not only welcomed by the Muslim community but also celebrated as an "ambitious and valuable undertaking." At the same time, many saw it as taking part in an ancient tradition, one that, according to Yale University professor Zareena Grewal, "eschewed the irony and satire that have become the knee-jerk impulse of so many Western artists." Now appearing in full for the first time, this lavishly designed volume -- containing all 114 suras -- melds the past with the present, East with the West like nothing before it</subfield>
+  </datafield>
+  <datafield tag="630" ind1="0" ind2="0">
+    <subfield code="a">Qurʼan</subfield>
+  </datafield>
+  <datafield tag="630" ind1="0" ind2="0">
+    <subfield code="a">Qurʼan</subfield>
+    <subfield code="x">Illustrations</subfield>
+    <subfield code="x">Qurʼan</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Islam</subfield>
+    <subfield code="x">United States</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Islam</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Civilization</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Islam</subfield>
+    <subfield code="x">Influence</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">United States</subfield>
+    <subfield code="x">Pictorial works</subfield>
+    <subfield code="x">Civilization</subfield>
+    <subfield code="x">United States</subfield>
+    <subfield code="x">Illustrated works</subfield>
+    <subfield code="x">Pictorial works</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Birk, Sandow</subfield>
+    <subfield code="d">1962-</subfield>
+    <subfield code="e">IllustratorIn</subfield>
+    <subfield code="0">(DE-588)136497616</subfield>
+    <subfield code="0">(DE-627)593638077</subfield>
+    <subfield code="0">(DE-576)30409997X</subfield>
+    <subfield code="4">ill</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Aslan, Reza</subfield>
+    <subfield code="d">1972-</subfield>
+    <subfield code="e">VerfasserIn eines Vorworts</subfield>
+    <subfield code="0">(DE-588)131912887</subfield>
+    <subfield code="0">(DE-627)516074873</subfield>
+    <subfield code="0">(DE-576)298831759</subfield>
+    <subfield code="4">wpr</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Grewal, Zareena</subfield>
+    <subfield code="e">KommentarverfasserIn</subfield>
+    <subfield code="0">(DE-588)1051121264</subfield>
+    <subfield code="0">(DE-627)785823859</subfield>
+    <subfield code="0">(DE-576)405866151</subfield>
+    <subfield code="4">wac</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Dadi, Iftikhar</subfield>
+    <subfield code="d">1961-</subfield>
+    <subfield code="e">KommentarverfasserIn</subfield>
+    <subfield code="0">(DE-588)13232315X</subfield>
+    <subfield code="0">(DE-627)521424089</subfield>
+    <subfield code="0">(DE-576)299074889</subfield>
+    <subfield code="4">wac</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3229543270</subfield>
+    <subfield code="b">DE-25-29</subfield>
+    <subfield code="9">25/29</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Frei 29: RB/bb/9564</subfield>
+  </datafield>
+  <datafield tag="936" ind1="r" ind2="v">
+    <subfield code="a">BE 8611</subfield>
+    <subfield code="b">Koran: Texte und Kommentare, Konkordanzen</subfield>
+    <subfield code="k">Theologie und Religionswissenschaften</subfield>
+    <subfield code="k">Religionswissenschaft</subfield>
+    <subfield code="k">Religionsgeschichte</subfield>
+    <subfield code="k">Islam</subfield>
+    <subfield code="k">Quellen</subfield>
+    <subfield code="k">Koran: Texte und Kommentare, Konkordanzen</subfield>
+    <subfield code="0">(DE-627)1270704508</subfield>
+    <subfield code="0">(DE-625)rvk/10777:</subfield>
+    <subfield code="0">(DE-576)200704508</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">D6C539QQ</subfield><subfield code="b">birk / american qur an</subfield><subfield code="c">title-author</subfield><subfield code="d">k10plus</subfield></datafield></record>
+</collection>
