@@ -1,85 +1,123 @@
+PREFIX ab:      <https://dkglab.github.io/ns/artists-books/>
+PREFIX bf:      <http://id.loc.gov/ontologies/bibframe/>
+PREFIX bflc:    <http://id.loc.gov/ontologies/bflc/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
-PREFIX ab:   <https://dkglab.github.io/ns/artists-books/>
-PREFIX bf:   <http://id.loc.gov/ontologies/bibframe/>
-PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
+# One row per agent credited (bf:contribution/bf:agent, any role, primary or
+# not) on at least one artists' book. Feeds both the creators index ("Creators"
+# page) and the per-creator detail page. Mirrors subjects.rq: the book join is
+# REQUIRED, so an agent credited only on reference works earns no page (yet).
+#
+# Since #170 each agent is one corpus-wide cluster with a single rdfs:label
+# (sources/creators/agents.csv), so grouping by agent yields exactly one row,
+# and so one output file, per creator.
 SELECT
   ?creator
+  # The URL slug (…/creator/<creatorKey>), used for the output path. It is the
+  # agent's agentKey from agents.csv (LC name-authority id, else a name slug):
+  # 1:1 with the agent URI and URL-safe. The agent node doesn't carry it, but
+  # it ends every contribution URI the construct queries mint
+  # (…/item/<book>/contribution/<agentKey>), so it is read back from there.
   ?creatorKey
-  ?creatorName
+  ?label
+  # The label's first letter, for the index's A–Z sections; anything outside
+  # A–Z (digits, punctuation, accented initials) files under "#".
   ?initial
-  (COUNT(DISTINCT ?book) AS ?bookCount)
-  (GROUP_CONCAT(DISTINCT ?bookToken; separator="\n") AS ?books)
+  # Each book as a TAB-separated token, tokens newline-separated, in the shape
+  # the shared book-cards partial (layouts/book-cards.html) expects:
+  #   itemKey <TAB> title <TAB> creators <TAB> date <TAB> imprint
+  #     <TAB> thumbUrl <TAB> thumbWidth <TAB> thumbHeight
+  ?books
+  ?bookCount
 WHERE {
-  ?book
-    a ab:ArtistsBook ;
-    ab:itemKey ?bookKey ;
-    rdfs:label ?title ;
-    bf:contribution ?contribution .
+  ?creator rdfs:label ?label .
+  BIND(UCASE(SUBSTR(STR(?label), 1, 1)) AS ?firstChar)
+  BIND(IF(REGEX(?firstChar, "^[A-Z]$"), ?firstChar, "#") AS ?initial)
 
-  ?contribution bf:agent ?creator .
-  ?creator rdfs:label ?creatorName .
+  # Required: the artists' books crediting this agent. The cards come out
+  # sorted by title: GROUP_CONCAT keeps its input order, and only a scope
+  # *below* the grouping can be ordered, so the innermost SELECT builds one
+  # token per book and sorts them (item key breaks ties between identically
+  # titled books, keeping the build deterministic).
+  {
+    SELECT ?creator
+           (SAMPLE(?key) AS ?creatorKey)
+           (GROUP_CONCAT(?bookToken; separator="\n") AS ?books)
+           (COUNT(DISTINCT ?book) AS ?bookCount)
+    WHERE {
+      {
+        SELECT DISTINCT ?creator ?key ?book ?bookToken
+        WHERE {
+          ?book
+            a ab:ArtistsBook ;
+            bf:contribution ?contribution ;
+            ab:itemKey ?bookKey ;
+            rdfs:label ?title ;
+            .
+          ?contribution bf:agent ?creator .
+          BIND(REPLACE(STR(?contribution), "^.*/contribution/", "") AS ?key)
 
-  # Stable, URL-safe key based on the creator's RDF identifier.
-  BIND(SHA256(STR(?creator)) AS ?creatorKey)
-
-  # Alphabetical grouping: # followed by A–Z.
-  BIND(UCASE(SUBSTR(STR(?creatorName), 1, 1)) AS ?firstChar)
-  BIND(
-    IF(REGEX(?firstChar, "^[A-Z]$"), ?firstChar, "#")
-    AS ?initial
-  )
-
-  # Primary creators displayed on each book card.
-  OPTIONAL {
-    {
-      SELECT ?book
-        (GROUP_CONCAT(DISTINCT ?name; separator="; ") AS ?creators)
-      WHERE {
-        ?book bf:contribution ?c .
-        ?c a bflc:PrimaryContribution ;
-           bf:agent/rdfs:label ?name .
+          # Card details for each book. Creators and the imprint are aggregated per
+          # book in their own subqueries so a book with two primary creators (or two
+          # dates) still yields one token rather than several near-duplicates.
+          OPTIONAL {
+            {
+              SELECT ?book (GROUP_CONCAT(DISTINCT ?creatorName; separator="; ") AS ?creators)
+              WHERE {
+                ?book bf:contribution ?c .
+                ?c a bflc:PrimaryContribution ;
+                   bf:agent/rdfs:label ?creatorName .
+              }
+              GROUP BY ?book
+            }
+          }
+          OPTIONAL {
+            {
+              SELECT ?book (SAMPLE(?d) AS ?date) (SAMPLE(?pl) AS ?place) (SAMPLE(?pb) AS ?publisher)
+              WHERE {
+                ?book bf:provisionActivity ?pub .
+                OPTIONAL { ?pub bflc:simpleDate  ?d . }
+                OPTIONAL { ?pub bflc:simplePlace ?pl . }
+                OPTIONAL { ?pub bflc:simpleAgent ?pb . }
+              }
+              GROUP BY ?book
+            }
+          }
+          # ab:representativeImage is single per book. The thumbnail is requested by
+          # width ("400," is width 400, height derived) and its height computed from
+          # the master's aspect ratio, so the browser reserves the right box before
+          # the lazy image loads.
+          OPTIONAL {
+            ?book ab:representativeImage ?thumb .
+            ?thumb ab:iiifPath    ?thumbPath ;
+                   ab:pixelWidth  ?thumbMasterWidth ;
+                   ab:pixelHeight ?thumbMasterHeight .
+            BIND(400 AS ?thumbWidth)
+            BIND(xsd:integer(ROUND(?thumbMasterHeight * ?thumbWidth / ?thumbMasterWidth)) AS ?thumbHeight)
+            BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/400,/0/default.jpg") AS ?thumbUrl)
+          }
+          BIND(CONCAT(
+                 COALESCE(STR(?place), ""),
+                 IF(BOUND(?place) && BOUND(?publisher), ": ", ""),
+                 COALESCE(STR(?publisher), "")
+               ) AS ?imprint)
+          BIND(CONCAT(
+                 ?bookKey, "\t", ?title, "\t",
+                 COALESCE(?creators, ""), "\t",
+                 COALESCE(STR(?date), ""), "\t",
+                 ?imprint, "\t",
+                 COALESCE(?thumbUrl, ""), "\t",
+                 COALESCE(STR(?thumbWidth), ""), "\t",
+                 COALESCE(STR(?thumbHeight), "")
+               ) AS ?bookToken)
+        }
+        ORDER BY LCASE(?title) ?bookKey
       }
-      GROUP BY ?book
     }
+    GROUP BY ?creator
   }
-
-  # Publication date.
-  OPTIONAL {
-    {
-      SELECT ?book (SAMPLE(?d) AS ?date)
-      WHERE {
-        ?book bf:provisionActivity/bflc:simpleDate ?d .
-      }
-      GROUP BY ?book
-    }
-  }
-
-  # Representative image for each book.
-  OPTIONAL {
-    ?book ab:representativeImage/ab:iiifPath ?thumbPath .
-    BIND(
-      CONCAT(
-        "https://www.jstor.org",
-        ?thumbPath,
-        "/full/,180/0/default.jpg"
-      )
-      AS ?thumbUrl
-    )
-  }
-
-  # Format expected by the shared book-cards template.
-  BIND(
-    CONCAT(
-      STR(?bookKey), "\t",
-      STR(?title), "\t",
-      COALESCE(?creators, ""), "\t",
-      COALESCE(STR(?date), ""), "\t",
-      COALESCE(?thumbUrl, "")
-    )
-    AS ?bookToken
-  )
 }
-GROUP BY ?creator ?creatorKey ?creatorName ?initial
-ORDER BY ?initial LCASE(?creatorName)
+# A–Z, so the index's letter sections come out contiguous ("#" sorts before
+# "A"); the key breaks ties between identically labelled agents.
+ORDER BY ?initial LCASE(?label) ?creatorKey
