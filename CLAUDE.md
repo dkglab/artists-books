@@ -16,6 +16,8 @@ make superclean   # also remove downloaded tool binaries under tools/
 
 The Makefile auto-fetches all tools (Jena, Fuseki, SPARQL-Anything, Snowman) into `tools/<tool>/` on first use — no system installs beyond a JVM and `sqlite3`.
 
+Those four tools are pinned by a `*_VERSION :=` line, and `renovate.json` watches the pins (#175). SPARQL-Anything and Snowman are pinned in their own `tools/<tool>/Makefile` and looked up on GitHub releases. Jena and Fuseki share a single pin, `JENA_VERSION` in `tools/jena/version.mk`, which both of their Makefiles include and which is looked up on Maven Central (`org.apache.jena:apache-jena`). They are separate Apache downloads, kept in separate directories, but they come from one release, so one pin keeps them from drifting apart. Renovate runs weekly and never automerges, because a bump can change the build output without any error (#174). If you rename a pin variable, update its `matchStrings` too. Otherwise Renovate silently stops seeing it. yaz-client has no feed Renovate can read, so nothing watches it.
+
 `sources/Makefile` is the one exception: it uses grouped targets and so needs **GNU Make ≥ 4.3**. macOS's `/usr/bin/make` is GNU Make 3.81, where grouped targets silently degrade and generators run twice, so on macOS regenerate sources with `gmake -C sources <target>` (`brew install make`). The guard at the top of that file errors out rather than letting it misbuild (#124). The top-level build is unaffected.
 
 ### Iterating on queries and templates
