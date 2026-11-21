@@ -85,6 +85,7 @@ sources/creators/agents.csv
 graph/publications.ttl: \
 sources/artists-books.csv \
 sources/reference-works.csv \
+sources/dates/decisions.csv \
 $(wildcard sources/marc/artists-books-marc/*.xml) \
 $(wildcard sources/marc/reference-works-marc/*.xml)
 

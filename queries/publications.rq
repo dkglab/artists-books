@@ -27,7 +27,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 #                     "; "-joined
 #   bflc:simplePlace  the group's $a, likewise
 #   bflc:simpleDate   008 date1 (a "1972–1974" range for types m/i/k), else
-#                     the field's $c year, else the Zotero date; on every group
+#                     the field's $c year, else an 008 decade ("196-?"), else
+#                     the Zotero date; on every group. This is the date as
+#                     recorded, and the one the site displays.
+#   bf:date           the same date normalized to one xsd:gYear (#22), for
+#                     sorting and filtering only: its first year, or a
+#                     decade's first year; none for "19--" and the like
 #   bf:place          the LC country of publication from 008, when it names
 #                     one; on the first group only
 CONSTRUCT {
@@ -36,6 +41,7 @@ CONSTRUCT {
   ?publication a bf:Publication ;
     bflc:simpleAgent ?publisher ;
     bflc:simpleDate ?date ;
+    bf:date ?normalizedDate ;
     bflc:simplePlace ?place ;
     bf:place ?placeCountry ;
     .
@@ -75,6 +81,34 @@ WHERE {
     }
   }
 
+  # Hand corrections to Zotero dates the normalizer below can't repair (#22):
+  # a place in the date field, an unknown 008 date copied in, a truncated
+  # century. A row replaces the work's Zotero date (an empty one removes it)
+  # everywhere it is used, the year guard included. Evaluated once in a
+  # sub-SELECT and hash-joined on ?canonical_key.
+  OPTIONAL {
+    SELECT ?canonical_key ?decision_date (true AS ?has_date_decision) WHERE {
+      SERVICE <x-sparql-anything:> {
+        fxe:properties
+          fxe:location "sources/dates/decisions.csv" ;
+          fxe:csv.headers "true" ;
+          fxe:csv.null-string "" ;
+          .
+        ?decisionRow xyz:canonicalKey ?canonical_key .
+        OPTIONAL { ?decisionRow xyz:date ?decision_date }
+      }
+    }
+  }
+  # Then the mechanical cleanup. A date that only says there is none ("N.d.",
+  # "[n.d.]") is dropped, as a placeholder publisher is, so nothing is
+  # displayed. A Zotero range "1981-1982" (or "1979-80", "1970-") takes the en
+  # dash the 008 ranges are built with.
+  BIND(IF(COALESCE(?has_date_decision, false), ?decision_date, ?zotero_date) AS ?zotero_date_d)
+  BIND(IF(REGEX(?zotero_date_d, "^\\[?\\s*(n\\.?\\s*d|s\\.\\s*d|no date|undated|date of publication not identified)\\.?\\s*\\]?$", "i"),
+          ?sentinel,
+          REPLACE(?zotero_date_d, "^([0-9]{4})-([0-9]{2}|[0-9]{4})?$", "$1–$2"))
+       AS ?zotero_date_ok)
+
   # The MARC publication fields, one row per (track, record). Read in its own
   # pass over the per-record directories (#81), with the same nested
   # Folder -> XML triplifiers and fx:anySlot traversal as the other two
@@ -84,6 +118,7 @@ WHERE {
       SELECT ?track ?canonical_key ?grp_x
              (SAMPLE(?record) AS ?marc_record)
              (SAMPLE(?date008_x) AS ?marc_date008)
+             (SAMPLE(?decade008_x) AS ?marc_decade008)
              (SAMPLE(?country_x) AS ?marc_country)
              (SAMPLE(?pub_year_x) AS ?marc_pub_year)
              (SAMPLE(?n_groups_x) AS ?marc_n_groups)
@@ -279,7 +314,9 @@ WHERE {
             # 7-10 and date2 is 11-14, with the date type at 6. Only a
             # four-digit date1 is used ("19uu" etc. are not). For a multipart
             # or collection range (types m, i, k) a later four-digit date2
-            # extends it to "1972–1974". The country of publication is
+            # extends it to "1972–1974". A date1 that names only the decade
+            # ("196u") becomes "196-?", the form catalogues transcribe it in,
+            # used only when $c gives no year either. The country of publication is
             # positions 15-17. It is linked only when it names a country:
             # "xx" (unknown) and "vp" (various places) are not countries.
             OPTIONAL {
@@ -295,6 +332,8 @@ WHERE {
                          CONCAT(?date1, "–", ?date2), ?date1),
                       ?sentinel)
                    AS ?date008_x)
+              BIND(IF(REGEX(?date1, "^[0-9]{3}u$"), CONCAT(SUBSTR(?date1, 1, 3), "-?"), ?sentinel)
+                   AS ?decade008_x)
               BIND(IF(REGEX(?country_raw, "^[a-z]{2,3}$") && !(?country_raw IN ("xx", "vp")),
                       ?country_raw, ?sentinel)
                    AS ?country_x)
@@ -337,9 +376,11 @@ WHERE {
   # publication statement stays Zotero's, rather than overwriting a right
   # publisher and date with a wrong one. The harvest still needs fixing: the
   # title and creators come from the same record.
-  BIND(IF(REGEX(COALESCE(?zotero_date, ""), "(1[5-9]|20)[0-9]{2}"),
-          xsd:integer(REPLACE(?zotero_date, "^.*?((1[5-9]|20)[0-9]{2}).*$", "$1")), ?sentinel) AS ?zotero_year)
-  BIND(COALESCE(?marc_date008, ?marc_pub_year) AS ?marc_date)
+  BIND(IF(REGEX(COALESCE(?zotero_date_ok, ""), "(1[5-9]|20)[0-9]{2}"),
+          xsd:integer(REPLACE(?zotero_date_ok, "^.*?((1[5-9]|20)[0-9]{2}).*$", "$1")), ?sentinel) AS ?zotero_year)
+  # A decade ("196-?") has no four-digit year, so ?marc_year_from is unbound
+  # and the guard passes it.
+  BIND(COALESCE(?marc_date008, ?marc_pub_year, ?marc_decade008) AS ?marc_date)
   BIND(xsd:integer(SUBSTR(?marc_date, 1, 4)) AS ?marc_year_from)
   BIND(IF(STRLEN(?marc_date) = 9, xsd:integer(SUBSTR(?marc_date, 6, 4)), ?marc_year_from) AS ?marc_year_to)
   BIND(BOUND(?zotero_year) && BOUND(?marc_year_from)
@@ -374,7 +415,18 @@ WHERE {
   # The date belongs to the whole statement, so every group repeats it. The
   # 008 country is a single code for the whole record, which needn't match
   # every group's place, so only the first group carries it.
-  BIND(COALESCE(?marc_date_ok, ?zotero_date) AS ?date)
+  BIND(COALESCE(?marc_date_ok, ?zotero_date_ok) AS ?date)
+  # The normalized year (#22): the first four-digit year in the date ("c1978",
+  # "[1996]", "1972 or 1973", a range's start), else the first year of a
+  # decade ("199-?", "[198-]", "198?"). A century ("19--") or anything else
+  # yields none, and the work simply has no bf:date.
+  BIND(IF(REGEX(?date, "(1[5-9]|20)[0-9]{2}"),
+          REPLACE(?date, "^.*?((1[5-9]|20)[0-9]{2}).*$", "$1"),
+          IF(REGEX(?date, "(1[5-9]|20)[0-9][-?uX]"),
+             CONCAT(REPLACE(?date, "^.*?((1[5-9]|20)[0-9])[-?uX].*$", "$1"), "0"),
+             ?sentinel))
+       AS ?year)
+  BIND(STRDT(?year, xsd:gYear) AS ?normalizedDate)
   BIND(IF(?group = 1 && BOUND(?marc_country_ok), IRI(CONCAT("http://id.loc.gov/vocabulary/countries/", ?marc_country_ok)), ?sentinel) AS ?placeCountry)
 
   # Group 1 is always emitted, as /publication always was: it carries the date

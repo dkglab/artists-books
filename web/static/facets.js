@@ -16,15 +16,20 @@
 // them all. Its book set comes from the grid (the cards with an <img>), so it
 // needs no index and is applied before the others have loaded — the grid
 // narrows to the illustrated works as soon as this script runs.
+//
+// The decade facet (#22) needs no index either: its concepts are the decades
+// of the cards' data-year (each book's normalized bf:date).
 
 import { HierarchicalFacet } from "./hierarchical-facet.js";
 import { FlatFacet } from "./flat-facet.js";
 import { BooleanFacet } from "./boolean-facet.js";
+import { DecadeFacet } from "./decade-facet.js";
 
 customElements.define("construction-facet", class extends HierarchicalFacet {});
 customElements.define("subject-facet", class extends FlatFacet {});
 customElements.define("place-facet", class extends FlatFacet {});
 customElements.define("image-facet", class extends BooleanFacet {});
+customElements.define("decade-facet", class extends DecadeFacet {});
 
 const sidebar = document.querySelector(".filters");
 const countLine = document.querySelector(".page-intro .count");
@@ -84,6 +89,28 @@ function boolean(element) {
     selected: new Set(),
     defaultOn: element.dataset.default === "on",
   };
+}
+
+// The decade facet: one concept per decade ("1960s") of the cards' data-year,
+// in chronological order.
+function decades(element) {
+  const books = new Map();
+  for (const [key, li] of cards) {
+    if (!li.dataset.year) continue;
+    const decade = `${Math.floor(Number(li.dataset.year) / 10) * 10}s`;
+    if (!books.has(decade)) books.set(decade, new Set());
+    books.get(decade).add(key);
+  }
+  // Every year is four digits (1500 on), so the keys sort as strings.
+  const keys = [...books.keys()].sort();
+  element.tree = {
+    categories: [{
+      key: "decades",
+      label: "Decades",
+      concepts: keys.map((key) => ({ key, label: key, count: books.get(key).size })),
+    }],
+  };
+  return { element, param: element.dataset.param, books, selected: new Set() };
 }
 
 // Read each facet's selection from the URL, dropping keys its index doesn't know.
@@ -189,10 +216,11 @@ async function init() {
     apply();
   });
 
-  // The boolean facets first: they need no index, and the images one is on by
+  // The boolean and decade facets first: they need no index, and the images one is on by
   // default, so applying it now keeps the full grid from lingering while the
   // indexes load. The sidebar shows from here, so it can always be turned off.
   facets.push(...[...sidebar.querySelectorAll("[data-cards][data-param]")].map(boolean));
+  facets.push(...[...sidebar.querySelectorAll("[data-years][data-param]")].map(decades));
   readURL();
   apply();
   sidebar.hidden = false;
