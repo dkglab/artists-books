@@ -454,9 +454,15 @@ WHERE {
     ) AS ?citedByToken)
   }
 
+  # Related works (#32): 740 titles, and 7xx name/title entries, which also
+  # credit the work's creator -- shown after the title, since the creator made
+  # the related work, not this book. COALESCE keeps a 740 (no creator) from
+  # unbinding the whole GROUP_CONCAT.
   OPTIONAL {
     ?book bf:relatedTo ?relatedWork .
-    ?relatedWork rdfs:label ?relatedTitle .
+    ?relatedWork rdfs:label ?relatedWorkTitle .
+    OPTIONAL { ?relatedWork bf:contribution/bf:agent/rdfs:label ?relatedWorkCreator . }
+    BIND(CONCAT(?relatedWorkTitle, COALESCE(CONCAT(" (", ?relatedWorkCreator, ")"), "")) AS ?relatedTitle)
   }
 
   OPTIONAL {

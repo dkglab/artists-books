@@ -148,9 +148,14 @@ CONSTRUCT {
     ab:imageViewType ?thumbViewConcept ;
     .
 
+  ?relatedWorkContribution a bflc:PrimaryContribution ;
+    bf:agent ?creator ;
+    .
+
   ?relatedWork
     a bf:Work ;
     rdfs:label ?related_title ;
+    bf:contribution ?relatedWorkContribution ;
     .
 
 }
@@ -219,6 +224,7 @@ WHERE {
              (SAMPLE(?edition_x) AS ?edition)
              (SAMPLE(?summary_x) AS ?summary)
              (SAMPLE(?related_title_x) AS ?related_title)
+             (SAMPLE(?name_title_x) AS ?name_title)
              (SAMPLE(?images_at_x) AS ?images_at)
              (SAMPLE(?marc_title_x) AS ?marc_title)
              (SAMPLE(?main_title_x) AS ?marc_main_title)
@@ -523,11 +529,23 @@ WHERE {
           # so all 143,271 datafields carrying a $a would be pushed through those
           # nested-loop joins instead of the 10,943 creator ones. Same answers,
           # twice the runtime (see docs/QUERY-PERFORMANCE.md).
+          #
+          # A field with a $t is a name/title added entry for a related *work*
+          # (#32), read by the related-work branch below. Unless its ind2 is 2
+          # it names a work the book derives from (based on, adapted from,
+          # inspired by), whose creator made only that work, so it is not
+          # credited here. ind2 2 is an analytical entry -- the book *contains*
+          # the work (a monograph's own "Works. Selections", a songbook's
+          # songs) -- so its creator made part of the book and keeps the credit.
           {
             {
               ?record fx:anySlot ?df .
               ?df a marc:datafield ; xyz:tag ?ctag .
               FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+              FILTER NOT EXISTS {
+                ?df fx:anySlot ?sft . ?sft xyz:code "t" .
+                FILTER NOT EXISTS { ?df xyz:ind2 "2" }
+              }
             }
 
           #binds the contribution type based on the tag of the datafield. 100, 110, and 111 are considered primary contributions, while 700, 710, and 711 are considered secondary contributions.
@@ -584,6 +602,31 @@ WHERE {
               AS ?related_title_x
             )
           }  # end related-title branch
+          UNION
+          {
+            # Related works from name/title added entries (#32): a 700/710/711
+            # with a $t names a work the book is related to (inspired by, an
+            # adaptation of, a container of ...) and, in $a, that work's
+            # creator. One row per field, grouped on its ?df like the 740s. The
+            # $a is read exactly as the creator branch reads it, so ?ctag +
+            # ?creator_name find the creator's agent in agents.csv -- but no
+            # contribution to the *book* is minted for it (see ?contribution
+            # below); the agent is credited on the related work instead. The
+            # $t alone is the title: $l/$s/$f/$k describe the expression.
+            ?record fx:anySlot ?df .
+            ?df a marc:datafield ; xyz:tag ?ctag .
+            FILTER(?ctag IN ("700", "710", "711"))
+
+            ?df fx:anySlot ?sfta .
+            ?sfta xyz:code "a" ; rdf:_1 ?name_raw .
+            BIND(REPLACE(?name_raw, "^\\s+|[\\s.,;:/]+$", "") AS ?name_x)
+
+            ?df fx:anySlot ?sftt .
+            ?sftt xyz:code "t" ; rdf:_1 ?name_title_raw .
+            BIND(REPLACE(?name_title_raw, "^\\s+|[\\s.,;:/]+$", "") AS ?related_title_x)
+            FILTER(?related_title_x != "")
+            BIND(true AS ?name_title_x)
+          }  # end name/title related-work branch
           UNION
           {
             # Where images of the book can be found, from MARC 856 $u (#17): one
@@ -880,14 +923,24 @@ WHERE {
     BIND(IF(BOUND(?summary), fx:entity(ab:, "item/", ?canonical_key, "/summary"), ?sentinel) AS ?bookSummary)
     BIND(IF(BOUND(?original_language_code), IRI(CONCAT("http://id.loc.gov/vocabulary/languages/", ?original_language_code)), ?sentinel) AS ?originalLanguage)
     BIND(IF(BOUND(?original_language_code), fx:entity(ab:, "item/", ?canonical_key, "/original-language"), ?sentinel) AS ?originalLanguageNote)
-    BIND(IF(BOUND(?creator_key), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
-    # Related works (740) are deliberately scoped per book and left unreconciled
-    # for now (#32): the same title on two books is two bf:Work nodes, and one
-    # matching a book already in the collection is not yet linked to its item/
-    # URI. The title is hashed rather than slugged because 740 titles are long,
-    # punctuation-heavy and often non-Latin, which a slug would mangle or
-    # collide.
-    BIND(IF(BOUND(?related_title), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(STR(?related_title))), ?sentinel) AS ?relatedWork)
+    # A name/title row (#32) binds a creator too: that agent made the related
+    # work, so it is credited there. (A contained work's creator, ind2 2, also
+    # has a creator-branch row of the same field, which credits the book.)
+    # Tested on the branch's
+    # own ?name_title flag, not on ?creator_name: the agents.csv join above
+    # treats a row's unbound ?ctag/?creator_name as a wildcard, so a 740 or
+    # 856 row can come out of it with a creator bound.
+    BIND(IF(BOUND(?creator_key) && !BOUND(?name_title), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
+    # Related works (740 and 7xx name/title, #32) are deliberately scoped per
+    # book and left unreconciled for now: the same title on two books is two
+    # bf:Work nodes, and one matching a book already in the collection is not
+    # yet linked to its item/ URI. The title is hashed rather than slugged
+    # because these titles are long, punctuation-heavy and often non-Latin,
+    # which a slug would mangle or collide. A name/title work hashes its
+    # creator's $a in too ("name|title"), so two authors' works of one title
+    # stay apart; a 740 keeps its title-only hash.
+    BIND(IF(BOUND(?related_title), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(IF(BOUND(?name_title), CONCAT(?creator_name, "|", ?related_title), STR(?related_title)))), ?sentinel) AS ?relatedWork)
+    BIND(IF(BOUND(?name_title) && BOUND(?creator_key), IRI(CONCAT(STR(?relatedWork), "/contribution/", ?creator_key)), ?sentinel) AS ?relatedWorkContribution)
     BIND(IF(BOUND(?images_at), IRI(?images_at), ?sentinel) AS ?imagesAt)
     # Variant titles (#20), scoped per book like the related works. Hashed on the
     # label *and* the kind, so a title that appears both on the cover and on the

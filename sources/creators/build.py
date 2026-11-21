@@ -344,8 +344,11 @@ def main():
                    "name": o["name"], "agentKey": a["agentKey"], "agentUri": a["agentUri"],
                    "label": a["label"]}
 
-    # 6. Zotero fallback for books with no MARC creator field.
-    marc_books = {o["canonicalKey"] for o in occ if o["source"] == "book"}
+    # 6. Zotero fallback for books with no MARC creator field. A "related"
+    # name/title field (#32: $t, ind2 not 2) credits the related work, not the
+    # book, so a book whose only 7xx fields are such fields still falls back.
+    marc_books = {o["canonicalKey"] for o in occ
+                  if o["source"] == "book" and o.get("work") != "related"}
     by_name = collections.defaultdict(set)
     for root, a in agents.items():
         for nk in a["nameKeys"]:

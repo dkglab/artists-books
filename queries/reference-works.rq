@@ -156,6 +156,13 @@ WHERE {
                 ?record fx:anySlot ?df .
                 ?df a marc:datafield ; xyz:tag ?ctag .
                 FILTER(?ctag IN ("100", "110", "111", "700", "710", "711"))
+                # A $t makes it a name/title entry for a related work, whose
+                # $a is that work's creator, not this one's (#32) -- unless
+                # ind2 is 2, an analytical entry for a work this one contains.
+                FILTER NOT EXISTS {
+                  ?df fx:anySlot ?sft . ?sft xyz:code "t" .
+                  FILTER NOT EXISTS { ?df xyz:ind2 "2" }
+                }
               }
 
               BIND(

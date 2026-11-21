@@ -23,6 +23,14 @@ sources/creators/occurrences.csv with the identifiers it carries:
   gnd           $0 (DE-588) id
   wcEntity      $1 WorldCat Entity id
   role          $e / $4 relator terms, ";"-joined (informational)
+  work          for a name/title field (one with $t, #32), an added entry for a
+                *work* whose creator its $a names: "contained" when ind2 is 2
+                (an analytical entry -- the record contains the work, so its
+                creator made part of this record too), else "related" (based
+                on, adapted from, inspired by ...: the creator made only the
+                related work). The construct queries credit a "related" field
+                to the related work alone, and build.py's Zotero fallback does
+                not count it as a MARC creator field. Empty for a plain name.
 
 It also writes sources/creators/zotero-creators.csv: the structured Zotero
 creators of every canonical artists' book, for the no-MARC fallback.
@@ -156,9 +164,10 @@ def main():
                         "dates": " ".join(dates),
                         **{k: ";".join(sorted(v)) for k, v in rec_ids.items()},
                         "role": ";".join(roles),
+                        "work": ("contained" if df.get("ind2") == "2" else "related") if is_work else "",
                     })
     fields = ["source", "canonicalKey", "tag", "name", "heading", "dates",
-              "lcId", "viaf", "isni", "gnd", "wcEntity", "role"]
+              "lcId", "viaf", "isni", "gnd", "wcEntity", "role", "work"]
     with open(out, "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=fields, lineterminator="\n")
         w.writeheader()
