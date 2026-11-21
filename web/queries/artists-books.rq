@@ -43,10 +43,14 @@ SELECT
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
   (GROUP_CONCAT(DISTINCT ?oclc_number; separator="; ") AS ?oclcNumbers)
   (SAMPLE(?worldcatLinks) AS ?worldcatLink)
-  # Reference works that cite this book (#42), each as an "itemKey<TAB>title"
-  # token (tokens newline-separated) so the template can link each to its
-  # /reference/ page. Any citing reference necessarily cites an in-collection
-  # book (this one), so it always has a reference page.
+  # Reference works that cite this book (#42), each as a four-field
+  # TAB-separated token (tokens newline-separated) so the template can link
+  # each to its /reference/ page and print the page numbers after it (#16).
+  # Field order is positional and every field is always present, so an absent
+  # page list is an empty field rather than a missing one:
+  #   itemKey <TAB> title <TAB> citation pages <TAB> image pages
+  # Any citing reference necessarily cites an in-collection book (this one),
+  # so it always has a reference page.
   (GROUP_CONCAT(DISTINCT ?citedByToken; separator="\n") AS ?citedBy)
   # The index thumbnail. ab:representativeImage is single per book, so these are
   # grouped on rather than aggregated.
@@ -343,7 +347,44 @@ WHERE {
               ab:citedBy ?citingRef .
     ?citingRef rdfs:label ?citingRefLabel ;
                ab:itemKey ?citingRefKey .
-    BIND(CONCAT(?citingRefKey, "\t", ?citingRefLabel) AS ?citedByToken)
+    # The pages this citation appears on (#44) and the pages carrying an image
+    # of the book (#43), each aggregated per citation in its own ordered
+    # subquery to avoid a pages x image-pages cross product and to sort pages
+    # on their leading integer. Same pattern as references.rq, whose comment
+    # explains it in full (including why the two lists are disjoint despite
+    # ab:imagesOnPageNumber being a sub-property of ab:onPageNumber).
+    OPTIONAL {
+      {
+        SELECT ?citation (GROUP_CONCAT(?page; separator=", ") AS ?pageNumbers)
+        WHERE {
+          {
+            SELECT DISTINCT ?citation ?page
+            WHERE { ?citation ab:onPageNumber ?page . }
+            ORDER BY xsd:integer(REPLACE(STR(?page), "[^0-9].*$", ""))
+          }
+        }
+        GROUP BY ?citation
+      }
+    }
+    OPTIONAL {
+      {
+        SELECT ?citation (GROUP_CONCAT(?imagePage; separator=", ") AS ?imagePageNumbers)
+        WHERE {
+          {
+            SELECT DISTINCT ?citation ?imagePage
+            WHERE { ?citation ab:imagesOnPageNumber ?imagePage . }
+            ORDER BY xsd:integer(REPLACE(STR(?imagePage), "[^0-9].*$", ""))
+          }
+        }
+        GROUP BY ?citation
+      }
+    }
+    BIND(CONCAT(
+      ?citingRefKey, "\t",
+      ?citingRefLabel, "\t",
+      COALESCE(?pageNumbers, ""), "\t",
+      COALESCE(?imagePageNumbers, "")
+    ) AS ?citedByToken)
   }
 
   OPTIONAL {
