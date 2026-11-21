@@ -26,9 +26,20 @@
        is typed; the rest are reached through the facet's text box. */}}
   <subject-facet data-label="Subject" data-src="/subject-facet.json" data-category="topical" data-param="subject" data-min="5"></subject-facet>
   <place-facet data-label="Place" data-search="Find a place" data-src="/subject-facet.json" data-category="geographic" data-param="place" data-min="5"></place-facet>
+  {{/* The decade of publication (#22), from each card's data-year (the
+       normalized bf:date), so like the images facet it needs no index. A book
+       whose date gives no year ("19--", none) is in no decade. */}}
+  <decade-facet data-label="Decade" data-years data-param="decade"></decade-facet>
 </aside>
 
 <div class="results">
+{{/* Hidden until /sort.js reveals it; without JS the grid stays in title
+     order. The date orders sort on data-year, never on the displayed date. */}}
+<p class="sort" hidden><label>Sort by <select>
+  <option value="title">Title</option>
+  <option value="date">Date, oldest first</option>
+  <option value="date-desc">Date, newest first</option>
+</select></label></p>
 <p class="no-results" hidden>No books match the selected filters.</p>
 {{/* A masonry grid: fixed-width lanes, cards stacked in each (display:
      grid-lanes, where supported). A book with an image shows it at its own
@@ -41,7 +52,7 @@
      so the thumbnail's `with` block could not otherwise reach .itemKey/.title. */}}
 <ol class="book-grid">
 {{- range $b := . }}
-<li data-key="{{ $b.itemKey }}">
+<li data-key="{{ $b.itemKey }}"{{ with $b.year }} data-year="{{ . }}"{{ end }}>
   <a href="/item/{{ $b.itemKey }}">
     {{- with $b.thumbUrl }}
     <img src="{{ . }}" width="{{ $b.thumbWidth }}" height="{{ $b.thumbHeight }}"
@@ -64,4 +75,5 @@
 </div>
 {{ end }}
 
-{{ define "scripts" }}<script type="module" src="/facets.js"></script>{{ end }}
+{{ define "scripts" }}<script type="module" src="/facets.js"></script>
+<script type="module" src="/sort.js"></script>{{ end }}

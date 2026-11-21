@@ -22,6 +22,9 @@ SELECT
   ?imprints
   ?imprint
   ?date
+  # The normalized year (bf:date, #22): never displayed, only carried on the
+  # homepage card for the date sort and the Decade facet.
+  ?year
   (GROUP_CONCAT(DISTINCT STR(?languageDisplay); separator=", ") AS ?language)
   (GROUP_CONCAT(DISTINCT ?originalLanguageDisplay; separator=", ") AS ?originalLanguage)
   (SAMPLE(?languageNoteLabel) AS ?languageNote)
@@ -185,6 +188,7 @@ WHERE {
     {
       SELECT ?book
              (SAMPLE(?d) AS ?date)
+             (SAMPLE(STR(?y)) AS ?year)
              (COUNT(DISTINCT ?pub) AS ?nPub)
              (SAMPLE(?pb) AS ?pb1)
              (SAMPLE(?pl) AS ?pl1)
@@ -193,9 +197,10 @@ WHERE {
           {
             # Ordered by group (the URI's /publication/<n>, plain /publication
             # being group 1), which Jena's GROUP_CONCAT preserves.
-            SELECT ?book ?d ?pl ?pb ?pub ?part WHERE {
+            SELECT ?book ?d ?y ?pl ?pb ?pub ?part WHERE {
               ?book bf:provisionActivity ?pub .
               OPTIONAL { ?pub bflc:simpleDate  ?d . }
+              OPTIONAL { ?pub bf:date          ?y . }
               OPTIONAL { ?pub bflc:simplePlace ?pl . }
               OPTIONAL { ?pub bflc:simpleAgent ?pb . }
               BIND(CONCAT(COALESCE(STR(?pl), ""),
@@ -462,6 +467,6 @@ WHERE {
   }
 
 }
-GROUP BY ?book ?title ?itemKey ?publisher ?place ?imprints ?imprint ?date ?extent ?illustrativeContent ?dimensions ?edition
+GROUP BY ?book ?title ?itemKey ?publisher ?place ?imprints ?imprint ?date ?year ?extent ?illustrativeContent ?dimensions ?edition
          ?thumbUrl ?thumbWidth ?thumbHeight ?thumbView ?images
 ORDER BY LCASE(?title)

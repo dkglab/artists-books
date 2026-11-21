@@ -69,6 +69,8 @@ export class Facet extends HTMLElement {
   // For the subclasses.
   get rows() { return this.#rows; }
   get query() { return this.#search.value.trim().toLowerCase(); }
+  // A subclass with a short, fixed list (the decades) turns the text box off.
+  get searchable() { return true; }
 
   // A checkbox row for one concept, registered in `rows`.
   row(concept) {
@@ -128,7 +130,7 @@ export class Facet extends HTMLElement {
     });
 
     this.replaceChildren(el("section", { className: "facet" },
-      heading, this.#chipBar, this.#search, this.#list));
+      heading, this.#chipBar, ...(this.searchable ? [this.#search] : []), this.#list));
   }
 
   #sync(previous) {

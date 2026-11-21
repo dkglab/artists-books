@@ -325,3 +325,8 @@ h3 { font-size: 1.25rem; margin: 2rem 0 1rem; }
    is typed; scroll them in place rather than pushing the next facet down. */
 .facet-list-flat ul { max-height: 20rem; overflow-y: auto; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: .25rem 0; margin: 0; }
 .facet-hint { color: var(--muted); font-size: .875rem; margin: .5rem 0 0; }
+
+/* The grid's sort control (#22), revealed by sort.js. */
+.sort { margin: 0 0 1rem; }
+.sort[hidden] { display: none; }
+.sort select { font: inherit; margin-left: .4rem; }
