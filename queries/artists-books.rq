@@ -33,6 +33,7 @@ CONSTRUCT {
     bf:editionStatement ?edition ;
     bf:summary ?bookSummary ;
     bf:relatedTo ?relatedWork ;
+    bf:relation ?relation ;
     bf:identifiedBy ?bookISBN ;
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
@@ -152,6 +153,18 @@ CONSTRUCT {
     bf:agent ?creator ;
     .
 
+  # The kind of relationship, where the field states it in $i (#32): a
+  # bf:Relation from the book to the related work, its bf:relationship the
+  # RDA designator ("Container of (work)", "Inspired by").
+  ?relation a bf:Relation ;
+    bf:relationship ?relationshipConcept ;
+    bf:associatedResource ?relatedWork ;
+    .
+
+  ?relationshipConcept a bf:Relationship ;
+    rdfs:label ?relationship_label ;
+    .
+
   ?relatedWork
     a bf:Work ;
     rdfs:label ?related_title ;
@@ -225,6 +238,7 @@ WHERE {
              (SAMPLE(?summary_x) AS ?summary)
              (SAMPLE(?related_title_x) AS ?related_title)
              (SAMPLE(?name_title_x) AS ?name_title)
+             (SAMPLE(?relationship_x) AS ?relationship_label)
              (SAMPLE(?images_at_x) AS ?images_at)
              (SAMPLE(?marc_title_x) AS ?marc_title)
              (SAMPLE(?main_title_x) AS ?marc_main_title)
@@ -622,6 +636,11 @@ WHERE {
             ?df fx:anySlot ?sf730a .
             ?sf730a xyz:code "a" ; rdf:_1 ?ut730a_raw .
             OPTIONAL { ?df fx:anySlot ?sf730n . ?sf730n xyz:code "n" ; rdf:_1 ?ut730n_raw . }
+            # $i relationship designator ("Translation of:"), minus its colon.
+            OPTIONAL {
+              ?df fx:anySlot ?sf730i . ?sf730i xyz:code "i" ; rdf:_1 ?ut730i_raw .
+              BIND(REPLACE(?ut730i_raw, "^\\s+|[\\s:]+$", "") AS ?relationship_x)
+            }
             OPTIONAL {
               ?df fx:anySlot ?sf730p . ?sf730p xyz:code "p" ; rdf:_1 ?ut730p_raw .
               ?df ?slot730p ?sf730p .
@@ -670,6 +689,13 @@ WHERE {
 
             ?df fx:anySlot ?sftt .
             ?sftt xyz:code "t" ; rdf:_1 ?name_title_raw .
+
+            # $i relationship designator ("Container of (work):", "Inspired
+            # by :"), minus its colon and the space some records put before it.
+            OPTIONAL {
+              ?df fx:anySlot ?sfti . ?sfti xyz:code "i" ; rdf:_1 ?name_title_i_raw .
+              BIND(REPLACE(?name_title_i_raw, "^\\s+|[\\s:]+$", "") AS ?relationship_x)
+            }
             BIND(REPLACE(?name_title_raw, "^\\s+|[\\s.,;:/]+$", "") AS ?related_title_x)
             FILTER(?related_title_x != "")
             BIND(true AS ?name_title_x)
@@ -988,6 +1014,16 @@ WHERE {
     # stay apart; a 740 or 730 keeps its title-only hash, so a 730 and a 740
     # of one title on one book are one work.
     BIND(IF(BOUND(?related_title), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(IF(BOUND(?name_title), CONCAT(?creator_name, "|", ?related_title), STR(?related_title)))), ?sentinel) AS ?relatedWork)
+    # The relation (#32) hangs off the related work's own URI, which is already
+    # per book, and is keyed by its relationship too: one work can be the
+    # target of two designators (Oe's "Map" is entered both as a contained
+    # work and as a contained expression), and each bf:Relation carries one.
+    # The relationship concept is minted from a slug of the RDA designator,
+    # qualifier included, so "Container of (work)" and "Container of
+    # (expression)" stay distinct, as RDA has them.
+    BIND(REPLACE(REPLACE(LCASE(?relationship_label), "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?relationship_slug)
+    BIND(IF(BOUND(?relatedWork) && BOUND(?relationship_label), IRI(CONCAT(STR(?relatedWork), "/relation/", ?relationship_slug)), ?sentinel) AS ?relation)
+    BIND(IF(BOUND(?relation), fx:entity(ab:, "relationship/", ?relationship_slug), ?sentinel) AS ?relationshipConcept)
     BIND(IF(BOUND(?name_title) && BOUND(?creator_key), IRI(CONCAT(STR(?relatedWork), "/contribution/", ?creator_key)), ?sentinel) AS ?relatedWorkContribution)
     BIND(IF(BOUND(?images_at), IRI(?images_at), ?sentinel) AS ?imagesAt)
     # Variant titles (#20), scoped per book like the related works. Hashed on the

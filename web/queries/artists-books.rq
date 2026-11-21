@@ -462,7 +462,19 @@ WHERE {
     ?book bf:relatedTo ?relatedWork .
     ?relatedWork rdfs:label ?relatedWorkTitle .
     OPTIONAL { ?relatedWork bf:contribution/bf:agent/rdfs:label ?relatedWorkCreator . }
-    BIND(CONCAT(?relatedWorkTitle, COALESCE(CONCAT(" (", ?relatedWorkCreator, ")"), "")) AS ?relatedTitle)
+    # The kind of relationship (#32), where the record states it, goes first:
+    # "Container of: Map (...)". RDA's "(work)"/"(expression)" qualifier is
+    # cataloguing detail and is dropped for display (it stays in the graph).
+    OPTIONAL {
+      ?book bf:relation ?relation .
+      ?relation bf:associatedResource ?relatedWork ;
+                bf:relationship/rdfs:label ?relationshipLabel .
+    }
+    BIND(CONCAT(
+      COALESCE(CONCAT(REPLACE(?relationshipLabel, "\\s*\\((work|expression)\\)$", ""), ": "), ""),
+      ?relatedWorkTitle,
+      COALESCE(CONCAT(" (", ?relatedWorkCreator, ")"), "")
+    ) AS ?relatedTitle)
   }
 
   OPTIONAL {
