@@ -231,6 +231,32 @@ The order also matters when aggregating: `GROUP_CONCAT` does not guarantee its
 input order, so two parallel concatenations (all places, all publishers) can't
 be relied on to line up. Carry `?pos` and pair or order explicitly.
 
+### Order-dependent logic belongs inside the per-record `SERVICE`
+
+Anything that compares one subfield's position with another's (for example "is
+there a `$b` between these two `$a`s?") is a self-join. Outside the `SERVICE`
+it would mean reading the MARC twice, since Jena re-evaluates a `SERVICE`
+everywhere it appears. **Inside** the per-record `SERVICE` it is a join over
+one record's few hundred triples, and these all work there:
+
+- the position as `xsd:integer(STRAFTER(STR(?slot), "#_"))`. Only the
+  `fx:cardinal` *function* fails inside a `SERVICE`; plain string functions on
+  `?slot` are fine;
+- a sub-`SELECT` with `COUNT`/`SAMPLE` and `GROUP BY`, evaluated per record;
+- nested `FILTER NOT EXISTS` / `EXISTS` over the same field's other subfields.
+
+`queries/publications.rq` (#196) uses all three to number the place/publisher
+groups of every 260/264. A subfield starts a group unless an earlier subfield
+of its field continues it, and its group number is the count of starts at or
+before it. The test runs twice (once per subfield, and once to count the
+record's groups), and the whole query went from **30 s to 47 s**. The
+self-joins never leave the record.
+
+To concatenate in position order, project the position out of the `SERVICE`,
+wrap the read in `{ SELECT * WHERE { SERVICE … } ORDER BY ?pos }`, and
+aggregate over that. Jena's `GROUP_CONCAT` keeps its input order, though the
+spec doesn't promise it.
+
 ## A variable `fxe:location` must come from an enclosing SERVICE
 
 The per-record read works because the outer folder-listing `SERVICE` binds

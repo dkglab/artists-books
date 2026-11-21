@@ -52,8 +52,8 @@
     {{- if or $b.primaryCreators $b.date }}
     <span class="book-grid-meta">{{ with $b.primaryCreators }}{{ . }}{{ end }}{{ if and $b.primaryCreators $b.date }} · {{ end }}{{ with $b.date }}{{ . }}{{ end }}</span>
     {{- end }}
-    {{- if or $b.publisher $b.place }}
-    <span class="book-grid-imprint">{{ with $b.place }}{{ . }}{{ end }}{{ if and $b.place $b.publisher }}: {{ end }}{{ with $b.publisher }}{{ . }}{{ end }}</span>
+    {{- with $b.imprint }}
+    <span class="book-grid-imprint">{{ . }}</span>
     {{- end }}
     </span>
   </a>

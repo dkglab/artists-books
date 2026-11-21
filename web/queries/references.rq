@@ -32,6 +32,8 @@ SELECT
   (SAMPLE(?contributorLinksAgg) AS ?contributorLinks)
   ?publisher
   ?place
+  ?imprints
+  ?imprint
   ?date
   ?language
   # One OCLC number per reference work (a single 001), so SAMPLE, not concat.
@@ -151,12 +153,46 @@ WHERE {
     }
   }
 
+  # The publication statement (#21). A work co-published from several places
+  # has one bf:Publication per place/publisher group (#196), so the groups are
+  # aggregated here to keep one row (one output page) per work. With a single
+  # group the page shows Publisher and Place as before; with several, ?imprints
+  # gives one "place: publisher" line per group, in order. ?imprint is the
+  # same pairs on one line, for the index card.
   OPTIONAL {
-    ?reference bf:provisionActivity ?pub .
-    OPTIONAL { ?pub bflc:simpleAgent ?publisher . }
-    OPTIONAL { ?pub bflc:simplePlace ?place . }
-    OPTIONAL { ?pub bflc:simpleDate  ?date . }
+    {
+      SELECT ?reference
+             (SAMPLE(?d) AS ?date)
+             (COUNT(DISTINCT ?pub) AS ?nPub)
+             (SAMPLE(?pb) AS ?pb1)
+             (SAMPLE(?pl) AS ?pl1)
+             (GROUP_CONCAT(?part; separator="\n") AS ?imprintLines)
+      WHERE {
+          {
+            # Ordered by group (the URI's /publication/<n>, plain /publication
+            # being group 1), which Jena's GROUP_CONCAT preserves.
+            SELECT ?reference ?d ?pl ?pb ?pub ?part WHERE {
+              ?reference bf:provisionActivity ?pub .
+              OPTIONAL { ?pub bflc:simpleDate  ?d . }
+              OPTIONAL { ?pub bflc:simplePlace ?pl . }
+              OPTIONAL { ?pub bflc:simpleAgent ?pb . }
+              BIND(CONCAT(COALESCE(STR(?pl), ""),
+                          IF(BOUND(?pl) && BOUND(?pb), ": ", ""),
+                          COALESCE(STR(?pb), "")) AS ?part)
+              BIND(COALESCE(xsd:integer(STRAFTER(STR(?pub), "/publication/")), 1) AS ?n)
+            }
+            ORDER BY ?reference ?n
+          }
+      }
+      GROUP BY ?reference
+    }
   }
+  BIND(IF(?nPub = 1, ?pb1, ?unbound) AS ?publisher)
+  BIND(IF(?nPub = 1, ?pl1, ?unbound) AS ?place)
+  # A group with neither place nor publisher contributes an empty line; drop it.
+  BIND(REPLACE(REPLACE(?imprintLines, "^\n+|\n+$", ""), "\n{2,}", "\n") AS ?imprintLinesTidy)
+  BIND(IF(?nPub > 1 && ?imprintLinesTidy != "", ?imprintLinesTidy, ?unbound) AS ?imprints)
+  BIND(IF(?imprintLinesTidy != "", REPLACE(?imprintLinesTidy, "\n", "; "), ?unbound) AS ?imprint)
 
   OPTIONAL { ?reference bf:language ?language . }
 
@@ -238,5 +274,5 @@ WHERE {
 
   BIND(COALESCE(?citedBookLabel, ?citedBookKey) AS ?citedTitle)
 }
-GROUP BY ?reference ?title ?itemKey ?publisher ?place ?date ?language
+GROUP BY ?reference ?title ?itemKey ?publisher ?place ?imprints ?imprint ?date ?language
 ORDER BY LCASE(?title)
