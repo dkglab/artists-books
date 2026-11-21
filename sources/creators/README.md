@@ -21,7 +21,7 @@ Regenerate with `make -C sources <target>` (GNU Make ≥ 4.3).
 
 | File | Made by | What |
 |---|---|---|
-| `occurrences.csv` | `mine.py` | Every 100/110/111/700/710/711 field of both MARC directories: source (`book`/`reference`), canonical key, tag, the `$a` exactly as the queries see it (`name`), full heading, dates, and its LC id / VIAF / ISNI / GND / WorldCat Entity ids. |
+| `occurrences.csv` | `mine.py` | Every 100/110/111/700/710/711 field of both MARC directories: source (`book`/`reference`), canonical key, tag, the `$a` exactly as the queries see it (`name`), full heading, dates, and its LC id / VIAF / ISNI / GND / WorldCat Entity ids. `work` marks a name/title field (`$t`, #32): `contained` for ind2 2 (the record contains the work, and its creator is credited on the record), `related` otherwise (the creator made only the related work, and is credited on it, not on the record). |
 | `zotero-creators.csv` | `mine.py` | The structured Zotero creators (last, first, single-field mode, creator type) of every canonical artists' book. |
 | `lc-viaf.csv` | `reconcile.py` | **Frozen** id.loc.gov lookup per LC id: VIAF, ISNI, authorized label, and the successor of a deprecated id. External and resumable, like the MARC harvest; committed. |
 | `decisions.csv` | a person | Hand overrides (below). Not generated. |
