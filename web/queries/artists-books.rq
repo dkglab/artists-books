@@ -69,7 +69,9 @@ SELECT
   # (multi-volume sets, cover variants), so the book page shows them all.
   ?images
   # Related works (#32), each as a "designator<TAB>title<TAB>creator<TAB>
-  # authority URL" token, tokens newline-separated; empty fields are "".
+  # authority URL<TAB>copies" token, tokens newline-separated; empty fields
+  # are "". copies is the related work's own books in this collection, as
+  # space-separated "itemKey|year" pairs.
   (GROUP_CONCAT(DISTINCT ?relatedTitle; separator="\n") AS ?relatedTitles)
   # Variant titles (MARC 246, #20), each as a "title<TAB>kind" token, tokens
   # newline-separated; the kind is "" when the record doesn't say.
@@ -476,11 +478,60 @@ WHERE {
     # The title links to the work's LC authority where it has one ($0, #32),
     # over https: id.loc.gov serves the HTML record to a browser at the URI.
     OPTIONAL { ?relatedWork madsrdf:isIdentifiedByAuthority ?relatedWorkAuthority . }
+    # The related work's own copies in this collection (#32): books credited to
+    # the related work's creator whose main title is the related title, once
+    # both are normalized (case, punctuation, a leading article). The creator
+    # must agree -- it is one shared agent across the graphs (#170), so this is
+    # an exact test -- because titles alone mislead: Mallock's "Human
+    # document", source of the Humuments, is not Gardner's 1964 "A human
+    # document", nor Ovid's Metamorphoses Grant Hanna's. 740s and 730s carry
+    # no creator and are never linked. Several editions are all listed, each
+    # by its year.
+    OPTIONAL {
+      # Ordered by year, which Jena's GROUP_CONCAT preserves (as for the imprints).
+      SELECT ?relatedWork (GROUP_CONCAT(DISTINCT ?copyToken; separator=" ") AS ?copies) WHERE {
+        {
+          SELECT ?relatedWork ?copyToken WHERE {
+            # Related works first, in their own sub-SELECT: left to reorder the
+            # pattern, Jena starts from every book's contributions and takes
+            # ~10 s; from the 252 credited related works it takes ~0.2 s.
+            {
+              SELECT ?relatedWork ?copyOfTitle ?copyAgent WHERE {
+                ?relatedWork a bf:Work ;
+                             rdfs:label ?copyOfTitle ;
+                             bf:contribution/bf:agent ?copyAgent .
+              }
+            }
+            ?copyContribution bf:agent ?copyAgent .
+            ?copy bf:contribution ?copyContribution ;
+                  a ab:ArtistsBook ;
+                  ab:itemKey ?copyKey ;
+                  bf:title ?copyTitle .
+            ?copyTitle a bf:Title ; bf:mainTitle ?copyMain .
+            # Not the book the related work hangs off (its URI is under the book's).
+            FILTER(!STRSTARTS(STR(?relatedWork), CONCAT(STR(?copy), "/")))
+            FILTER(
+              REPLACE(REPLACE(LCASE(STR(?copyMain)), "[^\\p{L}\\p{N}]+", " "), "^\\s*(the|a|an|le|la|les|el|los|las|der|die|das|il|lo)\\s+|^\\s+|\\s+$", "")
+              = REPLACE(REPLACE(LCASE(STR(?copyOfTitle)), "[^\\p{L}\\p{N}]+", " "), "^\\s*(the|a|an|le|la|les|el|los|las|der|die|das|il|lo)\\s+|^\\s+|\\s+$", "")
+            )
+            OPTIONAL {
+              SELECT ?copy (MIN(STR(?copyYearValue)) AS ?copyYear)
+              WHERE { ?copy bf:provisionActivity/bf:date ?copyYearValue . }
+              GROUP BY ?copy
+            }
+            BIND(CONCAT(?copyKey, "|", COALESCE(?copyYear, "")) AS ?copyToken)
+          }
+          ORDER BY ?relatedWork ?copyYear ?copyKey
+        }
+      }
+      GROUP BY ?relatedWork
+    }
     BIND(CONCAT(
       COALESCE(REPLACE(?relationshipLabel, "\\s*\\((work|expression)\\)$", ""), ""), "\t",
       ?relatedWorkTitle, "\t",
       COALESCE(?relatedWorkCreator, ""), "\t",
-      COALESCE(REPLACE(STR(?relatedWorkAuthority), "^http:", "https:"), "")
+      COALESCE(REPLACE(STR(?relatedWorkAuthority), "^http:", "https:"), ""), "\t",
+      COALESCE(?copies, "")
     ) AS ?relatedTitle)
   }
 

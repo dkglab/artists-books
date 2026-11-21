@@ -136,6 +136,10 @@
   {{- if $i }}; {{ end }}{{ with index $p 0 }}{{ . }}: {{ end }}
   {{- with index $p 3 }}<a href="{{ . }}">{{ index $p 1 }}</a>{{ else }}{{ index $p 1 }}{{ end }}
   {{- with index $p 2 }} ({{ . }}){{ end }}
+  {{- with index $p 4 }}{{ $c := split . " " }}
+  {{- if eq (len $c) 1 }}{{ $k := split (index $c 0) "|" }} &mdash; <a href="/item/{{ index $k 0 }}/">in this collection</a>
+  {{- else }} &mdash; in this collection:{{ range $j, $cp := $c }}{{ $k := split $cp "|" }}{{ if $j }},{{ end }} <a href="/item/{{ index $k 0 }}/">{{ with index $k 1 }}{{ . }}{{ else }}undated{{ end }}</a>{{ end }}
+  {{- end }}{{ end }}
   {{- end }}
   </dd>
   {{ end }}
