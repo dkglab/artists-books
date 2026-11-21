@@ -37,6 +37,7 @@ CONSTRUCT {
     bf:identifiedBy ?bookOCLCNum ;
     foaf:isPrimaryTopicOf ?worldcat_url ;
     ab:constructedUsing ?constructionConcept ;
+    bf:genreForm ?genreFormConcept ;
     ab:hasSubject ?subjectConcept ;
     ab:sourceImage ?sourceImage ;
     ab:representativeImage ?thumbnail ;
@@ -962,12 +963,19 @@ WHERE {
   # decisions is listed first (the ~60 include=y rows drive the join) so ARQ's
   # linear `sequence` re-reads only the occurrences CSV per decision, not vice
   # versa.
+  #
+  # Genre/form (#25) is not a separate track: it is the construction scheme's
+  # genre-form category (#117), so a concept in that category also gets a
+  # bf:genreForm edge, the BIBFRAME home for MARC 655 genre. Same concept URI,
+  # so the site renders it once, under construction. ?noGenreForm is never
+  # bound, so the IF leaves ?genreFormConcept unbound for other categories.
   OPTIONAL {
-    SELECT DISTINCT ?canonical_key ?constructionConcept WHERE {
+    SELECT DISTINCT ?canonical_key ?constructionConcept ?genreFormConcept WHERE {
       SERVICE <x-sparql-anything:location=sources/construction/decisions.csv,csv.headers=true> {
         ?dRow xyz:cluster    ?cCluster ;
               xyz:include    "y" ;
-              xyz:conceptId  ?cConceptId .
+              xyz:conceptId  ?cConceptId ;
+              xyz:category   ?cCategory .
       }
       # Subject-track occurrences are UNIONed in so a construction decision can
       # claim a 650 heading the construction pool doesn't mine (#148; see
@@ -984,6 +992,7 @@ WHERE {
         }
       }
       BIND(fx:entity(ab:, "construction/", ?cConceptId) AS ?constructionConcept)
+      BIND(IF(?cCategory = "genre-form", ?constructionConcept, ?noGenreForm) AS ?genreFormConcept)
     }
   }
 
