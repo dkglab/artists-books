@@ -131,7 +131,13 @@
 
   {{ with .relatedTitles }}
   <dt>Related titles</dt>
-  <dd>{{ . }}</dd>
+  <dd>
+  {{- range $i, $t := (split . "\n") }}{{ $p := split $t "\t" }}
+  {{- if $i }}; {{ end }}{{ with index $p 0 }}{{ . }}: {{ end }}
+  {{- with index $p 3 }}<a href="{{ . }}">{{ index $p 1 }}</a>{{ else }}{{ index $p 1 }}{{ end }}
+  {{- with index $p 2 }} ({{ . }}){{ end }}
+  {{- end }}
+  </dd>
   {{ end }}
 
   {{ with .constructionTerms }}

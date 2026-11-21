@@ -7,6 +7,7 @@ PREFIX wd:      <http://www.wikidata.org/entity/>
 PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
 PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+PREFIX madsrdf: <http://www.loc.gov/mads/rdf/v1#>
 
 SELECT
   ?book
@@ -67,7 +68,9 @@ SELECT
   # tokens newline-separated. Multi-valued: four books carry several images
   # (multi-volume sets, cover variants), so the book page shows them all.
   ?images
-  (GROUP_CONCAT(DISTINCT ?relatedTitle; separator="; ") AS ?relatedTitles)
+  # Related works (#32), each as a "designator<TAB>title<TAB>creator<TAB>
+  # authority URL" token, tokens newline-separated; empty fields are "".
+  (GROUP_CONCAT(DISTINCT ?relatedTitle; separator="\n") AS ?relatedTitles)
   # Variant titles (MARC 246, #20), each as a "title<TAB>kind" token, tokens
   # newline-separated; the kind is "" when the record doesn't say.
   (GROUP_CONCAT(DISTINCT ?variantToken; separator="\n") AS ?variantTitles)
@@ -470,10 +473,14 @@ WHERE {
       ?relation bf:associatedResource ?relatedWork ;
                 bf:relationship/rdfs:label ?relationshipLabel .
     }
+    # The title links to the work's LC authority where it has one ($0, #32),
+    # over https: id.loc.gov serves the HTML record to a browser at the URI.
+    OPTIONAL { ?relatedWork madsrdf:isIdentifiedByAuthority ?relatedWorkAuthority . }
     BIND(CONCAT(
-      COALESCE(CONCAT(REPLACE(?relationshipLabel, "\\s*\\((work|expression)\\)$", ""), ": "), ""),
-      ?relatedWorkTitle,
-      COALESCE(CONCAT(" (", ?relatedWorkCreator, ")"), "")
+      COALESCE(REPLACE(?relationshipLabel, "\\s*\\((work|expression)\\)$", ""), ""), "\t",
+      ?relatedWorkTitle, "\t",
+      COALESCE(?relatedWorkCreator, ""), "\t",
+      COALESCE(REPLACE(STR(?relatedWorkAuthority), "^http:", "https:"), "")
     ) AS ?relatedTitle)
   }
 
