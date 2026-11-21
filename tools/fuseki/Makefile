@@ -30,6 +30,7 @@ start: fuseki-server
 	./fuseki-server --quiet \
 	--file=../../graph/artists-books.ttl \
 	--file=../../graph/reference-works.ttl \
+	--file=../../graph/publications.ttl \
 	--file=../../sources/citations.ttl \
 	--file=../../sources/construction-methods.ttl \
 	--file=../../sources/subject-terms.ttl \

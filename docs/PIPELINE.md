@@ -25,14 +25,18 @@ flowchart TD
     marc --> abg
     extract --> refg{{"② Build reference-works graph"}}
     marc --> refg
+    extract --> pubg{{"Build publication statements"}}
+    marc --> pubg
     extract --> cit{{"③ Build citation links"}}
 
     abg --> abttl["graph/artists-books.ttl<br/>+ SKOS schemes"]
     refg --> refttl["graph/reference-works.ttl"]
+    pubg --> pubttl["graph/publications.ttl"]
     cit --> citttl["sources/citations.ttl"]
 
     abttl --> web{{"④ Generate website"}}
     refttl --> web
+    pubttl --> web
     citttl --> web
     web --> site["Static HTML website (web/site/)<br/>cross-linked by citations"]
 
@@ -174,11 +178,21 @@ flowchart TD
     agents["creators/agents.csv<br/>(see ①)"] -->|"bf:agent join"| refrq
     refrq --> refttl["graph/reference-works.ttl"]
 
+    refcsv --> pubrq{{"publications.rq<br/>(SPARQL-Anything CONSTRUCT)"}}
+    refmarc -->|"264/260 + 008"| pubrq
+    abinputs(["artists-books.csv + artists-books-marc/<br/>(see ①)"]) --> pubrq
+    pubrq --> pubttl["graph/publications.ttl"]
+
     classDef input fill:#e8f0fe,stroke:#4285f4,stroke-width:2px;
     classDef output fill:#e6f4ea,stroke:#34a853,stroke-width:2px;
     class catalogs input;
-    class refttl output;
+    class refttl,pubttl output;
 ```
+
+The publication statement of **both** tracks — the `bf:provisionActivity` edge
+and its `bf:Publication` node — is built by its own query,
+`queries/publications.rq` (#21), so the MARC 264/260 + 008 reading and the
+Zotero fallback are written once rather than in each construct query.
 
 `*` `reference-works-marc/` is read only for the creators (every 1xx/7xx
 field with its roles, as for the books — #40 — their identity looked up in the
@@ -227,6 +241,7 @@ The former live citation match (the `*-crosswalk.csv` fuzzy bridge feeding a
 flowchart TD
     abttl["graph/artists-books.ttl"]
     refttl["graph/reference-works.ttl"]
+    pubttl["graph/publications.ttl"]
     citttl["sources/citations.ttl"]
     cmttl["sources/construction-methods.ttl"]
     smttl["sources/subject-terms.ttl"]
@@ -234,6 +249,7 @@ flowchart TD
 
     abttl --> fuseki[["Apache Fuseki<br/>(SPARQL endpoint)"]]
     refttl --> fuseki
+    pubttl --> fuseki
     citttl -->|"loaded as-is (no query)"| fuseki
     cmttl -->|"loaded as-is (no query)"| fuseki
     smttl -->|"loaded as-is (no query)"| fuseki
@@ -248,7 +264,7 @@ flowchart TD
     class site output;
 ```
 
-Fuseki merges the two constructed graphs, the frozen citations, and the three
+Fuseki merges the three constructed graphs, the frozen citations, and the three
 SKOS schemes into a single dataset, so the web SELECT queries join across all of
 them without any per-graph plumbing — a book page resolves the reference works
 that cite it, the construction/subject concepts its headings map to, and the

@@ -22,7 +22,6 @@ CONSTRUCT {
     ab:heldBySloane ?held_flag ;
     bf:contribution ?contribution ;
     bf:contribution ?zoteroContribution ;
-    bf:provisionActivity ?bookPublication ;
     bf:language ?marc_language ;
     bf:language ?language041 ;
     bf:language ?zoteroLanguage ;
@@ -65,19 +64,6 @@ CONSTRUCT {
     bf:partName ?variant_part_name ;
     bf:variantType ?variant_type ;
     .
-
-  # Publication (#21): read from MARC where the book has a record (the 264
-  # ind2=1 or 260 statement, dated from 008), else from the Zotero row. The
-  # bflc:simple* literals are always the display form; bf:place adds the LC
-  # country of publication from 008 when it names one.
-  ?bookPublication a bf:Publication ;
-    bflc:simpleAgent ?publisher ;
-    bflc:simpleDate ?date ;
-    bflc:simplePlace ?place ;
-    bf:place ?placeCountry ;
-    .
-
-  ?placeCountry a bf:Place .
 
   ?bookISBN a bf:Identifier ;
     rdf:value ?ISBN ;
@@ -180,19 +166,14 @@ WHERE {
     # the Zotero title is just the fallback for a book with no MARC 245, and a
     # book needs one or the other (the FILTER at the end of the query). Eight
     # rows have an empty Zotero title, and before #20 they silently dropped out.
-    # Publisher/date/place are the Zotero fallback for the MARC publication
-    # statement (#21; see the COALESCE after the MARC OPTIONAL).
-    # Publisher/date are OPTIONAL so books lacking them still emit
-    # (otherwise books like Ruscha's "Every building on the Sunset Strip." which
-    # has a date but no publisher would silently drop out, taking their citations
-    # with them).
+    # The publication statement (publisher, date, place) is not read here: it
+    # is queries/publications.rq, shared with the reference works (#21).
     ?bookRow xyz:canonicalKey ?canonical_key .
     OPTIONAL { ?bookRow xyz:title ?zotero_title }
 
     # Mint new book URIs from the canonical key. Citations (sources/citations.ttl)
     # target these same item/<canonicalKey> URIs.
     BIND(fx:entity(ab:, "item/", ?canonical_key) AS ?book)
-    BIND(fx:entity(ab:, "item/", ?canonical_key, "/publication") AS ?bookPublication)
 
     # Sloane holdings flag (#82): the ~1,300 works UNC physically holds (and has
     # images of). Non-held rows carry an empty cell -> null -> ?held_raw unbound
@@ -200,16 +181,6 @@ WHERE {
     OPTIONAL { ?bookRow xyz:held ?held_raw }
     BIND(IF(BOUND(?held_raw), true, ?sentinel) AS ?held_flag)
 
-    OPTIONAL { ?bookRow xyz:publisher ?zotero_publisher }
-    OPTIONAL {
-      ?bookRow xyz:date ?date_raw .
-      # Strip Zotero's leading "YYYY-MM-DD " prefix from the date string
-      BIND(REPLACE(?date_raw, "^\\d{4}-\\d{2}-\\d{2} ", "") AS ?zotero_date)
-    }
-
-    OPTIONAL {
-      ?bookRow xyz:place ?zotero_place
-    }
     OPTIONAL { ?bookRow xyz:language ?zotero_language }
     OPTIONAL { ?bookRow xyz:ISBN ?ISBN }
     BIND(fx:entity(ab:, "item/", ?canonical_key, "/identifier") AS ?isbnNode)
@@ -245,11 +216,6 @@ WHERE {
              (SAMPLE(?extent_x) AS ?extent)
              (SAMPLE(?dimensions_x) AS ?dimensions)
              (SAMPLE(?edition_x) AS ?edition)
-             (SAMPLE(?date008_x) AS ?marc_date008)
-             (SAMPLE(?country_x) AS ?marc_country)
-             (SAMPLE(?pub_year_x) AS ?marc_pub_year)
-             (GROUP_CONCAT(DISTINCT ?pub_b_x; separator="; ") AS ?marc_publisher)
-             (GROUP_CONCAT(DISTINCT ?pub_a_x; separator="; ") AS ?marc_place)
              (SAMPLE(?summary_x) AS ?summary)
              (SAMPLE(?related_title_x) AS ?related_title)
              (SAMPLE(?images_at_x) AS ?images_at)
@@ -462,93 +428,6 @@ WHERE {
                 REPLACE(?edition_raw, "^\\s+|[\\s.;:/]+$", "")
                 AS ?edition_x
             )
-          }
-
-          # Publication statement (#21): the 264 with ind2=1 (RDA: publication)
-          # or, in pre-RDA records, the 260 -- each about half the corpus, and
-          # only one record carries both. Its other 264s (ind2 0/2/3/4:
-          # production, distribution, manufacture, copyright) are not read.
-          # $b publisher and $a place are aggregated with GROUP_CONCAT, since a
-          # co-published book lists several. Each subfield is its own OPTIONAL
-          # so that dropping a placeholder ("[s.n.]", "[publisher not
-          # identified]", "S.l.") only drops that value. The FILTER is inside
-          # the OPTIONAL rather than a sentinel BIND because of the Jena trap
-          # in CLAUDE.md: a GROUP_CONCAT over a group in which any row leaves
-          # the variable unbound comes back unbound altogether. Cleanup: square
-          # brackets (cataloguer-supplied) and "[u.a.]"/"[et al.]" are removed,
-          # then the ISBD punctuation that ends a subfield (" :", ",", " ;"),
-          # then a trailing "." unless it ends an abbreviation. Words of under
-          # four letters ("Ed.", "Co.") are never stripped. Longer ones
-          # ("Publ.", "Univ.") are listed.
-          OPTIONAL {
-            ?record fx:anySlot ?dfpb .
-            ?dfpb a marc:datafield ; xyz:tag ?pb_tag ; xyz:ind2 ?pb_ind2 .
-            FILTER(?pb_tag = "260" || (?pb_tag = "264" && ?pb_ind2 = "1"))
-            ?dfpb fx:anySlot ?sfpb .
-            ?sfpb xyz:code "b" ; rdf:_1 ?pub_b_raw .
-            BIND(REPLACE(REPLACE(REPLACE(REPLACE(?pub_b_raw,
-                   "\\[?\\b(u\\.\\s*a|et al|etc)\\.\\]?", ""),
-                   "[\\[\\]]", ""),
-                   "^[\\s:;,]+|[\\s:;,/]+$", ""),
-                   "(?i)(\\b(?!publ|corp|assoc|dept|univ|bros|verl|inst|internat|intl|natl|soc)\\w{4,})\\.$", "$1")
-                 AS ?pub_b_x)
-            FILTER(?pub_b_x != "" && !REGEX(?pub_b_x,
-                   "^s\\.\\s*n\\.?$|^sine nomine$|^no publisher|not ident|not idenf|nicht ermittel|non identifi|no identificad",
-                   "i"))
-          }
-          OPTIONAL {
-            ?record fx:anySlot ?dfpa .
-            ?dfpa a marc:datafield ; xyz:tag ?pa_tag ; xyz:ind2 ?pa_ind2 .
-            FILTER(?pa_tag = "260" || (?pa_tag = "264" && ?pa_ind2 = "1"))
-            ?dfpa fx:anySlot ?sfpa .
-            ?sfpa xyz:code "a" ; rdf:_1 ?pub_a_raw .
-            BIND(REPLACE(REPLACE(REPLACE(REPLACE(?pub_a_raw,
-                   "\\[?\\b(u\\.\\s*a|et al|etc)\\.\\]?", ""),
-                   "[\\[\\]]", ""),
-                   "^[\\s:;,]+|[\\s:;,/]+$", ""),
-                   "(?i)(\\b(?!publ|corp|assoc|dept|univ|bros|verl|inst|internat|intl|natl|soc)\\w{4,})\\.$", "$1")
-                 AS ?pub_a_x)
-            FILTER(?pub_a_x != "" && !REGEX(?pub_a_x,
-                   "^s\\.\\s*l\\.?$|^sine loco$|not ident|not idenf|nicht ermittel|non identifi|no identificad",
-                   "i"))
-          }
-          # $c only as a year source for records with no usable 008 -- the
-          # eHive/UW records synthesized from JSON (#99) carry none. The
-          # string itself ("c1998.", "[2003]") is not displayed.
-          OPTIONAL {
-            ?record fx:anySlot ?dfpc .
-            ?dfpc a marc:datafield ; xyz:tag ?pc_tag ; xyz:ind2 ?pc_ind2 .
-            FILTER(?pc_tag = "260" || (?pc_tag = "264" && ?pc_ind2 = "1"))
-            ?dfpc fx:anySlot ?sfpc .
-            ?sfpc xyz:code "c" ; rdf:_1 ?pub_c_raw .
-            FILTER(REGEX(?pub_c_raw, "\\d{4}"))
-            BIND(REPLACE(?pub_c_raw, "^\\D*?(\\d{4}).*$", "$1", "s") AS ?pub_year_x)
-          }
-          # Date and country of publication from 008 (#21). A separate OPTIONAL
-          # from the 008 language read, whose FILTER drops the whole match
-          # when a record has no valid language code. Date1 is positions 7-10
-          # and date2 is 11-14, with the date type at 6. Only a four-digit
-          # date1 is used ("19uu" etc. are not). For a multipart or
-          # collection range (types m, i, k) a later four-digit date2 extends
-          # it to "1972–1974". The country of publication is positions 15-17.
-          # It is linked only when it names a country: "xx" (unknown) and "vp"
-          # (various places) are not countries.
-          OPTIONAL {
-            ?record fx:anySlot ?cf008d .
-            ?cf008d a marc:controlfield ; xyz:tag "008" ; rdf:_1 ?fixed008 .
-            BIND(SUBSTR(?fixed008, 7, 1) AS ?date_type)
-            BIND(SUBSTR(?fixed008, 8, 4) AS ?date1)
-            BIND(SUBSTR(?fixed008, 12, 4) AS ?date2)
-            BIND(REPLACE(SUBSTR(?fixed008, 16, 3), "[\\s|]+", "") AS ?country_raw)
-            BIND(IF(REGEX(?date1, "^[0-9]{4}$"),
-                    IF(?date_type IN ("m", "i", "k") && REGEX(?date2, "^[0-9]{4}$")
-                         && ?date2 != "9999" && ?date2 > ?date1,
-                       CONCAT(?date1, "–", ?date2), ?date1),
-                    ?sentinel)
-                 AS ?date008_x)
-            BIND(IF(REGEX(?country_raw, "^[a-z]{2,3}$") && !(?country_raw IN ("xx", "vp")),
-                    ?country_raw, ?sentinel)
-                 AS ?country_x)
           }
 
           OPTIONAL {
@@ -1020,40 +899,6 @@ WHERE {
   # Zotero does not separate the subtitle. Every row of a book's MARC match
   # carries the same 245, so this never yields two labels for one book.
   BIND(COALESCE(?marc_title, ?zotero_title) AS ?title)
-
-  # Publication (#21): MARC first, Zotero as the fallback, field by field. An
-  # empty GROUP_CONCAT (a record whose only $b is a placeholder) is unbound or
-  # "", so both fall through. The date prefers 008, then the 264/260 $c year.
-  #
-  # Year guard (#193): a MARC record whose year is more than one year from the
-  # Zotero year (outside its range, for an "m/i/k" range) probably describes
-  # another edition or another work -- a 2002 facsimile matched to a 1748
-  # printing, a DVD of a same-titled film. For such a book the whole
-  # publication statement stays Zotero's, rather than overwriting a right
-  # publisher and date with a wrong one. The harvest still needs fixing:
-  # the title and creators come from the same record.
-  BIND(IF(REGEX(COALESCE(?zotero_date, ""), "(1[5-9]|20)[0-9]{2}"),
-          xsd:integer(REPLACE(?zotero_date, "^.*?((1[5-9]|20)[0-9]{2}).*$", "$1")), ?sentinel) AS ?zotero_year)
-  BIND(COALESCE(?marc_date008, ?marc_pub_year) AS ?marc_date)
-  BIND(xsd:integer(SUBSTR(?marc_date, 1, 4)) AS ?marc_year_from)
-  BIND(IF(STRLEN(?marc_date) = 9, xsd:integer(SUBSTR(?marc_date, 6, 4)), ?marc_year_from) AS ?marc_year_to)
-  BIND(BOUND(?zotero_year) && BOUND(?marc_year_from)
-       && (?zotero_year < ?marc_year_from - 1 || ?zotero_year > ?marc_year_to + 1) AS ?marc_year_conflict)
-  BIND(IF(?marc_year_conflict, ?sentinel, ?marc_publisher) AS ?marc_publisher_ok)
-  BIND(IF(?marc_year_conflict, ?sentinel, ?marc_place) AS ?marc_place_ok)
-  BIND(IF(?marc_year_conflict, ?sentinel, ?marc_date) AS ?marc_date_ok)
-  BIND(IF(?marc_year_conflict, ?sentinel, ?marc_country) AS ?marc_country_ok)
-  # Many Zotero values were copied from a catalogue, placeholders and all. A
-  # value that is *only* a placeholder ("[s.n.]", "[S.l.]") is dropped as it
-  # is from MARC. A longer string that merely contains one is kept as is.
-  BIND(REPLACE(?zotero_publisher, "^[\\s\\[]+|[\\s\\],:;.]+$", "") AS ?zotero_publisher_s)
-  BIND(REPLACE(?zotero_place, "^[\\s\\[]+|[\\s\\],:;.]+$", "") AS ?zotero_place_s)
-  BIND(IF(REGEX(?zotero_publisher_s, "^(s\\.\\s*n|sine nomine|no publisher|publisher not identified|verlag nicht ermittelbar)$", "i"), ?sentinel, ?zotero_publisher) AS ?zotero_publisher_ok)
-  BIND(IF(REGEX(?zotero_place_s, "^(s\\.\\s*[ln]|sine loco|place of publication not identified|erscheinungsort nicht ermittelbar)$", "i"), ?sentinel, ?zotero_place) AS ?zotero_place_ok)
-  BIND(COALESCE(IF(?marc_publisher_ok != "", ?marc_publisher_ok, ?sentinel), ?zotero_publisher_ok) AS ?publisher)
-  BIND(COALESCE(IF(?marc_place_ok != "", ?marc_place_ok, ?sentinel), ?zotero_place_ok) AS ?place)
-  BIND(COALESCE(?marc_date_ok, ?zotero_date) AS ?date)
-  BIND(IF(BOUND(?marc_country_ok), IRI(CONCAT("http://id.loc.gov/vocabulary/countries/", ?marc_country_ok)), ?sentinel) AS ?placeCountry)
   BIND(COALESCE(?marc_main_title, ?zotero_title) AS ?main_title)
   BIND(fx:entity(ab:, "item/", ?canonical_key, "/title") AS ?bookTitle)
   # A group filter, so it runs after every OPTIONAL: it only drops a book with

@@ -8,7 +8,7 @@ START_FUSEKI ?= true
 .DELETE_ON_ERROR:
 .DEFAULT_GOAL := all
 
-all: graph/artists-books.ttl graph/reference-works.ttl web/site/index.html
+all: graph/artists-books.ttl graph/reference-works.ttl graph/publications.ttl web/site/index.html
 
 clean:
 	rm -rf graph site .snowman web/site web/.snowman
@@ -79,12 +79,22 @@ sources/reference-works.csv \
 $(wildcard sources/marc/reference-works-marc/*.xml) \
 sources/creators/agents.csv
 
+# The publication statement of both tracks (#21): one query over both
+# canonical lists and both MARC directories, so the MARC 264/260 + 008 reading
+# and the Zotero fallback are written once.
+graph/publications.ttl: \
+sources/artists-books.csv \
+sources/reference-works.csv \
+$(wildcard sources/marc/artists-books-marc/*.xml) \
+$(wildcard sources/marc/reference-works-marc/*.xml)
+
 # sources/citations.ttl is a committed frozen graph (issue #82, task 3) — no
 # recipe; Fuseki loads it alongside the two constructed graphs, so the site
 # rebuilds when it changes.
 web/site/index.html: \
 graph/artists-books.ttl \
 graph/reference-works.ttl \
+graph/publications.ttl \
 sources/citations.ttl \
 sources/construction-methods.ttl \
 sources/subject-terms.ttl \
