@@ -15,6 +15,10 @@ frozen citation graph.
   work (verbatim-title substring → `<em>`-exact → fuzzy).
 - **`freeze_citations.py`** builds the frozen `sources/citations.ttl` — one
   `ab:Citation` per (reference work, artist's book) against the canonical URIs.
+- **`oclc_review.py`** + **`oclc-groups.rq`** build
+  `sources/artists-books-oclc-review.csv` (#70): the book nodes in the built
+  graph that share an OCLC number, with Zotero and MARC context for review. They
+  use only the standard library and Jena's `arq`, not the venv.
 
 Fuzzy matching uses [`rapidfuzz`](https://pypi.org/project/rapidfuzz/), installed
 into an isolated venv here. Everything except this
@@ -33,6 +37,7 @@ gitignored.
 make -C tools/fuzzy-match                 # build the venv (one time)
 make -C sources artists-books.csv         # run the dedup (also emits reference-works.csv + review)
 make -C sources -B citations.ttl          # freeze the citation graph
+make -C sources -B artists-books-oclc-review.csv   # shared-OCLC review sheet (needs graph/artists-books.ttl)
 ```
 
 Each script prints a coverage/summary report to stderr.
