@@ -488,9 +488,11 @@ WHERE {
           # Title from MARC 245 (#11, #20): $a title proper, $b remainder of
           # title (subtitle, parallel title), $n/$p part number/name. $c (the
           # statement of responsibility), $h (the medium) and the rest are not
-          # title. Every record has exactly one 245, and in the corpus $n/$p
-          # precede $b in all but three, so the parts are composed in that fixed
-          # order. Each part is stripped of the ISBD punctuation that ends it
+          # title. Every record has exactly one 245. Subfield positions can't be
+          # read without a variable predicate (docs/QUERY-PERFORMANCE.md), so the
+          # parts are composed in the fixed order $a $b $n $p, which is right for
+          # every record in the corpus: the only four 245s carrying both $b and
+          # $n/$p put $b first, and the 246s never carry both. Each part is stripped of the ISBD punctuation that ends it
           # (the " :" before $b, the " /" before $c, a closing ".") -- except an
           # ellipsis -- and rejoined with ". " before a part and ": " before $b
           # (" = " or "; " when that is what $a ended with: a parallel title, or
@@ -521,9 +523,9 @@ WHERE {
             BIND(IF(REGEX(?t245a_raw, "=\\s*$") || REGEX(COALESCE(?t245b_raw, ""), "^\\s*="), " = ", IF(REGEX(?t245a_raw, ";\\s*$"), "; ", ": ")) AS ?t245b_sep)
             BIND(CONCAT(
               ?main_title_x,
+              COALESCE(CONCAT(?t245b_sep, ?subtitle_x), ""),
               COALESCE(CONCAT(". ", ?part_number_x), ""),
-              COALESCE(CONCAT(IF(BOUND(?part_number_x), ", ", ". "), ?part_name_x), ""),
-              COALESCE(CONCAT(?t245b_sep, ?subtitle_x), "")
+              COALESCE(CONCAT(IF(BOUND(?part_number_x), ", ", ". "), ?part_name_x), "")
             ) AS ?marc_title_x)
           }
 
@@ -658,9 +660,9 @@ WHERE {
             BIND(IF(REGEX(?v246a_raw, "=\\s*$") || REGEX(COALESCE(?v246b_raw, ""), "^\\s*="), " = ", IF(REGEX(?v246a_raw, ";\\s*$"), "; ", ": ")) AS ?v246b_sep)
             BIND(CONCAT(
               ?variant_main_x,
+              COALESCE(CONCAT(?v246b_sep, ?variant_subtitle_x), ""),
               COALESCE(CONCAT(". ", ?variant_part_number_x), ""),
-              COALESCE(CONCAT(IF(BOUND(?variant_part_number_x), ", ", ". "), ?variant_part_name_x), ""),
-              COALESCE(CONCAT(?v246b_sep, ?variant_subtitle_x), "")
+              COALESCE(CONCAT(IF(BOUND(?variant_part_number_x), ", ", ". "), ?variant_part_name_x), "")
             ) AS ?variant_label_x)
 
             BIND(REPLACE(COALESCE(?v246_ind2_raw, ""), "\\s+", "") AS ?v246_ind2)
