@@ -35,7 +35,13 @@
 {{ else }}
 <div class="no-image">
   <span>No image available</span>
+  {{- with .imagesAt }}
+  {{- range (split . "\n") }}{{ $p := split . "\t" }}
+  <a href="{{ index $p 0 }}">View images at {{ index $p 1 }}</a>
+  {{- end }}
+  {{- else }}
   <span>Image not provided for this record</span>
+  {{- end }}
 </div>
 {{ end }}
 </div>
@@ -137,6 +143,15 @@
   {{ with .oclcNumbers }}
   <dt>WorldCat</dt>
   <dd><a href="{{ $.worldcatLink }}">{{ . }}</a></dd>
+  {{ end }}
+
+  {{/* Images elsewhere (#17). A book with no image of its own links these
+       from the no-image placeholder above instead. */}}
+  {{ if and .imagesAt .images }}
+  <dt>Images elsewhere</dt>
+  {{- range (split .imagesAt "\n") }}{{ $p := split . "\t" }}
+  <dd><a href="{{ index $p 0 }}">{{ index $p 1 }}</a></dd>
+  {{- end }}
   {{ end }}
 </dl>
 </div>

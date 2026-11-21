@@ -39,6 +39,7 @@ CONSTRUCT {
     ab:hasSubject ?subjectConcept ;
     ab:sourceImage ?sourceImage ;
     ab:representativeImage ?thumbnail ;
+    ab:imagesAt ?imagesAt ;
     .
 
 
@@ -213,6 +214,7 @@ WHERE {
              (SAMPLE(?edition_x) AS ?edition)
              (SAMPLE(?summary_x) AS ?summary)
              (SAMPLE(?related_title_x) AS ?related_title)
+             (SAMPLE(?images_at_x) AS ?images_at)
              (SAMPLE(?name_x)  AS ?creator_name)
       WHERE {
         SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc/> {
@@ -522,7 +524,29 @@ WHERE {
               AS ?related_title_x
             )
           }  # end related-title branch
-          }  # end OPTIONAL creator/related-title extraction
+          UNION
+          {
+            # Where images of the book can be found, from MARC 856 $u (#17): one
+            # row per 856 field, grouped on its ?df like the 740s above. Only
+            # links on an allowlist of hosts are kept -- the ones that, when
+            # audited (2026-11-21), led to images of the book itself: a full PDF
+            # scan (Visual Studies Workshop, the Met's library) or a per-item
+            # image viewer (SCAD's Luna, LIBRARYSTACK, UW-Madison's digital
+            # collections). The other non-Artstor 856s are tables of contents,
+            # blurbs, catalogue records or paywalled proxies, and the
+            # library.artstor.org links duplicate the IIIF images from #9.
+            # Matching on the host rather than on the indicators or $z/$3
+            # wording is deliberate: those links are mostly 4 0, not 4 2, and the
+            # notes are inconsistent.
+            ?record fx:anySlot ?df .
+            ?df a marc:datafield ; xyz:tag "856" .
+
+            ?df fx:anySlot ?sf856u .
+            ?sf856u xyz:code "u" ; rdf:_1 ?images_at_raw .
+            BIND(REPLACE(?images_at_raw, "^\\s+|\\s+$", "") AS ?images_at_x)
+            FILTER(REGEX(?images_at_x, "^https?://((www\\.)?wsworkshop\\.org/artist_books/|scad\\.lunaimaging\\.com/|(www\\.)?librarystack\\.org/|libmma\\.s3-website-us-east-1\\.amazonaws\\.com/|digital\\.library\\.wisc\\.edu/)"))
+          }  # end images-at branch
+          }  # end OPTIONAL creator/related-title/images-at extraction
         }  # end inner per-record SERVICE
       }  # end folder-listing SERVICE
       }
@@ -747,6 +771,7 @@ WHERE {
     # punctuation-heavy and often non-Latin, which a slug would mangle or
     # collide.
     BIND(IF(BOUND(?related_title), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(STR(?related_title))), ?sentinel) AS ?relatedWork)
+    BIND(IF(BOUND(?images_at), IRI(?images_at), ?sentinel) AS ?imagesAt)
   }
 
   # Language falls back to the Zotero string (a plain literal) when the book's
