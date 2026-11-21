@@ -74,7 +74,7 @@ ab:imagesOnPageNumber a rdf:Property ;
 
 ab:constructedUsing a rdf:Property ;
     rdfs:label "constructed using" ;
-    rdfs:comment "Indicates techniques, materials, and production methods used in the construction of an Artist's Book. May also include the genre of the book like \"photographic sequence\"" ;
+    rdfs:comment "Indicates techniques, materials, and production methods used in the construction of an Artist's Book. Includes the genre/form of the book (e.g. \"photobooks\"): concepts in the scheme's Genre/Form category are also asserted with bf:genreForm." ;
     rdfs:domain ab:ArtistsBook.
 
 ab:categoryRank a rdf:Property ;
