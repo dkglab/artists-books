@@ -106,14 +106,28 @@ WHERE {
               GROUP BY ?book
             }
           }
+          # The imprint: every publication group's "place: publisher" (#196), in
+          # order, "; "-joined.
           OPTIONAL {
             {
-              SELECT ?book (SAMPLE(?d) AS ?date) (SAMPLE(?pl) AS ?place) (SAMPLE(?pb) AS ?publisher)
+              SELECT ?book (SAMPLE(?d) AS ?date)
+                     (GROUP_CONCAT(?part; separator="; ") AS ?imprintRaw)
               WHERE {
-                ?book bf:provisionActivity ?pub .
-                OPTIONAL { ?pub bflc:simpleDate  ?d . }
-                OPTIONAL { ?pub bflc:simplePlace ?pl . }
-                OPTIONAL { ?pub bflc:simpleAgent ?pb . }
+                {
+                  # Ordered by group (the URI's /publication/<n>, plain /publication
+                  # being group 1), which Jena's GROUP_CONCAT preserves.
+                  SELECT ?book ?d ?pl ?pb ?pub ?part WHERE {
+                    ?book bf:provisionActivity ?pub .
+                    OPTIONAL { ?pub bflc:simpleDate  ?d . }
+                    OPTIONAL { ?pub bflc:simplePlace ?pl . }
+                    OPTIONAL { ?pub bflc:simpleAgent ?pb . }
+                    BIND(CONCAT(COALESCE(STR(?pl), ""),
+                                IF(BOUND(?pl) && BOUND(?pb), ": ", ""),
+                                COALESCE(STR(?pb), "")) AS ?part)
+                    BIND(COALESCE(xsd:integer(STRAFTER(STR(?pub), "/publication/")), 1) AS ?n)
+                  }
+                  ORDER BY ?book ?n
+                }
               }
               GROUP BY ?book
             }
@@ -131,11 +145,8 @@ WHERE {
             BIND(xsd:integer(ROUND(?thumbMasterHeight * ?thumbWidth / ?thumbMasterWidth)) AS ?thumbHeight)
             BIND(CONCAT("https://www.jstor.org", ?thumbPath, "/full/400,/0/default.jpg") AS ?thumbUrl)
           }
-          BIND(CONCAT(
-                 COALESCE(STR(?place), ""),
-                 IF(BOUND(?place) && BOUND(?publisher), ": ", ""),
-                 COALESCE(STR(?publisher), "")
-               ) AS ?imprint)
+          # A group with neither place nor publisher leaves an empty part; drop it.
+          BIND(COALESCE(REPLACE(REPLACE(?imprintRaw, "^(; )+|(; )+$", ""), "(; ){2,}", "; "), "") AS ?imprint)
           BIND(CONCAT(
                  ?bookKey, "\t", ?title, "\t",
                  COALESCE(?creators, ""), "\t",

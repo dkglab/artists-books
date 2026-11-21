@@ -29,6 +29,14 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
+  {{- /* Co-published from several places (#196): one "place: publisher"
+         line per group, so each publisher stays with its place. */}}
+  {{- with .imprints }}
+  <dt>Imprint</dt>
+  {{ range (split . "\n") }}<dd>{{ . }}</dd>
+  {{ end }}
+  {{- end }}
+
   {{ with .date }}
   <dt>Date of publication</dt>
   <dd>{{ . }}</dd>

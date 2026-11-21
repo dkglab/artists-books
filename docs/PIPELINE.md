@@ -192,7 +192,8 @@ flowchart TD
 The publication statement of **both** tracks — the `bf:provisionActivity` edge
 and its `bf:Publication` node — is built by its own query,
 `queries/publications.rq` (#21), so the MARC 264/260 + 008 reading and the
-Zotero fallback are written once rather than in each construct query.
+Zotero fallback are written once rather than in each construct query. A work co-published from several places gets one `bf:Publication` per
+place/publisher group (#196).
 
 `*` `reference-works-marc/` is read only for the creators (every 1xx/7xx
 field with its roles, as for the books — #40 — their identity looked up in the

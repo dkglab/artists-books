@@ -17,13 +17,19 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # graph alongside theirs and merges everything into one default graph, so the
 # web queries reach ?pub bflc:simpleAgent exactly as before.
 #
+# A work has one bf:Publication per place/publisher group of its MARC
+# statement (#196, see below): /publication for the first, /publication/2 ...
+# for the rest. Most works have just the one.
+#
 # Each field comes from MARC where the work has a record, else from its
 # Zotero row:
-#   bflc:simpleAgent  264 ind2=1 (or pre-RDA 260) $b, co-publishers "; "-joined
-#   bflc:simplePlace  the same field's $a
+#   bflc:simpleAgent  the group's 264 ind2=1 (or pre-RDA 260) $b, several
+#                     "; "-joined
+#   bflc:simplePlace  the group's $a, likewise
 #   bflc:simpleDate   008 date1 (a "1972–1974" range for types m/i/k), else
-#                     the field's $c year, else the Zotero date
-#   bf:place          the LC country of publication from 008, when it names one
+#                     the field's $c year, else the Zotero date; on every group
+#   bf:place          the LC country of publication from 008, when it names
+#                     one; on the first group only
 CONSTRUCT {
   ?work bf:provisionActivity ?publication .
 
@@ -75,14 +81,21 @@ WHERE {
   # queries (docs/QUERY-PERFORMANCE.md), joined on the record's own 999 $a.
   OPTIONAL {
     {
-      SELECT ?track ?canonical_key
+      SELECT ?track ?canonical_key ?grp_x
              (SAMPLE(?record) AS ?marc_record)
              (SAMPLE(?date008_x) AS ?marc_date008)
              (SAMPLE(?country_x) AS ?marc_country)
              (SAMPLE(?pub_year_x) AS ?marc_pub_year)
-             (GROUP_CONCAT(DISTINCT ?pub_b_x; separator="; ") AS ?marc_publisher)
-             (GROUP_CONCAT(DISTINCT ?pub_a_x; separator="; ") AS ?marc_place)
+             (SAMPLE(?n_groups_x) AS ?marc_n_groups)
+             (GROUP_CONCAT(DISTINCT ?pub_b_x; separator="\t") AS ?marc_publisher_t)
+             (GROUP_CONCAT(DISTINCT ?pub_a_x; separator="\t") AS ?marc_place_t)
       WHERE {
+       # Sorted by record order, so that each group's places (and
+       # publishers) concatenate in the order the field gives them: Jena's
+       # GROUP_CONCAT keeps its input order, while the SERVICE's own is
+       # arbitrary.
+       {
+        SELECT * WHERE {
         SERVICE <x-sparql-anything:> {
           fxe:properties
             fxe:content "track,csv,marc\nitem,sources/artists-books.csv,sources/marc/artists-books-marc/\nreference,sources/reference-works.csv,sources/marc/reference-works-marc/\n" ;
@@ -111,52 +124,144 @@ WHERE {
             # or, in pre-RDA records, the 260 -- each about half the corpus,
             # and only one record carries both. The other 264s (ind2 0/2/3/4:
             # production, distribution, manufacture, copyright) are not read.
-            # $b and $a are aggregated, since a co-published book lists
-            # several. Each subfield is its own OPTIONAL so that dropping a
-            # placeholder ("[s.n.]", "[publisher not identified]", "S.l.") only
-            # drops that value. The FILTER sits inside the OPTIONAL rather than
-            # binding a sentinel because of the Jena trap in CLAUDE.md: a
-            # GROUP_CONCAT over a group in which any row leaves its variable
-            # unbound comes back unbound altogether.
             #
-            # Cleanup: "[u.a.]"/"[et al.]" and square brackets (cataloguer-
-            # supplied) are removed, then the ISBD punctuation that ends a
-            # subfield (" :", ",", " ;"), then (publisher only) a trailing "."
-            # unless it ends an abbreviation. Words of under four letters
-            # ("Ed.", "Co.") are never stripped. Longer ones ("Publ.",
-            # "Univ.") are listed.
-            OPTIONAL {
-              ?record fx:anySlot ?dfpb .
-              ?dfpb a marc:datafield ; xyz:tag ?pb_tag ; xyz:ind2 ?pb_ind2 .
-              FILTER(?pb_tag = "260" || (?pb_tag = "264" && ?pb_ind2 = "1"))
-              ?dfpb fx:anySlot ?sfpb .
-              ?sfpb xyz:code "b" ; rdf:_1 ?pub_b_raw .
-              BIND(REPLACE(REPLACE(REPLACE(REPLACE(?pub_b_raw,
-                     "\\[?\\b(u\\.\\s*a|et al|etc)\\.\\]?", ""),
-                     "[\\[\\]]", ""),
-                     "^[\\s:;,]+|[\\s:;,/]+$", ""),
-                     "(?i)(\\b(?!publ|corp|assoc|dept|univ|bros|verl|inst|internat|intl|natl|soc)\\w{4,})\\.$", "$1")
-                   AS ?pub_b_x)
-              FILTER(?pub_b_x != "" && !REGEX(?pub_b_x,
-                     "^s\\.\\s*n\\.?$|^sine nomine$|^no publisher|not ident|not idenf|nicht ermittel|non identifi|no identificad",
-                     "i"))
+            # Its $a places and $b publishers fall into groups (#196): a run of
+            # places, then a run of publishers, each publisher going with the
+            # places before it --
+            #   $a Ostfildern : $b Hatje Cantz ; $a Edmonton : $b Art Gallery
+            # is two groups, "$a London ; $a New York : $b Phaidon" is one. A
+            # record with several such fields (co-publishers catalogued one
+            # field each, or a serial's change of publisher) has at least one
+            # group per field. Each group becomes its own bf:Publication.
+            #
+            # Groups are found by subfield position (docs/QUERY-PERFORMANCE.md,
+            # "Reading subfield order"): an $a or $b subfield *starts* a group
+            # unless an earlier $a/$b of the same field continues it. Any
+            # earlier one continues a $b; only an earlier $a with no $b in
+            # between continues an $a. And an $a with no $b after it in its
+            # field starts nothing, unless it is the field's first: in
+            # "$a Madrid : $b SEACEX ; $a Barcelona" (or the misordered
+            # "$b BBC $a London") the stray place stays with the publisher
+            # rather than standing alone. A subfield's group number is then the
+            # count of starts at or before it in record order (field position,
+            # then subfield position). Both subqueries run inside the
+            # per-record SERVICE, so the self-joins are over one record's small
+            # graph and cost next to nothing. Positions come from the slot
+            # IRIs via STRAFTER rather than fx:cardinal, which fails inside a
+            # SERVICE.
+            {
+              SELECT (COUNT(DISTINCT ?nst) AS ?n_groups_x) WHERE {
+                ?nr fx:anySlot ?ndf .
+                ?ndf a marc:datafield ; xyz:tag ?ntag ; xyz:ind2 ?nind2 .
+                FILTER(?ntag = "260" || (?ntag = "264" && ?nind2 = "1"))
+                ?ndf fx:anySlot ?nst .
+                ?nst xyz:code ?nct .
+                FILTER(?nct IN ("a", "b"))
+                ?ndf ?nslot ?nst .
+                BIND(xsd:integer(STRAFTER(STR(?nslot), "#_")) AS ?ntp)
+                FILTER(?nct = "b"
+                       || EXISTS { ?ndf fx:anySlot ?nsz . ?nsz xyz:code "b" . ?ndf ?nslotz ?nsz .
+                                  FILTER(xsd:integer(STRAFTER(STR(?nslotz), "#_")) > ?ntp) }
+                       || NOT EXISTS { ?ndf fx:anySlot ?nsw . ?nsw xyz:code ?ncw . ?ndf ?nslotw ?nsw .
+                                      FILTER(?ncw IN ("a", "b") && xsd:integer(STRAFTER(STR(?nslotw), "#_")) < ?ntp) })
+                FILTER NOT EXISTS {
+                  ?ndf fx:anySlot ?nsx .
+                  ?nsx xyz:code ?ncx .
+                  FILTER(?ncx IN ("a", "b") && (?nct = "b" || ?ncx = "a"))
+                  ?ndf ?nslotx ?nsx .
+                  BIND(xsd:integer(STRAFTER(STR(?nslotx), "#_")) AS ?nxp)
+                  FILTER(?nxp < ?ntp)
+                  FILTER NOT EXISTS {
+                    ?ndf fx:anySlot ?nsy .
+                    ?nsy xyz:code "b" .
+                    ?ndf ?nsloty ?nsy .
+                    BIND(xsd:integer(STRAFTER(STR(?nsloty), "#_")) AS ?nyp)
+                    FILTER(?nxp < ?nyp && ?nyp < ?ntp)
+                  }
+                }
+              }
             }
+            # Each $a/$b, with its group number and its position in the record
+            # (1000 x field slot + subfield slot). The start test is the one
+            # above, repeated (a subquery can't be shared).
+            #
+            # Each value is cleaned and placeholders ("[s.n.]", "[publisher
+            # not identified]", "S.l.") are dropped inside the OPTIONAL, so
+            # dropping one only drops that value. Cleanup: "[u.a.]"/"[et al.]"
+            # and square brackets (cataloguer-supplied) are removed, then the
+            # ISBD punctuation that ends a subfield (" :", ",", " ;"), then
+            # (publisher only) a trailing "." unless it ends an abbreviation.
+            # Words of under four letters ("Ed.", "Co.") are never stripped.
+            # Longer ones ("Publ.", "Univ.") are listed. A place keeps its
+            # trailing ".": it is nearly always abbreviated ("Calif.", "N.Y.").
             OPTIONAL {
-              ?record fx:anySlot ?dfpa .
-              ?dfpa a marc:datafield ; xyz:tag ?pa_tag ; xyz:ind2 ?pa_ind2 .
-              FILTER(?pa_tag = "260" || (?pa_tag = "264" && ?pa_ind2 = "1"))
-              ?dfpa fx:anySlot ?sfpa .
-              ?sfpa xyz:code "a" ; rdf:_1 ?pub_a_raw .
-              # No trailing-"." strip here: a place that ends in one is
-              # nearly always abbreviated ("Calif.", "Mass.", "N.Y.").
-              BIND(REPLACE(REPLACE(REPLACE(?pub_a_raw,
+              {
+                SELECT ?sfg (COUNT(DISTINCT ?st) AS ?grp_x) (SAMPLE(1000 * ?fpg + ?pg) AS ?pos_x) WHERE {
+                  ?gr fx:anySlot ?dfg .
+                  ?dfg a marc:datafield ; xyz:tag ?gtag ; xyz:ind2 ?gind2 .
+                  FILTER(?gtag = "260" || (?gtag = "264" && ?gind2 = "1"))
+                  ?gr ?fslotg ?dfg .
+                  ?dfg fx:anySlot ?sfg .
+                  ?sfg xyz:code ?cg .
+                  FILTER(?cg IN ("a", "b"))
+                  ?dfg ?slotg ?sfg .
+                  BIND(xsd:integer(STRAFTER(STR(?fslotg), "#_")) AS ?fpg)
+                  BIND(xsd:integer(STRAFTER(STR(?slotg), "#_")) AS ?pg)
+
+                  ?gr fx:anySlot ?dft .
+                  ?dft a marc:datafield ; xyz:tag ?ttag ; xyz:ind2 ?tind2 .
+                  FILTER(?ttag = "260" || (?ttag = "264" && ?tind2 = "1"))
+                  ?gr ?fslott ?dft .
+                  ?dft fx:anySlot ?st .
+                  ?st xyz:code ?ct .
+                  FILTER(?ct IN ("a", "b"))
+                  ?dft ?slott ?st .
+                  BIND(xsd:integer(STRAFTER(STR(?fslott), "#_")) AS ?ftp)
+                  BIND(xsd:integer(STRAFTER(STR(?slott), "#_")) AS ?tp)
+                  FILTER(?ftp < ?fpg || (?ftp = ?fpg && ?tp <= ?pg))
+                  FILTER(?ct = "b"
+                         || EXISTS { ?dft fx:anySlot ?sz . ?sz xyz:code "b" . ?dft ?slotz ?sz .
+                                    FILTER(xsd:integer(STRAFTER(STR(?slotz), "#_")) > ?tp) }
+                         || NOT EXISTS { ?dft fx:anySlot ?sw . ?sw xyz:code ?cw . ?dft ?slotw ?sw .
+                                        FILTER(?cw IN ("a", "b") && xsd:integer(STRAFTER(STR(?slotw), "#_")) < ?tp) })
+                  FILTER NOT EXISTS {
+                    ?dft fx:anySlot ?sx .
+                    ?sx xyz:code ?cx .
+                    FILTER(?cx IN ("a", "b") && (?ct = "b" || ?cx = "a"))
+                    ?dft ?slotx ?sx .
+                    BIND(xsd:integer(STRAFTER(STR(?slotx), "#_")) AS ?xp)
+                    FILTER(?xp < ?tp)
+                    FILTER NOT EXISTS {
+                      ?dft fx:anySlot ?sy .
+                      ?sy xyz:code "b" .
+                      ?dft ?sloty ?sy .
+                      BIND(xsd:integer(STRAFTER(STR(?sloty), "#_")) AS ?yp)
+                      FILTER(?xp < ?yp && ?yp < ?tp)
+                    }
+                  }
+                }
+                GROUP BY ?sfg
+              }
+              ?sfg xyz:code ?g_code ; rdf:_1 ?g_raw .
+              BIND(REPLACE(REPLACE(REPLACE(?g_raw,
                      "\\[?\\b(u\\.\\s*a|et al|etc)\\.\\]?", ""),
                      "[\\[\\]]", ""),
                      "^[\\s:;,]+|[\\s:;,/]+$", "")
-                   AS ?pub_a_x)
-              FILTER(?pub_a_x != "" && !REGEX(?pub_a_x,
-                     "^s\\.\\s*l\\.?$|^sine loco$|not ident|not idenf|nicht ermittel|non identifi|no identificad",
-                     "i"))
+                   AS ?g_clean)
+              BIND(IF(?g_code = "b",
+                      REPLACE(?g_clean, "(?i)(\\b(?!publ|corp|assoc|dept|univ|bros|verl|inst|internat|intl|natl|soc)\\w{4,})\\.$", "$1"),
+                      ?g_clean)
+                   AS ?g_val)
+              FILTER(?g_val != "")
+              FILTER(IF(?g_code = "b",
+                        !REGEX(?g_val, "^s\\.\\s*n\\.?$|^sine nomine$|^no publisher|not ident|not idenf|nicht ermittel|non identifi|no identificad", "i"),
+                        !REGEX(?g_val, "^s\\.\\s*l\\.?$|^sine loco$|not ident|not idenf|nicht ermittel|non identifi|no identificad", "i")))
+              # The other code's variable is "" rather than unbound: the Jena
+              # trap in CLAUDE.md (a GROUP_CONCAT over a group in which any row
+              # leaves its variable unbound comes back unbound altogether).
+              # The empty tokens are squeezed out after aggregating.
+              BIND(IF(?g_code = "b", ?g_val, "") AS ?pub_b_x)
+              BIND(IF(?g_code = "a", ?g_val, "") AS ?pub_a_x)
             }
             # $c only as a year source for records with no usable 008 -- the
             # eHive/UW records synthesized from JSON (#99) carry none. The
@@ -197,10 +302,19 @@ WHERE {
           }  # end inner per-record SERVICE
         }  # end folder-listing SERVICE
         }  # end track-table SERVICE
+        }
+        ORDER BY ?pos_x
+       }
       }
-      GROUP BY ?track ?canonical_key
+      # One row per publication group. A record with no $a/$b at all leaves
+      # ?grp_x unbound and gives a single row, taken as group 1 below.
+      GROUP BY ?track ?canonical_key ?grp_x
     }
+    # Squeeze out the empty tokens (see ?pub_b_x) and join the rest.
+    BIND(REPLACE(REPLACE(?marc_publisher_t, "^\t+|\t+$", ""), "\t+", "; ") AS ?marc_publisher)
+    BIND(REPLACE(REPLACE(?marc_place_t, "^\t+|\t+$", ""), "\t+", "; ") AS ?marc_place)
   }
+  BIND(COALESCE(?grp_x, 1) AS ?group)
 
   # Emit only for works the track's own query emits. A reference work needs a
   # Zotero title. A book needs a Zotero title or a MARC record (whose 245
@@ -209,7 +323,12 @@ WHERE {
   FILTER(BOUND(?zotero_title) || (?track = "item" && BOUND(?marc_record)))
 
   BIND(fx:entity(ab:, ?track, "/", ?canonical_key) AS ?work)
-  BIND(fx:entity(ab:, ?track, "/", ?canonical_key, "/publication") AS ?publication)
+  # The first group keeps the plain /publication URI (it is the only one for
+  # all but ~180 works); the others are /publication/2, /publication/3 ...
+  BIND(IF(?group = 1,
+          fx:entity(ab:, ?track, "/", ?canonical_key, "/publication"),
+          fx:entity(ab:, ?track, "/", ?canonical_key, "/publication/", STR(?group)))
+       AS ?publication)
 
   # Year guard (#193): a MARC record whose year is more than one year from the
   # Zotero year (outside its range, for an m/i/k range) probably describes
@@ -242,8 +361,25 @@ WHERE {
   # MARC first, Zotero as the fallback, field by field. An empty GROUP_CONCAT
   # (a record whose only $b is a placeholder) is unbound or "", so both fall
   # through.
-  BIND(COALESCE(IF(?marc_publisher_ok != "", ?marc_publisher_ok, ?sentinel), ?zotero_publisher_ok) AS ?publisher)
-  BIND(COALESCE(IF(?marc_place_ok != "", ?marc_place_ok, ?sentinel), ?zotero_place_ok) AS ?place)
+  #
+  # The Zotero values are one unstructured string for the whole statement, so
+  # they fall back only onto a work with a single MARC group (or none, or one
+  # the year guard rejected), where they stand in for exactly what is missing.
+  # Onto group 1 of several they would repeat the other groups' publishers.
+  BIND(?group = 1 && (?marc_year_conflict || COALESCE(?marc_n_groups, 0) <= 1) AS ?zotero_fallback)
+  BIND(COALESCE(IF(?marc_publisher_ok != "", ?marc_publisher_ok, ?sentinel),
+                IF(?zotero_fallback, ?zotero_publisher_ok, ?sentinel)) AS ?publisher)
+  BIND(COALESCE(IF(?marc_place_ok != "", ?marc_place_ok, ?sentinel),
+                IF(?zotero_fallback, ?zotero_place_ok, ?sentinel)) AS ?place)
+  # The date belongs to the whole statement, so every group repeats it. The
+  # 008 country is a single code for the whole record, which needn't match
+  # every group's place, so only the first group carries it.
   BIND(COALESCE(?marc_date_ok, ?zotero_date) AS ?date)
-  BIND(IF(BOUND(?marc_country_ok), IRI(CONCAT("http://id.loc.gov/vocabulary/countries/", ?marc_country_ok)), ?sentinel) AS ?placeCountry)
+  BIND(IF(?group = 1 && BOUND(?marc_country_ok), IRI(CONCAT("http://id.loc.gov/vocabulary/countries/", ?marc_country_ok)), ?sentinel) AS ?placeCountry)
+
+  # Group 1 is always emitted, as /publication always was: it carries the date
+  # even when MARC and Zotero name no publisher or place. A later group is
+  # emitted only when it has a place or publisher of its own (not when it was
+  # all placeholders), and not at all when the year guard rejected the MARC.
+  FILTER(?group = 1 || (!?marc_year_conflict && (BOUND(?publisher) || BOUND(?place))))
 }
