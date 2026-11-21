@@ -604,6 +604,53 @@ WHERE {
           }  # end related-title branch
           UNION
           {
+            # Related works from MARC 730 uniform titles (#32): one row per
+            # field, grouped on its ?df like the 740s. In this collection they
+            # are mostly the serial a book was issued in ("Journal of artists'
+            # books. No. 35 (Supplement)"), source texts (Bible, Aesop) and
+            # newspapers used as material. The title is $a, $n and $p, each
+            # after ". " as in a uniform title; $l/$s/$f/$k describe the
+            # expression, not the work, and are left out. $p can repeat
+            # ("Bible. O.T. Job XXXVIII"), so its first and second occurrence
+            # are read by subfield position (as in publications.rq: STRAFTER on
+            # the slot IRI, since fx:cardinal fails inside this SERVICE); no
+            # field here has three. Trailing punctuation is stripped from each
+            # part, except the period of a closing initialism ("O.T.").
+            ?record fx:anySlot ?df .
+            ?df a marc:datafield ; xyz:tag "730" .
+
+            ?df fx:anySlot ?sf730a .
+            ?sf730a xyz:code "a" ; rdf:_1 ?ut730a_raw .
+            OPTIONAL { ?df fx:anySlot ?sf730n . ?sf730n xyz:code "n" ; rdf:_1 ?ut730n_raw . }
+            OPTIONAL {
+              ?df fx:anySlot ?sf730p . ?sf730p xyz:code "p" ; rdf:_1 ?ut730p_raw .
+              ?df ?slot730p ?sf730p .
+              BIND(xsd:integer(STRAFTER(STR(?slot730p), "#_")) AS ?pos730p)
+              FILTER NOT EXISTS {
+                ?df fx:anySlot ?sf730e . ?sf730e xyz:code "p" . ?df ?slot730e ?sf730e .
+                FILTER(xsd:integer(STRAFTER(STR(?slot730e), "#_")) < ?pos730p)
+              }
+            }
+            OPTIONAL {
+              ?df fx:anySlot ?sf730q . ?sf730q xyz:code "p" ; rdf:_1 ?ut730q_raw .
+              ?df ?slot730q ?sf730q .
+              FILTER(xsd:integer(STRAFTER(STR(?slot730q), "#_")) > ?pos730p)
+            }
+
+            BIND(REPLACE(?ut730a_raw, "^\\s+|[\\s,;:/]+$", "") AS ?ut730a_s)
+            BIND(REPLACE(?ut730n_raw, "^\\s+|[\\s,;:/]+$", "") AS ?ut730n_s)
+            BIND(REPLACE(?ut730p_raw, "^\\s+|[\\s,;:/]+$", "") AS ?ut730p_s)
+            BIND(REPLACE(?ut730q_raw, "^\\s+|[\\s,;:/]+$", "") AS ?ut730q_s)
+            BIND(CONCAT(
+              IF(REGEX(?ut730a_s, "(^|[\\s.])[A-Z]\\.$"), ?ut730a_s, REPLACE(?ut730a_s, "\\.$", "")),
+              COALESCE(CONCAT(". ", IF(REGEX(?ut730n_s, "(^|[\\s.])[A-Z]\\.$"), ?ut730n_s, REPLACE(?ut730n_s, "\\.$", ""))), ""),
+              COALESCE(CONCAT(". ", IF(REGEX(?ut730p_s, "(^|[\\s.])[A-Z]\\.$"), ?ut730p_s, REPLACE(?ut730p_s, "\\.$", ""))), ""),
+              COALESCE(CONCAT(IF(REGEX(?ut730p_s, "\\.$"), " ", ". "), IF(REGEX(?ut730q_s, "(^|[\\s.])[A-Z]\\.$"), ?ut730q_s, REPLACE(?ut730q_s, "\\.$", ""))), "")
+            ) AS ?related_title_x)
+            FILTER(?related_title_x != "")
+          }  # end uniform-title branch
+          UNION
+          {
             # Related works from name/title added entries (#32): a 700/710/711
             # with a $t names a work the book is related to (inspired by, an
             # adaptation of, a container of ...) and, in $a, that work's
@@ -931,14 +978,15 @@ WHERE {
     # treats a row's unbound ?ctag/?creator_name as a wildcard, so a 740 or
     # 856 row can come out of it with a creator bound.
     BIND(IF(BOUND(?creator_key) && !BOUND(?name_title), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
-    # Related works (740 and 7xx name/title, #32) are deliberately scoped per
+    # Related works (740, 730 and 7xx name/title, #32) are deliberately scoped per
     # book and left unreconciled for now: the same title on two books is two
     # bf:Work nodes, and one matching a book already in the collection is not
     # yet linked to its item/ URI. The title is hashed rather than slugged
     # because these titles are long, punctuation-heavy and often non-Latin,
     # which a slug would mangle or collide. A name/title work hashes its
     # creator's $a in too ("name|title"), so two authors' works of one title
-    # stay apart; a 740 keeps its title-only hash.
+    # stay apart; a 740 or 730 keeps its title-only hash, so a 730 and a 740
+    # of one title on one book are one work.
     BIND(IF(BOUND(?related_title), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(IF(BOUND(?name_title), CONCAT(?creator_name, "|", ?related_title), STR(?related_title)))), ?sentinel) AS ?relatedWork)
     BIND(IF(BOUND(?name_title) && BOUND(?creator_key), IRI(CONCAT(STR(?relatedWork), "/contribution/", ?creator_key)), ?sentinel) AS ?relatedWorkContribution)
     BIND(IF(BOUND(?images_at), IRI(?images_at), ?sentinel) AS ?imagesAt)
