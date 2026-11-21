@@ -71,6 +71,7 @@ sources/construction/occurrences.csv \
 sources/construction/decisions.csv \
 sources/subjects/occurrences.csv \
 sources/subjects/decisions.csv \
+sources/titles/740-variant-titles.csv \
 sources/artstor-ssid.csv \
 sources/ssid-media.csv
 

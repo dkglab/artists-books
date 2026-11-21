@@ -19,6 +19,7 @@ CONSTRUCT {
     rdfs:label ?title ;
     bf:title ?bookTitle ;
     bf:title ?variantTitle ;
+    bf:title ?variant740Title ;
     ab:itemKey ?canonical_key ;
     ab:heldBySloane ?held_flag ;
     bf:contribution ?contribution ;
@@ -56,6 +57,15 @@ CONSTRUCT {
     bf:subtitle ?subtitle ;
     bf:partNumber ?part_number ;
     bf:partName ?part_name ;
+    .
+
+  # A 740 that is really another title of the book itself (#32), listed by
+  # hand in sources/titles/740-variant-titles.csv: emitted as a variant title
+  # instead of a related work.
+  ?variant740Title a bf:VariantTitle ;
+    rdfs:label ?related_title ;
+    bf:mainTitle ?related_title ;
+    bf:variantType ?v740_type ;
     .
 
   # Variant titles from MARC 246 (#20): cover, spine, parallel, portion ...
@@ -241,6 +251,7 @@ WHERE {
              (SAMPLE(?summary_x) AS ?summary)
              (SAMPLE(?related_title_x) AS ?related_title)
              (SAMPLE(?name_title_x) AS ?name_title)
+             (SAMPLE(?from740_x) AS ?from740)
              (SAMPLE(?relationship_x) AS ?relationship_label)
              (SAMPLE(?work_authority_x) AS ?work_authority)
              (SAMPLE(?work_rwo_x) AS ?work_rwo)
@@ -597,8 +608,18 @@ WHERE {
             # each field its own group. Trailing cataloguing punctuation is
             # stripped as for the other MARC fields -- except from $a when a $n
             # follows, where "Tabe." + "#11." reads correctly as "Tabe. #11".
+            #
+            # A 740 with ind2 2 is an analytical entry: a work the book
+            # contains -- one piece of a collection ("[Totems]": "Double caution
+            # totem"), a later work in a 245 without a collective title ("Por la
+            # mañana ; Por la noche"), or a contained work's title in another
+            # language. So it gets the "Container of (work)" relationship a 7xx
+            # $i would state. The few that are really another title of the book
+            # itself are moved to variant titles by hand (see ?v740_hit below).
             ?record fx:anySlot ?df .
             ?df a marc:datafield ; xyz:tag "740" .
+            BIND(true AS ?from740_x)
+            OPTIONAL { ?df xyz:ind2 "2" . BIND("Container of (work)" AS ?relationship_x) }
 
             ?df fx:anySlot ?sf740a .
             ?sf740a xyz:code "a" ; rdf:_1 ?related_title_a .
@@ -620,6 +641,18 @@ WHERE {
               )
               AS ?related_title_x
             )
+            # A 740 repeating a 7xx name/title entry of the same record (an
+            # uncontrolled title access point for a work also entered under its
+            # creator: "Por la tarde" beside "Lenardón, Gloria. Por la tarde") is
+            # dropped; the 7xx is the richer entry -- creator, and often ids.
+            FILTER NOT EXISTS {
+              ?record fx:anySlot ?df740x .
+              ?df740x a marc:datafield ; xyz:tag ?tag740x .
+              FILTER(?tag740x IN ("700", "710", "711"))
+              ?df740x fx:anySlot ?sf740x .
+              ?sf740x xyz:code "t" ; rdf:_1 ?t740x_raw .
+              FILTER(LCASE(REPLACE(?t740x_raw, "^\\s+|[\\s.,;:/]+$", "")) = LCASE(?related_title_x))
+            }
           }  # end related-title branch
           UNION
           {
@@ -716,10 +749,14 @@ WHERE {
 
             # $i relationship designator ("Container of (work):", "Inspired
             # by :"), minus its colon and the space some records put before it.
-            OPTIONAL {
-              ?df fx:anySlot ?sfti . ?sfti xyz:code "i" ; rdf:_1 ?name_title_i_raw .
-              BIND(REPLACE(?name_title_i_raw, "^\\s+|[\\s:]+$", "") AS ?relationship_x)
-            }
+            # Without an $i, ind2 2 still says the book contains the work, as
+            # for a 740.
+            OPTIONAL { ?df fx:anySlot ?sfti . ?sfti xyz:code "i" ; rdf:_1 ?name_title_i_raw . }
+            OPTIONAL { ?df xyz:ind2 ?name_title_ind2 }
+            BIND(COALESCE(
+              REPLACE(?name_title_i_raw, "^\\s+|[\\s:]+$", ""),
+              IF(COALESCE(?name_title_ind2, "") = "2", "Container of (work)", ?sentinel)
+            ) AS ?relationship_x)
 
             # The work's identifiers (#32): $0 its LC name-title / uniform-title
             # authority, $1 its real-world-object URI (VIAF, or an LC Hub). Read
@@ -1056,7 +1093,25 @@ WHERE {
     # creator's $a in too ("name|title"), so two authors' works of one title
     # stay apart; a 740 or 730 keeps its title-only hash, so a 730 and a 740
     # of one title on one book are one work.
-    BIND(IF(BOUND(?related_title), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(IF(BOUND(?name_title), CONCAT(?creator_name, "|", ?related_title), STR(?related_title)))), ?sentinel) AS ?relatedWork)
+    # 740s that are really variant titles of the book (#32): a hand list of
+    # (book, title) pairs, joined on one shared key so it is read once and
+    # hash-joined. Rows that are not 740s get a key no CSV row has: left
+    # unbound, the shared variable would match every row of the list.
+    BIND(IF(BOUND(?from740), CONCAT(?canonical_key, "|", ?related_title), "-") AS ?v740_join)
+    OPTIONAL {
+      SELECT ?v740_join ?v740_type ?v740_hit WHERE {
+        SERVICE <x-sparql-anything:location=sources/titles/740-variant-titles.csv,csv.headers=true> {
+          ?v740Row xyz:canonicalKey ?v740_key ;
+                   xyz:title        ?v740_title .
+          OPTIONAL { ?v740Row xyz:variantType ?v740_type_raw }
+        }
+        BIND(CONCAT(?v740_key, "|", ?v740_title) AS ?v740_join)
+        BIND(IF(COALESCE(?v740_type_raw, "") != "", ?v740_type_raw, ?sentinel) AS ?v740_type)
+        BIND(true AS ?v740_hit)
+      }
+    }
+    BIND(IF(BOUND(?v740_hit), fx:entity(ab:, "item/", ?canonical_key, "/variant-title/", SHA256(CONCAT(?related_title, "|", COALESCE(?v740_type, "")))), ?sentinel) AS ?variant740Title)
+    BIND(IF(BOUND(?related_title) && !BOUND(?v740_hit), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(IF(BOUND(?name_title), CONCAT(?creator_name, "|", ?related_title), STR(?related_title)))), ?sentinel) AS ?relatedWork)
     # The relation (#32) hangs off the related work's own URI, which is already
     # per book, and is keyed by its relationship too: one work can be the
     # target of two designators (Oe's "Map" is entered both as a contained
