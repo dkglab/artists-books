@@ -64,14 +64,20 @@
 <h2>Cites</h2>
 <ul class="chevron-list">
 {{- range (split . "\n") }}
-{{- /* itemKey <TAB> title <TAB> citation pages <TAB> image pages — see web/queries/references.rq */}}
+{{- /* itemKey <TAB> title <TAB> citation pages <TAB> image pages <TAB> creators
+       — see web/queries/references.rq */}}
 {{- $fields := split . "\t" }}
 {{- $pageNumbers := index $fields 2 }}
 {{- $imagePageNumbers := index $fields 3 }}
+{{- $creators := index $fields 4 }}
 {{- /* Both page lists may be empty. Whichever comes first is set off with an
        em dash; a following one is joined with a semicolon. */}}
 <li>
   <a href="/item/{{ index $fields 0 }}">{{ index $fields 1 }}</a>
+  {{- /* The book's creators (#50): agentKey <US> name, joined by RS. */}}
+  {{- with $creators }} ·
+    {{- range $i, $c := split . "\x1e" }}{{ $f := split $c "\x1f" }}{{ if $i }};{{ end }} <a href="/creator/{{ index $f 0 }}">{{ index $f 1 }}</a>{{ end }}
+  {{- end }}
   {{- with $pageNumbers }} — cited on page{{ template "plural-s" . }} {{ . }}{{ end }}
   {{- with $imagePageNumbers }}
     {{- if $pageNumbers }};{{ else }} —{{ end }} image{{ template "plural-s" . }} on page{{ template "plural-s" . }} {{ . }}

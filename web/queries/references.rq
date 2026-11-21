@@ -40,18 +40,20 @@ SELECT
   (SAMPLE(?oclcNumbers) AS ?oclcNumber)
   (SAMPLE(?worldcatLinks) AS ?worldcatLink)
   (GROUP_CONCAT(DISTINCT ?isbn; separator="; ") AS ?isbns)
-  # Each cited book as a four-field TAB-separated token, tokens separated by
+  # Each cited book as a five-field TAB-separated token, tokens separated by
   # newline, so the template can link each title to its /item/ page and print
-  # the page numbers after it. Field order is positional — the template indexes
-  # it — and every field is always present, so an absent page list is an empty
-  # field rather than a missing one:
-  #   itemKey <TAB> title <TAB> citation pages <TAB> image pages
+  # its creators and the page numbers after it. Field order is positional — the
+  # template indexes it — and every field is always present, so an absent list
+  # is an empty field rather than a missing one:
+  #   itemKey <TAB> title <TAB> citation pages <TAB> image pages <TAB> creators
+  # The creators field nests its own list (see ?citedCreators below).
   (GROUP_CONCAT(
     DISTINCT CONCAT(
       ?citedBookKey, "\t",
       ?citedTitle, "\t",
       COALESCE(?pageNumbers, ""), "\t",
-      COALESCE(?imagePageNumbers, "")
+      COALESCE(?imagePageNumbers, ""), "\t",
+      COALESCE(?citedCreators, "")
     );
     separator="\n"
   ) AS ?citedBooks)
@@ -269,6 +271,40 @@ WHERE {
         }
       }
       GROUP BY ?citation
+    }
+  }
+
+  # Each cited book's creators (#50), the credit that identifies the book in
+  # the list: its primary contributors (MARC 1xx, or its Zotero creators), else,
+  # for a book with no 1xx, its 7xx contributors — the same fallback the
+  # reference index uses for edited volumes. Each creator is
+  # "agentKey<US>name" (US = U+001F), creators joined by RS (U+001E) and sorted
+  # by name: control characters, because the list sits inside a TAB-separated
+  # field of a newline-separated token and a name may hold any printable
+  # character. Aggregated per book in its own subquery, like the page lists,
+  # so the contributions can't multiply the outer solutions.
+  OPTIONAL {
+    {
+      SELECT ?citedBook (GROUP_CONCAT(?creatorToken; separator="\u001E") AS ?citedCreators)
+      WHERE {
+        {
+          SELECT DISTINCT ?citedBook ?creatorToken ?creatorName
+          WHERE {
+            { SELECT DISTINCT ?citedBook WHERE { ?anyCitation ab:cites ?citedBook . } }
+            ?citedBook bf:contribution ?cc .
+            {
+              ?cc a bflc:PrimaryContribution .
+            } UNION {
+              ?cc a bf:Contribution .
+              FILTER NOT EXISTS { ?citedBook bf:contribution/a bflc:PrimaryContribution }
+            }
+            ?cc bf:agent/rdfs:label ?creatorName .
+            BIND(CONCAT(REPLACE(STR(?cc), "^.*/contribution/", ""), "\u001F", ?creatorName) AS ?creatorToken)
+          }
+          ORDER BY ?citedBook LCASE(?creatorName) ?creatorToken
+        }
+      }
+      GROUP BY ?citedBook
     }
   }
 
