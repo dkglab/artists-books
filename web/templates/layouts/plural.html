@@ -1,0 +1,9 @@
+{{/* "plural-s": prints "s" when a citation page list names more than one page,
+     for "page{{ template "plural-s" . }}". A list is the ", "-joined page values
+     built by the web queries (#16), and every value is a single page ("369")
+     or a range ("279-80"), so it is plural exactly when it holds a comma or a
+     hyphen. Snowman's split is the only string test needed: a string without
+     the separator splits to one piece. */}}
+{{- define "plural-s" -}}
+{{- if or (gt (len (split . ", ")) 1) (gt (len (split . "-")) 1) }}s{{ end -}}
+{{- end -}}

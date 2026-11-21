@@ -146,8 +146,19 @@
 <h2>Cited by:</h2>
 <ul class="chevron-list">
 {{- range (split . "\n") }}
-{{- $pair := split . "\t" }}
-<li><a href="/reference/{{ index $pair 0 }}">{{ index $pair 1 }}</a></li>
+{{- /* refKey <TAB> title <TAB> citation pages <TAB> image pages — see web/queries/artists-books.rq */}}
+{{- $fields := split . "\t" }}
+{{- $pageNumbers := index $fields 2 }}
+{{- $imagePageNumbers := index $fields 3 }}
+{{- /* Both page lists may be empty. Whichever comes first is set off with an
+       em dash; a following one is joined with a semicolon (as on reference.html). */}}
+<li>
+  <a href="/reference/{{ index $fields 0 }}">{{ index $fields 1 }}</a>
+  {{- with $pageNumbers }} — cited on page{{ template "plural-s" . }} {{ . }}{{ end }}
+  {{- with $imagePageNumbers }}
+    {{- if $pageNumbers }};{{ else }} —{{ end }} image{{ template "plural-s" . }} on page{{ template "plural-s" . }} {{ . }}
+  {{- end }}
+</li>
 {{- end }}
 </ul>
 </div>
