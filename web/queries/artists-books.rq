@@ -63,6 +63,9 @@ SELECT
   # (multi-volume sets, cover variants), so the book page shows them all.
   ?images
   (GROUP_CONCAT(DISTINCT ?relatedTitle; separator="; ") AS ?relatedTitles)
+  # Where images of the book can be found elsewhere (ab:imagesAt, #17), each as
+  # a "url<TAB>site name" token, tokens newline-separated.
+  (GROUP_CONCAT(DISTINCT ?imagesAtToken; separator="\n") AS ?imagesAt)
 WHERE {
   ?book
     a ab:ArtistsBook ;
@@ -280,6 +283,26 @@ WHERE {
 
   OPTIONAL {
     ?book foaf:isPrimaryTopicOf ?worldcatLinks .
+  }
+
+  # The graph keeps only links on an allowlist of hosts (queries/artists-books.rq),
+  # so every one should find its site name here; a new host falls back to its
+  # bare domain.
+  OPTIONAL {
+    ?book ab:imagesAt ?imagesAtUrl .
+    OPTIONAL {
+      VALUES (?imagesAtHost ?imagesAtSiteName) {
+        ("wsworkshop.org"                            "Visual Studies Workshop")
+        ("scad.lunaimaging.com"                      "SCAD Libraries Digital Collections")
+        ("librarystack.org"                          "LIBRARYSTACK")
+        ("libmma.s3-website-us-east-1.amazonaws.com" "the Metropolitan Museum of Art Libraries")
+        ("digital.library.wisc.edu"                  "UW–Madison Libraries Digital Collections")
+      }
+      FILTER(STRSTARTS(REPLACE(STR(?imagesAtUrl), "^https?://(www\\.)?", ""), CONCAT(?imagesAtHost, "/")))
+    }
+    BIND(CONCAT(STR(?imagesAtUrl), "\t",
+                COALESCE(?imagesAtSiteName, REPLACE(STR(?imagesAtUrl), "^https?://([^/]+).*", "$1")))
+         AS ?imagesAtToken)
   }
 
   OPTIONAL {
