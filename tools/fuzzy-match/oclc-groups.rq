@@ -1,0 +1,19 @@
+# Every ab:ArtistsBook whose OCLC number (from MARC 001, #51) is shared with at
+# least one other book node -- the duplicates the canonical dedup missed (#70).
+# Run by `make -C sources artists-books-oclc-review.csv` against the built
+# graph/artists-books.ttl; oclc_review.py turns the rows into the review sheet.
+PREFIX ab:  <https://dkglab.github.io/ns/artists-books/>
+PREFIX bf:  <http://id.loc.gov/ontologies/bibframe/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?oclc ?key WHERE {
+  { SELECT ?oclc WHERE {
+      ?b a ab:ArtistsBook ; bf:identifiedBy ?id .
+      ?id a bf:Local ; rdf:value ?oclc .
+      FILTER(STRENDS(STR(?id), "/oclc"))
+    } GROUP BY ?oclc HAVING (COUNT(DISTINCT ?b) > 1) }
+  ?b a ab:ArtistsBook ; ab:itemKey ?key ; bf:identifiedBy ?id .
+  ?id a bf:Local ; rdf:value ?oclc .
+  FILTER(STRENDS(STR(?id), "/oclc"))
+}
+ORDER BY ?oclc ?key

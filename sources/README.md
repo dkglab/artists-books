@@ -124,6 +124,21 @@ because lib 1 carries almost no `sameAs` (just 7 of its 1,341 books).
   rather than collapsing into its twin; `same` and unreviewed keys attach as
   before. This is the conservative default for a frozen set — a wrong merge is
   harder to undo than a missed one.
+- `artists-books-oclc-review.csv` — the **generated** review surface for the
+  duplicates the dedup misses because it doesn't merge on the OCLC number (#70):
+  one row per book node whose MARC `001` OCLC number is shared with another node,
+  grouped by OCLC, with the Zotero and MARC context side by side (including the
+  harvest's `999` match method and server, since some shared numbers are the
+  title-author search matching a book to the wrong record). `hint` is
+  `same-title` when the group's Zotero titles agree once punctuation and case are
+  ignored. Read from the built `graph/artists-books.ttl`, so rebuild with
+  `make -C sources -B artists-books-oclc-review.csv` after the graph changes.
+- `artists-books-oclc-decisions.csv` — its **hand-owned** overlay (`oclc,
+  canonicalKey, zoteroTitle, decision, notes`), joined into the sheet read-only.
+  `decision` ∈ `same` (duplicate: merge) / `no` (a distinct work that
+  legitimately shares the record) / `wrong-marc` (a distinct work with a bad
+  harvest match: fix or drop the record) / `unsure`; blank = not yet reviewed.
+  Nothing reads it back into the dedup yet.
 
 Both authoritative lists share the schema `canonicalKey, canonicalLib, held,
 sourceKeys, <bibliographic fields…>`. `canonicalLib` is the library the chosen
