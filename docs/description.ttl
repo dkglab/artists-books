@@ -40,6 +40,22 @@ rel:pht rdfs:label "photographer" .
 
 wd:Q7857846 a ab:ArtistsBook ;
     rdfs:label "Twentysix Gasoline Stations"@en ;
+    # The title as a bf:Title node, read from MARC 245 (#11, #20); its parts are
+    # bf:mainTitle, bf:subtitle, bf:partNumber and bf:partName. Each 246 becomes
+    # a second node typed bf:VariantTitle, with the kind of variant (from the
+    # 246 second indicator, or its $i) as a bf:variantType literal. (The variant
+    # below is illustrative: the catalogued record for this book has no 246.)
+    bf:title [
+        a bf:Title ;
+        rdfs:label "Twentysix gasoline stations" ;
+        bf:mainTitle "Twentysix gasoline stations"
+    ] ;
+    bf:title [
+        a bf:VariantTitle ;
+        rdfs:label "26 gasoline stations" ;
+        bf:mainTitle "26 gasoline stations" ;
+        bf:variantType "spine"
+    ] ;
     bf:contribution [
         a bf:PrimaryContribution ;
         bf:agent ulan:500024159 ;

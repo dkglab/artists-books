@@ -16,6 +16,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 CONSTRUCT {
   ?book a ab:ArtistsBook ;
     rdfs:label ?title ;
+    bf:title ?bookTitle ;
+    bf:title ?variantTitle ;
     ab:itemKey ?canonical_key ;
     ab:heldBySloane ?held_flag ;
     bf:contribution ?contribution ;
@@ -42,6 +44,27 @@ CONSTRUCT {
     ab:imagesAt ?imagesAt ;
     .
 
+
+  # Title (#11, #20): the main title as a bf:Title node, read from MARC 245
+  # where the book has a record and from the Zotero title otherwise. The same
+  # composed string is the book's rdfs:label, which the site displays.
+  ?bookTitle a bf:Title ;
+    rdfs:label ?title ;
+    bf:mainTitle ?main_title ;
+    bf:subtitle ?subtitle ;
+    bf:partNumber ?part_number ;
+    bf:partName ?part_name ;
+    .
+
+  # Variant titles from MARC 246 (#20): cover, spine, parallel, portion ...
+  ?variantTitle a bf:VariantTitle ;
+    rdfs:label ?variant_label ;
+    bf:mainTitle ?variant_main ;
+    bf:subtitle ?variant_subtitle ;
+    bf:partNumber ?variant_part_number ;
+    bf:partName ?variant_part_name ;
+    bf:variantType ?variant_type ;
+    .
 
   ?bookPublication a bf:Publication ;
     bflc:simpleAgent ?publisher ;
@@ -146,15 +169,16 @@ WHERE {
       .
 
     # For each row in the canonical artists'-book list (#82: lib 1 ∪ 2 ∪ 3,
-    # deduplicated to one node per work). Only canonicalKey and title are
-    # required; publisher/date are OPTIONAL so books lacking them still emit
+    # deduplicated to one node per work). Only canonicalKey is required here:
+    # the Zotero title is just the fallback for a book with no MARC 245, and a
+    # book needs one or the other (the FILTER at the end of the query). Eight
+    # rows have an empty Zotero title, and before #20 they silently dropped out.
+    # Publisher/date are OPTIONAL so books lacking them still emit
     # (otherwise books like Ruscha's "Every building on the Sunset Strip." which
     # has a date but no publisher would silently drop out, taking their citations
     # with them).
-    ?bookRow
-      xyz:canonicalKey ?canonical_key ;
-      xyz:title ?title ;
-      .
+    ?bookRow xyz:canonicalKey ?canonical_key .
+    OPTIONAL { ?bookRow xyz:title ?zotero_title }
 
     # Mint new book URIs from the canonical key. Citations (sources/citations.ttl)
     # target these same item/<canonicalKey> URIs.
@@ -215,6 +239,17 @@ WHERE {
              (SAMPLE(?summary_x) AS ?summary)
              (SAMPLE(?related_title_x) AS ?related_title)
              (SAMPLE(?images_at_x) AS ?images_at)
+             (SAMPLE(?marc_title_x) AS ?marc_title)
+             (SAMPLE(?main_title_x) AS ?marc_main_title)
+             (SAMPLE(?subtitle_x) AS ?subtitle)
+             (SAMPLE(?part_number_x) AS ?part_number)
+             (SAMPLE(?part_name_x) AS ?part_name)
+             (SAMPLE(?variant_label_x) AS ?variant_label)
+             (SAMPLE(?variant_main_x) AS ?variant_main)
+             (SAMPLE(?variant_subtitle_x) AS ?variant_subtitle)
+             (SAMPLE(?variant_part_number_x) AS ?variant_part_number)
+             (SAMPLE(?variant_part_name_x) AS ?variant_part_name)
+             (SAMPLE(?variant_type_x) AS ?variant_type)
              (SAMPLE(?name_x)  AS ?creator_name)
       WHERE {
         SERVICE <x-sparql-anything:location=sources/marc/artists-books-marc/> {
@@ -450,6 +485,50 @@ WHERE {
             )
           }
 
+          # Title from MARC 245 (#11, #20): $a title proper, $b remainder of
+          # title (subtitle, parallel title), $n/$p part number/name. $c (the
+          # statement of responsibility), $h (the medium) and the rest are not
+          # title. Every record has exactly one 245. Subfield positions can't be
+          # read without a variable predicate (docs/QUERY-PERFORMANCE.md), so the
+          # parts are composed in the fixed order $a $b $n $p, which is right for
+          # every record in the corpus: the only four 245s carrying both $b and
+          # $n/$p put $b first, and the 246s never carry both. Each part is stripped of the ISBD punctuation that ends it
+          # (the " :" before $b, the " /" before $c, a closing ".") -- except an
+          # ellipsis -- and rejoined with ". " before a part and ": " before $b
+          # (" = " or "; " when that is what $a ended with: a parallel title, or
+          # a second title by the same author). 45 records put the "=" at the
+          # start of $b instead, so leading punctuation is stripped from $b/$n/$p
+          # too, and a part that is nothing but punctuation is dropped.
+          OPTIONAL {
+            ?record fx:anySlot ?df245 .
+            ?df245 a marc:datafield ; xyz:tag "245" .
+            ?df245 fx:anySlot ?sf245a .
+            ?sf245a xyz:code "a" ; rdf:_1 ?t245a_raw .
+            OPTIONAL { ?df245 fx:anySlot ?sf245b . ?sf245b xyz:code "b" ; rdf:_1 ?t245b_raw . }
+            OPTIONAL { ?df245 fx:anySlot ?sf245n . ?sf245n xyz:code "n" ; rdf:_1 ?t245n_raw . }
+            OPTIONAL { ?df245 fx:anySlot ?sf245p . ?sf245p xyz:code "p" ; rdf:_1 ?t245p_raw . }
+
+            BIND(REPLACE(?t245a_raw, "^\\s+|[\\s,;:/=]+$", "") AS ?t245a_s)
+            BIND(IF(REGEX(?t245a_s, "\\.\\.\\.$"), ?t245a_s, REPLACE(?t245a_s, "\\.$", "")) AS ?main_title_x)
+            BIND(REPLACE(?t245b_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?t245b_s0)
+            BIND(IF(?t245b_s0 = "", ?sentinel, ?t245b_s0) AS ?t245b_s)
+            BIND(IF(REGEX(?t245b_s, "\\.\\.\\.$"), ?t245b_s, REPLACE(?t245b_s, "\\.$", "")) AS ?subtitle_x)
+            BIND(REPLACE(?t245n_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?t245n_s0)
+            BIND(IF(?t245n_s0 = "", ?sentinel, ?t245n_s0) AS ?t245n_s)
+            BIND(IF(REGEX(?t245n_s, "\\.\\.\\.$"), ?t245n_s, REPLACE(?t245n_s, "\\.$", "")) AS ?part_number_x)
+            BIND(REPLACE(?t245p_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?t245p_s0)
+            BIND(IF(?t245p_s0 = "", ?sentinel, ?t245p_s0) AS ?t245p_s)
+            BIND(IF(REGEX(?t245p_s, "\\.\\.\\.$"), ?t245p_s, REPLACE(?t245p_s, "\\.$", "")) AS ?part_name_x)
+
+            BIND(IF(REGEX(?t245a_raw, "=\\s*$") || REGEX(COALESCE(?t245b_raw, ""), "^\\s*="), " = ", IF(REGEX(?t245a_raw, ";\\s*$"), "; ", ": ")) AS ?t245b_sep)
+            BIND(CONCAT(
+              ?main_title_x,
+              COALESCE(CONCAT(?t245b_sep, ?subtitle_x), ""),
+              COALESCE(CONCAT(". ", ?part_number_x), ""),
+              COALESCE(CONCAT(IF(BOUND(?part_number_x), ", ", ". "), ?part_name_x), "")
+            ) AS ?marc_title_x)
+          }
+
           # Creator fields are OPTIONAL: the records with no 100/110/111/700/
           # 710/711 field still yield a row carrying canonical_key + the 001 number.
           OPTIONAL {
@@ -546,7 +625,64 @@ WHERE {
             BIND(REPLACE(?images_at_raw, "^\\s+|\\s+$", "") AS ?images_at_x)
             FILTER(REGEX(?images_at_x, "^https?://((www\\.)?wsworkshop\\.org/artist_books/|scad\\.lunaimaging\\.com/|(www\\.)?librarystack\\.org/|libmma\\.s3-website-us-east-1\\.amazonaws\\.com/|digital\\.library\\.wisc\\.edu/)"))
           }  # end images-at branch
-          }  # end OPTIONAL creator/related-title/images-at extraction
+          UNION
+          {
+            # Variant titles from MARC 246 (#20): one row per field, grouped on
+            # its ?df like the 740s. The parts are cleaned and composed as for
+            # the 245 above. The kind of variant comes from the second
+            # indicator; when that is blank the cataloguer spells it out in $i
+            # ("Title on cover:", "Umschlagt."), which is used as-is minus its
+            # closing colon. ind2 3 ("other title") and a blank with no $i say
+            # nothing about the kind, so they emit no bf:variantType.
+            ?record fx:anySlot ?df .
+            ?df a marc:datafield ; xyz:tag "246" .
+            OPTIONAL { ?df xyz:ind2 ?v246_ind2_raw }
+
+            ?df fx:anySlot ?sf246a .
+            ?sf246a xyz:code "a" ; rdf:_1 ?v246a_raw .
+            OPTIONAL { ?df fx:anySlot ?sf246b . ?sf246b xyz:code "b" ; rdf:_1 ?v246b_raw . }
+            OPTIONAL { ?df fx:anySlot ?sf246n . ?sf246n xyz:code "n" ; rdf:_1 ?v246n_raw . }
+            OPTIONAL { ?df fx:anySlot ?sf246p . ?sf246p xyz:code "p" ; rdf:_1 ?v246p_raw . }
+            OPTIONAL { ?df fx:anySlot ?sf246i . ?sf246i xyz:code "i" ; rdf:_1 ?v246i_raw . }
+
+            BIND(REPLACE(?v246a_raw, "^\\s+|[\\s,;:/=]+$", "") AS ?v246a_s)
+            BIND(IF(REGEX(?v246a_s, "\\.\\.\\.$"), ?v246a_s, REPLACE(?v246a_s, "\\.$", "")) AS ?variant_main_x)
+            BIND(REPLACE(?v246b_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?v246b_s0)
+            BIND(IF(?v246b_s0 = "", ?sentinel, ?v246b_s0) AS ?v246b_s)
+            BIND(IF(REGEX(?v246b_s, "\\.\\.\\.$"), ?v246b_s, REPLACE(?v246b_s, "\\.$", "")) AS ?variant_subtitle_x)
+            BIND(REPLACE(?v246n_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?v246n_s0)
+            BIND(IF(?v246n_s0 = "", ?sentinel, ?v246n_s0) AS ?v246n_s)
+            BIND(IF(REGEX(?v246n_s, "\\.\\.\\.$"), ?v246n_s, REPLACE(?v246n_s, "\\.$", "")) AS ?variant_part_number_x)
+            BIND(REPLACE(?v246p_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?v246p_s0)
+            BIND(IF(?v246p_s0 = "", ?sentinel, ?v246p_s0) AS ?v246p_s)
+            BIND(IF(REGEX(?v246p_s, "\\.\\.\\.$"), ?v246p_s, REPLACE(?v246p_s, "\\.$", "")) AS ?variant_part_name_x)
+
+            BIND(IF(REGEX(?v246a_raw, "=\\s*$") || REGEX(COALESCE(?v246b_raw, ""), "^\\s*="), " = ", IF(REGEX(?v246a_raw, ";\\s*$"), "; ", ": ")) AS ?v246b_sep)
+            BIND(CONCAT(
+              ?variant_main_x,
+              COALESCE(CONCAT(?v246b_sep, ?variant_subtitle_x), ""),
+              COALESCE(CONCAT(". ", ?variant_part_number_x), ""),
+              COALESCE(CONCAT(IF(BOUND(?variant_part_number_x), ", ", ". "), ?variant_part_name_x), "")
+            ) AS ?variant_label_x)
+
+            BIND(REPLACE(COALESCE(?v246_ind2_raw, ""), "\\s+", "") AS ?v246_ind2)
+            BIND(REPLACE(?v246i_raw, "^\\s+|[\\s:]+$", "") AS ?v246i)
+            BIND(
+              IF(?v246_ind2 = "0", "portion",
+              IF(?v246_ind2 = "1", "parallel",
+              IF(?v246_ind2 = "2", "distinctive",
+              IF(?v246_ind2 = "4", "cover",
+              IF(?v246_ind2 = "5", "added title page",
+              IF(?v246_ind2 = "6", "caption",
+              IF(?v246_ind2 = "7", "running",
+              IF(?v246_ind2 = "8", "spine",
+              IF(?v246_ind2 = "" && COALESCE(?v246i, "") != "", ?v246i,
+                 ?sentinel)))))))))
+              AS ?variant_type_x
+            )
+            FILTER(?variant_main_x != "")
+          }  # end variant-title branch
+          }  # end OPTIONAL creator/related-title/images-at/variant-title extraction
         }  # end inner per-record SERVICE
       }  # end folder-listing SERVICE
       }
@@ -772,7 +908,22 @@ WHERE {
     # collide.
     BIND(IF(BOUND(?related_title), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(STR(?related_title))), ?sentinel) AS ?relatedWork)
     BIND(IF(BOUND(?images_at), IRI(?images_at), ?sentinel) AS ?imagesAt)
+    # Variant titles (#20), scoped per book like the related works. Hashed on the
+    # label *and* the kind, so a title that appears both on the cover and on the
+    # spine is two nodes, each with one bf:variantType.
+    BIND(IF(BOUND(?variant_label), fx:entity(ab:, "item/", ?canonical_key, "/variant-title/", SHA256(CONCAT(?variant_label, "|", COALESCE(?variant_type, "")))), ?sentinel) AS ?variantTitle)
   }
+
+  # The title (#11, #20) comes from MARC 245 where the book has a record, and
+  # falls back to the Zotero title otherwise -- whole, as the main title, since
+  # Zotero does not separate the subtitle. Every row of a book's MARC match
+  # carries the same 245, so this never yields two labels for one book.
+  BIND(COALESCE(?marc_title, ?zotero_title) AS ?title)
+  BIND(COALESCE(?marc_main_title, ?zotero_title) AS ?main_title)
+  BIND(fx:entity(ab:, "item/", ?canonical_key, "/title") AS ?bookTitle)
+  # A group filter, so it runs after every OPTIONAL: it only drops a book with
+  # neither a MARC nor a Zotero title.
+  FILTER(BOUND(?title))
 
   # Language falls back to the Zotero string (a plain literal) when the book's
   # MARC record carries no 008 language code -- or when the book has no MARC

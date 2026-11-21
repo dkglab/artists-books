@@ -63,6 +63,9 @@ SELECT
   # (multi-volume sets, cover variants), so the book page shows them all.
   ?images
   (GROUP_CONCAT(DISTINCT ?relatedTitle; separator="; ") AS ?relatedTitles)
+  # Variant titles (MARC 246, #20), each as a "title<TAB>kind" token, tokens
+  # newline-separated; the kind is "" when the record doesn't say.
+  (GROUP_CONCAT(DISTINCT ?variantToken; separator="\n") AS ?variantTitles)
   # Where images of the book can be found elsewhere (ab:imagesAt, #17), each as
   # a "url<TAB>site name" token, tokens newline-separated.
   (GROUP_CONCAT(DISTINCT ?imagesAtToken; separator="\n") AS ?imagesAt)
@@ -413,6 +416,13 @@ WHERE {
   OPTIONAL {
     ?book bf:relatedTo ?relatedWork .
     ?relatedWork rdfs:label ?relatedTitle .
+  }
+
+  OPTIONAL {
+    ?book bf:title ?variant .
+    ?variant a bf:VariantTitle ; rdfs:label ?variantLabel .
+    OPTIONAL { ?variant bf:variantType ?variantType . }
+    BIND(CONCAT(?variantLabel, "\t", COALESCE(?variantType, "")) AS ?variantToken)
   }
 
 }
