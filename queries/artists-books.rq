@@ -12,6 +12,7 @@ PREFIX marc: <http://www.loc.gov/MARC21/slim#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX schema: <https://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX madsrdf: <http://www.loc.gov/mads/rdf/v1#>
 
 CONSTRUCT {
   ?book a ab:ArtistsBook ;
@@ -169,6 +170,8 @@ CONSTRUCT {
     a bf:Work ;
     rdfs:label ?related_title ;
     bf:contribution ?relatedWorkContribution ;
+    madsrdf:isIdentifiedByAuthority ?relatedWorkAuthority ;
+    schema:sameAs ?relatedWorkRwo ;
     .
 
 }
@@ -239,6 +242,8 @@ WHERE {
              (SAMPLE(?related_title_x) AS ?related_title)
              (SAMPLE(?name_title_x) AS ?name_title)
              (SAMPLE(?relationship_x) AS ?relationship_label)
+             (SAMPLE(?work_authority_x) AS ?work_authority)
+             (SAMPLE(?work_rwo_x) AS ?work_rwo)
              (SAMPLE(?images_at_x) AS ?images_at)
              (SAMPLE(?marc_title_x) AS ?marc_title)
              (SAMPLE(?main_title_x) AS ?marc_main_title)
@@ -641,6 +646,25 @@ WHERE {
               ?df fx:anySlot ?sf730i . ?sf730i xyz:code "i" ; rdf:_1 ?ut730i_raw .
               BIND(REPLACE(?ut730i_raw, "^\\s+|[\\s:]+$", "") AS ?relationship_x)
             }
+
+            # The work's identifiers (#32): $0 its LC name-title / uniform-title
+            # authority, $1 its real-world-object URI (VIAF, or an LC Hub). Read
+            # only from a field with no $l or $s: those make it an entry for an
+            # *expression* (a translation, a version), which LC authorizes
+            # separately -- "Cendrars. Prose du Transsibérien. English" -- while
+            # this node stands for the work, its title being read without them.
+            OPTIONAL {
+              ?df fx:anySlot ?sfut0 . ?sfut0 xyz:code "0" ; rdf:_1 ?ut_id0_raw .
+              BIND(REPLACE(?ut_id0_raw, "^\\s+|[\\s.]+$", "") AS ?work_authority_x)
+              FILTER(STRSTARTS(?work_authority_x, "http://id.loc.gov/authorities/"))
+              FILTER NOT EXISTS { ?df fx:anySlot ?sfutx0 . ?sfutx0 xyz:code ?utx0 . FILTER(?utx0 IN ("l", "s")) }
+            }
+            OPTIONAL {
+              ?df fx:anySlot ?sfut1 . ?sfut1 xyz:code "1" ; rdf:_1 ?ut_id1_raw .
+              BIND(REPLACE(?ut_id1_raw, "^\\s+|[\\s.]+$", "") AS ?work_rwo_x)
+              FILTER(REGEX(?work_rwo_x, "^https?://"))
+              FILTER NOT EXISTS { ?df fx:anySlot ?sfutx1 . ?sfutx1 xyz:code ?utx1 . FILTER(?utx1 IN ("l", "s")) }
+            }
             OPTIONAL {
               ?df fx:anySlot ?sf730p . ?sf730p xyz:code "p" ; rdf:_1 ?ut730p_raw .
               ?df ?slot730p ?sf730p .
@@ -695,6 +719,25 @@ WHERE {
             OPTIONAL {
               ?df fx:anySlot ?sfti . ?sfti xyz:code "i" ; rdf:_1 ?name_title_i_raw .
               BIND(REPLACE(?name_title_i_raw, "^\\s+|[\\s:]+$", "") AS ?relationship_x)
+            }
+
+            # The work's identifiers (#32): $0 its LC name-title / uniform-title
+            # authority, $1 its real-world-object URI (VIAF, or an LC Hub). Read
+            # only from a field with no $l or $s: those make it an entry for an
+            # *expression* (a translation, a version), which LC authorizes
+            # separately -- "Cendrars. Prose du Transsibérien. English" -- while
+            # this node stands for the work, its title being read without them.
+            OPTIONAL {
+              ?df fx:anySlot ?sfnt0 . ?sfnt0 xyz:code "0" ; rdf:_1 ?nt_id0_raw .
+              BIND(REPLACE(?nt_id0_raw, "^\\s+|[\\s.]+$", "") AS ?work_authority_x)
+              FILTER(STRSTARTS(?work_authority_x, "http://id.loc.gov/authorities/"))
+              FILTER NOT EXISTS { ?df fx:anySlot ?sfntx0 . ?sfntx0 xyz:code ?ntx0 . FILTER(?ntx0 IN ("l", "s")) }
+            }
+            OPTIONAL {
+              ?df fx:anySlot ?sfnt1 . ?sfnt1 xyz:code "1" ; rdf:_1 ?nt_id1_raw .
+              BIND(REPLACE(?nt_id1_raw, "^\\s+|[\\s.]+$", "") AS ?work_rwo_x)
+              FILTER(REGEX(?work_rwo_x, "^https?://"))
+              FILTER NOT EXISTS { ?df fx:anySlot ?sfntx1 . ?sfntx1 xyz:code ?ntx1 . FILTER(?ntx1 IN ("l", "s")) }
             }
             BIND(REPLACE(?name_title_raw, "^\\s+|[\\s.,;:/]+$", "") AS ?related_title_x)
             FILTER(?related_title_x != "")
@@ -1021,6 +1064,8 @@ WHERE {
     # The relationship concept is minted from a slug of the RDA designator,
     # qualifier included, so "Container of (work)" and "Container of
     # (expression)" stay distinct, as RDA has them.
+    BIND(IF(BOUND(?relatedWork) && BOUND(?work_authority), IRI(?work_authority), ?sentinel) AS ?relatedWorkAuthority)
+    BIND(IF(BOUND(?relatedWork) && BOUND(?work_rwo), IRI(?work_rwo), ?sentinel) AS ?relatedWorkRwo)
     BIND(REPLACE(REPLACE(LCASE(?relationship_label), "[^a-z0-9]+", "-"), "(^-)|(-$)", "") AS ?relationship_slug)
     BIND(IF(BOUND(?relatedWork) && BOUND(?relationship_label), IRI(CONCAT(STR(?relatedWork), "/relation/", ?relationship_slug)), ?sentinel) AS ?relation)
     BIND(IF(BOUND(?relation), fx:entity(ab:, "relationship/", ?relationship_slug), ?sentinel) AS ?relationshipConcept)
