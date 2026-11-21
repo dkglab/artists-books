@@ -494,7 +494,9 @@ WHERE {
           # (the " :" before $b, the " /" before $c, a closing ".") -- except an
           # ellipsis -- and rejoined with ". " before a part and ": " before $b
           # (" = " or "; " when that is what $a ended with: a parallel title, or
-          # a second title by the same author).
+          # a second title by the same author). 45 records put the "=" at the
+          # start of $b instead, so leading punctuation is stripped from $b/$n/$p
+          # too, and a part that is nothing but punctuation is dropped.
           OPTIONAL {
             ?record fx:anySlot ?df245 .
             ?df245 a marc:datafield ; xyz:tag "245" .
@@ -506,14 +508,17 @@ WHERE {
 
             BIND(REPLACE(?t245a_raw, "^\\s+|[\\s,;:/=]+$", "") AS ?t245a_s)
             BIND(IF(REGEX(?t245a_s, "\\.\\.\\.$"), ?t245a_s, REPLACE(?t245a_s, "\\.$", "")) AS ?main_title_x)
-            BIND(REPLACE(?t245b_raw, "^\\s+|[\\s,;:/=]+$", "") AS ?t245b_s)
+            BIND(REPLACE(?t245b_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?t245b_s0)
+            BIND(IF(?t245b_s0 = "", ?sentinel, ?t245b_s0) AS ?t245b_s)
             BIND(IF(REGEX(?t245b_s, "\\.\\.\\.$"), ?t245b_s, REPLACE(?t245b_s, "\\.$", "")) AS ?subtitle_x)
-            BIND(REPLACE(?t245n_raw, "^\\s+|[\\s,;:/=]+$", "") AS ?t245n_s)
+            BIND(REPLACE(?t245n_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?t245n_s0)
+            BIND(IF(?t245n_s0 = "", ?sentinel, ?t245n_s0) AS ?t245n_s)
             BIND(IF(REGEX(?t245n_s, "\\.\\.\\.$"), ?t245n_s, REPLACE(?t245n_s, "\\.$", "")) AS ?part_number_x)
-            BIND(REPLACE(?t245p_raw, "^\\s+|[\\s,;:/=]+$", "") AS ?t245p_s)
+            BIND(REPLACE(?t245p_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?t245p_s0)
+            BIND(IF(?t245p_s0 = "", ?sentinel, ?t245p_s0) AS ?t245p_s)
             BIND(IF(REGEX(?t245p_s, "\\.\\.\\.$"), ?t245p_s, REPLACE(?t245p_s, "\\.$", "")) AS ?part_name_x)
 
-            BIND(IF(REGEX(?t245a_raw, "=\\s*$"), " = ", IF(REGEX(?t245a_raw, ";\\s*$"), "; ", ": ")) AS ?t245b_sep)
+            BIND(IF(REGEX(?t245a_raw, "=\\s*$") || REGEX(COALESCE(?t245b_raw, ""), "^\\s*="), " = ", IF(REGEX(?t245a_raw, ";\\s*$"), "; ", ": ")) AS ?t245b_sep)
             BIND(CONCAT(
               ?main_title_x,
               COALESCE(CONCAT(". ", ?part_number_x), ""),
@@ -640,14 +645,17 @@ WHERE {
 
             BIND(REPLACE(?v246a_raw, "^\\s+|[\\s,;:/=]+$", "") AS ?v246a_s)
             BIND(IF(REGEX(?v246a_s, "\\.\\.\\.$"), ?v246a_s, REPLACE(?v246a_s, "\\.$", "")) AS ?variant_main_x)
-            BIND(REPLACE(?v246b_raw, "^\\s+|[\\s,;:/=]+$", "") AS ?v246b_s)
+            BIND(REPLACE(?v246b_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?v246b_s0)
+            BIND(IF(?v246b_s0 = "", ?sentinel, ?v246b_s0) AS ?v246b_s)
             BIND(IF(REGEX(?v246b_s, "\\.\\.\\.$"), ?v246b_s, REPLACE(?v246b_s, "\\.$", "")) AS ?variant_subtitle_x)
-            BIND(REPLACE(?v246n_raw, "^\\s+|[\\s,;:/=]+$", "") AS ?v246n_s)
+            BIND(REPLACE(?v246n_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?v246n_s0)
+            BIND(IF(?v246n_s0 = "", ?sentinel, ?v246n_s0) AS ?v246n_s)
             BIND(IF(REGEX(?v246n_s, "\\.\\.\\.$"), ?v246n_s, REPLACE(?v246n_s, "\\.$", "")) AS ?variant_part_number_x)
-            BIND(REPLACE(?v246p_raw, "^\\s+|[\\s,;:/=]+$", "") AS ?v246p_s)
+            BIND(REPLACE(?v246p_raw, "^[\\s,;:/=]+|[\\s,;:/=]+$", "") AS ?v246p_s0)
+            BIND(IF(?v246p_s0 = "", ?sentinel, ?v246p_s0) AS ?v246p_s)
             BIND(IF(REGEX(?v246p_s, "\\.\\.\\.$"), ?v246p_s, REPLACE(?v246p_s, "\\.$", "")) AS ?variant_part_name_x)
 
-            BIND(IF(REGEX(?v246a_raw, "=\\s*$"), " = ", IF(REGEX(?v246a_raw, ";\\s*$"), "; ", ": ")) AS ?v246b_sep)
+            BIND(IF(REGEX(?v246a_raw, "=\\s*$") || REGEX(COALESCE(?v246b_raw, ""), "^\\s*="), " = ", IF(REGEX(?v246a_raw, ";\\s*$"), "; ", ": ")) AS ?v246b_sep)
             BIND(CONCAT(
               ?variant_main_x,
               COALESCE(CONCAT(". ", ?variant_part_number_x), ""),
