@@ -22,7 +22,6 @@ CONSTRUCT {
     ab:heldBySloane ?held_flag ;
     bf:contribution ?contribution ;
     bf:contribution ?zoteroContribution ;
-    bf:provisionActivity ?bookPublication ;
     bf:language ?marc_language ;
     bf:language ?language041 ;
     bf:language ?zoteroLanguage ;
@@ -64,12 +63,6 @@ CONSTRUCT {
     bf:partNumber ?variant_part_number ;
     bf:partName ?variant_part_name ;
     bf:variantType ?variant_type ;
-    .
-
-  ?bookPublication a bf:Publication ;
-    bflc:simpleAgent ?publisher ;
-    bflc:simpleDate ?date ;
-    bflc:simplePlace ?place ;
     .
 
   ?bookISBN a bf:Identifier ;
@@ -173,17 +166,14 @@ WHERE {
     # the Zotero title is just the fallback for a book with no MARC 245, and a
     # book needs one or the other (the FILTER at the end of the query). Eight
     # rows have an empty Zotero title, and before #20 they silently dropped out.
-    # Publisher/date are OPTIONAL so books lacking them still emit
-    # (otherwise books like Ruscha's "Every building on the Sunset Strip." which
-    # has a date but no publisher would silently drop out, taking their citations
-    # with them).
+    # The publication statement (publisher, date, place) is not read here: it
+    # is queries/publications.rq, shared with the reference works (#21).
     ?bookRow xyz:canonicalKey ?canonical_key .
     OPTIONAL { ?bookRow xyz:title ?zotero_title }
 
     # Mint new book URIs from the canonical key. Citations (sources/citations.ttl)
     # target these same item/<canonicalKey> URIs.
     BIND(fx:entity(ab:, "item/", ?canonical_key) AS ?book)
-    BIND(fx:entity(ab:, "item/", ?canonical_key, "/publication") AS ?bookPublication)
 
     # Sloane holdings flag (#82): the ~1,300 works UNC physically holds (and has
     # images of). Non-held rows carry an empty cell -> null -> ?held_raw unbound
@@ -191,16 +181,6 @@ WHERE {
     OPTIONAL { ?bookRow xyz:held ?held_raw }
     BIND(IF(BOUND(?held_raw), true, ?sentinel) AS ?held_flag)
 
-    OPTIONAL { ?bookRow xyz:publisher ?publisher }
-    OPTIONAL {
-      ?bookRow xyz:date ?date_raw .
-      # Strip Zotero's leading "YYYY-MM-DD " prefix from the date string
-      BIND(REPLACE(?date_raw, "^\\d{4}-\\d{2}-\\d{2} ", "") AS ?date)
-    }
-
-    OPTIONAL {
-      ?bookRow xyz:place ?place
-    }
     OPTIONAL { ?bookRow xyz:language ?zotero_language }
     OPTIONAL { ?bookRow xyz:ISBN ?ISBN }
     BIND(fx:entity(ab:, "item/", ?canonical_key, "/identifier") AS ?isbnNode)

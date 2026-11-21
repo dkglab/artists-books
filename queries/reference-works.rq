@@ -38,7 +38,6 @@ CONSTRUCT {
   ?ref a ab:ReferenceWork ;
     rdfs:label ?title ;
     ab:itemKey ?canonical_key ;
-    bf:provisionActivity ?refPublication ;
     bf:language ?language ;
     bf:identifiedBy ?refISBN ;
     bf:identifiedBy ?refOCLCNum ;
@@ -57,12 +56,6 @@ CONSTRUCT {
 
   ?creator a bf:Agent ;
     rdfs:label ?creator_label ;
-    .
-
-  ?refPublication a bf:Publication ;
-    bflc:simpleAgent ?publisher ;
-    bflc:simpleDate ?date ;
-    bflc:simplePlace ?place ;
     .
 
   ?refISBN a bf:Identifier ;
@@ -91,17 +84,10 @@ WHERE {
       xyz:title ?title ;
       .
 
-    # Mint the reference-work URI and its publication sub-resource.
+    # Mint the reference-work URI. Its publication statement (publisher, date,
+    # place, from MARC 264/260 + 008 with this CSV as the fallback) is built
+    # by queries/publications.rq, shared with the artists' books (#21).
     BIND(fx:entity(ab:, "reference/", ?canonical_key) AS ?ref)
-    BIND(fx:entity(ab:, "reference/", ?canonical_key, "/publication") AS ?refPublication)
-
-    OPTIONAL { ?refRow xyz:publisher ?publisher }
-    OPTIONAL {
-      ?refRow xyz:date ?date_raw .
-      # Strip Zotero's leading "YYYY-MM-DD " prefix from the date string.
-      BIND(REPLACE(?date_raw, "^\\d{4}-\\d{2}-\\d{2} ", "") AS ?date)
-    }
-    OPTIONAL { ?refRow xyz:place ?place }
     OPTIONAL { ?refRow xyz:language ?language }
 
     OPTIONAL { ?refRow xyz:ISBN ?ISBN }

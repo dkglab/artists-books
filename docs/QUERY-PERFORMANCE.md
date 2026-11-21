@@ -48,6 +48,24 @@ The output was byte-for-byte identical before and after — only the access path
 changed. Note that XML triplification itself is cheap (2 s); if a query is slow,
 the scans are the cause, not the parsing.
 
+### Since #81 the scan is per record, so an *anchored* variable predicate is fine
+
+Those numbers were measured on the old **single-file** MARC collection, where
+one graph held every record and a variable-predicate scan walked all of them.
+Since the per-record directory (#81, [below](#reading-the-per-record-marc-directory-81)),
+each inner `SERVICE` triplifies **one** record, a few hundred triples, so a
+scan inside it is cheap. On SPARQL-Anything 1.3.0, reading every 260/264
+subfield of the 5,716 book records (#21):
+
+| query | time |
+|-------|-----:|
+| subfields via `fx:anySlot` | 19.3 s |
+| subfields via `fx:anySlot`, **plus** `?df ?slot ?sf` to read each one's position | **16.5 s** |
+
+So the rule still holds for *traversal* (walk with `fx:anySlot`), but
+reading the slot predicate of a member you have already reached costs
+nothing. That predicate is what you need for [subfield order](#reading-subfield-order).
+
 ## How to diagnose
 
 Run the query with `-e` (ARQ explain). The plan prints to stderr before
@@ -180,6 +198,68 @@ N-Triples. Only the number of rows reaching the `OPTIONAL`s changed.
   which is unbound when there is no creator), so CONSTRUCT drops the whole block
   instead of writing a dangling typed-but-empty node.
 
+## Reading subfield order
+
+`fx:anySlot` hides a member's position, but some MARC fields mean something
+only in order. A 260/264 like `$a Ostfildern : $b Hatje Cantz ; $a Edmonton :
+$b Art Gallery of Alberta` pairs each `$b` publisher with the `$a` place
+before it (#21, #196). The position is the number in the slot predicate
+(`rdf:_3` → 3). Read it like this:
+
+```sparql
+SERVICE <x-sparql-anything:> {           # the per-record read
+  fxe:properties fxe:location ?file ; fxe:media-type "application/xml" .
+  ...
+  ?df fx:anySlot ?sf .                    # 1. reach the subfield with fx:anySlot
+  ?sf xyz:code ?code ; rdf:_1 ?v .
+  ?df ?slot ?sf .                         # 2. then read its slot: both ends bound
+}
+BIND(fx:cardinal(?slot) AS ?pos)          # 3. OUTSIDE the SERVICE
+```
+
+Verified on three co-published records: positions 1-5 come out in field
+order, and `fx:cardinal(?slot)` equals `xsd:integer(STRAFTER(STR(?slot),
+"#_"))`. Two placements break it, and both fail the same way: SPARQL-Anything
+resolves the inner `fxe:location` to `fx:Root` and the query dies with
+`TriplifierHTTPException ... 404 Not Found http://sparql.xyz/facade-x/ns/Root`:
+
+- **an unanchored `?df ?slot ?sf`**, with no `fx:anySlot` binding `?sf` first;
+- **`BIND(fx:cardinal(?slot))` inside the `SERVICE`**. Move it out; the
+  binding of `?slot` survives the `SERVICE` boundary.
+
+The order also matters when aggregating: `GROUP_CONCAT` does not guarantee its
+input order, so two parallel concatenations (all places, all publishers) can't
+be relied on to line up. Carry `?pos` and pair or order explicitly.
+
+## A variable `fxe:location` must come from an enclosing SERVICE
+
+The per-record read works because the outer folder-listing `SERVICE` binds
+`?file` and the inner `SERVICE` is evaluated per binding. A location bound
+any other way is **silently ignored**: the read returns no rows and no error.
+
+```sparql
+# DON'T: returns nothing
+VALUES ?csv_file { "sources/artists-books.csv" "sources/reference-works.csv" }
+SERVICE <x-sparql-anything:> { fxe:properties fxe:location ?csv_file . ... }
+
+# (a BIND("..." AS ?csv_file) before the SERVICE fails the same way)
+
+# DO: bind it from an enclosing SERVICE, e.g. an inline CSV
+SERVICE <x-sparql-anything:> {
+  fxe:properties
+    fxe:content "track,csv\nitem,sources/artists-books.csv\nreference,sources/reference-works.csv\n" ;
+    fxe:media-type "text/csv" ;
+    fxe:csv.headers "true" .
+  ?t xyz:track ?track ; xyz:csv ?csv_file .
+  SERVICE <x-sparql-anything:> { fxe:properties fxe:location ?csv_file . ... }
+}
+```
+
+`queries/publications.rq` (#21) runs one query over both tracks this way: an
+inline track table, with each track's CSV read and MARC folder listing nested
+inside it, and the per-record read nested one level further. The whole query
+takes 28 s over 7,920 + 155 rows and 5,716 + 153 records.
+
 ## Reading the per-record MARC directory (#81)
 
 The MARC is a per-record directory (`*-marc/`, one `<key>.xml` per record),
@@ -204,8 +284,12 @@ re-triplified the **whole** collection once per key; per-record entries removed
 the monolith re-parse. `artists-books.rq` already parsed once (its creator
 sub-SELECT is self-contained), so there the per-record read is roughly even.
 
-Two gotchas:
+Three gotchas:
 
+- **`fxe:archive.matches` must match the whole path**, not just the filename.
+  `".*\\.xml"` works for every file, but to select a few records for a test,
+  write `".*(Y2MQKHFR|WXYMV79K)\\.xml"`. Without the leading `.*` the regex
+  matches nothing, and the query returns an empty result without complaint.
 - **Silence Log4j.** SPARQL-Anything's Log4j StatusLogger can print onto
   stdout (first seen with the archive triplifier), corrupting the Turtle. The graph recipe passes
   `-Dlog4j2.statusLoggerLevel=OFF`.
@@ -218,12 +302,18 @@ Two gotchas:
 ## Quick checklist before committing a construct change
 
 1. Did I add any `?s ?var ?o` to walk Facade-X members? Replace with `fx:anySlot`.
+   (Reading `?df ?slot ?sf` *after* `fx:anySlot` has bound both ends is fine.
+   See [Reading subfield order](#reading-subfield-order), and keep
+   `fx:cardinal` outside the `SERVICE`.)
 2. Can any pattern multiply rows (repeated subfields, a `VALUES` join on a shared
    var)? Aggregate it away or join on a private key. Conversely, am I joining two
    *required* sources with `FILTER(?a = ?b)` on private keys? Share one variable
    instead, or ARQ cross-products them.
 3. Does a `FILTER` share a group with an `OPTIONAL`? Then it runs *after* that
    optional. Wrap the required patterns it prunes in their own `{ … }`.
-4. `time` the rebuild (`make graph/artists-books.ttl`). It should be seconds. If
+4. Does a `SERVICE` take its `fxe:location` from a variable? It must be bound
+   by an enclosing `SERVICE`, not by `VALUES` or `BIND`, or the read silently
+   returns nothing.
+5. `time` the rebuild (`make graph/artists-books.ttl`). It should be seconds. If
    it is not, run with `-e` and look for variable-predicate triples in the BGP,
    and at the `BGP`-execution counts for an over-fed `OPTIONAL`.
