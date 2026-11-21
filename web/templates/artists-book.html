@@ -112,6 +112,15 @@
   <dd>{{ . }}</dd>
   {{ end }}
 
+  {{ with .variantTitles }}
+  <dt>Variant titles</dt>
+  <dd>
+  {{- range $i, $t := (split . "\n") }}{{ $p := split $t "\t" }}
+  {{- if $i }}<br>{{ end }}{{ index $p 0 }}{{ with index $p 1 }} ({{ . }}){{ end }}
+  {{- end }}
+  </dd>
+  {{ end }}
+
   {{ with .relatedTitles }}
   <dt>Related titles</dt>
   <dd>{{ . }}</dd>
