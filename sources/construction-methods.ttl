@@ -37,12 +37,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/music>
         rdf:type         skos:Concept;
         rdfs:label       "Music"@en;
-        skos:altLabel    "Songs with piano"@en , "Songs (Medium voice) with synthesizer"@en , "Nature -- Songs and music -- Texts"@en , "Nature -- Songs and music"@en , "Mills and mill-work -- Songs and music"@en , "Environmental protection -- Songs and music"@en , "Songs, Spanish"@en , "Music -- Manuscripts"@en , "Songs (High voice) with piano"@en , "Song cycles"@en , "Songs, Spanish -- Cuba"@en , "Music -- Manuscripts -- Facsimiles"@en , "Aleatory music"@en , "Rock music."@en , "Popular music."@en , "Instrumental music."@en , "Music."@en , "Soundscapes (Music)"@en , "Rock music"@en , "Rap (Music)"@en , "Popular music"@en , "Hip-hop (Music)"@en , "Songs"@en , "Songs."@en , "Love songs."@en , "Songs and music."@en , "Songs and music"@en , "Song cycles."@en;
+        skos:altLabel    "Popular music"@en , "Rock music"@en , "Music."@en , "Soundscapes (Music)"@en , "Hip-hop (Music)"@en , "Instrumental music."@en , "Popular music."@en , "Rap (Music)"@en , "Rock music."@en , "Aleatory music"@en , "Songs, Spanish -- Cuba"@en , "Music -- Manuscripts"@en , "Music -- Manuscripts -- Facsimiles"@en , "Songs (High voice) with piano"@en , "Songs, Spanish"@en , "Environmental protection -- Songs and music"@en , "Mills and mill-work -- Songs and music"@en , "Nature -- Songs and music"@en , "Nature -- Songs and music -- Texts"@en , "Song cycles"@en , "Songs (Medium voice) with synthesizer"@en , "Songs with piano"@en , "Songs"@en , "Songs."@en , "Love songs."@en , "Songs and music."@en , "Songs and music"@en , "Song cycles."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
-        skos:exactMatch  <http://id.worldcat.org/fast/1126526> , <http://id.worldcat.org/fast/1126153> , <http://id.worldcat.org/fast/1030388> , <http://id.worldcat.org/fast/1030385> , <http://id.loc.gov/authorities/subjects/sh85125149> , <http://id.loc.gov/authorities/subjects/sh85125033> , <http://id.loc.gov/authorities/subjects/sh2010114197> , <http://id.loc.gov/authorities/subjects/sh2008107384> , <http://id.worldcat.org/fast/804693> , <http://id.loc.gov/authorities/subjects/sh85022486> , <http://id.worldcat.org/fast/1921743> , <http://id.worldcat.org/fast/1423855> , <http://id.loc.gov/authorities/genreForms/gf2014027107> , <http://id.worldcat.org/fast/1726744> , <http://id.worldcat.org/fast/1726743> , <http://id.loc.gov/authorities/genreForms/gf2014027103> , <http://id.loc.gov/authorities/genreForms/gf2014026912> , <http://id.worldcat.org/fast/1726662> , <http://id.worldcat.org/fast/1985328> , <http://id.loc.gov/authorities/genreForms/gf2014027101>;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027107> , <http://id.worldcat.org/fast/1423855> , <http://id.worldcat.org/fast/1921743> , <http://id.loc.gov/authorities/subjects/sh85022486> , <http://id.worldcat.org/fast/804693> , <http://id.loc.gov/authorities/subjects/sh2008107384> , <http://id.loc.gov/authorities/subjects/sh2010114197> , <http://id.loc.gov/authorities/subjects/sh85125033> , <http://id.loc.gov/authorities/subjects/sh85125149> , <http://id.worldcat.org/fast/1030385> , <http://id.worldcat.org/fast/1030388> , <http://id.worldcat.org/fast/1126153> , <http://id.worldcat.org/fast/1126526> , <http://id.worldcat.org/fast/1726744> , <http://id.worldcat.org/fast/1726743> , <http://id.loc.gov/authorities/genreForms/gf2014027103> , <http://id.loc.gov/authorities/genreForms/gf2014026912> , <http://id.worldcat.org/fast/1726662> , <http://id.worldcat.org/fast/1985328> , <http://id.loc.gov/authorities/genreForms/gf2014027101>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Music"@en;
-        ab:matchKey      "songs-with-piano" , "songs-medium-voice-with-synthesizer" , "nature-songs-and-music-texts" , "nature-songs-and-music" , "mills-and-mill-work-songs-and-music" , "environmental-protection-songs-and-music" , "songs-spanish" , "music-manuscripts" , "songs-high-voice-with-piano" , "songs-spanish-cuba" , "music-manuscripts-facsimiles" , "aleatory-music" , "instrumental-music" , "music" , "soundscapes-music" , "rock-music" , "rap-music" , "popular-music" , "hip-hop-music" , "songs" , "love-songs" , "songs-and-music" , "song-cycles" .
+        ab:matchKey      "music" , "soundscapes-music" , "hip-hop-music" , "instrumental-music" , "popular-music" , "rap-music" , "rock-music" , "aleatory-music" , "songs-spanish-cuba" , "music-manuscripts" , "music-manuscripts-facsimiles" , "songs-high-voice-with-piano" , "songs-spanish" , "environmental-protection-songs-and-music" , "mills-and-mill-work-songs-and-music" , "nature-songs-and-music" , "nature-songs-and-music-texts" , "songs-medium-voice-with-synthesizer" , "songs-with-piano" , "songs" , "love-songs" , "songs-and-music" , "song-cycles" .
 
 <https://dkglab.github.io/ns/artists-books/construction/short-stories>
         rdf:type         skos:Concept;
@@ -67,12 +67,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/poetry>
         rdf:type         skos:Concept;
         rdfs:label       "Poetry"@en;
-        skos:altLabel    "Dadaist poetry"@en , "Poésie"@en , "poetry"@en , "Poésie expérimentale."@en , "Poésie concrète"@en , "Poésie concrète."@en , "Dadaist poetry."@en , "American poetry"@en , "Prose poems"@en , "Gay poetry."@en , "Spoken word poetry."@en , "Love poetry."@en , "Love poetry"@en , "POETRY / American / General"@en , "POETRY / American / General."@en , "visual poetry."@en , "poems."@en , "concrete poetry."@en , "Concrete poetry"@en , "Concrete poems"@en , "Visual poetry"@en , "Experimental poetry"@en , "Poésie."@en , "poetry."@en , "Poems."@en , "Political poetry."@en , "Haiku."@en , "Poems"@en , "Concrete poems."@en , "Poetry."@en , "Visual poetry."@en , "Concrete poetry."@en;
+        skos:altLabel    "Poésie expérimentale."@en , "Poésie concrète"@en , "Poésie concrète."@en , "Dadaist poetry."@en , "American poetry"@en , "Prose poems"@en , "Gay poetry."@en , "Spoken word poetry."@en , "Love poetry."@en , "Love poetry"@en , "POETRY / American / General"@en , "POETRY / American / General."@en , "visual poetry."@en , "poems."@en , "concrete poetry."@en , "Concrete poetry"@en , "Concrete poems"@en , "Visual poetry"@en , "Experimental poetry"@en , "Poésie."@en , "poetry."@en , "Poems."@en , "Political poetry."@en , "Haiku."@en , "Poems"@en , "Concrete poems."@en , "Poetry."@en , "Visual poetry."@en , "Concrete poetry."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
         skos:exactMatch  <https://id.loc.gov/authorities/genreForms/gf2014026481> , <http://id.worldcat.org/fast/1921737> , <http://id.worldcat.org/fast/1726661> , <http://id.nlm.nih.gov/mesh/D055821> , <http://id.loc.gov/authorities/genreForms/gf2018026002> , <http://id.loc.gov/authorities/genreForms/gf2014026552> , <http://id.loc.gov/authorities/genreForms/gf2014026419> , <http://vocab.getty.edu/aat/300251499> , <http://vocab.getty.edu/aat/300194347> , <http://vocab.getty.edu/aat/300055932> , <http://vocab.getty.edu/aat/300055931> , <http://id.worldcat.org/fast/1941332> , <http://id.worldcat.org/fast/1921680> , <http://id.loc.gov/vocabulary/rbmscv/cv00203> , <http://id.loc.gov/authorities/genreForms/gf2016026085> , <http://id.loc.gov/authorities/genreForms/gf2014026366> , <http://id.loc.gov/vocabulary/rbmscv/cv01163> , <http://id.worldcat.org/fast/1726570> , <http://id.loc.gov/authorities/genreForms/gf2014026481> , <http://id.worldcat.org/fast/1423828> , <http://id.loc.gov/authorities/genreForms/gf2014026588> , <http://id.worldcat.org/fast/1726771> , <http://id.loc.gov/authorities/genreForms/gf2014026270>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Poetry"@en;
-        ab:matchKey      "po-sie" , "poe-sie-expe-rimentale" , "poe-sie-concre-te" , "dadaist-poetry" , "american-poetry" , "prose-poems" , "gay-poetry" , "spoken-word-poetry" , "love-poetry" , "poetry-american-general" , "experimental-poetry" , "poe-sie" , "political-poetry" , "haiku" , "poems" , "concrete-poems" , "poetry" , "visual-poetry" , "concrete-poetry" .
+        ab:matchKey      "poe-sie-expe-rimentale" , "poe-sie-concre-te" , "dadaist-poetry" , "american-poetry" , "prose-poems" , "gay-poetry" , "spoken-word-poetry" , "love-poetry" , "poetry-american-general" , "experimental-poetry" , "poe-sie" , "political-poetry" , "haiku" , "poems" , "concrete-poems" , "poetry" , "visual-poetry" , "concrete-poetry" .
 
 <https://dkglab.github.io/ns/artists-books/construction/play-script>
         rdf:type        skos:Concept;
@@ -88,7 +88,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Photobook"@en;
         skos:altLabel    "Photobooks."@en , "photobooks"@en , "photobooks."@en , "Photobooks"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
-        skos:exactMatch  <http://id.loc.gov/authorities/subjects/sh2006009091> , <http://id.worldcat.org/fast/1742293> , <http://vocab.getty.edu/aat/300265728> , <http://id.worldcat.org/fast/1919950> , <http://id.loc.gov/authorities/genreForms/gf2014026144>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300265728> , <http://id.worldcat.org/fast/1919950> , <http://id.loc.gov/authorities/genreForms/gf2014026144>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Photobook"@en;
         ab:matchKey      "photobooks" .
@@ -359,20 +359,19 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Biography"@en;
         skos:altLabel    "Autobiographies"@en , "Imaginary biography."@en , "Biografier"@en , "Biographies."@en , "Autobiographies."@en , "Biographies"@en , "Autobiographies (literary genre)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
-        skos:exactMatch  <http://id.worldcat.org/fast/832149> , <https://id.loc.gov/authorities/genreForms/gf2014026049> , <https://id.kb.se/term/saogf/Biografier> , <http://id.worldcat.org/fast/1919896> , <http://id.loc.gov/authorities/genreForms/gf2014026047> , <http://id.worldcat.org/fast/1919894> , <http://id.loc.gov/authorities/genreForms/gf2014026049>;
+        skos:exactMatch  <https://id.loc.gov/authorities/genreForms/gf2014026049> , <https://id.kb.se/term/saogf/Biografier> , <http://id.worldcat.org/fast/1919896> , <http://id.loc.gov/authorities/genreForms/gf2014026047> , <http://id.worldcat.org/fast/1919894> , <http://id.loc.gov/authorities/genreForms/gf2014026049>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Biography"@en;
-        ab:matchKey      "biography" , "imaginary-biography" , "biografier" , "biographies" , "autobiographies" , "autobiographies-literary-genre" .
+        ab:matchKey      "imaginary-biography" , "biografier" , "biographies" , "autobiographies" , "autobiographies-literary-genre" .
 
 <https://dkglab.github.io/ns/artists-books/construction/bestiary>
-        rdf:type         skos:Concept;
-        rdfs:label       "Bestiary"@en;
-        skos:altLabel    "Bestiaires"@en , "Bestiaires."@en , "Bestiaries"@en , "bestiaries."@en , "bestiaries"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
-        skos:exactMatch  <http://id.worldcat.org/fast/830884>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Bestiary"@en;
-        ab:matchKey      "bestiaires" , "bestiaries" .
+        rdf:type        skos:Concept;
+        rdfs:label      "Bestiary"@en;
+        skos:altLabel   "Bestiaires."@en , "Bestiaries"@en , "bestiaries."@en , "bestiaries"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Bestiary"@en;
+        ab:matchKey     "bestiaires" , "bestiaries" .
 
 <https://dkglab.github.io/ns/artists-books/construction/axonometric-projection>
         rdf:type        skos:Concept;
@@ -381,12 +380,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
         skos:inScheme   ab:construction-methods;
         skos:prefLabel  "Axonometric projection"@en;
-        ab:matchKey     "axonometric-projection" , "axonometric-projections-images" .
+        ab:matchKey     "axonometric-projections-images" .
 
 <https://dkglab.github.io/ns/artists-books/construction/anthology>
         rdf:type        skos:Concept;
         rdfs:label      "Anthology"@en;
-        skos:altLabel   "Anthologies"@en , "anthologies."@en , "Anthologie"@en;
+        skos:altLabel   "anthologies."@en , "Anthologie"@en;
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
         skos:inScheme   ab:construction-methods;
         skos:prefLabel  "Anthology"@en;
@@ -395,7 +394,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/alphabet-book>
         rdf:type         skos:Concept;
         rdfs:label       "Alphabet book"@en;
-        skos:altLabel    "Alphabet Books"@en , "Alphabet books"@en , "Alphabet books."@en;
+        skos:altLabel    "Alphabet books"@en , "Alphabet books."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
         skos:exactMatch  <http://id.worldcat.org/fast/2015172> , <http://id.loc.gov/authorities/genreForms/gf2020026003>;
         skos:inScheme    ab:construction-methods;
@@ -472,9 +471,9 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/dust-jacket>
         rdf:type         skos:Concept;
         rdfs:label       "Dust jacket"@en;
-        skos:altLabel    "Book jackets"@en , "Book jackets."@en , "Dust jackets."@en;
+        skos:altLabel    "Book jackets."@en , "Dust jackets."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/enclosure>;
-        skos:exactMatch  <http://id.worldcat.org/fast/836218> , <http://id.loc.gov/authorities/subjects/sh85015630> , <http://vocab.getty.edu/aat/300195133> , <http://id.loc.gov/vocabulary/rbmscv/cv00514>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300195133> , <http://id.loc.gov/vocabulary/rbmscv/cv00514>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Dust jacket"@en;
         ab:matchKey      "book-jackets" , "dust-jackets" .
@@ -689,7 +688,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/scroll>
         rdf:type         skos:Concept;
         rdfs:label       "Scroll"@en;
-        skos:altLabel    "Handscrolls"@en , "Handscrolls."@en , "Scrolls (information artifacts)"@en;
+        skos:altLabel    "Handscrolls."@en , "Scrolls (information artifacts)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300178463> , <http://vocab.getty.edu/aat/300028629>;
         skos:inScheme    ab:construction-methods;
@@ -708,7 +707,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/saddle-stitching>
         rdf:type        skos:Concept;
         rdfs:label      "Saddle stitch binding"@en;
-        skos:altLabel   "Saddle stitching"@en , "Saddle stitching."@en;
+        skos:altLabel   "Saddle stitching."@en;
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:inScheme   ab:construction-methods;
         skos:prefLabel  "Saddle stitch binding"@en;
@@ -726,12 +725,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/postcard>
         rdf:type         skos:Concept;
         rdfs:label       "Postcard"@en;
-        skos:altLabel    "Postcards."@en , "Picture postcards."@en , "Postcards"@en , "Postcards.aat."@en;
+        skos:altLabel    "Postcards.aat."@en , "Postcards"@en , "Picture postcards."@en , "Postcards."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://id.worldcat.org/fast/1073018> , <http://id.loc.gov/authorities/genreForms/gf2014026151> , <http://id.worldcat.org/fast/1726707> , <http://vocab.getty.edu/aat/300026819> , <http://id.loc.gov/authorities/subjects/sh85105462>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300026819> , <http://id.worldcat.org/fast/1726707> , <http://id.loc.gov/authorities/genreForms/gf2014026151>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Postcard"@en;
-        ab:matchKey      "postcards" , "picture-postcards" , "postcards-aat" .
+        ab:matchKey      "postcards-aat" , "picture-postcards" , "postcards" .
 
 <https://dkglab.github.io/ns/artists-books/construction/postage-stamp>
         rdf:type        skos:Concept;
@@ -747,7 +746,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Pop-up element"@en;
         skos:altLabel    "Books with pop-up illustrations"@en , "Pop-up books"@en , "Pop-up books."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://id.worldcat.org/fast/1765213> , <http://id.loc.gov/authorities/childrensSubjects/sj2021051099> , <http://id.worldcat.org/fast/1919955> , <http://id.loc.gov/authorities/genreForms/gf2014026150> , <http://vocab.getty.edu/aat/300201034>;
+        skos:exactMatch  <http://id.worldcat.org/fast/1919955> , <http://id.loc.gov/authorities/genreForms/gf2014026150> , <http://vocab.getty.edu/aat/300201034>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Pop-up element"@en;
         ab:matchKey      "books-with-pop-up-illustrations" , "pop-up-books" .
@@ -783,7 +782,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/paper-doll>
         rdf:type         skos:Concept;
         rdfs:label       "Paper doll"@en;
-        skos:altLabel    "Paper dolls"@en , "Paper dolls."@en;
+        skos:altLabel    "Paper dolls."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300211178> , <http://id.worldcat.org/fast/1941319> , <http://id.loc.gov/authorities/genreForms/gf2015026060>;
         skos:inScheme    ab:construction-methods;
@@ -793,7 +792,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/pamphlet-binding>
         rdf:type         skos:Concept;
         rdfs:label       "Pamphlet binding"@en;
-        skos:altLabel    "Pamphlets"@en , "Pamphlets."@en , "pamphlet bindings."@en , "Pamphlet bindings."@en;
+        skos:altLabel    "Pamphlets."@en , "pamphlet bindings."@en , "Pamphlet bindings."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300264218>;
         skos:inScheme    ab:construction-methods;
@@ -833,7 +832,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Miniature book"@en;
         skos:altLabel    "Miniature books (Printing)"@en , "Minature books (Printing)"@en , "Miniature books."@en , "Miniature books"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://id.loc.gov/authorities/subjects/sh85085643> , <http://id.worldcat.org/fast/1022666> , <http://id.loc.gov/vocabulary/rbmscv/cv00867>;
+        skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv00867>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Miniature book"@en;
         ab:matchKey      "miniature-books-printing" , "minature-books-printing" , "miniature-books" .
@@ -841,7 +840,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/map>
         rdf:type         skos:Concept;
         rdfs:label       "Map"@en;
-        skos:altLabel    "Maps"@en , "Pictorial maps."@en , "Maps."@en;
+        skos:altLabel    "Pictorial maps."@en , "Maps."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
         skos:exactMatch  <http://id.worldcat.org/fast/1423807> , <http://id.loc.gov/authorities/genreForms/gf2011026441> , <http://id.worldcat.org/fast/1423704>;
         skos:inScheme    ab:construction-methods;
@@ -945,9 +944,9 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/flip-book>
         rdf:type         skos:Concept;
         rdfs:label       "Flip book"@en;
-        skos:altLabel    "flip books"@en , "Flip books"@en , "Flip books."@en;
+        skos:altLabel    "Flip books"@en , "Flip books."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://id.worldcat.org/fast/927412> , <http://id.worldcat.org/fast/1726615> , <http://id.loc.gov/authorities/genreForms/gf2014026105> , <http://vocab.getty.edu/aat/300201033>;
+        skos:exactMatch  <http://id.worldcat.org/fast/1726615> , <http://id.loc.gov/authorities/genreForms/gf2014026105> , <http://vocab.getty.edu/aat/300201033>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Flip book"@en;
         ab:matchKey      "flip-books" .
@@ -1087,7 +1086,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Broadside"@en;
         skos:altLabel    "Broadsides."@en , "Broadsides"@en , "Broadsheet (format)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://id.worldcat.org/fast/839252> , <http://vocab.getty.edu/aat/300310088>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300310088>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Broadside"@en;
         ab:matchKey      "broadsides" , "broadsheet-format" .
@@ -1103,14 +1102,13 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         ab:matchKey      "braille-books" .
 
 <https://dkglab.github.io/ns/artists-books/construction/bookmark>
-        rdf:type         skos:Concept;
-        rdfs:label       "Bookmark"@en;
-        skos:altLabel    "Bookmarks"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://id.worldcat.org/fast/836338> , <http://id.loc.gov/authorities/subjects/sh85015736>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Bookmark"@en;
-        ab:matchKey      "bookmarks" .
+        rdf:type        skos:Concept;
+        rdfs:label      "Bookmark"@en;
+        skos:altLabel   "Bookmarks"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Bookmark"@en;
+        ab:matchKey     "bookmarks" .
 
 <https://dkglab.github.io/ns/artists-books/construction/blu-ray-disc>
         rdf:type        skos:Concept;
@@ -1142,14 +1140,13 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         ab:matchKey      "backless-bindings" .
 
 <https://dkglab.github.io/ns/artists-books/construction/altered-book>
-        rdf:type         skos:Concept;
-        rdfs:label       "Altered book"@en;
-        skos:altLabel    "Altered books."@en , "Altered books"@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
-        skos:exactMatch  <http://id.loc.gov/authorities/subjects/sh2003001210> , <http://id.worldcat.org/fast/806113>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Altered book"@en;
-        ab:matchKey      "altered-books" .
+        rdf:type        skos:Concept;
+        rdfs:label      "Altered book"@en;
+        skos:altLabel   "Altered books."@en , "Altered books"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/structure-physical-format>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Altered book"@en;
+        ab:matchKey     "altered-books" .
 
 <https://dkglab.github.io/ns/artists-books/construction/accordion-binding>
         rdf:type         skos:Concept;
@@ -1213,7 +1210,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
         skos:inScheme   ab:construction-methods;
         skos:prefLabel  "Typewriter art"@en;
-        ab:matchKey     "typewriter-art" , "typewriting" .
+        ab:matchKey     "typewriting" .
 
 <https://dkglab.github.io/ns/artists-books/construction/stenciling>
         rdf:type         skos:Concept;
@@ -1266,17 +1263,17 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/screen-printing>
         rdf:type         skos:Concept;
         rdfs:label       "Screen printing"@en;
-        skos:altLabel    "Screenprint"@en , "Screen prints."@en , "Screen prints"@en , "Screen printing."@en , "screen prints."@en , "Screenprints"@en;
+        skos:altLabel    "Screen prints."@en , "Screen prints"@en , "Screen printing."@en , "screen prints."@en , "Screenprints"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300178688> , <http://vocab.getty.edu/aat/300053281> , <http://id.loc.gov/authorities/genreForms/gf2017027258> , <http://id.worldcat.org/fast/1986255>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Screen printing"@en;
-        ab:matchKey      "screenprint" , "screenprints" , "screen-prints" , "screen-printing" .
+        ab:matchKey      "screenprints" , "screen-prints" , "screen-printing" .
 
 <https://dkglab.github.io/ns/artists-books/construction/relief-printing>
         rdf:type         skos:Concept;
         rdfs:label       "Relief printing"@en;
-        skos:altLabel    "Relief prints"@en , "Relief prints."@en , "Block printing (relief printing process)"@en , "Vinylcuts."@en;
+        skos:altLabel    "Relief prints."@en , "Block printing (relief printing process)"@en , "Vinylcuts."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
         skos:exactMatch  <http://vocab.getty.edu/aat/300041391> , <http://vocab.getty.edu/aat/300053289> , <http://vocab.getty.edu/aat/300264640> , <http://id.loc.gov/authorities/genreForms/gf2017027256> , <http://id.worldcat.org/fast/1986258>;
         skos:inScheme    ab:construction-methods;
@@ -1341,9 +1338,9 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/photography>
         rdf:type         skos:Concept;
         rdfs:label       "Photography"@en;
-        skos:altLabel    "fotografie"@en , "Landscape photography"@en , "Architectural photography"@en , "Photography, artistic"@en , "Photoalbum"@en , "Photography, Artistic"@en , "Photographs, Original."@en , "Photographs, Original"@en , "Foto's"@en , "Foto's."@en , "Glass negatives."@en , "Photomontages (visual works)."@en , "Photography."@en , "Photographic prints."@en , "Manipulated photographs"@en , "art photography."@en , "art photography"@en , "Anaglyphs."@en , "Fotografie"@en , "Architectural photography."@en , "Black-and-white photography."@en , "Manipulated photographs."@en , "Fotonovelas."@en , "Documentary photographs."@en , "Photographs"@en , "Photographical works."@en , "Fotografické publikace."@en , "Landscape photography."@en , "Art photography."@en , "Photography, Artistic."@en , "Photographic sequence."@en , "Photographic sequence"@en , "Photographs."@en , "Documentary photography."@en , "Documentary photography"@en;
+        skos:altLabel    "Photoalbum"@en , "Photography, Artistic"@en , "Photographs, Original."@en , "Photographs, Original"@en , "Foto's"@en , "Foto's."@en , "Glass negatives."@en , "Photomontages (visual works)."@en , "Photography."@en , "Photographic prints."@en , "Manipulated photographs"@en , "art photography."@en , "art photography"@en , "Anaglyphs."@en , "Fotografie"@en , "Architectural photography."@en , "Black-and-white photography."@en , "Manipulated photographs."@en , "Fotonovelas."@en , "Documentary photographs."@en , "Photographs"@en , "Photographical works."@en , "Fotografické publikace."@en , "Landscape photography."@en , "Art photography."@en , "Photography, Artistic."@en , "Photographic sequence."@en , "Photographic sequence"@en , "Photographs."@en , "Documentary photography."@en , "Documentary photography"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
-        skos:exactMatch  <http://id.loc.gov/authorities/subjects/sh85101268> , <http://id.worldcat.org/fast/813301> , <http://id.worldcat.org/fast/1061714> , <http://id.loc.gov/authorities/subjects/sh85101269> , <http://id.worldcat.org/fast/1061964> , <https://id.loc.gov/authorities/genreForms/gf2017027249> , <http://vocab.getty.edu/aat/300162056> , <http://vocab.getty.edu/aat/300127269> , <http://vocab.getty.edu/aat/300046300> , <http://id.worldcat.org/fast/1986270> , <http://id.worldcat.org/fast/1774325> , <http://id.loc.gov/authorities/genreForms/gf2017027230> , <http://vocab.getty.edu/aat/300178594> , <http://id.worldcat.org/fast/1423689>;
+        skos:exactMatch  <https://id.loc.gov/authorities/genreForms/gf2017027249> , <http://vocab.getty.edu/aat/300162056> , <http://vocab.getty.edu/aat/300127269> , <http://vocab.getty.edu/aat/300046300> , <http://id.worldcat.org/fast/1986270> , <http://id.worldcat.org/fast/1774325> , <http://id.loc.gov/authorities/genreForms/gf2017027230> , <http://vocab.getty.edu/aat/300178594> , <http://id.worldcat.org/fast/1423689>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Photography"@en;
         ab:matchKey      "photoalbum" , "photographs-original" , "foto-s" , "glass-negatives" , "photomontages-visual-works" , "photography" , "photographic-prints" , "anaglyphs" , "fotografie" , "architectural-photography" , "black-and-white-photography" , "manipulated-photographs" , "fotonovelas" , "documentary-photographs" , "photographical-works" , "fotografick-publikace" , "landscape-photography" , "art-photography" , "photography-artistic" , "photographic-sequence" , "photographs" , "documentary-photography" .
@@ -1358,14 +1355,13 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         ab:matchKey     "photocopies" , "color-photocopies" .
 
 <https://dkglab.github.io/ns/artists-books/construction/photocollage>
-        rdf:type         skos:Concept;
-        rdfs:label       "Photocollage"@en;
-        skos:altLabel    "Photocollages (photographic compositions)."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
-        skos:exactMatch  <http://id.loc.gov/authorities/subjects/sh93002335> , <http://id.worldcat.org/fast/1061527>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Photocollage"@en;
-        ab:matchKey      "photocollage" , "photocollages-photographic-compositions" .
+        rdf:type        skos:Concept;
+        rdfs:label      "Photocollage"@en;
+        skos:altLabel   "Photocollages (photographic compositions)."@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Photocollage"@en;
+        ab:matchKey     "photocollages-photographic-compositions" .
 
 <https://dkglab.github.io/ns/artists-books/construction/palladium-process>
         rdf:type        skos:Concept;
@@ -1397,19 +1393,18 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         ab:matchKey      "overprinting" .
 
 <https://dkglab.github.io/ns/artists-books/construction/offset-lithography>
-        rdf:type         skos:Concept;
-        rdfs:label       "Offset lithography"@en;
-        skos:altLabel    "Offset printing"@en , "Offset lithographs"@en , "offset lithographs."@en , "Offset lithography."@en , "Offset printing."@en , "Offset prints."@en;
-        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
-        skos:exactMatch  <http://id.worldcat.org/fast/1044269>;
-        skos:inScheme    ab:construction-methods;
-        skos:prefLabel   "Offset lithography"@en;
-        ab:matchKey      "offset-printing" , "offset-lithographs" , "offset-lithography" , "offset-prints" .
+        rdf:type        skos:Concept;
+        rdfs:label      "Offset lithography"@en;
+        skos:altLabel   "Offset prints."@en , "Offset printing."@en , "Offset lithography."@en , "offset lithographs."@en , "Offset lithographs"@en , "Offset printing"@en;
+        skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
+        skos:inScheme   ab:construction-methods;
+        skos:prefLabel  "Offset lithography"@en;
+        ab:matchKey     "offset-prints" , "offset-lithography" , "offset-lithographs" , "offset-printing" .
 
 <https://dkglab.github.io/ns/artists-books/construction/monotype-planographic-print>
         rdf:type        skos:Concept;
         rdfs:label      "Monotype (planographic print)"@en;
-        skos:altLabel   "Monotypes"@en , "Monotypes (Planographic prints)."@en , "Monotypes."@en;
+        skos:altLabel   "Monotypes (Planographic prints)."@en , "Monotypes."@en;
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
         skos:inScheme   ab:construction-methods;
         skos:prefLabel  "Monotype (planographic print)"@en;
@@ -1418,7 +1413,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/marbling>
         rdf:type         skos:Concept;
         rdfs:label       "Marbling"@en;
-        skos:altLabel    "Marbled papers"@en , "Marbled papers."@en;
+        skos:altLabel    "Marbled papers."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
         skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv00063>;
         skos:inScheme    ab:construction-methods;
@@ -1438,12 +1433,12 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/linoleum-block-printing>
         rdf:type         skos:Concept;
         rdfs:label       "Linoleum block printing"@en;
-        skos:altLabel    "Linocuts (prints)"@en , "Linocuts"@en , "Linocuts."@en , "Linoleum block-printing"@en;
+        skos:altLabel    "Linocuts."@en , "Linocuts"@en , "Linocuts (prints)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
-        skos:exactMatch  <http://vocab.getty.edu/aat/300041393> , <http://id.loc.gov/authorities/genreForms/gf2017027240> , <http://id.worldcat.org/fast/1986235> , <http://id.worldcat.org/fast/999280>;
+        skos:exactMatch  <http://id.worldcat.org/fast/1986235> , <http://id.loc.gov/authorities/genreForms/gf2017027240> , <http://vocab.getty.edu/aat/300041393>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Linoleum block printing"@en;
-        ab:matchKey      "linocuts-prints" , "linocuts" , "linoleum-block-printing" .
+        ab:matchKey      "linocuts" , "linocuts-prints" .
 
 <https://dkglab.github.io/ns/artists-books/construction/letterpress-printing>
         rdf:type         skos:Concept;
@@ -1698,7 +1693,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Collage"@en;
         skos:altLabel    "Collage (technique)"@en , "Collage."@en , "Collages."@en , "Collages (visual works)"@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/process-technique>;
-        skos:exactMatch  <http://id.loc.gov/authorities/subjects/sh85027965> , <http://id.worldcat.org/fast/867085> , <http://vocab.getty.edu/aat/300033963> , <http://vocab.getty.edu/aat/300138699> , <http://id.loc.gov/authorities/genreForms/gf2017027227> , <http://id.worldcat.org/fast/1986256>;
+        skos:exactMatch  <http://vocab.getty.edu/aat/300033963> , <http://vocab.getty.edu/aat/300138699> , <http://id.loc.gov/authorities/genreForms/gf2017027227> , <http://id.worldcat.org/fast/1986256>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Collage"@en;
         ab:matchKey      "collage-technique" , "collage" , "collages" , "collages-visual-works" .
@@ -1771,11 +1766,11 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/watercolor-paint>
         rdf:type        skos:Concept;
         rdfs:label      "Watercolor"@en;
-        skos:altLabel   "Watercolor painting"@en , "Watercolors."@en , "Watercolors (paintings)"@en , "Watercolor (paint)"@en;
+        skos:altLabel   "Watercolors."@en , "Watercolors (paintings)"@en , "Watercolor (paint)"@en;
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
         skos:inScheme   ab:construction-methods;
         skos:prefLabel  "Watercolor"@en;
-        ab:matchKey     "watercolor-painting" , "watercolors" , "watercolors-paintings" , "watercolor-paint" .
+        ab:matchKey     "watercolors" , "watercolors-paintings" , "watercolor-paint" .
 
 <https://dkglab.github.io/ns/artists-books/construction/vellum>
         rdf:type        skos:Concept;
@@ -2010,7 +2005,7 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         rdfs:label       "Handmade paper"@en;
         skos:altLabel    "Handmade papers (Paper)"@en , "Paper, Handmade"@en , "Paper, handmade."@en , "Handmade papers."@en , "Handmade paper."@en , "Handmade papers"@en , "Handmade papers (fiber product)"@en , "Paper, Handmade."@en;
         skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/material>;
-        skos:exactMatch  <http://id.loc.gov/authorities/subjects/sh85097591> , <http://id.worldcat.org/fast/1052593> , <http://id.loc.gov/vocabulary/rbmscv/cv01435> , <http://vocab.getty.edu/aat/300411543>;
+        skos:exactMatch  <http://id.loc.gov/vocabulary/rbmscv/cv01435> , <http://vocab.getty.edu/aat/300411543>;
         skos:inScheme    ab:construction-methods;
         skos:prefLabel   "Handmade paper"@en;
         ab:matchKey      "handmade-papers-paper" , "handmade-papers" , "handmade-paper" , "handmade-papers-fiber-product" , "paper-handmade" .
@@ -2018,11 +2013,11 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 <https://dkglab.github.io/ns/artists-books/construction/gouache>
         rdf:type        skos:Concept;
         rdfs:label      "Gouache"@en;
-        skos:altLabel   "Gouache painting"@en , "Gouaches (paintings)"@en;
+        skos:altLabel   "Gouaches (paintings)"@en;
         skos:broader    <https://dkglab.github.io/ns/artists-books/construction/category/material>;
         skos:inScheme   ab:construction-methods;
         skos:prefLabel  "Gouache"@en;
-        ab:matchKey     "gouache-painting" , "gouaches-paintings" .
+        ab:matchKey     "gouaches-paintings" .
 
 <https://dkglab.github.io/ns/artists-books/construction/glassine>
         rdf:type        skos:Concept;

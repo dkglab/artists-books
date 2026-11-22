@@ -14,7 +14,9 @@ through four queues on it at once, live:
 - **Subject or construction**: `construction-overlap-review.csv`'s groups 1, 2
   and 5 (group 3, Screen prints, is settled). Each heading goes to
   construction, subjects, both or neither. A construction decision checks the
-  pre-filled concept or picks one, and writes `construction/decisions.csv`. The
+  pre-filled concept or picks one, and writes `construction/decisions.csv`.
+  The ~100 label-match pre-fills (#108) are held at `include=n`, off the site,
+  until a decision here confirms them. The
   16 headings also in the first queue get only their construction side here.
 - **Labels**: subject concepts that share a label (merge them, or keep them
   apart with distinct labels) and mis-cased labels, with a suggestion taken
@@ -36,5 +38,7 @@ concept: a label for the whole concept, or a merge into another).
 - `index.html`: the page.
 - `pull_decisions.py DIR`: writes a saved copy of both collections into
   `subjects/decisions.csv` and `construction/decisions.csv`, with the same
-  checks as the page. It writes nothing if any check fails. Then rebuild with
+  checks as the page, and keeps Priya's finer categories (`topical-people`,
+  `geographic-city`, ...) for the rows taken from her side in
+  `subjects/fine-categories.csv`. It writes nothing if any check fails. Then rebuild with
   `make -C sources subject-terms.ttl construction-methods.ttl`.

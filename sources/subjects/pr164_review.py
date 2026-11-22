@@ -85,13 +85,17 @@ def build():
     july = {r["cluster"]: r for r in rows(git_csv(JULY))}
     head = {r["cluster"]: r for r in csv.DictReader(open(DECISIONS, newline=""))}
     priya = priya_side()
+    # A pre-fill held at include=n until the #225 review confirms it still
+    # claims its heading for construction.
     claimed = {r["cluster"] for r in csv.DictReader(open(CONSTRUCTION, newline=""))
-               if r["include"] == "y"}
+               if r["include"] == "y" or (r["note"].startswith("pre-filled") and r["conceptId"])}
 
     # Which prefLabels each conceptId would carry if her rows were taken,
-    # alongside the rows of decisions.csv that already use it.
+    # alongside the rows of decisions.csv that already use it. A cluster she
+    # changed counts only with her row, so its own old label isn't a conflict.
+    mine = {r["cluster"] for r in priya}
     label_of_id = collections.defaultdict(set)
-    for r in list(head.values()) + priya:
+    for r in [r for k, r in head.items() if k not in mine] + priya:
         if r["include"] == "y" and r["conceptId"] and r["prefLabel"].strip():
             label_of_id[r["conceptId"]].add(r["prefLabel"].strip())
 

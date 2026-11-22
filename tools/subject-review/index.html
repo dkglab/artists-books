@@ -300,7 +300,8 @@ const plural = (n, one, many) => `${n} ${n === 1 ? one : many || one + "s"}`;
 
 // ---------- values ----------
 // Priya's finer categories (topical-people, geographic-city, ...) become the
-// two the site has; the finer one is kept on the decision as `fine`.
+// two the site has; the finer one is kept on the decision as `fine`, which
+// pull_decisions.py writes to sources/subjects/fine-categories.csv.
 function coarse(cat) {
   const head = (cat || "").split("-")[0];
   return CATS.includes(head) ? head : "";
@@ -330,10 +331,19 @@ function groupOf(g) { return GROUPS.find((x) => x.g === g); }
 function headings(row) { return row.labels.split(" | ").map((s) => s.trim()).filter(Boolean); }
 function titleOf(row) { return headings(row)[0] || row.cluster; }
 const ownsSubject = (row) => row.q !== "labels" && !(row.q === "overlap" && row.pair);
-// A concept merged into another on the Labels tab stands for that one.
+// A concept merged into another on the Labels tab stands for that one, followed
+// to the end of a chain (A into B, B into C: A stands for C). A cycle merges
+// nothing; pull_decisions.py refuses one.
 function resolve(cid) {
-  const o = S.overrides.get(cid);
-  return o && o.mergeInto ? o.mergeInto : cid;
+  const seen = new Set([cid]);
+  let cur = cid;
+  for (;;) {
+    const o = S.overrides.get(cur);
+    if (!o || !o.mergeInto) return cur;
+    if (seen.has(o.mergeInto)) return cid;
+    seen.add(o.mergeInto);
+    cur = o.mergeInto;
+  }
 }
 function labelOverride(cid) {
   const o = S.overrides.get(cid);
@@ -643,7 +653,7 @@ function hints(row) {
     if (row.priya.include === "y" && !row.priya.category) li("Priya included it but gave it no category.");
     if (row.priya.include === "y" && !row.priya.prefLabel.trim()) li("Priya's row has no label.");
     const fine = fineOf(row.priya);
-    if (fine) li(`Priya used the finer category “${fine}”. The site only has Topics and Places, so it becomes ${CAT_LABEL[coarse(fine)]}. The finer one is kept with the decision.`);
+    if (fine) li(`Priya used the finer category “${fine}”. The site only has Topics and Places, so it becomes ${CAT_LABEL[coarse(fine)]}. The finer one is saved beside the decisions, in fine-categories.csv.`);
     else if (row.priya.category && !CATS.includes(row.priya.category)) li(`Priya's category “${row.priya.category}” isn't one the site has. Pick Topic or Place.`);
     if (row.priya.conceptId && !SLUG.test(row.priya.conceptId.trim())) li(`Priya's concept ID “${row.priya.conceptId}” has spaces, capitals or stray hyphens.`);
     if (row.priya.prefLabel !== row.priya.prefLabel.trim()) li("Priya's label has a stray space at one end. It's trimmed when you use it.");
@@ -657,7 +667,7 @@ function hints(row) {
     li(OVERLAP_GROUP[row.group]);
     if (row.prefill) li(h("b", {}, "Pre-filled by label match: "), `construction “${row.prefill}”. Check it before confirming.`);
     else if (row.matches.length) li(`Its label matches the construction concept${row.matches.length > 1 ? "s" : ""} ${row.matches.map((m) => "“" + m + "”").join(", ")}.`);
-    if (row.pair) li(h("b", {}, "Its subject side is decided in Two passes."), " Here you only decide the construction side. ",
+    if (row.pair) li(h("b", {}, `Its subject side is decided in ${groupOf(rowOf(row.pair)?.g)?.name || "another tab"}, under “Reconcile the two passes”.`), " Here you only decide the construction side. ",
       h("button", { class: "navbtn sm", onclick: () => jump(rowOf(row.pair)) }, "Open it there"));
   }
   const base = row.q !== "overlap" && baseConcept(row);
@@ -952,6 +962,26 @@ function enqueue(key, run) {
   chains.set(key, p.catch(() => {}));
   return p;
 }
+// The first decision on a heading creates its document. Two reviewers can
+// make it at the same moment, before either sees the other's in a snapshot,
+// and a plain set() would replace the first along with its history. The
+// store has no create-if-absent write, so: take a short lease on the
+// document, read it, and set() only if nobody has created it; otherwise merge
+// into theirs, keeping their history ahead of ours.
+const TAB = Math.random().toString(36).slice(2);
+async function firstWrite(ref, patch, merged) {
+  for (let i = 0; i < 6; i++) {
+    const lease = await ref.acquire({ holder: (S.me || "anon") + ":" + TAB, ttlMs: 5000 });
+    if (lease.acquired) break;
+    await new Promise((r) => setTimeout(r, 400));
+  }
+  const snap = await ref.get();
+  const cur = snap.exists ? snap.data() : null;
+  if (!cur || !cur.cluster) return ref.set(merged);
+  const p = { ...patch };
+  if (patch.history) p.history = [...(cur.history || []), ...patch.history.slice(-1)].slice(-12);
+  return ref.update(p);
+}
 function writeRow(row, change, histEntry) {
   if (!S.db || !S.canWrite) return Promise.resolve();
   const prev = S.decisions.get(row.id);
@@ -962,7 +992,7 @@ function writeRow(row, change, histEntry) {
   S.decisions.set(row.id, merged);
   renderAll();
   const ref = S.db.collection("rows").doc(row.id);
-  return enqueue("r." + row.id, () => (prev ? ref.update(patch) : ref.set(merged)).catch((e) => {
+  return enqueue("r." + row.id, () => (prev ? ref.update(patch) : firstWrite(ref, patch, merged)).catch((e) => {
     // Undo the local copy (unless a later change or a snapshot replaced it),
     // so the row doesn't look decided and the next change doesn't update() a
     // document that was never created.

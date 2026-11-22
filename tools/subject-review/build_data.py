@@ -200,7 +200,9 @@ def main(out):
                "cons": {f: (c or {}).get(f, "") for f in ["include", "conceptId", "category", "prefLabel", "note"]},
                "matches": [m for m in r["matching_construction_concepts"].split()
                            if m and m not in rejected(c)],
-               "prefill": c["conceptId"] if c and c["note"].startswith("pre-filled") and c["include"] == "y" else ""}
+               # a pre-fill is held at include=n, off the site, until this
+               # review confirms it, but keeps its concept for the page to offer
+               "prefill": c["conceptId"] if c and c["note"].startswith("pre-filled") and c["conceptId"] else ""}
         if k in pair_ids:
             row["pair"] = pair_ids[k]
         rows.append(with_books(row, k))

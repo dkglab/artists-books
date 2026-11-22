@@ -5,6 +5,8 @@ The page (index.html, published as a claude.ai artifact) keeps two
 collections in its shared database:
 
   rows/<id>       one per heading: {q, cluster, take, final, cons, fine, notes, ...}
+                  (fine, Priya's finer category, is written to
+                  subjects/fine-categories.csv, as the site has only two)
                   q is the queue:
                     pairs    the #164 reconciliation. take head keeps the row,
                              priya/edit write `final`, unsure leaves it.
@@ -47,6 +49,7 @@ SUBJECTS = "sources/subjects/decisions.csv"
 CONSTRUCTION = "sources/construction/decisions.csv"
 SHEET = "sources/subjects/pr164-review.csv"
 OVERLAP = "sources/subjects/construction-overlap-review.csv"
+FINE = "sources/subjects/fine-categories.csv"   # Priya's finer categories, kept
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 CATEGORIES = {"topical", "geographic"}
 CONS_CATEGORIES = {"material", "process-technique", "hand-papermaking-traditions",
@@ -117,7 +120,8 @@ def subject_final(d, current, in_pairs):
 
 
 def main(out_dir):
-    rows = docs(os.path.join(out_dir, "rows"))
+    # a document with no heading is only a lease a first write took (index.html)
+    rows = [d for d in docs(os.path.join(out_dir, "rows")) if d.get("cluster")]
     concept_docs = docs(os.path.join(out_dir, "concepts"))
     merges = {d["id"]: d["mergeInto"] for d in concept_docs if d.get("mergeInto")}
     overrides = {d["id"]: d for d in concept_docs if d.get("prefLabel")}
@@ -168,6 +172,22 @@ def main(out_dir):
                 errors.append(f"subjects {k}: no label")
         put(s_by, s_rows, s_cols, k, new, FIELDS, "subjects")
 
+    # Priya's finer category (topical-people, geographic-city, ...) becomes one
+    # of the two the site has; the finer one is kept beside the decisions, in
+    # FINE, for every heading whose row is taken from her side. The notes
+    # column isn't used for it: its values are markers ("complex", ...).
+    fine = {}
+    if os.path.exists(FINE):
+        fine = {r["cluster"]: r["fineCategory"] for r in csv.DictReader(open(FINE, newline="", encoding="utf-8"))}
+    for d in rows:
+        if (d.get("q") or "pairs") != "pairs" or d.get("take") in {None, "", "unsure"}:
+            continue
+        k, f = d["cluster"], (d.get("fine") or "").strip()
+        if d["take"] in {"priya", "edit"} and f and s_by.get(k, {}).get("include") == "y":
+            fine[k] = f
+        else:
+            fine.pop(k, None)
+
     # construction: the overlap queue's construction side
     cons_label = {r["conceptId"]: (r["prefLabel"], r["category"]) for r in c_rows if r["include"] == "y" and r["conceptId"]}
     for d in rows:
@@ -189,9 +209,27 @@ def main(out_dir):
             errors.append(f"construction {k}: no label")
         put(c_by, c_rows, c_cols, k, {"include": "y", **c, "note": ""}, CONS_FIELDS, "construction")
 
-    # a concept merged into another (Labels tab) takes that concept's ID and label
+    # a concept merged into another (Labels tab) takes that concept's ID and
+    # label. A chain (A into B, B into C) is followed to its end first, so the
+    # result doesn't depend on the order the merges were saved in.
+    def final(src):
+        seen, cur = [src], merges[src]
+        while cur in merges:
+            if cur in seen:
+                return None
+            seen.append(cur)
+            cur = merges[cur]
+        return cur
+
+    resolved = {}
+    for src in merges:
+        target = final(src)
+        if target is None:
+            errors.append(f"merge {src}: the merges into one another make a cycle")
+        else:
+            resolved[src] = target
     merged = 0
-    for src, target in merges.items():
+    for src, target in resolved.items():
         tl = next(((r["prefLabel"], r["category"]) for r in s_rows if r["include"] == "y" and r["conceptId"] == target), None)
         if tl is None:
             errors.append(f"merge {src} -> {target}: no heading carries {target}")
@@ -223,8 +261,14 @@ def main(out_dir):
 
     save(SUBJECTS, s_raw, s_cols, s_rows)
     save(CONSTRUCTION, c_raw, c_cols, c_rows)
+    if fine or os.path.exists(FINE):
+        with open(FINE, "w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f, lineterminator="\n")
+            w.writerow(["cluster", "fineCategory"])
+            w.writerows(sorted(fine.items()))
     print("\n".join(changed))
     print(f"{len(changed)} row(s) changed, {merged} merged by {len(merges)} merge(s), {relabelled} relabelled by {len(overrides)} concept label(s)")
+    print(f"finer categories kept in {FINE}: {len(fine)}")
     print(f"draft notes left: {sum(r['note'] == DRAFT for r in s_rows)}")
     print("decisions on the page: " + ", ".join(f"{k} {n}" for k, n in sorted(takes.items())))
 
