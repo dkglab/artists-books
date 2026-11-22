@@ -1,24 +1,34 @@
 #!/usr/bin/env python3
-"""Merge the subject reconciliation page's decisions into decisions.csv.
+"""Merge the subject review page's decisions into the two decisions files.
 
 The page (index.html, published as a claude.ai artifact) keeps two
 collections in its shared database:
 
-  rows/<id>       one per heading in pr164-review.csv: {cluster, take, final,
-                  fine, notes, ...}. take is head (keep decisions.csv as it
-                  is), priya or edit (write `final`), or unsure.
-  concepts/<id>   a label and category set for a whole concept: every
-                  include=y row of decisions.csv under that concept gets it.
+  rows/<id>       one per heading: {q, cluster, take, final, cons, fine, notes, ...}
+                  q is the queue:
+                    pairs    the #164 reconciliation. take head keeps the row,
+                             priya/edit write `final`, unsure leaves it.
+                    draft    a draft place (#108). confirm keeps the row and
+                             clears its draft note, out leaves it out, edit
+                             writes `final`, unsure leaves it.
+                    overlap  subject or construction (#108). cons/subj/both/
+                             neither set both schemes; `final` is the subject
+                             row, `cons` the construction concept. A heading
+                             that's also in pairs gets only its construction
+                             side here.
+  concepts/<id>   a label and category set for a whole subject concept: every
+                  include=y row of subjects/decisions.csv under it gets them.
 
 Save both collections first (Claude: ArtifactData `list` of `rows` and of
-`concepts` with `out_dir`), then run from the repo root:
+`concepts` with `out_dir`, querying `rows` per `g` if it holds over 1,000),
+then run from the repo root:
 
   python3 tools/subject-review/pull_decisions.py <out_dir>
 
-It checks what it writes the way the page does (a slug concept ID, a
-topical/geographic category, a label, and one label and category per
-concept across the whole file) and writes nothing if any check fails.
-Row order, columns and line endings are kept. Prints what changed.
+It checks what it writes the way the page does (slug concept IDs, valid
+categories, labels, and one label and category per concept across each whole
+file) and writes nothing if any check fails. Row order, columns and line
+endings are kept. Prints what changed.
 """
 import collections
 import csv
@@ -29,87 +39,171 @@ import os
 import re
 import sys
 
-DECISIONS = "sources/subjects/decisions.csv"
+SUBJECTS = "sources/subjects/decisions.csv"
+CONSTRUCTION = "sources/construction/decisions.csv"
 SHEET = "sources/subjects/pr164-review.csv"
+OVERLAP = "sources/subjects/construction-overlap-review.csv"
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 CATEGORIES = {"topical", "geographic"}
+CONS_CATEGORIES = {"material", "process-technique", "hand-papermaking-traditions",
+                   "structure-physical-format", "enclosure", "genre-form"}
 FIELDS = ["include", "conceptId", "category", "prefLabel", "exactMatch", "note"]
+CONS_FIELDS = ["include", "conceptId", "category", "prefLabel", "note"]
+DRAFT = "auto-seeded draft; review"
 
 
 def docs(folder):
     out = []
-    for path in sorted(glob.glob(os.path.join(folder, "*.json"))):
+    for path in sorted(glob.glob(os.path.join(folder, "**", "*.json"), recursive=True)):
         with open(path, encoding="utf-8") as f:
             out.append(json.load(f))
     return out
 
 
-def main(out_dir):
-    rows = docs(os.path.join(out_dir, "rows"))
-    concepts = {d["id"]: d for d in docs(os.path.join(out_dir, "concepts"))}
-    with open(DECISIONS, newline="", encoding="utf-8") as f:
+def load(path):
+    with open(path, newline="", encoding="utf-8") as f:
         raw = f.read()
     reader = csv.DictReader(io.StringIO(raw, newline=""))
-    cols, dec = reader.fieldnames, list(reader)
-    by_key = {r["cluster"]: r for r in dec}
+    return raw, reader.fieldnames, list(reader)
+
+
+def save(path, raw, cols, rows):
+    le = "\r\n" if "\r\n" in raw else "\n"
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, cols, lineterminator=le)
+        w.writeheader()
+        w.writerows(rows)
+
+
+def left_out(note=""):
+    return {"include": "n", "conceptId": "", "category": "", "prefLabel": "", "exactMatch": "", "note": note}
+
+
+def reviewed(note):
+    """A decision on the page is the review, so the seed's '...; review' notes go."""
+    return "" if note.endswith("; review") else note
+
+
+def clean(final):
+    new = {f: (final or {}).get(f, "").strip() for f in FIELDS}
+    new["note"] = reviewed(new["note"])
+    return new if new["include"] == "y" else left_out(new["note"])
+
+
+def subject_final(d, current, in_pairs):
+    """The subjects row a decision writes, or None to leave it as it is."""
+    q, take = d.get("q") or "pairs", d.get("take")
+    if q == "pairs":
+        if take == "head" and current["note"] != reviewed(current["note"]):
+            return {**{f: current[f] for f in FIELDS}, "note": ""}
+        return clean(d.get("final")) if take in {"priya", "edit"} else None
+    if q == "draft":
+        if take == "confirm":
+            return {**{f: current[f] for f in FIELDS}, "note": ""}
+        return left_out() if take == "out" else clean(d.get("final")) if take == "edit" else None
+    if in_pairs:
+        return None
+    if take == "cons":
+        return left_out("construction")
+    if take == "neither":
+        return left_out()
+    return clean(d.get("final")) if take in {"subj", "both"} else None
+
+
+def main(out_dir):
+    rows = docs(os.path.join(out_dir, "rows"))
+    overrides = {d["id"]: d for d in docs(os.path.join(out_dir, "concepts"))}
+    s_raw, s_cols, s_rows = load(SUBJECTS)
+    c_raw, c_cols, c_rows = load(CONSTRUCTION)
+    s_by = {r["cluster"]: r for r in s_rows}
+    c_by = {r["cluster"]: r for r in c_rows}
     labels = {r["cluster"]: r["labels"] for r in csv.DictReader(open(SHEET, newline="", encoding="utf-8"))}
+    labels.update({r["cluster"]: r["labels"] for r in csv.DictReader(open(OVERLAP, newline="", encoding="utf-8"))})
+    in_pairs = {r["cluster"] for r in csv.DictReader(open(SHEET, newline="", encoding="utf-8"))}
 
     errors, changed = [], []
-    takes = collections.Counter(d.get("take") or "todo" for d in rows)
-    for d in rows:
-        if d.get("take") not in {"priya", "edit"}:
-            continue
+    takes = collections.Counter(f"{d.get('q') or 'pairs'} {d.get('take') or 'todo'}" for d in rows)
+
+    def put(by, out, cols, k, new, fields, where):
+        r = by.get(k)
+        if r is None:
+            if new["include"] != "y":
+                return
+            r = {c: "" for c in cols}
+            r.update(cluster=k, labels=labels.get(k, ""))
+            out.append(r)
+            by[k] = r
+        before = {f: r[f] for f in fields}
+        r.update({f: new[f] for f in fields})
+        if before != {f: r[f] for f in fields}:
+            changed.append(f"{where} {k}: " + ", ".join(f"{f} {before[f]!r} -> {r[f]!r}" for f in fields if before[f] != r[f]))
+
+    # subjects: pairs first, then the #108 queues; a cluster has one owner
+    order = {"pairs": 0, "draft": 1, "overlap": 2}
+    for d in sorted(rows, key=lambda d: order.get(d.get("q") or "pairs", 3)):
         k = d["cluster"]
-        new = {f: (d.get("final") or {}).get(f, "").strip() for f in FIELDS}
-        if new["include"] != "y":
-            new.update(include="n", conceptId="", category="", prefLabel="")
-        else:
-            o = concepts.get(new["conceptId"])
+        cur = s_by.get(k, left_out())
+        new = subject_final(d, cur, (d.get("q") == "overlap") and k in in_pairs)
+        if new is None:
+            continue
+        if new["include"] == "y":
+            o = overrides.get(new["conceptId"])
             if o:
                 new.update(prefLabel=o["prefLabel"], category=o["category"])
             if not SLUG.match(new["conceptId"]):
-                errors.append(f"{k}: concept ID {new['conceptId']!r} isn't a slug")
+                errors.append(f"subjects {k}: concept ID {new['conceptId']!r} isn't a slug")
             if new["category"] not in CATEGORIES:
-                errors.append(f"{k}: category {new['category']!r}")
+                errors.append(f"subjects {k}: category {new['category']!r}")
             if not new["prefLabel"]:
-                errors.append(f"{k}: no label")
-        r = by_key.get(k)
-        if r is None:
-            r = {c: "" for c in cols}
-            r.update(cluster=k, labels=labels.get(k, ""))
-            dec.append(r)
-            by_key[k] = r
-        before = {f: r[f] for f in FIELDS}
-        r.update(new)
-        if before != new:
-            changed.append(f"{k}: " + ", ".join(f"{f} {before[f]!r} -> {new[f]!r}" for f in FIELDS if before[f] != new[f]))
+                errors.append(f"subjects {k}: no label")
+        put(s_by, s_rows, s_cols, k, new, FIELDS, "subjects")
+
+    # construction: the overlap queue's construction side
+    cons_label = {r["conceptId"]: (r["prefLabel"], r["category"]) for r in c_rows if r["include"] == "y" and r["conceptId"]}
+    for d in rows:
+        if d.get("q") != "overlap" or d.get("take") in {None, "", "unsure"}:
+            continue
+        k = d["cluster"]
+        if d["take"] in {"subj", "neither"}:
+            if k in c_by:
+                put(c_by, c_rows, c_cols, k, {"include": "n", "conceptId": "", "category": "", "prefLabel": "", "note": "subject (#108 review)" if d["take"] == "subj" else ""}, CONS_FIELDS, "construction")
+            continue
+        c = {f: (d.get("cons") or {}).get(f, "").strip() for f in ["conceptId", "category", "prefLabel"]}
+        if c["conceptId"] in cons_label:
+            c["prefLabel"], c["category"] = cons_label[c["conceptId"]]
+        if not SLUG.match(c["conceptId"]):
+            errors.append(f"construction {k}: concept ID {c['conceptId']!r} isn't a slug")
+        if c["category"] not in CONS_CATEGORIES:
+            errors.append(f"construction {k}: category {c['category']!r}")
+        if not c["prefLabel"]:
+            errors.append(f"construction {k}: no label")
+        put(c_by, c_rows, c_cols, k, {"include": "y", **c, "note": ""}, CONS_FIELDS, "construction")
 
     relabelled = 0
-    for cid, o in concepts.items():
-        for r in dec:
+    for cid, o in overrides.items():
+        for r in s_rows:
             if r["include"] == "y" and r["conceptId"] == cid and (r["prefLabel"], r["category"]) != (o["prefLabel"], o["category"]):
                 r["prefLabel"], r["category"] = o["prefLabel"], o["category"]
                 relabelled += 1
 
-    seen = collections.defaultdict(set)
-    for r in dec:
-        if r["include"] == "y":
-            seen[r["conceptId"]].add((r["prefLabel"], r["category"]))
-    for cid, ls in sorted(seen.items()):
-        if len(ls) > 1:
-            errors.append(f"concept {cid}: several labels/categories {sorted(ls)}")
+    for name, out in [("subjects", s_rows), ("construction", c_rows)]:
+        seen = collections.defaultdict(set)
+        for r in out:
+            if r["include"] == "y":
+                seen[r["conceptId"]].add((r["prefLabel"], r["category"]))
+        for cid, ls in sorted(seen.items()):
+            if len(ls) > 1:
+                errors.append(f"{name} concept {cid}: several labels/categories {sorted(ls)}")
     if errors:
         print("\n".join(errors), file=sys.stderr)
-        sys.exit(f"{len(errors)} problems; {DECISIONS} not written")
+        sys.exit(f"{len(errors)} problems; nothing written")
 
-    le = "\r\n" if "\r\n" in raw else "\n"
-    with open(DECISIONS, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, cols, lineterminator=le)
-        w.writeheader()
-        w.writerows(dec)
+    save(SUBJECTS, s_raw, s_cols, s_rows)
+    save(CONSTRUCTION, c_raw, c_cols, c_rows)
     print("\n".join(changed))
-    print(f"{len(changed)} row(s) changed, {relabelled} relabelled by {len(concepts)} concept label(s)")
-    print("decisions on the page: " + ", ".join(f"{k} {n}" for k, n in takes.most_common()))
+    print(f"{len(changed)} row(s) changed, {relabelled} relabelled by {len(overrides)} concept label(s)")
+    print(f"draft notes left: {sum(r['note'] == DRAFT for r in s_rows)}")
+    print("decisions on the page: " + ", ".join(f"{k} {n}" for k, n in sorted(takes.items())))
 
 
 if __name__ == "__main__":

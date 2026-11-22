@@ -57,8 +57,11 @@ header.top {
 }
 h1 { font-family: var(--font-head); font-weight: 600; font-size: 18px; margin: 0; letter-spacing: 0.01em; }
 h1 small { font-family: var(--font-body); font-weight: 400; font-size: 12px; color: var(--ink-soft); margin-left: 6px; }
-.tabs { display: flex; gap: 4px; flex-wrap: wrap; }
-.tab { border: 1px solid var(--rule); background: transparent; border-radius: 6px; padding: 6px 12px; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 150px; }
+.tabs { display: flex; gap: 6px 14px; flex-wrap: wrap; align-items: flex-end; }
+.tabsec { display: grid; gap: 3px; }
+.tabsec > .eyebrow { font-size: 10px; }
+.tabsec > div { display: flex; gap: 4px; flex-wrap: wrap; }
+.tab { border: 1px solid var(--rule); background: transparent; border-radius: 6px; padding: 6px 12px; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 132px; }
 .tab[aria-selected="true"] { border-color: var(--accent); background: var(--accent-soft); }
 .tab .name { font-weight: 600; font-size: 13px; }
 .tab .bar { width: 100%; height: 4px; background: var(--rule-soft); border-radius: 2px; overflow: hidden; display: flex; }
@@ -164,7 +167,7 @@ button.chip { cursor: pointer; display: inline-flex; gap: 6px; align-items: cent
 </style>
 
 <header class="top">
-  <h1>Subject Reconciliation <small>Subject headings · #164</small></h1>
+  <h1>Subject Review <small>Subject headings · #108, #164</small></h1>
   <div class="tabs" role="tablist" id="tabs"></div>
   <div class="people" id="people"></div>
   <div class="status-line" id="status">Loading the headings…</div>
@@ -183,10 +186,11 @@ button.chip { cursor: pointer; display: inline-flex; gap: 6px; align-items: cent
     <div class="list" id="list" role="list"></div>
   </aside>
   <section class="detail" id="detail">
-    <div class="empty-state"><h2>Loading…</h2><p>The subject headings to reconcile are on their way.</p></div>
+    <div class="empty-state"><h2>Loading…</h2><p>The subject headings to review are on their way.</p></div>
   </section>
 </main>
 <datalist id="concept-ids"></datalist>
+<datalist id="cons-ids"></datalist>
 <datalist id="note-values"><option value="construction"></option><option value="genre"></option><option value="complex"></option><option value="needs exactMatch"></option></datalist>
 
 <script>
@@ -195,33 +199,61 @@ button.chip { cursor: pointer; display: inline-flex; gap: 6px; align-items: cent
 
 // ---------- state ----------
 const S = {
-  data: null,               // data.json: {site, rows, concepts}
+  data: null,               // data.json: {site, rows, concepts, consConcepts, consCategories}
   group: "place",
   sel: {}, filter: {}, sort: {},
   q: "",
   decisions: new Map(),     // row id -> doc
-  overrides: new Map(),     // concept id -> {prefLabel, category, by, at}
+  overrides: new Map(),     // subject concept id -> {prefLabel, category, by, at}
   me: null, user: null, db: null, room: null,
   canWrite: false, peers: [], profiles: {},
   dbState: "connecting",
 };
+// Tabs, grouped by the review they belong to. `q` is the queue a group's rows are in.
 const GROUPS = [
-  ["place", "Places", "Priya filed these under a place."],
-  ["topic", "Topics", "Priya filed these under a topic."],
-  ["unfinished", "Unfinished", "Priya included these but gave no category or label yet."],
-  ["out", "Left out", "Priya left these out of the subject scheme."],
+  { g: "place", q: "pairs", sec: "Two passes · #164", name: "Places" },
+  { g: "topic", q: "pairs", sec: "Two passes · #164", name: "Topics" },
+  { g: "unfinished", q: "pairs", sec: "Two passes · #164", name: "Unfinished" },
+  { g: "out", q: "pairs", sec: "Two passes · #164", name: "Left out" },
+  { g: "draft", q: "draft", sec: "Still open in #108", name: "Draft places" },
+  { g: "overlap", q: "overlap", sec: "Still open in #108", name: "Subject or construction" },
 ];
-const CHOICES = [
-  ["head", "Keep current", "1"],
-  ["priya", "Use Priya's", "2"],
-  ["edit", "Edit", "3"],
-  ["unsure", "Unsure", "4"],
-];
-const LABEL = { head: "Current", priya: "Priya's", edit: "Edited", unsure: "Unsure", fix: "Needs fixing", todo: "To do" };
+const CHOICES = {
+  pairs: [["head", "Keep current", "1"], ["priya", "Use Priya's", "2"], ["edit", "Edit", "3"], ["unsure", "Unsure", "4"]],
+  draft: [["confirm", "Confirm", "1"], ["out", "Leave out", "2"], ["edit", "Edit", "3"], ["unsure", "Unsure", "4"]],
+  overlap: [["cons", "Construction", "1"], ["subj", "Subject", "2"], ["both", "Both", "3"], ["neither", "Neither", "4"], ["unsure", "Unsure", "5"]],
+};
+const LEGEND = {
+  pairs: [
+    "Keep current: decisions.csv stays as it is now, after Mert's pass. A draft note on it is cleared.",
+    "Use Priya's: take her row. If it's missing something the build needs, you'll be asked to fill it in.",
+    "Edit: start from Priya's row and change it.",
+    "Unsure: leave it as it is now and come back to it."],
+  draft: [
+    "Confirm: the row is right as it is. This marks it reviewed.",
+    "Leave out: take it out of the subject scheme (noise, or not really a place).",
+    "Edit: change its concept, label or category, or file it under another concept to merge it.",
+    "Unsure: leave the draft note on it and come back to it."],
+  overlap: [
+    "Construction: it describes how the book is made. File it under a construction concept and leave it out of subjects.",
+    "Subject: it describes what the book is about. Keep it out of construction.",
+    "Both: a book can be one and about one (a letterpress book, a book about letterpress).",
+    "Neither: noise. Leave it out of both schemes.",
+    "Unsure: leave both schemes as they are now."],
+};
+const LABEL = { head: "Current", priya: "Priya's", edit: "Edited", unsure: "Unsure", fix: "Needs fixing", todo: "To do",
+  confirm: "Confirmed", out: "Left out", cons: "Construction", subj: "Subject", both: "Both", neither: "Neither" };
+const COLOR = { head: "head", priya: "priya", edit: "edit", unsure: "unsure", fix: "fix", todo: "todo",
+  confirm: "priya", out: "head", cons: "edit", subj: "priya", both: "priya", neither: "head" };
 const CATS = ["topical", "geographic"];
 const CAT_LABEL = { topical: "Topic", geographic: "Place" };
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const FIELD_ROWS = [["include", "In scheme"], ["conceptId", "Concept ID"], ["category", "Category"], ["prefLabel", "Label"], ["exactMatch", "Exact match"], ["note", "Note"]];
+const OVERLAP_GROUP = {
+  "1": "Subjects marks this heading as a construction method, but no construction row claimed it until the label-match pre-fill.",
+  "2": "Subjects marks this heading as a construction method, but construction leaves it out, so neither scheme has it.",
+  "5": "A subject whose label matches a construction concept. Some belong in both.",
+};
 
 const store = {
   get(k) { try { return localStorage.getItem("absr." + k); } catch { return null; } },
@@ -244,6 +276,7 @@ function h(tag, attrs, ...kids) {
   return el;
 }
 const $ = (id) => document.getElementById(id);
+const plural = (n, one, many) => `${n} ${n === 1 ? one : many || one + "s"}`;
 
 // ---------- values ----------
 // Priya's finer categories (topical-people, geographic-city, ...) become the
@@ -252,59 +285,83 @@ function coarse(cat) {
   const head = (cat || "").split("-")[0];
   return CATS.includes(head) ? head : "";
 }
+// A decision on this page is the review, so the seed's "...; review" notes go.
+const reviewed = (note) => (/; review$/.test(note || "") ? "" : note || "");
+function leftOut(note) { return { include: "n", conceptId: "", category: "", prefLabel: "", exactMatch: "", note: reviewed(note) }; }
 function fromSide(side) {
-  const inc = side.include === "y" ? "y" : "n";
-  if (inc === "n") return { include: "n", conceptId: "", category: "", prefLabel: "", exactMatch: (side.exactMatch || "").trim(), note: side.note || "" };
+  if (side.include !== "y") return leftOut(side.note);
   return {
     include: "y", conceptId: (side.conceptId || "").trim(), category: coarse(side.category),
-    prefLabel: (side.prefLabel || "").trim(), exactMatch: (side.exactMatch || "").trim(), note: side.note || "",
+    prefLabel: (side.prefLabel || "").trim(), exactMatch: (side.exactMatch || "").trim(), note: reviewed(side.note),
   };
 }
 function fineOf(side) {
   const c = side.category || "";
   return c && !CATS.includes(c) && coarse(c) ? c : "";
 }
+function slugify(s) {
+  return (s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
 const rowsById = new Map();
+const owner = new Map();         // cluster -> the row that decides its subjects row
+const labelIndex = new Map();    // lowercased label or heading -> subject concept id
 function rowOf(id) { return rowsById.get(id); }
+function groupOf(g) { return GROUPS.find((x) => x.g === g); }
 function headings(row) { return row.labels.split(" | ").map((s) => s.trim()).filter(Boolean); }
 function titleOf(row) { return headings(row)[0] || row.cluster; }
+const ownsSubject = (row) => !(row.q === "overlap" && row.pair);
 
-// What the row will be in decisions.csv: null when it stays as it is now.
-function effective(row) {
+// What the heading's subjects row will be once its decision is pulled: null
+// when this page leaves it as it is now.
+function subjFinal(row) {
+  if (!ownsSubject(row)) return null;
   const d = S.decisions.get(row.id);
-  if (!d || (d.take !== "priya" && d.take !== "edit") || !d.final) return null;
-  const f = { ...d.final };
+  if (!d || !d.take) return null;
+  let f = null;
+  if (row.q === "pairs") f = (d.take === "priya" || d.take === "edit") ? d.final : null;
+  else if (row.q === "draft") f = d.take === "confirm" ? { ...fromSide(row.head), note: "" } : d.take === "out" ? leftOut("") : d.take === "edit" ? d.final : null;
+  else f = d.take === "cons" ? leftOut("construction") : (d.take === "subj" || d.take === "both") ? d.final : d.take === "neither" ? leftOut("") : null;
+  if (!f) return null;
+  f = { ...f };
   const o = f.include === "y" && S.overrides.get(f.conceptId);
   if (o) { f.prefLabel = o.prefLabel; f.category = o.category; }
   return f;
 }
+// What the heading's construction row will be: overlap headings only.
+function consFinal(row) {
+  if (row.q !== "overlap") return null;
+  const d = S.decisions.get(row.id);
+  if (!d || !d.take || d.take === "unsure") return null;
+  if (d.take === "subj" || d.take === "neither") return { include: "n", conceptId: "", category: "", prefLabel: "" };
+  const c = { include: "y", ...(d.cons || {}) };
+  const known = S.data.consConcepts[c.conceptId];
+  if (known) { c.prefLabel = known.l; c.category = known.c; }
+  return c;
+}
 
-// The label a concept carries elsewhere: a concept-wide label set on this
-// page, else the label it has under other headings in decisions.csv, else
-// what another decided row gives it.
+// The label a subject concept carries elsewhere: a concept-wide label set on
+// this page, else its label under other headings in decisions.csv, else what
+// another decided heading gives it.
 function conceptElsewhere(cid, exceptCluster) {
   if (!cid) return null;
   const o = S.overrides.get(cid);
   if (o) return { l: o.prefLabel, c: o.category, src: "override", n: 0 };
   const c = S.data.concepts[cid];
   if (c) {
-    // headings that will still be under this concept: not this one, and not
-    // ones a decision on this page moves elsewhere
     const others = c.k.filter(([k]) => k !== exceptCluster && !movedAway(k, cid));
     if (others.length) return { l: c.l, c: c.c, src: "csv", n: others.length };
   }
-  for (const r of S.data.rows) {
+  for (const r of owner.values()) {
     if (r.cluster === exceptCluster) continue;
-    const f = effective(r);
+    const f = subjFinal(r);
     if (f && f.include === "y" && f.conceptId === cid && f.prefLabel && f.category) return { l: f.prefLabel, c: f.category, src: "row", n: 1, row: r };
   }
   return null;
 }
-const clusterRow = new Map();
 function movedAway(cluster, cid) {
-  const r = clusterRow.get(cluster);
+  const r = owner.get(cluster);
   if (!r) return false;
-  const f = effective(r);
+  const f = subjFinal(r);
   return !!f && (f.include !== "y" || f.conceptId !== cid);
 }
 
@@ -322,20 +379,60 @@ function problems(row, f) {
   }
   return out;
 }
+const CONS_CATS = () => S.data.consCategories.map(([k]) => k);
+function consProblems(row, c) {
+  const out = [];
+  if (c.include !== "y") return out;
+  if (!c.conceptId) out.push({ msg: "Choose a construction concept, or make a new one." });
+  else if (!SLUG.test(c.conceptId)) out.push({ msg: `The construction concept ID “${c.conceptId}” can only use lowercase letters, digits and single hyphens.` });
+  if (!S.data.consConcepts[c.conceptId]) {
+    if (!CONS_CATS().includes(c.category)) out.push({ msg: "A new construction concept needs a category." });
+    if (!c.prefLabel) out.push({ msg: "A new construction concept needs a label." });
+    for (const r of S.data.rows) {
+      if (r.q !== "overlap" || r.id === row.id) continue;
+      const o = consFinal(r);
+      if (o && o.include === "y" && o.conceptId === c.conceptId && (o.prefLabel !== c.prefLabel || o.category !== c.category)) {
+        out.push({ msg: `Another heading (${titleOf(r)}) makes the new concept “${c.conceptId}” with the label “${o.prefLabel}”. A concept has one label.` });
+        break;
+      }
+    }
+  }
+  return out;
+}
 
 function statusOf(row) {
   const d = S.decisions.get(row.id);
   if (!d || !d.take) return "todo";
-  if (d.take === "head" || d.take === "unsure") return d.take;
-  const f = effective(row);
-  return f && !problems(row, f).length ? d.take : "fix";
+  if (d.take === "unsure") return "unsure";
+  if (row.q === "pairs" && d.take === "head") return "head";
+  const f = subjFinal(row), c = consFinal(row);
+  if (f && problems(row, f).length) return "fix";
+  if (c && consProblems(row, c).length) return "fix";
+  return d.take;
 }
 const isDone = (st) => st !== "todo" && st !== "fix";
+
+// A heading like "Berlin (Germany) -- Buildings, structures, etc" can usually
+// be filed under the place or topic itself, when that's already a concept.
+function baseConcept(row) {
+  for (const hd of headings(row)) {
+    const i = hd.indexOf(" -- ");
+    if (i < 0) continue;
+    const cid = labelIndex.get(hd.slice(0, i).trim().toLowerCase());
+    if (cid) return cid;
+  }
+  return null;
+}
 
 // ---------- list ----------
 function rows(g) { return S.data.rows.filter((r) => r.g === g); }
 function haystack(r) {
-  return r._hay || (r._hay = [r.labels, r.cluster, r.head.conceptId, r.priya.conceptId, r.priya.prefLabel, r.head.prefLabel, ...r.books.map((b) => b[1])].join(" ").toLowerCase());
+  return r._hay || (r._hay = [r.labels, r.cluster, r.head.conceptId, r.priya?.conceptId, r.priya?.prefLabel, r.head.prefLabel, r.cons?.conceptId, ...(r.matches || []), ...r.books.map((b) => b[1])].join(" ").toLowerCase());
+}
+function filtersFor(gr) {
+  const extra = gr.q === "pairs" ? [["both", "Both passes changed"]]
+    : gr.q === "overlap" ? [["prefill", "Pre-filled"], ["g5", "Label matches"]] : [["sub", "Subdivided"]];
+  return [["todo", "To do"], ["fix", "Needs fixing"], ...extra, ["unsure", "Unsure"], ["mine", "Mine"], ["done", "Decided"], ["all", "All"]];
 }
 function visible(g) {
   const f = S.filter[g] || "todo", q = S.q.trim().toLowerCase();
@@ -346,48 +443,55 @@ function visible(g) {
     if (f === "unsure" && st !== "unsure") return false;
     if (f === "done" && !isDone(st)) return false;
     if (f === "both" && !r.flags.includes("also-reviewed-in-head")) return false;
+    if (f === "prefill" && !r.prefill) return false;
+    if (f === "g5" && r.group !== "5") return false;
+    if (f === "sub" && !r.labels.includes(" -- ")) return false;
     if (f === "mine") { const d = S.decisions.get(r.id); if (!d || !S.me || d.by !== S.me) return false; }
     return !q || haystack(r).includes(q);
   });
-  const s = S.sort[g] || "concept";
+  const s = S.sort[g] || "default";
   const byTitle = (a, b) => titleOf(a).localeCompare(titleOf(b));
-  if (s === "concept") list.sort((a, b) => (a.priya.conceptId || "~").localeCompare(b.priya.conceptId || "~") || byTitle(a, b));
-  else if (s === "books") list.sort((a, b) => b.nBooks - a.nBooks || byTitle(a, b));
-  else list.sort(byTitle);
+  if (s === "books") list.sort((a, b) => b.nBooks - a.nBooks || byTitle(a, b));
+  else if (s === "title") list.sort(byTitle);
+  else if (g === "overlap") list.sort((a, b) => a.group.localeCompare(b.group) || b.nBooks - a.nBooks || byTitle(a, b));
+  else if (g === "draft") list.sort(byTitle);
+  else list.sort((a, b) => (a.priya.conceptId || "~").localeCompare(b.priya.conceptId || "~") || byTitle(a, b));
   return list;
 }
 
 function renderTabs() {
   const tabs = $("tabs");
   tabs.replaceChildren();
-  for (const [g, name] of GROUPS) {
-    const all = rows(g);
+  const secs = new Map();
+  for (const gr of GROUPS) {
+    const all = rows(gr.g);
     if (!all.length) continue;
     const counts = {};
     let done = 0;
-    for (const r of all) { const st = statusOf(r); counts[st] = (counts[st] || 0) + 1; if (isDone(st)) done++; }
+    for (const r of all) { const st = statusOf(r); counts[COLOR[st]] = (counts[COLOR[st]] || 0) + 1; if (isDone(st)) done++; }
     const bar = h("span", { class: "bar", "aria-hidden": "true" },
       ...["head", "priya", "edit", "unsure", "fix"].map((k) => {
         const s = h("span"); s.style.width = (100 * (counts[k] || 0) / all.length) + "%"; s.style.background = `var(--${k})`; return s;
       }));
-    tabs.append(h("button", {
-      class: "tab", role: "tab", "aria-selected": String(S.group === g),
-      onclick: () => { S.group = g; store.set("group", g); renderAll(); },
-    }, h("span", { class: "name" }, name), bar,
+    if (!secs.has(gr.sec)) { const box = h("div"); secs.set(gr.sec, box); tabs.append(h("div", { class: "tabsec" }, h("span", { class: "eyebrow" }, gr.sec), box)); }
+    secs.get(gr.sec).append(h("button", {
+      class: "tab", role: "tab", "aria-selected": String(S.group === gr.g),
+      onclick: () => { S.group = gr.g; store.set("group", gr.g); renderAll(); },
+    }, h("span", { class: "name" }, gr.name), bar,
        h("span", { class: "count" }, `${done} of ${all.length} decided` + (counts.fix ? ` · ${counts.fix} to fix` : ""))));
   }
 }
 
 function renderFilters() {
-  const g = S.group, cur = S.filter[g] || "todo";
-  const opts = [["todo", "To do"], ["fix", "Needs fixing"], ["both", "Both passes changed"], ["unsure", "Unsure"], ["mine", "Mine"], ["done", "Decided"], ["all", "All"]];
-  $("statusFilters").replaceChildren(...opts.map(([v, l]) =>
-    h("button", { class: "chipbtn", "aria-pressed": String(cur === v), onclick: () => { S.filter[g] = v; renderFilters(); renderList(); } }, l)));
-  const sorts = [["concept", "By Priya's concept"], ["books", "Most books first"], ["title", "Heading A–Z"]];
-  $("sort").replaceChildren(...sorts.map(([v, l]) => h("option", { value: v, selected: (S.sort[g] || "concept") === v }, l)));
+  const gr = groupOf(S.group), cur = S.filter[gr.g] || "todo";
+  $("statusFilters").replaceChildren(...filtersFor(gr).map(([v, l]) =>
+    h("button", { class: "chipbtn", "aria-pressed": String(cur === v), onclick: () => { S.filter[gr.g] = v; renderFilters(); renderList(); } }, l)));
+  const first = gr.q === "pairs" ? "By Priya's concept" : gr.q === "overlap" ? "By group, most books first" : "Heading A–Z";
+  const sorts = [["default", first], ["books", "Most books first"], ["title", "Heading A–Z"]].filter((x, i, a) => i === 0 || x[1] !== a[0][1]);
+  $("sort").replaceChildren(...sorts.map(([v, l]) => h("option", { value: v, selected: (S.sort[gr.g] || "default") === v }, l)));
 }
 
-function pillFor(st) { return h("span", { class: "pill " + st }, LABEL[st] || st); }
+function pillFor(st) { return h("span", { class: "pill " + COLOR[st] }, LABEL[st] || st); }
 function peersOn(id) {
   const out = [];
   for (const p of S.peers) if (!p.isMe && p.kind === "viewer" && p.presence && p.presence.viewing === id && p.by) out.push(p.by);
@@ -399,6 +503,17 @@ function avatarFor(id, small) {
   if (p) { if (p.avatarUrl) img.src = p.avatarUrl; img.title = p.name || "Someone"; }
   return img;
 }
+function metaOf(r) {
+  const books = plural(r.nBooks, "book");
+  if (r.q === "pairs") {
+    const from = r.head.include === "y" ? r.head.conceptId : "left out";
+    const to = r.priya.include === "y" ? (r.priya.conceptId || "no ID") : "left out";
+    return `${from} → ${to} · ${books}`;
+  }
+  if (r.q === "draft") return `${r.head.conceptId} · ${books}`;
+  const c = r.prefill ? `pre-filled ${r.prefill}` : r.matches.length ? `matches ${r.matches.join(", ")}` : "no construction concept";
+  return `group ${r.group} · ${c} · ${books}`;
+}
 
 function renderList() {
   const g = S.group, list = visible(g), box = $("list");
@@ -409,15 +524,11 @@ function renderList() {
   }
   const frag = document.createDocumentFragment();
   for (const r of list) {
-    const from = r.head.include === "y" ? r.head.conceptId : "left out";
-    const to = r.priya.include === "y" ? (r.priya.conceptId || "no ID") : "left out";
-    const row = h("div", {
+    frag.append(h("div", {
       class: "row", role: "listitem", tabindex: "0", "aria-current": String(S.sel[g] === r.id),
       onclick: () => select(r.id), onkeydown: (e) => { if (e.key === "Enter") select(r.id); },
-    }, h("span", { class: "t" }, titleOf(r)),
-       h("span", { class: "m" }, `${from} → ${to} · ${r.nBooks} book${r.nBooks === 1 ? "" : "s"}`),
-       h("span", { class: "r" }, peersOn(r.id).map((id) => avatarFor(id, true)), pillFor(statusOf(r))));
-    frag.append(row);
+    }, h("span", { class: "t" }, titleOf(r)), h("span", { class: "m" }, metaOf(r)),
+       h("span", { class: "r" }, peersOn(r.id).map((id) => avatarFor(id, true)), pillFor(statusOf(r)))));
   }
   box.append(frag);
   const cur = box.querySelector('[aria-current="true"]');
@@ -428,30 +539,28 @@ function renderList() {
 function showVal(field, v) {
   if (field === "include") return v === "y" ? "Yes" : v === "n" ? "No, left out" : v ? v : "—";
   if (!v) return "—";
-  if (field === "category") return h("span", {}, CAT_LABEL[v] ? `${CAT_LABEL[v]} (${v})` : v);
+  if (field === "category") return CAT_LABEL[v] ? `${CAT_LABEL[v]} (${v})` : (S.data.consCategories.find((x) => x[0] === v)?.[1] || v);
   if (field === "exactMatch" && /^https?:/.test(v)) return h("a", { href: v, target: "_blank", rel: "noopener" }, v.replace(/^https?:\/\//, ""));
   const m = v.match(/^(\s*)(.*?)(\s*)$/s);
   if (m[1] || m[3]) return h("span", {}, m[1] ? h("span", { class: "ws", title: "leading space" }, "␣") : null, m[2], m[3] ? h("span", { class: "ws", title: "trailing space" }, "␣") : null);
   return v;
 }
 
-function compareTable(row, f) {
-  const d = S.decisions.get(row.id);
-  const cols = [["Now", "after Mert's pass", row.head], ["Priya's pass", "990d2b2 and 7febe8d", row.priya]];
-  const headRow = h("tr", {}, h("th", {}, ""), cols.map(([t, s]) => h("th", {}, t, h("span", { class: "sub" }, s))),
-    f ? h("th", {}, "Result", h("span", { class: "sub" }, d.take === "priya" ? "Priya's, as the build reads it" : "as edited here")) : null);
-  const body = FIELD_ROWS.map(([field, label]) => {
-    const a = row.head[field] || "", b = row.priya[field] || "";
-    const differ = a !== b;
+// cols: [[heading, subheading, values]], plus an optional result column
+function table(cols, result, resultSub, fields = FIELD_ROWS, extra) {
+  const headRow = h("tr", {}, h("th", {}, ""), cols.map(([t, s]) => h("th", {}, t, s ? h("span", { class: "sub" }, s) : null)),
+    result ? h("th", {}, "Result", h("span", { class: "sub" }, resultSub || "")) : null);
+  const body = fields.map(([field, label]) => {
+    const vals = cols.map((c) => c[2][field] || "");
+    const differ = cols.length > 1 && new Set(vals).size > 1;
     let res = null;
-    if (f) {
-      let v = showVal(field, f[field] || "");
-      if (field === "category" && d.fine) v = h("span", {}, v, h("span", { class: "muted" }, ` · Priya's finer category: ${d.fine}`));
-      res = h("td", { class: "result" + (f[field] ? "" : " empty") }, v);
+    if (result) {
+      let v = showVal(field, result[field] || "");
+      if (field === "category" && extra && extra.fine) v = h("span", {}, v, h("span", { class: "muted" }, ` · Priya's finer category: ${extra.fine}`));
+      res = h("td", { class: "result" + (result[field] ? "" : " empty") }, v);
     }
     return h("tr", {}, h("th", { scope: "row" }, label),
-      h("td", { class: (differ ? "diff " : "") + (a ? "" : "empty") }, showVal(field, a)),
-      h("td", { class: (differ ? "diff " : "") + (b ? "" : "empty") }, showVal(field, b)), res);
+      vals.map((v) => h("td", { class: (differ ? "diff " : "") + (v ? "" : "empty") }, showVal(field, v))), res);
   });
   return h("div", { class: "cmp-wrap" }, h("table", { class: "cmp" }, h("thead", {}, headRow), h("tbody", {}, body)));
 }
@@ -459,17 +568,36 @@ function compareTable(row, f) {
 function hints(row) {
   const items = [];
   const fl = new Set(row.flags);
-  if (fl.has("also-reviewed-in-head")) items.push(h("li", {}, h("b", {}, "Both passes changed this heading."), " Mert's pass and Priya's reached different results."));
-  else items.push(h("li", {}, "Only Priya's pass changed this heading. ", h("b", {}, "Now"), " is how it stood before both passes."));
-  if (row.priya.include === "y" && !row.priya.category) items.push(h("li", {}, "Priya included it but gave it no category."));
-  if (row.priya.include === "y" && !row.priya.prefLabel.trim()) items.push(h("li", {}, "Priya's row has no label."));
-  const fine = fineOf(row.priya);
-  if (fine) items.push(h("li", {}, `Priya used the finer category “${fine}”. The site only has Topics and Places, so it becomes ${CAT_LABEL[coarse(fine)]}. The finer one is kept with the decision.`));
-  else if (row.priya.category && !CATS.includes(row.priya.category)) items.push(h("li", {}, `Priya's category “${row.priya.category}” isn't one the site has. Pick Topic or Place.`));
-  if (row.priya.conceptId && !SLUG.test(row.priya.conceptId.trim())) items.push(h("li", {}, `Priya's concept ID “${row.priya.conceptId}” has spaces, capitals or stray hyphens.`));
-  if (row.priya.prefLabel !== row.priya.prefLabel.trim()) items.push(h("li", {}, "Priya's label has a stray space at one end. It's trimmed when you use it."));
-  if (fl.has("claimed-by-construction")) items.push(h("li", {}, "The construction scheme also claims this heading. A heading that's a construction method should usually be left out here, with the note “construction”."));
-  if (fl.has("new-cluster")) items.push(h("li", {}, "This heading isn't in decisions.csv yet. Taking Priya's row adds it."));
+  const li = (...k) => items.push(h("li", {}, ...k));
+  if (row.q === "pairs") {
+    if (fl.has("also-reviewed-in-head")) li(h("b", {}, "Both passes changed this heading."), " Mert's pass and Priya's reached different results.");
+    else li("Only Priya's pass changed this heading. ", h("b", {}, "Now"), " is how it stood before both passes.");
+    if (fl.has("left-out-by-mert")) li(h("b", {}, "Mert's earlier pass left this place out."), " The merge in #154 put it back, because the geographic file had every row in. #108 asks for a second look.");
+    if (row.priya.include === "y" && !row.priya.category) li("Priya included it but gave it no category.");
+    if (row.priya.include === "y" && !row.priya.prefLabel.trim()) li("Priya's row has no label.");
+    const fine = fineOf(row.priya);
+    if (fine) li(`Priya used the finer category “${fine}”. The site only has Topics and Places, so it becomes ${CAT_LABEL[coarse(fine)]}. The finer one is kept with the decision.`);
+    else if (row.priya.category && !CATS.includes(row.priya.category)) li(`Priya's category “${row.priya.category}” isn't one the site has. Pick Topic or Place.`);
+    if (row.priya.conceptId && !SLUG.test(row.priya.conceptId.trim())) li(`Priya's concept ID “${row.priya.conceptId}” has spaces, capitals or stray hyphens.`);
+    if (row.priya.prefLabel !== row.priya.prefLabel.trim()) li("Priya's label has a stray space at one end. It's trimmed when you use it.");
+    if (fl.has("claimed-by-construction")) li("The construction scheme also claims this heading. A heading that's a construction method should usually be left out here, with the note “construction”.");
+    if (fl.has("new-cluster")) li("This heading isn't in decisions.csv yet. Taking Priya's row adds it.");
+  } else if (row.q === "draft") {
+    li("This place still has the seed's draft row. Confirming it, editing it or leaving it out marks it reviewed.");
+    li("Label style (#154): LCSH's parenthetical form, such as “Los Angeles (Calif.)” or “Amsterdam (Netherlands)”.");
+    li("To merge twins, give them the same concept ID. Don't over-merge: New York (State) and New York (N.Y.) are different places.");
+  } else {
+    li(OVERLAP_GROUP[row.group]);
+    if (row.prefill) li(h("b", {}, "Pre-filled by label match: "), `construction “${row.prefill}”. Check it before confirming.`);
+    else if (row.matches.length) li(`Its label matches the construction concept${row.matches.length > 1 ? "s" : ""} ${row.matches.map((m) => "“" + m + "”").join(", ")}.`);
+    if (row.pair) li(h("b", {}, "Its subject side is decided in Two passes."), " Here you only decide the construction side. ",
+      h("button", { class: "navbtn sm", onclick: () => jump(rowOf(row.pair)) }, "Open it there"));
+  }
+  const base = row.q !== "overlap" && baseConcept(row);
+  if (base && (subjFinal(row)?.conceptId || row.head.conceptId) !== base) {
+    const c = S.data.concepts[base];
+    li(`The part before “--” is already the concept “${c.l}” (${base}). Filing this heading under it merges the two.`);
+  }
   return h("div", { class: "hintbox" }, h("ul", {}, items));
 }
 
@@ -484,16 +612,12 @@ function booksPanel(row) {
 function decidePanel(row, d) {
   const panel = h("div", { class: "panel" });
   panel.append(h("div", { class: "decide-row" }, h("span", { class: "eyebrow" }, "Decision"),
-    h("div", { class: "seg", role: "group" }, CHOICES.map(([v, l, k]) => h("button", {
-      class: v, "aria-pressed": String(d?.take === v), disabled: !S.canWrite,
+    h("div", { class: "seg", role: "group" }, CHOICES[row.q].map(([v, l, k]) => h("button", {
+      class: COLOR[v], "aria-pressed": String(d?.take === v), disabled: !S.canWrite,
       title: S.canWrite ? `${l} (${k})` : "You can't record decisions in this view",
       onclick: () => choose(row, d?.take === v ? "" : v),
     }, l, h("kbd", {}, k))))));
-  panel.append(h("div", { class: "legend" },
-    h("span", {}, "Keep current: decisions.csv stays as it is now, after Mert's pass."),
-    h("span", {}, "Use Priya's: take her row. If it's missing something the build needs, you'll be asked to fill it in."),
-    h("span", {}, "Edit: start from Priya's row and change it, or start over."),
-    h("span", {}, "Unsure: leave it as it is now and come back to it.")));
+  panel.append(h("div", { class: "legend" }, LEGEND[row.q].map((t) => h("span", {}, t))));
   const ta = h("textarea", { id: "notes", placeholder: "Notes for each other (why, what to check)", disabled: !S.canWrite });
   ta.value = d?.notes || "";
   let t = null;
@@ -515,49 +639,63 @@ function whoLine(d) {
   return h("div", { class: "who" }, parts);
 }
 
-function editPanel(row, d, f) {
+// The subject row's fields. Editing a pairs or draft row makes it "edit";
+// an overlap row keeps its choice and only changes the subject side.
+function editPanel(row, d, f, title) {
   const panel = h("div", { class: "panel" });
-  panel.append(h("h3", {}, d.take === "priya" ? "Priya's row, as it will be written" : "Edited row"));
+  panel.append(h("h3", {}, title));
   const dis = !S.canWrite;
-  const set = (patch) => writeRow(row, { take: "edit", final: { ...d.final, ...patch } }, d.take === "edit" ? null : "edit");
-  const inc = h("select", { id: "f-include", disabled: dis, onchange: (e) => set({ include: e.target.value }) },
-    h("option", { value: "y", selected: d.final.include === "y" }, "Yes, in the scheme"),
-    h("option", { value: "n", selected: d.final.include !== "y" }, "No, left out"));
+  const base = d.final || f;
+  const set = (patch) => {
+    const final = { ...base, ...patch };
+    if (row.q === "overlap") return writeRow(row, { final });
+    return writeRow(row, { take: "edit", final }, d.take === "edit" ? null : "edit");
+  };
+  const inc = h("select", { id: "f-include", disabled: dis || row.q === "overlap", onchange: (e) => set(e.target.value === "y" ? { include: "y" } : leftOut(base.note)) },
+    h("option", { value: "y", selected: f.include === "y" }, "Yes, in the scheme"),
+    h("option", { value: "n", selected: f.include !== "y" }, "No, left out"));
   const form = h("div", { class: "form" }, h("label", { for: "f-include" }, "In scheme"), inc);
-  if (d.final.include === "y") {
-    const o = S.overrides.get(d.final.conceptId);
+  if (f.include === "y") {
+    const o = S.overrides.get(f.conceptId);
     form.append(
       h("label", { for: "f-id" }, "Concept ID"),
-      h("input", { type: "text", id: "f-id", list: "concept-ids", value: d.final.conceptId, disabled: dis, spellcheck: "false",
+      h("input", { type: "text", id: "f-id", list: "concept-ids", value: f.conceptId, disabled: dis, spellcheck: "false",
         onchange: (e) => {
           const cid = e.target.value.trim();
           const patch = { conceptId: cid };
           const e2 = conceptElsewhere(cid, row.cluster);
-          if (e2 && !d.final.prefLabel) { patch.prefLabel = e2.l; patch.category = e2.c; }
+          if (e2) { patch.prefLabel = e2.l; patch.category = e2.c; }
           set(patch);
         } }),
       h("label", { for: "f-cat" }, "Category"),
       h("select", { id: "f-cat", disabled: dis || !!o, onchange: (e) => set({ category: e.target.value }) },
-        h("option", { value: "", selected: !d.final.category }, "Choose…"),
-        CATS.map((c) => h("option", { value: c, selected: d.final.category === c }, `${CAT_LABEL[c]} (${c})`))),
+        h("option", { value: "", selected: !f.category }, "Choose…"),
+        CATS.map((c) => h("option", { value: c, selected: f.category === c }, `${CAT_LABEL[c]} (${c})`))),
       h("label", { for: "f-label" }, "Label"),
-      h("input", { type: "text", id: "f-label", value: d.final.prefLabel, disabled: dis || !!o, onchange: (e) => set({ prefLabel: e.target.value.trim() }) }));
+      h("input", { type: "text", id: "f-label", value: f.prefLabel, disabled: dis || !!o, onchange: (e) => set({ prefLabel: e.target.value.trim() }) }));
     if (o) form.append(h("span"), h("span", { class: "muted" }, "The label and category are set for the whole concept below."));
+    const bc = baseConcept(row);
+    if (bc && bc !== f.conceptId) {
+      const c = S.data.concepts[bc];
+      form.append(h("span"), h("div", { class: "decide-row" },
+        h("button", { class: "navbtn sm", disabled: dis, onclick: () => set({ conceptId: bc, prefLabel: c.l, category: c.c }) }, `File under “${c.l}”`),
+        h("span", { class: "muted" }, "the part of the heading before “--”")));
+    }
   }
   form.append(
     h("label", { for: "f-exact" }, "Exact match"),
-    h("input", { type: "text", id: "f-exact", value: d.final.exactMatch, disabled: dis, spellcheck: "false", onchange: (e) => set({ exactMatch: e.target.value.trim() }) }),
+    h("input", { type: "text", id: "f-exact", value: f.exactMatch, disabled: dis, spellcheck: "false", placeholder: "An authority URI, only if no record carries one", onchange: (e) => set({ exactMatch: e.target.value.trim() }) }),
     h("label", { for: "f-note" }, "Note"),
-    h("input", { type: "text", id: "f-note", list: "note-values", value: d.final.note, disabled: dis, onchange: (e) => set({ note: e.target.value.trim() }) }));
+    h("input", { type: "text", id: "f-note", list: "note-values", value: f.note, disabled: dis, onchange: (e) => set({ note: e.target.value.trim() }) }));
   panel.append(form);
 
   const probs = problems(row, f);
-  if (!probs.length) panel.append(h("div", { class: "ok" }, "Ready. This row can go into decisions.csv as shown."));
+  if (!probs.length) panel.append(h("div", { class: "ok" }, "Ready. The subject row can go into decisions.csv as shown."));
   else panel.append(h("div", { class: "problems" }, probs.map((p) => {
     if (p.code !== "conflict") return h("div", { class: "problem" }, p.msg);
     const e = p.other;
     const where = e.src === "override" ? "set for the whole concept on this page"
-      : e.src === "csv" ? `on ${e.n} other heading${e.n === 1 ? "" : "s"} in decisions.csv` : `on another heading decided here (${titleOf(e.row)})`;
+      : e.src === "csv" ? `on ${plural(e.n, "other heading")} in decisions.csv` : `on another heading decided here (${titleOf(e.row)})`;
     return h("div", { class: "problem" },
       h("span", {}, `Concept “${f.conceptId}” is labelled “${e.l}” (${CAT_LABEL[e.c] || e.c}) ${where}. A concept has one label.`),
       h("button", { class: "navbtn sm", disabled: dis, onclick: () => set({ prefLabel: e.l, category: e.c }) }, `Use “${e.l}”`),
@@ -566,35 +704,70 @@ function editPanel(row, d, f) {
   return panel;
 }
 
+function consPanel(row, d, c) {
+  const panel = h("div", { class: "panel" });
+  panel.append(h("h3", {}, "Construction concept"));
+  const dis = !S.canWrite;
+  const set = (patch) => writeRow(row, { cons: { ...(d.cons || {}), ...patch } });
+  const known = S.data.consConcepts[c.conceptId];
+  const quick = [...new Set([row.prefill, ...row.matches, row.cons.include === "y" ? row.cons.conceptId : ""].filter(Boolean))];
+  if (quick.length) panel.append(h("div", { class: "decide-row" }, h("span", { class: "muted" }, "Suggested:"),
+    quick.map((id) => h("button", { class: "chip", disabled: dis, "aria-pressed": String(c.conceptId === id), onclick: () => set({ conceptId: id }) },
+      `${S.data.consConcepts[id]?.l || id}`, h("span", { class: "muted" }, id)))));
+  const form = h("div", { class: "form" },
+    h("label", { for: "c-id" }, "Concept ID"),
+    h("input", { type: "text", id: "c-id", list: "cons-ids", value: c.conceptId || "", disabled: dis, spellcheck: "false",
+      onchange: (e) => {
+        const id = e.target.value.trim();
+        set(S.data.consConcepts[id] ? { conceptId: id } : { conceptId: id, prefLabel: c.prefLabel || titleOf(row), category: c.category || "" });
+      } }));
+  if (known) form.append(h("span"), h("span", { class: "muted" }, `“${known.l}” · ${showVal("category", known.c)} · already on ${plural(known.n, "heading")}`));
+  else {
+    form.append(
+      h("label", { for: "c-label" }, "Label"),
+      h("input", { type: "text", id: "c-label", value: c.prefLabel || "", disabled: dis, onchange: (e) => set({ prefLabel: e.target.value.trim() }) }),
+      h("label", { for: "c-cat" }, "Category"),
+      h("select", { id: "c-cat", disabled: dis, onchange: (e) => set({ category: e.target.value }) },
+        h("option", { value: "", selected: !c.category }, "Choose…"),
+        S.data.consCategories.map(([k, l]) => h("option", { value: k, selected: c.category === k }, l))),
+      h("span"), h("span", { class: "muted" }, "A new construction concept. Pick an existing one above if it fits."));
+  }
+  panel.append(form);
+  const probs = consProblems(row, c);
+  panel.append(probs.length ? h("div", { class: "problems" }, probs.map((p) => h("div", { class: "problem" }, p.msg)))
+    : h("div", { class: "ok" }, "Ready. The construction row can go into construction/decisions.csv as shown."));
+  return panel;
+}
+
 function conceptPanel(row, cid) {
   const panel = h("div", { class: "panel" });
   const c = S.data.concepts[cid];
   const o = S.overrides.get(cid);
-  panel.append(h("h3", {}, "Concept ", h("span", { class: "mono" }, cid)));
+  panel.append(h("h3", {}, "Subject concept ", h("span", { class: "mono" }, cid)));
   const e = conceptElsewhere(cid, row.cluster);
   if (o) panel.append(h("div", {}, `Label for every heading under it: “${o.prefLabel}” (${CAT_LABEL[o.category]}), set here`, o.by ? [" by ", S.profiles[o.by]?.name || "someone"] : "", "."));
-  else if (c) panel.append(h("div", {}, `In decisions.csv it's labelled “${c.l}” (${CAT_LABEL[c.c] || c.c}), with ${c.k.length} heading${c.k.length === 1 ? "" : "s"} and ${c.n} book${c.n === 1 ? "" : "s"}.`));
+  else if (c) panel.append(h("div", {}, `In decisions.csv it's labelled “${c.l}” (${CAT_LABEL[c.c] || c.c}), with ${plural(c.k.length, "heading")} and ${plural(c.n, "book")}.`));
   else if (e) panel.append(h("div", {}, `A new concept. Another heading decided here labels it “${e.l}”.`));
   else panel.append(h("div", { class: "muted" }, "A new concept: no other heading uses it yet."));
-
   if (c && c.k.length) {
     const shown = c.k.slice(0, 12);
     panel.append(h("div", { class: "eyebrow" }, "Headings under it in decisions.csv"),
       h("div", { class: "chips" }, shown.map(([k, l]) => h("span", { class: "chip", title: k }, l.split(" | ")[0])),
         c.k.length > shown.length ? h("span", { class: "muted" }, `+${c.k.length - shown.length} more`) : null));
   }
-  const sibs = S.data.rows.filter((r) => r.id !== row.id && r.priya.include === "y" && r.priya.conceptId.trim() === cid);
-  if (sibs.length) {
-    panel.append(h("div", { class: "eyebrow" }, `Other headings Priya put under it · ${sibs.length}`),
-      h("div", { class: "chips" }, sibs.map((r) => h("button", { class: "chip", onclick: () => jump(r) }, titleOf(r), pillFor(statusOf(r))))));
-    const ready = sibs.filter((r) => statusOf(r) === "todo" && !problems(r, fromSide(r.priya)).length);
-    if (ready.length) panel.append(h("div", { class: "decide-row" },
-      h("button", { class: "navbtn sm", disabled: !S.canWrite, onclick: () => bulkPriya(ready) }, `Use Priya's for the ${ready.length} still to do`),
-      h("span", { class: "muted" }, "Only rows that are complete and agree on the label.")));
+  if (row.q === "pairs") {
+    const sibs = S.data.rows.filter((r) => r.q === "pairs" && r.id !== row.id && r.priya.include === "y" && r.priya.conceptId.trim() === cid);
+    if (sibs.length) {
+      panel.append(h("div", { class: "eyebrow" }, `Other headings Priya put under it · ${sibs.length}`),
+        h("div", { class: "chips" }, sibs.map((r) => h("button", { class: "chip", onclick: () => jump(r) }, titleOf(r), pillFor(statusOf(r))))));
+      const ready = sibs.filter((r) => statusOf(r) === "todo" && !problems(r, fromSide(r.priya)).length);
+      if (ready.length) panel.append(h("div", { class: "decide-row" },
+        h("button", { class: "navbtn sm", disabled: !S.canWrite, onclick: () => bulkPriya(ready) }, `Use Priya's for the ${ready.length} still to do`),
+        h("span", { class: "muted" }, "Only rows that are complete and agree on the label.")));
+    }
   }
-  // concept-wide label: where headings disagree, settle it once for all of them
-  const lab = h("input", { type: "text", id: "c-label", value: o ? o.prefLabel : (c ? c.l : ""), disabled: !S.canWrite, "aria-label": "Label for the whole concept" });
-  const cat = h("select", { id: "c-cat", disabled: !S.canWrite, "aria-label": "Category for the whole concept" },
+  const lab = h("input", { type: "text", id: "o-label", value: o ? o.prefLabel : (c ? c.l : ""), disabled: !S.canWrite, "aria-label": "Label for the whole concept" });
+  const cat = h("select", { id: "o-cat", disabled: !S.canWrite, "aria-label": "Category for the whole concept" },
     CATS.map((k) => h("option", { value: k, selected: (o ? o.category : c ? c.c : "") === k }, CAT_LABEL[k])));
   panel.append(h("details", { open: !!o },
     h("summary", { class: "muted", style: "cursor:pointer" }, "Set one label for every heading under this concept"),
@@ -610,25 +783,40 @@ function renderDetail() {
   const row = S.data.rows.find((r) => r.id === S.sel[S.group] && r.g === S.group);
   if (!row) {
     box.replaceChildren(h("div", { class: "empty-state" }, h("h2", {}, "Pick a heading"),
-      h("p", {}, "Choose a heading on the left. J and K move through the list, N jumps to the next one still to do, and 1 to 4 record a decision.")));
+      h("p", {}, "Choose a heading on the left. J and K move through the list, N jumps to the next one still to do, and the number keys record a decision.")));
     return;
   }
   const d = S.decisions.get(row.id);
-  const f = effective(row);
+  const f = subjFinal(row), c = consFinal(row);
   const hs = headings(row);
   const others = peersOn(row.id);
+  const eyebrow = { pairs: "Two passes", draft: "Draft place", overlap: `Subject or construction · group ${row.group}` }[row.q];
   const head = h("div", { class: "detail-head" },
-    h("span", { class: "eyebrow" }, `Subject heading · ${row.nBooks} book${row.nBooks === 1 ? "" : "s"}`),
+    h("span", { class: "eyebrow" }, `${eyebrow} · ${plural(row.nBooks, "book")}`),
     h("h2", {}, hs[0] || row.cluster),
     hs.length > 1 ? h("div", { class: "variants" }, "Also: " + hs.slice(1).join(" · ")) : null,
     h("div", { class: "mono muted" }, row.cluster),
     others.length ? h("span", { class: "also" }, others.map((id) => avatarFor(id, true)), others.map((id) => S.profiles[id]?.name || "Someone").join(", ") + " also looking at this") : null);
-  const cid = (f && f.include === "y" && f.conceptId) || (row.priya.include === "y" && row.priya.conceptId.trim()) || (row.head.include === "y" && row.head.conceptId) || "";
-  box.replaceChildren(h("div", { class: "stack" }, head, decidePanel(row, d),
-    f ? editPanel(row, d, f) : null,
-    compareTable(row, f), hints(row),
-    cid && SLUG.test(cid) ? conceptPanel(row, cid) : null,
-    booksPanel(row)));
+  const parts = [head, decidePanel(row, d)];
+  if (row.q === "pairs") {
+    if (f) parts.push(editPanel(row, d, f, d.take === "priya" ? "Priya's row, as it will be written" : "Edited row"));
+    parts.push(table([["Now", "after Mert's pass", row.head], ["Priya's pass", "990d2b2 and 7febe8d", row.priya]], f,
+      d?.take === "priya" ? "Priya's, as the build reads it" : "as edited here", FIELD_ROWS, { fine: d?.fine }));
+  } else if (row.q === "draft") {
+    if (f && (d.take === "edit" || problems(row, f).length)) parts.push(editPanel(row, d, f, "Edited row"));
+    parts.push(table([["Now", "the seed's draft", row.head]], f, LABEL[d?.take] || ""));
+  } else {
+    if (c && c.include === "y") parts.push(consPanel(row, d, c));
+    if (f && f.include === "y") parts.push(editPanel(row, d, f, "Subject row"));
+    const consNow = { include: row.cons.include || "", conceptId: row.cons.conceptId, category: row.cons.category, prefLabel: row.cons.prefLabel, note: row.cons.note };
+    parts.push(table([["Subjects now", "subjects/decisions.csv", row.head], ["Construction now", "construction/decisions.csv", consNow]], null, null,
+      [["include", "In scheme"], ["conceptId", "Concept ID"], ["category", "Category"], ["prefLabel", "Label"], ["note", "Note"]]));
+  }
+  parts.push(hints(row));
+  const cid = (f && f.include === "y" && f.conceptId) || (row.priya?.include === "y" && row.priya.conceptId.trim()) || (row.head.include === "y" && row.head.conceptId) || "";
+  if (ownsSubject(row) && cid && SLUG.test(cid) && (row.q !== "overlap" || (f && f.include === "y") || row.head.include === "y")) parts.push(conceptPanel(row, cid));
+  parts.push(booksPanel(row));
+  box.replaceChildren(h("div", { class: "stack" }, parts));
 }
 
 // ---------- writes ----------
@@ -642,7 +830,7 @@ function writeRow(row, change, histEntry) {
   if (!S.db || !S.canWrite) return Promise.resolve();
   const prev = S.decisions.get(row.id);
   const now = Date.now();
-  const patch = { id: row.id, cluster: row.cluster, g: row.g, by: S.me, at: now, ...change };
+  const patch = { id: row.id, q: row.q, cluster: row.cluster, g: row.g, by: S.me, at: now, ...change };
   if (histEntry !== undefined && histEntry !== null) patch.history = [...(prev?.history || []), { d: histEntry, by: S.me, at: now }].slice(-12);
   const merged = { ...(prev || {}), ...patch };
   S.decisions.set(row.id, merged);
@@ -653,11 +841,30 @@ function writeRow(row, change, histEntry) {
     else setStatus("That change didn't save (" + (e?.code || "error") + "). Try again in a moment.", true);
   }));
 }
+// A subject row to start an overlap heading's subject side from.
+function subjectSeed(row) {
+  if (row.head.include === "y") return fromSide(row.head);
+  const label = titleOf(row);
+  const cid = labelIndex.get(label.toLowerCase());
+  const c = cid && S.data.concepts[cid];
+  return { include: "y", conceptId: cid || slugify(label), category: c ? c.c : "topical", prefLabel: c ? c.l : label, exactMatch: "", note: "" };
+}
+function consSeed(row) {
+  const id = row.prefill || row.matches[0] || (row.cons.include === "y" ? row.cons.conceptId : "");
+  return id ? { conceptId: id } : { conceptId: slugify(titleOf(row)), prefLabel: titleOf(row), category: "" };
+}
 function choose(row, take) {
   const d = S.decisions.get(row.id);
   const change = { take };
-  if (take === "priya") { change.final = fromSide(row.priya); change.fine = fineOf(row.priya); }
-  else if (take === "edit") { change.final = d?.final || (row.priya.include === "y" ? fromSide(row.priya) : fromSide(row.head)); change.fine = d?.fine || fineOf(row.priya); }
+  if (row.q === "pairs") {
+    if (take === "priya") { change.final = fromSide(row.priya); change.fine = fineOf(row.priya); }
+    else if (take === "edit") { change.final = d?.final || (row.priya.include === "y" ? fromSide(row.priya) : fromSide(row.head)); change.fine = d?.fine || fineOf(row.priya); }
+  } else if (row.q === "draft") {
+    if (take === "edit") change.final = d?.final || { ...fromSide(row.head), note: "" };
+  } else {
+    if ((take === "subj" || take === "both") && ownsSubject(row)) change.final = d?.final?.include === "y" ? d.final : subjectSeed(row);
+    if ((take === "cons" || take === "both") && !d?.cons?.conceptId) change.cons = consSeed(row);
+  }
   writeRow(row, change, take || "cleared");
   if (take && take !== "edit") maybeAdvance(row);
 }
@@ -691,6 +898,7 @@ function select(id) {
   if (window.matchMedia("(max-width: 820px)").matches) $("detail").scrollIntoView({ block: "start" });
 }
 function jump(r) {
+  if (!r) return;
   if (r.g !== S.group) { S.group = r.g; store.set("group", r.g); }
   if (!visible(r.g).some((x) => x.id === r.id)) S.filter[r.g] = "all";
   renderTabs(); renderFilters(); select(r.id);
@@ -716,10 +924,12 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "j") step(1);
   else if (e.key === "k") step(-1);
   else if (e.key === "n") nextTodo();
-  else if (/^[1-4]$/.test(e.key)) {
+  else if (/^[1-5]$/.test(e.key)) {
     const r = rowOf(S.sel[S.group]);
-    if (!r || !S.canWrite) return;
-    choose(r, CHOICES.find((c) => c[2] === e.key)[0]);
+    if (!r || r.g !== S.group || !S.canWrite) return;
+    const c = CHOICES[r.q].find((x) => x[2] === e.key);
+    if (!c) return;
+    choose(r, c[0]);
   } else return;
   e.preventDefault();
 });
@@ -788,12 +998,21 @@ async function boot() {
     $("detail").replaceChildren(h("div", { class: "empty-state" }, h("h2", {}, "No data"), h("p", {}, "data.json could not be fetched.")));
     return;
   }
-  for (const r of S.data.rows) { rowsById.set(r.id, r); clusterRow.set(r.cluster, r); }
+  for (const r of S.data.rows) {
+    rowsById.set(r.id, r);
+    if (ownsSubject(r)) owner.set(r.cluster, r);
+  }
+  for (const [id, c] of Object.entries(S.data.concepts)) {
+    labelIndex.set(c.l.toLowerCase(), id);
+    for (const [, labels] of c.k) for (const l of labels.split(" | ")) if (!labelIndex.has(l.trim().toLowerCase())) labelIndex.set(l.trim().toLowerCase(), id);
+  }
   const dl = $("concept-ids");
   for (const [id, c] of Object.entries(S.data.concepts)) dl.append(h("option", { value: id, label: c.l }));
+  const cl = $("cons-ids");
+  for (const [id, c] of Object.entries(S.data.consConcepts)) cl.append(h("option", { value: id, label: c.l }));
   const savedG = store.get("group");
-  if (GROUPS.some(([g]) => g === savedG)) S.group = savedG;
-  for (const [g] of GROUPS) {
+  if (GROUPS.some((x) => x.g === savedG)) S.group = savedG;
+  for (const { g } of GROUPS) {
     const s = store.get("sel." + g);
     S.sel[g] = rows(g).some((x) => x.id === s) ? s : visible(g)[0]?.id || rows(g)[0]?.id || null;
   }
@@ -809,7 +1028,7 @@ async function boot() {
   if (!db) { S.dbState = "off"; S.canWrite = false; renderAll(); return; }
   S.db = db;
   if (!S.canWrite) S.dbState = "readonly";
-  const pending = new Set([...GROUPS.map(([g]) => g), "concepts"]);
+  const pending = new Set([...GROUPS.map((x) => x.g), "concepts"]);
   const slow = setTimeout(() => { if (S.dbState === "connecting") { S.dbState = "slow"; renderStatus(); } }, 10000);
   const arrived = (name, fromCache) => {
     if (fromCache) return;
@@ -818,7 +1037,7 @@ async function boot() {
   };
   const lost = (e) => { clearTimeout(slow); S.dbState = "off"; S.canWrite = false; renderAll(); setStatus("Lost the connection to the shared decisions (" + (e?.code || "error") + "). Reload the page to reconnect.", true); };
   // one subscription per group: a query delivers at most 1,000 documents
-  for (const [g] of GROUPS) {
+  for (const { g } of GROUPS) {
     db.collection("rows").where("g", "==", g).limit(1000).onSnapshot((snap) => {
       for (const [id, d] of S.decisions) if (d.g === g) S.decisions.delete(id);
       for (const doc of snap.docs) S.decisions.set(doc.id, doc.data());
