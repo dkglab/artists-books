@@ -161,7 +161,7 @@ would reject, plus `also-reviewed-in-head` where Mert's pass decided the same
 row.
 
 The sheet isn't edited by hand. It's reviewed on a shared page,
-`tools/subject-review/` (see its README), which also covers the draft places and
-`construction-overlap-review.csv` still open in #108,, and `pull_decisions.py` there writes
+`tools/subject-review/` (see its README and issue #225), which also covers the
+draft places, `construction-overlap-review.csv` and the label fixes,, and `pull_decisions.py` there writes
 the decisions into `decisions.csv`. Delete the sheet, `pr164_review.py` and
 that tool once the review is done.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Merge the subject review page's decisions into the two decisions files.
+"""Merge the subject review page's decisions (issue #225) into the two decisions files.
 
 The page (index.html, published as a claude.ai artifact) keeps two
 collections in its shared database:
@@ -8,16 +8,20 @@ collections in its shared database:
                   q is the queue:
                     pairs    the #164 reconciliation. take head keeps the row,
                              priya/edit write `final`, unsure leaves it.
-                    draft    a draft place (#108). confirm keeps the row and
+                    draft    a draft place. confirm keeps the row and
                              clears its draft note, out leaves it out, edit
                              writes `final`, unsure leaves it.
-                    overlap  subject or construction (#108). cons/subj/both/
+                    overlap  subject or construction. cons/subj/both/
                              neither set both schemes; `final` is the subject
                              row, `cons` the construction concept. A heading
                              that's also in pairs gets only its construction
                              side here.
-  concepts/<id>   a label and category set for a whole subject concept: every
-                  include=y row of subjects/decisions.csv under it gets them.
+  concepts/<id>   a subject concept's own decision. {prefLabel, category}: a
+                  label for the whole concept, which every include=y row of
+                  subjects/decisions.csv under it gets. {mergeInto}: the
+                  concept is merged into another, and its rows move there.
+                  (The Labels tab's rows only record which choice was made;
+                  their effect is here.)
 
 Save both collections first (Claude: ArtifactData `list` of `rows` and of
 `concepts` with `out_dir`, querying `rows` per `g` if it holds over 1,000),
@@ -93,6 +97,8 @@ def clean(final):
 def subject_final(d, current, in_pairs):
     """The subjects row a decision writes, or None to leave it as it is."""
     q, take = d.get("q") or "pairs", d.get("take")
+    if q == "labels":
+        return None   # its effect is in the concepts collection
     if q == "pairs":
         if take == "head" and current["note"] != reviewed(current["note"]):
             return {**{f: current[f] for f in FIELDS}, "note": ""}
@@ -112,7 +118,9 @@ def subject_final(d, current, in_pairs):
 
 def main(out_dir):
     rows = docs(os.path.join(out_dir, "rows"))
-    overrides = {d["id"]: d for d in docs(os.path.join(out_dir, "concepts"))}
+    concept_docs = docs(os.path.join(out_dir, "concepts"))
+    merges = {d["id"]: d["mergeInto"] for d in concept_docs if d.get("mergeInto")}
+    overrides = {d["id"]: d for d in concept_docs if d.get("prefLabel")}
     s_raw, s_cols, s_rows = load(SUBJECTS)
     c_raw, c_cols, c_rows = load(CONSTRUCTION)
     s_by = {r["cluster"]: r for r in s_rows}
@@ -138,7 +146,7 @@ def main(out_dir):
         if before != {f: r[f] for f in fields}:
             changed.append(f"{where} {k}: " + ", ".join(f"{f} {before[f]!r} -> {r[f]!r}" for f in fields if before[f] != r[f]))
 
-    # subjects: pairs first, then the #108 queues; a cluster has one owner
+    # subjects: pairs first, then the other queues; a cluster has one owner
     order = {"pairs": 0, "draft": 1, "overlap": 2}
     for d in sorted(rows, key=lambda d: order.get(d.get("q") or "pairs", 3)):
         k = d["cluster"]
@@ -147,6 +155,7 @@ def main(out_dir):
         if new is None:
             continue
         if new["include"] == "y":
+            new["conceptId"] = merges.get(new["conceptId"], new["conceptId"])
             o = overrides.get(new["conceptId"])
             if o:
                 new.update(prefLabel=o["prefLabel"], category=o["category"])
@@ -166,7 +175,7 @@ def main(out_dir):
         k = d["cluster"]
         if d["take"] in {"subj", "neither"}:
             if k in c_by:
-                put(c_by, c_rows, c_cols, k, {"include": "n", "conceptId": "", "category": "", "prefLabel": "", "note": "subject (#108 review)" if d["take"] == "subj" else ""}, CONS_FIELDS, "construction")
+                put(c_by, c_rows, c_cols, k, {"include": "n", "conceptId": "", "category": "", "prefLabel": "", "note": "subject (#225 review)" if d["take"] == "subj" else ""}, CONS_FIELDS, "construction")
             continue
         c = {f: (d.get("cons") or {}).get(f, "").strip() for f in ["conceptId", "category", "prefLabel"]}
         if c["conceptId"] in cons_label:
@@ -178,6 +187,19 @@ def main(out_dir):
         if not c["prefLabel"]:
             errors.append(f"construction {k}: no label")
         put(c_by, c_rows, c_cols, k, {"include": "y", **c, "note": ""}, CONS_FIELDS, "construction")
+
+    # a concept merged into another (Labels tab) takes that concept's ID and label
+    merged = 0
+    for src, target in merges.items():
+        tl = next(((r["prefLabel"], r["category"]) for r in s_rows if r["include"] == "y" and r["conceptId"] == target), None)
+        if tl is None:
+            errors.append(f"merge {src} -> {target}: no heading carries {target}")
+            continue
+        for r in s_rows:
+            if r["include"] == "y" and r["conceptId"] == src:
+                r["conceptId"], (r["prefLabel"], r["category"]) = target, tl
+                merged += 1
+                changed.append(f"subjects {r['cluster']}: merged {src} into {target}")
 
     relabelled = 0
     for cid, o in overrides.items():
@@ -201,7 +223,7 @@ def main(out_dir):
     save(SUBJECTS, s_raw, s_cols, s_rows)
     save(CONSTRUCTION, c_raw, c_cols, c_rows)
     print("\n".join(changed))
-    print(f"{len(changed)} row(s) changed, {relabelled} relabelled by {len(overrides)} concept label(s)")
+    print(f"{len(changed)} row(s) changed, {merged} merged by {len(merges)} merge(s), {relabelled} relabelled by {len(overrides)} concept label(s)")
     print(f"draft notes left: {sum(r['note'] == DRAFT for r in s_rows)}")
     print("decisions on the page: " + ", ".join(f"{k} {n}" for k, n in sorted(takes.items())))
 

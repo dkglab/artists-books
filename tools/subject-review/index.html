@@ -167,7 +167,7 @@ button.chip { cursor: pointer; display: inline-flex; gap: 6px; align-items: cent
 </style>
 
 <header class="top">
-  <h1>Subject Review <small>Subject headings · #108, #164</small></h1>
+  <h1>Subject Review <small>Subject headings · issue #225</small></h1>
   <div class="tabs" role="tablist" id="tabs"></div>
   <div class="people" id="people"></div>
   <div class="status-line" id="status">Loading the headings…</div>
@@ -211,18 +211,27 @@ const S = {
 };
 // Tabs, grouped by the review they belong to. `q` is the queue a group's rows are in.
 const GROUPS = [
-  { g: "place", q: "pairs", sec: "Two passes · #164", name: "Places" },
-  { g: "topic", q: "pairs", sec: "Two passes · #164", name: "Topics" },
-  { g: "unfinished", q: "pairs", sec: "Two passes · #164", name: "Unfinished" },
-  { g: "out", q: "pairs", sec: "Two passes · #164", name: "Left out" },
-  { g: "draft", q: "draft", sec: "Still open in #108", name: "Draft places" },
-  { g: "overlap", q: "overlap", sec: "Still open in #108", name: "Subject or construction" },
+  { g: "place", q: "pairs", sec: "Reconcile the two passes", name: "Places" },
+  { g: "topic", q: "pairs", sec: "Reconcile the two passes", name: "Topics" },
+  { g: "unfinished", q: "pairs", sec: "Reconcile the two passes", name: "Unfinished" },
+  { g: "out", q: "pairs", sec: "Reconcile the two passes", name: "Left out" },
+  { g: "draft", q: "draft", sec: "Finish the review", name: "Draft places" },
+  { g: "overlap", q: "overlap", sec: "Finish the review", name: "Subject or construction" },
+  { g: "labels", q: "labels", sec: "Finish the review", name: "Labels" },
 ];
 const CHOICES = {
   pairs: [["head", "Keep current", "1"], ["priya", "Use Priya's", "2"], ["edit", "Edit", "3"], ["unsure", "Unsure", "4"]],
   draft: [["confirm", "Confirm", "1"], ["out", "Leave out", "2"], ["edit", "Edit", "3"], ["unsure", "Unsure", "4"]],
   overlap: [["cons", "Construction", "1"], ["subj", "Subject", "2"], ["both", "Both", "3"], ["neither", "Neither", "4"], ["unsure", "Unsure", "5"]],
+  case: [["suggested", "Use suggestion", "1"], ["keep", "Keep as is", "2"], ["edit", "Edit", "3"], ["unsure", "Unsure", "4"]],
 };
+function choicesFor(row) {
+  if (row.q !== "labels") return CHOICES[row.q];
+  if (row.kind === "case") return CHOICES.case;
+  const [a, b] = row.concepts;
+  return [["merge0", `Merge into ${a.id}`, "1"], ["merge1", `Merge into ${b.id}`, "2"], ["separate", "Keep apart", "3"], ["unsure", "Unsure", "4"]];
+}
+const legendFor = (row) => row.q === "labels" ? LEGEND[row.kind] : LEGEND[row.q];
 const LEGEND = {
   pairs: [
     "Keep current: decisions.csv stays as it is now, after Mert's pass. A draft note on it is cleared.",
@@ -240,11 +249,22 @@ const LEGEND = {
     "Both: a book can be one and about one (a letterpress book, a book about letterpress).",
     "Neither: noise. Leave it out of both schemes.",
     "Unsure: leave both schemes as they are now."],
+  case: [
+    "Use suggestion: the same words as the concept's own LCSH or FAST heading, with its capitalization.",
+    "Keep as is: the label is already right (a proper noun, an established form).",
+    "Edit: type the label. LCSH/FAST capitalize only the first word, proper nouns and acronyms, and the first word of a qualifier: “Found objects (Art)”, “HIV/AIDS”.",
+    "Unsure: leave the label as it is and come back to it."],
+  dup: [
+    "Merge: one concept, under the ID you pick. Every heading under the other moves to it.",
+    "Keep apart: two concepts, so they need two labels. Give them different ones below.",
+    "Unsure: leave both as they are."],
 };
 const LABEL = { head: "Current", priya: "Priya's", edit: "Edited", unsure: "Unsure", fix: "Needs fixing", todo: "To do",
-  confirm: "Confirmed", out: "Left out", cons: "Construction", subj: "Subject", both: "Both", neither: "Neither" };
+  confirm: "Confirmed", out: "Left out", cons: "Construction", subj: "Subject", both: "Both", neither: "Neither",
+  suggested: "Relabelled", keep: "Kept", merge0: "Merged", merge1: "Merged", separate: "Kept apart" };
 const COLOR = { head: "head", priya: "priya", edit: "edit", unsure: "unsure", fix: "fix", todo: "todo",
-  confirm: "priya", out: "head", cons: "edit", subj: "priya", both: "priya", neither: "head" };
+  confirm: "priya", out: "head", cons: "edit", subj: "priya", both: "priya", neither: "head",
+  suggested: "priya", keep: "head", merge0: "priya", merge1: "priya", separate: "head" };
 const CATS = ["topical", "geographic"];
 const CAT_LABEL = { topical: "Topic", geographic: "Place" };
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -309,7 +329,16 @@ function rowOf(id) { return rowsById.get(id); }
 function groupOf(g) { return GROUPS.find((x) => x.g === g); }
 function headings(row) { return row.labels.split(" | ").map((s) => s.trim()).filter(Boolean); }
 function titleOf(row) { return headings(row)[0] || row.cluster; }
-const ownsSubject = (row) => !(row.q === "overlap" && row.pair);
+const ownsSubject = (row) => row.q !== "labels" && !(row.q === "overlap" && row.pair);
+// A concept merged into another on the Labels tab stands for that one.
+function resolve(cid) {
+  const o = S.overrides.get(cid);
+  return o && o.mergeInto ? o.mergeInto : cid;
+}
+function labelOverride(cid) {
+  const o = S.overrides.get(cid);
+  return o && o.prefLabel ? o : null;
+}
 
 // What the heading's subjects row will be once its decision is pulled: null
 // when this page leaves it as it is now.
@@ -323,8 +352,16 @@ function subjFinal(row) {
   else f = d.take === "cons" ? leftOut("construction") : (d.take === "subj" || d.take === "both") ? d.final : d.take === "neither" ? leftOut("") : null;
   if (!f) return null;
   f = { ...f };
-  const o = f.include === "y" && S.overrides.get(f.conceptId);
-  if (o) { f.prefLabel = o.prefLabel; f.category = o.category; }
+  if (f.include === "y") {
+    const target = resolve(f.conceptId);
+    if (target !== f.conceptId) {
+      const c = S.data.concepts[target];
+      f.conceptId = target;
+      if (c) { f.prefLabel = c.l; f.category = c.c; }
+    }
+    const o = labelOverride(f.conceptId);
+    if (o) { f.prefLabel = o.prefLabel; f.category = o.category; }
+  }
   return f;
 }
 // What the heading's construction row will be: overlap headings only.
@@ -344,7 +381,8 @@ function consFinal(row) {
 // another decided heading gives it.
 function conceptElsewhere(cid, exceptCluster) {
   if (!cid) return null;
-  const o = S.overrides.get(cid);
+  cid = resolve(cid);
+  const o = labelOverride(cid);
   if (o) return { l: o.prefLabel, c: o.category, src: "override", n: 0 };
   const c = S.data.concepts[cid];
   if (c) {
@@ -405,12 +443,36 @@ function statusOf(row) {
   if (!d || !d.take) return "todo";
   if (d.take === "unsure") return "unsure";
   if (row.q === "pairs" && d.take === "head") return "head";
+  if (row.q === "labels") return labelsProblem(row, d) ? "fix" : d.take;
   const f = subjFinal(row), c = consFinal(row);
   if (f && problems(row, f).length) return "fix";
   if (c && consProblems(row, c).length) return "fix";
   return d.take;
 }
 const isDone = (st) => st !== "todo" && st !== "fix";
+
+// The labels the two concepts of a duplicate pair will carry.
+function dupLabels(row) {
+  return row.concepts.map((c) => (labelOverride(c.id)?.prefLabel || c.l));
+}
+// What's still wrong with a Labels decision, or "" when it's done.
+function labelsProblem(row, d) {
+  if (row.kind === "case") {
+    if (d.take === "keep") return "";
+    const o = labelOverride(row.cid);
+    if (!o) return d.take === "edit" ? "Type the label below." : "The suggestion didn't save. Choose it again.";
+    if (!o.prefLabel.trim()) return "The label can't be empty.";
+    return "";
+  }
+  const [a, b] = row.concepts;
+  if (d.take === "merge0") return S.overrides.get(b.id)?.mergeInto === a.id ? "" : "The merge didn't save. Choose it again.";
+  if (d.take === "merge1") return S.overrides.get(a.id)?.mergeInto === b.id ? "" : "The merge didn't save. Choose it again.";
+  if (d.take === "separate") {
+    const [la, lb] = dupLabels(row);
+    return la.toLowerCase() === lb.toLowerCase() ? "The two concepts still have the same label. Give one of them another label below." : "";
+  }
+  return "";
+}
 
 // A heading like "Berlin (Germany) -- Buildings, structures, etc" can usually
 // be filed under the place or topic itself, when that's already a concept.
@@ -427,11 +489,12 @@ function baseConcept(row) {
 // ---------- list ----------
 function rows(g) { return S.data.rows.filter((r) => r.g === g); }
 function haystack(r) {
-  return r._hay || (r._hay = [r.labels, r.cluster, r.head.conceptId, r.priya?.conceptId, r.priya?.prefLabel, r.head.prefLabel, r.cons?.conceptId, ...(r.matches || []), ...r.books.map((b) => b[1])].join(" ").toLowerCase());
+  return r._hay || (r._hay = [r.labels, r.cluster, r.cid, r.suggestion, ...(r.concepts || []).map((c) => c.id), ...(r.h || []), r.head.conceptId, r.priya?.conceptId, r.priya?.prefLabel, r.head.prefLabel, r.cons?.conceptId, ...(r.matches || []), ...r.books.map((b) => b[1])].join(" ").toLowerCase());
 }
 function filtersFor(gr) {
-  const extra = gr.q === "pairs" ? [["both", "Both passes changed"]]
-    : gr.q === "overlap" ? [["prefill", "Pre-filled"], ["g5", "Label matches"]] : [["sub", "Subdivided"]];
+  const extra = gr.q === "pairs" ? [["both", "Decided twice"]]
+    : gr.q === "overlap" ? [["prefill", "Pre-filled"], ["g5", "Label matches"]]
+    : gr.q === "labels" ? [["sugg", "Has a suggestion"], ["nosugg", "No suggestion"]] : [["sub", "Subdivided"]];
   return [["todo", "To do"], ["fix", "Needs fixing"], ...extra, ["unsure", "Unsure"], ["mine", "Mine"], ["done", "Decided"], ["all", "All"]];
 }
 function visible(g) {
@@ -446,6 +509,8 @@ function visible(g) {
     if (f === "prefill" && !r.prefill) return false;
     if (f === "g5" && r.group !== "5") return false;
     if (f === "sub" && !r.labels.includes(" -- ")) return false;
+    if (f === "sugg" && !r.suggestion) return false;
+    if (f === "nosugg" && (r.kind !== "case" || r.suggestion)) return false;
     if (f === "mine") { const d = S.decisions.get(r.id); if (!d || !S.me || d.by !== S.me) return false; }
     return !q || haystack(r).includes(q);
   });
@@ -455,6 +520,7 @@ function visible(g) {
   else if (s === "title") list.sort(byTitle);
   else if (g === "overlap") list.sort((a, b) => a.group.localeCompare(b.group) || b.nBooks - a.nBooks || byTitle(a, b));
   else if (g === "draft") list.sort(byTitle);
+  else if (g === "labels") list.sort((a, b) => (a.kind === "dup" ? 0 : a.suggestion ? 2 : 1) - (b.kind === "dup" ? 0 : b.suggestion ? 2 : 1) || b.nBooks - a.nBooks || byTitle(a, b));
   else list.sort((a, b) => (a.priya.conceptId || "~").localeCompare(b.priya.conceptId || "~") || byTitle(a, b));
   return list;
 }
@@ -486,7 +552,7 @@ function renderFilters() {
   const gr = groupOf(S.group), cur = S.filter[gr.g] || "todo";
   $("statusFilters").replaceChildren(...filtersFor(gr).map(([v, l]) =>
     h("button", { class: "chipbtn", "aria-pressed": String(cur === v), onclick: () => { S.filter[gr.g] = v; renderFilters(); renderList(); } }, l)));
-  const first = gr.q === "pairs" ? "By Priya's concept" : gr.q === "overlap" ? "By group, most books first" : "Heading A–Z";
+  const first = gr.q === "pairs" ? "By Priya's concept" : gr.q === "overlap" ? "By group, most books first" : gr.q === "labels" ? "Duplicates, then most books" : "Heading A–Z";
   const sorts = [["default", first], ["books", "Most books first"], ["title", "Heading A–Z"]].filter((x, i, a) => i === 0 || x[1] !== a[0][1]);
   $("sort").replaceChildren(...sorts.map(([v, l]) => h("option", { value: v, selected: (S.sort[gr.g] || "default") === v }, l)));
 }
@@ -511,6 +577,7 @@ function metaOf(r) {
     return `${from} → ${to} · ${books}`;
   }
   if (r.q === "draft") return `${r.head.conceptId} · ${books}`;
+  if (r.q === "labels") return r.kind === "dup" ? `same label · ${r.concepts.map((c) => c.id).join(" + ")}` : `${r.cid} · ${r.suggestion ? "→ " + r.suggestion : "no suggestion"} · ${books}`;
   const c = r.prefill ? `pre-filled ${r.prefill}` : r.matches.length ? `matches ${r.matches.join(", ")}` : "no construction concept";
   return `group ${r.group} · ${c} · ${books}`;
 }
@@ -570,9 +637,9 @@ function hints(row) {
   const fl = new Set(row.flags);
   const li = (...k) => items.push(h("li", {}, ...k));
   if (row.q === "pairs") {
-    if (fl.has("also-reviewed-in-head")) li(h("b", {}, "Both passes changed this heading."), " Mert's pass and Priya's reached different results.");
-    else li("Only Priya's pass changed this heading. ", h("b", {}, "Now"), " is how it stood before both passes.");
-    if (fl.has("left-out-by-mert")) li(h("b", {}, "Mert's earlier pass left this place out."), " The merge in #154 put it back, because the geographic file had every row in. #108 asks for a second look.");
+    if (fl.has("also-reviewed-in-head")) li(h("b", {}, "This heading was decided twice."), " Priya's pass and the current file (Mert's pass, or the earlier merge of the two review passes) both changed it, with different results.");
+    else li("Only Priya's pass changed this heading. ", h("b", {}, "Now"), " is how it stood before her pass.");
+    if (fl.has("left-out-by-mert")) li(h("b", {}, "Mert's earlier pass left this place out."), " Merging the two geographic files put it back, because one of them had every row in. It needs a second look.");
     if (row.priya.include === "y" && !row.priya.category) li("Priya included it but gave it no category.");
     if (row.priya.include === "y" && !row.priya.prefLabel.trim()) li("Priya's row has no label.");
     const fine = fineOf(row.priya);
@@ -584,7 +651,7 @@ function hints(row) {
     if (fl.has("new-cluster")) li("This heading isn't in decisions.csv yet. Taking Priya's row adds it.");
   } else if (row.q === "draft") {
     li("This place still has the seed's draft row. Confirming it, editing it or leaving it out marks it reviewed.");
-    li("Label style (#154): LCSH's parenthetical form, such as “Los Angeles (Calif.)” or “Amsterdam (Netherlands)”.");
+    li("Label style, as agreed for places: LCSH's parenthetical form, such as “Los Angeles (Calif.)” or “Amsterdam (Netherlands)”.");
     li("To merge twins, give them the same concept ID. Don't over-merge: New York (State) and New York (N.Y.) are different places.");
   } else {
     li(OVERLAP_GROUP[row.group]);
@@ -612,12 +679,12 @@ function booksPanel(row) {
 function decidePanel(row, d) {
   const panel = h("div", { class: "panel" });
   panel.append(h("div", { class: "decide-row" }, h("span", { class: "eyebrow" }, "Decision"),
-    h("div", { class: "seg", role: "group" }, CHOICES[row.q].map(([v, l, k]) => h("button", {
-      class: COLOR[v], "aria-pressed": String(d?.take === v), disabled: !S.canWrite,
+    h("div", { class: "seg", role: "group" }, choicesFor(row).map(([v, l, k]) => h("button", {
+      class: COLOR[v], "aria-pressed": String(d?.take === v), disabled: !S.canWrite || (v === "suggested" && !row.suggestion),
       title: S.canWrite ? `${l} (${k})` : "You can't record decisions in this view",
       onclick: () => choose(row, d?.take === v ? "" : v),
     }, l, h("kbd", {}, k))))));
-  panel.append(h("div", { class: "legend" }, LEGEND[row.q].map((t) => h("span", {}, t))));
+  panel.append(h("div", { class: "legend" }, legendFor(row).map((t) => h("span", {}, t))));
   const ta = h("textarea", { id: "notes", placeholder: "Notes for each other (why, what to check)", disabled: !S.canWrite });
   ta.value = d?.notes || "";
   let t = null;
@@ -656,7 +723,7 @@ function editPanel(row, d, f, title) {
     h("option", { value: "n", selected: f.include !== "y" }, "No, left out"));
   const form = h("div", { class: "form" }, h("label", { for: "f-include" }, "In scheme"), inc);
   if (f.include === "y") {
-    const o = S.overrides.get(f.conceptId);
+    const o = labelOverride(f.conceptId);
     form.append(
       h("label", { for: "f-id" }, "Concept ID"),
       h("input", { type: "text", id: "f-id", list: "concept-ids", value: f.conceptId, disabled: dis, spellcheck: "false",
@@ -742,7 +809,7 @@ function consPanel(row, d, c) {
 function conceptPanel(row, cid) {
   const panel = h("div", { class: "panel" });
   const c = S.data.concepts[cid];
-  const o = S.overrides.get(cid);
+  const o = labelOverride(cid);
   panel.append(h("h3", {}, "Subject concept ", h("span", { class: "mono" }, cid)));
   const e = conceptElsewhere(cid, row.cluster);
   if (o) panel.append(h("div", {}, `Label for every heading under it: “${o.prefLabel}” (${CAT_LABEL[o.category]}), set here`, o.by ? [" by ", S.profiles[o.by]?.name || "someone"] : "", "."));
@@ -778,6 +845,64 @@ function conceptPanel(row, cid) {
   return panel;
 }
 
+function labelsDetail(row, d) {
+  const dis = !S.canWrite;
+  const problem = d?.take ? labelsProblem(row, d) : "";
+  const parts = [];
+  if (row.kind === "case") {
+    const o = labelOverride(row.cid);
+    parts.push(h("div", { class: "detail-head" },
+      h("span", { class: "eyebrow" }, `Concept label · ${CAT_LABEL[row.category]} · ${plural(row.nBooks, "book")}`),
+      h("h2", {}, o ? o.prefLabel : row.labels),
+      o ? h("div", { class: "variants" }, `Was “${row.labels}”`) : null,
+      h("div", { class: "mono muted" }, row.cid)));
+    parts.push(decidePanel(row, d));
+    const panel = h("div", { class: "panel" }, h("h3", {}, "Label"),
+      h("div", { class: "form" },
+        h("label", {}, "Now"), h("span", {}, showVal("prefLabel", row.labels)),
+        h("label", {}, "Suggestion"), row.suggestion ? h("span", {}, row.suggestion, h("span", { class: "muted" }, " · from the concept's own heading")) : h("span", { class: "muted" }, "None. No heading under this concept has the same words.")));
+    if (d?.take === "edit") panel.append(h("div", { class: "form" }, h("label", { for: "l-label" }, "New label"),
+      h("input", { type: "text", id: "l-label", value: o ? o.prefLabel : (row.suggestion || row.labels), disabled: dis,
+        onchange: (e) => setOverride(row.cid, e.target.value.trim(), row.category) })));
+    if (problem) panel.append(h("div", { class: "problem" }, problem));
+    else if (o) panel.append(h("div", { class: "ok" }, "Every heading under this concept gets this label when the decisions are pulled."));
+    parts.push(panel);
+    parts.push(h("div", { class: "panel" }, h("h3", {}, "Headings under this concept"),
+      h("div", { class: "chips" }, row.h.map((x) => h("span", { class: "chip" }, x)))));
+    const hint = [h("li", {}, "LCSH and FAST capitalize the first word, proper nouns and acronyms, and the first word of a parenthetical qualifier: “Politics and government”, “Found objects (Art)”, “HIV/AIDS”, “LGBTQ+”. Places and names keep their capitals: “New York (State)”.")];
+    if (row.flags.includes("in-dup")) hint.push(h("li", {}, "This concept also shares its label with another concept. That pair is at the top of this list."));
+    parts.push(h("div", { class: "hintbox" }, h("ul", {}, hint)));
+    const todo = rows("labels").filter((r) => r.kind === "case" && r.suggestion && statusOf(r) === "todo");
+    if (row.suggestion && todo.length > 1) {
+      parts.push(h("div", { class: "panel" }, h("h3", {}, "All suggestions at once"),
+        h("div", { class: "muted" }, `${plural(todo.length, "label")} still to do have a suggestion from their own heading. You can take them all, then look through Decided and change any that are wrong.`),
+        h("div", { class: "decide-row" }, S.bulkArm
+          ? [h("button", { class: "navbtn primary", disabled: dis, onclick: () => bulkSuggest(todo) }, `Relabel ${todo.length} concepts`),
+             h("button", { class: "navbtn", onclick: () => { S.bulkArm = false; renderDetail(); } }, "Cancel")]
+          : h("button", { class: "navbtn", disabled: dis, onclick: () => { S.bulkArm = true; renderDetail(); } }, `Use all ${todo.length} suggestions…`))));
+    }
+  } else {
+    const labels = dupLabels(row);
+    parts.push(h("div", { class: "detail-head" },
+      h("span", { class: "eyebrow" }, `Two concepts, one label · ${plural(row.nBooks, "book")}`),
+      h("h2", {}, row.labels)));
+    parts.push(decidePanel(row, d));
+    const cmp = h("div", { class: "cmp-wrap" }, h("table", { class: "cmp" },
+      h("thead", {}, h("tr", {}, h("th", {}, ""), row.concepts.map((c) => h("th", {}, h("span", { class: "mono" }, c.id))))),
+      h("tbody", {},
+        h("tr", {}, h("th", { scope: "row" }, "Label"), row.concepts.map((c, i) => h("td", {},
+          d?.take === "separate" ? h("input", { type: "text", id: "dup-" + i, value: labels[i], disabled: dis, "aria-label": `Label for ${c.id}`,
+            onchange: (e) => setOverride(c.id, e.target.value.trim(), c.c) }) : labels[i]))),
+        h("tr", {}, h("th", { scope: "row" }, "Category"), row.concepts.map((c) => h("td", {}, showVal("category", c.c)))),
+        h("tr", {}, h("th", { scope: "row" }, "Books"), row.concepts.map((c) => h("td", {}, String(c.n)))),
+        h("tr", {}, h("th", { scope: "row" }, "Headings"), row.concepts.map((c) => h("td", {}, h("div", { class: "chips" }, c.h.map((x) => h("span", { class: "chip" }, x)))))))));
+    parts.push(cmp);
+    if (problem) parts.push(h("div", { class: "problem" }, problem));
+    parts.push(h("div", { class: "hintbox" }, h("ul", {}, h("li", {}, "Two concepts can't share a label: the Subject and Place facets would list it twice. Merge them if they're one idea; otherwise keep them apart with labels that say how they differ."))));
+  }
+  return parts;
+}
+
 function renderDetail() {
   const box = $("detail");
   const row = S.data.rows.find((r) => r.id === S.sel[S.group] && r.g === S.group);
@@ -790,6 +915,7 @@ function renderDetail() {
   const f = subjFinal(row), c = consFinal(row);
   const hs = headings(row);
   const others = peersOn(row.id);
+  if (row.q === "labels") { box.replaceChildren(h("div", { class: "stack" }, labelsDetail(row, d))); return; }
   const eyebrow = { pairs: "Two passes", draft: "Draft place", overlap: `Subject or construction · group ${row.group}` }[row.q];
   const head = h("div", { class: "detail-head" },
     h("span", { class: "eyebrow" }, `${eyebrow} · ${plural(row.nBooks, "book")}`),
@@ -856,6 +982,7 @@ function consSeed(row) {
 function choose(row, take) {
   const d = S.decisions.get(row.id);
   const change = { take };
+  if (row.q === "labels") return chooseLabel(row, d, take);
   if (row.q === "pairs") {
     if (take === "priya") { change.final = fromSide(row.priya); change.fine = fineOf(row.priya); }
     else if (take === "edit") { change.final = d?.final || (row.priya.include === "y" ? fromSide(row.priya) : fromSide(row.head)); change.fine = d?.fine || fineOf(row.priya); }
@@ -872,17 +999,50 @@ async function bulkPriya(list) {
   for (const r of list) await writeRow(r, { take: "priya", final: fromSide(r.priya), fine: fineOf(r.priya) }, "priya");
 }
 function setOverride(cid, label, category) {
-  if (!S.db || !S.canWrite || !SLUG.test(cid) || !label || !CATS.includes(category)) return;
+  if (!S.db || !S.canWrite || !SLUG.test(cid) || !label || !CATS.includes(category)) return Promise.resolve();
   const doc = { id: cid, prefLabel: label, category, by: S.me, at: Date.now() };
   S.overrides.set(cid, doc);
   renderAll();
-  enqueue("c." + cid, () => S.db.collection("concepts").doc(cid).set(doc).catch((e) => setStatus("The concept label didn't save (" + (e?.code || "error") + ").", true)));
+  return enqueue("c." + cid, () => S.db.collection("concepts").doc(cid).set(doc).catch((e) => setStatus("The concept label didn't save (" + (e?.code || "error") + ").", true)));
+}
+function setMerge(cid, target) {
+  if (!S.db || !S.canWrite) return Promise.resolve();
+  const doc = { id: cid, mergeInto: target, by: S.me, at: Date.now() };
+  S.overrides.set(cid, doc);
+  renderAll();
+  return enqueue("c." + cid, () => S.db.collection("concepts").doc(cid).set(doc).catch((e) => setStatus("The merge didn't save (" + (e?.code || "error") + ").", true)));
 }
 function clearOverride(cid) {
-  if (!S.db || !S.canWrite) return;
+  if (!S.db || !S.canWrite) return Promise.resolve();
   S.overrides.delete(cid);
   renderAll();
-  enqueue("c." + cid, () => S.db.collection("concepts").doc(cid).delete().catch((e) => setStatus("Couldn't remove the concept label (" + (e?.code || "error") + ").", true)));
+  return enqueue("c." + cid, () => S.db.collection("concepts").doc(cid).delete().catch((e) => setStatus("Couldn't remove the concept label (" + (e?.code || "error") + ").", true)));
+}
+function chooseLabel(row, d, take) {
+  if (row.kind === "case") {
+    if (take === "suggested") setOverride(row.cid, row.suggestion, row.category);
+    else if ((take === "keep" || take === "") && labelOverride(row.cid)) clearOverride(row.cid);
+  } else {
+    const [a, b] = row.concepts;
+    for (const c of [a, b]) if (S.overrides.get(c.id)?.mergeInto) clearOverride(c.id);
+    if (take === "merge0") setMerge(b.id, a.id);
+    else if (take === "merge1") setMerge(a.id, b.id);
+  }
+  writeRow(row, { take }, take || "cleared");
+  if (take && take !== "edit" && take !== "separate") maybeAdvance(row);
+}
+// Use the suggestion on every Labels row still to do that has one. Renders
+// once at the end: one render per write would stall the page.
+let quiet = false;
+async function bulkSuggest(list) {
+  quiet = true;
+  try {
+    let n = 0;
+    for (const r of list) {
+      setStatus(`Relabelling ${++n} of ${list.length}…`);
+      await Promise.all([setOverride(r.cid, r.suggestion, r.category), writeRow(r, { take: "suggested" }, "suggested")]);
+    }
+  } finally { quiet = false; S.bulkArm = false; renderAll(); }
 }
 function maybeAdvance(row) {
   if ((S.filter[S.group] || "todo") !== "todo") return;
@@ -927,8 +1087,8 @@ document.addEventListener("keydown", (e) => {
   else if (/^[1-5]$/.test(e.key)) {
     const r = rowOf(S.sel[S.group]);
     if (!r || r.g !== S.group || !S.canWrite) return;
-    const c = CHOICES[r.q].find((x) => x[2] === e.key);
-    if (!c) return;
+    const c = choicesFor(r).find((x) => x[2] === e.key);
+    if (!c || (c[0] === "suggested" && !r.suggestion)) return;
     choose(r, c[0]);
   } else return;
   e.preventDefault();
@@ -979,7 +1139,7 @@ function editingDetail() {
   return !!(a && $("detail").contains(a) && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName));
 }
 function renderAll() {
-  if (!S.data) return;
+  if (!S.data || quiet) return;
   renderTabs(); renderFilters(); renderList(); renderStatus(); renderPeople();
   if (!editingDetail()) renderDetail();   // a live update must not wipe what's being typed
   refreshProfiles();
