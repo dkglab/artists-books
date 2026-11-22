@@ -270,6 +270,45 @@ One of the 12 was ranked 4th of 7 hits, i.e. outside the harvest's `show_n=3`
 window: on common-word artist's-book titles the show depth, not just the
 threshold, is a real ceiling on recall.
 
+### Show depth: a deeper title window, guarded (#98)
+
+Title probes now fetch `TITLE_SHOW_N = 10` candidates, not the server's
+`show_n` of 3. Identifier probes still fetch `show_n`, because their first hit is
+trusted and a longer list adds nothing. `show_n` is now the *trusted window*.
+Within it, a candidate is judged by `verify_title` exactly as before. Below it, a
+candidate must clear the stricter `verify_deep`, which takes **only** a strong
+title match (`TITLE_STRONG`, no weak band) whose year is within one of the CSV's.
+The thresholds themselves are unchanged. A deep acceptance is logged in
+`review.tsv` as `N candidates; verified rank R below show_n 3`, so it can be
+audited. eHive opts out (`title_show_n: 5` = its `show_n`), because each of its
+candidates costs a full-record re-fetch.
+
+The guard is there because a wider window fed to plain `verify_title` mostly
+*hurts*. Its strong band accepts on title alone. The deeper a query reaches into
+the 400 hits a title like "Sans titre" returns, the more **other works with the
+same title** it finds. The weak band then accepts the wrong installment of a
+series ("Perspectives II" for "Perspectives IV"). Measured offline with
+`measure_show_n.py` over `adjudicate_review.py` dumps of each server's own
+rejects, fetched at depth 10:
+
+| rejects re-queried | verify at rank 4–10 | year conflicts | guarded harvest accepts |
+|---|---|---|---|
+| SCAD, 76 | 4 | 0 | 3 |
+| UW/VSW, 35 | 5 | 0 | 3 |
+| NYARC (books still missing MARC), 713 | 62 | 33 | 17 |
+
+For VSW the guard reproduces the earlier hand adjudication in `emit_manual.py`.
+It takes *Letters*, *Spine* and *Six*, and rejects both of the cases deliberately
+left unconfirmed there. Every NYARC acceptance has an exact title and a year
+within one.
+
+```sh
+# from sources/marc/: re-query one server's rejects for books still missing MARC
+STEM=artists-books SERVER=nyarc CSV=../artists-books.csv HAVE=artists-books-marc \
+    OUT=harvest/artists-books-nyarc-candidates.jsonl python3 adjudicate_review.py
+python3 measure_show_n.py harvest/artists-books-nyarc-candidates.jsonl
+```
+
 ```sh
 # from sources/, after harvesting a residual into its own .zip:
 python3 marc/merge_archives.py --base marc/artists-books-marc \
