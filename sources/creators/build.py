@@ -31,8 +31,15 @@ Clustering (union-find over field occurrences):
      -> it stays a local agent of its own; several -> review, and it stays
      local.
   4. decisions.csv: `merge` (a, b) unions the agents holding two keys;
-     `separate` (a) exempts a name key from rule 3; `label` (a, label) sets an
-     agent's preferred label. Keys are typed: lc:<id>, viaf:<id>, isni:<id>,
+     `separate` (a) exempts a heading: key from rule 2, or a name: key from
+     rule 3; `label`
+     (a, label) sets an agent's preferred label; `distinct` (a, b) records that
+     two agents are different people (checked, and written to authority.csv's
+     distinctFrom); `place` (field:book:<key>:zotero:<name key>, b) credits a
+     Zotero-only book to the agent holding b, or to nobody when b is empty;
+     `prefer` (lc:<id>) makes that id the LC id (so the URI and label) of an
+     agent holding several.
+     Keys are typed: lc:<id>, viaf:<id>, isni:<id>,
      gnd:<id>, name:<name key>, heading:<heading key>, and
      field:<source>:<canonicalKey>:<tag>:<name key> for one MARC field of one
      work. A key held by several agents is refused (review.csv reports it as
@@ -99,6 +106,13 @@ def split_dates(heading):
     return heading[:m.start()].rstrip(" ,"), heading[m.start():].strip(" ,")
 
 
+def name_key(tag, heading):
+    """The name key of one MARC field: a personal heading's name without its
+    dates, a corporate or meeting heading whole. review_cases.py uses it too,
+    so the field: keys it offers are the ones built here."""
+    return fold(split_dates(heading)[0] if tag.endswith("00") else heading)
+
+
 def slug(s):
     s = unicodedata.normalize("NFKD", s)
     s = "".join(c for c in s if not unicodedata.combining(c)).lower()
@@ -151,8 +165,8 @@ def main():
     for i, o in enumerate(occ):
         o["i"] = i
         o["personal"] = o["tag"].endswith("00")
-        name_part, dates = split_dates(o["heading"]) if o["personal"] else (o["heading"], "")
-        o["nameKey"] = fold(name_part)
+        dates = split_dates(o["heading"])[1] if o["personal"] else ""
+        o["nameKey"] = name_key(o["tag"], o["heading"])
         year = YEAR.search(dates)
         o["headingKey"] = (f"{o['nameKey']}:{year.group(0)}" if year else "") if o["personal"] \
             else fold(o["heading"])
@@ -198,13 +212,32 @@ def main():
         members_ids[uf.find(roots[0])] = merged
         return True
 
-    # Decisions.
-    separate = {d["a"] for d in decisions if d["action"] == "separate"}
+    # Decisions. `separate` takes a typed key like every other decision: a
+    # heading:<heading key> exempts that heading from rule 2, a name:<name key>
+    # exempts that name from rule 3. The two are kept apart because a corporate
+    # heading's name key and heading key are the same string. Any other key is
+    # refused, and one no occurrence carries is reported as stale, rather than
+    # silently ignored.
+    separate = {"name": set(), "heading": set()}
+    name_keys = {o["nameKey"] for o in occ}
+    heading_keys = {o["headingKey"] for o in occ if o["headingKey"]}
+    for d in decisions:
+        if d["action"] != "separate":
+            continue
+        kind, _, bare = d["a"].partition(":")
+        if kind not in ("name", "heading") or not bare:
+            review.append({"issue": "bad-decision-key", "key": d["a"],
+                           "detail": "separate takes a name: or heading: key"})
+        elif bare not in (name_keys if kind == "name" else heading_keys):
+            review.append({"issue": "stale-decision", "key": d["a"],
+                           "detail": f"separate {d['a']}: key not found"})
+        else:
+            separate[kind].add(bare)
 
     # 2. Dated / corporate headings.
     by_heading = collections.defaultdict(list)
     for o in occ:
-        if o["headingKey"] and o["headingKey"] not in separate:
+        if o["headingKey"] and o["headingKey"] not in separate["heading"]:
             by_heading[o["headingKey"]].append(o)
     for hk, group in sorted(by_heading.items()):
         try_merge([uf.find(("o", o["i"])) for o in group], "same heading", f"heading:{hk}")
@@ -238,7 +271,7 @@ def main():
     # name whose birth years don't contradict it.
     info, by_name = snapshot()
     for nk in sorted(by_name):
-        if nk in separate:
+        if nk in separate["name"]:
             continue
         roots = by_name[nk]
         anchored = [r for r in roots if info[r]["ids"]]
@@ -264,7 +297,7 @@ def main():
             continue
         for r in pool[1:]:
             uf.union(uf.find(pool[0]), uf.find(r))
-        if nk in separate:
+        if nk in separate["name"]:
             continue
         cands = {uf.find(r) for r in roots if r not in pool}
         if len(cands) == 1:
@@ -309,6 +342,18 @@ def main():
             if ra is not None and rb is not None:
                 uf.union(ra, rb)
 
+    # `distinct` (a, b) records a reviewer's verdict that the agents holding a
+    # and b are different people. It changes no clustering -- the rules have
+    # already left them apart -- but it is written to authority.csv so the
+    # review page stops listing a settled name, and it is checked: if a merge
+    # (or a later rule change) ever puts the two in one agent, it is reported.
+    distinct_roots = []
+    for d in decisions:
+        if d["action"] == "distinct":
+            ra, rb = decision_root(d["a"], d), decision_root(d["b"], d)
+            if ra is not None and rb is not None:
+                distinct_roots.append((ra, rb, d))
+
     # Build agents.
     clusters = collections.defaultdict(list)
     for o in occ:
@@ -320,6 +365,17 @@ def main():
             if r is not None:
                 label_override[uf.find(r)] = d["b"]
 
+    # `prefer` (lc:<id>) makes that id the LC id of the agent holding it.
+    prefer_lc = set()
+    for d in decisions:
+        if d["action"] != "prefer":
+            continue
+        if not d["a"].startswith("lc:"):
+            review.append({"issue": "bad-decision-key", "key": d["a"],
+                           "detail": "prefer takes an lc: key"})
+        elif decision_root(d["a"], d) is not None:
+            prefer_lc.add(d["a"][3:])
+
     agents = {}
     used_keys = collections.Counter()
     for root, os_ in sorted(clusters.items(), key=lambda kv: min(o["i"] for o in kv[1])):
@@ -328,7 +384,24 @@ def main():
                                        if k.startswith(field + ":"))
         lc, viaf, isni = ids("lcId"), ids("viaf"), ids("isni")
         pick = lambda c: sorted(c.items(), key=lambda kv: (-kv[1], kv[0]))[0][0] if c else ""
-        lc_id = pick(lc)
+        # The agent's LC id, when it holds several (a hand merge of an LC
+        # duplicate, or a field citing two ids): a `prefer` decision first, else
+        # the id cited most, then a current record over a deprecated one, then
+        # one whose heading is dated (the fuller record) -- the id only breaks
+        # what is left. The URI follows this id's VIAF, so the tie-break matters.
+        preferred = [k for k in lc if k in prefer_lc]
+        def lc_rank(kv):
+            r = lc_rec.get(kv[0], {})
+            return (-kv[1], r.get("status") == "deprecated",
+                    not split_dates(r.get("label", ""))[1], kv[0])
+        # Several `prefer` rows on one agent conflict (reported below); the
+        # ranking then chooses among the preferred ids only, never one that no
+        # `prefer` row named.
+        ranked = [(k, lc[k]) for k in preferred] or list(lc.items())
+        lc_id = sorted(ranked, key=lc_rank)[0][0] if ranked else ""
+        if len(preferred) > 1:
+            review.append({"issue": "conflicting-prefer", "key": f"lc:{lc_id}",
+                           "detail": "prefer names " + " + ".join(sorted(preferred))})
         # VIAF renumbers clusters as it merges them, so a MARC $1 can carry an
         # older VIAF id than the one LC links today: prefer LC's.
         rec = lc_rec.get(lc_id, {})
@@ -361,6 +434,19 @@ def main():
                         "occurrences": len(os_),
                         "works": len({(o["source"], o["canonicalKey"]) for o in os_})}
 
+    for a in agents.values():
+        a["distinct"] = set()
+    for ra, rb, d in distinct_roots:
+        aa, ab = agents[uf.find(ra)], agents[uf.find(rb)]
+        if aa is ab:
+            review.append({"issue": "distinct-conflict", "key": d["a"],
+                           "detail": f"distinct {d['a']} {d['b']}: both are agent {aa['agentKey']}"})
+            continue
+        aa["distinct"].add(ab["agentKey"])
+        ab["distinct"].add(aa["agentKey"])
+    for a in agents.values():
+        a["distinctFrom"] = " ".join(sorted(a.pop("distinct")))
+
     rows = {}
     for o in occ:
         a = agents[uf.find(("o", o["i"]))]
@@ -378,6 +464,40 @@ def main():
     for root, a in agents.items():
         for nk in a["nameKeys"]:
             by_name[nk].add(root)
+    # `place` (field:book:<canonicalKey>:zotero:<name key>, b) settles a Zotero
+    # credit that the name join can't (several agents carry the name): b is a
+    # key of the agent to credit, or empty to leave the book deliberately
+    # uncredited under that name.
+    # Two `place` rows for one credit that name different agents conflict: the
+    # credit is left unplaced (and so still ambiguous) and reported, rather
+    # than given to whichever row came last.
+    placed, place_conflicts = {}, set()
+    def place(k, root, d):
+        if k in placed and placed[k][0] != root:
+            place_conflicts.add(k)
+            review.append({"issue": "conflicting-place", "key": d["a"],
+                           "detail": f"place {d['a']}: {placed[k][1]['b'] or '(nobody)'} "
+                                     f"vs {d['b'] or '(nobody)'}"})
+        else:
+            placed[k] = (root, d)
+    for d in decisions:
+        if d["action"] != "place":
+            continue
+        parts = d["a"].split(":")
+        if len(parts) != 5 or parts[0] != "field" or parts[1] != "book" or parts[3] != "zotero":
+            review.append({"issue": "bad-decision-key", "key": d["a"],
+                           "detail": "place takes a field:book:<canonicalKey>:zotero:<name key> key"})
+            continue
+        if not d["b"]:
+            place((parts[2], parts[4]), None, d)
+            continue
+        r = decision_root(d["b"], d)
+        if r is not None:
+            place((parts[2], parts[4]), uf.find(r), d)
+    for k in place_conflicts:
+        placed.pop(k, None)
+    used_places = set()
+
     zstats = collections.Counter()
     for z in read(f"{D}/zotero-creators.csv"):
         if z["canonicalKey"] in marc_books:
@@ -388,13 +508,22 @@ def main():
             first, _ = split_dates(z["firstName"])
             nk = fold(f"{z['lastName']} {first}")
         cands = by_name.get(nk, set())
-        if len(cands) != 1:
+        if (z["canonicalKey"], nk) in placed:
+            used_places.add((z["canonicalKey"], nk))
+            root, _d = placed[(z["canonicalKey"], nk)]
+            if root is None:
+                zstats["uncredited by decision"] += 1
+                continue
+            cands = {root}
+            zstats["placed"] += 1
+        elif len(cands) != 1:
             zstats["unmatched" if not cands else "ambiguous"] += 1
             if cands:
                 review.append({"issue": "ambiguous-zotero", "key": f"name:{nk}",
                                "detail": f"{z['canonicalKey']}: {len(cands)} candidate agents"})
             continue
-        zstats["matched"] += 1
+        else:
+            zstats["matched"] += 1
         a = agents[next(iter(cands))]
         code, term = ZOTERO_ROLES.get(z["creatorType"], ("", ""))
         rows[("book", z["canonicalKey"], "zotero", nk, a["agentKey"])] = {
@@ -404,10 +533,15 @@ def main():
             "roleUri": f"http://id.loc.gov/vocabulary/relators/{code}" if code else "",
             "roleTerm": term}
 
+    for (key, nk), (_r, d) in placed.items():
+        if (key, nk) not in used_places:
+            review.append({"issue": "stale-decision", "key": d["a"],
+                           "detail": f"place {d['a']} {d['b']}: no Zotero-only credit with that name"})
+
     write(f"{D}/agents.csv", ["source", "canonicalKey", "tag", "name", "agentKey", "agentUri", "label",
                               "primary", "roleUri", "roleTerm"],
           sorted(rows.values(), key=lambda r: (r["source"], r["canonicalKey"], r["tag"], r["name"], r["agentKey"])))
-    write(f"{D}/authority.csv", ["agentKey", "agentUri", "label", "lcId", "viaf", "isni", "works", "occurrences", "headings"],
+    write(f"{D}/authority.csv", ["agentKey", "agentUri", "label", "lcId", "viaf", "isni", "works", "occurrences", "headings", "distinctFrom"],
           sorted(agents.values(), key=lambda a: a["agentKey"]))
     seen = set()
     review = [r for r in review if not (tuple(r.values()) in seen or seen.add(tuple(r.values())))]
