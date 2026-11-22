@@ -158,11 +158,11 @@ def emit_ttl(path, citations):
     ]
     for (ref, book) in sorted(citations):
         c = citations[(ref, book)]
-        iri = f"<{BASE}reference/{ref}/citation/{book}>"
+        iri = f"<{BASE}work/{ref}/citation/{book}>"
         parts = [
             f"{iri} a ab:Citation",
-            f"    ab:citedBy <{BASE}reference/{ref}>",
-            f"    ab:cites <{BASE}item/{book}>",
+            f"    ab:citedBy <{BASE}work/{ref}>",
+            f"    ab:cites <{BASE}work/{book}>",
             f'    rdfs:label "{ttl_str(c["label"])}"',
         ]
         passing = sorted(c["passing"], key=page_sort_key)

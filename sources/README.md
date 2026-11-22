@@ -62,11 +62,11 @@ flag), *not* as a distinct held-books graph.
 
 ### URI consequences
 
-Minted URIs use the canonical key: `…/item/<canonicalKey>` for artists' books,
-`…/reference/<canonicalKey>` for reference works (see CLAUDE.md "URI minting").
+Minted URIs use the canonical key: `…/work/<canonicalKey>` for artists' books and
+reference works alike, since a work can be both (#113; see CLAUDE.md "URI minting").
 
 - **Reference works are unaffected.** The `Reference resources` collection (157)
-  lives in **lib 3**, so `…/reference/<itemKey>` URIs already use lib-3 keys.
+  lives in **lib 3**, so reference-work URIs already use lib-3 keys.
 - **Artists'-book URIs migrate.** The site historically built from lib 1, so
   today's book URIs carry **lib-1** keys. Under lib-3-precedence the ~1,051 held
   books that also exist in a group library move to their **lib-3** (or lib-2)
@@ -139,6 +139,18 @@ because lib 1 carries almost no `sameAs` (just 7 of its 1,341 books).
   legitimately shares the record) / `wrong-marc` (a distinct work with a bad
   harvest match: fix or drop the record) / `unsure`; blank = not yet reviewed.
   Nothing reads it back into the dedup yet.
+- `cross-track-review.csv` — the **generated** review surface for works that may
+  be in **both** lists (#113). The dedup runs each list on its own, so a work
+  that is both an artist's book and a reference work (Keith Smith's *Two hundred
+  books*) keeps two keys. One row per candidate (artists' book, reference work)
+  pair, found by a shared Zotero source key, ISBN, MARC `001` or title + creator
+  surname (`signals`), with each side's citation counts. Rebuild with
+  `make -C sources -B cross-track-review.csv`.
+- `cross-track-decisions.csv` — its **hand-owned** overlay (`abKey, rwKey,
+  abTitle, rwTitle, decision, notes`). `decision` ∈ `both` (one work, typed as
+  both) / `reference` (one work, not an artist's book: drop it from the
+  artists'-books list) / `no` (different works) / `unsure`; blank = not yet
+  reviewed. Nothing reads it back into the dedup yet.
 
 Both authoritative lists share the schema `canonicalKey, canonicalLib, held,
 sourceKeys, <bibliographic fields…>`. `canonicalLib` is the library the chosen
@@ -172,7 +184,7 @@ paragraph, resolves **both ends to their canonical URI**:
 Page numbers come straight from the note markup (#43/#44): a page inside
 `<strong>` is an image of the book (`ab:imagesOnPageNumber`), the rest are
 passing mentions (`ab:onPageNumber`). Each citation is
-`reference/<refKey>/citation/<bookKey>` with `ab:citedBy`, `ab:cites`, an
+`work/<refKey>/citation/<bookKey>` with `ab:citedBy`, `ab:cites`, an
 `rdfs:label` (the verbatim reference string), and its page triples — the same
 shape the old construct query emitted, now against canonical keys and with pages.
 

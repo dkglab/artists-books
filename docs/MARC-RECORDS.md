@@ -10,7 +10,7 @@ data. **1340 records**, one per artists'-book item that has a UNC bib number.
   1340 `<record>` children. Well-formed; UTF-8 (`leader/09 = a`).
 - Each record carries a synthetic **`999 $a <itemKey> $b <bibnum>`** stamped by
   the harvester — this is the join key back to the Zotero items / the
-  `item/<itemKey>` URIs. (`999 $a SY5RIFMP $b b11859007`)
+  `work/<itemKey>` URIs. (`999 $a SY5RIFMP $b b11859007`)
 - Records are real OCLC/cataloging records: `001` is the **OCLC number**, `003`
   is `OCoLC`. The UNC bib number is *not* otherwise present — hence the `999`.
 
@@ -335,7 +335,7 @@ records — colophons, edition statements, signature notes, etc.).
 
 ## Recommendations for the SPARQL-Anything step
 
-1. **Join on `999 $a`** → the Zotero `itemKey` → existing `item/<itemKey>` URIs.
+1. **Join on `999 $a`** → the Zotero `itemKey` → existing `work/<itemKey>` URIs.
 2. **Sanitize URIs:** strip a single trailing `.` from `$0`/`$1` (77% / 58% are
    affected). `$u` is clean.
 3. **Normalize `$2`:** strip a trailing `.` before bucketing vocabularies; treat

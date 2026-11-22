@@ -113,6 +113,20 @@ artists-books-oclc-review.csv: $(FUZZY)/oclc-groups.rq $(FUZZY)/oclc_review.py \
 		--decisions artists-books-oclc-decisions.csv --out $@
 	rm -f $@.groups.tsv
 
+# Cross-track review sheet (issue #113): pairs of an artists' book and a
+# reference work that may be one work, since dedup.py runs each list on its
+# own. cross-track-review.csv is GENERATED; the decisions live in the
+# hand-owned overlay cross-track-decisions.csv (both / reference / no /
+# unsure, see cross_track_review.py), keyed by (abKey, rwKey). As above, the
+# MARC directories are read but not prerequisites. Nothing reads the
+# decisions back into the dedup yet.
+cross-track-review.csv: $(FUZZY)/cross_track_review.py artists-books.csv \
+		reference-works.csv citations-review.csv cross-track-decisions.csv
+	python3 $(FUZZY)/cross_track_review.py --books artists-books.csv \
+		--refs reference-works.csv --marc-books marc/artists-books-marc \
+		--marc-refs marc/reference-works-marc --citations citations-review.csv \
+		--decisions cross-track-decisions.csv --out $@
+
 $(ARQ):
 	$(MAKE) -s -C ../tools/jena
 
