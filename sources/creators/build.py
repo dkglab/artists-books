@@ -33,7 +33,10 @@ Clustering (union-find over field occurrences):
   4. decisions.csv: `merge` (a, b) unions the agents holding two keys;
      `separate` (a) exempts a name key from rule 3; `label` (a, label) sets an
      agent's preferred label. Keys are typed: lc:<id>, viaf:<id>, isni:<id>,
-     gnd:<id>, name:<name key>, heading:<heading key>.
+     gnd:<id>, name:<name key>, heading:<heading key>, and
+     field:<source>:<canonicalKey>:<tag>:<name key> for one MARC field of one
+     work. A key held by several agents is refused (review.csv reports it as
+     ambiguous-decision-key) rather than applied to an arbitrary one.
 
 An agent with an LC id is labelled with LC's authorized heading; otherwise with
 its commonest controlled, then dated, then any heading.
@@ -271,20 +274,40 @@ def main():
                            "detail": f"{len(cands)} candidate agents"})
 
     # 4. Hand merges.
-    key_root = {}
+    # A key can be held by occurrences in several clusters -- a name: key always
+    # is when the name is split, which is what review.csv reports. Collect them
+    # all, so a decision on such a key is refused rather than applied to
+    # whichever occurrence came last. field: names exactly one occurrence (one
+    # MARC field of one work), for placing a single credit.
+    key_occ = collections.defaultdict(list)
     for o in occ:
         r = ("o", o["i"])
         for k in o["ids"]:
-            key_root[k.replace("lcId:", "lc:")] = r
-        key_root[f"name:{o['nameKey']}"] = r
+            key_occ[k.replace("lcId:", "lc:")].append(r)
+        key_occ[f"name:{o['nameKey']}"].append(r)
+        key_occ[f"field:{o['source']}:{o['canonicalKey']}:{o['tag']}:{o['nameKey']}"].append(r)
         if o["headingKey"]:
-            key_root[f"heading:{o['headingKey']}"] = r
+            key_occ[f"heading:{o['headingKey']}"].append(r)
+
+    def decision_root(k, d):
+        """The one cluster holding key k, or None (reported to review)."""
+        if k not in key_occ:
+            review.append({"issue": "stale-decision", "key": k,
+                           "detail": f"{d['action']} {d['a']} {d['b']}: key not found"})
+            return None
+        roots = {uf.find(r) for r in key_occ[k]}
+        if len(roots) > 1:
+            review.append({"issue": "ambiguous-decision-key", "key": k,
+                           "detail": f"{d['action']} {d['a']} {d['b']}: key spans "
+                                     f"{len(roots)} agents; use a field: or id key"})
+            return None
+        return next(iter(roots))
+
     for d in decisions:
         if d["action"] == "merge":
-            if d["a"] in key_root and d["b"] in key_root:
-                uf.union(uf.find(key_root[d["a"]]), uf.find(key_root[d["b"]]))
-            else:
-                review.append({"issue": "stale-decision", "key": d["a"], "detail": f"merge with {d['b']}: key not found"})
+            ra, rb = decision_root(d["a"], d), decision_root(d["b"], d)
+            if ra is not None and rb is not None:
+                uf.union(ra, rb)
 
     # Build agents.
     clusters = collections.defaultdict(list)
@@ -292,8 +315,10 @@ def main():
         clusters[uf.find(("o", o["i"]))].append(o)
     label_override = {}
     for d in decisions:
-        if d["action"] == "label" and d["a"] in key_root:
-            label_override[uf.find(key_root[d["a"]])] = d["b"]
+        if d["action"] == "label":
+            r = decision_root(d["a"], d)
+            if r is not None:
+                label_override[uf.find(r)] = d["b"]
 
     agents = {}
     used_keys = collections.Counter()
