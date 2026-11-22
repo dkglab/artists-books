@@ -83,14 +83,18 @@ place,field:book:X27XZCGK:zotero:douglashelen,lc:nb2006019729,
 ```
 
 - `merge a b` — union the agents holding keys `a` and `b`.
-- `separate a` — exempt a `name:` or `heading:` key from rules 2–3 (the heading
-  stays its own agent). Any other kind of key is refused as `bad-decision-key`.
+- `separate a` — exempt a `heading:` key from rule 2 (that dated or corporate
+  heading is not merged by heading), or a `name:` key from rule 3 (that name
+  is not joined by name; its dated headings still merge under rule 2). Any
+  other kind of key is refused as `bad-decision-key`.
 - `label a b` — set the preferred label of the agent holding `a` to `b`.
 - `prefer lc:<id>` — make that id the LC id of the agent holding it, and so
   its URI (via LC's VIAF link) and label. This is for an agent holding several LC ids,
   such as a merged LC duplicate. Without it, the agent takes the id cited most,
   then a current record over a deprecated one, then one with a dated heading,
-  then the alphabetically first id.
+  then the alphabetically first id. Several `prefer` rows on one agent are
+  reported as `conflicting-prefer`, and the same ranking picks among the
+  preferred ids only.
 - `distinct a b` — record that the agents holding `a` and `b` are different
   people. It changes no clustering, because the rules have already left them
   apart. It is written to `authority.csv`'s `distinctFrom` column, so that a
@@ -101,7 +105,8 @@ place,field:book:X27XZCGK:zotero:douglashelen,lc:nb2006019729,
   `field:book:<canonicalKey>:zotero:<name key>`, the key of that book's
   `zotero` row in `agents.csv`. An empty `b` leaves the book uncredited under
   that name on purpose. A `place` matching no Zotero-only credit is reported as
-  `stale-decision`.
+  `stale-decision`. Two `place` rows for one credit that disagree are reported
+  as `conflicting-place`, and the credit stays unplaced.
 
 Keys are typed: `lc:`, `viaf:`, `isni:`, `gnd:`, `name:<name key>`,
 `heading:<heading key>` — copy them from `review.csv` — and
@@ -142,8 +147,10 @@ python3 sources/creators/pull_verdicts.py <saved verdicts folder>
 make -C sources -B creators/agents.csv
 ```
 
-The rows it writes carry the note prefix `[review <case>]` and are replaced
-on every pull. Rows without the prefix are never touched. An unsure verdict
+The rows it writes carry the note prefix `[review-page <case>]`. A pull
+replaces the rows of each case it has a verdict file for and keeps the rest,
+so a partial folder loses nothing; an empty one is refused. To withdraw a
+case's rows, delete them by hand. Rows without the prefix are never touched. An unsure verdict
 writes nothing and has its note printed. A merge of two LC records keeps the
 id described under `prefer` above. Check the merged agent's URI, and add a
 `prefer` row if it kept the record you would report to NACO as the duplicate.

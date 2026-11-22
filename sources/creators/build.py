@@ -31,7 +31,8 @@ Clustering (union-find over field occurrences):
      -> it stays a local agent of its own; several -> review, and it stays
      local.
   4. decisions.csv: `merge` (a, b) unions the agents holding two keys;
-     `separate` (a) exempts a name: or heading: key from rules 2-3; `label`
+     `separate` (a) exempts a heading: key from rule 2, or a name: key from
+     rule 3; `label`
      (a, label) sets an agent's preferred label; `distinct` (a, b) records that
      two agents are different people (checked, and written to authority.csv's
      distinctFrom); `place` (field:book:<key>:zotero:<name key>, b) credits a
@@ -105,6 +106,13 @@ def split_dates(heading):
     return heading[:m.start()].rstrip(" ,"), heading[m.start():].strip(" ,")
 
 
+def name_key(tag, heading):
+    """The name key of one MARC field: a personal heading's name without its
+    dates, a corporate or meeting heading whole. review_cases.py uses it too,
+    so the field: keys it offers are the ones built here."""
+    return fold(split_dates(heading)[0] if tag.endswith("00") else heading)
+
+
 def slug(s):
     s = unicodedata.normalize("NFKD", s)
     s = "".join(c for c in s if not unicodedata.combining(c)).lower()
@@ -157,8 +165,8 @@ def main():
     for i, o in enumerate(occ):
         o["i"] = i
         o["personal"] = o["tag"].endswith("00")
-        name_part, dates = split_dates(o["heading"]) if o["personal"] else (o["heading"], "")
-        o["nameKey"] = fold(name_part)
+        dates = split_dates(o["heading"])[1] if o["personal"] else ""
+        o["nameKey"] = name_key(o["tag"], o["heading"])
         year = YEAR.search(dates)
         o["headingKey"] = (f"{o['nameKey']}:{year.group(0)}" if year else "") if o["personal"] \
             else fold(o["heading"])
@@ -204,11 +212,13 @@ def main():
         members_ids[uf.find(roots[0])] = merged
         return True
 
-    # Decisions. `separate` takes a typed key like every other decision
-    # (name:<name key> or heading:<heading key>); the rules below compare bare
-    # keys, so the prefix is stripped here. Any other key is refused, and one
-    # no occurrence carries is reported as stale, rather than silently ignored.
-    separate = set()
+    # Decisions. `separate` takes a typed key like every other decision: a
+    # heading:<heading key> exempts that heading from rule 2, a name:<name key>
+    # exempts that name from rule 3. The two are kept apart because a corporate
+    # heading's name key and heading key are the same string. Any other key is
+    # refused, and one no occurrence carries is reported as stale, rather than
+    # silently ignored.
+    separate = {"name": set(), "heading": set()}
     name_keys = {o["nameKey"] for o in occ}
     heading_keys = {o["headingKey"] for o in occ if o["headingKey"]}
     for d in decisions:
@@ -222,12 +232,12 @@ def main():
             review.append({"issue": "stale-decision", "key": d["a"],
                            "detail": f"separate {d['a']}: key not found"})
         else:
-            separate.add(bare)
+            separate[kind].add(bare)
 
     # 2. Dated / corporate headings.
     by_heading = collections.defaultdict(list)
     for o in occ:
-        if o["headingKey"] and o["headingKey"] not in separate:
+        if o["headingKey"] and o["headingKey"] not in separate["heading"]:
             by_heading[o["headingKey"]].append(o)
     for hk, group in sorted(by_heading.items()):
         try_merge([uf.find(("o", o["i"])) for o in group], "same heading", f"heading:{hk}")
@@ -261,7 +271,7 @@ def main():
     # name whose birth years don't contradict it.
     info, by_name = snapshot()
     for nk in sorted(by_name):
-        if nk in separate:
+        if nk in separate["name"]:
             continue
         roots = by_name[nk]
         anchored = [r for r in roots if info[r]["ids"]]
@@ -287,7 +297,7 @@ def main():
             continue
         for r in pool[1:]:
             uf.union(uf.find(pool[0]), uf.find(r))
-        if nk in separate:
+        if nk in separate["name"]:
             continue
         cands = {uf.find(r) for r in roots if r not in pool}
         if len(cands) == 1:
@@ -384,8 +394,11 @@ def main():
             r = lc_rec.get(kv[0], {})
             return (-kv[1], r.get("status") == "deprecated",
                     not split_dates(r.get("label", ""))[1], kv[0])
-        lc_id = preferred[0] if len(preferred) == 1 else \
-            (sorted(lc.items(), key=lc_rank)[0][0] if lc else "")
+        # Several `prefer` rows on one agent conflict (reported below); the
+        # ranking then chooses among the preferred ids only, never one that no
+        # `prefer` row named.
+        ranked = [(k, lc[k]) for k in preferred] or list(lc.items())
+        lc_id = sorted(ranked, key=lc_rank)[0][0] if ranked else ""
         if len(preferred) > 1:
             review.append({"issue": "conflicting-prefer", "key": f"lc:{lc_id}",
                            "detail": "prefer names " + " + ".join(sorted(preferred))})
@@ -455,7 +468,18 @@ def main():
     # credit that the name join can't (several agents carry the name): b is a
     # key of the agent to credit, or empty to leave the book deliberately
     # uncredited under that name.
-    placed = {}
+    # Two `place` rows for one credit that name different agents conflict: the
+    # credit is left unplaced (and so still ambiguous) and reported, rather
+    # than given to whichever row came last.
+    placed, place_conflicts = {}, set()
+    def place(k, root, d):
+        if k in placed and placed[k][0] != root:
+            place_conflicts.add(k)
+            review.append({"issue": "conflicting-place", "key": d["a"],
+                           "detail": f"place {d['a']}: {placed[k][1]['b'] or '(nobody)'} "
+                                     f"vs {d['b'] or '(nobody)'}"})
+        else:
+            placed[k] = (root, d)
     for d in decisions:
         if d["action"] != "place":
             continue
@@ -465,11 +489,13 @@ def main():
                            "detail": "place takes a field:book:<canonicalKey>:zotero:<name key> key"})
             continue
         if not d["b"]:
-            placed[(parts[2], parts[4])] = (None, d)
+            place((parts[2], parts[4]), None, d)
             continue
         r = decision_root(d["b"], d)
         if r is not None:
-            placed[(parts[2], parts[4])] = (uf.find(r), d)
+            place((parts[2], parts[4]), uf.find(r), d)
+    for k in place_conflicts:
+        placed.pop(k, None)
     used_places = set()
 
     zstats = collections.Counter()

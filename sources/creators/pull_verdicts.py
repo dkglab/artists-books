@@ -20,13 +20,16 @@ A decided verdict becomes:
     nobody ("none").
 An unsure verdict writes no rows; its note is printed.
 
-Each row's note is "[review <case>] <reviewer's note>". Rows with that prefix
-are the page's: they are replaced on every pull, so pulling is idempotent and
-a verdict changed on the page changes its rows here. Hand-written rows are
-kept.
+Each row's note is "[review-page <case>] <reviewer's note>". Rows with that
+prefix are the page's: a pull replaces the rows of every case it has a verdict
+file for, so pulling is idempotent and a verdict changed on the page changes
+its rows here. Rows of a case with no file in the folder are kept, so a
+partial folder (one page of a listing) loses nothing; to drop a case's rows,
+delete them by hand. Hand-written rows are always kept. An empty folder is
+refused.
 
 Save the collection first (Claude: ArtifactData `list` of `verdicts` with
-`out_dir`), then run from the repo root:
+`out_dir`), then run:
 
   python3 sources/creators/pull_verdicts.py <out_dir>/verdicts
   make -C sources -B creators/agents.csv
@@ -38,15 +41,15 @@ import os
 import re
 import sys
 
-DECISIONS = "sources/creators/decisions.csv"
-TAG = re.compile(r"^\[review ([^\]]+)\]")
+DECISIONS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "decisions.csv")
+TAG = re.compile(r"^\[review-page ([^\]\s]+)\]")
 
 
 def rows_for(case, v, warnings):
     if v.get("status") != "decided":
         return []
     notes = (v.get("notes") or "").strip()
-    note = f"[review {case}] {notes}".strip()
+    note = f"[review-page {case}] {notes}".strip()
     agents = v.get("agents") or []
     dkey = {a["key"]: a.get("decisionKey") or "" for a in agents}
     for a in agents:
@@ -75,6 +78,8 @@ def rows_for(case, v, warnings):
             out.append({"action": "distinct", "a": dkey[p], "b": dkey[q], "note": note})
     places = v.get("places") or {}
     for book, choice in sorted((v.get("zotero") or {}).items()):
+        if choice in ("?", "", None):
+            continue  # "Can't tell" or no answer: left on the page, no row
         if not places.get(book):
             warnings.append(f"{case}: no place key for Zotero book {book}, skipped")
         elif choice == "none":
@@ -91,12 +96,17 @@ def main(folder):
     for p in sorted(glob.glob(os.path.join(folder, "*.json"))):
         with open(p, encoding="utf-8") as f:
             verdicts[os.path.basename(p)[:-5]] = json.load(f)
+    if not verdicts:
+        sys.exit(f"no verdict files (*.json) in {folder!r}; nothing pulled")
 
     with open(DECISIONS, newline="", encoding="utf-8") as f:
         r = csv.DictReader(f)
         cols, rows = r.fieldnames, list(r)
-    kept = [x for x in rows if not TAG.match(x.get("note") or "")]
-    old = [x for x in rows if TAG.match(x.get("note") or "")]
+    def case_of(x):
+        m = TAG.match(x.get("note") or "")
+        return m.group(1) if m else None
+    old = [x for x in rows if case_of(x) in verdicts]
+    kept = [x for x in rows if case_of(x) not in verdicts]
 
     warnings, new = [], []
     for case, v in sorted(verdicts.items()):

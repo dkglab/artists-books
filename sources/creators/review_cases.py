@@ -30,7 +30,7 @@ import sys
 import xml.etree.ElementTree as ET
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build import fold, split_dates  # the same name key build.py clusters on
+from build import fold, name_key, split_dates  # the same keys build.py clusters on
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SOURCES = os.path.dirname(HERE)
@@ -77,8 +77,8 @@ def main():
             works[(src, r["canonicalKey"])] = r
     lc = {r["lcId"]: r for r in read(os.path.join(HERE, "lc-viaf.csv"))}
     authority = {r["agentKey"]: r for r in read(os.path.join(HERE, "authority.csv"))}
-    occ = {(o["source"], o["canonicalKey"], o["tag"], o["name"]): o
-           for o in read(os.path.join(HERE, "occurrences.csv"))}
+    occ_rows = read(os.path.join(HERE, "occurrences.csv"))
+    occ = {(o["source"], o["canonicalKey"], o["tag"], o["name"]): o for o in occ_rows}
     zotero = collections.defaultdict(list)
     for z in read(os.path.join(HERE, "zotero-creators.csv")):
         zotero[z["canonicalKey"]].append(z)
@@ -132,10 +132,12 @@ def main():
             b in distinct.get(a, set()) for a in keys for b in keys if a != b)
 
     # How many occurrences each field: key names; a decision may only use a
-    # key that names exactly one (build.py refuses the rest).
+    # key that names exactly one (build.py refuses the rest). Counted over the
+    # raw rows, as build.py does: two fields of one name in one record are two
+    # occurrences, though `occ` above keeps one of them.
     field_count = collections.Counter(
-        (o["source"], o["canonicalKey"], o["tag"], fold(split_dates(o["heading"])[0]))
-        for o in occ.values())
+        (o["source"], o["canonicalKey"], o["tag"], name_key(o["tag"], o["heading"]))
+        for o in occ_rows)
 
     def decision_key(au, fields):
         """A decisions.csv key that names this agent and no other: its LC, VIAF
@@ -144,7 +146,7 @@ def main():
             if au.get(f):
                 return f"{prefix}:{au[f]}"
         for src, key, tag, heading in fields:
-            fk = (src, key, tag, fold(split_dates(heading)[0]))
+            fk = (src, key, tag, name_key(tag, heading))
             if field_count[fk] == 1:
                 return "field:" + ":".join(fk)
         return ""
