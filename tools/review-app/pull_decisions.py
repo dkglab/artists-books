@@ -8,6 +8,7 @@ per item in its `decisions` collection:
   oclc.<oclc>      {nodes: {key: decision}, notes, ...}
                                                 -> artists-books-oclc-decisions.csv
                                                    (notes go on every row of the group)
+  xtrack.<abKey>.<rwKey>  {decision, notes, ...}  -> cross-track-decisions.csv (#113)
 
 Save the collection first (Claude: ArtifactData `list` of `decisions` with
 `out_dir`), then run from the repo root:
@@ -26,8 +27,10 @@ import sys
 
 DEDUP = "sources/artists-books-dedup-decisions.csv"
 OCLC = "sources/artists-books-oclc-decisions.csv"
+XTRACK = "sources/cross-track-decisions.csv"
 VALID = {"dedup": {"", "same", "no", "unsure"},
-         "oclc": {"", "same", "no", "wrong-marc", "unsure"}}
+         "oclc": {"", "same", "no", "wrong-marc", "unsure"},
+         "xtrack": {"", "both", "reference", "no", "unsure"}}
 
 
 def load(path):
@@ -89,6 +92,22 @@ def main(folder):
                            + (" (notes changed)" if r["notes"] != notes else ""))
             r["decision"], r["notes"] = dec, notes
     save(OCLC, cols, rows)
+
+    cols, rows = load(XTRACK)
+    for r in rows:
+        pair = f"{r['abKey']}.{r['rwKey']}"
+        d = docs.pop("xtrack." + pair, None)
+        if d is None:
+            continue
+        dec, notes = (d.get("decision") or "").strip(), (d.get("notes") or "").strip()
+        if dec not in VALID["xtrack"]:
+            warnings.append(f"xtrack {pair}: unknown decision {dec!r}, skipped")
+            continue
+        if (r["decision"], r["notes"]) != (dec, notes):
+            changes.append(f"xtrack {pair}: {r['decision'] or '-'} -> {dec or '-'}"
+                           + (" (notes changed)" if r["notes"] != notes else ""))
+            r["decision"], r["notes"] = dec, notes
+    save(XTRACK, cols, rows)
 
     for k in sorted(set(docs) - seen):
         warnings.append(f"{k}: no matching CSV row, ignored")

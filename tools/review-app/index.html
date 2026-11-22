@@ -96,6 +96,8 @@ select { font: inherit; font-size: 12px; padding: 2px 4px; border: 1px solid var
 .pill.no { color: var(--no); background: var(--no-bg); }
 .pill.wrong-marc { color: var(--wrong); background: var(--wrong-bg); }
 .pill.unsure { color: var(--unsure); background: var(--unsure-bg); }
+.pill.both { color: var(--same); background: var(--same-bg); }
+.pill.reference { color: var(--wrong); background: var(--wrong-bg); }
 .pill.partial { color: var(--ink-soft); background: var(--rule-soft); }
 .pill.todo { color: var(--ink-soft); border: 1px dashed var(--rule); }
 
@@ -118,6 +120,8 @@ select { font: inherit; font-size: 12px; padding: 2px 4px; border: 1px solid var
 .seg button[aria-pressed="true"].no { background: var(--no-bg); color: var(--no); }
 .seg button[aria-pressed="true"].wrong-marc { background: var(--wrong-bg); color: var(--wrong); }
 .seg button[aria-pressed="true"].unsure { background: var(--unsure-bg); color: var(--unsure); }
+.seg button[aria-pressed="true"].both { background: var(--same-bg); color: var(--same); }
+.seg button[aria-pressed="true"].reference { background: var(--wrong-bg); color: var(--wrong); }
 .seg.sm button { padding: 3px 8px; font-size: 12px; }
 .seg button:disabled { cursor: not-allowed; opacity: 0.5; }
 textarea { width: 100%; min-height: 54px; resize: vertical; font: inherit; padding: 6px 8px; border: 1px solid var(--rule); border-radius: 5px; background: var(--paper); color: var(--ink); }
@@ -158,7 +162,7 @@ details.marc summary .sub { font-weight: 400; color: var(--ink-soft); font-size:
 </style>
 
 <header class="top">
-  <h1>Dedup Review <small>Artists' books · issue #70</small></h1>
+  <h1>Dedup Review <small>Artists' books · issues #70, #113</small></h1>
   <div class="tabs" role="tablist" id="tabs"></div>
   <div class="people" id="people"></div>
   <div class="status-line" id="status">Loading the review data…</div>
@@ -188,10 +192,10 @@ details.marc summary .sub { font-weight: 400; color: var(--ink-soft); font-size:
 // ---------- state ----------
 const S = {
   data: null,             // data.json
-  queue: "dedup",         // "dedup" | "oclc"
-  sel: { dedup: null, oclc: null },
-  filter: { dedup: "todo", oclc: "todo" },
-  sort: { dedup: "conf", oclc: "differs" },
+  queue: "dedup",         // "dedup" | "oclc" | "xtrack"
+  sel: { dedup: null, oclc: null, xtrack: null },
+  filter: { dedup: "todo", oclc: "todo", xtrack: "todo" },
+  sort: { dedup: "conf", oclc: "differs", xtrack: "signals" },
   q: "",
   decisions: new Map(),   // doc id -> body
   me: null,               // user id
@@ -212,7 +216,16 @@ const OCLC_CHOICES = [
   ["wrong-marc", "Wrong MARC", "3"],
   ["unsure", "Unsure", "4"],
 ];
-const LABEL = { same: "Same", no: "Different", "wrong-marc": "Wrong MARC", unsure: "Unsure" };
+// #113: an artists' book beside a reference work that may be the same work.
+const XTRACK_CHOICES = [
+  ["both", "One work, both", "1"],
+  ["no", "Different works", "2"],
+  ["reference", "Not an artist's book", "3"],
+  ["unsure", "Unsure", "4"],
+];
+const QUEUES = [["dedup", "Title matches", "pairs"], ["oclc", "Shared OCLC numbers", "groups"], ["xtrack", "In both lists", "pairs"]];
+const LABEL = { same: "Same", no: "Different", "wrong-marc": "Wrong MARC", unsure: "Unsure", both: "Both", reference: "Reference only" };
+const SIGNAL = { sourceKey: "linked in Zotero", isbn: "same ISBN", oclc: "same OCLC number", title: "same title and creator" };
 const KEY_TAGS = new Set(["001", "020", "100", "110", "245", "250", "260", "264", "300", "999"]);
 
 const store = {
@@ -239,14 +252,15 @@ const $ = (id) => document.getElementById(id);
 
 // ---------- items ----------
 function docId(queue, id) { return queue + "." + id; }
-function items(queue) { return queue === "dedup" ? S.data.dedup : S.data.oclc; }
+function items(queue) { return S.data[queue] || []; }
+const paired = (queue) => queue !== "oclc";  // one decision per pair, not per node
 function titleOf(queue, it) {
-  return queue === "dedup" ? it.sides[0].zot.title || it.sides[1].zot.title
+  return paired(queue) ? it.sides[0].zot.title || it.sides[1].zot.title
     : (it.nodes[0].zot.title || "(untitled)");
 }
 function statusOf(queue, it) {
   const d = S.decisions.get(docId(queue, it.id));
-  if (queue === "dedup") return d && d.decision ? d.decision : "todo";
+  if (paired(queue)) return d && d.decision ? d.decision : "todo";
   const nodes = (d && d.nodes) || {};
   const vals = it.nodes.map((n) => nodes[n.key] || "");
   if (vals.every((v) => !v)) return "todo";
@@ -258,7 +272,7 @@ function isDone(st) { return st !== "todo" && st !== "partial"; }
 function haystack(queue, it) {
   if (it._hay) return it._hay;
   const parts = [it.id];
-  const recs = queue === "dedup" ? it.sides : it.nodes;
+  const recs = paired(queue) ? it.sides : it.nodes;
   for (const r of recs) parts.push(r.key, r.zot.title, r.zot.creators);
   return (it._hay = parts.join(" ").toLowerCase());
 }
@@ -273,7 +287,7 @@ function visible(queue) {
       const d = S.decisions.get(docId(queue, it.id));
       if (!d || !S.me || d.by !== S.me) return false;
     }
-    if (f === "flag" && !(queue === "dedup" ? it.flag : it.hint === "title-differs")) return false;
+    if (f === "flag" && !(queue === "dedup" ? it.flag : queue === "xtrack" ? it.signals.length === 1 : it.hint === "title-differs")) return false;
     return !q || haystack(queue, it).includes(q);
   });
   const s = S.sort[queue];
@@ -282,6 +296,7 @@ function visible(queue) {
   else if (s === "title") list.sort(byTitle);
   else if (s === "differs") list.sort((a, b) => (a.hint === b.hint ? a.n - b.n : a.hint === "title-differs" ? -1 : 1));
   else if (s === "group") list.sort((a, b) => a.n - b.n);
+  else if (s === "signals") list.sort((a, b) => a.signals.length - b.signals.length || byTitle(a, b));
   return list;
 }
 
@@ -289,22 +304,24 @@ function visible(queue) {
 function renderTabs() {
   const tabs = $("tabs");
   tabs.replaceChildren();
-  for (const [queue, name] of [["dedup", "Title matches"], ["oclc", "Shared OCLC numbers"]]) {
+  for (const [queue, name, unit] of QUEUES) {
     const all = items(queue);
-    const counts = { same: 0, no: 0, "wrong-marc": 0, unsure: 0, mixed: 0 };
+    if (!all.length) continue;
+    const counts = { same: 0, no: 0, "wrong-marc": 0, unsure: 0, mixed: 0, both: 0, reference: 0 };
     let done = 0;
     for (const it of all) { const st = statusOf(queue, it); if (isDone(st)) { done++; counts[st] = (counts[st] || 0) + 1; } }
     const bar = h("span", { class: "bar", "aria-hidden": "true" },
-      ...["same", "no", "wrong-marc", "unsure", "mixed"].map((k) => {
+      ...["same", "both", "no", "wrong-marc", "reference", "unsure", "mixed"].map((k) => {
         const s = h("span"); s.style.width = (100 * (counts[k] || 0) / all.length) + "%";
-        s.style.background = k === "mixed" ? "var(--ink-soft)" : `var(--${k === "wrong-marc" ? "wrong" : k})`;
+        const color = { mixed: "ink-soft", "wrong-marc": "wrong", reference: "wrong", both: "same" }[k] || k;
+        s.style.background = `var(--${color})`;
         return s;
       }));
     tabs.append(h("button", {
       class: "tab", role: "tab", "aria-selected": String(S.queue === queue),
       onclick: () => { S.queue = queue; store.set("queue", queue); renderAll(); },
     }, h("span", { class: "name" }, name), bar,
-       h("span", { class: "count" }, `${done} of ${all.length} ${queue === "dedup" ? "pairs" : "groups"} decided`)));
+       h("span", { class: "count" }, `${done} of ${all.length} ${unit} decided`)));
   }
 }
 
@@ -342,15 +359,16 @@ function renderStatus() {
 // ---------- list ----------
 function renderFilters() {
   const q = S.queue;
-  const opts = q === "dedup"
-    ? [["todo", "To do"], ["flag", "Low confidence"], ["unsure", "Unsure"], ["mine", "Mine"], ["done", "Decided"], ["all", "All"]]
-    : [["todo", "To do"], ["flag", "Titles differ"], ["unsure", "Unsure"], ["mine", "Mine"], ["done", "Decided"], ["all", "All"]];
+  const flag = { dedup: "Low confidence", oclc: "Titles differ", xtrack: "One signal only" }[q];
+  const opts = [["todo", "To do"], ["flag", flag], ["unsure", "Unsure"], ["mine", "Mine"], ["done", "Decided"], ["all", "All"]];
   $("statusFilters").replaceChildren(...opts.map(([v, l]) =>
     h("button", { class: "chipbtn", "aria-pressed": String(S.filter[q] === v),
       onclick: () => { S.filter[q] = v; renderFilters(); renderList(); } }, l)));
-  const sorts = q === "dedup"
-    ? [["conf", "Lowest match confidence first"], ["title", "Title A–Z"]]
-    : [["differs", "Titles that differ first"], ["group", "Group number"], ["title", "Title A–Z"]];
+  const sorts = {
+    dedup: [["conf", "Lowest match confidence first"], ["title", "Title A–Z"]],
+    oclc: [["differs", "Titles that differ first"], ["group", "Group number"], ["title", "Title A–Z"]],
+    xtrack: [["signals", "Weakest evidence first"], ["title", "Title A–Z"]],
+  }[q];
   const sel = $("sort");
   sel.replaceChildren(...sorts.map(([v, l]) => h("option", { value: v, selected: S.sort[q] === v }, l)));
 }
@@ -380,6 +398,7 @@ function renderList() {
     const st = statusOf(q, it);
     const meta = q === "dedup"
       ? `${(it.conf * 100).toFixed(0)}% · ${it.sides[0].key} ↔ ${it.sides[1].key}`
+      : q === "xtrack" ? `${it.sides[0].key} ↔ ${it.sides[1].key} · ${it.signals.length} signal${it.signals.length === 1 ? "" : "s"}`
       : `#${it.n} · OCLC ${it.id} · ${it.nodes.length} books${it.hint === "title-differs" ? " · titles differ" : ""}`;
     const others = peersOn(docId(q, it.id));
     const row = h("div", {
@@ -456,6 +475,8 @@ function marcBlock(key, label, sub) {
 }
 
 function siteLink(key) { return key ? [S.data.site + "/item/" + key + "/", "On the site ↗"] : null; }
+// Only a reference work that cites an artists' book in the collection gets a page.
+function refLink(side) { return side.cites ? [S.data.site + "/reference/" + side.key + "/", "On the site ↗"] : null; }
 function catLink(url) {
   if (!url) return null;
   const host = (() => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "catalogue"; } })();
@@ -483,10 +504,12 @@ function renderDetail() {
   const d = S.decisions.get(docId(q, it.id));
   const others = peersOn(docId(q, it.id));
   const head = h("div", { class: "detail-head" },
-    h("span", { class: "eyebrow" }, q === "dedup" ? `Fuzzy title match · ${(it.conf * 100).toFixed(0)}% confidence` : `Group ${it.n} · OCLC ${it.id}`),
+    h("span", { class: "eyebrow" }, q === "dedup" ? `Fuzzy title match · ${(it.conf * 100).toFixed(0)}% confidence`
+      : q === "xtrack" ? "Artists' book and reference work · " + it.signals.map((x) => SIGNAL[x] || x).join(", ")
+      : `Group ${it.n} · OCLC ${it.id}`),
     h("h2", {}, titleOf(q, it)),
     others.length ? h("span", { class: "also" }, others.map((id) => avatarFor(id, true)), (others.map((id) => S.profiles[id]?.name || "Someone").join(", ")) + " also looking at this") : null);
-  box.replaceChildren(head, q === "dedup" ? dedupBody(it, d) : oclcBody(it, d));
+  box.replaceChildren(head, q === "dedup" ? dedupBody(it, d) : q === "xtrack" ? xtrackBody(it, d) : oclcBody(it, d));
 }
 
 function dedupBody(it, d) {
@@ -527,6 +550,29 @@ function oclcBody(it, d) {
   return h("div", { style: "display:grid;gap:16px;min-width:0" }, decide, hint, compareTable(cols), marcs);
 }
 
+function xtrackBody(it, d) {
+  const [a, b] = it.sides;
+  const n = (k, one, many) => `${k} ${k === 1 ? one : many}`;
+  const cols = [
+    { head: h("span", {}, "In the artists' books", a.held ? h("span", { class: "held" }, "held") : null),
+      sub: `${a.key} · cited by ${n(a.citedBy, "reference work", "reference works")}`, zot: a.zot,
+      links: [siteLink(a.key), catLink(a.zot.url)], extraRow: a.oclc ? "OCLC " + a.oclc : "" },
+    { head: "In the reference works", sub: `${b.key} · cites ${n(b.cites, "artists' book", "artists' books")}`, zot: b.zot,
+      links: [refLink(b), catLink(b.zot.url)], extraRow: b.oclc ? "OCLC " + b.oclc : "" },
+  ];
+  const hint = h("div", { class: "hintbox" },
+    "This work is in both lists, so the build treats it as ", h("b", {}, "two works"), ". Choose ",
+    h("b", {}, "One work, both"), " if it is an artist's book and also a reference work (Keith Smith's ",
+    h("i", {}, "Two hundred books"), " is his book number 200, and a bibliography). Choose ",
+    h("b", {}, "Not an artist's book"), " if it is one work that only belongs with the reference works, such as an exhibition catalogue or a critical survey. Choose ",
+    h("b", {}, "Different works"), " for another edition, or a title or ISBN that only looks the same. Highlighted cells differ.");
+  const decide = decidePanel("xtrack", it, d);
+  const marcs = h("div", { class: "marc-grid" },
+    marcBlock(a.marc, "MARC · artists' book", a.marc ? `record ${a.key}` : "No harvested record."),
+    marcBlock(b.marc, "MARC · reference work", b.marc ? `record ${b.key}` : "No harvested record."));
+  return h("div", { style: "display:grid;gap:16px;min-width:0" }, decide, hint, compareTable(cols), marcs);
+}
+
 function segFor(choices, current, onPick, small) {
   const dis = !S.canWrite;
   return h("div", { class: "seg" + (small ? " sm" : ""), role: "group" },
@@ -539,7 +585,16 @@ function segFor(choices, current, onPick, small) {
 
 function decidePanel(queue, it, d) {
   const panel = h("div", { class: "decide" });
-  if (queue === "dedup") {
+  if (queue === "xtrack") {
+    panel.append(h("div", { class: "decide-row" },
+      h("span", { class: "eyebrow" }, "Decision"),
+      segFor(XTRACK_CHOICES, d?.decision || "", (v) => writeDecision("xtrack", it, { decision: v }))));
+    panel.append(h("div", { class: "legend" },
+      h("span", {}, "One work, both: an artist's book that is also a reference work. Merge, keeping both roles."),
+      h("span", {}, "Different works: another edition, or a title or ISBN that only looks the same. Keep both."),
+      h("span", {}, "Not an artist's book: one work, a reference work only. Merge, and take it out of the artists' books."),
+      h("span", {}, "Unsure: needs another signal. Kept as two works for now.")));
+  } else if (queue === "dedup") {
     panel.append(h("div", { class: "decide-row" },
       h("span", { class: "eyebrow" }, "Decision"),
       segFor(DEDUP_CHOICES, d?.decision || "", (v) => writeDecision("dedup", it, { decision: v }))));
@@ -582,7 +637,7 @@ function writeDecision(queue, it, change) {
   let patch = { queue, id: it.id, by: S.me, at: now };
   let histEntry = null;
   if ("notes" in change) patch.notes = change.notes;
-  if (queue === "dedup" && "decision" in change) { patch.decision = change.decision; histEntry = change.decision || "cleared"; }
+  if (paired(queue) && "decision" in change) { patch.decision = change.decision; histEntry = change.decision || "cleared"; }
   if (queue === "oclc") {
     const nodes = {};
     if ("all" in change) { for (const n of it.nodes) nodes[n.key] = change.all; histEntry = "all " + (change.all || "cleared"); }
@@ -643,10 +698,10 @@ document.addEventListener("keydown", (e) => {
   else if (/^[1-4]$/.test(e.key)) {
     const q = S.queue, it = items(q).find((x) => x.id === S.sel[q]);
     if (!it) return;
-    const choices = q === "dedup" ? DEDUP_CHOICES : OCLC_CHOICES;
+    const choices = { dedup: DEDUP_CHOICES, oclc: OCLC_CHOICES, xtrack: XTRACK_CHOICES }[q];
     const c = choices.find((x) => x[2] === e.key);
     if (!c) return;
-    if (q === "dedup") writeDecision(q, it, { decision: c[0] });
+    if (paired(q)) writeDecision(q, it, { decision: c[0] });
     else writeDecision(q, it, { all: c[0] });
   } else return;
   e.preventDefault();
@@ -694,10 +749,10 @@ async function boot() {
     return;
   }
   const savedQ = store.get("queue");
-  if (savedQ === "dedup" || savedQ === "oclc") S.queue = savedQ;
-  for (const q of ["dedup", "oclc"]) {
+  if (QUEUES.some(([q]) => q === savedQ) && items(savedQ).length) S.queue = savedQ;
+  for (const [q] of QUEUES) {
     const s = store.get("sel." + q);
-    S.sel[q] = items(q).some((x) => x.id === s) ? s : visible(q)[0]?.id || items(q)[0].id;
+    S.sel[q] = items(q).some((x) => x.id === s) ? s : visible(q)[0]?.id || items(q)[0]?.id || null;
   }
   renderAll();
 

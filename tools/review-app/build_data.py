@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """Build data.json for the dedup review page (issue #70).
 
-Two review queues, both read from committed sources (run from the repo root):
+Three review queues, all read from committed sources (run from the repo root):
 
   dedup  every fuzzy lib-1 attach in sources/artists-books-dedup-review.csv:
          the Sloane (lib 1) Zotero record beside its fuzzy twin's, plus the
          MARC record of the canonical node(s) they map to.
   oclc   every shared-OCLC group in sources/artists-books-oclc-review.csv:
          each book node's canonical Zotero row and its own MARC record.
+  xtrack every pair in sources/cross-track-review.csv (#113): an artists'
+         book beside a reference work that may be the same work, each with
+         its canonical row, its MARC record and its citation count.
 
 MARC records are rendered as plain text lines ("245 10 $a ... $c ..."), so the
 page needs no MARC parsing. Usage: python3 tools/review-app/build_data.py OUT
@@ -23,6 +26,7 @@ from collections import OrderedDict, defaultdict
 
 NS = {"m": "http://www.loc.gov/MARC21/slim"}
 MARC_DIR = "sources/marc/artists-books-marc"
+RW_MARC_DIR = "sources/marc/reference-works-marc"
 
 
 def read_csv(path):
@@ -30,8 +34,8 @@ def read_csv(path):
         return list(csv.DictReader(f))
 
 
-def marc_text(key):
-    path = os.path.join(MARC_DIR, f"{key}.xml")
+def marc_text(key, marc_dir=MARC_DIR):
+    path = os.path.join(marc_dir, f"{key}.xml")
     if not os.path.exists(path):
         return None
     rec = ET.parse(path).getroot().find("m:record", NS)
@@ -143,11 +147,47 @@ def main(out):
             "zot": zot_book(k),
         })
 
+    # Cross-track pairs (#113): an artists' book beside a reference work that
+    # may be the same work. Reference-work MARC lives in its own directory, so
+    # its records are filed under "rw:<key>" to keep the two key spaces apart.
+    refs = {r["canonicalKey"]: r for r in read_csv("sources/reference-works.csv")}
+
+    def want_rw_marc(key):
+        mk = "rw:" + key
+        if mk not in marc:
+            t = marc_text(key, RW_MARC_DIR)
+            if t:
+                marc[mk] = t
+        return mk if mk in marc else None
+
+    def zot_ref(key):
+        r = refs[key]
+        return {
+            "title": r["title"], "creators": r["creators"], "date": r["date"],
+            "publisher": r["publisher"], "place": r["place"], "edition": r["edition"],
+            "pages": r["numPages"], "isbn": r["ISBN"], "callNumber": r["callNumber"],
+            "url": r["url"], "extra": r["extra"], "sourceKeys": r["sourceKeys"],
+        }
+
+    xtrack = []
+    for r in read_csv("sources/cross-track-review.csv"):
+        a, b = r["abKey"], r["rwKey"]
+        xtrack.append({
+            "id": f"{a}.{b}", "signals": r["signals"].split(),
+            "sides": [
+                {"key": a, "kind": "ab", "held": r["abHeld"] == "true",
+                 "citedBy": int(r["abCitedBy"]), "oclc": r["abOCLC"],
+                 "marc": want_marc(a), "zot": zot_book(a)},
+                {"key": b, "kind": "rw", "cites": int(r["rwCites"]), "oclc": r["rwOCLC"],
+                 "marc": want_rw_marc(b), "zot": zot_ref(b)},
+            ],
+        })
+
     data = {"site": "https://dev-artists-books-bdhx.sprites.app",
-            "dedup": dedup, "oclc": list(groups.values()), "marc": marc}
+            "dedup": dedup, "oclc": list(groups.values()), "xtrack": xtrack, "marc": marc}
     with open(out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
-    print(f"{len(dedup)} dedup pairs, {len(groups)} OCLC groups, "
+    print(f"{len(dedup)} dedup pairs, {len(groups)} OCLC groups, {len(xtrack)} cross-track pairs, "
           f"{len(marc)} MARC records -> {out} ({os.path.getsize(out) // 1024} KB)",
           file=sys.stderr)
 

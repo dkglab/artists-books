@@ -139,6 +139,18 @@ because lib 1 carries almost no `sameAs` (just 7 of its 1,341 books).
   legitimately shares the record) / `wrong-marc` (a distinct work with a bad
   harvest match: fix or drop the record) / `unsure`; blank = not yet reviewed.
   Nothing reads it back into the dedup yet.
+- `cross-track-review.csv` — the **generated** review surface for works that may
+  be in **both** lists (#113). The dedup runs each list on its own, so a work
+  that is both an artist's book and a reference work (Keith Smith's *Two hundred
+  books*) keeps two keys. One row per candidate (artists' book, reference work)
+  pair, found by a shared Zotero source key, ISBN, MARC `001` or title + creator
+  surname (`signals`), with each side's citation counts. Rebuild with
+  `make -C sources -B cross-track-review.csv`.
+- `cross-track-decisions.csv` — its **hand-owned** overlay (`abKey, rwKey,
+  abTitle, rwTitle, decision, notes`). `decision` ∈ `both` (one work, typed as
+  both) / `reference` (one work, not an artist's book: drop it from the
+  artists'-books list) / `no` (different works) / `unsure`; blank = not yet
+  reviewed. Nothing reads it back into the dedup yet.
 
 Both authoritative lists share the schema `canonicalKey, canonicalLib, held,
 sourceKeys, <bibliographic fields…>`. `canonicalLib` is the library the chosen
