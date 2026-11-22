@@ -109,6 +109,9 @@ select { font: inherit; font-size: 12px; padding: 2px 4px; border: 1px solid var
 .also { font-size: 12px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; }
 .hintbox { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; font-size: 13px; color: var(--ink-soft); max-width: 75ch; }
 .hintbox b { color: var(--ink); }
+.overlaps { border-color: var(--wrong); }
+.overlaps ul { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 4px; }
+.linkbtn { border: 0; background: none; padding: 0; color: var(--accent); text-decoration: underline; cursor: pointer; text-align: left; }
 
 .decide { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 12px; display: grid; gap: 10px; }
 .decide-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
@@ -162,7 +165,7 @@ details.marc summary .sub { font-weight: 400; color: var(--ink-soft); font-size:
 </style>
 
 <header class="top">
-  <h1>Dedup Review <small>Artists' books · issues #70, #113</small></h1>
+  <h1>Dedup Review <small>Artists' books · issues #214, #113</small></h1>
   <div class="tabs" role="tablist" id="tabs"></div>
   <div class="people" id="people"></div>
   <div class="status-line" id="status">Loading the review data…</div>
@@ -483,7 +486,10 @@ function siteLink(key) { return key ? [S.data.site + "/item/" + key + "/", "On t
 // Only a reference work that cites an artists' book in the collection gets a page.
 function refLink(side) { return side.cites ? [S.data.site + "/reference/" + side.key + "/", "On the site ↗"] : null; }
 function catLink(url) {
-  if (!url) return null;
+  // Zotero's url field sometimes holds a note ("[No WorldCat records found 11/18/21]"), not a link.
+  // A link Zotero stored without its scheme ("worldcat.org/title/123") is still a link.
+  if (url && !/^https?:\/\//i.test(url) && /^(www\.)?[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}(\/|$)/i.test(url.trim())) url = "https://" + url.trim();
+  if (!url || !/^https?:\/\//i.test(url)) return null;
   const host = (() => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "catalogue"; } })();
   return [url, host + " ↗"];
 }
@@ -514,7 +520,76 @@ function renderDetail() {
       : `Group ${it.n} · ${it.label}`),
     h("h2", {}, titleOf(q, it)),
     others.length ? h("span", { class: "also" }, others.map((id) => avatarFor(id, true)), (others.map((id) => S.profiles[id]?.name || "Someone").join(", ")) + " also looking at this") : null);
-  box.replaceChildren(head, q === "dedup" ? dedupBody(it, d) : q === "xtrack" ? xtrackBody(it, d) : oclcBody(it, d));
+  box.replaceChildren(head, overlapsBox(q, it), q === "dedup" ? dedupBody(it, d) : q === "xtrack" ? xtrackBody(it, d) : oclcBody(it, d));
+}
+
+// ---------- overlaps ----------
+// A book can be in several items: two cross-track pairs that share a book, or a
+// pair whose books are also in a shared-OCLC group. Decisions on them have to
+// agree (two "both" pairs that share a book would merge every work in them), so
+// each item lists the others that share one of its books. Reference-work keys
+// are prefixed "rw:" so they never collide with an artists' book's key. A dedup
+// side with no canonical key falls back to its own Zotero key, prefixed "z:", so
+// two pairs that share an unmapped record still find each other.
+let OVERLAP = null;
+const dedupKey = (s) => s.canon || "z:" + s.key;
+function bookKeys(q, it) {
+  if (q === "dedup") return it.sides.map(dedupKey);
+  if (q === "oclc") return it.nodes.map((n) => n.key);
+  return [it.sides[0].key, "rw:" + it.sides[1].key];
+}
+function overlapIndex() {
+  if (OVERLAP) return OVERLAP;
+  OVERLAP = new Map();
+  for (const [q] of QUEUES) for (const it of items(q)) for (const k of new Set(bookKeys(q, it))) {
+    if (!k) continue;
+    if (!OVERLAP.has(k)) OVERLAP.set(k, []);
+    OVERLAP.get(k).push({ q, it });
+  }
+  return OVERLAP;
+}
+function goTo(q, id) {
+  S.queue = q; store.set("queue", q);
+  // The target may be hidden by that queue's filter or by the search box; widen
+  // them so it is in the list, or J/K would start over from the top.
+  if (!visible(q).some((x) => x.id === id)) {
+    if (S.q) { S.q = ""; $("q").value = ""; }
+    if (!visible(q).some((x) => x.id === id)) S.filter[q] = "all";
+  }
+  renderAll(); select(id);
+  // select() scrolls the detail into view only on narrow screens.
+  if (!window.matchMedia("(max-width: 820px)").matches) window.scrollTo({ top: 0 });
+}
+// A dedup item's header shows its Zotero keys, not its canonical key, so name the
+// dedup side(s) a shared key belongs to.
+function sharedLabel(k, ...its) {
+  const sides = [];
+  for (const [q, it] of its) if (q === "dedup") it.sides.forEach((s) => {
+    const t = `lib ${s.lib} ${s.key}`;
+    if (dedupKey(s) === k && !sides.includes(t)) sides.push(t);
+  });
+  const key = k.startsWith("z:") ? "" : k.replace(/^rw:/, "");
+  return key && sides.length ? `${key} (${sides.join(", ")})` : key || sides.join(", ");
+}
+function overlapsBox(q, it) {
+  const seen = new Set([docId(q, it.id)]), out = [];
+  for (const k of bookKeys(q, it)) for (const o of overlapIndex().get(k) || []) {
+    const id = docId(o.q, o.it.id);
+    if (seen.has(id)) continue;
+    seen.add(id); out.push({ ...o, key: sharedLabel(k, [q, it], [o.q, o.it]) });
+  }
+  if (!out.length) return null;
+  const qname = Object.fromEntries(QUEUES.map(([v, l]) => [v, l]));
+  // Two or more cross-track pairs in play, this one included, can chain a merge.
+  const chain = (q === "xtrack") + out.filter((o) => o.q === "xtrack").length >= 2;
+  return h("div", { class: "hintbox overlaps" },
+    h("b", {}, "Also under review elsewhere. "),
+    "These share a book with this one, so decide them together and make the decisions agree.",
+    chain ? h("span", {}, " Marking ", h("b", {}, "One work, both"), " on two cross-track pairs that share a book would merge all of their works into one, so use it on one pair at most when the others are different editions.") : null,
+    h("ul", {}, out.map((o) => h("li", {},
+      h("button", { class: "linkbtn", onclick: () => goTo(o.q, o.it.id) }, `${qname[o.q]}: ${titleOf(o.q, o.it)}`),
+      h("span", { class: "mono" }, ` · shares ${o.key}${o.q === "oclc" ? " · " + o.it.label : ""} `),
+      pillFor(statusOf(o.q, o.it))))));
 }
 
 function dedupBody(it, d) {
