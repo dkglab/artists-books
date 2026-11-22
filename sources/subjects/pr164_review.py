@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build and apply the review sheet for the second subject pass in #164.
+"""Build the review sheet for the second subject pass in #164.
 
 PR #164 has two subject passes that were made at the same time. Mert's
 (bf0a69a, 03833cd) is applied to decisions.csv. Priya's (990d2b2 + 7febe8d)
@@ -8,14 +8,11 @@ would revert the Nov 10 merged review (c7870e6c), #148 and Mert's pass. This
 script recovers only the rows Priya herself changed (her side against
 6ce1da22) and lists those whose decision differs from decisions.csv now.
 
-  build:  pr164_review.py build  -> pr164-review.csv
-  apply:  pr164_review.py apply  -> copies rows marked take=priya into
-                                    decisions.csv (or take=edit, using the
-                                    final_* columns), then validates them
+  pr164_review.py build  -> pr164-review.csv   (run from sources/subjects/)
 
-Review by filling the `take` column: `head` (keep decisions.csv), `priya`
-(take her values) or `edit` (use the final_* columns). Blank rows are left
-alone. Both commands run from sources/subjects/.
+The sheet isn't filled in by hand: it's reviewed on the shared page in
+tools/subject-review/, whose pull_decisions.py writes the decisions into
+decisions.csv. Both commits above must be in the local repository.
 """
 import collections
 import csv
@@ -35,8 +32,12 @@ CATEGORIES = {"topical", "geographic"}   # build-scheme.rq's VALUES table
 
 
 def git_csv(rev, path="sources/subjects/decisions.csv"):
-    text = subprocess.check_output(["git", "show", f"{rev}:{path}"], text=True)
-    return text
+    try:
+        return subprocess.run(["git", "show", f"{rev}:{path}"], text=True,
+                              check=True, capture_output=True).stdout
+    except subprocess.CalledProcessError:
+        sys.exit(f"commit {rev} isn't in this repository: fetch it first "
+                 f"(git fetch origin {rev}, or the #164 branch if it still exists)")
 
 
 def rows(text):
@@ -111,22 +112,19 @@ def build():
             fl.append("new-cluster")
         elif j is not None and any(j[f] != h[f] for f in FIELDS):
             fl.append("also-reviewed-in-head")
-        row = {"cluster": k, "labels": p["labels"], "take": "",
+        row = {"cluster": k, "labels": p["labels"],
                "changed": " ".join(changed), "flags": " ".join(fl)}
         for f in FIELDS + ["note"]:
             row[f"head_{f}"] = h.get(f, "")
         for f in FIELDS + ["note"]:
             row[f"priya_{f}"] = p[f]
-        for f in FIELDS:
-            row[f"final_{f}"] = ""
         out.append(row)
 
     out.sort(key=lambda r: (coarse(r["priya_category"]) or "~",
                             r["priya_conceptId"] or "~", r["cluster"]))
-    cols = (["cluster", "labels", "take", "changed", "flags"]
+    cols = (["cluster", "labels", "changed", "flags"]
             + [f"head_{f}" for f in FIELDS + ["note"]]
-            + [f"priya_{f}" for f in FIELDS + ["note"]]
-            + [f"final_{f}" for f in FIELDS])
+            + [f"priya_{f}" for f in FIELDS + ["note"]])
     with open(SHEET, "w", newline="") as fh:
         w = csv.DictWriter(fh, cols, lineterminator="\n")
         w.writeheader()
@@ -137,58 +135,7 @@ def build():
         print(f"  {f}: {n}")
 
 
-def apply():
-    sheet = list(csv.DictReader(open(SHEET, newline="")))
-    with open(DECISIONS, newline="") as fh:
-        raw = fh.read()
-    reader = csv.DictReader(io.StringIO(raw, newline=""))
-    cols, dec = reader.fieldnames, list(reader)
-    by_key = {r["cluster"]: r for r in dec}
-    errors, n = [], 0
-    for s in sheet:
-        take = s["take"].strip().lower()
-        if take in {"", "head"}:
-            continue
-        if take not in {"priya", "edit"}:
-            errors.append(f"{s['cluster']}: take must be head, priya or edit, not {take!r}")
-            continue
-        src = "priya_" if take == "priya" else "final_"
-        new = {f: s[src + f].strip() for f in FIELDS}
-        if new["category"] and new["category"] not in CATEGORIES and coarse(new["category"]):
-            new["category"] = coarse(new["category"])
-        if new["include"] == "n":
-            new.update(conceptId="", category="", prefLabel="")
-        fl = [f for f in flags(new, {}) if f != "id-has-several-labels"]
-        if fl:
-            errors.append(f"{s['cluster']}: {' '.join(fl)}")
-            continue
-        r = by_key.get(s["cluster"])
-        if r is None:
-            r = {c: "" for c in cols}
-            r.update(cluster=s["cluster"], labels=s["labels"])
-            dec.append(r)
-            by_key[r["cluster"]] = r
-        r.update(new)
-        r["note"] = s["priya_note"] if take == "priya" else r["note"]
-        n += 1
-
-    labels = collections.defaultdict(set)
-    for r in dec:
-        if r["include"] == "y":
-            labels[r["conceptId"]].add((r["prefLabel"], r["category"]))
-    for cid, ls in sorted(labels.items()):
-        if len(ls) > 1:
-            errors.append(f"conceptId {cid}: several labels/categories {sorted(ls)}")
-    if errors:
-        print("\n".join(errors), file=sys.stderr)
-        sys.exit(f"{len(errors)} problems; decisions.csv not written")
-    le = "\r\n" if "\r\n" in raw else "\n"
-    with open(DECISIONS, "w", newline="") as fh:
-        w = csv.DictWriter(fh, cols, lineterminator=le)
-        w.writeheader()
-        w.writerows(dec)
-    print(f"applied {n} rows to {DECISIONS}")
-
-
 if __name__ == "__main__":
-    {"build": build, "apply": apply}[sys.argv[1] if len(sys.argv) > 1 else "build"]()
+    if sys.argv[1:] not in ([], ["build"]):
+        sys.exit("usage: pr164_review.py [build]")
+    build()

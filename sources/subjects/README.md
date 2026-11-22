@@ -162,6 +162,6 @@ row.
 
 The sheet isn't edited by hand. It's reviewed on a shared page,
 `tools/subject-review/` (see its README and issue #225), which also covers the
-draft places, `construction-overlap-review.csv` and the label fixes,, and `pull_decisions.py` there writes
+draft places, `construction-overlap-review.csv` and the label fixes, and `pull_decisions.py` there writes
 the decisions into `decisions.csv`. Delete the sheet, `pr164_review.py` and
 that tool once the review is done.

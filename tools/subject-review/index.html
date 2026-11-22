@@ -863,7 +863,7 @@ function labelsDetail(row, d) {
         h("label", {}, "Suggestion"), row.suggestion ? h("span", {}, row.suggestion, h("span", { class: "muted" }, " · from the concept's own heading")) : h("span", { class: "muted" }, "None. No heading under this concept has the same words.")));
     if (d?.take === "edit") panel.append(h("div", { class: "form" }, h("label", { for: "l-label" }, "New label"),
       h("input", { type: "text", id: "l-label", value: o ? o.prefLabel : (row.suggestion || row.labels), disabled: dis,
-        onchange: (e) => setOverride(row.cid, e.target.value.trim(), row.category) })));
+        onchange: (e) => setOverride(row.cid, e.target.value.trim(), row.category, "labels") })));
     if (problem) panel.append(h("div", { class: "problem" }, problem));
     else if (o) panel.append(h("div", { class: "ok" }, "Every heading under this concept gets this label when the decisions are pulled."));
     parts.push(panel);
@@ -963,8 +963,12 @@ function writeRow(row, change, histEntry) {
   renderAll();
   const ref = S.db.collection("rows").doc(row.id);
   return enqueue("r." + row.id, () => (prev ? ref.update(patch) : ref.set(merged)).catch((e) => {
+    // Undo the local copy (unless a later change or a snapshot replaced it),
+    // so the row doesn't look decided and the next change doesn't update() a
+    // document that was never created.
+    if (S.decisions.get(row.id) === merged) { if (prev) S.decisions.set(row.id, prev); else S.decisions.delete(row.id); }
     if (e && (e.code === "permission_denied" || e.code === "not_granted")) { S.canWrite = false; S.dbState = "readonly"; renderAll(); }
-    else setStatus("That change didn't save (" + (e?.code || "error") + "). Try again in a moment.", true);
+    else { renderAll(); setStatus("That change didn't save (" + (e?.code || "error") + "). Try again in a moment.", true); }
   }));
 }
 // A subject row to start an overlap heading's subject side from.
@@ -998,9 +1002,12 @@ function choose(row, take) {
 async function bulkPriya(list) {
   for (const r of list) await writeRow(r, { take: "priya", final: fromSide(r.priya), fine: fineOf(r.priya) }, "priya");
 }
-function setOverride(cid, label, category) {
+// `from` names the tab that set it, so a Labels row's "Keep as is" can undo
+// its own relabel without deleting one made from another tab.
+function setOverride(cid, label, category, from) {
   if (!S.db || !S.canWrite || !SLUG.test(cid) || !label || !CATS.includes(category)) return Promise.resolve();
   const doc = { id: cid, prefLabel: label, category, by: S.me, at: Date.now() };
+  if (from) doc.from = from;
   S.overrides.set(cid, doc);
   renderAll();
   return enqueue("c." + cid, () => S.db.collection("concepts").doc(cid).set(doc).catch((e) => setStatus("The concept label didn't save (" + (e?.code || "error") + ").", true)));
@@ -1020,8 +1027,8 @@ function clearOverride(cid) {
 }
 function chooseLabel(row, d, take) {
   if (row.kind === "case") {
-    if (take === "suggested") setOverride(row.cid, row.suggestion, row.category);
-    else if ((take === "keep" || take === "") && labelOverride(row.cid)) clearOverride(row.cid);
+    if (take === "suggested") setOverride(row.cid, row.suggestion, row.category, "labels");
+    else if ((take === "keep" || take === "") && labelOverride(row.cid)?.from === "labels") clearOverride(row.cid);
   } else {
     const [a, b] = row.concepts;
     for (const c of [a, b]) if (S.overrides.get(c.id)?.mergeInto) clearOverride(c.id);
@@ -1040,7 +1047,7 @@ async function bulkSuggest(list) {
     let n = 0;
     for (const r of list) {
       setStatus(`Relabelling ${++n} of ${list.length}…`);
-      await Promise.all([setOverride(r.cid, r.suggestion, r.category), writeRow(r, { take: "suggested" }, "suggested")]);
+      await Promise.all([setOverride(r.cid, r.suggestion, r.category, "labels"), writeRow(r, { take: "suggested" }, "suggested")]);
     }
   } finally { quiet = false; S.bulkArm = false; renderAll(); }
 }

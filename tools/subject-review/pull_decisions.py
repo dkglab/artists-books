@@ -155,7 +155,8 @@ def main(out_dir):
         if new is None:
             continue
         if new["include"] == "y":
-            new["conceptId"] = merges.get(new["conceptId"], new["conceptId"])
+            # a merged concept is left to the merge loop below, which gives
+            # the row the target's label and category as well as its ID
             o = overrides.get(new["conceptId"])
             if o:
                 new.update(prefLabel=o["prefLabel"], category=o["category"])

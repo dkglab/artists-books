@@ -67,8 +67,10 @@ def pair_group(r):
     head = r["priya_category"].split("-", 1)[0]
     if head == "geographic":
         return "place"
-    if head in {"topical", "chronological"}:
+    if head == "topical":
         return "topic"
+    # chronological isn't a category of the scheme (see CATEGORIES in
+    # pr164_review.py), so such a heading needs one chosen, like the rest here
     return "unfinished"
 
 
@@ -179,6 +181,13 @@ def main(out):
                    "head": {f: r[f] for f in FIELDS}}
             rows.append(with_books(row, r["cluster"]))
 
+    # A label match the construction review turned down ("pre-fill to X
+    # rejected …") is no candidate: offering it would seed the page's
+    # Construction choice with the very concept that was rejected.
+    def rejected(c):
+        m = re.match(r"pre-fill to (\S+) rejected", (c or {}).get("note", ""))
+        return {m.group(1)} if m else set()
+
     for r in read_csv(OVERLAP):
         if r["group"] == "3":
             continue
@@ -189,7 +198,8 @@ def main(out):
                "cluster": k, "labels": r["labels"], "flags": [],
                "head": {f: s.get(f, "") for f in FIELDS},
                "cons": {f: (c or {}).get(f, "") for f in ["include", "conceptId", "category", "prefLabel", "note"]},
-               "matches": [m for m in r["matching_construction_concepts"].split() if m],
+               "matches": [m for m in r["matching_construction_concepts"].split()
+                           if m and m not in rejected(c)],
                "prefill": c["conceptId"] if c and c["note"].startswith("pre-filled") and c["include"] == "y" else ""}
         if k in pair_ids:
             row["pair"] = pair_ids[k]
