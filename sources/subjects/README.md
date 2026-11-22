@@ -150,3 +150,18 @@ identical `prefLabel`+`category` into one `conceptId` (so the FAST/LCSH/local
 variants of e.g. *Toy and movable books* collapse). Curation — flipping
 non-subjects to `include=n` and merging the remaining differently-spelled/worded
 twins — brings that down to the real subject set.
+
+## The #164 parallel-pass review sheet
+
+`pr164-review.csv` lists the 1,113 rows where Priya's subject pass in #164
+differs from `decisions.csv`. Her pass started from the July copy of the file,
+so only the rows she changed herself are recovered, by `pr164_review.py build`
+(it reads both from git history). The `flags` column lists what the build
+would reject, plus `also-reviewed-in-head` where Mert's pass decided the same
+row.
+
+The sheet isn't edited by hand. It's reviewed on a shared page,
+`tools/subject-review/` (see its README and issue #225), which also covers the
+draft places, `construction-overlap-review.csv` and the label fixes, and `pull_decisions.py` there writes
+the decisions into `decisions.csv`. Delete the sheet, `pr164_review.py` and
+that tool once the review is done.

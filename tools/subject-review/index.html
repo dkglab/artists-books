@@ -1,0 +1,1258 @@
+<title>Subject Heading Reconciliation</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: the dedup review's frame. A sticky header with one tab per group and its progress, the headings on the left, the two passes side by side on the right (stacked on phones). */
+:root {
+  --paper: #f7f9f9;
+  --card: #ffffff;
+  --ink: #18252b;
+  --ink-soft: #52646c;
+  --rule: #d5dfe2;
+  --rule-soft: #e7eef0;
+  --accent: #0f6e78;
+  --accent-soft: #dcf0f1;
+  --diff: #fff3cf;
+  --head: #3a5fa8;   --head-bg: #e1e9f8;
+  --priya: #23824a;  --priya-bg: #def3e5;
+  --edit: #a8620f;   --edit-bg: #fbecd6;
+  --unsure: #7a4fa0; --unsure-bg: #efe5f7;
+  --fix: #b3372f;    --fix-bg: #fbe3e0;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-head: "IBM Plex Sans Condensed", "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --head-h: 80px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #11191c; --card: #172226; --ink: #e3ecee; --ink-soft: #97aab1;
+  --rule: #2c3c42; --rule-soft: #222f34; --accent: #5cc3cc; --accent-soft: #173b40;
+  --diff: #3d3418;
+  --head: #8eaef0; --head-bg: #1c2a45; --priya: #6fd396; --priya-bg: #183527;
+  --edit: #f0b05f; --edit-bg: #3a2a14; --unsure: #c9a2eb; --unsure-bg: #30233d;
+  --fix: #f08f86; --fix-bg: #3f1d1a; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #11191c; --card: #172226; --ink: #e3ecee; --ink-soft: #97aab1;
+  --rule: #2c3c42; --rule-soft: #222f34; --accent: #5cc3cc; --accent-soft: #173b40;
+  --diff: #3d3418;
+  --head: #8eaef0; --head-bg: #1c2a45; --priya: #6fd396; --priya-bg: #183527;
+  --edit: #f0b05f; --edit-bg: #3a2a14; --unsure: #c9a2eb; --unsure-bg: #30233d;
+  --fix: #f08f86; --fix-bg: #3f1d1a; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 14px; line-height: 1.45; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--card); }
+a { color: var(--accent); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--card); border-bottom: 1px solid var(--rule);
+  padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px;
+}
+h1 { font-family: var(--font-head); font-weight: 600; font-size: 18px; margin: 0; letter-spacing: 0.01em; }
+h1 small { font-family: var(--font-body); font-weight: 400; font-size: 12px; color: var(--ink-soft); margin-left: 6px; }
+.tabs { display: flex; gap: 6px 14px; flex-wrap: wrap; align-items: flex-end; }
+.tabsec { display: grid; gap: 3px; }
+.tabsec > .eyebrow { font-size: 10px; }
+.tabsec > div { display: flex; gap: 4px; flex-wrap: wrap; }
+.tab { border: 1px solid var(--rule); background: transparent; border-radius: 6px; padding: 6px 12px; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 132px; }
+.tab[aria-selected="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.tab .name { font-weight: 600; font-size: 13px; }
+.tab .bar { width: 100%; height: 4px; background: var(--rule-soft); border-radius: 2px; overflow: hidden; display: flex; }
+.tab .bar span { display: block; height: 100%; }
+.tab .count { font-size: 11px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.people { margin-left: auto; display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-soft); }
+.avatar { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--card); object-fit: cover; flex: none; background: var(--rule-soft); }
+.avatar.sm { width: 16px; height: 16px; border-width: 1px; }
+.status-line { width: 100%; font-size: 12px; color: var(--ink-soft); }
+.status-line.warn { color: var(--edit); }
+
+main { display: grid; grid-template-columns: minmax(280px, 360px) minmax(0, 1fr); min-height: calc(100% - var(--head-h)); }
+@media (max-width: 820px) { main { grid-template-columns: minmax(0, 1fr); } .list-pane { max-height: 45vh; border-right: 0; border-bottom: 1px solid var(--rule); } }
+
+.list-pane { border-right: 1px solid var(--rule); display: flex; flex-direction: column; min-height: 0; position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--head-h, 80px)); height: calc(100vh - var(--head-h, 80px) - env(safe-area-inset-top, 0px)); }
+@media (max-width: 820px) { .list-pane { position: static; height: auto; } }
+.filters { padding: 10px 12px; display: grid; gap: 8px; border-bottom: 1px solid var(--rule); background: var(--card); }
+.filters input[type=search] { width: 100%; padding: 6px 8px; border: 1px solid var(--rule); border-radius: 5px; background: var(--paper); color: var(--ink); font: inherit; }
+.filter-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.chipbtn { border: 1px solid var(--rule); background: transparent; border-radius: 999px; padding: 2px 10px; font-size: 12px; cursor: pointer; }
+.chipbtn[aria-pressed="true"] { background: var(--ink); color: var(--card); border-color: var(--ink); }
+select, input[type=text] { font: inherit; font-size: 13px; padding: 4px 6px; border: 1px solid var(--rule); border-radius: 5px; background: var(--paper); color: var(--ink); min-width: 0; }
+.filters select { font-size: 12px; padding: 2px 4px; }
+.list { overflow-y: auto; flex: 1; min-height: 0; }
+.row { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; padding: 8px 12px; border-bottom: 1px solid var(--rule-soft); cursor: pointer; border-left: 3px solid transparent; }
+.row:hover { background: var(--rule-soft); }
+.row[aria-current="true"] { background: var(--accent-soft); border-left-color: var(--accent); }
+.row .t { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.row .m { grid-column: 1; font-size: 11px; color: var(--ink-soft); font-family: var(--font-mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row .r { grid-row: 1 / span 2; grid-column: 2; display: flex; align-items: center; gap: 4px; }
+.list-empty { padding: 24px 12px; color: var(--ink-soft); }
+
+.pill { font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 999px; white-space: nowrap; letter-spacing: 0.02em; }
+.pill.head { color: var(--head); background: var(--head-bg); }
+.pill.priya { color: var(--priya); background: var(--priya-bg); }
+.pill.edit { color: var(--edit); background: var(--edit-bg); }
+.pill.unsure { color: var(--unsure); background: var(--unsure-bg); }
+.pill.fix { color: var(--fix); background: var(--fix-bg); }
+.pill.todo { color: var(--ink-soft); border: 1px dashed var(--rule); }
+
+.detail { min-width: 0; padding-block: 16px 120px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 16px; align-content: start; }
+.stack { display: grid; gap: 16px; min-width: 0; }
+.detail-head { display: grid; gap: 4px; }
+.detail-head h2 { font-family: var(--font-head); font-weight: 600; font-size: 22px; margin: 0; text-wrap: balance; }
+.variants { font-size: 13px; color: var(--ink-soft); }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); font-weight: 600; }
+.mono { font-family: var(--font-mono); font-size: 12px; }
+.ws { color: var(--fix); font-family: var(--font-mono); }
+.also { font-size: 12px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; }
+.hintbox { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; font-size: 13px; color: var(--ink-soft); max-width: 80ch; }
+.hintbox ul { margin: 0; padding-left: 18px; display: grid; gap: 2px; }
+.hintbox b { color: var(--ink); }
+
+.panel { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 12px; display: grid; gap: 10px; min-width: 0; }
+.panel h3 { margin: 0; font-family: var(--font-head); font-size: 15px; font-weight: 600; }
+.decide-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; flex-wrap: wrap; }
+.seg button { border: 0; border-right: 1px solid var(--rule); background: transparent; padding: 6px 12px; cursor: pointer; font-size: 13px; font-weight: 500; }
+.seg button:last-child { border-right: 0; }
+.seg button kbd { font-family: var(--font-mono); font-size: 10px; color: var(--ink-soft); margin-left: 6px; }
+.seg button[aria-pressed="true"].head { background: var(--head-bg); color: var(--head); }
+.seg button[aria-pressed="true"].priya { background: var(--priya-bg); color: var(--priya); }
+.seg button[aria-pressed="true"].edit { background: var(--edit-bg); color: var(--edit); }
+.seg button[aria-pressed="true"].unsure { background: var(--unsure-bg); color: var(--unsure); }
+.seg button:disabled { cursor: not-allowed; opacity: 0.5; }
+textarea { width: 100%; min-height: 54px; resize: vertical; font: inherit; padding: 6px 8px; border: 1px solid var(--rule); border-radius: 5px; background: var(--paper); color: var(--ink); }
+.who { font-size: 12px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
+.who span { display: inline-flex; align-items: center; gap: 4px; }
+.navbtn { border: 1px solid var(--rule); background: transparent; border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 13px; }
+.navbtn.primary { background: var(--accent); color: var(--card); border-color: var(--accent); font-weight: 600; }
+.navbtn.sm { padding: 3px 9px; font-size: 12px; }
+.navbtn:disabled { opacity: 0.5; cursor: not-allowed; }
+.legend { font-size: 12px; color: var(--ink-soft); display: grid; gap: 2px; }
+
+.cmp-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--card); }
+table.cmp { border-collapse: collapse; width: 100%; min-width: 520px; }
+.cmp th, .cmp td { text-align: left; vertical-align: top; padding: 6px 10px; border-bottom: 1px solid var(--rule-soft); }
+.cmp thead th { background: var(--rule-soft); font-weight: 600; font-size: 13px; vertical-align: bottom; }
+.cmp thead th .sub { font-weight: 400; font-size: 11px; color: var(--ink-soft); display: block; }
+.cmp tbody th { width: 110px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); font-weight: 600; white-space: nowrap; }
+.cmp td { overflow-wrap: anywhere; }
+.cmp td.diff { background: var(--diff); }
+.cmp td.empty { color: var(--ink-soft); }
+.cmp td.result { border-left: 2px solid var(--accent); }
+
+.form { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 8px 12px; align-items: center; }
+@media (max-width: 520px) { .form { grid-template-columns: minmax(0, 1fr); } }
+.form label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); font-weight: 600; }
+.form input[type=text] { width: 100%; }
+.problems { display: grid; gap: 6px; }
+.problem { border-left: 3px solid var(--fix); background: var(--fix-bg); padding: 6px 10px; border-radius: 0 6px 6px 0; font-size: 13px; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.ok { border-left: 3px solid var(--priya); background: var(--priya-bg); padding: 6px 10px; border-radius: 0 6px 6px 0; font-size: 13px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.chip { font-size: 12px; border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; background: var(--paper); }
+button.chip { cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+.books { margin: 0; padding-left: 18px; display: grid; gap: 2px; font-size: 13px; }
+.muted { color: var(--ink-soft); font-size: 12px; }
+
+.empty-state { padding: 48px 0; color: var(--ink-soft); max-width: 60ch; }
+.empty-state h2 { font-family: var(--font-head); color: var(--ink); }
+@media (prefers-reduced-motion: no-preference) { .row, .tab, .seg button { transition: background-color 120ms ease; } }
+</style>
+
+<header class="top">
+  <h1>Subject Review <small>Subject headings · issue #225</small></h1>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="people" id="people"></div>
+  <div class="status-line" id="status">Loading the headings…</div>
+</header>
+
+<main>
+  <aside class="list-pane">
+    <div class="filters">
+      <input type="search" id="q" placeholder="Search headings, concepts, books" aria-label="Search">
+      <div class="filter-row" id="statusFilters"></div>
+      <div class="filter-row">
+        <label for="sort" class="eyebrow">Order</label>
+        <select id="sort"></select>
+      </div>
+    </div>
+    <div class="list" id="list" role="list"></div>
+  </aside>
+  <section class="detail" id="detail">
+    <div class="empty-state"><h2>Loading…</h2><p>The subject headings to review are on their way.</p></div>
+  </section>
+</main>
+<datalist id="concept-ids"></datalist>
+<datalist id="cons-ids"></datalist>
+<datalist id="note-values"><option value="construction"></option><option value="genre"></option><option value="complex"></option><option value="needs exactMatch"></option></datalist>
+
+<script>
+(() => {
+"use strict";
+
+// ---------- state ----------
+const S = {
+  data: null,               // data.json: {site, rows, concepts, consConcepts, consCategories}
+  group: "place",
+  sel: {}, filter: {}, sort: {},
+  q: "",
+  decisions: new Map(),     // row id -> doc
+  overrides: new Map(),     // subject concept id -> {prefLabel, category, by, at}
+  me: null, user: null, db: null, room: null,
+  canWrite: false, peers: [], profiles: {},
+  dbState: "connecting",
+};
+// Tabs, grouped by the review they belong to. `q` is the queue a group's rows are in.
+const GROUPS = [
+  { g: "place", q: "pairs", sec: "Reconcile the two passes", name: "Places" },
+  { g: "topic", q: "pairs", sec: "Reconcile the two passes", name: "Topics" },
+  { g: "unfinished", q: "pairs", sec: "Reconcile the two passes", name: "Unfinished" },
+  { g: "out", q: "pairs", sec: "Reconcile the two passes", name: "Left out" },
+  { g: "draft", q: "draft", sec: "Finish the review", name: "Draft places" },
+  { g: "overlap", q: "overlap", sec: "Finish the review", name: "Subject or construction" },
+  { g: "labels", q: "labels", sec: "Finish the review", name: "Labels" },
+];
+const CHOICES = {
+  pairs: [["head", "Keep current", "1"], ["priya", "Use Priya's", "2"], ["edit", "Edit", "3"], ["unsure", "Unsure", "4"]],
+  draft: [["confirm", "Confirm", "1"], ["out", "Leave out", "2"], ["edit", "Edit", "3"], ["unsure", "Unsure", "4"]],
+  overlap: [["cons", "Construction", "1"], ["subj", "Subject", "2"], ["both", "Both", "3"], ["neither", "Neither", "4"], ["unsure", "Unsure", "5"]],
+  case: [["suggested", "Use suggestion", "1"], ["keep", "Keep as is", "2"], ["edit", "Edit", "3"], ["unsure", "Unsure", "4"]],
+};
+function choicesFor(row) {
+  if (row.q !== "labels") return CHOICES[row.q];
+  if (row.kind === "case") return CHOICES.case;
+  const [a, b] = row.concepts;
+  return [["merge0", `Merge into ${a.id}`, "1"], ["merge1", `Merge into ${b.id}`, "2"], ["separate", "Keep apart", "3"], ["unsure", "Unsure", "4"]];
+}
+const legendFor = (row) => row.q === "labels" ? LEGEND[row.kind] : LEGEND[row.q];
+const LEGEND = {
+  pairs: [
+    "Keep current: decisions.csv stays as it is now, after Mert's pass. A draft note on it is cleared.",
+    "Use Priya's: take her row. If it's missing something the build needs, you'll be asked to fill it in.",
+    "Edit: start from Priya's row and change it.",
+    "Unsure: leave it as it is now and come back to it."],
+  draft: [
+    "Confirm: the row is right as it is. This marks it reviewed.",
+    "Leave out: take it out of the subject scheme (noise, or not really a place).",
+    "Edit: change its concept, label or category, or file it under another concept to merge it.",
+    "Unsure: leave the draft note on it and come back to it."],
+  overlap: [
+    "Construction: it describes how the book is made. File it under a construction concept and leave it out of subjects.",
+    "Subject: it describes what the book is about. Keep it out of construction.",
+    "Both: a book can be one and about one (a letterpress book, a book about letterpress).",
+    "Neither: noise. Leave it out of both schemes.",
+    "Unsure: leave both schemes as they are now."],
+  case: [
+    "Use suggestion: the same words as the concept's own LCSH or FAST heading, with its capitalization.",
+    "Keep as is: the label is already right (a proper noun, an established form).",
+    "Edit: type the label. LCSH/FAST capitalize only the first word, proper nouns and acronyms, and the first word of a qualifier: “Found objects (Art)”, “HIV/AIDS”.",
+    "Unsure: leave the label as it is and come back to it."],
+  dup: [
+    "Merge: one concept, under the ID you pick. Every heading under the other moves to it.",
+    "Keep apart: two concepts, so they need two labels. Give them different ones below.",
+    "Unsure: leave both as they are."],
+};
+const LABEL = { head: "Current", priya: "Priya's", edit: "Edited", unsure: "Unsure", fix: "Needs fixing", todo: "To do",
+  confirm: "Confirmed", out: "Left out", cons: "Construction", subj: "Subject", both: "Both", neither: "Neither",
+  suggested: "Relabelled", keep: "Kept", merge0: "Merged", merge1: "Merged", separate: "Kept apart" };
+const COLOR = { head: "head", priya: "priya", edit: "edit", unsure: "unsure", fix: "fix", todo: "todo",
+  confirm: "priya", out: "head", cons: "edit", subj: "priya", both: "priya", neither: "head",
+  suggested: "priya", keep: "head", merge0: "priya", merge1: "priya", separate: "head" };
+const CATS = ["topical", "geographic"];
+const CAT_LABEL = { topical: "Topic", geographic: "Place" };
+const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const FIELD_ROWS = [["include", "In scheme"], ["conceptId", "Concept ID"], ["category", "Category"], ["prefLabel", "Label"], ["exactMatch", "Exact match"], ["note", "Note"]];
+const OVERLAP_GROUP = {
+  "1": "Subjects marks this heading as a construction method, but no construction row claimed it until the label-match pre-fill.",
+  "2": "Subjects marks this heading as a construction method, but construction leaves it out, so neither scheme has it.",
+  "5": "A subject whose label matches a construction concept. Some belong in both.",
+};
+
+const store = {
+  get(k) { try { return localStorage.getItem("absr." + k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem("absr." + k, v); } catch {} },
+};
+
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k === "class") el.className = v;
+    else if (k === "value") el.value = v;
+    else if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+    else el.setAttribute(k, v === true ? "" : v);
+  }
+  for (const kid of kids.flat()) {
+    if (kid == null || kid === false) continue;
+    el.append(kid instanceof Node ? kid : document.createTextNode(String(kid)));
+  }
+  return el;
+}
+const $ = (id) => document.getElementById(id);
+const plural = (n, one, many) => `${n} ${n === 1 ? one : many || one + "s"}`;
+
+// ---------- values ----------
+// Priya's finer categories (topical-people, geographic-city, ...) become the
+// two the site has; the finer one is kept on the decision as `fine`, which
+// pull_decisions.py writes to sources/subjects/fine-categories.csv.
+function coarse(cat) {
+  const head = (cat || "").split("-")[0];
+  return CATS.includes(head) ? head : "";
+}
+// A decision on this page is the review, so the seed's "...; review" notes go.
+const reviewed = (note) => (/; review$/.test(note || "") ? "" : note || "");
+function leftOut(note) { return { include: "n", conceptId: "", category: "", prefLabel: "", exactMatch: "", note: reviewed(note) }; }
+function fromSide(side) {
+  if (side.include !== "y") return leftOut(side.note);
+  return {
+    include: "y", conceptId: (side.conceptId || "").trim(), category: coarse(side.category),
+    prefLabel: (side.prefLabel || "").trim(), exactMatch: (side.exactMatch || "").trim(), note: reviewed(side.note),
+  };
+}
+function fineOf(side) {
+  const c = side.category || "";
+  return c && !CATS.includes(c) && coarse(c) ? c : "";
+}
+function slugify(s) {
+  return (s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+const rowsById = new Map();
+const owner = new Map();         // cluster -> the row that decides its subjects row
+const labelIndex = new Map();    // lowercased label or heading -> subject concept id
+function rowOf(id) { return rowsById.get(id); }
+function groupOf(g) { return GROUPS.find((x) => x.g === g); }
+function headings(row) { return row.labels.split(" | ").map((s) => s.trim()).filter(Boolean); }
+function titleOf(row) { return headings(row)[0] || row.cluster; }
+const ownsSubject = (row) => row.q !== "labels" && !(row.q === "overlap" && row.pair);
+// A concept merged into another on the Labels tab stands for that one, followed
+// to the end of a chain (A into B, B into C: A stands for C). A cycle merges
+// nothing; pull_decisions.py refuses one.
+function resolve(cid) {
+  const seen = new Set([cid]);
+  let cur = cid;
+  for (;;) {
+    const o = S.overrides.get(cur);
+    if (!o || !o.mergeInto) return cur;
+    if (seen.has(o.mergeInto)) return cid;
+    seen.add(o.mergeInto);
+    cur = o.mergeInto;
+  }
+}
+function labelOverride(cid) {
+  const o = S.overrides.get(cid);
+  return o && o.prefLabel ? o : null;
+}
+
+// What the heading's subjects row will be once its decision is pulled: null
+// when this page leaves it as it is now.
+function subjFinal(row) {
+  if (!ownsSubject(row)) return null;
+  const d = S.decisions.get(row.id);
+  if (!d || !d.take) return null;
+  let f = null;
+  if (row.q === "pairs") f = (d.take === "priya" || d.take === "edit") ? d.final : null;
+  else if (row.q === "draft") f = d.take === "confirm" ? { ...fromSide(row.head), note: "" } : d.take === "out" ? leftOut("") : d.take === "edit" ? d.final : null;
+  else f = d.take === "cons" ? leftOut("construction") : (d.take === "subj" || d.take === "both") ? d.final : d.take === "neither" ? leftOut("") : null;
+  if (!f) return null;
+  f = { ...f };
+  if (f.include === "y") {
+    const target = resolve(f.conceptId);
+    if (target !== f.conceptId) {
+      const c = S.data.concepts[target];
+      f.conceptId = target;
+      if (c) { f.prefLabel = c.l; f.category = c.c; }
+    }
+    const o = labelOverride(f.conceptId);
+    if (o) { f.prefLabel = o.prefLabel; f.category = o.category; }
+  }
+  return f;
+}
+// What the heading's construction row will be: overlap headings only.
+function consFinal(row) {
+  if (row.q !== "overlap") return null;
+  const d = S.decisions.get(row.id);
+  if (!d || !d.take || d.take === "unsure") return null;
+  if (d.take === "subj" || d.take === "neither") return { include: "n", conceptId: "", category: "", prefLabel: "" };
+  const c = { include: "y", ...(d.cons || {}) };
+  const known = S.data.consConcepts[c.conceptId];
+  if (known) { c.prefLabel = known.l; c.category = known.c; }
+  return c;
+}
+
+// The label a subject concept carries elsewhere: a concept-wide label set on
+// this page, else its label under other headings in decisions.csv, else what
+// another decided heading gives it.
+function conceptElsewhere(cid, exceptCluster) {
+  if (!cid) return null;
+  cid = resolve(cid);
+  const o = labelOverride(cid);
+  if (o) return { l: o.prefLabel, c: o.category, src: "override", n: 0 };
+  const c = S.data.concepts[cid];
+  if (c) {
+    const others = c.k.filter(([k]) => k !== exceptCluster && !movedAway(k, cid));
+    if (others.length) return { l: c.l, c: c.c, src: "csv", n: others.length };
+  }
+  for (const r of owner.values()) {
+    if (r.cluster === exceptCluster) continue;
+    const f = subjFinal(r);
+    if (f && f.include === "y" && f.conceptId === cid && f.prefLabel && f.category) return { l: f.prefLabel, c: f.category, src: "row", n: 1, row: r };
+  }
+  return null;
+}
+function movedAway(cluster, cid) {
+  const r = owner.get(cluster);
+  if (!r) return false;
+  const f = subjFinal(r);
+  return !!f && (f.include !== "y" || f.conceptId !== cid);
+}
+
+function problems(row, f) {
+  const out = [];
+  if (f.include !== "y" && f.include !== "n") out.push({ code: "include", msg: "Choose whether the heading is in the scheme." });
+  if (f.include !== "y") return out;
+  if (!f.conceptId) out.push({ code: "id", msg: "It needs a concept ID." });
+  else if (!SLUG.test(f.conceptId)) out.push({ code: "id", msg: `The concept ID “${f.conceptId}” can only use lowercase letters, digits and single hyphens.` });
+  if (!CATS.includes(f.category)) out.push({ code: "cat", msg: "Choose Topic or Place as the category." });
+  if (!f.prefLabel) out.push({ code: "label", msg: "It needs a label." });
+  if (f.conceptId && f.prefLabel && CATS.includes(f.category)) {
+    const e = conceptElsewhere(f.conceptId, row.cluster);
+    if (e && (e.l !== f.prefLabel || e.c !== f.category)) out.push({ code: "conflict", msg: "", other: e });
+  }
+  return out;
+}
+const CONS_CATS = () => S.data.consCategories.map(([k]) => k);
+function consProblems(row, c) {
+  const out = [];
+  if (c.include !== "y") return out;
+  if (!c.conceptId) out.push({ msg: "Choose a construction concept, or make a new one." });
+  else if (!SLUG.test(c.conceptId)) out.push({ msg: `The construction concept ID “${c.conceptId}” can only use lowercase letters, digits and single hyphens.` });
+  if (!S.data.consConcepts[c.conceptId]) {
+    if (!CONS_CATS().includes(c.category)) out.push({ msg: "A new construction concept needs a category." });
+    if (!c.prefLabel) out.push({ msg: "A new construction concept needs a label." });
+    for (const r of S.data.rows) {
+      if (r.q !== "overlap" || r.id === row.id) continue;
+      const o = consFinal(r);
+      if (o && o.include === "y" && o.conceptId === c.conceptId && (o.prefLabel !== c.prefLabel || o.category !== c.category)) {
+        out.push({ msg: `Another heading (${titleOf(r)}) makes the new concept “${c.conceptId}” with the label “${o.prefLabel}”. A concept has one label.` });
+        break;
+      }
+    }
+  }
+  return out;
+}
+
+function statusOf(row) {
+  const d = S.decisions.get(row.id);
+  if (!d || !d.take) return "todo";
+  if (d.take === "unsure") return "unsure";
+  if (row.q === "pairs" && d.take === "head") return "head";
+  if (row.q === "labels") return labelsProblem(row, d) ? "fix" : d.take;
+  const f = subjFinal(row), c = consFinal(row);
+  if (f && problems(row, f).length) return "fix";
+  if (c && consProblems(row, c).length) return "fix";
+  return d.take;
+}
+const isDone = (st) => st !== "todo" && st !== "fix";
+
+// The labels the two concepts of a duplicate pair will carry.
+function dupLabels(row) {
+  return row.concepts.map((c) => (labelOverride(c.id)?.prefLabel || c.l));
+}
+// What's still wrong with a Labels decision, or "" when it's done.
+function labelsProblem(row, d) {
+  if (row.kind === "case") {
+    if (d.take === "keep") return "";
+    const o = labelOverride(row.cid);
+    if (!o) return d.take === "edit" ? "Type the label below." : "The suggestion didn't save. Choose it again.";
+    if (!o.prefLabel.trim()) return "The label can't be empty.";
+    return "";
+  }
+  const [a, b] = row.concepts;
+  if (d.take === "merge0") return S.overrides.get(b.id)?.mergeInto === a.id ? "" : "The merge didn't save. Choose it again.";
+  if (d.take === "merge1") return S.overrides.get(a.id)?.mergeInto === b.id ? "" : "The merge didn't save. Choose it again.";
+  if (d.take === "separate") {
+    const [la, lb] = dupLabels(row);
+    return la.toLowerCase() === lb.toLowerCase() ? "The two concepts still have the same label. Give one of them another label below." : "";
+  }
+  return "";
+}
+
+// A heading like "Berlin (Germany) -- Buildings, structures, etc" can usually
+// be filed under the place or topic itself, when that's already a concept.
+function baseConcept(row) {
+  for (const hd of headings(row)) {
+    const i = hd.indexOf(" -- ");
+    if (i < 0) continue;
+    const cid = labelIndex.get(hd.slice(0, i).trim().toLowerCase());
+    if (cid) return cid;
+  }
+  return null;
+}
+
+// ---------- list ----------
+function rows(g) { return S.data.rows.filter((r) => r.g === g); }
+function haystack(r) {
+  return r._hay || (r._hay = [r.labels, r.cluster, r.cid, r.suggestion, ...(r.concepts || []).map((c) => c.id), ...(r.h || []), r.head.conceptId, r.priya?.conceptId, r.priya?.prefLabel, r.head.prefLabel, r.cons?.conceptId, ...(r.matches || []), ...r.books.map((b) => b[1])].join(" ").toLowerCase());
+}
+function filtersFor(gr) {
+  const extra = gr.q === "pairs" ? [["both", "Decided twice"]]
+    : gr.q === "overlap" ? [["prefill", "Pre-filled"], ["g5", "Label matches"]]
+    : gr.q === "labels" ? [["sugg", "Has a suggestion"], ["nosugg", "No suggestion"]] : [["sub", "Subdivided"]];
+  return [["todo", "To do"], ["fix", "Needs fixing"], ...extra, ["unsure", "Unsure"], ["mine", "Mine"], ["done", "Decided"], ["all", "All"]];
+}
+function visible(g) {
+  const f = S.filter[g] || "todo", q = S.q.trim().toLowerCase();
+  const list = rows(g).filter((r) => {
+    const st = statusOf(r);
+    if (f === "todo" && st !== "todo") return false;
+    if (f === "fix" && st !== "fix") return false;
+    if (f === "unsure" && st !== "unsure") return false;
+    if (f === "done" && !isDone(st)) return false;
+    if (f === "both" && !r.flags.includes("also-reviewed-in-head")) return false;
+    if (f === "prefill" && !r.prefill) return false;
+    if (f === "g5" && r.group !== "5") return false;
+    if (f === "sub" && !r.labels.includes(" -- ")) return false;
+    if (f === "sugg" && !r.suggestion) return false;
+    if (f === "nosugg" && (r.kind !== "case" || r.suggestion)) return false;
+    if (f === "mine") { const d = S.decisions.get(r.id); if (!d || !S.me || d.by !== S.me) return false; }
+    return !q || haystack(r).includes(q);
+  });
+  const s = S.sort[g] || "default";
+  const byTitle = (a, b) => titleOf(a).localeCompare(titleOf(b));
+  if (s === "books") list.sort((a, b) => b.nBooks - a.nBooks || byTitle(a, b));
+  else if (s === "title") list.sort(byTitle);
+  else if (g === "overlap") list.sort((a, b) => a.group.localeCompare(b.group) || b.nBooks - a.nBooks || byTitle(a, b));
+  else if (g === "draft") list.sort(byTitle);
+  else if (g === "labels") list.sort((a, b) => (a.kind === "dup" ? 0 : a.suggestion ? 2 : 1) - (b.kind === "dup" ? 0 : b.suggestion ? 2 : 1) || b.nBooks - a.nBooks || byTitle(a, b));
+  else list.sort((a, b) => (a.priya.conceptId || "~").localeCompare(b.priya.conceptId || "~") || byTitle(a, b));
+  return list;
+}
+
+function renderTabs() {
+  const tabs = $("tabs");
+  tabs.replaceChildren();
+  const secs = new Map();
+  for (const gr of GROUPS) {
+    const all = rows(gr.g);
+    if (!all.length) continue;
+    const counts = {};
+    let done = 0;
+    for (const r of all) { const st = statusOf(r); counts[COLOR[st]] = (counts[COLOR[st]] || 0) + 1; if (isDone(st)) done++; }
+    const bar = h("span", { class: "bar", "aria-hidden": "true" },
+      ...["head", "priya", "edit", "unsure", "fix"].map((k) => {
+        const s = h("span"); s.style.width = (100 * (counts[k] || 0) / all.length) + "%"; s.style.background = `var(--${k})`; return s;
+      }));
+    if (!secs.has(gr.sec)) { const box = h("div"); secs.set(gr.sec, box); tabs.append(h("div", { class: "tabsec" }, h("span", { class: "eyebrow" }, gr.sec), box)); }
+    secs.get(gr.sec).append(h("button", {
+      class: "tab", role: "tab", "aria-selected": String(S.group === gr.g),
+      onclick: () => { S.group = gr.g; store.set("group", gr.g); renderAll(); },
+    }, h("span", { class: "name" }, gr.name), bar,
+       h("span", { class: "count" }, `${done} of ${all.length} decided` + (counts.fix ? ` · ${counts.fix} to fix` : ""))));
+  }
+}
+
+function renderFilters() {
+  const gr = groupOf(S.group), cur = S.filter[gr.g] || "todo";
+  $("statusFilters").replaceChildren(...filtersFor(gr).map(([v, l]) =>
+    h("button", { class: "chipbtn", "aria-pressed": String(cur === v), onclick: () => { S.filter[gr.g] = v; renderFilters(); renderList(); } }, l)));
+  const first = gr.q === "pairs" ? "By Priya's concept" : gr.q === "overlap" ? "By group, most books first" : gr.q === "labels" ? "Duplicates, then most books" : "Heading A–Z";
+  const sorts = [["default", first], ["books", "Most books first"], ["title", "Heading A–Z"]].filter((x, i, a) => i === 0 || x[1] !== a[0][1]);
+  $("sort").replaceChildren(...sorts.map(([v, l]) => h("option", { value: v, selected: (S.sort[gr.g] || "default") === v }, l)));
+}
+
+function pillFor(st) { return h("span", { class: "pill " + COLOR[st] }, LABEL[st] || st); }
+function peersOn(id) {
+  const out = [];
+  for (const p of S.peers) if (!p.isMe && p.kind === "viewer" && p.presence && p.presence.viewing === id && p.by) out.push(p.by);
+  return [...new Set(out)];
+}
+function avatarFor(id, small) {
+  const img = h("img", { class: "avatar" + (small ? " sm" : ""), alt: "" });
+  const p = S.profiles[id];
+  if (p) { if (p.avatarUrl) img.src = p.avatarUrl; img.title = p.name || "Someone"; }
+  return img;
+}
+function metaOf(r) {
+  const books = plural(r.nBooks, "book");
+  if (r.q === "pairs") {
+    const from = r.head.include === "y" ? r.head.conceptId : "left out";
+    const to = r.priya.include === "y" ? (r.priya.conceptId || "no ID") : "left out";
+    return `${from} → ${to} · ${books}`;
+  }
+  if (r.q === "draft") return `${r.head.conceptId} · ${books}`;
+  if (r.q === "labels") return r.kind === "dup" ? `same label · ${r.concepts.map((c) => c.id).join(" + ")}` : `${r.cid} · ${r.suggestion ? "→ " + r.suggestion : "no suggestion"} · ${books}`;
+  const c = r.prefill ? `pre-filled ${r.prefill}` : r.matches.length ? `matches ${r.matches.join(", ")}` : "no construction concept";
+  return `group ${r.group} · ${c} · ${books}`;
+}
+
+function renderList() {
+  const g = S.group, list = visible(g), box = $("list");
+  box.replaceChildren();
+  if (!list.length) {
+    box.append(h("div", { class: "list-empty" }, (S.filter[g] || "todo") === "todo" && !S.q ? "Nothing left to do in this group." : "Nothing matches these filters."));
+    return;
+  }
+  const frag = document.createDocumentFragment();
+  for (const r of list) {
+    frag.append(h("div", {
+      class: "row", role: "listitem", tabindex: "0", "aria-current": String(S.sel[g] === r.id),
+      onclick: () => select(r.id), onkeydown: (e) => { if (e.key === "Enter") select(r.id); },
+    }, h("span", { class: "t" }, titleOf(r)), h("span", { class: "m" }, metaOf(r)),
+       h("span", { class: "r" }, peersOn(r.id).map((id) => avatarFor(id, true)), pillFor(statusOf(r)))));
+  }
+  box.append(frag);
+  const cur = box.querySelector('[aria-current="true"]');
+  if (cur) { const a = cur.getBoundingClientRect(), b = box.getBoundingClientRect(); if (a.top < b.top || a.bottom > b.bottom) cur.scrollIntoView({ block: "nearest" }); }
+}
+
+// ---------- detail ----------
+function showVal(field, v) {
+  if (field === "include") return v === "y" ? "Yes" : v === "n" ? "No, left out" : v ? v : "—";
+  if (!v) return "—";
+  if (field === "category") return CAT_LABEL[v] ? `${CAT_LABEL[v]} (${v})` : (S.data.consCategories.find((x) => x[0] === v)?.[1] || v);
+  if (field === "exactMatch" && /^https?:/.test(v)) return h("a", { href: v, target: "_blank", rel: "noopener" }, v.replace(/^https?:\/\//, ""));
+  const m = v.match(/^(\s*)(.*?)(\s*)$/s);
+  if (m[1] || m[3]) return h("span", {}, m[1] ? h("span", { class: "ws", title: "leading space" }, "␣") : null, m[2], m[3] ? h("span", { class: "ws", title: "trailing space" }, "␣") : null);
+  return v;
+}
+
+// cols: [[heading, subheading, values]], plus an optional result column
+function table(cols, result, resultSub, fields = FIELD_ROWS, extra) {
+  const headRow = h("tr", {}, h("th", {}, ""), cols.map(([t, s]) => h("th", {}, t, s ? h("span", { class: "sub" }, s) : null)),
+    result ? h("th", {}, "Result", h("span", { class: "sub" }, resultSub || "")) : null);
+  const body = fields.map(([field, label]) => {
+    const vals = cols.map((c) => c[2][field] || "");
+    const differ = cols.length > 1 && new Set(vals).size > 1;
+    let res = null;
+    if (result) {
+      let v = showVal(field, result[field] || "");
+      if (field === "category" && extra && extra.fine) v = h("span", {}, v, h("span", { class: "muted" }, ` · Priya's finer category: ${extra.fine}`));
+      res = h("td", { class: "result" + (result[field] ? "" : " empty") }, v);
+    }
+    return h("tr", {}, h("th", { scope: "row" }, label),
+      vals.map((v) => h("td", { class: (differ ? "diff " : "") + (v ? "" : "empty") }, showVal(field, v))), res);
+  });
+  return h("div", { class: "cmp-wrap" }, h("table", { class: "cmp" }, h("thead", {}, headRow), h("tbody", {}, body)));
+}
+
+function hints(row) {
+  const items = [];
+  const fl = new Set(row.flags);
+  const li = (...k) => items.push(h("li", {}, ...k));
+  if (row.q === "pairs") {
+    if (fl.has("also-reviewed-in-head")) li(h("b", {}, "This heading was decided twice."), " Priya's pass and the current file (Mert's pass, or the earlier merge of the two review passes) both changed it, with different results.");
+    else li("Only Priya's pass changed this heading. ", h("b", {}, "Now"), " is how it stood before her pass.");
+    if (fl.has("left-out-by-mert")) li(h("b", {}, "Mert's earlier pass left this place out."), " Merging the two geographic files put it back, because one of them had every row in. It needs a second look.");
+    if (row.priya.include === "y" && !row.priya.category) li("Priya included it but gave it no category.");
+    if (row.priya.include === "y" && !row.priya.prefLabel.trim()) li("Priya's row has no label.");
+    const fine = fineOf(row.priya);
+    if (fine) li(`Priya used the finer category “${fine}”. The site only has Topics and Places, so it becomes ${CAT_LABEL[coarse(fine)]}. The finer one is saved beside the decisions, in fine-categories.csv.`);
+    else if (row.priya.category && !CATS.includes(row.priya.category)) li(`Priya's category “${row.priya.category}” isn't one the site has. Pick Topic or Place.`);
+    if (row.priya.conceptId && !SLUG.test(row.priya.conceptId.trim())) li(`Priya's concept ID “${row.priya.conceptId}” has spaces, capitals or stray hyphens.`);
+    if (row.priya.prefLabel !== row.priya.prefLabel.trim()) li("Priya's label has a stray space at one end. It's trimmed when you use it.");
+    if (fl.has("claimed-by-construction")) li("The construction scheme also claims this heading. A heading that's a construction method should usually be left out here, with the note “construction”.");
+    if (fl.has("new-cluster")) li("This heading isn't in decisions.csv yet. Taking Priya's row adds it.");
+  } else if (row.q === "draft") {
+    li("This place still has the seed's draft row. Confirming it, editing it or leaving it out marks it reviewed.");
+    li("Label style, as agreed for places: LCSH's parenthetical form, such as “Los Angeles (Calif.)” or “Amsterdam (Netherlands)”.");
+    li("To merge twins, give them the same concept ID. Don't over-merge: New York (State) and New York (N.Y.) are different places.");
+  } else {
+    li(OVERLAP_GROUP[row.group]);
+    if (row.prefill) li(h("b", {}, "Pre-filled by label match: "), `construction “${row.prefill}”. Check it before confirming.`);
+    else if (row.matches.length) li(`Its label matches the construction concept${row.matches.length > 1 ? "s" : ""} ${row.matches.map((m) => "“" + m + "”").join(", ")}.`);
+    if (row.pair) li(h("b", {}, `Its subject side is decided in ${groupOf(rowOf(row.pair)?.g)?.name || "another tab"}, under “Reconcile the two passes”.`), " Here you only decide the construction side. ",
+      h("button", { class: "navbtn sm", onclick: () => jump(rowOf(row.pair)) }, "Open it there"));
+  }
+  const base = row.q !== "overlap" && baseConcept(row);
+  if (base && (subjFinal(row)?.conceptId || row.head.conceptId) !== base) {
+    const c = S.data.concepts[base];
+    li(`The part before “--” is already the concept “${c.l}” (${base}). Filing this heading under it merges the two.`);
+  }
+  return h("div", { class: "hintbox" }, h("ul", {}, items));
+}
+
+function booksPanel(row) {
+  if (!row.nBooks) return h("div", { class: "panel" }, h("h3", {}, "Books"), h("div", { class: "muted" }, "No book in the collection uses this heading."));
+  return h("div", { class: "panel" },
+    h("h3", {}, `Books with this heading · ${row.nBooks}`),
+    h("ul", { class: "books" }, row.books.map(([k, t]) => h("li", {}, h("a", { href: `${S.data.site}/item/${k}/`, target: "_blank", rel: "noopener" }, t || k)))),
+    row.nBooks > row.books.length ? h("div", { class: "muted" }, `and ${row.nBooks - row.books.length} more`) : null);
+}
+
+function decidePanel(row, d) {
+  const panel = h("div", { class: "panel" });
+  panel.append(h("div", { class: "decide-row" }, h("span", { class: "eyebrow" }, "Decision"),
+    h("div", { class: "seg", role: "group" }, choicesFor(row).map(([v, l, k]) => h("button", {
+      class: COLOR[v], "aria-pressed": String(d?.take === v), disabled: !S.canWrite || (v === "suggested" && !row.suggestion),
+      title: S.canWrite ? `${l} (${k})` : "You can't record decisions in this view",
+      onclick: () => choose(row, d?.take === v ? "" : v),
+    }, l, h("kbd", {}, k))))));
+  panel.append(h("div", { class: "legend" }, legendFor(row).map((t) => h("span", {}, t))));
+  const ta = h("textarea", { id: "notes", placeholder: "Notes for each other (why, what to check)", disabled: !S.canWrite });
+  ta.value = d?.notes || "";
+  let t = null;
+  const save = () => { clearTimeout(t); if ((S.decisions.get(row.id)?.notes || "") !== ta.value) writeRow(row, { notes: ta.value }); };
+  ta.addEventListener("input", () => { clearTimeout(t); t = setTimeout(save, 900); });
+  ta.addEventListener("blur", save);
+  ta.addEventListener("keydown", (e) => e.stopPropagation());
+  panel.append(ta, h("div", { class: "decide-row" }, whoLine(d), h("span", { style: "flex:1" }),
+    h("button", { class: "navbtn", onclick: () => step(-1) }, "← Previous"),
+    h("button", { class: "navbtn primary", onclick: nextTodo }, "Next to do →")));
+  return panel;
+}
+
+function whoLine(d) {
+  if (!d || !d.by) return h("div", { class: "who" }, "No decision yet.");
+  const parts = [h("span", {}, "Last change by ", avatarFor(d.by, true), " ", S.profiles[d.by]?.name || "someone", d.at ? " · " + new Date(d.at).toLocaleString() : "")];
+  const hist = (d.history || []).slice(-4).reverse();
+  if (hist.length > 1) parts.push(h("span", {}, "Earlier: " + hist.slice(1).map((x) => `${LABEL[x.d] || x.d}${x.by && S.profiles[x.by]?.name ? " (" + S.profiles[x.by].name + ")" : ""}`).join(", ")));
+  return h("div", { class: "who" }, parts);
+}
+
+// The subject row's fields. Editing a pairs or draft row makes it "edit";
+// an overlap row keeps its choice and only changes the subject side.
+function editPanel(row, d, f, title) {
+  const panel = h("div", { class: "panel" });
+  panel.append(h("h3", {}, title));
+  const dis = !S.canWrite;
+  const base = d.final || f;
+  const set = (patch) => {
+    const final = { ...base, ...patch };
+    if (row.q === "overlap") return writeRow(row, { final });
+    return writeRow(row, { take: "edit", final }, d.take === "edit" ? null : "edit");
+  };
+  const inc = h("select", { id: "f-include", disabled: dis || row.q === "overlap", onchange: (e) => set(e.target.value === "y" ? { include: "y" } : leftOut(base.note)) },
+    h("option", { value: "y", selected: f.include === "y" }, "Yes, in the scheme"),
+    h("option", { value: "n", selected: f.include !== "y" }, "No, left out"));
+  const form = h("div", { class: "form" }, h("label", { for: "f-include" }, "In scheme"), inc);
+  if (f.include === "y") {
+    const o = labelOverride(f.conceptId);
+    form.append(
+      h("label", { for: "f-id" }, "Concept ID"),
+      h("input", { type: "text", id: "f-id", list: "concept-ids", value: f.conceptId, disabled: dis, spellcheck: "false",
+        onchange: (e) => {
+          const cid = e.target.value.trim();
+          const patch = { conceptId: cid };
+          const e2 = conceptElsewhere(cid, row.cluster);
+          if (e2) { patch.prefLabel = e2.l; patch.category = e2.c; }
+          set(patch);
+        } }),
+      h("label", { for: "f-cat" }, "Category"),
+      h("select", { id: "f-cat", disabled: dis || !!o, onchange: (e) => set({ category: e.target.value }) },
+        h("option", { value: "", selected: !f.category }, "Choose…"),
+        CATS.map((c) => h("option", { value: c, selected: f.category === c }, `${CAT_LABEL[c]} (${c})`))),
+      h("label", { for: "f-label" }, "Label"),
+      h("input", { type: "text", id: "f-label", value: f.prefLabel, disabled: dis || !!o, onchange: (e) => set({ prefLabel: e.target.value.trim() }) }));
+    if (o) form.append(h("span"), h("span", { class: "muted" }, "The label and category are set for the whole concept below."));
+    const bc = baseConcept(row);
+    if (bc && bc !== f.conceptId) {
+      const c = S.data.concepts[bc];
+      form.append(h("span"), h("div", { class: "decide-row" },
+        h("button", { class: "navbtn sm", disabled: dis, onclick: () => set({ conceptId: bc, prefLabel: c.l, category: c.c }) }, `File under “${c.l}”`),
+        h("span", { class: "muted" }, "the part of the heading before “--”")));
+    }
+  }
+  form.append(
+    h("label", { for: "f-exact" }, "Exact match"),
+    h("input", { type: "text", id: "f-exact", value: f.exactMatch, disabled: dis, spellcheck: "false", placeholder: "An authority URI, only if no record carries one", onchange: (e) => set({ exactMatch: e.target.value.trim() }) }),
+    h("label", { for: "f-note" }, "Note"),
+    h("input", { type: "text", id: "f-note", list: "note-values", value: f.note, disabled: dis, onchange: (e) => set({ note: e.target.value.trim() }) }));
+  panel.append(form);
+
+  const probs = problems(row, f);
+  if (!probs.length) panel.append(h("div", { class: "ok" }, "Ready. The subject row can go into decisions.csv as shown."));
+  else panel.append(h("div", { class: "problems" }, probs.map((p) => {
+    if (p.code !== "conflict") return h("div", { class: "problem" }, p.msg);
+    const e = p.other;
+    const where = e.src === "override" ? "set for the whole concept on this page"
+      : e.src === "csv" ? `on ${plural(e.n, "other heading")} in decisions.csv` : `on another heading decided here (${titleOf(e.row)})`;
+    return h("div", { class: "problem" },
+      h("span", {}, `Concept “${f.conceptId}” is labelled “${e.l}” (${CAT_LABEL[e.c] || e.c}) ${where}. A concept has one label.`),
+      h("button", { class: "navbtn sm", disabled: dis, onclick: () => set({ prefLabel: e.l, category: e.c }) }, `Use “${e.l}”`),
+      e.src !== "override" ? h("button", { class: "navbtn sm", disabled: dis, onclick: () => setOverride(f.conceptId, f.prefLabel, f.category) }, `Label the whole concept “${f.prefLabel}”`) : null);
+  })));
+  return panel;
+}
+
+function consPanel(row, d, c) {
+  const panel = h("div", { class: "panel" });
+  panel.append(h("h3", {}, "Construction concept"));
+  const dis = !S.canWrite;
+  const set = (patch) => writeRow(row, { cons: { ...(d.cons || {}), ...patch } });
+  const known = S.data.consConcepts[c.conceptId];
+  const quick = [...new Set([row.prefill, ...row.matches, row.cons.include === "y" ? row.cons.conceptId : ""].filter(Boolean))];
+  if (quick.length) panel.append(h("div", { class: "decide-row" }, h("span", { class: "muted" }, "Suggested:"),
+    quick.map((id) => h("button", { class: "chip", disabled: dis, "aria-pressed": String(c.conceptId === id), onclick: () => set({ conceptId: id }) },
+      `${S.data.consConcepts[id]?.l || id}`, h("span", { class: "muted" }, id)))));
+  const form = h("div", { class: "form" },
+    h("label", { for: "c-id" }, "Concept ID"),
+    h("input", { type: "text", id: "c-id", list: "cons-ids", value: c.conceptId || "", disabled: dis, spellcheck: "false",
+      onchange: (e) => {
+        const id = e.target.value.trim();
+        set(S.data.consConcepts[id] ? { conceptId: id } : { conceptId: id, prefLabel: c.prefLabel || titleOf(row), category: c.category || "" });
+      } }));
+  if (known) form.append(h("span"), h("span", { class: "muted" }, `“${known.l}” · ${showVal("category", known.c)} · already on ${plural(known.n, "heading")}`));
+  else {
+    form.append(
+      h("label", { for: "c-label" }, "Label"),
+      h("input", { type: "text", id: "c-label", value: c.prefLabel || "", disabled: dis, onchange: (e) => set({ prefLabel: e.target.value.trim() }) }),
+      h("label", { for: "c-cat" }, "Category"),
+      h("select", { id: "c-cat", disabled: dis, onchange: (e) => set({ category: e.target.value }) },
+        h("option", { value: "", selected: !c.category }, "Choose…"),
+        S.data.consCategories.map(([k, l]) => h("option", { value: k, selected: c.category === k }, l))),
+      h("span"), h("span", { class: "muted" }, "A new construction concept. Pick an existing one above if it fits."));
+  }
+  panel.append(form);
+  const probs = consProblems(row, c);
+  panel.append(probs.length ? h("div", { class: "problems" }, probs.map((p) => h("div", { class: "problem" }, p.msg)))
+    : h("div", { class: "ok" }, "Ready. The construction row can go into construction/decisions.csv as shown."));
+  return panel;
+}
+
+function conceptPanel(row, cid) {
+  const panel = h("div", { class: "panel" });
+  const c = S.data.concepts[cid];
+  const o = labelOverride(cid);
+  panel.append(h("h3", {}, "Subject concept ", h("span", { class: "mono" }, cid)));
+  const e = conceptElsewhere(cid, row.cluster);
+  if (o) panel.append(h("div", {}, `Label for every heading under it: “${o.prefLabel}” (${CAT_LABEL[o.category]}), set here`, o.by ? [" by ", S.profiles[o.by]?.name || "someone"] : "", "."));
+  else if (c) panel.append(h("div", {}, `In decisions.csv it's labelled “${c.l}” (${CAT_LABEL[c.c] || c.c}), with ${plural(c.k.length, "heading")} and ${plural(c.n, "book")}.`));
+  else if (e) panel.append(h("div", {}, `A new concept. Another heading decided here labels it “${e.l}”.`));
+  else panel.append(h("div", { class: "muted" }, "A new concept: no other heading uses it yet."));
+  if (c && c.k.length) {
+    const shown = c.k.slice(0, 12);
+    panel.append(h("div", { class: "eyebrow" }, "Headings under it in decisions.csv"),
+      h("div", { class: "chips" }, shown.map(([k, l]) => h("span", { class: "chip", title: k }, l.split(" | ")[0])),
+        c.k.length > shown.length ? h("span", { class: "muted" }, `+${c.k.length - shown.length} more`) : null));
+  }
+  if (row.q === "pairs") {
+    const sibs = S.data.rows.filter((r) => r.q === "pairs" && r.id !== row.id && r.priya.include === "y" && r.priya.conceptId.trim() === cid);
+    if (sibs.length) {
+      panel.append(h("div", { class: "eyebrow" }, `Other headings Priya put under it · ${sibs.length}`),
+        h("div", { class: "chips" }, sibs.map((r) => h("button", { class: "chip", onclick: () => jump(r) }, titleOf(r), pillFor(statusOf(r))))));
+      const ready = sibs.filter((r) => statusOf(r) === "todo" && !problems(r, fromSide(r.priya)).length);
+      if (ready.length) panel.append(h("div", { class: "decide-row" },
+        h("button", { class: "navbtn sm", disabled: !S.canWrite, onclick: () => bulkPriya(ready) }, `Use Priya's for the ${ready.length} still to do`),
+        h("span", { class: "muted" }, "Only rows that are complete and agree on the label.")));
+    }
+  }
+  const lab = h("input", { type: "text", id: "o-label", value: o ? o.prefLabel : (c ? c.l : ""), disabled: !S.canWrite, "aria-label": "Label for the whole concept" });
+  const cat = h("select", { id: "o-cat", disabled: !S.canWrite, "aria-label": "Category for the whole concept" },
+    CATS.map((k) => h("option", { value: k, selected: (o ? o.category : c ? c.c : "") === k }, CAT_LABEL[k])));
+  panel.append(h("details", { open: !!o },
+    h("summary", { class: "muted", style: "cursor:pointer" }, "Set one label for every heading under this concept"),
+    h("div", { class: "decide-row", style: "margin-top:8px" }, lab, cat,
+      h("button", { class: "navbtn sm", disabled: !S.canWrite || !SLUG.test(cid), onclick: () => setOverride(cid, lab.value.trim(), cat.value) }, "Set for the concept"),
+      o ? h("button", { class: "navbtn sm", disabled: !S.canWrite, onclick: () => clearOverride(cid) }, "Remove") : null),
+    h("div", { class: "muted" }, "This relabels the concept on every heading in decisions.csv when the decisions are pulled, not only the ones reviewed here.")));
+  return panel;
+}
+
+function labelsDetail(row, d) {
+  const dis = !S.canWrite;
+  const problem = d?.take ? labelsProblem(row, d) : "";
+  const parts = [];
+  if (row.kind === "case") {
+    const o = labelOverride(row.cid);
+    parts.push(h("div", { class: "detail-head" },
+      h("span", { class: "eyebrow" }, `Concept label · ${CAT_LABEL[row.category]} · ${plural(row.nBooks, "book")}`),
+      h("h2", {}, o ? o.prefLabel : row.labels),
+      o ? h("div", { class: "variants" }, `Was “${row.labels}”`) : null,
+      h("div", { class: "mono muted" }, row.cid)));
+    parts.push(decidePanel(row, d));
+    const panel = h("div", { class: "panel" }, h("h3", {}, "Label"),
+      h("div", { class: "form" },
+        h("label", {}, "Now"), h("span", {}, showVal("prefLabel", row.labels)),
+        h("label", {}, "Suggestion"), row.suggestion ? h("span", {}, row.suggestion, h("span", { class: "muted" }, " · from the concept's own heading")) : h("span", { class: "muted" }, "None. No heading under this concept has the same words.")));
+    if (d?.take === "edit") panel.append(h("div", { class: "form" }, h("label", { for: "l-label" }, "New label"),
+      h("input", { type: "text", id: "l-label", value: o ? o.prefLabel : (row.suggestion || row.labels), disabled: dis,
+        onchange: (e) => setOverride(row.cid, e.target.value.trim(), row.category, "labels") })));
+    if (problem) panel.append(h("div", { class: "problem" }, problem));
+    else if (o) panel.append(h("div", { class: "ok" }, "Every heading under this concept gets this label when the decisions are pulled."));
+    parts.push(panel);
+    parts.push(h("div", { class: "panel" }, h("h3", {}, "Headings under this concept"),
+      h("div", { class: "chips" }, row.h.map((x) => h("span", { class: "chip" }, x)))));
+    const hint = [h("li", {}, "LCSH and FAST capitalize the first word, proper nouns and acronyms, and the first word of a parenthetical qualifier: “Politics and government”, “Found objects (Art)”, “HIV/AIDS”, “LGBTQ+”. Places and names keep their capitals: “New York (State)”.")];
+    if (row.flags.includes("in-dup")) hint.push(h("li", {}, "This concept also shares its label with another concept. That pair is at the top of this list."));
+    parts.push(h("div", { class: "hintbox" }, h("ul", {}, hint)));
+    const todo = rows("labels").filter((r) => r.kind === "case" && r.suggestion && statusOf(r) === "todo");
+    if (row.suggestion && todo.length > 1) {
+      parts.push(h("div", { class: "panel" }, h("h3", {}, "All suggestions at once"),
+        h("div", { class: "muted" }, `${plural(todo.length, "label")} still to do have a suggestion from their own heading. You can take them all, then look through Decided and change any that are wrong.`),
+        h("div", { class: "decide-row" }, S.bulkArm
+          ? [h("button", { class: "navbtn primary", disabled: dis, onclick: () => bulkSuggest(todo) }, `Relabel ${todo.length} concepts`),
+             h("button", { class: "navbtn", onclick: () => { S.bulkArm = false; renderDetail(); } }, "Cancel")]
+          : h("button", { class: "navbtn", disabled: dis, onclick: () => { S.bulkArm = true; renderDetail(); } }, `Use all ${todo.length} suggestions…`))));
+    }
+  } else {
+    const labels = dupLabels(row);
+    parts.push(h("div", { class: "detail-head" },
+      h("span", { class: "eyebrow" }, `Two concepts, one label · ${plural(row.nBooks, "book")}`),
+      h("h2", {}, row.labels)));
+    parts.push(decidePanel(row, d));
+    const cmp = h("div", { class: "cmp-wrap" }, h("table", { class: "cmp" },
+      h("thead", {}, h("tr", {}, h("th", {}, ""), row.concepts.map((c) => h("th", {}, h("span", { class: "mono" }, c.id))))),
+      h("tbody", {},
+        h("tr", {}, h("th", { scope: "row" }, "Label"), row.concepts.map((c, i) => h("td", {},
+          d?.take === "separate" ? h("input", { type: "text", id: "dup-" + i, value: labels[i], disabled: dis, "aria-label": `Label for ${c.id}`,
+            onchange: (e) => setOverride(c.id, e.target.value.trim(), c.c) }) : labels[i]))),
+        h("tr", {}, h("th", { scope: "row" }, "Category"), row.concepts.map((c) => h("td", {}, showVal("category", c.c)))),
+        h("tr", {}, h("th", { scope: "row" }, "Books"), row.concepts.map((c) => h("td", {}, String(c.n)))),
+        h("tr", {}, h("th", { scope: "row" }, "Headings"), row.concepts.map((c) => h("td", {}, h("div", { class: "chips" }, c.h.map((x) => h("span", { class: "chip" }, x)))))))));
+    parts.push(cmp);
+    if (problem) parts.push(h("div", { class: "problem" }, problem));
+    parts.push(h("div", { class: "hintbox" }, h("ul", {}, h("li", {}, "Two concepts can't share a label: the Subject and Place facets would list it twice. Merge them if they're one idea; otherwise keep them apart with labels that say how they differ."))));
+  }
+  return parts;
+}
+
+function renderDetail() {
+  const box = $("detail");
+  const row = S.data.rows.find((r) => r.id === S.sel[S.group] && r.g === S.group);
+  if (!row) {
+    box.replaceChildren(h("div", { class: "empty-state" }, h("h2", {}, "Pick a heading"),
+      h("p", {}, "Choose a heading on the left. J and K move through the list, N jumps to the next one still to do, and the number keys record a decision.")));
+    return;
+  }
+  const d = S.decisions.get(row.id);
+  const f = subjFinal(row), c = consFinal(row);
+  const hs = headings(row);
+  const others = peersOn(row.id);
+  if (row.q === "labels") { box.replaceChildren(h("div", { class: "stack" }, labelsDetail(row, d))); return; }
+  const eyebrow = { pairs: "Two passes", draft: "Draft place", overlap: `Subject or construction · group ${row.group}` }[row.q];
+  const head = h("div", { class: "detail-head" },
+    h("span", { class: "eyebrow" }, `${eyebrow} · ${plural(row.nBooks, "book")}`),
+    h("h2", {}, hs[0] || row.cluster),
+    hs.length > 1 ? h("div", { class: "variants" }, "Also: " + hs.slice(1).join(" · ")) : null,
+    h("div", { class: "mono muted" }, row.cluster),
+    others.length ? h("span", { class: "also" }, others.map((id) => avatarFor(id, true)), others.map((id) => S.profiles[id]?.name || "Someone").join(", ") + " also looking at this") : null);
+  const parts = [head, decidePanel(row, d)];
+  if (row.q === "pairs") {
+    if (f) parts.push(editPanel(row, d, f, d.take === "priya" ? "Priya's row, as it will be written" : "Edited row"));
+    parts.push(table([["Now", "after Mert's pass", row.head], ["Priya's pass", "990d2b2 and 7febe8d", row.priya]], f,
+      d?.take === "priya" ? "Priya's, as the build reads it" : "as edited here", FIELD_ROWS, { fine: d?.fine }));
+  } else if (row.q === "draft") {
+    if (f && (d.take === "edit" || problems(row, f).length)) parts.push(editPanel(row, d, f, "Edited row"));
+    parts.push(table([["Now", "the seed's draft", row.head]], f, LABEL[d?.take] || ""));
+  } else {
+    if (c && c.include === "y") parts.push(consPanel(row, d, c));
+    if (f && f.include === "y") parts.push(editPanel(row, d, f, "Subject row"));
+    const consNow = { include: row.cons.include || "", conceptId: row.cons.conceptId, category: row.cons.category, prefLabel: row.cons.prefLabel, note: row.cons.note };
+    parts.push(table([["Subjects now", "subjects/decisions.csv", row.head], ["Construction now", "construction/decisions.csv", consNow]], null, null,
+      [["include", "In scheme"], ["conceptId", "Concept ID"], ["category", "Category"], ["prefLabel", "Label"], ["note", "Note"]]));
+  }
+  parts.push(hints(row));
+  const cid = (f && f.include === "y" && f.conceptId) || (row.priya?.include === "y" && row.priya.conceptId.trim()) || (row.head.include === "y" && row.head.conceptId) || "";
+  if (ownsSubject(row) && cid && SLUG.test(cid) && (row.q !== "overlap" || (f && f.include === "y") || row.head.include === "y")) parts.push(conceptPanel(row, cid));
+  parts.push(booksPanel(row));
+  box.replaceChildren(h("div", { class: "stack" }, parts));
+}
+
+// ---------- writes ----------
+const chains = new Map();
+function enqueue(key, run) {
+  const p = (chains.get(key) || Promise.resolve()).then(run);
+  chains.set(key, p.catch(() => {}));
+  return p;
+}
+// The first decision on a heading creates its document. Two reviewers can
+// make it at the same moment, before either sees the other's in a snapshot,
+// and a plain set() would replace the first along with its history. The
+// store has no create-if-absent write, so: take a short lease on the
+// document, read it, and set() only if nobody has created it; otherwise merge
+// into theirs, keeping their history ahead of ours.
+const TAB = Math.random().toString(36).slice(2);
+async function firstWrite(ref, patch, merged) {
+  for (let i = 0; i < 6; i++) {
+    const lease = await ref.acquire({ holder: (S.me || "anon") + ":" + TAB, ttlMs: 5000 });
+    if (lease.acquired) break;
+    await new Promise((r) => setTimeout(r, 400));
+  }
+  const snap = await ref.get();
+  const cur = snap.exists ? snap.data() : null;
+  if (!cur || !cur.cluster) return ref.set(merged);
+  const p = { ...patch };
+  if (patch.history) p.history = [...(cur.history || []), ...patch.history.slice(-1)].slice(-12);
+  return ref.update(p);
+}
+function writeRow(row, change, histEntry) {
+  if (!S.db || !S.canWrite) return Promise.resolve();
+  const prev = S.decisions.get(row.id);
+  const now = Date.now();
+  const patch = { id: row.id, q: row.q, cluster: row.cluster, g: row.g, by: S.me, at: now, ...change };
+  if (histEntry !== undefined && histEntry !== null) patch.history = [...(prev?.history || []), { d: histEntry, by: S.me, at: now }].slice(-12);
+  const merged = { ...(prev || {}), ...patch };
+  S.decisions.set(row.id, merged);
+  renderAll();
+  const ref = S.db.collection("rows").doc(row.id);
+  return enqueue("r." + row.id, () => (prev ? ref.update(patch) : firstWrite(ref, patch, merged)).catch((e) => {
+    // Undo the local copy (unless a later change or a snapshot replaced it),
+    // so the row doesn't look decided and the next change doesn't update() a
+    // document that was never created.
+    if (S.decisions.get(row.id) === merged) { if (prev) S.decisions.set(row.id, prev); else S.decisions.delete(row.id); }
+    if (e && (e.code === "permission_denied" || e.code === "not_granted")) { S.canWrite = false; S.dbState = "readonly"; renderAll(); }
+    else { renderAll(); setStatus("That change didn't save (" + (e?.code || "error") + "). Try again in a moment.", true); }
+  }));
+}
+// A subject row to start an overlap heading's subject side from.
+function subjectSeed(row) {
+  if (row.head.include === "y") return fromSide(row.head);
+  const label = titleOf(row);
+  const cid = labelIndex.get(label.toLowerCase());
+  const c = cid && S.data.concepts[cid];
+  return { include: "y", conceptId: cid || slugify(label), category: c ? c.c : "topical", prefLabel: c ? c.l : label, exactMatch: "", note: "" };
+}
+function consSeed(row) {
+  const id = row.prefill || row.matches[0] || (row.cons.include === "y" ? row.cons.conceptId : "");
+  return id ? { conceptId: id } : { conceptId: slugify(titleOf(row)), prefLabel: titleOf(row), category: "" };
+}
+function choose(row, take) {
+  const d = S.decisions.get(row.id);
+  const change = { take };
+  if (row.q === "labels") return chooseLabel(row, d, take);
+  if (row.q === "pairs") {
+    if (take === "priya") { change.final = fromSide(row.priya); change.fine = fineOf(row.priya); }
+    else if (take === "edit") { change.final = d?.final || (row.priya.include === "y" ? fromSide(row.priya) : fromSide(row.head)); change.fine = d?.fine || fineOf(row.priya); }
+  } else if (row.q === "draft") {
+    if (take === "edit") change.final = d?.final || { ...fromSide(row.head), note: "" };
+  } else {
+    if ((take === "subj" || take === "both") && ownsSubject(row)) change.final = d?.final?.include === "y" ? d.final : subjectSeed(row);
+    if ((take === "cons" || take === "both") && !d?.cons?.conceptId) change.cons = consSeed(row);
+  }
+  writeRow(row, change, take || "cleared");
+  if (take && take !== "edit") maybeAdvance(row);
+}
+async function bulkPriya(list) {
+  for (const r of list) await writeRow(r, { take: "priya", final: fromSide(r.priya), fine: fineOf(r.priya) }, "priya");
+}
+// `from` names the tab that set it, so a Labels row's "Keep as is" can undo
+// its own relabel without deleting one made from another tab.
+function setOverride(cid, label, category, from) {
+  if (!S.db || !S.canWrite || !SLUG.test(cid) || !label || !CATS.includes(category)) return Promise.resolve();
+  const doc = { id: cid, prefLabel: label, category, by: S.me, at: Date.now() };
+  if (from) doc.from = from;
+  S.overrides.set(cid, doc);
+  renderAll();
+  return enqueue("c." + cid, () => S.db.collection("concepts").doc(cid).set(doc).catch((e) => setStatus("The concept label didn't save (" + (e?.code || "error") + ").", true)));
+}
+function setMerge(cid, target) {
+  if (!S.db || !S.canWrite) return Promise.resolve();
+  const doc = { id: cid, mergeInto: target, by: S.me, at: Date.now() };
+  S.overrides.set(cid, doc);
+  renderAll();
+  return enqueue("c." + cid, () => S.db.collection("concepts").doc(cid).set(doc).catch((e) => setStatus("The merge didn't save (" + (e?.code || "error") + ").", true)));
+}
+function clearOverride(cid) {
+  if (!S.db || !S.canWrite) return Promise.resolve();
+  S.overrides.delete(cid);
+  renderAll();
+  return enqueue("c." + cid, () => S.db.collection("concepts").doc(cid).delete().catch((e) => setStatus("Couldn't remove the concept label (" + (e?.code || "error") + ").", true)));
+}
+function chooseLabel(row, d, take) {
+  if (row.kind === "case") {
+    if (take === "suggested") setOverride(row.cid, row.suggestion, row.category, "labels");
+    else if ((take === "keep" || take === "") && labelOverride(row.cid)?.from === "labels") clearOverride(row.cid);
+  } else {
+    const [a, b] = row.concepts;
+    for (const c of [a, b]) if (S.overrides.get(c.id)?.mergeInto) clearOverride(c.id);
+    if (take === "merge0") setMerge(b.id, a.id);
+    else if (take === "merge1") setMerge(a.id, b.id);
+  }
+  writeRow(row, { take }, take || "cleared");
+  if (take && take !== "edit" && take !== "separate") maybeAdvance(row);
+}
+// Use the suggestion on every Labels row still to do that has one. Renders
+// once at the end: one render per write would stall the page.
+let quiet = false;
+async function bulkSuggest(list) {
+  quiet = true;
+  try {
+    let n = 0;
+    for (const r of list) {
+      setStatus(`Relabelling ${++n} of ${list.length}…`);
+      await Promise.all([setOverride(r.cid, r.suggestion, r.category, "labels"), writeRow(r, { take: "suggested" }, "suggested")]);
+    }
+  } finally { quiet = false; S.bulkArm = false; renderAll(); }
+}
+function maybeAdvance(row) {
+  if ((S.filter[S.group] || "todo") !== "todo") return;
+  setTimeout(() => { if (S.sel[S.group] === row.id && isDone(statusOf(row))) nextTodo(); }, 350);
+}
+
+// ---------- navigation ----------
+function select(id) {
+  S.sel[S.group] = id;
+  store.set("sel." + S.group, id);
+  S.room?.presence({ viewing: id }).catch(() => {});
+  renderList(); renderDetail();
+  if (window.matchMedia("(max-width: 820px)").matches) $("detail").scrollIntoView({ block: "start" });
+}
+function jump(r) {
+  if (!r) return;
+  if (r.g !== S.group) { S.group = r.g; store.set("group", r.g); }
+  if (!visible(r.g).some((x) => x.id === r.id)) S.filter[r.g] = "all";
+  renderTabs(); renderFilters(); select(r.id);
+}
+function step(dir) {
+  const list = visible(S.group);
+  if (!list.length) return;
+  const i = list.findIndex((x) => x.id === S.sel[S.group]);
+  select(list[i < 0 ? 0 : Math.min(list.length - 1, Math.max(0, i + dir))].id);
+}
+function nextTodo() {
+  const g = S.group, all = visible(g).length ? visible(g) : rows(g);
+  const i = all.findIndex((x) => x.id === S.sel[g]);
+  for (let k = 1; k <= all.length; k++) {
+    const r = all[(i + k + all.length) % all.length];
+    if (!isDone(statusOf(r)) && r.id !== S.sel[g]) return select(r.id);
+  }
+}
+document.addEventListener("keydown", (e) => {
+  if (!S.data || e.metaKey || e.ctrlKey || e.altKey) return;
+  const tag = (e.target.tagName || "").toLowerCase();
+  if (tag === "input" || tag === "textarea" || tag === "select") return;
+  if (e.key === "j") step(1);
+  else if (e.key === "k") step(-1);
+  else if (e.key === "n") nextTodo();
+  else if (/^[1-5]$/.test(e.key)) {
+    const r = rowOf(S.sel[S.group]);
+    if (!r || r.g !== S.group || !S.canWrite) return;
+    const c = choicesFor(r).find((x) => x[2] === e.key);
+    if (!c || (c[0] === "suggested" && !r.suggestion)) return;
+    choose(r, c[0]);
+  } else return;
+  e.preventDefault();
+});
+$("q").addEventListener("input", (e) => { S.q = e.target.value; renderList(); });
+$("sort").addEventListener("change", (e) => { S.sort[S.group] = e.target.value; renderList(); });
+
+// ---------- render ----------
+function setStatus(text, warn) { const el = $("status"); el.textContent = text; el.classList.toggle("warn", !!warn); }
+function renderStatus() {
+  const m = {
+    connecting: ["Connecting to the shared decisions…", false],
+    slow: ["Can't reach the shared decisions yet. What you see may be out of date, and changes can't be saved until it connects.", true],
+    live: ["Decisions save as you click and appear for everyone with the page open.", false],
+    readonly: ["You can browse, but you don't have permission to record decisions. Ask for Contributor access to this page.", true],
+    off: ["Shared decisions aren't available in this view. Open the page signed in to claude.ai to record decisions.", true],
+  }[S.dbState];
+  setStatus(m[0], m[1]);
+}
+async function renderPeople() {
+  const box = $("people");
+  const ids = [...new Set(S.peers.filter((p) => p.kind === "viewer" && p.by).map((p) => p.by))];
+  if (!ids.length) { box.replaceChildren(); return; }
+  const ps = S.user ? await S.user.profiles(ids) : {};
+  box.replaceChildren(h("span", {}, "Here now"), ...ids.map((id) => {
+    const p = ps[id] || {};
+    const img = h("img", { class: "avatar", alt: "", title: (p.name || "Someone") + (p.isMe ? " (you)" : "") });
+    if (p.avatarUrl) img.src = p.avatarUrl;
+    return img;
+  }));
+}
+let profileKey = "";
+async function refreshProfiles() {
+  if (!S.user) return;
+  const ids = new Set();
+  for (const d of S.decisions.values()) { if (d.by) ids.add(d.by); for (const x of d.history || []) if (x.by) ids.add(x.by); }
+  for (const o of S.overrides.values()) if (o.by) ids.add(o.by);
+  for (const p of S.peers) if (p.by) ids.add(p.by);
+  if (S.me) ids.add(S.me);
+  const key = [...ids].sort().join(",");
+  if (key === profileKey) return;
+  profileKey = key;
+  S.profiles = await S.user.profiles([...ids]);
+  renderAll();
+}
+function editingDetail() {
+  const a = document.activeElement;
+  return !!(a && $("detail").contains(a) && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName));
+}
+function renderAll() {
+  if (!S.data || quiet) return;
+  renderTabs(); renderFilters(); renderList(); renderStatus(); renderPeople();
+  if (!editingDetail()) renderDetail();   // a live update must not wipe what's being typed
+  refreshProfiles();
+}
+new ResizeObserver(([e]) => document.documentElement.style.setProperty("--head-h", Math.ceil(e.borderBoxSize?.[0]?.blockSize || e.target.offsetHeight) + "px"))
+  .observe(document.querySelector("header.top"));
+
+// ---------- boot ----------
+async function boot() {
+  try {
+    const res = await fetch("data.json");
+    if (!res.ok) throw new Error(res.status);
+    S.data = await res.json();
+  } catch (e) {
+    setStatus("The headings didn't load. Reload the page to try again.", true);
+    $("detail").replaceChildren(h("div", { class: "empty-state" }, h("h2", {}, "No data"), h("p", {}, "data.json could not be fetched.")));
+    return;
+  }
+  for (const r of S.data.rows) {
+    rowsById.set(r.id, r);
+    if (ownsSubject(r)) owner.set(r.cluster, r);
+  }
+  for (const [id, c] of Object.entries(S.data.concepts)) {
+    labelIndex.set(c.l.toLowerCase(), id);
+    for (const [, labels] of c.k) for (const l of labels.split(" | ")) if (!labelIndex.has(l.trim().toLowerCase())) labelIndex.set(l.trim().toLowerCase(), id);
+  }
+  const dl = $("concept-ids");
+  for (const [id, c] of Object.entries(S.data.concepts)) dl.append(h("option", { value: id, label: c.l }));
+  const cl = $("cons-ids");
+  for (const [id, c] of Object.entries(S.data.consConcepts)) cl.append(h("option", { value: id, label: c.l }));
+  const savedG = store.get("group");
+  if (GROUPS.some((x) => x.g === savedG)) S.group = savedG;
+  for (const { g } of GROUPS) {
+    const s = store.get("sel." + g);
+    S.sel[g] = rows(g).some((x) => x.id === s) ? s : visible(g)[0]?.id || rows(g)[0]?.id || null;
+  }
+  renderAll();
+
+  const [db, user, room] = await Promise.all(["db", "user", "room"].map((n) => Promise.resolve(window.claude?.use?.(n) ?? null).catch(() => null)));
+  S.user = user; S.room = room;
+  if (user) {
+    S.me = await user.id();
+    const cw = await user.can("data.write");
+    S.canWrite = cw !== false;
+  }
+  if (!db) { S.dbState = "off"; S.canWrite = false; renderAll(); return; }
+  S.db = db;
+  if (!S.canWrite) S.dbState = "readonly";
+  const pending = new Set([...GROUPS.map((x) => x.g), "concepts"]);
+  const slow = setTimeout(() => { if (S.dbState === "connecting") { S.dbState = "slow"; renderStatus(); } }, 10000);
+  const arrived = (name, fromCache) => {
+    if (fromCache) return;
+    pending.delete(name);
+    if (!pending.size) { clearTimeout(slow); if (S.dbState !== "readonly") S.dbState = S.canWrite ? "live" : "readonly"; }
+  };
+  const lost = (e) => { clearTimeout(slow); S.dbState = "off"; S.canWrite = false; renderAll(); setStatus("Lost the connection to the shared decisions (" + (e?.code || "error") + "). Reload the page to reconnect.", true); };
+  // one subscription per group: a query delivers at most 1,000 documents
+  for (const { g } of GROUPS) {
+    db.collection("rows").where("g", "==", g).limit(1000).onSnapshot((snap) => {
+      for (const [id, d] of S.decisions) if (d.g === g) S.decisions.delete(id);
+      for (const doc of snap.docs) S.decisions.set(doc.id, doc.data());
+      arrived(g, snap.metadata.fromCache);
+      renderAll();
+    }, lost);
+  }
+  db.collection("concepts").limit(1000).onSnapshot((snap) => {
+    S.overrides = new Map(snap.docs.map((doc) => [doc.id, doc.data()]));
+    arrived("concepts", snap.metadata.fromCache);
+    renderAll();
+  }, lost);
+
+  if (room) {
+    room.onPeers((ch) => { S.peers = ch.peers; renderPeople(); renderList(); if (!editingDetail()) renderDetail(); refreshProfiles(); });
+    room.presence({ viewing: S.sel[S.group] }).catch(() => {});
+  }
+}
+boot();
+})();
+</script>
