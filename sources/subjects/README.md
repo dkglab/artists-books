@@ -150,3 +150,16 @@ identical `prefLabel`+`category` into one `conceptId` (so the FAST/LCSH/local
 variants of e.g. *Toy and movable books* collapse). Curation — flipping
 non-subjects to `include=n` and merging the remaining differently-spelled/worded
 twins — brings that down to the real subject set.
+
+## The #164 parallel-pass review sheet
+
+`pr164-review.csv` lists the 1,113 rows where Priya's subject pass in #164
+differs from `decisions.csv`. Her pass started from the July copy of the file,
+so only the rows she changed herself are recovered, by `pr164_review.py build`
+(it reads both from git history). Fill `take` with `head`, `priya` or `edit`
+(using the `final_*` columns), then run `python3 pr164_review.py apply` from
+this folder. It maps finer categories such as `topical-people` to
+`topical`/`geographic`, and refuses rows with a blank category or label, an ID
+that isn't a slug, or an ID left with more than one label. The `flags` column
+gives the same checks up front, plus `also-reviewed-in-head` where Mert's pass
+decided the same row. Delete the sheet and the script once it's done.
