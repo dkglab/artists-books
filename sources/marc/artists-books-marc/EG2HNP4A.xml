@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"><record>
+  <leader>01338nam a2200337 i 4500</leader>
+  <controlfield tag="001">991001137319708431</controlfield>
+  <controlfield tag="005">20260225163736.0</controlfield>
+  <controlfield tag="008">900418s1976    sz a     bc   000 0 ger d</controlfield>
+  <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">77463111</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">Sw76-11687</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)3292551</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(NNMoMA)41316</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="d">MWiCA</subfield>
+  </datafield>
+  <datafield tag="041" ind1="0" ind2=" ">
+    <subfield code="a">ger</subfield>
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="050" ind1="0" ind2="0">
+    <subfield code="a">TR647</subfield>
+    <subfield code="b">.G7 1976</subfield>
+  </datafield>
+  <datafield tag="090" ind1=" " ind2=" ">
+    <subfield code="a">NF237 .G738 B38 1976</subfield>
+  </datafield>
+  <datafield tag="110" ind1="2" ind2=" ">
+    <subfield code="a">Kunsthalle Basel.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/names/n50079499</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Dan Graham :</subfield>
+    <subfield code="b">[Ausstellung], Kunsthalle Basel, 28. August - 3. Oktober 1976 : [Katalog ; engl. Text mit deutscher Übers.]</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">Basel :</subfield>
+    <subfield code="b">[publisher not identified],</subfield>
+    <subfield code="c">1976</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">42 pages :</subfield>
+    <subfield code="b">illustrations ;</subfield>
+    <subfield code="c">27 cm</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="600" ind1="1" ind2="0">
+    <subfield code="a">Graham, Dan,</subfield>
+    <subfield code="d">1942-</subfield>
+    <subfield code="v">Exhibitions</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Photography, Artistic</subfield>
+    <subfield code="v">Exhibitions.</subfield>
+    <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008108790</subfield>
+  </datafield>
+  <datafield tag="799" ind1="0" ind2="1">
+    <subfield code="a">Micah Lexier collection</subfield>
+  </datafield>
+  <datafield tag="902" ind1=" " ind2=" ">
+    <subfield code="a">Processed by Backstage 2020-04</subfield>
+  </datafield>
+  <datafield tag="903" ind1=" " ind2=" ">
+    <subfield code="a">(CStRLIN)NYMX90-B2347</subfield>
+  </datafield>
+  <datafield tag="907" ind1=" " ind2=" ">
+    <subfield code="a">.b11173464</subfield>
+    <subfield code="b">12-23-23</subfield>
+    <subfield code="c">01-14-03</subfield>
+  </datafield>
+  <datafield tag="998" ind1=" " ind2=" ">
+    <subfield code="a">stbib</subfield>
+    <subfield code="b">01-14-03</subfield>
+    <subfield code="c">m</subfield>
+    <subfield code="d">-</subfield>
+    <subfield code="e">-</subfield>
+    <subfield code="f">ger</subfield>
+    <subfield code="g">sz</subfield>
+    <subfield code="h">0</subfield>
+  </datafield>
+  <datafield tag="AVA" ind1=" " ind2=" ">
+    <subfield code="0">991001137319708431</subfield>
+    <subfield code="8">2214328210008431</subfield>
+    <subfield code="a">01CLARKART_INST</subfield>
+    <subfield code="b">MAIN</subfield>
+    <subfield code="c">Stacks</subfield>
+    <subfield code="d">NF237 .G738 B38 1976</subfield>
+    <subfield code="e">available</subfield>
+    <subfield code="f">1</subfield>
+    <subfield code="g">0</subfield>
+    <subfield code="j">STACKS</subfield>
+    <subfield code="k">0</subfield>
+    <subfield code="p">1</subfield>
+    <subfield code="q">Clark</subfield>
+  </datafield>
+<datafield tag="999" ind1=" " ind2=" "><subfield code="a">EG2HNP4A</subfield><subfield code="b">graham / dan graham</subfield><subfield code="c">title-author</subfield><subfield code="d">clark</subfield></datafield></record>
+</collection>

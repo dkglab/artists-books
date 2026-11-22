@@ -200,6 +200,16 @@ PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
         skos:prefLabel   "Facsimile"@en;
         ab:matchKey      "facsimiles-printing" , "facsimiles-reproductions" , "faksimile" , "facsimiles" .
 
+<https://dkglab.github.io/ns/artists-books/construction/fable>
+        rdf:type         skos:Concept;
+        rdfs:label       "Fable"@en;
+        skos:altLabel    "Fables."@en , "fables."@en , "Fables"@en;
+        skos:broader     <https://dkglab.github.io/ns/artists-books/construction/category/genre-form>;
+        skos:exactMatch  <http://id.worldcat.org/fast/1726604> , <http://id.loc.gov/authorities/genreForms/gf2014026327>;
+        skos:inScheme    ab:construction-methods;
+        skos:prefLabel   "Fable"@en;
+        ab:matchKey      "fables" .
+
 <https://dkglab.github.io/ns/artists-books/construction/exhibition-catalog>
         rdf:type         skos:Concept;
         rdfs:label       "Exhibition catalog"@en;
