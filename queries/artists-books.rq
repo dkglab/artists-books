@@ -244,6 +244,8 @@ WHERE {
              (?language041_x AS ?language041_code)
              (?original_language_x AS ?original_language_code)
              (SAMPLE(?control_number_raw) AS ?control_number)
+             (SAMPLE(?control_source_raw) AS ?control_source)
+             (SAMPLE(?oclc035_x) AS ?oclc035)
              (SAMPLE(?language_code_x) AS ?language_code)
              (SAMPLE(?language_note_x) AS ?language_note)
              (SAMPLE(?extent_x) AS ?extent)
@@ -310,6 +312,41 @@ WHERE {
             ?record fx:anySlot ?cf001 .
             ?cf001 a marc:controlfield ; xyz:tag "001" ; rdf:_1 ?control_number_raw .
           }
+
+          # 003, whose number the 001 is (#222): "OCoLC" makes a bare 001 an OCLC
+          # number. Most servers in the harvest waterfall put their own record id in
+          # 001 -- a K10plus PPN (003 DE-627), an LC, LIBRIS or SIRSI id, an Alma MMS
+          # id -- and a short one used to pass the digit-count guard below.
+          OPTIONAL {
+            ?record fx:anySlot ?cf003 .
+            ?cf003 a marc:controlfield ; xyz:tag "003" ; rdf:_1 ?control_source_raw .
+          }
+
+          # The record's first 035 $a "(OCoLC)..." (#222), the OCLC number to use
+          # when 001 is not one. A record can carry several -- merged or related
+          # WorldCat records -- and the first, in field order, is the one the
+          # cataloguer gave as the record's own. Read in a sub-SELECT over this one
+          # record's small graph so it adds no rows to the group above; MIN over a
+          # key that starts with the zero-padded field and subfield positions picks
+          # the first.
+          # Positions come from the slot IRI by STRAFTER, as fx:cardinal fails here.
+          OPTIONAL {
+            SELECT (MIN(?oclc035_k) AS ?oclc035_key) WHERE {
+              ?r035 fx:anySlot ?df035 .
+              ?df035 a marc:datafield ; xyz:tag "035" .
+              ?df035 fx:anySlot ?sf035a .
+              ?sf035a xyz:code "a" ; rdf:_1 ?oclc035_raw .
+              FILTER(REGEX(?oclc035_raw, "^\\s*\\(OCoLC\\)\\D*\\d"))
+              ?r035 ?slot035 ?df035 .
+              ?df035 ?sfslot035 ?sf035a .
+              BIND(CONCAT("00000", STRAFTER(STR(?slot035), "#_")) AS ?pos035)
+              BIND(CONCAT("00000", STRAFTER(STR(?sfslot035), "#_")) AS ?sfpos035)
+              BIND(CONCAT(SUBSTR(?pos035, STRLEN(?pos035) - 4), " ",
+                          SUBSTR(?sfpos035, STRLEN(?sfpos035) - 4), " ",
+                          REPLACE(?oclc035_raw, "^\\s*\\(OCoLC\\)\\D*(\\d+)[\\s\\S]*$", "$1")) AS ?oclc035_k)
+            }
+          }
+          BIND(REPLACE(?oclc035_key, "^\\S+ \\S+ ", "") AS ?oclc035_x)
 
           # Primary language from MARC 008 positions 35-37.
           OPTIONAL {
@@ -963,18 +1000,29 @@ WHERE {
       AS ?language041
     )
 
-    # WorldCat link + OCLC identifier, from the 001 number sampled above. Extract
-    # the first run of digits (dropping the on/ocn/ocm prefix, any trailing suffix
-    # such as "wcm"/"wcmasp", and leading zeros), then guard: only treat the 001
-    # as an OCLC number when it carries an OCLC prefix (on/ocn/ocm) or that digit
-    # run is at most 10 digits. A longer bare 001 is a local system id (e.g. an
-    # Ex Libris Alma MMS id), not an OCLC number, so a worldcat.org/oclc/ link
-    # minted from it would 404 (#51). Both ?worldcat_url and ?bookOCLCNum stay
-    # unbound (guarded) for a non-OCLC 001.
-    BIND(REPLACE(REPLACE(?control_number, "^\\D*(\\d+).*$", "$1"), "^0+", "") AS ?oclc_raw)
+    # WorldCat link + OCLC identifier (#51, #222). The 001 is an OCLC number
+    # only when it carries an OCLC prefix (on/ocn/ocm) or the 003 says OCoLC:
+    # most servers in the harvest waterfall put their own record id there (a
+    # K10plus PPN, an LC, LIBRIS or SIRSI id, an Alma MMS id), and reading the
+    # first digit run of a short one used to link to an unrelated WorldCat
+    # record, or to a mangled number (a PPN's check digit dropped,
+    # "4mvgbx3t2l8j1mcg" read as OCLC 4). Otherwise the record's first 035
+    # "(OCoLC)" $a is used. Either way the number is the first digit run, without
+    # prefix, suffix ("wcm"/"wcmasp") or leading zeros, and at most 10 digits:
+    # a longer one is a local id whose link would 404. The COALESCEs keep an
+    # absent 001 or 003 from erroring the test before the 035 is tried. Every
+    # variable minted from ?oclc_number stays unbound for a record with no OCLC
+    # number, so no dangling /oclc node is minted.
+    BIND(REPLACE(REPLACE(?control_number, "^\\D*(\\d+).*$", "$1"), "^0+", "") AS ?oclc001_raw)
+    BIND(REPLACE(?oclc035, "^0+", "") AS ?oclc035_num)
     BIND(
-      IF(REGEX(?control_number, "^(on|ocn|ocm)", "i") || REGEX(?oclc_raw, "^[0-9]{1,10}$"),
-         ?oclc_raw, ?sentinel)
+      IF(COALESCE(
+           (COALESCE(REGEX(?control_number, "^\\s*(on|ocn|ocm)", "i"), false)
+              || COALESCE(REPLACE(?control_source, "\\s", "") = "OCoLC", false))
+           && REGEX(?oclc001_raw, "^[0-9]{1,10}$"),
+           false),
+         ?oclc001_raw,
+         IF(COALESCE(REGEX(?oclc035_num, "^[0-9]{1,10}$"), false), ?oclc035_num, ?sentinel))
       AS ?oclc_number
     )
     BIND(IF(BOUND(?oclc_number), IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)), ?sentinel) AS ?worldcat_url)

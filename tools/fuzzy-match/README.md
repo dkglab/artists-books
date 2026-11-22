@@ -16,9 +16,19 @@ frozen citation graph.
 - **`freeze_citations.py`** builds the frozen `sources/citations.ttl` — one
   `ab:Citation` per (reference work, artist's book) against the canonical URIs.
 - **`oclc_review.py`** + **`oclc-groups.rq`** build
-  `sources/artists-books-oclc-review.csv` (#70): the book nodes in the built
-  graph that share an OCLC number, with Zotero and MARC context for review. They
-  use only the standard library and Jena's `arq`, not the venv.
+  `sources/artists-books-oclc-review.csv` (#70): groups of book nodes that may
+  be one work, with Zotero and MARC context for review. A group is either books
+  that share an OCLC number in the built graph, or (#222) books whose MARC is
+  the same catalogue record, by harvest server and `001`, where that `001` is
+  the catalogue's own id rather than an OCLC number (group id
+  `rec.<server>.<001>`). They use only the standard library and Jena's `arq`,
+  not the venv.
+- **`marc_oclc.py`** is the Python copy of the construct queries' OCLC rule
+  (#222): the `001` is an OCLC number only with an `on`/`ocn`/`ocm` prefix or
+  an `OCoLC` `003`, else the first `035 $a (OCoLC)…`, at most 10 digits.
+  `oclc_review.py` uses it to name a record group and link its record. If you
+  change the rule, change `queries/artists-books.rq`,
+  `queries/reference-works.rq` and this file together.
 
 Fuzzy matching uses [`rapidfuzz`](https://pypi.org/project/rapidfuzz/), installed
 into an isolated venv here. Everything except this
@@ -37,7 +47,7 @@ gitignored.
 make -C tools/fuzzy-match                 # build the venv (one time)
 make -C sources artists-books.csv         # run the dedup (also emits reference-works.csv + review)
 make -C sources -B citations.ttl          # freeze the citation graph
-make -C sources -B artists-books-oclc-review.csv   # shared-OCLC review sheet (needs graph/artists-books.ttl)
+make -C sources -B artists-books-oclc-review.csv   # shared-OCLC/record review sheet (needs graph/artists-books.ttl)
 ```
 
 Each script prints a coverage/summary report to stderr.

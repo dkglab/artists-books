@@ -223,10 +223,10 @@ const XTRACK_CHOICES = [
   ["reference", "Not an artist's book", "3"],
   ["unsure", "Unsure", "4"],
 ];
-const QUEUES = [["dedup", "Title matches", "pairs"], ["oclc", "Shared OCLC numbers", "groups"], ["xtrack", "In both lists", "pairs"]];
+const QUEUES = [["dedup", "Title matches", "pairs"], ["oclc", "Shared OCLC or record", "groups"], ["xtrack", "In both lists", "pairs"]];
 const LABEL = { same: "Same", no: "Different", "wrong-marc": "Wrong MARC", unsure: "Unsure", both: "Both", reference: "Reference only" };
-const SIGNAL = { sourceKey: "linked in Zotero", isbn: "same ISBN", oclc: "same OCLC number", title: "same title and creator" };
-const KEY_TAGS = new Set(["001", "020", "100", "110", "245", "250", "260", "264", "300", "999"]);
+const SIGNAL = { sourceKey: "linked in Zotero", isbn: "same ISBN", oclc: "same OCLC number", record: "same catalogue record", title: "same title and creator" };
+const KEY_TAGS = new Set(["001", "003", "020", "035", "100", "110", "245", "250", "260", "264", "300", "999"]);
 
 const store = {
   get(k) { try { return localStorage.getItem("abdr." + k); } catch { return null; } },
@@ -271,7 +271,7 @@ function statusOf(queue, it) {
 function isDone(st) { return st !== "todo" && st !== "partial"; }
 function haystack(queue, it) {
   if (it._hay) return it._hay;
-  const parts = [it.id];
+  const parts = [it.id, it.label];
   const recs = paired(queue) ? it.sides : it.nodes;
   for (const r of recs) parts.push(r.key, r.zot.title, r.zot.creators);
   return (it._hay = parts.join(" ").toLowerCase());
@@ -399,7 +399,7 @@ function renderList() {
     const meta = q === "dedup"
       ? `${(it.conf * 100).toFixed(0)}% · ${it.sides[0].key} ↔ ${it.sides[1].key}`
       : q === "xtrack" ? `${it.sides[0].key} ↔ ${it.sides[1].key} · ${it.signals.length} signal${it.signals.length === 1 ? "" : "s"}`
-      : `#${it.n} · OCLC ${it.id} · ${it.nodes.length} books${it.hint === "title-differs" ? " · titles differ" : ""}`;
+      : `#${it.n} · ${it.label} · ${it.nodes.length} books${it.hint === "title-differs" ? " · titles differ" : ""}`;
     const others = peersOn(docId(q, it.id));
     const row = h("div", {
       class: "row", role: "listitem", tabindex: "0", "data-id": it.id,
@@ -511,7 +511,7 @@ function renderDetail() {
   const head = h("div", { class: "detail-head" },
     h("span", { class: "eyebrow" }, q === "dedup" ? `Fuzzy title match · ${(it.conf * 100).toFixed(0)}% confidence`
       : q === "xtrack" ? "Artists' book and reference work · " + it.signals.map((x) => SIGNAL[x] || x).join(", ")
-      : `Group ${it.n} · OCLC ${it.id}`),
+      : `Group ${it.n} · ${it.label}`),
     h("h2", {}, titleOf(q, it)),
     others.length ? h("span", { class: "also" }, others.map((id) => avatarFor(id, true)), (others.map((id) => S.profiles[id]?.name || "Someone").join(", ")) + " also looking at this") : null);
   box.replaceChildren(head, q === "dedup" ? dedupBody(it, d) : q === "xtrack" ? xtrackBody(it, d) : oclcBody(it, d));
@@ -546,7 +546,10 @@ function oclcBody(it, d) {
     extraRow: [n.match.method, n.match.server, n.match.on].filter(Boolean).join(" · "),
   }));
   const hint = h("div", { class: "hintbox" },
-    "These books all carry OCLC ", h("a", { href: "https://www.worldcat.org/oclc/" + it.id, target: "_blank", rel: "noopener" }, it.id + " ↗"),
+    // #222: a group shares an OCLC number, or (kind "record") its books' MARC
+    // is one catalogue's own record, by its 001, with no OCLC number to share.
+    it.kind === "record" ? "These books were all matched to the same catalogue record, " : "These books all carry ",
+    it.url ? h("a", { href: it.url, target: "_blank", rel: "noopener" }, it.label + " ↗") : h("span", { class: "mono" }, it.label),
     ". Mark each one ", h("b", {}, "Same"), " if it duplicates the others, ", h("b", {}, "Distinct"), " if it is a different volume, edition or set member, or ",
     h("b", {}, "Wrong MARC"), " if it is a different book whose MARC record is someone else's (check the 245 and the match row: title-author matches are the loosest).");
   const decide = decidePanel("oclc", it, d);

@@ -1,5 +1,7 @@
-# Every ab:ArtistsBook whose OCLC number (from MARC 001, #51) is shared with at
-# least one other book node -- the duplicates the canonical dedup missed (#70).
+# Every ab:ArtistsBook whose OCLC number (from an OCLC MARC 001, else the first
+# (OCoLC) 035: #51, #222) is shared with at least one other book node -- the
+# duplicates the canonical dedup missed (#70). oclc_review.py adds the books
+# that share a catalogue's own record id in 001, which the graph doesn't carry.
 # Run by `make -C sources artists-books-oclc-review.csv` against the built
 # graph/artists-books.ttl; oclc_review.py turns the rows into the review sheet.
 PREFIX ab:  <https://dkglab.github.io/ns/artists-books/>

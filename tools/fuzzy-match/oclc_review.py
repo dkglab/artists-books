@@ -4,13 +4,25 @@
 The canonical dedup (dedup.py, #82) merges on Zotero sameAs/ISBN/title+author
 and fuzzy titles, but not on the OCLC number, which only arrives later with the
 MARC harvest. So some works still mint two or three ab:ArtistsBook nodes that
-share one MARC 001. oclc-groups.rq lists those nodes from the built graph; this
-script lays each group out with its Zotero and MARC context for a person to
-decide.
+match one catalogue record. Each group of them is one of two kinds:
 
-A shared OCLC number is not always a duplicate. The harvest's title-author
-search sometimes matches a book to the wrong record, so two distinct books end
-up carrying the same 001. The decision vocabulary therefore has four values:
+  oclc    the books share an OCLC number. oclc-groups.rq lists them from the
+          built graph, which reads it from an OCLC 001, else the first
+          (OCoLC) 035 (#222).
+  record  the books' MARC records are the same catalogue record, by server and
+          001, where that 001 is the catalogue's own record id (a K10plus PPN,
+          an LC or Alma id) rather than an OCLC number. Read from the MARC
+          directory. A record group that overlaps one oclc group is folded
+          into it (its other books join that group), so no book is reviewed
+          under two groups.
+
+Its id, the groupId column, is the OCLC number or "rec.<server>.<001>"; the
+review page files its decision under "oclc.<groupId>". This script lays each
+group out with its Zotero and MARC context for a person to decide.
+
+A shared record is not always a duplicate. The harvest's title-author search
+sometimes matches a book to the wrong record, so two distinct books end up
+carrying the same one. The decision vocabulary therefore has four values:
 
   same        a duplicate of the group's other node(s): merge
   no          a distinct work that legitimately shares the record (volume,
@@ -20,7 +32,7 @@ up carrying the same 001. The decision vocabulary therefore has four values:
   unsure      needs another signal
 
 The sheet (--out) is GENERATED and overwritten on every run. The decisions
-live in the hand-owned overlay (--decisions), keyed by (oclc, canonicalKey),
+live in the hand-owned overlay (--decisions), keyed by (groupId, canonicalKey),
 and are joined into the sheet read-only, the same split as
 artists-books-dedup-review.csv / artists-books-dedup-decisions.csv. Pass
 --seed-decisions to create the overlay with a blank row per node; it refuses
@@ -33,12 +45,14 @@ import re
 import sys
 import unicodedata
 import xml.etree.ElementTree as ET
-from collections import Counter, OrderedDict
+from collections import Counter, OrderedDict, defaultdict
+
+from marc_oclc import record_id, record_url
 
 NS = {"m": "http://www.loc.gov/MARC21/slim"}
 DECISIONS = {"", "same", "no", "wrong-marc", "unsure"}
-DECISION_COLS = ["oclc", "canonicalKey", "zoteroTitle", "decision", "notes"]
-COLS = ["group", "oclc", "hint", "canonicalKey", "held", "zoteroTitle", "zoteroDate",
+DECISION_COLS = ["groupId", "canonicalKey", "zoteroTitle", "decision", "notes"]
+COLS = ["group", "groupId", "groupKind", "groupUrl", "hint", "canonicalKey", "held", "zoteroTitle", "zoteroDate",
         "zoteroCreators", "zoteroPublisher", "callNumber", "marcTitle", "marcCreator",
         "marcEdition", "marcImprint", "marcExtent", "matchMethod", "matchServer",
         "matchedOn", "sourceKeys", "url", "decision", "notes"]
@@ -55,6 +69,43 @@ def read_groups(path):
             oclc, key = (v.strip().strip('"') for v in line.rstrip("\n").split("\t")[:2])
             groups.setdefault(oclc, []).append(key)
     return groups
+
+
+def record_groups(marc_dir, keys, oclc_groups):
+    """{groupId: (url, [key, ...])} for books sharing one catalogue record.
+
+    A record group that overlaps one oclc group is folded into it: its other
+    books are appended to that group's list in place, so every book has one
+    decision row, not one under each group. (A group all of whose books are in
+    the oclc group already adds nothing.) One that overlaps several oclc groups
+    is kept as its own group, with a warning that its books are under two."""
+    by_rec, url = defaultdict(list), {}
+    for k in sorted(keys):
+        path = os.path.join(marc_dir, f"{k}.xml")
+        rec = ET.parse(path).getroot().find("m:record", NS) if os.path.exists(path) else None
+        rid = record_id(rec) if rec is not None else None
+        if rid:
+            by_rec[rid].append(k)
+            url.setdefault(rid, record_url(rec))
+    in_oclc = {k: o for o, ks in oclc_groups.items() for k in ks}
+    out, owner = OrderedDict(), {}
+    for (src, c001), ks in sorted(by_rec.items()):
+        if len(ks) < 2:
+            continue
+        hit = sorted({in_oclc[k] for k in ks if k in in_oclc})
+        if len(hit) == 1:
+            oclc_groups[hit[0]].extend(k for k in ks if k not in in_oclc)
+            in_oclc.update((k, hit[0]) for k in ks)
+            continue
+        if hit:
+            print(f"  warning: record {src}/{c001} spans oclc groups {', '.join(hit)}; "
+                  "its books get a decision row under each", file=sys.stderr)
+        gid = ".".join(["rec"] + [re.sub(r"[^A-Za-z0-9_-]", "_", x) for x in (src, c001)])
+        if gid in owner:  # the sanitizing folded two distinct records together
+            sys.exit(f"records {owner[gid]} and {(src, c001)} both map to groupId {gid}")
+        owner[gid] = (src, c001)
+        out[gid] = (url[(src, c001)], ks)
+    return out
 
 
 def subfields(rec, tag, codes):
@@ -98,7 +149,7 @@ def load_decisions(path):
             d = (r.get("decision") or "").strip()
             if d not in DECISIONS:
                 print(f"  warning: {path}:{n}: unknown decision {d!r}", file=sys.stderr)
-            out[(r["oclc"], r["canonicalKey"])] = (d, r.get("notes") or "")
+            out[(r["groupId"], r["canonicalKey"])] = (d, r.get("notes") or "")
     return out
 
 
@@ -113,20 +164,25 @@ def main():
                     help="create --decisions with a blank row per node (never overwrites)")
     args = ap.parse_args()
 
-    groups = read_groups(args.groups)
     with open(args.books, newline="", encoding="utf-8") as f:
         books = {r["canonicalKey"]: r for r in csv.DictReader(f)}
+    oclc_groups = read_groups(args.groups)
+    rec_groups = record_groups(args.marc, books, oclc_groups)  # may extend oclc_groups
+    groups = OrderedDict(
+        [(o, ("oclc", f"https://www.worldcat.org/oclc/{o}", ks)) for o, ks in oclc_groups.items()]
+        + [(gid, ("record", url, ks)) for gid, (url, ks) in rec_groups.items()])
     decisions = load_decisions(args.decisions)
 
     rows = []
-    for g, (oclc, keys) in enumerate(groups.items(), 1):
+    for g, (gid, (kind, url, keys)) in enumerate(groups.items(), 1):
         hint = ("same-title" if len({norm_title(books[k]["title"]) for k in keys}) == 1
                 else "title-differs")
         for k in keys:
             b = books[k]
-            decision, notes = decisions.get((oclc, k), ("", ""))
+            decision, notes = decisions.get((gid, k), ("", ""))
             rows.append({
-                "group": g, "oclc": oclc, "hint": hint, "canonicalKey": k,
+                "group": g, "groupId": gid, "groupKind": kind, "groupUrl": url,
+                "hint": hint, "canonicalKey": k,
                 "held": b["held"], "zoteroTitle": b["title"], "zoteroDate": b["date"],
                 "zoteroCreators": b["creators"], "zoteroPublisher": b["publisher"],
                 "callNumber": b["callNumber"], "sourceKeys": b["sourceKeys"],
@@ -139,7 +195,7 @@ def main():
         w.writeheader()
         w.writerows(rows)
 
-    current = {(r["oclc"], r["canonicalKey"]) for r in rows}
+    current = {(r["groupId"], r["canonicalKey"]) for r in rows}
     if args.seed_decisions:
         if os.path.exists(args.decisions):
             sys.exit(f"{args.decisions} exists; refusing to overwrite hand-owned decisions")
@@ -155,12 +211,14 @@ def main():
             print(f"  {len(missing)} node(s) not in {args.decisions} yet; add them by hand: "
                   + ", ".join(sorted(f"{o}/{k}" for o, k in missing)), file=sys.stderr)
         if stale:
-            print(f"  {len(stale)} decision row(s) no longer in a shared-OCLC group: "
+            print(f"  {len(stale)} decision row(s) no longer in a shared-OCLC or record group: "
                   + ", ".join(sorted(f"{o}/{k}" for o, k in stale)), file=sys.stderr)
 
     hints = Counter({r["group"]: r["hint"] for r in rows}.values())
+    kinds = Counter(kind for kind, _, _ in groups.values())
     done = Counter(r["decision"] for r in rows)
-    print(f"  {len(groups)} shared-OCLC groups, {len(rows)} nodes "
+    print(f"  {len(groups)} groups ({kinds['oclc']} shared OCLC, {kinds['record']} same record), "
+          f"{len(rows)} nodes "
           f"({hints['same-title']} same-title, {hints['title-differs']} title-differs); "
           f"decisions: {dict(done)}", file=sys.stderr)
 
