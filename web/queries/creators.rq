@@ -20,7 +20,7 @@ SELECT
   # agent's agentKey from agents.csv (LC name-authority id, else a name slug):
   # 1:1 with the agent URI and URL-safe. The agent node doesn't carry it, but
   # it ends every contribution URI the construct queries mint
-  # (…/item/<book>/contribution/<agentKey>), so it is read back from there.
+  # (…/work/<book>/contribution/<agentKey>), so it is read back from there.
   ?creatorKey
   ?label
   # The label's first letter, for the index's A–Z sections (see ?sortKey).

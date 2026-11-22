@@ -22,7 +22,7 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 #
 # Each reference work is the node + its own BIBFRAME bib metadata, mirroring the
 # shape the artists' books get in artists-books.rq but typed ab:ReferenceWork and
-# minted under reference/<canonicalKey>. The collection is heterogeneous
+# minted under work/<canonicalKey>, the URI space the artists' books share (#113). The collection is heterogeneous
 # (book + journalArticle + webpage), so ab:ReferenceWork is a subclass of
 # schema:CreativeWork (docs/vocab.ttl). Most fields come from
 # sources/reference-works.csv (the canonical RW list from the Phase-0 dedup);
@@ -87,11 +87,11 @@ WHERE {
     # Mint the reference-work URI. Its publication statement (publisher, date,
     # place, from MARC 264/260 + 008 with this CSV as the fallback) is built
     # by queries/publications.rq, shared with the artists' books (#21).
-    BIND(fx:entity(ab:, "reference/", ?canonical_key) AS ?ref)
+    BIND(fx:entity(ab:, "work/", ?canonical_key) AS ?ref)
     OPTIONAL { ?refRow xyz:language ?language }
 
     OPTIONAL { ?refRow xyz:ISBN ?ISBN }
-    BIND(fx:entity(ab:, "reference/", ?canonical_key, "/identifier") AS ?isbnNode)
+    BIND(fx:entity(ab:, "work/", ?canonical_key, "/identifier") AS ?isbnNode)
     BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?refISBN)
   }
 
@@ -205,7 +205,7 @@ WHERE {
       AS ?oclc_number
     )
     BIND(IF(BOUND(?oclc_number), IRI(CONCAT("https://www.worldcat.org/oclc/", ?oclc_number)), ?sentinel) AS ?worldcat_url)
-    BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "reference/", ?canonical_key, "/oclc"), ?sentinel) AS ?refOCLCNum)
+    BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "work/", ?canonical_key, "/oclc"), ?sentinel) AS ?refOCLCNum)
 
     # Creator identity (#170), looked up in the same corpus-wide table
     # artists-books.rq reads (sources/creators/agents.csv, rows with source
@@ -227,7 +227,7 @@ WHERE {
         BIND(IRI(?agent_uri) AS ?creator)
       }
     }
-    BIND(IF(BOUND(?creator_key), fx:entity(ab:, "reference/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
+    BIND(IF(BOUND(?creator_key), fx:entity(ab:, "work/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
 
     # Map the relator term to its LC relator URI, falling back to a minted
     # ab:role/ URI. Joined via FILTER on a separate key variable so an unbound

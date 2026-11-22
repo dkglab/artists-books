@@ -62,11 +62,11 @@ flag), *not* as a distinct held-books graph.
 
 ### URI consequences
 
-Minted URIs use the canonical key: `…/item/<canonicalKey>` for artists' books,
-`…/reference/<canonicalKey>` for reference works (see CLAUDE.md "URI minting").
+Minted URIs use the canonical key: `…/work/<canonicalKey>` for artists' books and
+reference works alike, since a work can be both (#113; see CLAUDE.md "URI minting").
 
 - **Reference works are unaffected.** The `Reference resources` collection (157)
-  lives in **lib 3**, so `…/reference/<itemKey>` URIs already use lib-3 keys.
+  lives in **lib 3**, so reference-work URIs already use lib-3 keys.
 - **Artists'-book URIs migrate.** The site historically built from lib 1, so
   today's book URIs carry **lib-1** keys. Under lib-3-precedence the ~1,051 held
   books that also exist in a group library move to their **lib-3** (or lib-2)
@@ -172,7 +172,7 @@ paragraph, resolves **both ends to their canonical URI**:
 Page numbers come straight from the note markup (#43/#44): a page inside
 `<strong>` is an image of the book (`ab:imagesOnPageNumber`), the rest are
 passing mentions (`ab:onPageNumber`). Each citation is
-`reference/<refKey>/citation/<bookKey>` with `ab:citedBy`, `ab:cites`, an
+`work/<refKey>/citation/<bookKey>` with `ab:citedBy`, `ab:cites`, an
 `rdfs:label` (the verbatim reference string), and its page triples — the same
 shape the old construct query emitted, now against canonical keys and with pages.
 

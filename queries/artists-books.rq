@@ -204,8 +204,9 @@ WHERE {
     OPTIONAL { ?bookRow xyz:title ?zotero_title }
 
     # Mint new book URIs from the canonical key. Citations (sources/citations.ttl)
-    # target these same item/<canonicalKey> URIs.
-    BIND(fx:entity(ab:, "item/", ?canonical_key) AS ?book)
+    # target these same work/<canonicalKey> URIs, the URI space the reference
+    # works share (#113).
+    BIND(fx:entity(ab:, "work/", ?canonical_key) AS ?book)
 
     # Sloane holdings flag (#82): the ~1,300 works UNC physically holds (and has
     # images of). Non-held rows carry an empty cell -> null -> ?held_raw unbound
@@ -215,7 +216,7 @@ WHERE {
 
     OPTIONAL { ?bookRow xyz:language ?zotero_language }
     OPTIONAL { ?bookRow xyz:ISBN ?ISBN }
-    BIND(fx:entity(ab:, "item/", ?canonical_key, "/identifier") AS ?isbnNode)
+    BIND(fx:entity(ab:, "work/", ?canonical_key, "/identifier") AS ?isbnNode)
     BIND(IF(BOUND(?ISBN), ?isbnNode, ?sentinel) AS ?bookISBN)
   }
 
@@ -1070,12 +1071,12 @@ WHERE {
     # guarded so a book with no MARC match emits no dangling node). For a book
     # that never matched MARC the whole OPTIONAL contributes nothing, so these
     # stay unbound and no triple is emitted.
-    BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "item/", ?canonical_key, "/oclc"), ?sentinel) AS ?bookOCLCNum)
-    BIND(IF(BOUND(?extent), fx:entity(ab:, "item/", ?canonical_key, "/extent"), ?sentinel) AS ?bookExtent)
-    BIND(IF(BOUND(?language_note), fx:entity(ab:, "item/", ?canonical_key, "/language-note"), ?sentinel) AS ?languageNote)
-    BIND(IF(BOUND(?summary), fx:entity(ab:, "item/", ?canonical_key, "/summary"), ?sentinel) AS ?bookSummary)
+    BIND(IF(BOUND(?oclc_number), fx:entity(ab:, "work/", ?canonical_key, "/oclc"), ?sentinel) AS ?bookOCLCNum)
+    BIND(IF(BOUND(?extent), fx:entity(ab:, "work/", ?canonical_key, "/extent"), ?sentinel) AS ?bookExtent)
+    BIND(IF(BOUND(?language_note), fx:entity(ab:, "work/", ?canonical_key, "/language-note"), ?sentinel) AS ?languageNote)
+    BIND(IF(BOUND(?summary), fx:entity(ab:, "work/", ?canonical_key, "/summary"), ?sentinel) AS ?bookSummary)
     BIND(IF(BOUND(?original_language_code), IRI(CONCAT("http://id.loc.gov/vocabulary/languages/", ?original_language_code)), ?sentinel) AS ?originalLanguage)
-    BIND(IF(BOUND(?original_language_code), fx:entity(ab:, "item/", ?canonical_key, "/original-language"), ?sentinel) AS ?originalLanguageNote)
+    BIND(IF(BOUND(?original_language_code), fx:entity(ab:, "work/", ?canonical_key, "/original-language"), ?sentinel) AS ?originalLanguageNote)
     # A name/title row (#32) binds a creator too: that agent made the related
     # work, so it is credited there. (A contained work's creator, ind2 2, also
     # has a creator-branch row of the same field, which credits the book.)
@@ -1083,7 +1084,7 @@ WHERE {
     # own ?name_title flag, not on ?creator_name: the agents.csv join above
     # treats a row's unbound ?ctag/?creator_name as a wildcard, so a 740 or
     # 856 row can come out of it with a creator bound.
-    BIND(IF(BOUND(?creator_key) && !BOUND(?name_title), fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
+    BIND(IF(BOUND(?creator_key) && !BOUND(?name_title), fx:entity(ab:, "work/", ?canonical_key, "/contribution/", ?creator_key), ?sentinel) AS ?contribution)
     # Related works (740, 730 and 7xx name/title, #32) are deliberately scoped per
     # book and left unreconciled for now: the same title on two books is two
     # bf:Work nodes, and one matching a book already in the collection is not
@@ -1110,8 +1111,8 @@ WHERE {
         BIND(true AS ?v740_hit)
       }
     }
-    BIND(IF(BOUND(?v740_hit), fx:entity(ab:, "item/", ?canonical_key, "/variant-title/", SHA256(CONCAT(?related_title, "|", COALESCE(?v740_type, "")))), ?sentinel) AS ?variant740Title)
-    BIND(IF(BOUND(?related_title) && !BOUND(?v740_hit), fx:entity(ab:, "item/", ?canonical_key, "/related-work/", SHA256(IF(BOUND(?name_title), CONCAT(?creator_name, "|", ?related_title), STR(?related_title)))), ?sentinel) AS ?relatedWork)
+    BIND(IF(BOUND(?v740_hit), fx:entity(ab:, "work/", ?canonical_key, "/variant-title/", SHA256(CONCAT(?related_title, "|", COALESCE(?v740_type, "")))), ?sentinel) AS ?variant740Title)
+    BIND(IF(BOUND(?related_title) && !BOUND(?v740_hit), fx:entity(ab:, "work/", ?canonical_key, "/related-work/", SHA256(IF(BOUND(?name_title), CONCAT(?creator_name, "|", ?related_title), STR(?related_title)))), ?sentinel) AS ?relatedWork)
     # The relation (#32) hangs off the related work's own URI, which is already
     # per book, and is keyed by its relationship too: one work can be the
     # target of two designators (Oe's "Map" is entered both as a contained
@@ -1129,7 +1130,7 @@ WHERE {
     # Variant titles (#20), scoped per book like the related works. Hashed on the
     # label *and* the kind, so a title that appears both on the cover and on the
     # spine is two nodes, each with one bf:variantType.
-    BIND(IF(BOUND(?variant_label), fx:entity(ab:, "item/", ?canonical_key, "/variant-title/", SHA256(CONCAT(?variant_label, "|", COALESCE(?variant_type, "")))), ?sentinel) AS ?variantTitle)
+    BIND(IF(BOUND(?variant_label), fx:entity(ab:, "work/", ?canonical_key, "/variant-title/", SHA256(CONCAT(?variant_label, "|", COALESCE(?variant_type, "")))), ?sentinel) AS ?variantTitle)
   }
 
   # The title (#11, #20) comes from MARC 245 where the book has a record, and
@@ -1138,7 +1139,7 @@ WHERE {
   # carries the same 245, so this never yields two labels for one book.
   BIND(COALESCE(?marc_title, ?zotero_title) AS ?title)
   BIND(COALESCE(?marc_main_title, ?zotero_title) AS ?main_title)
-  BIND(fx:entity(ab:, "item/", ?canonical_key, "/title") AS ?bookTitle)
+  BIND(fx:entity(ab:, "work/", ?canonical_key, "/title") AS ?bookTitle)
   # A group filter, so it runs after every OPTIONAL: it only drops a book with
   # neither a MARC nor a Zotero title.
   FILTER(BOUND(?title))
@@ -1177,7 +1178,7 @@ WHERE {
       # Empty cells arrive as "" (no csv.null-string here), so test the value.
       BIND(IF(COALESCE(?z_primary, "") = "y", bflc:PrimaryContribution, bf:Contribution) AS ?zoteroContributionType)
       BIND(IF(COALESCE(?z_role_uri, "") != "", IRI(?z_role_uri), ?sentinel) AS ?zoteroRole)
-      BIND(fx:entity(ab:, "item/", ?canonical_key, "/contribution/", ?z_key) AS ?zoteroContribution)
+      BIND(fx:entity(ab:, "work/", ?canonical_key, "/contribution/", ?z_key) AS ?zoteroContribution)
     }
   }
 
@@ -1292,7 +1293,7 @@ WHERE {
                   xyz:height        ?src_height_raw ;
                   xyz:imageViewType ?src_view_raw .
       }
-      BIND(fx:entity(ab:, "item/", ?canonical_key, "/image/", ?ssid) AS ?sourceImage)
+      BIND(fx:entity(ab:, "work/", ?canonical_key, "/image/", ?ssid) AS ?sourceImage)
       BIND(xsd:integer(?src_width_raw) AS ?src_width)
       BIND(xsd:integer(?src_height_raw) AS ?src_height)
       BIND(STRDT(CONCAT("https://www.jstor.org", ?src_iiif_path, "/full/,1200/0/default.jpg"), xsd:anyURI) AS ?src_url)
@@ -1348,7 +1349,7 @@ WHERE {
           }
         }
       }
-      BIND(fx:entity(ab:, "item/", ?canonical_key, "/thumbnail") AS ?thumbnail)
+      BIND(fx:entity(ab:, "work/", ?canonical_key, "/thumbnail") AS ?thumbnail)
       BIND(xsd:integer(?thumb_width_raw) AS ?thumb_width)
       BIND(xsd:integer(?thumb_height_raw) AS ?thumb_height)
       BIND(STRDT(CONCAT("https://www.jstor.org", ?thumb_iiif_path, "/full/,300/0/default.jpg"), xsd:anyURI) AS ?thumb_url)
