@@ -15,7 +15,8 @@ Save the collection first (Claude: ArtifactData `list` of `decisions` with
 
   python3 tools/review-app/pull_decisions.py <out_dir>/decisions
 
-Only rows with a document are touched; the page is the source of truth for
+Only rows with a document are touched (plus a new cross-track row for a pair
+that is in cross-track-review.csv but not yet in the overlay); the page is the source of truth for
 those, including a decision someone cleared. Other columns and row order are
 kept. Prints what changed.
 """
@@ -28,6 +29,7 @@ import sys
 DEDUP = "sources/artists-books-dedup-decisions.csv"
 OCLC = "sources/artists-books-oclc-decisions.csv"
 XTRACK = "sources/cross-track-decisions.csv"
+XTRACK_REVIEW = "sources/cross-track-review.csv"  # for the titles of a new pair's row
 VALID = {"dedup": {"", "same", "no", "unsure"},
          "oclc": {"", "same", "no", "wrong-marc", "unsure"},
          "xtrack": {"", "both", "reference", "no", "unsure"}}
@@ -107,6 +109,27 @@ def main(folder):
             changes.append(f"xtrack {pair}: {r['decision'] or '-'} -> {dec or '-'}"
                            + (" (notes changed)" if r["notes"] != notes else ""))
             r["decision"], r["notes"] = dec, notes
+    # A pair found by a later regeneration of cross-track-review.csv has no
+    # overlay row yet (--seed-decisions runs once), so add one for it here
+    # rather than drop the decision.
+    with open(XTRACK_REVIEW, newline="", encoding="utf-8") as f:
+        review = {f"{r['abKey']}.{r['rwKey']}": r for r in csv.DictReader(f)}
+    for k in sorted(k for k in docs if k.startswith("xtrack.")):
+        pair = k[len("xtrack."):]
+        if pair not in review:
+            continue  # left in docs, so it is warned about below
+        d = docs.pop(k)
+        dec, notes = (d.get("decision") or "").strip(), (d.get("notes") or "").strip()
+        if dec not in VALID["xtrack"]:
+            warnings.append(f"xtrack {pair}: unknown decision {dec!r}, skipped")
+            continue
+        if not (dec or notes):
+            continue
+        rv = review[pair]
+        rows.append({c: "" for c in cols} | {
+            "abKey": rv["abKey"], "rwKey": rv["rwKey"], "abTitle": rv["abTitle"],
+            "rwTitle": rv["rwTitle"], "decision": dec, "notes": notes})
+        changes.append(f"xtrack {pair}: new row, {dec or '-'}" + (" (notes)" if notes else ""))
     save(XTRACK, cols, rows)
 
     for k in sorted(set(docs) - seen):

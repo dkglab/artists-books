@@ -108,8 +108,22 @@ def oclc_of(marc_dir, key):
         return ""
     rec = ET.parse(path).getroot().find("m:record", NS)
     el = rec.find("m:controlfield[@tag='001']", NS) if rec is not None else None
-    m = re.search(r"\d{1,10}", (el.text or "") if el is not None else "")
-    return m.group(0).lstrip("0") if m else ""
+    return oclc_number((el.text or "") if el is not None else "")
+
+
+def oclc_number(control):
+    """The OCLC number in a 001, guarded as in the construct queries
+    (reference-works.rq, #51): the first digit run, leading zeros dropped,
+    accepted only when the 001 has an on/ocn/ocm prefix or the run is at most
+    10 digits. A longer bare 001 is a local system id (an Alma MMS id), and
+    truncating it would make up an OCLC number that two records can share."""
+    m = re.search(r"\d+", control)
+    if not m:
+        return ""
+    raw = m.group(0).lstrip("0")
+    if re.match(r"(on|ocn|ocm)", control, re.I) or len(raw) <= 10:
+        return raw
+    return ""
 
 
 def source_keys(row):
