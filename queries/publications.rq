@@ -99,6 +99,24 @@ WHERE {
       }
     }
   }
+  # A key in both canonical lists is one work, both an artist's book and a
+  # reference work (#113's "both" merge). Both tracks would mint onto its one
+  # work/ URI, and the /publication nodes would take two sets of values with
+  # mismatched group numbers, so such a work is published from the item track
+  # only. The artists'-book keys are read once and hash-joined.
+  OPTIONAL {
+    SELECT ?canonical_key (true AS ?also_book) WHERE {
+      SERVICE <x-sparql-anything:> {
+        fxe:properties
+          fxe:location "sources/artists-books.csv" ;
+          fxe:csv.headers "true" ;
+          .
+        ?bookRow xyz:canonicalKey ?canonical_key .
+      }
+    }
+  }
+  FILTER(?track = "item" || !BOUND(?also_book))
+
   # Then the mechanical cleanup. A date that only says there is none ("N.d.",
   # "[n.d.]") is dropped, as a placeholder publisher is, so nothing is
   # displayed. A Zotero range "1981-1982" (or "1979-80", "1970-") takes the en

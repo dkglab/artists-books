@@ -1088,7 +1088,7 @@ WHERE {
     # Related works (740, 730 and 7xx name/title, #32) are deliberately scoped per
     # book and left unreconciled for now: the same title on two books is two
     # bf:Work nodes, and one matching a book already in the collection is not
-    # yet linked to its item/ URI. The title is hashed rather than slugged
+    # yet linked to its work/ URI. The title is hashed rather than slugged
     # because these titles are long, punctuation-heavy and often non-Latin,
     # which a slug would mangle or collide. A name/title work hashes its
     # creator's $a in too ("name|title"), so two authors' works of one title

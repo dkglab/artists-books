@@ -434,7 +434,10 @@ const FIELDS = [
 ];
 const norm = (s) => (s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "");
 
-function compareTable(cols) {
+// extraRow: one more row under the Zotero fields, labelled extraLabel; with
+// extraDiff its cells are marked when they differ (the OCLC numbers of a
+// cross-track pair; an OCLC group's match methods differ by nature).
+function compareTable(cols, extraLabel = "MARC match", extraDiff = false) {
   const head = h("tr", {}, h("th", {}, ""), cols.map((c) => h("th", {}, c.head, c.sub ? h("span", { class: "sub" }, c.sub) : null)));
   const body = [];
   for (const [f, label] of FIELDS) {
@@ -447,7 +450,9 @@ function compareTable(cols) {
   body.push(h("tr", { class: "linkrow" }, h("th", { scope: "row" }, "Look it up"),
     cols.map((c) => h("td", {}, c.links.filter(Boolean).map(([href, text]) => h("a", { href, target: "_blank", rel: "noopener" }, text))))));
   if (cols.some((c) => c.extraRow)) {
-    body.push(h("tr", {}, h("th", { scope: "row" }, "MARC match"), cols.map((c) => h("td", { class: "mono" }, c.extraRow || "—"))));
+    const differ = extraDiff && new Set(cols.map((c) => c.extraRow || "")).size > 1;
+    body.push(h("tr", {}, h("th", { scope: "row" }, extraLabel),
+      cols.map((c) => h("td", { class: "mono" + (differ ? " diff" : "") + (c.extraRow ? "" : " empty") }, c.extraRow || "—"))));
   }
   return h("div", { class: "cmp-wrap" }, h("table", { class: "cmp" }, h("thead", {}, head), h("tbody", {}, body)));
 }
@@ -556,9 +561,9 @@ function xtrackBody(it, d) {
   const cols = [
     { head: h("span", {}, "In the artists' books", a.held ? h("span", { class: "held" }, "held") : null),
       sub: `${a.key} · cited by ${n(a.citedBy, "reference work", "reference works")}`, zot: a.zot,
-      links: [siteLink(a.key), catLink(a.zot.url)], extraRow: a.oclc ? "OCLC " + a.oclc : "" },
+      links: [siteLink(a.key), catLink(a.zot.url)], extraRow: a.oclc || "" },
     { head: "In the reference works", sub: `${b.key} · cites ${n(b.cites, "artists' book", "artists' books")}`, zot: b.zot,
-      links: [refLink(b), catLink(b.zot.url)], extraRow: b.oclc ? "OCLC " + b.oclc : "" },
+      links: [refLink(b), catLink(b.zot.url)], extraRow: b.oclc || "" },
   ];
   const hint = h("div", { class: "hintbox" },
     "This work is in both lists, so the build treats it as ", h("b", {}, "two works"), ". Choose ",
@@ -570,7 +575,7 @@ function xtrackBody(it, d) {
   const marcs = h("div", { class: "marc-grid" },
     marcBlock(a.marc, "MARC · artists' book", a.marc ? `record ${a.key}` : "No harvested record."),
     marcBlock(b.marc, "MARC · reference work", b.marc ? `record ${b.key}` : "No harvested record."));
-  return h("div", { style: "display:grid;gap:16px;min-width:0" }, decide, hint, compareTable(cols), marcs);
+  return h("div", { style: "display:grid;gap:16px;min-width:0" }, decide, hint, compareTable(cols, "OCLC", true), marcs);
 }
 
 function segFor(choices, current, onPick, small) {

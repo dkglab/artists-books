@@ -77,14 +77,29 @@ def main_title(s):
     return norm_title(re.split(r"\s*[:;]\s*", s or "", maxsplit=1)[0])
 
 
+# A creator naming a body, not a person: its last word ("centre", "gallery",
+# "press") is no surname, and two catalogues from different galleries would
+# share it. Zotero gives no person/body flag, and its body names are often
+# split oddly ("Andi Wrexford Arts Centre McGarry"), so any creator holding
+# one of these words is skipped.
+CORPORATE = re.compile(
+    r"\b(arts|centre|center|gallery|galerie|galleries|museum|musee|library|libraries|"
+    r"bibliotheque|press|editions?|university|universite|college|institute|foundation|"
+    r"society|department|school|ecole|collection|council|association|(?:private|firm))\b")
+NOT_SURNAMES = {"various", "donor", "and", "the"}
+
+
 def surnames(creators):
     """Surname-ish tokens of a '; '-joined Zotero creator string ('First Last')."""
     out = set()
     for c in (creators or "").split(";"):
-        words = re.findall(r"[a-z]+", fold(c))
+        c = fold(c)
+        if CORPORATE.search(c):
+            continue
+        words = re.findall(r"[a-z]+", c)
         if words:
             out.add(words[-1])
-    return {w for w in out if len(w) > 2}
+    return {w for w in out if len(w) > 2 and w not in NOT_SURNAMES}
 
 
 def isbn13(raw):
@@ -208,11 +223,12 @@ def main():
         print(f"warning: decision for {p[0]}/{p[1]} matches no current candidate pair",
               file=sys.stderr)
 
-    cited_by, cites = Counter(), Counter()
-    for r in read_csv(args.citations):
-        if r["status"] == "emitted":
-            cited_by[r["bookKey"]] += 1
-            cites[r["refKey"]] += 1
+    # One per (reference, book) pair, as in the frozen graph: a work cited in
+    # several note paragraphs has several emitted rows but one ab:Citation.
+    cited = {(r["refKey"], r["bookKey"]) for r in read_csv(args.citations)
+             if r["status"] == "emitted"}
+    cited_by = Counter(bk for _, bk in cited)
+    cites = Counter(rk for rk, _ in cited)
 
     with open(args.out, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, COLS, lineterminator="\n")
