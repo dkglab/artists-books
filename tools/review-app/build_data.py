@@ -31,7 +31,8 @@ RW_MARC_DIR = "sources/marc/reference-works-marc"
 # The catalogue a same-record group's 001 belongs to, by harvest server (#222).
 CATALOGUE = {"k10plus": "K10plus", "lc": "Library of Congress", "libris": "LIBRIS",
              "nyarc": "NYARC", "harvard": "Harvard", "getty": "Getty", "clark": "Clark",
-             "emory": "Emory", "psu": "Penn State", "unc": "UNC"}
+             "emory": "Emory", "psu": "Penn State", "unc": "UNC", "scad": "SCAD",
+             "uwmad": "UW-Madison", "ehive": "eHive"}
 
 
 def read_csv(path):

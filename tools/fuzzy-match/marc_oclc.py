@@ -86,7 +86,20 @@ def record_url(rec):
         return f"https://libris.kb.se/bib/{c001}"
     if src == "lc":  # LC's 001 has no public permalink; its 010 LCCN does
         for sf in rec.iterfind("m:datafield[@tag='010']/m:subfield[@code='a']", NS):
-            lccn = re.sub(r"\s", "", sf.text or "")
+            lccn = normalize_lccn(sf.text or "")
             if lccn:
                 return f"https://lccn.loc.gov/{lccn}"
     return ""
+
+
+def normalize_lccn(raw):
+    """An LCCN in LC's normalized form, or "" when it isn't one.
+
+    LC's rules (https://www.loc.gov/marc/lccn-namespace.html): drop blanks and
+    anything from a "/" on (a "//r86" revision suffix), and zero-pad the serial
+    after a hyphen to six digits."""
+    s = re.sub(r"\s", "", raw).split("/")[0].lower()
+    if "-" in s:
+        prefix, _, serial = s.partition("-")
+        s = prefix + serial.zfill(6) if serial.isdigit() else ""
+    return s if re.fullmatch(r"[a-z]{0,3}\d{8,10}", s) else ""

@@ -12,8 +12,9 @@ match one catalogue record. Each group of them is one of two kinds:
   record  the books' MARC records are the same catalogue record, by server and
           001, where that 001 is the catalogue's own record id (a K10plus PPN,
           an LC or Alma id) rather than an OCLC number. Read from the MARC
-          directory; a group is left out when all its books are already in one
-          oclc group.
+          directory. A record group that overlaps one oclc group is folded
+          into it (its other books join that group), so no book is reviewed
+          under two groups.
 
 Its id, the groupId column, is the OCLC number or "rec.<server>.<001>"; the
 review page files its decision under "oclc.<groupId>". This script lays each
@@ -73,8 +74,11 @@ def read_groups(path):
 def record_groups(marc_dir, keys, oclc_groups):
     """{groupId: (url, [key, ...])} for books sharing one catalogue record.
 
-    A group whose books all share one OCLC number already is left out, since
-    the oclc group has them."""
+    A record group that overlaps one oclc group is folded into it: its other
+    books are appended to that group's list in place, so every book has one
+    decision row, not one under each group. (A group all of whose books are in
+    the oclc group already adds nothing.) One that overlaps several oclc groups
+    is kept as its own group, with a warning that its books are under two."""
     by_rec, url = defaultdict(list), {}
     for k in sorted(keys):
         path = os.path.join(marc_dir, f"{k}.xml")
@@ -83,12 +87,24 @@ def record_groups(marc_dir, keys, oclc_groups):
         if rid:
             by_rec[rid].append(k)
             url.setdefault(rid, record_url(rec))
-    covered = [set(ks) for ks in oclc_groups.values()]
-    out = OrderedDict()
+    in_oclc = {k: o for o, ks in oclc_groups.items() for k in ks}
+    out, owner = OrderedDict(), {}
     for (src, c001), ks in sorted(by_rec.items()):
-        if len(ks) > 1 and not any(set(ks) <= c for c in covered):
-            gid = ".".join(["rec"] + [re.sub(r"[^A-Za-z0-9_-]", "_", x) for x in (src, c001)])
-            out[gid] = (url[(src, c001)], ks)
+        if len(ks) < 2:
+            continue
+        hit = sorted({in_oclc[k] for k in ks if k in in_oclc})
+        if len(hit) == 1:
+            oclc_groups[hit[0]].extend(k for k in ks if k not in in_oclc)
+            in_oclc.update((k, hit[0]) for k in ks)
+            continue
+        if hit:
+            print(f"  warning: record {src}/{c001} spans oclc groups {', '.join(hit)}; "
+                  "its books get a decision row under each", file=sys.stderr)
+        gid = ".".join(["rec"] + [re.sub(r"[^A-Za-z0-9_-]", "_", x) for x in (src, c001)])
+        if gid in owner:  # the sanitizing folded two distinct records together
+            sys.exit(f"records {owner[gid]} and {(src, c001)} both map to groupId {gid}")
+        owner[gid] = (src, c001)
+        out[gid] = (url[(src, c001)], ks)
     return out
 
 
@@ -151,10 +167,10 @@ def main():
     with open(args.books, newline="", encoding="utf-8") as f:
         books = {r["canonicalKey"]: r for r in csv.DictReader(f)}
     oclc_groups = read_groups(args.groups)
+    rec_groups = record_groups(args.marc, books, oclc_groups)  # may extend oclc_groups
     groups = OrderedDict(
         [(o, ("oclc", f"https://www.worldcat.org/oclc/{o}", ks)) for o, ks in oclc_groups.items()]
-        + [(gid, ("record", url, ks))
-           for gid, (url, ks) in record_groups(args.marc, books, oclc_groups).items()])
+        + [(gid, ("record", url, ks)) for gid, (url, ks) in rec_groups.items()])
     decisions = load_decisions(args.decisions)
 
     rows = []

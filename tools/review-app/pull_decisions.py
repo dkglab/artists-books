@@ -17,9 +17,10 @@ Save the collection first (Claude: ArtifactData `list` of `decisions` with
 
   python3 tools/review-app/pull_decisions.py <out_dir>/decisions
 
-Only rows with a document are touched (plus a new cross-track row for a pair
-that is in cross-track-review.csv but not yet in the overlay); the page is the source of truth for
-those, including a decision someone cleared. Other columns and row order are
+Only rows with a document are touched (plus a new row for a cross-track pair
+or OCLC-group node that is in its review sheet but not yet in the overlay);
+the page is the source of truth for those, including a decision someone
+cleared. Other columns and row order are
 kept. Prints what changed.
 """
 import csv
@@ -30,6 +31,7 @@ import sys
 
 DEDUP = "sources/artists-books-dedup-decisions.csv"
 OCLC = "sources/artists-books-oclc-decisions.csv"
+OCLC_REVIEW = "sources/artists-books-oclc-review.csv"  # for a new node's row
 XTRACK = "sources/cross-track-decisions.csv"
 XTRACK_REVIEW = "sources/cross-track-review.csv"  # for the titles of a new pair's row
 VALID = {"dedup": {"", "same", "no", "unsure"},
@@ -95,6 +97,28 @@ def main(folder):
             changes.append(f"oclc {r['groupId']}/{r['canonicalKey']}: {r['decision'] or '-'} -> {dec or '-'}"
                            + (" (notes changed)" if r["notes"] != notes else ""))
             r["decision"], r["notes"] = dec, notes
+    # A group or member found by a later regeneration of the review sheet (a
+    # record group's membership moves with every re-harvest, #222) has no
+    # overlay row yet, so add one for each such node rather than drop it.
+    with open(OCLC_REVIEW, newline="", encoding="utf-8") as f:
+        review = {(r["groupId"], r["canonicalKey"]): r for r in csv.DictReader(f)}
+    have = {(r["groupId"], r["canonicalKey"]) for r in rows}
+    for gid, key in sorted(review.keys() - have):
+        d = docs.get("oclc." + gid)
+        if d is None:
+            continue
+        seen.add("oclc." + gid)
+        dec = ((d.get("nodes") or {}).get(key) or "").strip()
+        notes = (d.get("notes") or "").strip()
+        if dec not in VALID["oclc"]:
+            warnings.append(f"oclc {gid}/{key}: unknown decision {dec!r}, skipped")
+            continue
+        if not (dec or notes):
+            continue
+        rows.append({c: "" for c in cols} | {
+            "groupId": gid, "canonicalKey": key,
+            "zoteroTitle": review[(gid, key)]["zoteroTitle"], "decision": dec, "notes": notes})
+        changes.append(f"oclc {gid}/{key}: new row, {dec or '-'}" + (" (notes)" if notes else ""))
     save(OCLC, cols, rows)
 
     cols, rows = load(XTRACK)

@@ -162,7 +162,8 @@ WHERE {
             # WorldCat records -- and the first, in field order, is the one the
             # cataloguer gave as the record's own. Read in a sub-SELECT over this one
             # record's small graph so it adds no rows to the group above; MIN over a
-            # key that starts with the zero-padded field position picks the first.
+            # key that starts with the zero-padded field and subfield positions picks
+            # the first.
             # Positions come from the slot IRI by STRAFTER, as fx:cardinal fails here.
             OPTIONAL {
               SELECT (MIN(?oclc035_k) AS ?oclc035_key) WHERE {
@@ -172,12 +173,15 @@ WHERE {
                 ?sf035a xyz:code "a" ; rdf:_1 ?oclc035_raw .
                 FILTER(REGEX(?oclc035_raw, "^\\s*\\(OCoLC\\)\\D*\\d"))
                 ?r035 ?slot035 ?df035 .
+                ?df035 ?sfslot035 ?sf035a .
                 BIND(CONCAT("00000", STRAFTER(STR(?slot035), "#_")) AS ?pos035)
+                BIND(CONCAT("00000", STRAFTER(STR(?sfslot035), "#_")) AS ?sfpos035)
                 BIND(CONCAT(SUBSTR(?pos035, STRLEN(?pos035) - 4), " ",
-                            REPLACE(?oclc035_raw, "^\\s*\\(OCoLC\\)\\D*(\\d+).*$", "$1")) AS ?oclc035_k)
+                            SUBSTR(?sfpos035, STRLEN(?sfpos035) - 4), " ",
+                            REPLACE(?oclc035_raw, "^\\s*\\(OCoLC\\)\\D*(\\d+)[\\s\\S]*$", "$1")) AS ?oclc035_k)
               }
             }
-            BIND(STRAFTER(?oclc035_key, " ") AS ?oclc035_x)
+            BIND(REPLACE(?oclc035_key, "^\\S+ \\S+ ", "") AS ?oclc035_x)
 
             # Creator fields are OPTIONAL: a record with no 1xx/7xx still yields
             # a row carrying canonical_key + the 001 number.
