@@ -156,10 +156,11 @@ twins — brings that down to the real subject set.
 `pr164-review.csv` lists the 1,113 rows where Priya's subject pass in #164
 differs from `decisions.csv`. Her pass started from the July copy of the file,
 so only the rows she changed herself are recovered, by `pr164_review.py build`
-(it reads both from git history). Fill `take` with `head`, `priya` or `edit`
-(using the `final_*` columns), then run `python3 pr164_review.py apply` from
-this folder. It maps finer categories such as `topical-people` to
-`topical`/`geographic`, and refuses rows with a blank category or label, an ID
-that isn't a slug, or an ID left with more than one label. The `flags` column
-gives the same checks up front, plus `also-reviewed-in-head` where Mert's pass
-decided the same row. Delete the sheet and the script once it's done.
+(it reads both from git history). The `flags` column lists what the build
+would reject, plus `also-reviewed-in-head` where Mert's pass decided the same
+row.
+
+The sheet isn't edited by hand. It's reviewed on a shared page,
+`tools/subject-review/` (see its README), and `pull_decisions.py` there writes
+the decisions into `decisions.csv`. Delete the sheet, `pr164_review.py` and
+that tool once the review is done.
