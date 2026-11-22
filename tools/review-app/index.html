@@ -1,0 +1,738 @@
+<title>Artists' Books Dedup Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: sticky header with queue tabs and progress; a scrolling work list on the left, the comparison sheet on the right (stacked on phones). */
+:root {
+  --paper: #f7f9f9;
+  --card: #ffffff;
+  --ink: #18252b;
+  --ink-soft: #52646c;
+  --rule: #d5dfe2;
+  --rule-soft: #e7eef0;
+  --accent: #0f6e78;
+  --accent-soft: #dcf0f1;
+  --diff: #fff3cf;
+  --same: #23824a;   --same-bg: #def3e5;
+  --no: #3a5fa8;     --no-bg: #e1e9f8;
+  --wrong: #a8620f;  --wrong-bg: #fbecd6;
+  --unsure: #7a4fa0; --unsure-bg: #efe5f7;
+  --tag: #0f6e78;
+  --sub: #a8620f;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-head: "IBM Plex Sans Condensed", "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --head-h: 80px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #11191c; --card: #172226; --ink: #e3ecee; --ink-soft: #97aab1;
+  --rule: #2c3c42; --rule-soft: #222f34; --accent: #5cc3cc; --accent-soft: #173b40;
+  --diff: #3d3418;
+  --same: #6fd396; --same-bg: #183527; --no: #8eaef0; --no-bg: #1c2a45;
+  --wrong: #f0b05f; --wrong-bg: #3a2a14; --unsure: #c9a2eb; --unsure-bg: #30233d;
+  --tag: #5cc3cc; --sub: #f0b05f; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #11191c; --card: #172226; --ink: #e3ecee; --ink-soft: #97aab1;
+  --rule: #2c3c42; --rule-soft: #222f34; --accent: #5cc3cc; --accent-soft: #173b40;
+  --diff: #3d3418;
+  --same: #6fd396; --same-bg: #183527; --no: #8eaef0; --no-bg: #1c2a45;
+  --wrong: #f0b05f; --wrong-bg: #3a2a14; --unsure: #c9a2eb; --unsure-bg: #30233d;
+  --tag: #5cc3cc; --sub: #f0b05f; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 14px; line-height: 1.45; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--card); }
+a { color: var(--accent); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--card); border-bottom: 1px solid var(--rule);
+  padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px;
+}
+h1 { font-family: var(--font-head); font-weight: 600; font-size: 18px; margin: 0; letter-spacing: 0.01em; }
+h1 small { font-family: var(--font-body); font-weight: 400; font-size: 12px; color: var(--ink-soft); margin-left: 6px; }
+.tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.tab { border: 1px solid var(--rule); background: transparent; border-radius: 6px; padding: 6px 12px; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 190px; }
+.tab[aria-selected="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.tab .name { font-weight: 600; font-size: 13px; }
+.tab .bar { width: 100%; height: 4px; background: var(--rule-soft); border-radius: 2px; overflow: hidden; display: flex; }
+.tab .bar span { display: block; height: 100%; }
+.tab .count { font-size: 11px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.people { margin-left: auto; display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-soft); }
+.avatar { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--card); object-fit: cover; flex: none; }
+.avatar.sm { width: 16px; height: 16px; border-width: 1px; }
+.status-line { width: 100%; font-size: 12px; color: var(--ink-soft); }
+.status-line.warn { color: var(--wrong); }
+
+main { display: grid; grid-template-columns: minmax(280px, 360px) minmax(0, 1fr); min-height: calc(100% - var(--head-h)); }
+@media (max-width: 820px) { main { grid-template-columns: minmax(0, 1fr); } .list-pane { max-height: 45vh; border-right: 0; border-bottom: 1px solid var(--rule); } }
+
+.list-pane { border-right: 1px solid var(--rule); display: flex; flex-direction: column; min-height: 0; position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--head-h, 80px)); height: calc(100vh - var(--head-h, 80px) - env(safe-area-inset-top, 0px)); }
+@media (max-width: 820px) { .list-pane { position: static; height: auto; } }
+.filters { padding: 10px 12px; display: grid; gap: 8px; border-bottom: 1px solid var(--rule); background: var(--card); }
+.filters input[type=search] { width: 100%; padding: 6px 8px; border: 1px solid var(--rule); border-radius: 5px; background: var(--paper); color: var(--ink); font: inherit; }
+.filter-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.chipbtn { border: 1px solid var(--rule); background: transparent; border-radius: 999px; padding: 2px 10px; font-size: 12px; cursor: pointer; }
+.chipbtn[aria-pressed="true"] { background: var(--ink); color: var(--card); border-color: var(--ink); }
+select { font: inherit; font-size: 12px; padding: 2px 4px; border: 1px solid var(--rule); border-radius: 5px; background: var(--paper); color: var(--ink); }
+.list { overflow-y: auto; flex: 1; min-height: 0; }
+.row { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; padding: 8px 12px; border-bottom: 1px solid var(--rule-soft); cursor: pointer; border-left: 3px solid transparent; }
+.row:hover { background: var(--rule-soft); }
+.row[aria-current="true"] { background: var(--accent-soft); border-left-color: var(--accent); }
+.row .t { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.row .m { grid-column: 1; font-size: 11px; color: var(--ink-soft); font-family: var(--font-mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row .r { grid-row: 1 / span 2; grid-column: 2; display: flex; align-items: center; gap: 4px; }
+.list-empty { padding: 24px 12px; color: var(--ink-soft); }
+
+.pill { font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 999px; white-space: nowrap; letter-spacing: 0.02em; }
+.pill.same { color: var(--same); background: var(--same-bg); }
+.pill.no { color: var(--no); background: var(--no-bg); }
+.pill.wrong-marc { color: var(--wrong); background: var(--wrong-bg); }
+.pill.unsure { color: var(--unsure); background: var(--unsure-bg); }
+.pill.partial { color: var(--ink-soft); background: var(--rule-soft); }
+.pill.todo { color: var(--ink-soft); border: 1px dashed var(--rule); }
+
+.detail { min-width: 0; padding-block: 16px 120px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 16px; align-content: start; }
+.detail-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.detail-head h2 { font-family: var(--font-head); font-weight: 600; font-size: 22px; margin: 0; text-wrap: balance; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); font-weight: 600; }
+.mono { font-family: var(--font-mono); font-size: 12px; }
+.also { font-size: 12px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; }
+.hintbox { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; font-size: 13px; color: var(--ink-soft); max-width: 75ch; }
+.hintbox b { color: var(--ink); }
+
+.decide { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 12px; display: grid; gap: 10px; }
+.decide-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; flex-wrap: wrap; }
+.seg button { border: 0; border-right: 1px solid var(--rule); background: transparent; padding: 6px 12px; cursor: pointer; font-size: 13px; font-weight: 500; }
+.seg button:last-child { border-right: 0; }
+.seg button kbd { font-family: var(--font-mono); font-size: 10px; color: var(--ink-soft); margin-left: 6px; }
+.seg button[aria-pressed="true"].same { background: var(--same-bg); color: var(--same); }
+.seg button[aria-pressed="true"].no { background: var(--no-bg); color: var(--no); }
+.seg button[aria-pressed="true"].wrong-marc { background: var(--wrong-bg); color: var(--wrong); }
+.seg button[aria-pressed="true"].unsure { background: var(--unsure-bg); color: var(--unsure); }
+.seg.sm button { padding: 3px 8px; font-size: 12px; }
+.seg button:disabled { cursor: not-allowed; opacity: 0.5; }
+textarea { width: 100%; min-height: 54px; resize: vertical; font: inherit; padding: 6px 8px; border: 1px solid var(--rule); border-radius: 5px; background: var(--paper); color: var(--ink); }
+.who { font-size: 12px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
+.who span { display: inline-flex; align-items: center; gap: 4px; }
+.navbtn { border: 1px solid var(--rule); background: transparent; border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 13px; }
+.navbtn.primary { background: var(--accent); color: var(--card); border-color: var(--accent); font-weight: 600; }
+.legend { font-size: 12px; color: var(--ink-soft); display: grid; gap: 2px; }
+
+.cmp-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--card); }
+table.cmp { border-collapse: collapse; width: 100%; min-width: 560px; }
+.cmp th, .cmp td { text-align: left; vertical-align: top; padding: 6px 10px; border-bottom: 1px solid var(--rule-soft); }
+.cmp thead th { background: var(--rule-soft); font-weight: 600; font-size: 13px; vertical-align: bottom; }
+.cmp thead th .sub { font-weight: 400; font-size: 11px; color: var(--ink-soft); display: block; }
+.cmp tbody th { width: 110px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); font-weight: 600; white-space: nowrap; }
+.cmp td { overflow-wrap: anywhere; }
+.cmp td.diff { background: var(--diff); }
+.cmp td.empty { color: var(--ink-soft); }
+.linkrow a { margin-right: 10px; white-space: nowrap; }
+.held { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: 0 4px; margin-left: 4px; }
+
+.marc-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+details.marc { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; min-width: 0; }
+details.marc summary { cursor: pointer; padding: 8px 12px; font-weight: 600; font-size: 13px; list-style-position: inside; }
+details.marc summary .sub { font-weight: 400; color: var(--ink-soft); font-size: 12px; margin-left: 6px; }
+.marc-body { overflow-x: auto; padding: 4px 12px 12px; }
+.marc-body pre { margin: 0; font-family: var(--font-mono); font-size: 12px; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; }
+.marc-body .ln { display: block; padding-left: 7.5em; text-indent: -7.5em; }
+.marc-body .ln.key { background: var(--accent-soft); }
+.marc-body .tg { color: var(--tag); font-weight: 600; }
+.marc-body .in { color: var(--ink-soft); }
+.marc-body .sc { color: var(--sub); font-weight: 600; }
+.nomarc { padding: 12px; color: var(--ink-soft); font-size: 13px; background: var(--card); border: 1px dashed var(--rule); border-radius: 8px; }
+
+.empty-state { padding: 48px 0; color: var(--ink-soft); max-width: 60ch; }
+.empty-state h2 { font-family: var(--font-head); color: var(--ink); }
+@media (prefers-reduced-motion: no-preference) { .row, .tab, .seg button { transition: background-color 120ms ease; } }
+</style>
+
+<header class="top">
+  <h1>Dedup Review <small>Artists' books · issue #70</small></h1>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="people" id="people"></div>
+  <div class="status-line" id="status">Loading the review data…</div>
+</header>
+
+<main>
+  <aside class="list-pane">
+    <div class="filters">
+      <input type="search" id="q" placeholder="Search titles, creators, keys" aria-label="Search">
+      <div class="filter-row" id="statusFilters"></div>
+      <div class="filter-row">
+        <label for="sort" class="eyebrow">Order</label>
+        <select id="sort"></select>
+      </div>
+    </div>
+    <div class="list" id="list" role="list"></div>
+  </aside>
+  <section class="detail" id="detail">
+    <div class="empty-state"><h2>Loading…</h2><p>The pairs and groups to review are on their way.</p></div>
+  </section>
+</main>
+
+<script>
+(() => {
+"use strict";
+
+// ---------- state ----------
+const S = {
+  data: null,             // data.json
+  queue: "dedup",         // "dedup" | "oclc"
+  sel: { dedup: null, oclc: null },
+  filter: { dedup: "todo", oclc: "todo" },
+  sort: { dedup: "conf", oclc: "differs" },
+  q: "",
+  decisions: new Map(),   // doc id -> body
+  me: null,               // user id
+  user: null, db: null, room: null,
+  canWrite: false,
+  peers: [],
+  profiles: {},
+  dbState: "connecting",  // connecting | live | slow | off | readonly
+};
+const DEDUP_CHOICES = [
+  ["same", "Same book", "1"],
+  ["no", "Different works", "2"],
+  ["unsure", "Unsure", "4"],
+];
+const OCLC_CHOICES = [
+  ["same", "Same", "1"],
+  ["no", "Distinct", "2"],
+  ["wrong-marc", "Wrong MARC", "3"],
+  ["unsure", "Unsure", "4"],
+];
+const LABEL = { same: "Same", no: "Different", "wrong-marc": "Wrong MARC", unsure: "Unsure" };
+const KEY_TAGS = new Set(["001", "020", "100", "110", "245", "250", "260", "264", "300", "999"]);
+
+const store = {
+  get(k) { try { return localStorage.getItem("abdr." + k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem("abdr." + k, v); } catch {} },
+};
+
+// ---------- tiny DOM helper ----------
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k === "class") el.className = v;
+    else if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+    else el.setAttribute(k, v === true ? "" : v);
+  }
+  for (const kid of kids.flat()) {
+    if (kid == null || kid === false) continue;
+    el.append(kid instanceof Node ? kid : document.createTextNode(String(kid)));
+  }
+  return el;
+}
+const $ = (id) => document.getElementById(id);
+
+// ---------- items ----------
+function docId(queue, id) { return queue + "." + id; }
+function items(queue) { return queue === "dedup" ? S.data.dedup : S.data.oclc; }
+function titleOf(queue, it) {
+  return queue === "dedup" ? it.sides[0].zot.title || it.sides[1].zot.title
+    : (it.nodes[0].zot.title || "(untitled)");
+}
+function statusOf(queue, it) {
+  const d = S.decisions.get(docId(queue, it.id));
+  if (queue === "dedup") return d && d.decision ? d.decision : "todo";
+  const nodes = (d && d.nodes) || {};
+  const vals = it.nodes.map((n) => nodes[n.key] || "");
+  if (vals.every((v) => !v)) return "todo";
+  if (vals.some((v) => !v)) return "partial";
+  const uniq = [...new Set(vals)];
+  return uniq.length === 1 ? uniq[0] : "mixed";
+}
+function isDone(st) { return st !== "todo" && st !== "partial"; }
+function haystack(queue, it) {
+  if (it._hay) return it._hay;
+  const parts = [it.id];
+  const recs = queue === "dedup" ? it.sides : it.nodes;
+  for (const r of recs) parts.push(r.key, r.zot.title, r.zot.creators);
+  return (it._hay = parts.join(" ").toLowerCase());
+}
+function visible(queue) {
+  const f = S.filter[queue], q = S.q.trim().toLowerCase();
+  let list = items(queue).filter((it) => {
+    const st = statusOf(queue, it);
+    if (f === "todo" && isDone(st)) return false;
+    if (f === "done" && !isDone(st)) return false;
+    if (f === "unsure" && st !== "unsure") return false;
+    if (f === "mine") {
+      const d = S.decisions.get(docId(queue, it.id));
+      if (!d || !S.me || d.by !== S.me) return false;
+    }
+    if (f === "flag" && !(queue === "dedup" ? it.flag : it.hint === "title-differs")) return false;
+    return !q || haystack(queue, it).includes(q);
+  });
+  const s = S.sort[queue];
+  const byTitle = (a, b) => titleOf(queue, a).localeCompare(titleOf(queue, b));
+  if (s === "conf") list.sort((a, b) => a.conf - b.conf || byTitle(a, b));
+  else if (s === "title") list.sort(byTitle);
+  else if (s === "differs") list.sort((a, b) => (a.hint === b.hint ? a.n - b.n : a.hint === "title-differs" ? -1 : 1));
+  else if (s === "group") list.sort((a, b) => a.n - b.n);
+  return list;
+}
+
+// ---------- header ----------
+function renderTabs() {
+  const tabs = $("tabs");
+  tabs.replaceChildren();
+  for (const [queue, name] of [["dedup", "Title matches"], ["oclc", "Shared OCLC numbers"]]) {
+    const all = items(queue);
+    const counts = { same: 0, no: 0, "wrong-marc": 0, unsure: 0, mixed: 0 };
+    let done = 0;
+    for (const it of all) { const st = statusOf(queue, it); if (isDone(st)) { done++; counts[st] = (counts[st] || 0) + 1; } }
+    const bar = h("span", { class: "bar", "aria-hidden": "true" },
+      ...["same", "no", "wrong-marc", "unsure", "mixed"].map((k) => {
+        const s = h("span"); s.style.width = (100 * (counts[k] || 0) / all.length) + "%";
+        s.style.background = k === "mixed" ? "var(--ink-soft)" : `var(--${k === "wrong-marc" ? "wrong" : k})`;
+        return s;
+      }));
+    tabs.append(h("button", {
+      class: "tab", role: "tab", "aria-selected": String(S.queue === queue),
+      onclick: () => { S.queue = queue; store.set("queue", queue); renderAll(); },
+    }, h("span", { class: "name" }, name), bar,
+       h("span", { class: "count" }, `${done} of ${all.length} ${queue === "dedup" ? "pairs" : "groups"} decided`)));
+  }
+}
+
+async function renderPeople() {
+  const box = $("people");
+  const here = new Map();
+  for (const p of S.peers) if (p.kind === "viewer" && p.by && !here.has(p.by)) here.set(p.by, p);
+  if (!here.size) { box.replaceChildren(); return; }
+  const ps = S.user ? await S.user.profiles([...here.keys()]) : {};
+  box.replaceChildren(h("span", {}, "Here now"),
+    ...[...here.keys()].map((id) => {
+      const p = ps[id] || {};
+      const img = h("img", { class: "avatar", alt: "", title: (p.name || "Someone") + (p.isMe ? " (you)" : "") });
+      img.src = p.avatarUrl || "";
+      return img;
+    }));
+}
+
+function setStatus(text, warn) {
+  const el = $("status");
+  el.textContent = text;
+  el.classList.toggle("warn", !!warn);
+}
+function renderStatus() {
+  const m = {
+    connecting: ["Connecting to the shared decisions…", false],
+    slow: ["Can't reach the shared decisions yet. What you see may be out of date, and changes can't be saved until it connects.", true],
+    live: ["Decisions save as you click and appear for everyone with the page open.", false],
+    readonly: ["You can browse, but you don't have permission to record decisions. Ask for Contributor access to this page.", true],
+    off: ["Shared decisions aren't available in this view. Open the page signed in to claude.ai to record decisions.", true],
+  }[S.dbState];
+  setStatus(m[0], m[1]);
+}
+
+// ---------- list ----------
+function renderFilters() {
+  const q = S.queue;
+  const opts = q === "dedup"
+    ? [["todo", "To do"], ["flag", "Low confidence"], ["unsure", "Unsure"], ["mine", "Mine"], ["done", "Decided"], ["all", "All"]]
+    : [["todo", "To do"], ["flag", "Titles differ"], ["unsure", "Unsure"], ["mine", "Mine"], ["done", "Decided"], ["all", "All"]];
+  $("statusFilters").replaceChildren(...opts.map(([v, l]) =>
+    h("button", { class: "chipbtn", "aria-pressed": String(S.filter[q] === v),
+      onclick: () => { S.filter[q] = v; renderFilters(); renderList(); } }, l)));
+  const sorts = q === "dedup"
+    ? [["conf", "Lowest match confidence first"], ["title", "Title A–Z"]]
+    : [["differs", "Titles that differ first"], ["group", "Group number"], ["title", "Title A–Z"]];
+  const sel = $("sort");
+  sel.replaceChildren(...sorts.map(([v, l]) => h("option", { value: v, selected: S.sort[q] === v }, l)));
+}
+
+function peersOn(id) {
+  const out = [];
+  for (const p of S.peers) if (!p.isMe && p.kind === "viewer" && p.presence && p.presence.viewing === id && p.by) out.push(p.by);
+  return [...new Set(out)];
+}
+
+function pillFor(st) {
+  if (st === "todo") return h("span", { class: "pill todo" }, "To do");
+  if (st === "partial") return h("span", { class: "pill partial" }, "Partly done");
+  if (st === "mixed") return h("span", { class: "pill partial" }, "Mixed");
+  return h("span", { class: "pill " + st }, LABEL[st] || st);
+}
+
+function renderList() {
+  const q = S.queue, list = visible(q), box = $("list");
+  box.replaceChildren();
+  if (!list.length) {
+    box.append(h("div", { class: "list-empty" }, S.filter[q] === "todo" && !S.q ? "Nothing left to do in this queue." : "Nothing matches these filters."));
+    return;
+  }
+  const frag = document.createDocumentFragment();
+  for (const it of list) {
+    const st = statusOf(q, it);
+    const meta = q === "dedup"
+      ? `${(it.conf * 100).toFixed(0)}% · ${it.sides[0].key} ↔ ${it.sides[1].key}`
+      : `#${it.n} · OCLC ${it.id} · ${it.nodes.length} books${it.hint === "title-differs" ? " · titles differ" : ""}`;
+    const others = peersOn(docId(q, it.id));
+    const row = h("div", {
+      class: "row", role: "listitem", tabindex: "0", "data-id": it.id,
+      "aria-current": String(S.sel[q] === it.id),
+      onclick: () => select(it.id),
+      onkeydown: (e) => { if (e.key === "Enter") select(it.id); },
+    }, h("span", { class: "t" }, titleOf(q, it)),
+       h("span", { class: "m" }, meta),
+       h("span", { class: "r" }, others.map((id) => avatarFor(id, true)), pillFor(st)));
+    frag.append(row);
+  }
+  box.append(frag);
+  const cur = box.querySelector('[aria-current="true"]');
+  if (cur && !isInView(cur, box)) cur.scrollIntoView({ block: "nearest" });
+}
+function isInView(el, box) {
+  const a = el.getBoundingClientRect(), b = box.getBoundingClientRect();
+  return a.top >= b.top && a.bottom <= b.bottom;
+}
+function avatarFor(id, small) {
+  const img = h("img", { class: "avatar" + (small ? " sm" : ""), alt: "" });
+  const p = S.profiles[id];
+  if (p) { img.src = p.avatarUrl; img.title = p.name || "Someone"; }
+  return img;
+}
+
+// ---------- detail ----------
+const FIELDS = [
+  ["title", "Title"], ["creators", "Creators"], ["date", "Date"], ["publisher", "Publisher"],
+  ["place", "Place"], ["edition", "Edition"], ["pages", "Pages"], ["isbn", "ISBN"],
+  ["callNumber", "Call number"], ["collections", "Collections"], ["sourceKeys", "Source keys"], ["extra", "Extra"],
+];
+const norm = (s) => (s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+
+function compareTable(cols) {
+  const head = h("tr", {}, h("th", {}, ""), cols.map((c) => h("th", {}, c.head, c.sub ? h("span", { class: "sub" }, c.sub) : null)));
+  const body = [];
+  for (const [f, label] of FIELDS) {
+    const vals = cols.map((c) => c.zot[f] || "");
+    if (vals.every((v) => !v)) continue;
+    const differ = new Set(vals.map(norm)).size > 1;
+    body.push(h("tr", {}, h("th", { scope: "row" }, label),
+      vals.map((v) => h("td", { class: (differ ? "diff " : "") + (v ? "" : "empty") }, v || "—"))));
+  }
+  body.push(h("tr", { class: "linkrow" }, h("th", { scope: "row" }, "Look it up"),
+    cols.map((c) => h("td", {}, c.links.filter(Boolean).map(([href, text]) => h("a", { href, target: "_blank", rel: "noopener" }, text))))));
+  if (cols.some((c) => c.extraRow)) {
+    body.push(h("tr", {}, h("th", { scope: "row" }, "MARC match"), cols.map((c) => h("td", { class: "mono" }, c.extraRow || "—"))));
+  }
+  return h("div", { class: "cmp-wrap" }, h("table", { class: "cmp" }, h("thead", {}, head), h("tbody", {}, body)));
+}
+
+function marcBlock(key, label, sub) {
+  const text = key && S.data.marc[key];
+  if (!text) return h("div", { class: "nomarc" }, `${label}: no MARC record. `, sub || "");
+  const pre = h("pre");
+  for (const line of text.split("\n")) {
+    const tag = line.slice(0, 3);
+    const ln = h("span", { class: "ln" + (KEY_TAGS.has(tag) ? " key" : "") });
+    ln.append(h("span", { class: "tg" }, tag));
+    const rest = line.slice(3);
+    const m = rest.match(/^( [0-9_]{2} )(.*)$/);
+    if (m) {
+      ln.append(h("span", { class: "in" }, m[1]));
+      for (const part of m[2].split(/(\$[a-z0-9] )/)) {
+        if (/^\$[a-z0-9] $/.test(part)) ln.append(h("span", { class: "sc" }, part));
+        else ln.append(part);
+      }
+    } else ln.append(rest);
+    pre.append(ln, "\n");
+  }
+  return h("details", { class: "marc", open: true }, h("summary", {}, label, h("span", { class: "sub" }, sub || "")), h("div", { class: "marc-body" }, pre));
+}
+
+function siteLink(key) { return key ? [S.data.site + "/item/" + key + "/", "On the site ↗"] : null; }
+function catLink(url) {
+  if (!url) return null;
+  const host = (() => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "catalogue"; } })();
+  return [url, host + " ↗"];
+}
+
+function whoLine(d) {
+  if (!d) return h("div", { class: "who" }, "No decision yet.");
+  const parts = [];
+  if (d.src === "csv" && !d.by) parts.push(h("span", {}, "Decided in the earlier review (from the CSV)"));
+  else if (d.by) parts.push(h("span", {}, "Last change by ", avatarFor(d.by, true), " ", S.profiles[d.by]?.name || "someone", d.at ? " · " + new Date(d.at).toLocaleString() : ""));
+  const hist = (d.history || []).slice(-4).reverse();
+  if (hist.length > 1) parts.push(h("span", {}, "Earlier: " + hist.slice(1).map((x) => `${x.d}${x.by && S.profiles[x.by]?.name ? " (" + S.profiles[x.by].name + ")" : ""}`).join(", ")));
+  return h("div", { class: "who" }, parts);
+}
+
+function renderDetail() {
+  const q = S.queue, box = $("detail");
+  const it = items(q).find((x) => x.id === S.sel[q]);
+  if (!it) {
+    box.replaceChildren(h("div", { class: "empty-state" }, h("h2", {}, "Pick something to review"),
+      h("p", {}, "Choose a pair or group on the left. J and K move through the list, N jumps to the next one nobody has decided, and the number keys record a decision.")));
+    return;
+  }
+  const d = S.decisions.get(docId(q, it.id));
+  const others = peersOn(docId(q, it.id));
+  const head = h("div", { class: "detail-head" },
+    h("span", { class: "eyebrow" }, q === "dedup" ? `Fuzzy title match · ${(it.conf * 100).toFixed(0)}% confidence` : `Group ${it.n} · OCLC ${it.id}`),
+    h("h2", {}, titleOf(q, it)),
+    others.length ? h("span", { class: "also" }, others.map((id) => avatarFor(id, true)), (others.map((id) => S.profiles[id]?.name || "Someone").join(", ")) + " also looking at this") : null);
+  box.replaceChildren(head, q === "dedup" ? dedupBody(it, d) : oclcBody(it, d));
+}
+
+function dedupBody(it, d) {
+  const [a, b] = it.sides;
+  const merged = a.canon && a.canon === b.canon;
+  const cols = [
+    { head: h("span", {}, "Sloane copy", a.held ? h("span", { class: "held" }, "held") : null), sub: `lib 1 · ${a.key}`, zot: a.zot,
+      links: [siteLink(a.canon), catLink(a.zot.url)] },
+    { head: "Fuzzy twin", sub: `lib ${b.lib} · ${b.key}`, zot: b.zot,
+      links: [merged ? null : siteLink(b.canon), catLink(b.zot.url)] },
+  ];
+  const hint = h("div", { class: "hintbox" },
+    merged
+      ? h("span", {}, "The build currently ", h("b", {}, "merges"), " these two Zotero records into one book (", h("span", { class: "mono" }, a.canon), "), so they share one page on the site. Choose ", h("b", {}, "Different works"), " or ", h("b", {}, "Unsure"), " to split them.")
+      : h("span", {}, "The build currently keeps these as ", h("b", {}, "two separate books"), ", because of an earlier decision. Highlighted cells differ."));
+  const decide = decidePanel("dedup", it, d);
+  const marcs = h("div", { class: "marc-grid" },
+    marcBlock(a.marc, "MARC · Sloane copy", a.marc ? `record ${a.marc}` : "This item has no harvested record."),
+    b.marc ? marcBlock(b.marc, "MARC · twin", `record ${b.marc}`)
+      : h("div", { class: "nomarc" }, merged ? "The twin has no MARC record of its own. The merged book uses the Sloane copy's record." : "The twin has no MARC record of its own."));
+  return h("div", { style: "display:grid;gap:16px;min-width:0" }, decide, hint, compareTable(cols), marcs);
+}
+
+function oclcBody(it, d) {
+  const cols = it.nodes.map((n, i) => ({
+    head: h("span", {}, `Book ${i + 1}`, n.held ? h("span", { class: "held" }, "held") : null),
+    sub: n.key, zot: n.zot,
+    links: [siteLink(n.key), catLink(n.zot.url)],
+    extraRow: [n.match.method, n.match.server, n.match.on].filter(Boolean).join(" · "),
+  }));
+  const hint = h("div", { class: "hintbox" },
+    "These books all carry OCLC ", h("a", { href: "https://www.worldcat.org/oclc/" + it.id, target: "_blank", rel: "noopener" }, it.id + " ↗"),
+    ". Mark each one ", h("b", {}, "Same"), " if it duplicates the others, ", h("b", {}, "Distinct"), " if it is a different volume, edition or set member, or ",
+    h("b", {}, "Wrong MARC"), " if it is a different book whose MARC record is someone else's (check the 245 and the match row: title-author matches are the loosest).");
+  const decide = decidePanel("oclc", it, d);
+  const marcs = h("div", { class: "marc-grid" },
+    it.nodes.map((n, i) => marcBlock(n.marc, `MARC · Book ${i + 1}`, n.key)));
+  return h("div", { style: "display:grid;gap:16px;min-width:0" }, decide, hint, compareTable(cols), marcs);
+}
+
+function segFor(choices, current, onPick, small) {
+  const dis = !S.canWrite;
+  return h("div", { class: "seg" + (small ? " sm" : ""), role: "group" },
+    choices.map(([v, l, k]) => h("button", {
+      class: v, "aria-pressed": String(current === v), disabled: dis,
+      title: dis ? "You can't record decisions in this view" : `${l} (${k})`,
+      onclick: () => onPick(current === v ? "" : v),
+    }, l, small ? null : h("kbd", {}, k))));
+}
+
+function decidePanel(queue, it, d) {
+  const panel = h("div", { class: "decide" });
+  if (queue === "dedup") {
+    panel.append(h("div", { class: "decide-row" },
+      h("span", { class: "eyebrow" }, "Decision"),
+      segFor(DEDUP_CHOICES, d?.decision || "", (v) => writeDecision("dedup", it, { decision: v }))));
+    panel.append(h("div", { class: "legend" },
+      h("span", {}, "Same book: one work, merge the two records (also right for multiple copies of one edition)."),
+      h("span", {}, "Different works: they only share a title. Keep them separate."),
+      h("span", {}, "Unsure: needs another signal. Kept separate for now.")));
+  } else {
+    const nodes = d?.nodes || {};
+    panel.append(h("div", { class: "decide-row" },
+      h("span", { class: "eyebrow" }, "Whole group"),
+      segFor(OCLC_CHOICES, (() => { const v = it.nodes.map((n) => nodes[n.key] || ""); return new Set(v).size === 1 ? v[0] : ""; })(),
+        (v) => writeDecision("oclc", it, { all: v }))));
+    it.nodes.forEach((n, i) => panel.append(h("div", { class: "decide-row" },
+      h("span", { class: "mono", style: "min-width:150px" }, `Book ${i + 1} · ${n.key}`),
+      segFor(OCLC_CHOICES, nodes[n.key] || "", (v) => writeDecision("oclc", it, { node: n.key, value: v }), true))));
+  }
+  const ta = h("textarea", { id: "notes-" + queue, placeholder: "Notes (what settled it, what to check)", disabled: !S.canWrite });
+  ta.value = d?.notes || "";
+  let t = null;
+  const save = () => { clearTimeout(t); if ((d?.notes || "") !== ta.value) writeDecision(queue, it, { notes: ta.value }); };
+  ta.addEventListener("input", () => { clearTimeout(t); t = setTimeout(save, 900); });
+  ta.addEventListener("blur", save);
+  ta.addEventListener("keydown", (e) => e.stopPropagation());
+  panel.append(ta, h("div", { class: "decide-row" },
+    whoLine(d),
+    h("span", { style: "flex:1" }),
+    h("button", { class: "navbtn", onclick: () => step(-1) }, "← Previous"),
+    h("button", { class: "navbtn primary", onclick: nextUndecided }, "Next to do →")));
+  return panel;
+}
+
+// ---------- writes ----------
+const chains = new Map();
+function writeDecision(queue, it, change) {
+  if (!S.db || !S.canWrite) return;
+  const id = docId(queue, it.id);
+  const prev = S.decisions.get(id);
+  const now = Date.now();
+  let patch = { queue, id: it.id, by: S.me, at: now };
+  let histEntry = null;
+  if ("notes" in change) patch.notes = change.notes;
+  if (queue === "dedup" && "decision" in change) { patch.decision = change.decision; histEntry = change.decision || "cleared"; }
+  if (queue === "oclc") {
+    const nodes = {};
+    if ("all" in change) { for (const n of it.nodes) nodes[n.key] = change.all; histEntry = "all " + (change.all || "cleared"); }
+    if ("node" in change) { nodes[change.node] = change.value; histEntry = change.node + " " + (change.value || "cleared"); }
+    if (Object.keys(nodes).length) patch.nodes = nodes;
+  }
+  if (histEntry) patch.history = [...(prev?.history || []), { d: histEntry, by: S.me, at: now }].slice(-12);
+  // optimistic local view
+  const merged = { ...(prev || {}), ...patch, nodes: { ...(prev?.nodes || {}), ...(patch.nodes || {}) } };
+  S.decisions.set(id, merged);
+  renderAll();
+  if (histEntry && !("notes" in change)) maybeAdvance(queue, it);
+  const ref = S.db.collection("decisions").doc(id);
+  const run = () => (prev ? ref.update(patch) : ref.set(merged)).catch((e) => {
+    if (e && e.code === "invalid_argument" && !prev) { S.canWrite = false; S.dbState = "readonly"; renderAll(); }
+    else setStatus("That change didn't save (" + (e?.code || "error") + "). Try again in a moment.", true);
+  });
+  const p = (chains.get(id) || Promise.resolve()).then(run);
+  chains.set(id, p);
+}
+function maybeAdvance(queue, it) {
+  // after a complete decision in the To-do view, move on to the next item
+  if (S.filter[queue] !== "todo") return;
+  if (!isDone(statusOf(queue, it))) return;
+  setTimeout(() => { if (S.sel[queue] === it.id) nextUndecided(); }, 350);
+}
+
+// ---------- navigation ----------
+function select(id) {
+  S.sel[S.queue] = id;
+  store.set("sel." + S.queue, id);
+  S.room?.presence({ viewing: docId(S.queue, id) }).catch(() => {});
+  renderList(); renderDetail();
+  if (window.matchMedia("(max-width: 820px)").matches) $("detail").scrollIntoView({ block: "start" });
+}
+function step(dir) {
+  const list = visible(S.queue);
+  if (!list.length) return;
+  const i = list.findIndex((x) => x.id === S.sel[S.queue]);
+  const j = i < 0 ? 0 : Math.min(list.length - 1, Math.max(0, i + dir));
+  select(list[j].id);
+}
+function nextUndecided() {
+  const q = S.queue, all = visible(q).length ? visible(q) : items(q);
+  const i = all.findIndex((x) => x.id === S.sel[q]);
+  for (let k = 1; k <= all.length; k++) {
+    const it = all[(i + k + all.length) % all.length];
+    if (!isDone(statusOf(q, it)) && it.id !== S.sel[q]) return select(it.id);
+  }
+}
+document.addEventListener("keydown", (e) => {
+  if (!S.data || e.metaKey || e.ctrlKey || e.altKey) return;
+  const tag = (e.target.tagName || "").toLowerCase();
+  if (tag === "input" || tag === "textarea" || tag === "select") return;
+  if (e.key === "j") step(1);
+  else if (e.key === "k") step(-1);
+  else if (e.key === "n") nextUndecided();
+  else if (/^[1-4]$/.test(e.key)) {
+    const q = S.queue, it = items(q).find((x) => x.id === S.sel[q]);
+    if (!it) return;
+    const choices = q === "dedup" ? DEDUP_CHOICES : OCLC_CHOICES;
+    const c = choices.find((x) => x[2] === e.key);
+    if (!c) return;
+    if (q === "dedup") writeDecision(q, it, { decision: c[0] });
+    else writeDecision(q, it, { all: c[0] });
+  } else return;
+  e.preventDefault();
+});
+$("q").addEventListener("input", (e) => { S.q = e.target.value; renderList(); });
+$("sort").addEventListener("change", (e) => { S.sort[S.queue] = e.target.value; renderList(); });
+
+// ---------- render ----------
+let profileIds = new Set();
+async function refreshProfiles() {
+  if (!S.user) return;
+  const ids = new Set();
+  for (const d of S.decisions.values()) { if (d.by) ids.add(d.by); for (const x of d.history || []) if (x.by) ids.add(x.by); }
+  for (const p of S.peers) if (p.by) ids.add(p.by);
+  if (S.me) ids.add(S.me);
+  const key = [...ids].sort().join(",");
+  if (key === [...profileIds].sort().join(",")) return;
+  profileIds = ids;
+  S.profiles = await S.user.profiles([...ids]);
+  renderAll();
+}
+function typingNotes() {
+  const a = document.activeElement;
+  return !!(a && a.tagName === "TEXTAREA" && a.id === "notes-" + S.queue);
+}
+function renderAll() {
+  if (!S.data) return;
+  renderTabs(); renderFilters(); renderList(); renderStatus(); renderPeople();
+  // a live update must not wipe a note that is being typed
+  if (!typingNotes()) renderDetail();
+  refreshProfiles();
+}
+new ResizeObserver(([e]) => document.documentElement.style.setProperty("--head-h", Math.ceil(e.borderBoxSize?.[0]?.blockSize || e.target.offsetHeight) + "px"))
+  .observe(document.querySelector("header.top"));
+
+// ---------- boot ----------
+async function boot() {
+  try {
+    const res = await fetch("data.json");
+    if (!res.ok) throw new Error(res.status);
+    S.data = await res.json();
+  } catch (e) {
+    setStatus("The review data didn't load. Reload the page to try again.", true);
+    $("detail").replaceChildren(h("div", { class: "empty-state" }, h("h2", {}, "No data"), h("p", {}, "data.json could not be fetched.")));
+    return;
+  }
+  const savedQ = store.get("queue");
+  if (savedQ === "dedup" || savedQ === "oclc") S.queue = savedQ;
+  for (const q of ["dedup", "oclc"]) {
+    const s = store.get("sel." + q);
+    S.sel[q] = items(q).some((x) => x.id === s) ? s : visible(q)[0]?.id || items(q)[0].id;
+  }
+  renderAll();
+
+  const [db, user, room] = await Promise.all([
+    window.claude?.use?.("db") ?? null, window.claude?.use?.("user") ?? null, window.claude?.use?.("room") ?? null,
+  ].map((p) => Promise.resolve(p).catch(() => null)));
+  S.user = user; S.room = room;
+  if (user) {
+    S.me = await user.id();
+    const cw = await user.can("data.write");
+    S.canWrite = cw !== false;
+  }
+  if (!db) { S.dbState = "off"; S.canWrite = false; renderAll(); return; }
+  S.db = db;
+  if (!S.canWrite) S.dbState = "readonly";
+  const slow = setTimeout(() => { if (S.dbState === "connecting") { S.dbState = "slow"; renderStatus(); } }, 10000);
+  db.collection("decisions").limit(1000).onSnapshot((snap) => {
+    const next = new Map();
+    for (const doc of snap.docs) next.set(doc.id, doc.data());
+    S.decisions = next;
+    if (!snap.metadata.fromCache) { clearTimeout(slow); if (S.dbState !== "readonly") S.dbState = S.canWrite ? "live" : "readonly"; }
+    renderAll();
+  }, (e) => {
+    clearTimeout(slow);
+    S.dbState = "off"; S.canWrite = false;
+    setStatus("Lost the connection to the shared decisions (" + e.code + "). Reload the page to reconnect.", true);
+  });
+
+  if (room) {
+    room.onPeers((ch) => { S.peers = ch.peers; renderPeople(); renderList(); if (S.sel[S.queue]) renderDetail(); refreshProfiles(); });
+    const t = Date.now();
+    const me = user ? await user.me() : null;
+    room.presence({ viewing: docId(S.queue, S.sel[S.queue]), who: me ? { c: me.color, t } : null }).catch(() => {});
+  }
+}
+boot();
+})();
+</script>
