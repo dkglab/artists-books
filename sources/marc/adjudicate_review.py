@@ -4,7 +4,7 @@ each candidate's decoded 245/author/year next to the CSV row, so the genuine
 false-negatives can be picked out by hand (issue #84, step 3).
 
 Resumable: appends to candidates.jsonl and skips keys already present. Fetches
-more candidates per probe than the harvest did (show_n=10 vs 3), since the whole
+more candidates per probe than the harvest trusts (show_n=10 at every rank), since the whole
 point is to see the ones verify_title never got to look at.
 """
 import json

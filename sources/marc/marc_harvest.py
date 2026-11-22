@@ -106,9 +106,11 @@ MARC_NS     = "http://www.loc.gov/MARC21/slim"
 # Z39.50 servers, tried in order. keytypes lists the search keys to try at that
 # server, in precedence order (first hit wins). The throttle overrides keep LC --
 # a shared national service -- gentler than UNC. Both targets serve UTF-8.
-# show_n is how many candidate records to retrieve per query: 1 is enough for
-# the unique identifier keys at UNC; title searches pull several to verify
-# against, since the right record may not be the first hit. `protocol` defaults
+# show_n is how many candidate records to retrieve per identifier query, and the
+# *trusted window* of a title query: the ranks verify_title judges as it always
+# has. Title queries fetch deeper, to title_show_n (default TITLE_SHOW_N), and a
+# candidate below the window must clear the stricter verify_deep -- see
+# probe_depth and select_record (issue #98). `protocol` defaults
 # to "z3950" (Bib-1 prefix queries via yaz-client); "sru" servers are queried
 # over HTTP/CQL and return MARCXML, which is converted to binary on ingest so
 # the rest of the pipeline is identical.
@@ -247,7 +249,11 @@ SERVERS = [
     # over-fetch and let ehive_candidates() dedupe down to show_n distinct works.
     {"name": "ehive", "conn": "/api/v2/accounts/3931/objectrecords",
      "protocol": "ehive", "keytypes": ("title-author", "title"),
-     "batch": 25, "qsleep": 0.15, "bsleep": 1, "show_n": 5, "fetch_n": 25},
+     # title_show_n = show_n: no deep window here. Each eHive candidate costs a
+     # full-record re-fetch, and fetch_n=25 copies rarely dedupe to more than
+     # five distinct works anyway.
+     "batch": 25, "qsleep": 0.15, "bsleep": 1, "show_n": 5, "fetch_n": 25,
+     "title_show_n": 5},
     # NOTE: SUDOC (carmin.sudoc.abes.fr/ABES-Z39-PUBLIC) is reachable and would
     # reach the French references, but its public endpoint emits records in a
     # non-standard encoding that mislabels itself UTF-8 and that yaz cannot
@@ -267,6 +273,32 @@ IDENTIFIER_KEYS = ("bib", "isbn", "oclc")
 TITLE_KEYS      = ("title-author", "title")
 TITLE_STRONG    = 0.85
 TITLE_WEAK      = 0.60
+
+# How deep a title query reaches (issue #98). A server's show_n=3 is a recall
+# ceiling as well as a cost knob: on the short, common titles this collection is
+# full of ("Climax", "Spine", "Six") relevance ranking is weak, and a record that
+# verifies outright can rank 4th of 7 or 9th of 10. But the window is also what
+# has kept the strong band honest -- it accepts on title alone, so the deeper a
+# query reaches into 400 hits for "Sans titre", the more *other works with the
+# same title* it finds. Measured over NYARC's 713 rejects at depth 10, 62 verify
+# below rank 3, and 33 of those have a year contradicting the CSV's. Hence a
+# candidate below the trusted window must clear verify_deep: a strong title
+# match *and* a year within DEEP_YEAR_SLACK. The thresholds themselves are
+# unchanged.
+TITLE_SHOW_N    = 10
+DEEP_YEAR_SLACK = 1
+
+
+def probe_depth(server, keytype, show_n=None):
+    """Records to fetch for one probe. An explicit show_n (adjudicate_review's
+    uniform re-query) wins; identifier keys take the server's show_n, since the
+    first hit is trusted and a deeper list adds nothing; title keys reach to the
+    server's title_show_n, never shallower than its trusted window."""
+    if show_n:
+        return show_n
+    if keytype in IDENTIFIER_KEYS:
+        return server["show_n"]
+    return max(server["show_n"], server.get("title_show_n", TITLE_SHOW_N))
 
 
 def make_cfg(csv_path, out_xml, premerged=None):
@@ -575,12 +607,13 @@ def parse_zoom(out):
     return hits, recs
 
 
-def run_zoom(cfg, server, batch, show_n):
+def run_zoom(cfg, server, batch, show_n=None):
     """Fetch a batch over one persistent connection via the zoomfetch driver.
     batch is [(itemKey, [(keytype, value, query), ...]), ...]. Returns results as
         [(itemKey, [(keytype, value, count, [record_bytes, ...]), ...]), ...]
     one probe per query in precedence order (count is the server hit count; the
-    list holds min(show_n, count) records) -- the same shape run_sru returns and
+    list holds min(depth, count) records, depth per probe_depth) -- the same
+    shape run_sru returns and
     select_record consumes.
 
     Every probe is fed to the driver with a unique job id, and every record comes
@@ -594,21 +627,21 @@ def run_zoom(cfg, server, batch, show_n):
     conn = server["conn"]
     qsleep = server["qsleep"]
 
-    # Flatten probes to lines `<jobid>\t<query>\t<show_n>`; jobid is the flat
+    # Flatten probes to lines `<jobid>\t<query>\t<depth>`; jobid is the flat
     # probe index. per_item keeps the (jobid, keytype, value) grouping to reassemble.
     lines, per_item, pid = [], [], 0
     for key, plist in batch:
         ids = []
         for keytype, value, query in plist:
             jid = str(pid); pid += 1
-            lines.append(f"{jid}\t{query}\t{show_n}")
+            lines.append(f"{jid}\t{query}\t{probe_depth(server, keytype, show_n)}")
             ids.append((jid, keytype, value))
         per_item.append((key, ids))
 
     try:
         proc = subprocess.run(
             [ZOOMFETCH, "--syntax", "usmarc", "--sleep", str(qsleep),
-             "--maxrecords", str(show_n), conn],
+             "--maxrecords", str(server["show_n"]), conn],
             input=("\n".join(lines) + "\n").encode(),
             capture_output=True, timeout=60 + len(lines) * 10,
         )
@@ -629,9 +662,12 @@ def run_zoom(cfg, server, batch, show_n):
     return results
 
 
-def select_record(cfg, key, probelist, rowmap):
+def select_record(cfg, key, probelist, rowmap, window=None):
     """Choose a record for one item from its probe results, in precedence order.
     Identifier-key hits are trusted; title-key hits are verified against the CSV.
+    window is the server's trusted show_n: a title candidate ranked within it is
+    judged by verify_title, one ranked below it by the stricter verify_deep
+    (issue #98). None judges every rank by verify_title.
     Returns (status, keytype, value, record_or_None, ncands, review_or_None).
 
     status is "ok" (a record was chosen), "miss" (every probe was tested and none
@@ -645,8 +681,15 @@ def select_record(cfg, key, probelist, rowmap):
         if keytype in IDENTIFIER_KEYS:
             review = f"{count} holdings; show picked first" if count > 1 else None
             return "ok", keytype, value, recs[0], count, review
-        for rec in recs:  # title key: accept the first candidate that verifies
-            if verify_title(cfg, rec, rowmap[key]):
+        # title key: accept the first candidate that verifies, in rank order
+        for rank, rec in enumerate(recs, 1):
+            deep = window is not None and rank > window
+            if deep:
+                if verify_deep(cfg, rec, rowmap[key]):
+                    review = (f"{count} candidates; verified rank {rank} "
+                              f"below show_n {window}")
+                    return "ok", keytype, value, rec, count, review
+            elif verify_title(cfg, rec, rowmap[key]):
                 review = f"{count} candidates; verified one" if count > 1 else None
                 return "ok", keytype, value, rec, count, review
     if any(count is None for _kt, _v, count, _r in probelist):
@@ -719,7 +762,7 @@ def marcxml_to_binary(elements):
     return [marc_element_to_binary(el) for el in elements]
 
 
-def run_sru(cfg, server, batch, show_n):
+def run_sru(cfg, server, batch, show_n=None):
     """SRU equivalent of run_zoom: one HTTP request per probe (CQL), returning
     the same (itemKey, [(keytype, value, count, [record_bytes...]), ...]) shape.
     SRU has no persistent-connection drop to defer, so count is always an int."""
@@ -727,8 +770,9 @@ def run_sru(cfg, server, batch, show_n):
     for key, plist in batch:
         probelist = []
         for keytype, value, cql in plist:
-            n, els = sru_search(server["conn"], cql, show_n)
-            probelist.append((keytype, value, n, marcxml_to_binary(els[:show_n])))
+            depth = probe_depth(server, keytype, show_n)
+            n, els = sru_search(server["conn"], cql, depth)
+            probelist.append((keytype, value, n, marcxml_to_binary(els[:depth])))
             time.sleep(server["qsleep"])
         results.append((key, probelist))
     return results
@@ -894,7 +938,7 @@ def ehive_session(server):
     return _EHIVE_SESSION["s"]
 
 
-def run_ehive(cfg, server, batch, show_n):
+def run_ehive(cfg, server, batch, show_n=None):
     """eHive equivalent of run_zoom/run_sru: one account-scoped search per probe.
 
     The reported count is the number of distinct candidates handed back, not
@@ -914,7 +958,8 @@ def run_ehive(cfg, server, batch, show_n):
                 probelist.append((keytype, value, 0, []))
                 continue
             recs = []
-            for c in ehive_candidates(payload, show_n):
+            for c in ehive_candidates(payload,
+                                      probe_depth(server, keytype, show_n)):
                 full = ehive_full_record(sess, c)
                 if full is not None:
                     recs.append(marc_element_to_binary(ehive_to_marcxml(full)))
@@ -1179,7 +1224,7 @@ def uw_to_marcxml(data):
     return rec
 
 
-def run_uwmad(cfg, server, batch, show_n):
+def run_uwmad(cfg, server, batch, show_n=None):
     """UW equivalent of run_zoom/run_sru/run_ehive: one fielded search per probe,
     then a per-record JSON fetch for each candidate.
 
@@ -1192,7 +1237,8 @@ def run_uwmad(cfg, server, batch, show_n):
         probelist = []
         for keytype, value, params in plist:
             recs = []
-            for mms in uw_search(server["conn"], params, show_n):
+            for mms in uw_search(server["conn"], params,
+                                 probe_depth(server, keytype, show_n)):
                 time.sleep(server["qsleep"])
                 data = uw_record(server["conn"], mms)
                 if data is None or not uw_confirms(data, keytype, value):
@@ -1285,6 +1331,25 @@ def verify_title(cfg, record_bytes, row):
     return bool(cyear and ryear == cyear)
 
 
+def verify_deep(cfg, record_bytes, row):
+    """verify_title for a candidate ranked below the server's trusted window.
+
+    Stricter on both sides of the band, without touching either threshold:
+    the full title must clear TITLE_STRONG (no weak band -- deep in a long list
+    it accepts the wrong installment of a series, "Perspectives II" for
+    "Perspectives IV"), and the record's year must be within DEEP_YEAR_SLACK of
+    the CSV's (a strong title match alone accepts a 2010 "Sans titre" for every
+    untitled book). A side with no year cannot corroborate, so it fails."""
+    rtitle, _rmain, _rauthors, ryear = decode_record(cfg, record_bytes)
+    ctitle = norm(row.get("title") or "")
+    cyear = year_of(row.get("date") or "")
+    if not (rtitle and ctitle and ryear and cyear):
+        return False
+    if difflib.SequenceMatcher(None, rtitle, ctitle).ratio() < TITLE_STRONG:
+        return False
+    return abs(int(ryear) - int(cyear)) <= DEEP_YEAR_SLACK
+
+
 def harvest(cfg, limit=None, servers=None):
     os.makedirs(cfg["state"], exist_ok=True)
     rows = read_rows(cfg)
@@ -1306,22 +1371,22 @@ def harvest(cfg, limit=None, servers=None):
               f"this_run={len(pending)}")
 
         proto = server.get("protocol", "z3950")
-        bsize, show_n = server["batch"], server["show_n"]
+        bsize = server["batch"]
         for start in range(0, len(pending), bsize):
             batch = pending[start:start + bsize]
 
             if proto == "sru":
-                results = run_sru(cfg, server, batch, show_n)
+                results = run_sru(cfg, server, batch)
             elif proto == "uwmad":
-                results = run_uwmad(cfg, server, batch, show_n)
+                results = run_uwmad(cfg, server, batch)
             elif proto == "ehive":
-                results = run_ehive(cfg, server, batch, show_n)
+                results = run_ehive(cfg, server, batch)
             else:
                 # zoomfetch tags every record with its job id, so there is no
                 # positional alignment to break (issue #85): the only failure mode
                 # left is a hung driver, which returns None -> defer the whole
                 # batch to the next run rather than crash the resumable harvest.
-                results = run_zoom(cfg, server, batch, show_n)
+                results = run_zoom(cfg, server, batch)
                 if results is None:
                     print(f"  !! [{name}] batch at {start}: zoomfetch timed out; "
                           f"deferring to next run", file=sys.stderr)
@@ -1334,7 +1399,7 @@ def harvest(cfg, limit=None, servers=None):
             accepted, rows_out, reviews = [], [], []
             for key, probelist in results:
                 status, kt, value, rec, _n, review = select_record(
-                    cfg, key, probelist, rowmap)
+                    cfg, key, probelist, rowmap, window=server["show_n"])
                 if status == "defer":
                     continue
                 rows_out.append((key, kt, value, status))
