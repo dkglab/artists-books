@@ -20,9 +20,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 STEM = os.environ.get("STEM", "scad-residual")
 SERVER = os.environ.get("SERVER", "scad")
 STATE = os.path.join(HERE, "harvest")
-OUT = os.path.join(STATE, f"{STEM}-candidates.jsonl")
+OUT = os.environ.get("OUT") or os.path.join(STATE, f"{STEM}-candidates.jsonl")
 REVIEW = os.path.join(STATE, STEM, "review.tsv")
-CSV = os.path.join(STATE, f"{STEM}.csv")
+# The run's CSV: harvest/<stem>.csv for a residual run, or set CSV= for a run
+# keyed straight off a committed list (the main run reads ../artists-books.csv).
+CSV = os.environ.get("CSV") or os.path.join(STATE, f"{STEM}.csv")
+# Optional committed record directory: skip rejects that a later server in the
+# waterfall has since resolved, so only books still missing MARC are re-queried.
+HAVE = os.environ.get("HAVE")
 # Deliberately wider than the harvest's show_n=3: the whole point is to see the
 # candidates verify_title never got to look at (one of the 12 SCAD recoveries was
 # ranked 4th of 7 hits).
@@ -31,13 +36,18 @@ BATCH = 10
 
 
 def reject_keys():
-    """Keys whose only review reason is a failed title verification -- the true
-    rejects. Rows reading "N candidates; verified one" were accepted."""
+    """Keys whose only review reason at SERVER is a failed title verification --
+    the true rejects. Rows reading "N candidates; verified one" were accepted. A
+    multi-server run's review.tsv mixes every server's rows, hence the filter."""
+    have = ({f[:-4] for f in os.listdir(HAVE) if f.endswith(".xml")}
+            if HAVE else set())
     keys = []
     with open(REVIEW) as fh:
         for line in fh:
             parts = line.rstrip("\n").split("\t")
-            if len(parts) >= 5 and parts[4] == "title hits failed verification":
+            if (len(parts) >= 5 and parts[1] == SERVER
+                    and parts[4] == "title hits failed verification"
+                    and parts[0] not in have):
                 keys.append(parts[0])
     return keys
 
