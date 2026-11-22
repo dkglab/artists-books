@@ -6,7 +6,8 @@ queues on it at once, live:
 
 - **Title matches**: the fuzzy lib-1 attaches in
   `sources/artists-books-dedup-review.csv` → `artists-books-dedup-decisions.csv`.
-- **Shared OCLC numbers**: the groups in `sources/artists-books-oclc-review.csv`
+- **Shared OCLC or record**: the groups in `sources/artists-books-oclc-review.csv`
+  (books sharing an OCLC number, or matched to one catalogue's own record, #222)
   → `artists-books-oclc-decisions.csv`.
 
 Each item shows both Zotero records, the MARC record(s), and links to the dev

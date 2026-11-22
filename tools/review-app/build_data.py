@@ -6,8 +6,9 @@ Three review queues, all read from committed sources (run from the repo root):
   dedup  every fuzzy lib-1 attach in sources/artists-books-dedup-review.csv:
          the Sloane (lib 1) Zotero record beside its fuzzy twin's, plus the
          MARC record of the canonical node(s) they map to.
-  oclc   every shared-OCLC group in sources/artists-books-oclc-review.csv:
-         each book node's canonical Zotero row and its own MARC record.
+  oclc   every group in sources/artists-books-oclc-review.csv: books that
+         share an OCLC number, or whose MARC is the same catalogue record
+         (#222), each node's canonical Zotero row and its own MARC record.
   xtrack every pair in sources/cross-track-review.csv (#113): an artists'
          book beside a reference work that may be the same work, each with
          its canonical row, its MARC record and its citation count.
@@ -27,6 +28,10 @@ from collections import OrderedDict, defaultdict
 NS = {"m": "http://www.loc.gov/MARC21/slim"}
 MARC_DIR = "sources/marc/artists-books-marc"
 RW_MARC_DIR = "sources/marc/reference-works-marc"
+# The catalogue a same-record group's 001 belongs to, by harvest server (#222).
+CATALOGUE = {"k10plus": "K10plus", "lc": "Library of Congress", "libris": "LIBRIS",
+             "nyarc": "NYARC", "harvard": "Harvard", "getty": "Getty", "clark": "Clark",
+             "emory": "Emory", "psu": "Penn State", "unc": "UNC"}
 
 
 def read_csv(path):
@@ -137,8 +142,15 @@ def main(out):
 
     groups = OrderedDict()
     for r in read_csv("sources/artists-books-oclc-review.csv"):
-        g = groups.setdefault(r["oclc"], {"id": r["oclc"], "n": int(r["group"]),
-                                          "hint": r["hint"], "nodes": []})
+        gid = r["groupId"]
+        if r["groupKind"] == "record":  # rec.<server>.<001>
+            src, rid = gid.split(".", 2)[1:]
+            label = f"{CATALOGUE.get(src, src)} record {rid}"
+        else:
+            label = f"OCLC {gid}"
+        g = groups.setdefault(gid, {"id": gid, "n": int(r["group"]), "kind": r["groupKind"],
+                                    "label": label, "url": r["groupUrl"],
+                                    "hint": r["hint"], "nodes": []})
         k = r["canonicalKey"]
         g["nodes"].append({
             "key": k, "held": r["held"] == "true", "marc": want_marc(k),
@@ -187,7 +199,7 @@ def main(out):
             "dedup": dedup, "oclc": list(groups.values()), "xtrack": xtrack, "marc": marc}
     with open(out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
-    print(f"{len(dedup)} dedup pairs, {len(groups)} OCLC groups, {len(xtrack)} cross-track pairs, "
+    print(f"{len(dedup)} dedup pairs, {len(groups)} OCLC/record groups, {len(xtrack)} cross-track pairs, "
           f"{len(marc)} MARC records -> {out} ({os.path.getsize(out) // 1024} KB)",
           file=sys.stderr)
 

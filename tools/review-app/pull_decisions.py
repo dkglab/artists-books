@@ -5,9 +5,11 @@ The page (index.html, published as a claude.ai artifact) keeps one document
 per item in its `decisions` collection:
 
   dedup.<lib1Key>  {decision, notes, ...}       -> artists-books-dedup-decisions.csv
-  oclc.<oclc>      {nodes: {key: decision}, notes, ...}
+  oclc.<groupId>   {nodes: {key: decision}, notes, ...}
                                                 -> artists-books-oclc-decisions.csv
-                                                   (notes go on every row of the group)
+                                                   (notes go on every row of the group;
+                                                   groupId is an OCLC number or, for a
+                                                   same-record group, rec.<server>.<001>, #222)
   xtrack.<abKey>.<rwKey>  {decision, notes, ...}  -> cross-track-decisions.csv (#113)
 
 Save the collection first (Claude: ArtifactData `list` of `decisions` with
@@ -80,17 +82,17 @@ def main(folder):
     cols, rows = load(OCLC)
     seen = set()
     for r in rows:
-        d = docs.get("oclc." + r["oclc"])
+        d = docs.get("oclc." + r["groupId"])
         if d is None:
             continue
-        seen.add("oclc." + r["oclc"])
+        seen.add("oclc." + r["groupId"])
         dec = ((d.get("nodes") or {}).get(r["canonicalKey"]) or "").strip()
         notes = (d.get("notes") or "").strip()
         if dec not in VALID["oclc"]:
-            warnings.append(f"oclc {r['oclc']}/{r['canonicalKey']}: unknown decision {dec!r}, skipped")
+            warnings.append(f"oclc {r['groupId']}/{r['canonicalKey']}: unknown decision {dec!r}, skipped")
             continue
         if (r["decision"], r["notes"]) != (dec, notes):
-            changes.append(f"oclc {r['oclc']}/{r['canonicalKey']}: {r['decision'] or '-'} -> {dec or '-'}"
+            changes.append(f"oclc {r['groupId']}/{r['canonicalKey']}: {r['decision'] or '-'} -> {dec or '-'}"
                            + (" (notes changed)" if r["notes"] != notes else ""))
             r["decision"], r["notes"] = dec, notes
     save(OCLC, cols, rows)

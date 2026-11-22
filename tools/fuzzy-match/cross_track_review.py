@@ -16,7 +16,10 @@ A pair (artists'-book key, reference-work key) is a candidate on any of:
   sourceKey  both canonical rows list the same Zotero record in sourceKeys
              (the per-list dedups already linked them through sameAs)
   isbn       a shared ISBN (ISBN-10 compared as ISBN-13)
-  oclc       the same MARC 001 OCLC number in both MARC directories
+  oclc       the same OCLC number in both MARC directories (an OCLC 001,
+             else the first (OCoLC) 035; see marc_oclc.py, #222)
+  record     the same catalogue record: both MARC records are one server's
+             record, by its 001, where that 001 is a local record id
   title      the same normalized title, or the same main title (before the
              first colon) of three words or more, plus a shared creator surname
 
@@ -49,6 +52,8 @@ import unicodedata
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 
+from marc_oclc import oclc_number, record_id
+
 NS = {"m": "http://www.loc.gov/MARC21/slim"}
 DECISIONS = {"", "both", "reference", "no", "unsure"}
 DECISION_COLS = ["abKey", "rwKey", "abTitle", "rwTitle", "decision", "notes"]
@@ -56,7 +61,7 @@ COLS = ["abKey", "rwKey", "signals", "abTitle", "rwTitle", "abDate", "rwDate",
         "abCreators", "rwCreators", "abISBN", "rwISBN", "abOCLC", "rwOCLC",
         "abHeld", "abCitedBy", "rwCites", "abSourceKeys", "rwSourceKeys",
         "decision", "notes"]
-SIGNAL_ORDER = ["sourceKey", "isbn", "oclc", "title"]
+SIGNAL_ORDER = ["sourceKey", "isbn", "oclc", "record", "title"]
 
 
 def read_csv(path):
@@ -117,28 +122,12 @@ def isbns(field):
     return {i for i in (isbn13(t) for t in re.split(r"[\s;,]+", field or "")) if i}
 
 
-def oclc_of(marc_dir, key):
+def marc_ids(marc_dir, key):
+    """(OCLC number, (server, 001) record id) of the key's MARC record, by the
+    construct queries' rule (marc_oclc.py, #222); ("", None) without one."""
     path = os.path.join(marc_dir, f"{key}.xml")
-    if not os.path.exists(path):
-        return ""
-    rec = ET.parse(path).getroot().find("m:record", NS)
-    el = rec.find("m:controlfield[@tag='001']", NS) if rec is not None else None
-    return oclc_number((el.text or "") if el is not None else "")
-
-
-def oclc_number(control):
-    """The OCLC number in a 001, guarded as in the construct queries
-    (reference-works.rq, #51): the first digit run, leading zeros dropped,
-    accepted only when the 001 has an on/ocn/ocm prefix or the run is at most
-    10 digits. A longer bare 001 is a local system id (an Alma MMS id), and
-    truncating it would make up an OCLC number that two records can share."""
-    m = re.search(r"\d+", control)
-    if not m:
-        return ""
-    raw = m.group(0).lstrip("0")
-    if re.match(r"(on|ocn|ocm)", control, re.I) or len(raw) <= 10:
-        return raw
-    return ""
+    rec = ET.parse(path).getroot().find("m:record", NS) if os.path.exists(path) else None
+    return (oclc_number(rec), record_id(rec)) if rec is not None else ("", None)
 
 
 def source_keys(row):
@@ -147,7 +136,7 @@ def source_keys(row):
 
 def candidates(books, refs, marc_ab, marc_rw):
     pairs = defaultdict(set)
-    by_src, by_isbn, by_oclc, by_title = (defaultdict(set) for _ in range(4))
+    by_src, by_isbn, by_oclc, by_rec, by_title = (defaultdict(set) for _ in range(5))
     oclc = {}
     for b in books:
         k = b["canonicalKey"]
@@ -155,9 +144,11 @@ def candidates(books, refs, marc_ab, marc_rw):
             by_src[s].add(k)
         for i in isbns(b["ISBN"]):
             by_isbn[i].add(k)
-        oclc[k] = oclc_of(marc_ab, k)
+        oclc[k], rec = marc_ids(marc_ab, k)
         if oclc[k]:
             by_oclc[oclc[k]].add(k)
+        if rec:
+            by_rec[rec].add(k)
         by_title[main_title(b["title"])].add(k)
     book = {b["canonicalKey"]: b for b in books}
     for r in refs:
@@ -168,9 +159,11 @@ def candidates(books, refs, marc_ab, marc_rw):
         for i in isbns(r["ISBN"]):
             for k in by_isbn.get(i, ()):
                 pairs[(k, rk)].add("isbn")
-        oclc[rk] = oclc_of(marc_rw, rk)
+        oclc[rk], rec = marc_ids(marc_rw, rk)
         for k in by_oclc.get(oclc[rk], ()) if oclc[rk] else ():
             pairs[(k, rk)].add("oclc")
+        for k in by_rec.get(rec, ()) if rec else ():
+            pairs[(k, rk)].add("record")
         mt = main_title(r["title"])
         for k in by_title.get(mt, ()):
             b = book[k]
